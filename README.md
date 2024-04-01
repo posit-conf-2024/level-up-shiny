@@ -1,4 +1,4 @@
-WORKSHOP_TITLE
+Level Up with Shiny for R
 ================
 
 ### posit::conf(2024)
