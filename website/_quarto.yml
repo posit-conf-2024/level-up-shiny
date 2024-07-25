@@ -10,7 +10,7 @@ project:
 
 website:
   title: "Level Up with Shiny for R"
-  # description: "A tutorial on how to create modern Shiny apps with {bslib} and {shiny}"
+  description: "Take your Shiny skills to the next level."
   page-footer: |
     <a href="https://posit.co/conference">posit::conf(2024)</a>
   repo-url: https://github.com/posit-conf-2024/level-up-shiny
