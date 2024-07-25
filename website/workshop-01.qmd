@@ -1,0 +1,23 @@
+---
+title: Welcome and getting started
+description: Hello and welcome to the workshop!
+description-short: Hello and welcome to the workshop!
+duration: 15min
+time: 9:00 - 9:15
+
+editor: { render-on-save: true }
+---
+
+<!-- {{ < revealjs "slides/slides-01.html" > }} -->
+
+## Outline
+
+- Welcome to posit::conf(2024)!
+- Introductions and meet your neighbors
+- About the workshop, conference, goals and ground rules
+
+
+## 🧑‍💻 Your Turn {#your-turn}
+
+<!-- {{ < partial partials/your-turn.qmd file="exercises/ex-1.R" > }} -->
+

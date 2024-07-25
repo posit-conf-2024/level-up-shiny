@@ -1,0 +1,13 @@
+workshop:
+  title: "Level Up with Shiny for R"
+  conference: 
+    name: "posit::conf(2024)"
+    link: "https://posit.co/conference"
+  date: August 12, 2024
+  time: 09:00 - 17:00
+  location: ROOM TBA
+  links:
+    repo: https://github.com/posit-conf-2024/level-up-shiny
+    website: https://posit-conf-2024.github.io/level-up-shiny
+    # FIXME cloud link
+    cloud: https://posit.cloud/spaces/517274/

@@ -1,4 +1,13 @@
 .Rproj.user
+.Rdata
 .Rhistory
-.RData
-.Ruserdata
+.httr-oauth
+.DS_Store
+
+/.quarto/
+/website/_site/
+/_dev
+
+rmedicine-2024-bslib.Rcheck/
+rmedicine-2024-bslib*.tar.gz
+rmedicine-2024-bslib*.tgz

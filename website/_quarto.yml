@@ -1,0 +1,74 @@
+project:
+  type: website
+  preview:
+    port: 7567
+  render:
+    - "./*.qmd"
+    - "about/index.qmd"
+  resources:
+    - slides
+
+website:
+  title: "Level Up with Shiny for R"
+  # description: "A tutorial on how to create modern Shiny apps with {bslib} and {shiny}"
+  page-footer: |
+    <a href="https://posit.co/conference">posit::conf(2024)</a>
+  repo-url: https://github.com/posit-conf-2024/level-up-shiny
+  repo-subdir: website
+  repo-actions: [edit, issue]
+  navbar:
+    title: "Level Up Shiny"
+    foreground: black
+    background: white
+    left:
+      - href: index.qmd
+        text: Home
+      - href: workshop.qmd
+        text: Workshop
+      - href: about/index.qmd
+        text: Team
+    tools:
+      - icon: github
+        href: https://github.com/posit-conf-2024/level-up-shiny
+      - icon: pc-display
+        href: https://posit.cloud/spaces/517274/
+  page-navigation: true
+  sidebar:
+    - id: workshop
+      style: docked
+      type: light
+      background: light
+      foreground: dark
+      contents:
+        - workshop.qmd
+        - text: '<div class="sidebar-divider font-monospace">Morning 1</div>'
+        - workshop-01.qmd
+        - workshop-02.qmd
+        - workshop-03-break.qmd
+        - text: '<div class="sidebar-divider font-monospace">Morning 2</div>'
+        - workshop-04.qmd
+        - workshop-05.qmd
+        - workshop-06.qmd
+        - workshop-07-break.qmd
+        - text: '<div class="sidebar-divider font-monospace">Afternoon 1</div>'
+        - workshop-08.qmd
+        - workshop-09-break.qmd
+        - text: '<div class="sidebar-divider font-monospace">Afternoon 2</div>'
+        - workshop-10.qmd
+        - workshop-11.qmd
+
+format:
+  html:
+    theme: [zephyr, styles.scss]
+    css:
+      - auto-dark-mode.css
+    toc: true
+    lightbox: true
+    include-before-body:
+      - text: <script>document.querySelector('.navbar').dataset.bsTheme = 'light';</script>
+
+filters:
+  - shinylive
+
+editor:
+  render-on-save: true

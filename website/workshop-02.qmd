@@ -1,0 +1,10 @@
+---
+title: Modern layouts with bslib
+description: Level up your UI with bslib.
+description-short: Level up your UI with bslib
+duration: 75min
+time: 9:15 - 10:30
+
+
+editor: { render-on-save: true }
+---

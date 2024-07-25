@@ -1,0 +1,7 @@
+---
+title: Fast, reactive apps
+description: Mastering reactivity for fast Shiny apps
+description-short: Mastering reactivity for fast Shiny apps
+duration: 90min
+time: 15:00 - 15:30
+---
