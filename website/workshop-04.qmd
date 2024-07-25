@@ -1,7 +1,7 @@
 ---
 title: Code organization
-description: Flexible and responsive column-first layouts
-description-short: Flexible and responsive column-first layouts
+description: Organizing and writing code for maintainability and readability
+description-short: Organizing and writing code for maintainability and readability
 duration: 45min
 time: 11:00 - 11:45
 ---
