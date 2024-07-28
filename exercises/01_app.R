@@ -1,15 +1,15 @@
 # ┌ level-up-shiny ──────────────────────────────────┐
-# │                                                 │
-# │                   Exercise 1                    │
-# │                                                 │
+# │                                                  │
+# │                    Exercise 1                    │
+# │                                                  │
 # └─────────────────────────────── posit::conf(2024) ┘
 #
 # TASKS:
 # 1. Run the app and use it to learn about the `school` and `scorecard` datasets.
 #
 # 2. Load {bslib} and change the theme of the app, using your favorite colors
-#    for the background and foreground colors.
-#    *Hint:* Check out https://coolors.co for color inspiration.
+#    for the background and foreground colors. *Hint:* Check out
+#    https://coolors.co for color inspiration.
 #
 # 3. Choose an accent color for the primary color of the app.
 #
