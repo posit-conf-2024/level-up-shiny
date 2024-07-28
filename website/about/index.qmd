@@ -11,7 +11,7 @@ listing:
     - name: Garrick Aden-Buie
       instructor: true
       role: "Software Engineer, Shiny"
-      image: garrick-social-profile.jpeg
+      image: garrick.jpg
       links:
       - icon: github
         text: GitHub
