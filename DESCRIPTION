@@ -1,0 +1,30 @@
+Type: Project
+Package: level-up-shiny
+Title: Level Up with Shiny for R at posit::conf(2024)
+Version: 0.0.0.9000
+Authors@R:
+    person("Garrick", "Aden-Buie", , "garrick@adenbuie.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-7111-0077"))
+Description: Level up with Shiny for R at posit::conf(2024).
+License: CC BY-SA 4.0
+URL: https://github.com/posit-conf-2024/level-up-shiny
+BugReports: https://github.com/posit-conf-2024/level-up-shiny/issues
+Imports: 
+    bslib (>= 0.8.0),
+    collegeScorecard (>= 0.1.0),
+    leaflet,
+    lorem,
+    plotly,
+    shiny (>= 1.9.0),
+    shinylive,
+    thematic
+Suggests: 
+    duckdb
+Remotes: 
+    collegeScorecard=gadenbuie/scorecard-db:pkg@rc-v0.1.0,
+    rstudio/bslib@rc-v0.8.0,
+    rstudio/shiny@rc-v1.9.0
+Config/Needs/dev: usethis
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
