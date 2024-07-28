@@ -12,6 +12,7 @@ BugReports: https://github.com/posit-conf-2024/level-up-shiny/issues
 Imports: 
     bslib (>= 0.8.0),
     collegeScorecard (>= 0.1.0),
+    inspectdf,
     leaflet,
     lorem,
     plotly,
@@ -24,7 +25,7 @@ Remotes:
     collegeScorecard=gadenbuie/scorecard-db:pkg@rc-v0.1.0,
     rstudio/bslib@rc-v0.8.0,
     rstudio/shiny@rc-v1.9.0
-Config/Needs/dev: usethis
+Config/Needs/dev: lionel-/codegrip, usethis
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
