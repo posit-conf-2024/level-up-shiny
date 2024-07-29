@@ -38,9 +38,17 @@ listing:
     - name: Kalau Tanaka-Pesamino
       role: Solutions Engineer, Posit
       image: kalau.png
+      links:
+      - icon: linkedin
+        text: LinkedIn
+        href: https://www.linkedin.com/in/kalauonaona-t-753487b7/
     - name: Andrew Holz
       role: Head of Engineering, Posit
       image: andrew.png
+      links:
+      - icon: linkedin
+        text: LinkedIn
+        href: https://www.linkedin.com/in/andrewholz/
 ---
 
 ::: column-body
