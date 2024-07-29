@@ -1,0 +1,198 @@
+/*-- scss:defaults --*/
+/* See https://quarto.org/docs/presentations/revealjs/themes.html#customizing-themes */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+$font-family-sans-serif: "Lato", Helvetica, sans-serif !default;
+$font-family-monospace: "Source Code Pro", monospace !default;
+$presentation-heading-font: "Nunito Sans", $font-family-sans-serif !default;
+
+$title-slide-color: #FFF !default;
+$title-slide-background-color: #9A4665FF !default;
+
+:root {
+  --font-sans-serif: #{$font-family-sans-serif};
+  --font-monospace: #{$font-family-monospace};
+  --font-heading: #{$presentation-heading-font};
+  --title-slide-color: #{$title-slide-color};
+  --title-slide-background-color: #{$title-slide-background-color};
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+$presentation-h1-font-size: var(--step-5);
+$presentation-h2-font-size: var(--step-4);
+$presentation-h3-font-size: var(--step-3);
+$presentation-h4-font-size: var(--step-2);
+$presentation-font-size-root: var(--step-1);
+$presentation-heading-font-weight: 700;
+
+/*-- scss:rules --*/
+
+/*-- quarto resets --*/
+.reveal .slide {
+  font-family: var(--slide-main-font, var(--r-main-font));
+  font-size: var(--slide-main-font-size, var(--r-main-font-size));
+  color: var(--slide-color, var(--slide-main-color, var(--r-main-color)))
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  color: var(--slide-color, var(--slide-heading-color, var(--r-heading-color)));
+  text-wrap: balance;
+  // margin: var(--r-heading-margin);
+  // font-family: var(--r-heading-font);
+  // font-weight: var(--r-heading-font-weight);
+  // line-height: var(--r-heading-line-height);
+  // letter-spacing: var(--r-heading-letter-spacing);
+  // text-transform: var(--r-heading-text-transform);
+  // text-shadow: var(--r-heading-text-shadow);
+  // word-wrap: break-word;
+}
+
+.reveal .r-stretch {
+  max-width: 100%;
+}
+
+.slide.has-dark-background {
+  --slide-main-color: #FFF;
+  --slide-heading-color: #FFF;
+}
+
+.reveal img, .reveal video, .reveal iframe {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.reveal div.sourceCode {
+  margin-bottom: 1rem !important;
+}
+
+/*-- custom styles --*/
+.slides #title-slide {
+  justify-content: center;
+  align-items: center;
+}
+
+.title-slide {
+  background-color: var(--title-slide-background-color);
+  --slide-color: var(--title-slide-color);
+}
+
+.reveal.reveal {
+  .slides .slide,
+  .slides #title-slide {
+    // height: calc(100vh - 2 * var(--_slide-padding));
+    // width: calc(100vw - 2 * var(--_slide-padding));
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.slides .slide {
+  overflow: auto;
+}
+
+.slides .slide,
+.slides #title-slide {
+  --_slide-padding: var(--space-s);
+  padding: var(--_slide-padding);
+  flex-direction: column;
+}
+
+.slides .slide {
+  --_slide-padding: var(--space-s);
+  &.left {
+    align-items: start;
+  }
+  &.center {
+    align-items: center;
+  }
+  &.right {
+    align-items: end;
+  }
+
+  &.top {
+    justify-content: start;
+  }
+  &.middle {
+    justify-content: center;
+  }
+  &.bottom {
+    justify-content: end;
+  }
+
+  &.fullscreen {
+    --_slide-padding: 0;
+  }
+}
+
+@each $val in ("left", "center", "right") {
+  .text-#{$val} {
+    text-align: #{$val};
+  }
+}
+
+.slide-container {
+    max-width: 100%;
+}
+
+.slide p {
+  text-wrap: pretty;
+  margin-block: var(--step-1);
+}
+
+@each $val in ("-2", "-1", "0", "1", "2", "3", "4", "5") {
+  .fs-step-#{$val} {
+    font-size: var(--step-#{$val});
+  }
+}
+
+@each $val in ("3xs", "2xs", "xs", "s", "m", "l", "xl", "2xl", "3xl") {
+  .gap-#{$val} {
+    gap: var(--space-#{$val});
+  }
+  .m-block-#{$val} {
+    margin-block: var(--space-#{$val});
+  }
+  .m-inline-#{$val} {
+    margin-inline: var(--space-#{$val});
+  }
+  .m-block-start-#{$val} {
+    margin-block-start: var(--space-#{$val});
+  }
+  .m-block-end-#{$val} {
+    margin-block-end: var(--space-#{$val});
+  }
+  .p-block-#{$val} {
+    padding-block: var(--space-#{$val});
+  }
+  .p-inline-#{$val} {
+    padding-inline: var(--space-#{$val});
+  }
+  .p-block-start-#{$val} {
+    padding-block-start: var(--space-#{$val});
+  }
+  .p-block-end-#{$val} {
+    padding-block-end: var(--space-#{$val});
+  }
+  .p-inline-start-#{$val} {
+    padding-inline-start: var(--space-#{$val});
+  }
+  .p-inline-end-#{$val} {
+    padding-inline-end: var(--space-#{$val});
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .slides .slide {
+    --_slide-padding: var(--space-xs);
+    overflow: auto;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .slide-container {
+    width: 100%;
+  }
+}

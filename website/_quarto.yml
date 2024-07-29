@@ -4,6 +4,7 @@ project:
     port: 7567
   render:
     - "./*.qmd"
+    - "slides/*.qmd"
     - "about/index.qmd"
   resources:
     - slides

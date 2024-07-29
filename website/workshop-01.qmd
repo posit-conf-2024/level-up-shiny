@@ -8,7 +8,7 @@ time: 9:00 - 9:15
 editor: { render-on-save: true }
 ---
 
-<!-- {{ < revealjs "slides/slides-01.html" > }} -->
+{{< revealjs "slides/slides-01-intro.html" height="600px" >}}
 
 ## Outline
 

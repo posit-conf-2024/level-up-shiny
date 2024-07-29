@@ -1,0 +1,9 @@
+| Time          | Activity         |
+| :------------ | :--------------- |
+| 09:00 | Modern UI with bslib        |
+| 10:30 | *Coffee break*   |
+| 11:00 | Organizing your Shiny apps        |
+| 12:30 | *Lunch break*    |
+| 13:30 | Mastering reactivity        |
+| 15:00 | *Coffee break*   |
+| 15:30 | Push to prod        |

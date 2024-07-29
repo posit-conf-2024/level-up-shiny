@@ -1,0 +1,150 @@
+---
+title: Welcome!
+subtitle: Level Up with Shiny for R<br><code>posit::conf(2024)</code>
+author: Garrick Aden-Buie
+date: last-modified
+
+format:
+  utopia-slides-revealjs:
+    html-math-method: plain
+    slide-level: 2
+    theme:
+      - slides.scss
+
+    
+
+revealjs-plugins:
+  - utopia-slides
+
+editor:
+  render-on-save: true
+---
+
+## Welcome to Level&nbsp;Up&nbsp;with Shiny&nbsp;for&nbsp;R
+
+* Take a seat, etc.
+* Here's an important link
+* WiFI info
+
+# 🤝 Introductions 🤝 {.middle}
+
+## Meet us
+
+- Garrick
+- Carson
+- Kalau
+- Andrew
+
+## Code of Conduct
+
+[Code of Conduct and COVID policies](https://posit.co/code-of-conduct/). **Please Review**
+
+-   💙 Treat everyone with respect
+-   🧡 Everyone should feel welcome and safe
+
+Reporting:
+
+-   🗣️ any posit::conf staff member (t-shirt) or Info desk
+-   📧 `conf@posit.com`
+
+## Meet each other
+
+TK: activity
+
+# About this workshop {.middle}
+
+## WiFi {.center .middle}
+
+WiFi: Posit Conf 2024 \
+Password: `conf2024`
+
+## posit::conf(2024) Things to Know
+
+::: incremental
+* There will be a gender-neutral bathroom on levels `3:7`
+* Meditation/prayer room: 503
+    * Mon & Tues 7am - 7pm
+    * Wed 7am - 5pm
+* Mothers room: 509
+* [Red lanyards]{.red .b} available to those who don't wish to be photographed
+:::
+
+## Stickies
+
+::: {.flex style="margin-top: var(--space-xl); font-size: var(--step-3);"}
+::: {.flex .flex-column .items-center .justify-center .w-50 .text-center}
+🟩
+
+All good \
+I'm done
+:::
+::: {.flex .flex-column .items-center .justify-center .w-50 .text-center}
+🟥
+
+Not great \
+Need time or help
+:::
+:::
+
+
+## Shedule
+
+{{< partial ../partials/schedule.qmd >}}
+
+## Shedule
+
+::: {.table-highlight-even}
+{{< partial ../partials/schedule.qmd >}}
+:::
+
+## Discord
+
+Go [posit.co/conference](https://posit.co/conference), click **Login**.
+Click image to connect to the `posit::conf()` Discord server.
+
+This workshop has a private channel under Workshops.
+
+::: {.text-center .code .purple}
+#level-up-shiny
+:::
+
+
+Great place to ask questions, post resources, memes, or most anything else before, during, and after the workshop.
+
+
+# Computational Environment {.middle}
+
+## RStudio Cloud
+
+You can use the following link to join the workshops RStudio cloud space,
+
+::: {.large style="text-align: center;"}
+[bit.ly/conf2023_shiny_cloud](https://bit.ly/conf2023_shiny_cloud)
+:::
+
+Once you have joined you can then select the `get-started-shiny` assignment, 
+
+TK Image of assignment
+
+which should then create a copy of all materials and launch a cloud session for you.
+
+
+## Cloud session
+
+If everything is working you should see something very close to the following,
+
+TK image of cloud session
+
+
+## File organization
+
+::: {.table-no-border style="--row-padding: var(--space-xs);"}
+|  |  |
+|:---|:------------|
+| `_exercises/` | Files for **Your Turn** exercises |
+| `_examples/` | Files for my demo examples |
+| `website/` | The website and slides |
+| `./*` | Lots of project related files you can ignore |
+:::
+
+# Let's Dive In! {.middle}

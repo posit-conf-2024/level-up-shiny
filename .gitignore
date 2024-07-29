@@ -11,3 +11,5 @@
 level-up-shiny.Rcheck/
 level-up-shiny*.tar.gz
 level-up-shiny*.tgz
+
+/.luarc.json

@@ -1,0 +1,21 @@
+title: Utopia Slides
+author: Garrick Aden-Buie
+version: 1.0.0
+quarto-required: ">=1.4.0"
+contributes:
+  formats:
+    revealjs:
+      disable-layout: true
+      display: flex
+      view: scroll
+      theme: 
+        - default
+        - utopia-slides.scss
+      css: 
+        - utopia.css
+        - tachyons.css
+
+  revealjs-plugins:
+    - name: RevealSlideContainer
+      script:
+        - slide-container.js

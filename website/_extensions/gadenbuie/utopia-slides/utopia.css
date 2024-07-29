@@ -1,0 +1,59 @@
+/* TODO: Use Sass instead of fixed values in CSS */
+/* @link https://utopia.fyi/type/calculator?c=320,20,1.2,1440,40,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --step--2: clamp(0.8681rem, 0.6589rem + 1.0456vi, 1.6rem);
+  --step--1: clamp(1.0417rem, 0.7679rem + 1.369vi, 2rem);
+  --step-0: clamp(1.25rem, 0.8929rem + 1.7857vi, 2.5rem);
+  --step-1: clamp(1.5rem, 1.0357rem + 2.3214vi, 3.125rem);
+  --step-2: clamp(1.8rem, 1.1982rem + 3.0089vi, 3.9063rem);
+  --step-3: clamp(2.16rem, 1.3821rem + 3.8897vi, 4.8828rem);
+  --step-4: clamp(2.592rem, 1.5887rem + 5.0165vi, 6.1035rem);
+  --step-5: clamp(3.1104rem, 1.8193rem + 6.4557vi, 7.6294rem);
+}
+
+/* @link https://utopia.fyi/space/calculator?c=320,32,1.25,1440,40,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --space-3xs: clamp(0.5rem, 0.4643rem + 0.1786vi, 0.625rem);
+  --space-2xs: clamp(1rem, 0.9286rem + 0.3571vi, 1.25rem);
+  --space-xs: clamp(1.5rem, 1.3929rem + 0.5357vi, 1.875rem);
+  --space-s: clamp(2rem, 1.8571rem + 0.7143vi, 2.5rem);
+  --space-m: clamp(3rem, 2.7857rem + 1.0714vi, 3.75rem);
+  --space-l: clamp(4rem, 3.7143rem + 1.4286vi, 5rem);
+  --space-xl: clamp(6rem, 5.5714rem + 2.1429vi, 7.5rem);
+  --space-2xl: clamp(8rem, 7.4286rem + 2.8571vi, 10rem);
+  --space-3xl: clamp(12rem, 11.1429rem + 4.2857vi, 15rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.5rem, 0.2857rem + 1.0714vi, 1.25rem);
+  --space-2xs-xs: clamp(1rem, 0.75rem + 1.25vi, 1.875rem);
+  --space-xs-s: clamp(1.5rem, 1.2143rem + 1.4286vi, 2.5rem);
+  --space-s-m: clamp(2rem, 1.5rem + 2.5vi, 3.75rem);
+  --space-m-l: clamp(3rem, 2.4286rem + 2.8571vi, 5rem);
+  --space-l-xl: clamp(4rem, 3rem + 5vi, 7.5rem);
+  --space-xl-2xl: clamp(6rem, 4.8571rem + 5.7143vi, 10rem);
+  --space-2xl-3xl: clamp(8rem, 6rem + 10vi, 15rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(2rem, 1.1429rem + 4.2857vi, 5rem);
+}
+
+/* @link https://utopia.fyi/grid/calculator?c=320,32,1.25,1440,40,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --grid-max-width: 155rem;
+  --grid-gutter: var(--space-s-l, clamp(2rem, 1.5556rem + 2.2222vw, 5rem));
+  --grid-columns: 12;
+}
+
+.u-container {
+  max-width: var(--grid-max-width);
+  padding-inline: var(--grid-gutter);
+  margin-inline: auto;
+}
+
+.u-grid {
+  display: grid;
+  gap: var(--grid-gutter);
+}
