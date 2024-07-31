@@ -20,12 +20,20 @@
   color: var(--title-slide-background-color);
 }
 
-.slide-your-turn {
+.reveal .slide-your-turn {
   background-color: #17212b;
   --slide-color: #F2F5F8;
   --quarto-hl-fu-color: #E7B10A;
   --r-link-color: #ff5fa1;
   --r-link-color-hover: #E56399;
+
+  strong {
+    color: var(--quarto-hl-fu-color);
+  }
+
+  code {
+    color: var(--quarto-hl-fu-color);
+  }
 }
 
 :root {

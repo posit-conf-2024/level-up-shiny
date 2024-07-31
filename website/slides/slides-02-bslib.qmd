@@ -557,15 +557,26 @@ layout_sidebar(
 )
 ```
 
-## Example
+## {#ex-page-sidebar .fullscreen}
 
-TK: page sidebar app `_examples/01-bslib/03_app.R`
 
-Start with
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+#| orientation: horizontal
+#| viewerHeight: "100%"
 
-1. State selector
-2. Plot: predominant degree
-3. Plot: cost vs earnings
+{{< include ../../_examples/01-bslib/03_app.R >}}
+
+## file: notes.R
+# * Use page_sidebar(), move state selector there
+# * turn fill on and off for main area
+# * Mention `sidebar()` options, like `open` and `position`
+```
+
+::: notes
+Use `page_sidebar()` to move the state selector to a global sidebar.
+:::
 
 # Your Turn {.middle}
 
@@ -573,15 +584,9 @@ Start with
 
 {{< countdown 4:00 bottom="2rem" right="2rem" >}}
 
-TK: global-vs-local sidebar app `_exercises/03_app.R
-
-Start with `_examples/01-bslib/03_app.R` and add:
-
-* Radio buttons: locale type
-* Radio buttons: group by
-
-1. Convert the app to a sidebar page
-2. Use `layout_sidebar()` to make the sidebar local to cost vs. earnings plot
+1. Convert the app to a **page with a sidebar**
+2. One input only applies to _one of the plots_. Use `layout_sidebar()` to create a sidebar with a local input for that plot.
+3. Stretch: Position the local sidebar on the right of the card and have it start closed.
 
 # Value Boxes {.middle}
 

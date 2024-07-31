@@ -6,6 +6,8 @@ library(leaflet)
 library(fontawesome)
 library(collegeScorecard)
 
+# Setup -----------------------------------------------------------------------
+
 colors <- c("#007bc2", "#f45100", "#bf007f")
 
 theme_set(
@@ -19,24 +21,7 @@ theme_set(
 
 thematic::thematic_shiny()
 
-scorecard_latest <-
-  scorecard |>
-  group_by(id) |>
-  arrange(academic_year) |>
-  tidyr::fill(
-    n_undergrads,
-    rate_admissions,
-    rate_completion,
-    cost_avg,
-    amnt_earnings_med_10y
-  ) |>
-  slice_max(academic_year, n = 1, with_ties = FALSE) |>
-  ungroup()
-
-school <-
-  school |>
-  left_join(scorecard_latest, by = "id")
-
+# UI --------------------------------------------------------------------------
 
 ui <- page_sidebar(
   title = "Find a School",
@@ -147,6 +132,27 @@ ui <- page_sidebar(
     )
   )
 )
+
+# Data ------------------------------------------------------------------------
+scorecard_latest <-
+  scorecard |>
+  group_by(id) |>
+  arrange(academic_year) |>
+  tidyr::fill(
+    n_undergrads,
+    rate_admissions,
+    rate_completion,
+    cost_avg,
+    amnt_earnings_med_10y
+  ) |>
+  slice_max(academic_year, n = 1, with_ties = FALSE) |>
+  ungroup()
+
+school <-
+  school |>
+  left_join(scorecard_latest, by = "id")
+
+# Server ----------------------------------------------------------------------
 
 server <- function(input, output, session) {
   # Value Boxes ----
