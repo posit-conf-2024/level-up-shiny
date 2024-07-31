@@ -116,16 +116,25 @@
       ],
       "Hash": "c1ee497a6d999947c2c224ae46799b1a"
     },
+    "bsicons": {
+      "Package": "bsicons",
+      "Version": "0.1.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "cli",
+        "htmltools",
+        "rlang",
+        "utils"
+      ],
+      "Hash": "d8f892fbd94d0b9b1f6d688b05b8633c"
+    },
     "bslib": {
       "Package": "bslib",
       "Version": "0.8.0",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteUsername": "rstudio",
-      "RemoteRepo": "bslib",
-      "RemoteRef": "rc-v0.8.0",
-      "RemoteSha": "d4a9baf5b79f5058425607eb3bc656af6d9fd4fd",
+      "Source": "Repository",
+      "Repository": "CRAN",
       "Requirements": [
         "R",
         "base64enc",
@@ -141,7 +150,7 @@
         "rlang",
         "sass"
       ],
-      "Hash": "f52332e1140cb7b48f9ff07f6336981d"
+      "Hash": "b299c6741ca9746fb227debcb0f9fb6c"
     },
     "cachem": {
       "Package": "cachem",
@@ -181,19 +190,12 @@
     "collegeScorecard": {
       "Package": "collegeScorecard",
       "Version": "0.1.0",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "scorecard-db",
-      "RemoteUsername": "gadenbuie",
-      "RemotePkgRef": "gadenbuie/scorecard-db/pkg@rc-v0.1.0",
-      "RemoteRef": "rc-v0.1.0",
-      "RemoteSha": "d88fad12a67431844856dbd4966ce4c3a268a264",
-      "RemoteSubdir": "pkg",
+      "Source": "Repository",
+      "Repository": "CRAN",
       "Requirements": [
         "R"
       ],
-      "Hash": "559cfca8664612d666022a54faebc35c"
+      "Hash": "180162f9b1cf8b83bdb69587b29dd749"
     },
     "colorspace": {
       "Package": "colorspace",
@@ -208,6 +210,24 @@
         "stats"
       ],
       "Hash": "d954cb1c57e8d8b756165d7ba18aa55a"
+    },
+    "colourpicker": {
+      "Package": "colourpicker",
+      "Version": "1.3.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "ggplot2",
+        "htmltools",
+        "htmlwidgets",
+        "jsonlite",
+        "miniUI",
+        "shiny",
+        "shinyjs",
+        "utils"
+      ],
+      "Hash": "daec8f7d4ba89df06fe2c0802c3a9dac"
     },
     "commonmark": {
       "Package": "commonmark",
@@ -368,21 +388,31 @@
     },
     "fontawesome": {
       "Package": "fontawesome",
-      "Version": "0.5.2.9000",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "fontawesome",
-      "RemoteUsername": "rstudio",
-      "RemotePkgRef": "rstudio/fontawesome",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "32617f7c9d5bbc03f1b37d7f2cf5b3e87b85bfc1",
+      "Version": "0.5.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
       "Requirements": [
         "R",
         "htmltools",
         "rlang"
       ],
-      "Hash": "7b18b1823a0caa3bdfe9d92ed097fac5"
+      "Hash": "c2efdd5f0bcd1ea861c2d4e2a883a67d"
+    },
+    "forcats": {
+      "Package": "forcats",
+      "Version": "1.0.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "cli",
+        "glue",
+        "lifecycle",
+        "magrittr",
+        "rlang",
+        "tibble"
+      ],
+      "Hash": "1a0a9a3d5083d0d573c4214576f1e690"
     },
     "fs": {
       "Package": "fs",
@@ -888,6 +918,18 @@
       ],
       "Hash": "18e9c28c1d3ca1560ce30658b22ce104"
     },
+    "miniUI": {
+      "Package": "miniUI",
+      "Version": "0.1.1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "htmltools",
+        "shiny",
+        "utils"
+      ],
+      "Hash": "fec5f52652d60615fdb3957b3d74324a"
+    },
     "munsell": {
       "Package": "munsell",
       "Version": "0.5.1",
@@ -1249,13 +1291,8 @@
     "shiny": {
       "Package": "shiny",
       "Version": "1.9.0",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteUsername": "rstudio",
-      "RemoteRepo": "shiny",
-      "RemoteRef": "rc-v1.9.0",
-      "RemoteSha": "f5fdfac0d65acc6e55d1c10f64a5cf1159238588",
+      "Source": "Repository",
+      "Repository": "CRAN",
       "Requirements": [
         "R",
         "R6",
@@ -1282,7 +1319,20 @@
         "withr",
         "xtable"
       ],
-      "Hash": "a552b739d7da7d346382af2cae280a42"
+      "Hash": "01666113b04d504390d60736f39bd0d0"
+    },
+    "shinyjs": {
+      "Package": "shinyjs",
+      "Version": "2.1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "digest",
+        "jsonlite",
+        "shiny"
+      ],
+      "Hash": "802e4786b353a4bb27116957558548d5"
     },
     "shinylive": {
       "Package": "shinylive",
@@ -1387,7 +1437,7 @@
     },
     "thematic": {
       "Package": "thematic",
-      "Version": "0.1.5",
+      "Version": "0.1.6",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -1403,7 +1453,7 @@
         "scales",
         "utils"
       ],
-      "Hash": "dd888c43932085e4a8aa7388f6f8dc23"
+      "Hash": "4682b2074c3822b6e1de33b06a868e3c"
     },
     "tibble": {
       "Package": "tibble",

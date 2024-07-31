@@ -1,0 +1,668 @@
+---
+title: Modern UI with bslib
+subtitle: Level Up with Shiny for R<br><code>posit::conf(2024)</code>
+author: Garrick Aden-Buie
+date: last-modified
+
+format:
+  utopia-slides-revealjs:
+    html-math-method: plain
+    revealjs-url: slides/assets/reveal.js-4.5.0
+    slide-level: 2
+    chalkboard: true
+    theme:
+      - slides.scss
+
+revealjs-plugins:
+  - utopia-slides
+
+editor:
+  render-on-save: true
+---
+
+# [shiny + bslib = 💛]{.code} {.middle}
+
+## At first there was `shiny`  {auto-animate=true}
+
+::: {.flex-ns}
+::: w-two-thirds-ns
+```{.r}
+library(shiny)
+
+ui <- fluidPage(
+  selectInput(
+    "pkg",
+    "Best Package",
+    choices = c("shiny", "bslib")
+  )
+)
+
+server <- function(input, output, session) {
+
+}
+
+shinyApp(ui, server)
+```
+:::
+
+::: {.flex .items-center .justify-center .text-center .p-inline-s}
+![](assets/shiny.svg){width="100%"}
+:::
+:::
+
+## Then came `bslib` {auto-animate=true}
+
+::: {.flex-ns}
+::: w-two-thirds-ns
+```{.r code-line-numbers="2,5"}
+library(shiny)
+library(bslib)
+
+ui <- fluidPage(
+  theme = bs_theme(version = 5),
+  selectInput(
+    "pkg",
+    "Best Package",
+    choices = c("shiny", "bslib")
+  )
+)
+
+server <- function(input, output, session) {
+  
+}
+
+shinyApp(ui, server)
+```
+:::
+
+::: {.w-third-ns .flex .items-center .justify-center .text-center}
+![](assets/shiny.svg){width="50%" style="position:relative; left:-5rem;"}
+![](assets/bslib.png){width="75%" style="position:relative; top:-10rem; left: 2rem; filter: drop-shadow(0 0 0.25rem #000);}"}
+:::
+:::
+
+## `bslib`: 1-line Bootstrap upgrades {auto-animate=true}
+
+::: {.flex-ns}
+::: w-two-thirds-ns
+```{.r code-line-numbers="2,5"}
+library(shiny)
+library(bslib)
+
+ui <- fluidPage(
+  theme = bs_theme(5),
+  # App code
+)
+```
+:::
+
+::: {.w-third-ns .flex .items-center .justify-center .text-center}
+![](assets/bslib.png){width="75%"}
+:::
+:::
+
+
+## `bslib`: 1-line Bootstrap themes! {auto-animate=true}
+
+::: {.flex-ns}
+::: w-two-thirds-ns
+```{.r code-line-numbers="2,5"}
+library(shiny)
+library(bslib)
+
+ui <- fluidPage(
+  theme = bs_theme(5, "flatly"),
+  # App code
+)
+```
+:::
+
+::: {.w-third-ns .flex .items-center .justify-center .text-center}
+![](assets/bslib.png){width="75%"}
+:::
+:::
+
+
+## `bslib`: 1-line Bootstrap themes! {auto-animate=true}
+
+::: {.flex-ns}
+::: w-two-thirds-ns
+```{.r code-line-numbers="2,5"}
+library(shiny)
+library(bslib)
+
+ui <- fluidPage(
+  theme = bs_theme(5, "darkly"),
+  # App code
+)
+```
+:::
+
+::: {.w-third-ns .flex .items-center .justify-center .text-center}
+![](assets/bslib.png){width="75%"}
+:::
+:::
+
+## `bslib`: 3-line Bootstrap themes! {auto-animate=true}
+
+::: {.flex-ns}
+::: w-two-thirds-ns
+```{.r code-line-numbers="2,5-9"}
+library(shiny)
+library(bslib)
+
+ui <- fluidPage(
+  theme = bs_theme(
+    version = 5,
+    bg = "#44344F", # dark eggplant
+    fg = "#C2F970", # neon lime
+  ),
+  # App code
+)
+```
+:::
+
+::: {.w-third-ns .flex .items-center .justify-center .text-center}
+![](assets/bslib.png){width="75%"}
+:::
+:::
+
+
+
+## `bslib`: N-line Bootstrap themes! {auto-animate=true}
+
+::: {.flex-ns}
+::: w-two-thirds-ns
+```{.r code-line-numbers="2,5-10"}
+library(shiny)
+library(bslib)
+
+ui <- fluidPage(
+  theme = bs_theme(
+    version = 5,
+    bg = "#44344F", # dark eggplant
+    fg = "#C2F970", # neon lime
+    "link-color" = "#F9F871", # neon yellow
+  ),
+  # App code
+)
+```
+:::
+
+::: {.w-third-ns .flex .items-center .justify-center .text-center}
+![](assets/bslib.png){width="75%"}
+:::
+:::
+
+[rstudio.github.io/bslib/articles/bs5-variables](https://rstudio.github.io/bslib/articles/bs5-variables/index.html)
+
+
+
+## `bslib`: A Shiny Bootstrap theme! {auto-animate=true}
+
+::: {.flex-ns}
+::: w-two-thirds-ns
+```{.r code-line-numbers="2,5"}
+library(shiny)
+library(bslib)
+
+ui <- fluidPage(
+  theme = bs_theme(5, "shiny"),
+  # App code
+)
+```
+:::
+
+::: {.w-third-ns .flex .items-center .justify-center .text-center}
+![](assets/bslib.png){width="75%"}
+:::
+:::
+
+
+## `bslib`: A Shiny Bootstrap [preset]{.orange}! {auto-animate=true}
+
+::: {.flex-ns}
+::: w-two-thirds-ns
+```{.r code-line-numbers="2,5"}
+library(shiny)
+library(bslib)
+
+ui <- fluidPage(
+  theme = bs_theme(version = 5, preset = "shiny"),
+  # App code
+)
+```
+:::
+
+::: {.w-third-ns .flex .items-center .justify-center .text-center}
+![](assets/bslib.png){width="75%"}
+:::
+:::
+
+
+## `bslib`: A Shiny Bootstrap [default]{.orange}! {auto-animate=true}
+
+::: {.flex-ns}
+::: w-two-thirds-ns
+```{.r code-line-numbers="2,5"}
+library(shiny)
+library(bslib)
+
+ui <- fluidPage(
+  theme = bs_theme(),
+  # App code
+)
+```
+:::
+
+::: {.w-third-ns .flex .items-center .justify-center .text-center}
+![](assets/bslib.png){width="75%"}
+:::
+:::
+
+
+
+
+# Your Turn {.middle}
+
+## U.S. College Scorecard
+
+We'll be using the [U.S. College Scorecard data](https://collegescorecard.ed.gov/) for our examples today,
+from 📦 `collegeScorecard`.
+
+`school`
+:    Information about colleges and universities
+
+`scorecard`
+:    Data on cost, admission and completion rates, earnings and more
+
+## Your Turn `_exercises/01-app.R` {#your-turn-1 .slide-your-turn}
+
+::: w-75
+1. Run the app and use it to learn about the `school` and `scorecard` datasets.
+2. Load `bslib` and change the theme of the app, using your favorite colors
+   for the background and foreground colors.<br>
+   *Hint:* Get color inspiration at <https://coolors.co>.
+3. Choose an accent color for the app's primary color.
+4. Add `thematic::thematic_shiny()` to the app to make the plots look better.
+:::
+
+{{< countdown 4:00 bottom="2rem" right="2rem" >}}
+
+# bslib: fillable layouts and cards {.middle}
+
+## {#my-turn-shinylive .fullscreen}
+
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+#| orientation: horizontal
+#| viewerHeight: "100%"
+
+{{< include ../../_exercises/01_solution_app.R >}}
+
+## file: notes.R
+# => _exercises/01_solution_app.R
+
+theme = bs_theme(
+  version = 5,
+  bg = "#0B3954",
+  fg = "#bfd7ea",
+  primary = "#0BAFC1",
+)
+
+# * Add thematic::thematic_shiny() to the app
+# * page_fluid()
+```
+
+
+## {#page-fillable .fullscreen}
+
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+#| orientation: horizontal
+#| viewerHeight: "100%"
+
+{{< include ../../_examples/01-bslib/01_app.R >}}
+
+## file: notes.R
+# => examples/01-bslib/01_app.R
+# * Compare with page_fillable()
+# * fill items and fillable containers
+# * Add card()
+```
+
+## Filling Layouts {auto-animate=true}
+
+```{r}
+htmltools::tagList(htmltools:::fillDependencies())
+```
+
+::: {.flex .justify-center .gap-m .text-center}
+::: {.w-50}
+::: {.fs-step-2}
+[Fillable Container]{data-id="txt-fillable"} 🫱
+:::
+
+::: {data-id="fillable-container" .html-fill-container .bg-black-025 .p-s .bw-1 .b--dashed .ba .br2 .overflow-auto style="resize: vertical; min-height: 200px"}
+:::
+:::
+
+::: {.w-50}
+::: {.fs-step-2}
+🫲 [Fill Item]{data-id="txt-fill"}
+:::
+
+::: {data-id="fill-item" .html-fill-item .bg-light-pink .b-pink .bw-1 .ba .br2 style="height: 300px;"}
+:::
+:::
+:::
+
+## Filling Layouts {auto-animate=true}
+
+::: {.flex .justify-center .gap-m .text-center}
+::: {.w-60}
+::: {.fs-step-2}
+[Fillable Container]{data-id="txt-fillable"} 🤝 [Fill Item]{data-id="txt-fill"}
+:::
+
+::: {data-id="fillable-container" .html-fill-container .relative .bg-light-gray .p-s .bw-1 .b--dashed .ba .br2 .overflow-auto style="resize: vertical; min-height: 200px"}
+::: {.fragment .absolute .silver left=0 top="calc(-1.7 * var(--space-s))"}
+card
+:::
+
+::: {data-id="fill-item" .html-fill-item .bg-hot-pink .b-dark-pink .bw-1 .ba .br2 style="height: 300px;"}
+::: {.fragment .absolute .white bottom="0" right="0"}
+plot
+:::
+:::
+
+:::
+:::
+:::
+
+## Filling Layouts {auto-animate=true}
+
+::: {.flex .justify-center .gap-m .text-center}
+::: {.w-60}
+::: {.fs-step-2}
+[~~Fillable Container~~]{data-id="txt-fillable"} 🫸 🫲 [Fill Item]{data-id="txt-fill"}
+:::
+
+::: {data-id="fillable-container" .relative .bg-gray-025 .p-s .bw-1 .b--dashed .ba .br2 .overflow-auto style="resize: vertical; min-height: 200px"}
+
+::: {data-id="fill-item" .html-fill-item .bg-hot-pink .b-dark-pink .bw-1 .ba .br2 style="height: 300px;"}
+:::
+
+:::
+:::
+
+:::
+
+::: text-center
+`fillable = FALSE`
+:::
+
+## Filling Layouts {auto-animate=true}
+
+::: {.flex .justify-center .gap-m .text-center}
+::: {.w-60}
+::: {.fs-step-2}
+[Fillable Container]{data-id="txt-fillable"} 🫱 🫷 [~~Fill Item~~]{data-id="txt-fill"}
+:::
+
+::: {data-id="fillable-container" .html-fill-container .relative .bg-light-gray .p-s .bw-1 .b--dashed .ba .br2 .overflow-auto style="resize: vertical; min-height: 200px"}
+
+::: {data-id="fill-item" .bg-light-pink .b-pink .bw-1 .ba .br2 style="height: 300px;"}
+:::
+
+:::
+:::
+:::
+
+::: text-center
+`fill = FALSE`
+:::
+
+
+## Card Parts
+
+::: {.flex .justify-center .items-center}
+::: {.w-40}
+<!-- _examples/bslib/02_example.R -->
+![](assets/bslib-card.png)
+:::
+
+::: {.w-60}
+```{.r}
+card(
+  card_header("Card Header"),
+
+  p("This is the body of the card"),
+  p("Anything here becomes part of the card body."),
+  
+  card_footer("Card footer. © bslib 2024")
+)
+```
+:::
+:::
+
+## Card Parts {auto-animate=true}
+
+::: {.flex .justify-center .items-center}
+::: {.w-40}
+<!-- _examples/bslib/02_example.R -->
+![](assets/bslib-card-not-fillable.png)
+:::
+
+::: {.w-60}
+```{.r}
+card(
+  card_header("Card Header"),
+
+  card_body(
+    fillable = FALSE,
+    p("This is the body of the card"),
+    p("Anything here becomes part of the card body.")
+  ),
+  
+  card_footer("Card footer. © bslib 2024")
+)
+```
+:::
+:::
+
+## Full Screen Cards
+
+::: {.flex .justify-center .items-center .gap-xs}
+
+::: {.w-40}
+```{.r}
+card(
+  card_header("School Governance"),
+  plotlyOutput("plot_control"),
+  full_screen = TRUE
+)
+```
+:::
+
+::: {.w-60 style="min-height: 400px;"}
+```{shinylive-r}
+#| standalone: true
+#| components: [viewer]
+#| viewerHeight: "400px"
+
+{{< include ../../_examples/01-bslib/03_app.R >}}
+```
+:::
+
+:::
+
+
+# Your Turn {.middle}
+
+## Your Turn `_exercises/02-app.R` {#your-turn-2-inst .slide-your-turn}
+
+::: w-90
+1. Place each of the plots in a `card()` with a header.
+2. What happens when you set `fill = FALSE` or `fillable = FALSE` in a card?
+3. Give each card a **minimum height** to prevent squishing.
+4. How is the plotly plot different from the ggplot2 plot?
+:::
+
+{{< countdown 4:00 bottom="2rem" right="2rem" >}}
+
+# Sidebar Layouts {.middle}
+
+## A global page-level sidebar {auto-animate=true}
+
+```{.r}
+page_sidebar(
+  sidebar = sidebar(
+    selectInput(...),
+    # other inputs
+  ),
+  # Main content area
+  plotOutput("plot")
+)
+```
+
+## A global page-level sidebar {auto-animate=true}
+
+```{.r}
+page_navbar(
+  sidebar = sidebar(
+    selectInput(...),
+    # other inputs
+  ),
+  nav_panel(
+    "Page 1", 
+    # Main content area
+    plotOutput("plot")
+  ),
+)
+```
+
+## Local sidebars {auto-animate=true}
+
+```{.r}
+layout_sidebar(
+  sidebar = sidebar(
+    selectInput(...),
+    # other inputs
+  ),
+  # Main content area
+  plotOutput("plot")
+)
+```
+
+## Example
+
+TK: page sidebar app
+
+Source: `rmedicine: exercises/02_solution_app.R`
+
+App with `state` and `deg_predominant` filters, plots are `control` and `locale_type`.
+
+# Your Turn {.middle}
+
+## Your Turn `_exercises/XX-app.R` {#your-turn-3-inst .slide-your-turn}
+
+{{< countdown 4:00 bottom="2rem" right="2rem" >}}
+
+TK: global-vs-local sidebar app
+
+Source: `rmedicine: exercises/02_solution_app.R`
+
+App with `state` and `deg_predominant` filters, plots are `control` and `locale_type`.
+
+Additonal third plot featuring Cost vs Earnings with "group by" input.
+
+**Rewrite the app to use a local sidebar.**
+
+# Value Boxes {.middle}
+
+##
+
+* Simple app where I can walk through the basics of a `value_box()`
+  * `title`, `value`
+  * `showcase`
+  * `showcase_layout`
+  * `theme`
+
+# Your Turn {.middle}
+
+## Your Turn `_exercises/XX-app.R` {#your-turn-4-inst .slide-your-turn}
+
+{{< countdown 6:00 bottom="2rem" right="2rem" >}}
+
+1. Use the Build-A-Box app to design three value boxes
+    * [bslib.shinyapps.io/build-a-box](https://bslib.shinyapps.io/build-a-box)
+    * `shiny::runExample("build-a-box", package = "bslib")`
+
+Note: value boxes are stacked in a single column.
+
+# Column Layouts {.middle}
+
+## Column Layouts
+
+### `layout_column_wrap()`
+
+* Takes any number of items and lays them out column-wise
+
+* Equally sized columns and rows
+
+* All the same thing
+
+### `layout_columns()`
+
+* Takes any number of items and lays them out column-wise
+
+* Uneven columns and rows
+
+* Bootstrap's 12-column grid
+
+## Splat!
+
+```{.r}
+cards <- list(
+  card("One"),
+  card("Two"),
+  card("Three")
+)
+
+layout_columns(
+  !!!cards
+)
+```
+
+## Splat example
+
+TK: example splatting app `!!!items`
+
+`rmedicine: examples/app-layout-columns_end.R`
+
+Note: start with `lapply()` set up, write out `value_box()` code.
+
+# Your Turn {.middle}
+
+## Your Turn `_exercises/XX-app.R` {#your-turn-5-inst .slide-your-turn}
+
+{{< countdown 4:00 bottom="2rem" right="2rem" >}}
+
+TK: Value box solution + plot card + location card (`01-bslib/99_app.R`)
+
+Lay out the app with `layout_columns()` and `layout_column_wrap()`.
+
+# Details on Demand {.middle}
+
+## Tooltips
+
+input with a tooltip icon
+
+## Popovers
+
+popover settings button
+
+## Accordion

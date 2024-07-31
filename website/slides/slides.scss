@@ -1,15 +1,16 @@
 /*-- scss:rules --*/
-.table-highlight-even > table > tbody > tr:nth-child(2n) {
-  font-weight: bold;    
+.table-highlight-even>table>tbody>tr:nth-child(2n) {
+  font-weight: bold;
 }
 
-.table-highlight-even > table > tbody > tr:nth-child(2n - 1) {
+.table-highlight-even>table>tbody>tr:nth-child(2n - 1) {
   opacity: 0.5
 }
 
 .table-no-border {
-  > table th, 
-  > table td {
+
+  >table th,
+  >table td {
     border-bottom: none;
     padding-block: var(--row-padding);
   }
@@ -17,4 +18,32 @@
 
 .reveal .progress {
   color: var(--title-slide-background-color);
+}
+
+.slide-your-turn {
+  background-color: #17212b;
+  --slide-color: #F2F5F8;
+  --quarto-hl-fu-color: #E7B10A;
+  --r-link-color: #ff5fa1;
+  --r-link-color-hover: #E56399;
+}
+
+:root {
+  --countdown-font-size: var(--step-3);
+  --sl-fullscreen-scale: 1.5;
+}
+
+.reveal pre.sourceCode code {
+  max-height: 800px;
+}
+
+.reveal .sourceCode:has(> .shinylive-wrapper) {
+  border: none;
+  background-color: inherit;
+  color: inherit;
+}
+
+div.shinylive-wrapper {
+  box-shadow: none;
+  border: none;
 }

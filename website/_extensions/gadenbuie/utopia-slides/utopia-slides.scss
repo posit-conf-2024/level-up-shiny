@@ -40,6 +40,11 @@ $presentation-heading-font-weight: 700;
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   color: var(--slide-color, var(--slide-heading-color, var(--r-heading-color)));
   text-wrap: balance;
+
+  &:empty {
+    display: none;
+  }
+  
   // margin: var(--r-heading-margin);
   // font-family: var(--r-heading-font);
   // font-weight: var(--r-heading-font-weight);
@@ -95,13 +100,13 @@ $presentation-heading-font-weight: 700;
 
 .slides .slide,
 .slides #title-slide {
-  --_slide-padding: var(--space-s);
+  --_slide-padding: var(--space-m);
   padding: var(--_slide-padding);
   flex-direction: column;
 }
 
 .slides .slide {
-  --_slide-padding: var(--space-s);
+  --_slide-padding: var(--space-m);
   &.left {
     align-items: start;
   }
@@ -124,8 +129,46 @@ $presentation-heading-font-weight: 700;
 
   &.fullscreen {
     --_slide-padding: 0;
+
+    .sourceCode:has(> .shinylive-wapper) {
+      margin: 0;
+    }
+    
+    .shinylive-wrapper {
+      margin: 0;
+
+      .shinylive-editor {
+        grid-template-rows: 2.5rem 1fr;
+      }
+
+      .shinylive-container {
+        max-height: 100vh;
+      }
+    }
   }
 }
+
+:root {
+  --sl-fullscreen-scale: 2;
+}
+
+.slide.fullscreen{
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  .shinylive-wrapper {
+    width: calc(100% / var(--sl-fullscreen-scale));
+    height: calc(100% / var(--sl-fullscreen-scale));
+    transform: scale(var(--sl-fullscreen-scale));
+    transform-origin: top left;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
 
 @each $val in ("left", "center", "right") {
   .text-#{$val} {
@@ -152,6 +195,16 @@ $presentation-heading-font-weight: 700;
   .gap-#{$val} {
     gap: var(--space-#{$val});
   }
+  .gap-row-#{$val} {
+    row-gap: var(--space-#{$val});
+  }
+  .gap-column-#{$val} {
+    column-gap: var(--space-#{$val});
+  }
+
+  .m-#{$val} {
+    margin: var(--space-#{$val});
+  }
   .m-block-#{$val} {
     margin-block: var(--space-#{$val});
   }
@@ -163,6 +216,16 @@ $presentation-heading-font-weight: 700;
   }
   .m-block-end-#{$val} {
     margin-block-end: var(--space-#{$val});
+  }
+  .m-inline-start-#{$val} {
+    margin-inline-start: var(--space-#{$val});
+  }
+  .m-inline-end-#{$val} {
+    margin-inline-end: var(--space-#{$val});
+  }
+
+  .p-#{$val} {
+    padding: var(--space-#{$val});
   }
   .p-block-#{$val} {
     padding-block: var(--space-#{$val});
@@ -184,9 +247,31 @@ $presentation-heading-font-weight: 700;
   }
 }
 
+// Fixes for tachyons and pandoc code styles interactions
+code span {
+  &.bn { border-style: inherit; border-width: inherit } /* BaseN */
+  &.cf:before, &.cf:after { content: unset; display: inline; }
+  &.cf:after { clear: unset; }
+  &.cf { zoom: inherit; }
+  &.cn { clear: unset; }
+  &.dt { display: inline; }
+  &.fl { float: unset; }
+}
+
+@media screen and (max-width: 768px) {
+  .slides .slide,
+  .slides #title-slide {
+    --_slide-padding: var(--space-s);
+  }
+}
+
 @media screen and (max-width: 576px) {
-  .slides .slide {
+  .slides .slide,
+  .slides #title-slide {
     --_slide-padding: var(--space-xs);
+  }
+
+  .slides .slide {
     overflow: auto;
     justify-content: start;
     align-items: start;

@@ -8,3 +8,12 @@ time: 9:15 - 10:30
 
 editor: { render-on-save: true }
 ---
+
+{{< revealjs "slides/slides-02-intro.html" height="600px" >}}
+
+
+## Resources
+
+* [Carson Sievert: Towards the next generation of Shiny UI](https://www.youtube.com/watch?v=avZ7TDTRnVo) ([slides](https://talks.cpsievert.me/20230317/#/towards-the-next-generation-of-shiny-ui)) (ShinyConf 2023)
+
+* [Next Generation Shiny Apps with {bslib}](https://pkg.garrickadenbuie.com/rmedicine-2024-bslib/workshop.html) (Workshop at R/Medicine 2024)
