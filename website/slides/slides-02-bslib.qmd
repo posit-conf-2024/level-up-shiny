@@ -559,27 +559,29 @@ layout_sidebar(
 
 ## Example
 
-TK: page sidebar app
+TK: page sidebar app `_examples/01-bslib/03_app.R`
 
-Source: `rmedicine: exercises/02_solution_app.R`
+Start with
 
-App with `state` and `deg_predominant` filters, plots are `control` and `locale_type`.
+1. State selector
+2. Plot: predominant degree
+3. Plot: cost vs earnings
 
 # Your Turn {.middle}
 
-## Your Turn `_exercises/XX-app.R` {#your-turn-3-inst .slide-your-turn}
+## Your Turn `_exercises/03_app.R` {#your-turn-3-inst .slide-your-turn}
 
 {{< countdown 4:00 bottom="2rem" right="2rem" >}}
 
-TK: global-vs-local sidebar app
+TK: global-vs-local sidebar app `_exercises/03_app.R
 
-Source: `rmedicine: exercises/02_solution_app.R`
+Start with `_examples/01-bslib/03_app.R` and add:
 
-App with `state` and `deg_predominant` filters, plots are `control` and `locale_type`.
+* Radio buttons: locale type
+* Radio buttons: group by
 
-Additonal third plot featuring Cost vs Earnings with "group by" input.
-
-**Rewrite the app to use a local sidebar.**
+1. Convert the app to a sidebar page
+2. Use `layout_sidebar()` to make the sidebar local to cost vs. earnings plot
 
 # Value Boxes {.middle}
 
@@ -591,17 +593,27 @@ Additonal third plot featuring Cost vs Earnings with "group by" input.
   * `showcase_layout`
   * `theme`
 
+## Build-A-Box
+
+[bslib.shinyapps.io/build-a-box](https://bslib.shinyapps.io/build-a-box)
+
 # Your Turn {.middle}
 
-## Your Turn `_exercises/XX-app.R` {#your-turn-4-inst .slide-your-turn}
+## Your Turn `_exercises/04_app.R` {#your-turn-4-inst .slide-your-turn}
 
 {{< countdown 6:00 bottom="2rem" right="2rem" >}}
+
+Start with `_exercises/03_solution_app.R` with plots removed. Add text output for public, non-profit, for-profit values.
 
 1. Use the Build-A-Box app to design three value boxes
     * [bslib.shinyapps.io/build-a-box](https://bslib.shinyapps.io/build-a-box)
     * `shiny::runExample("build-a-box", package = "bslib")`
 
-Note: value boxes are stacked in a single column.
+2. Some icon hints:
+    * public - `fa_i("university")`
+    * non-profit - `fa_i("school-lock")` (it's still private!)
+    * for-profit - `fa_i("building")`
+
 
 # Column Layouts {.middle}
 
@@ -637,32 +649,96 @@ layout_columns(
 )
 ```
 
-## Splat example
+## Splat/columns example
 
-TK: example splatting app `!!!items`
+TK: `_examples/01-bslib/04_app.R`
 
 `rmedicine: examples/app-layout-columns_end.R`
 
 Note: start with `lapply()` set up, write out `value_box()` code.
+Demo: `layout_columns()` vs `layout_column_wrap()`, `width` vs `col_widths`, `row_heights`
 
 # Your Turn {.middle}
 
-## Your Turn `_exercises/XX-app.R` {#your-turn-5-inst .slide-your-turn}
+## Your Turn `_exercises/05_app.R` {#your-turn-5-inst .slide-your-turn}
 
 {{< countdown 4:00 bottom="2rem" right="2rem" >}}
 
-TK: Value box solution + plot card + location card (`01-bslib/99_app.R`)
+TK: `_exercises/05_app.R`
+
+Start with `_exercises/04_app.R` with value boxes. Add cost/earnings plot + new location card (`01-bslib/99_app.R`)
 
 Lay out the app with `layout_columns()` and `layout_column_wrap()`.
 
 # Details on Demand {.middle}
 
+## Accordion
+
+TK: `_examples/01-bslib/05_app.R`
+
+Simple app with several inputs
+
+* state selector
+* locale type
+* slider input
+
+Use `accordion()` and `accordion_panel()` to organize the inputs.
+
 ## Tooltips
 
-input with a tooltip icon
+```{.r}
+tooltip(
+  fontawesome::fa_i("info-circle"),
+  "Hover over me for more info!"
+)
+```
 
 ## Popovers
 
-popover settings button
+```{.r}
+popover(
+  fontawesome::fa_i("info-circle", title = "About "),
+  title = "Learn more!",
+  "I'm the popover content."
+)
+```
 
-## Accordion
+* The target can be anything, typically a `button()` or icon
+    * `{bsicons}` or `{fontawesome}`
+    * Important to give the icon a title
+
+* The content can be anything, including inputs!
+
+## Popover in a card header
+
+```{.r}
+card(
+  card_header(
+    class = "hstack",
+    "Card Header",
+    popover(
+      fontawesome::fa_i("info-circle", title = "About "),
+      class = "ms-auto",
+      title = "Learn more!",
+      "I'm the popover content."
+    )
+  ),
+  lorem::ipsum(2)
+)
+```
+
+https://getbootstrap.com/docs/5.3/helpers/stacks/#horizontal
+
+# Your Turn {.middle}
+
+## Your Turn `_exercises/06_app.R` {#your-turn-6-inst .slide-your-turn}
+
+{{< countdown 8:00 bottom="2rem" right="2rem" >}}
+
+TK: `_exercises/06_app.R`
+
+Start with a variant of `_examples/01-bslib/99_app.R` without accordion or tooltips (maybe also remove `navset_card_pill()`).
+
+* Organize the sidebar
+* Add tooltips to the value box titles
+* Stretch: Move local sidebar into a popover
