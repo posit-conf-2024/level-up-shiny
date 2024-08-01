@@ -16,6 +16,8 @@ format:
 revealjs-plugins:
   - utopia-slides
 
+engine: markdown
+
 editor:
   render-on-save: true
 ---
