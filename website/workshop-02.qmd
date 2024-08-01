@@ -9,8 +9,44 @@ time: 9:15 - 10:30
 editor: { render-on-save: true }
 ---
 
-{{< revealjs "slides/slides-02-intro.html" height="600px" >}}
+{{< revealjs "slides/slides-02-bslib.html" height="600px" >}}
 
+## Topic Links
+
+* [bslib](https://rstudio.github.io/bslib)
+
+* [U.S. College Scorecard Data](https://collegescorecard.ed.gov/data/)
+    * [`collegeScorecard`](https://cran.r-project.org/package=collegeScorecard)
+
+* Theming with bslib
+    * [bslib | Get Started | Theming](https://rstudio.github.io/bslib/articles/theming/index.html)
+    * [`bs_theme()`](https://rstudio.github.io/bslib/reference/bs_theme.html)
+    * [Bootstrap 5 theming variables](https://rstudio.github.io/bslib/articles/bs5-variables/index.html)
+
+* [bslib page functions](https://rstudio.github.io/bslib/reference/index.html#page-layouts)
+
+* [Filling layouts with bslib](https://rstudio.github.io/bslib/articles/filling/index.html)
+
+* bslib components:
+    * [`card()`](https://rstudio.github.io/bslib/reference/card.html) &middot; [Article: Cards](https://rstudio.github.io/bslib/articles/cards/index.html)
+    * [`value_box()`](https://rstudio.github.io/bslib/reference/value_box.html) &middot; [Article: Value Boxes](https://rstudio.github.io/bslib/articles/value-boxes/index.html)
+    * [Build-A-Box app](https://bslib.shinyapps.io/build-a-box/)
+
+* bslib sidebar layouts:
+    * [`page_sidebar()`](https://rstudio.github.io/bslib/reference/page_sidebar.html)
+    * [`sidebar()`](https://rstudio.github.io/bslib/reference/sidebar.html)
+    * [`layout_sidebar()`](https://rstudio.github.io/bslib/reference/layout_sidebar.html)
+    * [Article: Sidebar Layouts](https://rstudio.github.io/bslib/articles/sidebars/index.html)
+
+* Details on demand
+    * [`accordion()`](https://rstudio.github.io/bslib/reference/accordion.html)
+    * [`tooltip()`](https://rstudio.github.io/bslib/reference/tooltip.html)
+    * [`popover()`](https://rstudio.github.io/bslib/reference/popover.html)
+    * [Article: Tooltips and Popovers](https://rstudio.github.io/bslib/articles/tooltips-popovers/index.html)
+
+* Icons
+    * [fontawesome](https://rstudio.github.io/fontawesome/) &middot; [Fontawesome Icons](https://fontawesome.com/v5/search?m=free)
+    * [bsicons](https://cran.r-project.org/package=bsicons) &middot; [Bootstrap Icons](https://icons.getbootstrap.com/)
 
 ## Resources
 
