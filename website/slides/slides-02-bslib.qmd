@@ -642,6 +642,8 @@ Use `page_sidebar()` to move the state selector to a global sidebar.
 
 ## Column Layouts
 
+<!-- TODO: sequential reveal -->
+
 ### `layout_column_wrap()`
 
 * Takes any number of items and lays them out column-wise
@@ -672,14 +674,28 @@ layout_columns(
 )
 ```
 
-## Splat/columns example
+## {#ex-layout-columns .fullscreen}
 
-TK: `_examples/01-bslib/05_app.R`
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+#| orientation: horizontal
+#| viewerHeight: "100%"
 
-`rmedicine: examples/app-layout-columns_end.R`
+{{< include ../../_examples/01-bslib/05_app.R >}}
 
-Note: start with `lapply()` set up, write out `value_box()` code.
-Demo: `layout_columns()` vs `layout_column_wrap()`, `width` vs `col_widths`, `row_heights`
+## file: notes.R
+value_box(
+  title = name,
+  value = scales::dollar(cost_avg),
+  theme = sample(colors, 1),
+  p(glue("{city}, {state}"))
+)
+
+# * write out `value_box()` code
+# * `layout_columns()` vs `layout_column_wrap()`
+# * `width` vs `col_widths`
+```
 
 # Your Turn {.middle}
 
@@ -687,25 +703,35 @@ Demo: `layout_columns()` vs `layout_column_wrap()`, `width` vs `col_widths`, `ro
 
 {{< countdown 4:00 bottom="2rem" right="2rem" >}}
 
-TK: `_exercises/05_app.R`
+::: w-90
+1. Use `layout_columns()` and `layout_column_wrap()` to improve the layout of the app.
 
-Start with `_exercises/04_app.R` with value boxes. Add cost/earnings plot + new location card (`01-bslib/99_app.R`)
-
-Lay out the app with `layout_columns()` and `layout_column_wrap()`.
+2. Some hints:
+    * Which items should be grouped together in a row?
+    * `layout_columns()` has `col_widths` which takes a vector of column widths in Bootstrap's grid units.
+    * `layout_column_wrap()` has `width` and can take fractional widths, e.g. `1 / 2`.
+:::
 
 # Details on Demand {.middle}
 
 ## Accordion
 
-TK: `_examples/01-bslib/06_app.R`
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+#| orientation: horizontal
+#| viewerHeight: "100%"
 
-Simple app with several inputs
+{{< include ../../_examples/01-bslib/06_app.R >}}
 
-* state selector
-* locale type
-* slider input
+## file: notes.R
+# * accordion()
+# * accordion_panel()
+# * fa_i: map, users
 
-Use `accordion()` and `accordion_panel()` to organize the inputs.
+## file: solution.R
+{{< include ../../_examples/01-bslib/06_end_app.R >}}
+```
 
 ## Tooltips
 
