@@ -590,25 +590,43 @@ Use `page_sidebar()` to move the state selector to a global sidebar.
 
 # Value Boxes {.middle}
 
-##
+## {#ex-value-box .fullscreen}
 
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+#| orientation: horizontal
+#| viewerHeight: "100%"
+
+{{< include ../../_examples/01-bslib/04_app.R >}}
+
+## file: solution.R
+{{< include ../../_examples/01-bslib/04_end_app.R >}}
+```
+
+::: notes
 * Simple app where I can walk through the basics of a `value_box()`
   * `title`, `value`
   * `showcase`
   * `showcase_layout`
   * `theme`
+:::
 
-## Build-A-Box
+## Build-A-Box 
+
+::: text-center
+```{=html}
+<img src="assets/bslib-build-a-box.png" alt="Screenshot of the Build-A-Box app" class="shadow-3" style="max-height: 650px;">
+```
 
 [bslib.shinyapps.io/build-a-box](https://bslib.shinyapps.io/build-a-box)
+:::
 
 # Your Turn {.middle}
 
 ## Your Turn `_exercises/04_app.R` {#your-turn-4-inst .slide-your-turn}
 
 {{< countdown 6:00 bottom="2rem" right="2rem" >}}
-
-Start with `_exercises/03_solution_app.R` with plots removed. Add text output for public, non-profit, for-profit values.
 
 1. Use the Build-A-Box app to design three value boxes
     * [bslib.shinyapps.io/build-a-box](https://bslib.shinyapps.io/build-a-box)
@@ -656,7 +674,7 @@ layout_columns(
 
 ## Splat/columns example
 
-TK: `_examples/01-bslib/04_app.R`
+TK: `_examples/01-bslib/05_app.R`
 
 `rmedicine: examples/app-layout-columns_end.R`
 
@@ -679,7 +697,7 @@ Lay out the app with `layout_columns()` and `layout_column_wrap()`.
 
 ## Accordion
 
-TK: `_examples/01-bslib/05_app.R`
+TK: `_examples/01-bslib/06_app.R`
 
 Simple app with several inputs
 

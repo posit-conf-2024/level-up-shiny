@@ -1,13 +1,13 @@
 # ┌ level-up-shiny ──────────────────────────────────┐
 # │                                                  │
-# │                    Exercise 2                    │
+# │                    Exercise 3                    │
 # │                                                  │
 # └─────────────────────────────── posit::conf(2024) ┘
 #
 # TASKS:
-# 1. Convert the app to a **page with a sidebar**.
+# 1. Convert the app to a page with a sidebar.
 #
-# 2. One input only applies to _one of the plots_. Use `layout_sidebar()` to
+# 2. One input only applies to *one of the plots*. Use `layout_sidebar()` to
 #    create a sidebar with a local input for that plot.
 # 
 # 3. Stretch: Position the local sidebar on the right of the card and have it

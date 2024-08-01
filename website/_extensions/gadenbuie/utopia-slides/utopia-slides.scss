@@ -152,7 +152,7 @@ $presentation-heading-font-weight: 700;
   --sl-fullscreen-scale: 2;
 }
 
-.slide.fullscreen{
+.slides .slide.fullscreen{
   overflow: hidden;
   position: relative;
   width: 100vw;

@@ -70,7 +70,7 @@ ui <- page_sidebar(
     ),
     value_box(
       span(
-        "Non-Profit",
+        "Nonprofit",
         tooltip(
           fa_i("info-circle"),
           "Private institutions that are not operated for profit."
