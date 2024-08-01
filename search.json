@@ -1,94 +1,297 @@
 [
   {
-    "objectID": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
-    "href": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
-    "title": "Welcome!",
-    "section": "Welcome to Level Up with Shiny for R",
-    "text": "Welcome to Level Up with Shiny for R\n\nTake a seat, etc.\nHere’s an important link\nWiFI info"
+    "objectID": "slides/slides-02-bslib.html#at-first-there-was-shiny",
+    "href": "slides/slides-02-bslib.html#at-first-there-was-shiny",
+    "title": "Modern UI with bslib",
+    "section": "At first there was shiny",
+    "text": "At first there was shiny\n\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  selectInput(\n    \"pkg\",\n    \"Best Package\",\n    choices = c(\"shiny\", \"bslib\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n\n}\n\nshinyApp(ui, server)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#meet-us",
-    "href": "slides/slides-01-intro.html#meet-us",
-    "title": "Welcome!",
-    "section": "Meet us",
-    "text": "Meet us\n\nGarrick\nCarson\nKalau\nAndrew"
+    "objectID": "slides/slides-02-bslib.html#then-came-bslib",
+    "href": "slides/slides-02-bslib.html#then-came-bslib",
+    "title": "Modern UI with bslib",
+    "section": "Then came bslib",
+    "text": "Then came bslib\n\n\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- fluidPage(\n  theme = bs_theme(version = 5),\n  selectInput(\n    \"pkg\",\n    \"Best Package\",\n    choices = c(\"shiny\", \"bslib\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  \n}\n\nshinyApp(ui, server)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#code-of-conduct",
-    "href": "slides/slides-01-intro.html#code-of-conduct",
-    "title": "Welcome!",
-    "section": "Code of Conduct",
-    "text": "Code of Conduct\nCode of Conduct and COVID policies. Please Review\n\n💙 Treat everyone with respect\n🧡 Everyone should feel welcome and safe\n\nReporting:\n\n🗣️ any posit::conf staff member (t-shirt) or Info desk\n📧 conf@posit.com"
+    "objectID": "slides/slides-02-bslib.html#bslib-1-line-bootstrap-upgrades",
+    "href": "slides/slides-02-bslib.html#bslib-1-line-bootstrap-upgrades",
+    "title": "Modern UI with bslib",
+    "section": "bslib: 1-line Bootstrap upgrades",
+    "text": "bslib: 1-line Bootstrap upgrades\n\n\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- fluidPage(\n  theme = bs_theme(5),\n  # App code\n)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#meet-each-other",
-    "href": "slides/slides-01-intro.html#meet-each-other",
-    "title": "Welcome!",
-    "section": "Meet each other",
-    "text": "Meet each other\nTK: activity"
+    "objectID": "slides/slides-02-bslib.html#bslib-1-line-bootstrap-themes",
+    "href": "slides/slides-02-bslib.html#bslib-1-line-bootstrap-themes",
+    "title": "Modern UI with bslib",
+    "section": "bslib: 1-line Bootstrap themes!",
+    "text": "bslib: 1-line Bootstrap themes!\n\n\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- fluidPage(\n  theme = bs_theme(5, \"flatly\"),\n  # App code\n)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#wifi",
-    "href": "slides/slides-01-intro.html#wifi",
-    "title": "Welcome!",
-    "section": "WiFi",
-    "text": "WiFi\nWiFi: Posit Conf 2024\nPassword: conf2024"
+    "objectID": "slides/slides-02-bslib.html#bslib-1-line-bootstrap-themes-1",
+    "href": "slides/slides-02-bslib.html#bslib-1-line-bootstrap-themes-1",
+    "title": "Modern UI with bslib",
+    "section": "bslib: 1-line Bootstrap themes!",
+    "text": "bslib: 1-line Bootstrap themes!\n\n\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- fluidPage(\n  theme = bs_theme(5, \"darkly\"),\n  # App code\n)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#positconf2024-things-to-know",
-    "href": "slides/slides-01-intro.html#positconf2024-things-to-know",
-    "title": "Welcome!",
-    "section": "posit::conf(2024) Things to Know",
-    "text": "posit::conf(2024) Things to Know\n\n\nThere will be a gender-neutral bathroom on levels 3:7\nMeditation/prayer room: 503\n\nMon & Tues 7am - 7pm\nWed 7am - 5pm\n\nMothers room: 509\nRed lanyards available to those who don’t wish to be photographed"
+    "objectID": "slides/slides-02-bslib.html#bslib-3-line-bootstrap-themes",
+    "href": "slides/slides-02-bslib.html#bslib-3-line-bootstrap-themes",
+    "title": "Modern UI with bslib",
+    "section": "bslib: 3-line Bootstrap themes!",
+    "text": "bslib: 3-line Bootstrap themes!\n\n\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- fluidPage(\n  theme = bs_theme(\n    version = 5,\n    bg = \"#44344F\", # dark eggplant\n    fg = \"#C2F970\", # neon lime\n  ),\n  # App code\n)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#stickies",
-    "href": "slides/slides-01-intro.html#stickies",
-    "title": "Welcome!",
-    "section": "Stickies",
-    "text": "Stickies\n\n\n🟩\nAll good\nI’m done\n\n\n🟥\nNot great\nNeed time or help"
+    "objectID": "slides/slides-02-bslib.html#bslib-n-line-bootstrap-themes",
+    "href": "slides/slides-02-bslib.html#bslib-n-line-bootstrap-themes",
+    "title": "Modern UI with bslib",
+    "section": "bslib: N-line Bootstrap themes!",
+    "text": "bslib: N-line Bootstrap themes!\n\n\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- fluidPage(\n  theme = bs_theme(\n    version = 5,\n    bg = \"#44344F\", # dark eggplant\n    fg = \"#C2F970\", # neon lime\n    \"link-color\" = \"#F9F871\", # neon yellow\n  ),\n  # App code\n)\n\n\n\n\n\nrstudio.github.io/bslib/articles/bs5-variables"
   },
   {
-    "objectID": "slides/slides-01-intro.html#shedule",
-    "href": "slides/slides-01-intro.html#shedule",
-    "title": "Welcome!",
-    "section": "Shedule",
-    "text": "Shedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
+    "objectID": "slides/slides-02-bslib.html#bslib-a-shiny-bootstrap-theme",
+    "href": "slides/slides-02-bslib.html#bslib-a-shiny-bootstrap-theme",
+    "title": "Modern UI with bslib",
+    "section": "bslib: A Shiny Bootstrap theme!",
+    "text": "bslib: A Shiny Bootstrap theme!\n\n\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- fluidPage(\n  theme = bs_theme(5, \"shiny\"),\n  # App code\n)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#shedule-1",
-    "href": "slides/slides-01-intro.html#shedule-1",
-    "title": "Welcome!",
-    "section": "Shedule",
-    "text": "Shedule\n\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
+    "objectID": "slides/slides-02-bslib.html#bslib-a-shiny-bootstrap-preset",
+    "href": "slides/slides-02-bslib.html#bslib-a-shiny-bootstrap-preset",
+    "title": "Modern UI with bslib",
+    "section": "bslib: A Shiny Bootstrap preset!",
+    "text": "bslib: A Shiny Bootstrap preset!\n\n\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- fluidPage(\n  theme = bs_theme(version = 5, preset = \"shiny\"),\n  # App code\n)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#discord",
-    "href": "slides/slides-01-intro.html#discord",
-    "title": "Welcome!",
-    "section": "Discord",
-    "text": "Discord\nGo posit.co/conference, click Login. Click image to connect to the posit::conf() Discord server.\nThis workshop has a private channel under Workshops.\n\n#level-up-shiny\n\nGreat place to ask questions, post resources, memes, or most anything else before, during, and after the workshop."
+    "objectID": "slides/slides-02-bslib.html#bslib-a-shiny-bootstrap-default",
+    "href": "slides/slides-02-bslib.html#bslib-a-shiny-bootstrap-default",
+    "title": "Modern UI with bslib",
+    "section": "bslib: A Shiny Bootstrap default!",
+    "text": "bslib: A Shiny Bootstrap default!\n\n\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- fluidPage(\n  theme = bs_theme(),\n  # App code\n)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#rstudio-cloud",
-    "href": "slides/slides-01-intro.html#rstudio-cloud",
-    "title": "Welcome!",
-    "section": "RStudio Cloud",
-    "text": "RStudio Cloud\nYou can use the following link to join the workshops RStudio cloud space,\n\nbit.ly/conf2023_shiny_cloud\n\nOnce you have joined you can then select the get-started-shiny assignment,\nTK Image of assignment\nwhich should then create a copy of all materials and launch a cloud session for you."
+    "objectID": "slides/slides-02-bslib.html#u.s.-college-scorecard",
+    "href": "slides/slides-02-bslib.html#u.s.-college-scorecard",
+    "title": "Modern UI with bslib",
+    "section": "U.S. College Scorecard",
+    "text": "U.S. College Scorecard\nWe’ll be using the U.S. College Scorecard data for our examples today, from 📦 collegeScorecard.\n\nschool\n\nInformation about colleges and universities\n\nscorecard\n\nData on cost, admission and completion rates, earnings and more"
   },
   {
-    "objectID": "slides/slides-01-intro.html#cloud-session",
-    "href": "slides/slides-01-intro.html#cloud-session",
-    "title": "Welcome!",
-    "section": "Cloud session",
-    "text": "Cloud session\nIf everything is working you should see something very close to the following,\nTK image of cloud session"
+    "objectID": "slides/slides-02-bslib.html#your-turn-1",
+    "href": "slides/slides-02-bslib.html#your-turn-1",
+    "title": "Modern UI with bslib",
+    "section": "Your Turn _exercises/01-app.R",
+    "text": "Your Turn _exercises/01-app.R\n\n\nRun the app and use it to learn about the school and scorecard datasets.\nLoad bslib and change the theme of the app, using your favorite colors for the background and foreground colors. Hint: Get color inspiration at https://coolors.co.\nChoose an accent color for the app’s primary color.\nAdd thematic::thematic_shiny() to the app to make the plots look better.\n\n\n\n  \n    −\n    +\n \n 04:00"
   },
   {
-    "objectID": "slides/slides-01-intro.html#file-organization",
-    "href": "slides/slides-01-intro.html#file-organization",
-    "title": "Welcome!",
-    "section": "File organization",
-    "text": "File organization\n\n\n\n\n_exercises/\nFiles for Your Turn exercises\n\n\n_examples/\nFiles for my demo examples\n\n\nwebsite/\nThe website and slides\n\n\n./*\nLots of project related files you can ignore"
+    "objectID": "slides/slides-02-bslib.html#my-turn-shinylive",
+    "href": "slides/slides-02-bslib.html#my-turn-shinylive",
+    "title": "Modern UI with bslib",
+    "section": "",
+    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\n\nthematic::thematic_shiny()\n\nui &lt;- fluidPage(\n  theme = bs_theme(\n    version = 5,\n    bg = \"#0B3954\",\n    fg = \"#bfd7ea\",\n    primary = \"#0BAFC1\",\n  ),\n  selectizeInput(\"data\", \"Data set\", choices = c(\"school\", \"scorecard\"), selected = \"school\"),\n  radioButtons(\"type\", \"Inspection type\", choices = c(\"Column Types\" = \"types\", \"Categorical\" = \"cat\", \"Numeric\" = \"num\", \"Missing\" = \"na\"), inline = TRUE),\n  plotOutput(\"plot\")\n)\n\nserver &lt;- function(input, output, session) {\n  data &lt;- reactive({\n    switch(\n      input$data,\n      \"school\" = collegeScorecard::school,\n      \"scorecard\" = collegeScorecard::scorecard\n    )\n  })\n\n  output$plot &lt;- renderPlot({\n    req(data())\n\n    df &lt;- data()\n\n    inspected &lt;- switch(\n      input$type,\n      \"types\" = inspectdf::inspect_types(df),\n      \"cat\" = inspectdf::inspect_cat(df),\n      \"num\" = inspectdf::inspect_num(df),\n      \"na\" = inspectdf::inspect_na(df)\n    )\n\n    inspectdf::show_plot(inspected, col_palette = 2)\n  })\n}\n\nshinyApp(ui, server)\n\n\n\n## file: notes.R\n# =&gt; _exercises/01_solution_app.R\n\ntheme = bs_theme(\n  version = 5,\n  bg = \"#0B3954\",\n  fg = \"#bfd7ea\",\n  primary = \"#0BAFC1\",\n)\n\n# * Add thematic::thematic_shiny() to the app\n# * page_fluid()"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#page-fillable",
+    "href": "slides/slides-02-bslib.html#page-fillable",
+    "title": "Modern UI with bslib",
+    "section": "",
+    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(plotly)\nlibrary(collegeScorecard)\n\ncolors &lt;- c(\"#007bc2\", \"#f45100\", \"#bf007f\")\n\nui &lt;- page_fluid(\n  plotlyOutput(\"plot_control\")\n)\n\nserver &lt;- function(input, output, session) {\n  output$plot_control &lt;- renderPlotly({\n    plot_school_var(school, \"control\", title = \"School Governance\", color = colors[1])\n  })\n\n  output$plot_deg_predominant &lt;- renderPlotly({\n    plot_school_var(school, \"deg_predominant\", title = \"Predominant Degree\", colors[2])\n  })\n\n  output$plot_locale_type &lt;- renderPlotly({\n    plot_school_var(school, \"locale_type\", title = \"Locale Type\", colors[3])\n  })\n}\n\nplot_school_var &lt;- function(school, var, title = \"\", color = \"blue\") {\n  school |&gt;\n      plot_ly(\n        y = ~get(var),\n        type = \"histogram\",\n        color = I(color)\n      ) |&gt;\n      layout(\n        title = title,\n        xaxis = list(title = \"Number of Schools\"),\n        yaxis = list(title = \"\")\n      ) |&gt;\n      config(displayModeBar = FALSE)\n}\n\nshinyApp(ui, server)\n\n\n## file: notes.R\n# =&gt; examples/01-bslib/01_app.R\n# * Compare with page_fillable()\n# * fill items and fillable containers\n# * Add card()"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#filling-layouts",
+    "href": "slides/slides-02-bslib.html#filling-layouts",
+    "title": "Modern UI with bslib",
+    "section": "Filling Layouts",
+    "text": "Filling Layouts\nhtmltools::tagList(htmltools:::fillDependencies())\n\n\n\nFillable Container 🫱\n\n\n\n\n\n\n\n🫲 Fill Item"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#filling-layouts-1",
+    "href": "slides/slides-02-bslib.html#filling-layouts-1",
+    "title": "Modern UI with bslib",
+    "section": "Filling Layouts",
+    "text": "Filling Layouts\n\n\n\nFillable Container 🤝 Fill Item\n\n\n\ncard\n\n\n\nplot"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#filling-layouts-2",
+    "href": "slides/slides-02-bslib.html#filling-layouts-2",
+    "title": "Modern UI with bslib",
+    "section": "Filling Layouts",
+    "text": "Filling Layouts\n\n\n\nFillable Container 🫸 🫲 Fill Item\n\n\n\n\n\n\n\n\n\nfillable = FALSE"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#filling-layouts-3",
+    "href": "slides/slides-02-bslib.html#filling-layouts-3",
+    "title": "Modern UI with bslib",
+    "section": "Filling Layouts",
+    "text": "Filling Layouts\n\n\n\nFillable Container 🫱 🫷 Fill Item\n\n\n\n\n\n\n\n\n\nfill = FALSE"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#card-parts",
+    "href": "slides/slides-02-bslib.html#card-parts",
+    "title": "Modern UI with bslib",
+    "section": "Card Parts",
+    "text": "Card Parts\n\n\n\n\n\n\ncard(\n  card_header(\"Card Header\"),\n\n  p(\"This is the body of the card\"),\n  p(\"Anything here becomes part of the card body.\"),\n  \n  card_footer(\"Card footer. © bslib 2024\")\n)"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#card-parts-1",
+    "href": "slides/slides-02-bslib.html#card-parts-1",
+    "title": "Modern UI with bslib",
+    "section": "Card Parts",
+    "text": "Card Parts\n\n\n\n\n\n\ncard(\n  card_header(\"Card Header\"),\n\n  card_body(\n    fillable = FALSE,\n    p(\"This is the body of the card\"),\n    p(\"Anything here becomes part of the card body.\")\n  ),\n  \n  card_footer(\"Card footer. © bslib 2024\")\n)"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#full-screen-cards",
+    "href": "slides/slides-02-bslib.html#full-screen-cards",
+    "title": "Modern UI with bslib",
+    "section": "Full Screen Cards",
+    "text": "Full Screen Cards\n\n\ncard(\n  card_header(\"School Governance\"),\n  plotlyOutput(\"plot_control\"),\n  full_screen = TRUE\n)\n\n\n#| standalone: true\n#| components: [viewer]\n#| viewerHeight: \"400px\"\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(collegeScorecard)\n\n# UI -------------------------------------------------------------------------\n\nui &lt;- page_fillable(\n  selectInput(\"state\", \"State\", choices = setNames(state.abb, state.name)),\n  card(\n    card_header(\"Predominant Degree\"),\n    plotOutput(\"plot_deg_predominant\"),\n    full_screen = TRUE\n  ),\n  card(\n    card_header(\"Cost vs Earnings\"),\n    plotOutput(\"plot_cost\"),\n    full_screen = TRUE\n  )\n)\n\n# Setup -----------------------------------------------------------------------\n\ncolors &lt;- c(\"#007bc2\", \"#f45100\", \"#bf007f\")\n\ntheme_set(\n  theme_minimal(18) +\n    theme(\n      panel.grid.minor = element_blank(),\n      panel.grid.major.y = element_blank(),\n      axis.title = element_text(size = 14)\n    )\n)\n\nscorecard_latest &lt;-\n  scorecard |&gt;\n  group_by(id) |&gt;\n  arrange(academic_year) |&gt;\n  tidyr::fill(\n    n_undergrads,\n    rate_admissions,\n    rate_completion,\n    cost_avg,\n    amnt_earnings_med_10y\n  ) |&gt;\n  slice_max(academic_year, n = 1, with_ties = FALSE) |&gt;\n  ungroup()\n\nschool &lt;-\n  school |&gt;\n  left_join(scorecard_latest, by = \"id\")\n\n# Server ---------------------------------------------------------------------\n\nserver &lt;- function(input, output, session) {\n  output$plot_deg_predominant &lt;- renderPlot({\n    school |&gt;\n      filter(state == input$state) |&gt;\n      ggplot() +\n      aes(y = deg_predominant) +\n      geom_bar(fill = colors[2], na.rm = TRUE) +\n      labs(\n        title = \"Predominant Degree\",\n        x = \"Number of Schools\",\n        y = NULL\n      ) +\n      scale_x_continuous(expand = c(0, 0)) +\n      scale_y_discrete(\n        labels = \\(x) ifelse(is.na(x), \"Unknown\", x)\n      )\n  })\n\n  output$plot_cost &lt;- renderPlot({\n    label_dollars &lt;- scales::label_dollar(scale_cut = scales::cut_long_scale())\n\n    school |&gt;\n      filter(state == input$state) |&gt;\n      ggplot() +\n      aes(\n        x = cost_avg,\n        y = amnt_earnings_med_10y,\n        # color = !!rlang::sym(input$cost_group_by)\n      ) +\n      geom_point(size = 3, color = colors[1]) +\n      labs(\n        title = NULL,\n        x = \"Average Cost\",\n        y = \"Median Earnings\",\n        color = NULL\n      ) +\n      scale_x_continuous(labels = label_dollars) +\n      scale_y_continuous(labels = label_dollars) +\n      # scale_color_manual(\n      #   values = c(\"#007bc2\", \"#f45100\", \"#00891a\", \"#bf007f\", \"#f9b928\", \"#03c7e8\", \"#00bf7f\")\n      # ) +\n      theme(\n        legend.position = \"bottom\",\n        panel.grid.major.y = element_line()\n      )\n  })\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#your-turn-2-inst",
+    "href": "slides/slides-02-bslib.html#your-turn-2-inst",
+    "title": "Modern UI with bslib",
+    "section": "Your Turn _exercises/02-app.R",
+    "text": "Your Turn _exercises/02-app.R\n\n\nPlace each of the plots in a card() with a header.\nWhat happens when you set fill = FALSE or fillable = FALSE in a card?\nGive each card a minimum height to prevent squishing.\nHow is the plotly plot different from the ggplot2 plot?\n\n\n\n  \n    −\n    +\n \n 04:00"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#a-global-page-level-sidebar",
+    "href": "slides/slides-02-bslib.html#a-global-page-level-sidebar",
+    "title": "Modern UI with bslib",
+    "section": "A global page-level sidebar",
+    "text": "A global page-level sidebar\npage_sidebar(\n  sidebar = sidebar(\n    selectInput(...),\n    # other inputs\n  ),\n  # Main content area\n  plotOutput(\"plot\")\n)"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#a-global-page-level-sidebar-1",
+    "href": "slides/slides-02-bslib.html#a-global-page-level-sidebar-1",
+    "title": "Modern UI with bslib",
+    "section": "A global page-level sidebar",
+    "text": "A global page-level sidebar\npage_navbar(\n  sidebar = sidebar(\n    selectInput(...),\n    # other inputs\n  ),\n  nav_panel(\n    \"Page 1\", \n    # Main content area\n    plotOutput(\"plot\")\n  ),\n)"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#local-sidebars",
+    "href": "slides/slides-02-bslib.html#local-sidebars",
+    "title": "Modern UI with bslib",
+    "section": "Local sidebars",
+    "text": "Local sidebars\nlayout_sidebar(\n  sidebar = sidebar(\n    selectInput(...),\n    # other inputs\n  ),\n  # Main content area\n  plotOutput(\"plot\")\n)"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#ex-page-sidebar",
+    "href": "slides/slides-02-bslib.html#ex-page-sidebar",
+    "title": "Modern UI with bslib",
+    "section": "",
+    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(collegeScorecard)\n\n# UI -------------------------------------------------------------------------\n\nui &lt;- page_fillable(\n  selectInput(\"state\", \"State\", choices = setNames(state.abb, state.name)),\n  card(\n    card_header(\"Predominant Degree\"),\n    plotOutput(\"plot_deg_predominant\"),\n    full_screen = TRUE\n  ),\n  card(\n    card_header(\"Cost vs Earnings\"),\n    plotOutput(\"plot_cost\"),\n    full_screen = TRUE\n  )\n)\n\n# Setup -----------------------------------------------------------------------\n\ncolors &lt;- c(\"#007bc2\", \"#f45100\", \"#bf007f\")\n\ntheme_set(\n  theme_minimal(18) +\n    theme(\n      panel.grid.minor = element_blank(),\n      panel.grid.major.y = element_blank(),\n      axis.title = element_text(size = 14)\n    )\n)\n\nscorecard_latest &lt;-\n  scorecard |&gt;\n  group_by(id) |&gt;\n  arrange(academic_year) |&gt;\n  tidyr::fill(\n    n_undergrads,\n    rate_admissions,\n    rate_completion,\n    cost_avg,\n    amnt_earnings_med_10y\n  ) |&gt;\n  slice_max(academic_year, n = 1, with_ties = FALSE) |&gt;\n  ungroup()\n\nschool &lt;-\n  school |&gt;\n  left_join(scorecard_latest, by = \"id\")\n\n# Server ---------------------------------------------------------------------\n\nserver &lt;- function(input, output, session) {\n  output$plot_deg_predominant &lt;- renderPlot({\n    school |&gt;\n      filter(state == input$state) |&gt;\n      ggplot() +\n      aes(y = deg_predominant) +\n      geom_bar(fill = colors[2], na.rm = TRUE) +\n      labs(\n        title = \"Predominant Degree\",\n        x = \"Number of Schools\",\n        y = NULL\n      ) +\n      scale_x_continuous(expand = c(0, 0)) +\n      scale_y_discrete(\n        labels = \\(x) ifelse(is.na(x), \"Unknown\", x)\n      )\n  })\n\n  output$plot_cost &lt;- renderPlot({\n    label_dollars &lt;- scales::label_dollar(scale_cut = scales::cut_long_scale())\n\n    school |&gt;\n      filter(state == input$state) |&gt;\n      ggplot() +\n      aes(\n        x = cost_avg,\n        y = amnt_earnings_med_10y,\n        # color = !!rlang::sym(input$cost_group_by)\n      ) +\n      geom_point(size = 3, color = colors[1]) +\n      labs(\n        title = NULL,\n        x = \"Average Cost\",\n        y = \"Median Earnings\",\n        color = NULL\n      ) +\n      scale_x_continuous(labels = label_dollars) +\n      scale_y_continuous(labels = label_dollars) +\n      # scale_color_manual(\n      #   values = c(\"#007bc2\", \"#f45100\", \"#00891a\", \"#bf007f\", \"#f9b928\", \"#03c7e8\", \"#00bf7f\")\n      # ) +\n      theme(\n        legend.position = \"bottom\",\n        panel.grid.major.y = element_line()\n      )\n  })\n}\n\nshinyApp(ui, server)\n\n\n## file: notes.R\n# * Use page_sidebar(), move state selector there\n# * turn fill on and off for main area\n# * Mention `sidebar()` options, like `open` and `position`\n\nUse page_sidebar() to move the state selector to a global sidebar."
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#your-turn-3-inst",
+    "href": "slides/slides-02-bslib.html#your-turn-3-inst",
+    "title": "Modern UI with bslib",
+    "section": "Your Turn _exercises/03_app.R",
+    "text": "Your Turn _exercises/03_app.R\n\n  \n    −\n    +\n \n 04:00\n \n\nConvert the app to a page with a sidebar\nOne input only applies to one of the plots. Use layout_sidebar() to create a sidebar with a local input for that plot.\nStretch: Position the local sidebar on the right of the card and have it start closed."
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#ex-value-box",
+    "href": "slides/slides-02-bslib.html#ex-value-box",
+    "title": "Modern UI with bslib",
+    "section": "",
+    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- page_fluid(\n  card(\n    \"Undergrad Students\",\n    5612\n  ),\n  card(\n    \"Average Yearly Cost\",\n    32125\n  ),\n  card(\n    \"Completion Rate\",\n    0.83\n  )\n)\n\nserver &lt;- function(input, output, session) {\n\n}\n\nshinyApp(ui, server)\n\n\n## file: solution.R\nlibrary(shiny)\nlibrary(bslib)\nlibrary(fontawesome)\n\nui &lt;- page_fluid(\n  value_box(\n    \"Undergrad Students\",\n    scales::number(5612, big.mark = \",\"),\n    showcase = fa_i(\"people-roof\")\n  ),\n  value_box(\n    \"Average Yearly Cost\",\n    scales::dollar(32125),\n    showcase = fa_i(\"money-check-dollar\"),\n    theme = \"primary\"\n  ),\n  value_box(\n    \"Completion Rate\",\n    scales::percent(0.83),\n    showcase = fa_i(\"user-graduate\"),\n    theme = \"bg-gradient-orange-red\"\n  )\n)\n\nserver &lt;- function(input, output, session) {\n\n}\n\nshinyApp(ui, server)\n\n\nSimple app where I can walk through the basics of a value_box()\n\ntitle, value\nshowcase\nshowcase_layout\ntheme"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#build-a-box",
+    "href": "slides/slides-02-bslib.html#build-a-box",
+    "title": "Modern UI with bslib",
+    "section": "Build-A-Box",
+    "text": "Build-A-Box\n\n\nbslib.shinyapps.io/build-a-box"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#your-turn-4-inst",
+    "href": "slides/slides-02-bslib.html#your-turn-4-inst",
+    "title": "Modern UI with bslib",
+    "section": "Your Turn _exercises/04_app.R",
+    "text": "Your Turn _exercises/04_app.R\n\n  \n    −\n    +\n \n 06:00\n \n\nUse the Build-A-Box app to design three value boxes\n\nbslib.shinyapps.io/build-a-box\nshiny::runExample(\"build-a-box\", package = \"bslib\")\n\nSome icon hints:\n\npublic - fa_i(\"university\")\nnon-profit - fa_i(\"school-lock\") (it’s still private!)\nfor-profit - fa_i(\"building\")"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#column-layouts-1",
+    "href": "slides/slides-02-bslib.html#column-layouts-1",
+    "title": "Modern UI with bslib",
+    "section": "Column Layouts",
+    "text": "Column Layouts\n\nlayout_column_wrap()\n\nTakes any number of items and lays them out column-wise\nEqually sized columns and rows\nAll the same thing\n\nlayout_columns()\n\nTakes any number of items and lays them out column-wise\nUneven columns and rows\nBootstrap’s 12-column grid"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#splat",
+    "href": "slides/slides-02-bslib.html#splat",
+    "title": "Modern UI with bslib",
+    "section": "Splat!",
+    "text": "Splat!\ncards &lt;- list(\n  card(\"One\"),\n  card(\"Two\"),\n  card(\"Three\")\n)\n\nlayout_columns(\n  !!!cards\n)"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#ex-layout-columns",
+    "href": "slides/slides-02-bslib.html#ex-layout-columns",
+    "title": "Modern UI with bslib",
+    "section": "",
+    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(glue)\nlibrary(dplyr)\nlibrary(purrr)\nlibrary(collegeScorecard)\n\nui &lt;- page_fluid(\n  class = \"p-4\",\n  sliderInput(\"n\", \"Top N Schools\", min = 1, max = 20, value = 9, ticks = FALSE),\n  uiOutput(\"layout_school_cards\")\n)\n\nserver &lt;- function(input, output, session) {\n  colors &lt;- c(\"blue\", \"indigo\", \"purple\", \"pink\", \"red\", \"orange\", \"yellow\", \"green\", \"teal\", \"cyan\")\n  \n  output$layout_school_cards &lt;- renderUI({\n    school_cards()\n  })\n\n  school_cards &lt;- reactive({\n    set.seed(42**3.8)\n\n    pmap(top_n_schools(), function(name, cost_avg, city, state, ...) {\n      # Turn this into a value box\n      p(\n        strong(name),\n        glue(\"{city}, {state}\")\n      )\n    })\n  })\n\n  top_n_schools &lt;- reactive({\n    scorecard |&gt;\n      filter(n_undergrads &gt; 1000) |&gt;\n      slice_max(academic_year, n = 1) |&gt;\n      slice_max(cost_avg, n = input$n) |&gt;\n      arrange(desc(cost_avg)) |&gt;\n      left_join(school, by = \"id\")\n  })\n}\n\nshinyApp(ui, server)\n\n\n## file: notes.R\nvalue_box(\n  title = name,\n  value = scales::dollar(cost_avg),\n  theme = sample(colors, 1),\n  p(glue(\"{city}, {state}\"))\n)\n\n# * write out `value_box()` code\n# * `layout_columns()` vs `layout_column_wrap()`\n# * `width` vs `col_widths`"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#your-turn-5-inst",
+    "href": "slides/slides-02-bslib.html#your-turn-5-inst",
+    "title": "Modern UI with bslib",
+    "section": "Your Turn _exercises/05_app.R",
+    "text": "Your Turn _exercises/05_app.R\n\n  \n    −\n    +\n \n 04:00\n \n\n\nUse layout_columns() and layout_column_wrap() to improve the layout of the app.\nSome hints:\n\nWhich items should be grouped together in a row?\nlayout_columns() has col_widths which takes a vector of column widths in Bootstrap’s grid units.\nlayout_column_wrap() has width and can take fractional widths, e.g. 1 / 2."
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#accordion",
+    "href": "slides/slides-02-bslib.html#accordion",
+    "title": "Modern UI with bslib",
+    "section": "",
+    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(fontawesome)\nlibrary(collegeScorecard)\n\nui &lt;- page_fillable(\n  selectInput(\"state\", \"State\", choices = setNames(state.abb, state.name)),\n  checkboxGroupInput(\"locale_type\", \"Locale Type\", choices = levels(school$locale_type), selected = levels(school$locale_type)),\n  sliderInput(\"n_undergrads\", \"Number of Undergrads\", min = 0, max = 50000, value = c(0, 50000), step = 1000)\n)\n\nserver &lt;- function(input, output, session) {\n\n}\n\nshinyApp(ui, server)\n\n\n## file: notes.R\n# * accordion()\n# * accordion_panel()\n# * fa_i: map, users\n\n## file: solution.R\nlibrary(shiny)\nlibrary(bslib)\nlibrary(fontawesome)\nlibrary(collegeScorecard)\n\nui &lt;- page_fillable(\n  accordion(\n    multiple = FALSE,\n    accordion_panel(\n      title = \"Location\",\n      icon = fa_i(\"map\"),\n      selectInput(\"state\", \"State\", choices = setNames(state.abb, state.name)),\n      checkboxGroupInput(\"locale_type\", \"Locale Type\", choices = levels(school$locale_type), selected = levels(school$locale_type)),\n    ),\n    accordion_panel(\n      title = \"Student Population\",\n      icon = fa_i(\"users\"),\n      sliderInput(\"n_undergrads\", \"Number of Undergrads\", min = 0, max = 50000, value = c(0, 50000), step = 1000),\n    )\n  )\n)\n\nserver &lt;- function(input, output, session) {\n\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#tooltip",
+    "href": "slides/slides-02-bslib.html#tooltip",
+    "title": "Modern UI with bslib",
+    "section": "",
+    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(fontawesome)\n\nui &lt;- page_fillable(\n  class = \"justify-content-center align-items-center\",\n\n)\n\nserver &lt;- function(input, output, session) {\n\n}\n\nshinyApp(ui, server)\n\n## file: notes.R\ntooltip(\n  fontawesome::fa_i(\"info-circle\"),\n  \"Hover over me for more info!\"\n)\n\ntextInput(\"package\", \"Package Name\", placeholder = \"e.g. shiny\")"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#popover",
+    "href": "slides/slides-02-bslib.html#popover",
+    "title": "Modern UI with bslib",
+    "section": "",
+    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(fontawesome)\n\nui &lt;- page_fillable(\n  class = \"justify-content-center align-items-center\",\n\n)\n\nserver &lt;- function(input, output, session) {\n\n}\n\nshinyApp(ui, server)\n\n## file: notes.R\n# * The target can be anything, typically a `button()` or icon\n#     * `{bsicons}` or `{fontawesome}`\n#     * Important to give the icon a title\n# \n# * The content can be anything, including inputs!\n\npopover(\n  fontawesome::fa_i(\"gear\", title = \"Settings\"),\n  title = \"Plot settings\",\n  \"I'm the popover content.\"\n)\n\ncard(\n  card_header(\"Card Title\"),\n  \"A map or a plot would go here.\",\n  max_height = 300\n)\n\ncard(\n  card_header(\n    class = \"hstack\",\n    \"Card Title\",\n    popover(\n      fontawesome::fa_i(\"gear\", title = \"Settings\", class = \"ms-auto\"),\n      title = \"Plot settings\",\n      checkboxInput(\"show_legend\", \"Show legend\", TRUE),\n      input_switch(\"show_legend\", \"Show legend\", TRUE)\n    )\n  ),\n  \"A map or a plot would go here.\",\n  max_height = 300\n)"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#popover-in-a-card-header",
+    "href": "slides/slides-02-bslib.html#popover-in-a-card-header",
+    "title": "Modern UI with bslib",
+    "section": "Popover in a card header",
+    "text": "Popover in a card header\ncard(\n  card_header(\n    class = \"hstack\",\n    \"Card Title\",\n    popover(\n      fontawesome::fa_i(\"gear\", title = \"Settings\", class = \"ms-auto\"),\n      title = \"Plot settings\",\n      input_switch(\"show_legend\", \"Show legend\", TRUE)\n    )\n  ),\n  \"A map or a plot would go here.\"\n)\nhttps://getbootstrap.com/docs/5.3/helpers/stacks/#horizontal"
+  },
+  {
+    "objectID": "slides/slides-02-bslib.html#your-turn-6-inst",
+    "href": "slides/slides-02-bslib.html#your-turn-6-inst",
+    "title": "Modern UI with bslib",
+    "section": "Your Turn _exercises/06_app.R",
+    "text": "Your Turn _exercises/06_app.R\n\n  \n    −\n    +\n \n 08:00\n \n\nUse accordion() and accordion_panel() to organize the sidebar inputs. See the exercise header for links to search icons.\nAdd informational tooltips to the value box titles.\n\nPublic: “Supported by public funds and operated by elected or appointed officials.”\nNonprofit: “Private institutions that are not operated for profit.”\nFor-Profit: “Operated by private, profit-seeking businesses.”\n\nStretch: Replace the local sidebar with a popover element."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Level Up with Shiny for R",
+    "section": "",
+    "text": "Workshop at posit::conf(2024)August 12, 202409:00 - 17:00ROOM TBA"
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Level Up with Shiny for R",
+    "section": "Introduction",
+    "text": "Introduction\nShiny lets you quickly create rich, data-driven web applications for yourself, your clients, your students, or your colleagues. This workshop will give you the skills you need to build complex applications with brilliant user interfaces.\nYou’ll learn how to make the most of recent developments in the Shiny ecosystem, while mastering techniques for modularizing and structuring your applications for growth and maintainability. Along the way, you’ll encounter new techniques to speed up your applications using caching and databases for a smooth user experience."
+  },
+  {
+    "objectID": "index.html#setup",
+    "href": "index.html#setup",
+    "title": "Level Up with Shiny for R",
+    "section": "Setup",
+    "text": "Setup\n\n📘 Website (you are here!)\n🧑‍💻 Join Posit Cloud Space (Only for workshop participants)\n📦 Repository\n\n\nUsing Posit Cloud\n\n\n\n\n\n\nWarning\n\n\n\n\nThese instructions will be updated.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the rmedicine-2024-bslib space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the rmedicine-2024-bslib space, select the rmedicine-2024-bslib assignment to create and launch a new project just for you."
   },
   {
     "objectID": "workshop-01.html",
@@ -197,24 +400,116 @@
     "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Level Up with Shiny for R",
+    "objectID": "workshop-02.html",
+    "href": "workshop-02.html",
+    "title": "Modern layouts with bslib",
     "section": "",
-    "text": "Workshop at posit::conf(2024)August 12, 202409:00 - 17:00ROOM TBA"
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Modern layouts with bslib"
+    ]
   },
   {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Level Up with Shiny for R",
-    "section": "Introduction",
-    "text": "Introduction\nShiny lets you quickly create rich, data-driven web applications for yourself, your clients, your students, or your colleagues. This workshop will give you the skills you need to build complex applications with brilliant user interfaces.\nYou’ll learn how to make the most of recent developments in the Shiny ecosystem, while mastering techniques for modularizing and structuring your applications for growth and maintainability. Along the way, you’ll encounter new techniques to speed up your applications using caching and databases for a smooth user experience."
+    "objectID": "workshop-02.html#resources",
+    "href": "workshop-02.html#resources",
+    "title": "Modern layouts with bslib",
+    "section": "Resources",
+    "text": "Resources\n\nCarson Sievert: Towards the next generation of Shiny UI (slides) (ShinyConf 2023)\nNext Generation Shiny Apps with {bslib} (Workshop at R/Medicine 2024)",
+    "crumbs": [
+      "Workshop",
+      "Modern layouts with bslib"
+    ]
   },
   {
-    "objectID": "index.html#setup",
-    "href": "index.html#setup",
-    "title": "Level Up with Shiny for R",
-    "section": "Setup",
-    "text": "Setup\n\n📘 Website (you are here!)\n🧑‍💻 Join Posit Cloud Space (Only for workshop participants)\n📦 Repository\n\n\nUsing Posit Cloud\n\n\n\n\n\n\nWarning\n\n\n\n\nThese instructions will be updated.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the rmedicine-2024-bslib space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the rmedicine-2024-bslib space, select the rmedicine-2024-bslib assignment to create and launch a new project just for you."
+    "objectID": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
+    "href": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
+    "title": "Welcome!",
+    "section": "Welcome to Level Up with Shiny for R",
+    "text": "Welcome to Level Up with Shiny for R\n\nTake a seat, etc.\nHere’s an important link\nWiFI info"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#meet-us",
+    "href": "slides/slides-01-intro.html#meet-us",
+    "title": "Welcome!",
+    "section": "Meet us",
+    "text": "Meet us\n\nGarrick\nCarson\nKalau\nAndrew"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#code-of-conduct",
+    "href": "slides/slides-01-intro.html#code-of-conduct",
+    "title": "Welcome!",
+    "section": "Code of Conduct",
+    "text": "Code of Conduct\nCode of Conduct and COVID policies. Please Review\n\n💙 Treat everyone with respect\n🧡 Everyone should feel welcome and safe\n\nReporting:\n\n🗣️ any posit::conf staff member (t-shirt) or Info desk\n📧 conf@posit.com"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#meet-each-other",
+    "href": "slides/slides-01-intro.html#meet-each-other",
+    "title": "Welcome!",
+    "section": "Meet each other",
+    "text": "Meet each other\nTK: activity"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#wifi",
+    "href": "slides/slides-01-intro.html#wifi",
+    "title": "Welcome!",
+    "section": "WiFi",
+    "text": "WiFi\nWiFi: Posit Conf 2024\nPassword: conf2024"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#positconf2024-things-to-know",
+    "href": "slides/slides-01-intro.html#positconf2024-things-to-know",
+    "title": "Welcome!",
+    "section": "posit::conf(2024) Things to Know",
+    "text": "posit::conf(2024) Things to Know\n\n\nThere will be a gender-neutral bathroom on levels 3:7\nMeditation/prayer room: 503\n\nMon & Tues 7am - 7pm\nWed 7am - 5pm\n\nMothers room: 509\nRed lanyards available to those who don’t wish to be photographed"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#stickies",
+    "href": "slides/slides-01-intro.html#stickies",
+    "title": "Welcome!",
+    "section": "Stickies",
+    "text": "Stickies\n\n\n🟩\nAll good\nI’m done\n\n\n🟥\nNot great\nNeed time or help"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#shedule",
+    "href": "slides/slides-01-intro.html#shedule",
+    "title": "Welcome!",
+    "section": "Shedule",
+    "text": "Shedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#shedule-1",
+    "href": "slides/slides-01-intro.html#shedule-1",
+    "title": "Welcome!",
+    "section": "Shedule",
+    "text": "Shedule\n\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#discord",
+    "href": "slides/slides-01-intro.html#discord",
+    "title": "Welcome!",
+    "section": "Discord",
+    "text": "Discord\nGo posit.co/conference, click Login. Click image to connect to the posit::conf() Discord server.\nThis workshop has a private channel under Workshops.\n\n#level-up-shiny\n\nGreat place to ask questions, post resources, memes, or most anything else before, during, and after the workshop."
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#rstudio-cloud",
+    "href": "slides/slides-01-intro.html#rstudio-cloud",
+    "title": "Welcome!",
+    "section": "RStudio Cloud",
+    "text": "RStudio Cloud\nYou can use the following link to join the workshops RStudio cloud space,\n\nbit.ly/conf2023_shiny_cloud\n\nOnce you have joined you can then select the get-started-shiny assignment,\nTK Image of assignment\nwhich should then create a copy of all materials and launch a cloud session for you."
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#cloud-session",
+    "href": "slides/slides-01-intro.html#cloud-session",
+    "title": "Welcome!",
+    "section": "Cloud session",
+    "text": "Cloud session\nIf everything is working you should see something very close to the following,\nTK image of cloud session"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#file-organization",
+    "href": "slides/slides-01-intro.html#file-organization",
+    "title": "Welcome!",
+    "section": "File organization",
+    "text": "File organization\n\n\n\n\n_exercises/\nFiles for Your Turn exercises\n\n\n_examples/\nFiles for my demo examples\n\n\nwebsite/\nThe website and slides\n\n\n./*\nLots of project related files you can ignore"
   }
 ]
