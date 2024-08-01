@@ -714,7 +714,7 @@ value_box(
 
 # Details on Demand {.middle}
 
-## Accordion
+## {#accordion .fullscreen}
 
 ```{shinylive-r}
 #| standalone: true
@@ -733,30 +733,96 @@ value_box(
 {{< include ../../_examples/01-bslib/06_end_app.R >}}
 ```
 
-## Tooltips
+## {#tooltip .fullscreen}
 
-```{.r}
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+#| orientation: horizontal
+#| viewerHeight: "100%"
+
+library(shiny)
+library(bslib)
+library(fontawesome)
+
+ui <- page_fillable(
+  class = "justify-content-center align-items-center",
+
+)
+
+server <- function(input, output, session) {
+
+}
+
+shinyApp(ui, server)
+
+## file: notes.R
 tooltip(
   fontawesome::fa_i("info-circle"),
   "Hover over me for more info!"
 )
+
+textInput("package", "Package Name", placeholder = "e.g. shiny")
 ```
 
-## Popovers
 
-```{.r}
+## {#popover .fullscreen}
+
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+#| orientation: horizontal
+#| viewerHeight: "100%"
+
+library(shiny)
+library(bslib)
+library(fontawesome)
+
+ui <- page_fillable(
+  class = "justify-content-center align-items-center",
+
+)
+
+server <- function(input, output, session) {
+
+}
+
+shinyApp(ui, server)
+
+## file: notes.R
+# * The target can be anything, typically a `button()` or icon
+#     * `{bsicons}` or `{fontawesome}`
+#     * Important to give the icon a title
+# 
+# * The content can be anything, including inputs!
+
 popover(
-  fontawesome::fa_i("info-circle", title = "About "),
-  title = "Learn more!",
+  fontawesome::fa_i("gear", title = "Settings"),
+  title = "Plot settings",
   "I'm the popover content."
 )
+
+card(
+  card_header("Card Title"),
+  "A map or a plot would go here.",
+  max_height = 300
+)
+
+card(
+  card_header(
+    class = "hstack",
+    "Card Title",
+    popover(
+      fontawesome::fa_i("gear", title = "Settings", class = "ms-auto"),
+      title = "Plot settings",
+      checkboxInput("show_legend", "Show legend", TRUE),
+      input_switch("show_legend", "Show legend", TRUE)
+    )
+  ),
+  "A map or a plot would go here.",
+  max_height = 300
+)
 ```
-
-* The target can be anything, typically a `button()` or icon
-    * `{bsicons}` or `{fontawesome}`
-    * Important to give the icon a title
-
-* The content can be anything, including inputs!
 
 ## Popover in a card header
 
@@ -764,15 +830,14 @@ popover(
 card(
   card_header(
     class = "hstack",
-    "Card Header",
+    "Card Title",
     popover(
-      fontawesome::fa_i("info-circle", title = "About "),
-      class = "ms-auto",
-      title = "Learn more!",
-      "I'm the popover content."
+      fontawesome::fa_i("gear", title = "Settings", class = "ms-auto"),
+      title = "Plot settings",
+      input_switch("show_legend", "Show legend", TRUE)
     )
   ),
-  lorem::ipsum(2)
+  "A map or a plot would go here."
 )
 ```
 
@@ -784,10 +849,10 @@ https://getbootstrap.com/docs/5.3/helpers/stacks/#horizontal
 
 {{< countdown 8:00 bottom="2rem" right="2rem" >}}
 
-TK: `_exercises/06_app.R`
-
-Start with a variant of `_examples/01-bslib/99_app.R` without accordion or tooltips (maybe also remove `navset_card_pill()`).
-
-* Organize the sidebar
-* Add tooltips to the value box titles
-* Stretch: Move local sidebar into a popover
+1. Use `accordion()` and `accordion_panel()` to organize the sidebar inputs.
+   See the exercise header for links to search icons.
+2. Add informational tooltips to the value box titles.
+   * Public: "Supported by public funds and operated by elected or appointed officials."
+   * Nonprofit: "Private institutions that are not operated for profit."
+   * For-Profit: "Operated by private, profit-seeking businesses."
+3. Stretch: Replace the local sidebar with a popover element.

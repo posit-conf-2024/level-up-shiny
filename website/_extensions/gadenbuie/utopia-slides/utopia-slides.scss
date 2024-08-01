@@ -154,9 +154,8 @@ $presentation-heading-font-weight: 700;
 
 .slides .slide.fullscreen{
   overflow: hidden;
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+  position: absolute;
+  inset: 0;
 
   .shinylive-wrapper {
     width: calc(100% / var(--sl-fullscreen-scale));
