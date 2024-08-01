@@ -411,6 +411,17 @@
     ]
   },
   {
+    "objectID": "workshop-02.html#topic-links",
+    "href": "workshop-02.html#topic-links",
+    "title": "Modern layouts with bslib",
+    "section": "Topic Links",
+    "text": "Topic Links\n\nbslib\nU.S. College Scorecard Data\n\ncollegeScorecard\n\nTheming with bslib\n\nbslib | Get Started | Theming\nbs_theme()\nBootstrap 5 theming variables\n\nbslib page functions\nFilling layouts with bslib\nbslib components:\n\ncard() · Article: Cards\nvalue_box() · Article: Value Boxes\nBuild-A-Box app\n\nbslib sidebar layouts:\n\npage_sidebar()\nsidebar()\nlayout_sidebar()\nArticle: Sidebar Layouts\n\nDetails on demand\n\naccordion()\ntooltip()\npopover()\nArticle: Tooltips and Popovers\n\nIcons\n\nfontawesome · Fontawesome Icons\nbsicons · Bootstrap Icons",
+    "crumbs": [
+      "Workshop",
+      "Modern layouts with bslib"
+    ]
+  },
+  {
     "objectID": "workshop-02.html#resources",
     "href": "workshop-02.html#resources",
     "title": "Modern layouts with bslib",
