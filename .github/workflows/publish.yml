@@ -40,7 +40,7 @@ jobs:
       #     cache-version: 2
 
       - name: 📰 Render and Publish to GitHub Pages
-        uses: quarto-dev/quarto-actions/publish@v2
+        uses: gadenbuie/quarto-actions/publish@quarto-render-working-dir
         with:
           target: gh-pages
-          path: website
+          working-directory: website
