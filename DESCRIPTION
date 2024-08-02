@@ -24,10 +24,14 @@ Imports:
     purrr,
     shiny (>= 1.9.0),
     shinylive,
+    styler,
     thematic,
     tidyr
 Suggests: 
-    duckdb
+    duckdb,
+    grkstyle (>= 0.2.1)
+Remotes: 
+    gadenbuie/grkstyle
 Config/Needs/dev: lionel-/codegrip, styler, usethis
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
