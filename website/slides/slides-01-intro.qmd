@@ -1,7 +1,7 @@
 ---
 title: Welcome!
-subtitle: Level Up with Shiny for R<br><code>posit::conf(2024)</code>
-author: Garrick Aden-Buie
+subtitle: Level Up with Shiny for R
+author: <code>posit::conf(2024)</code>
 date: last-modified
 
 format:
