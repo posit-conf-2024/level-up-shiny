@@ -1,189 +1,189 @@
 [
   {
-    "objectID": "slides/slides-03-code-style.html#section",
-    "href": "slides/slides-03-code-style.html#section",
+    "objectID": "slides/slides-04-code-style.html#section",
+    "href": "slides/slides-04-code-style.html#section",
     "title": "Bit by Bit",
     "section": "",
     "text": "card(card_header(\"Cost vs Earnings\"),\n     layout_sidebar(sidebar = sidebar(\n                    open = FALSE, position = \"right\",\n                    radioButtons(\"cost_group_by\",\n                                 \"Group By\",\n                                 choices = c(\"Predominant Degree\" = \"deg_predominant\",\n                                             \"Campus Setting\" = \"locale_type\",\n                                             \"Testing Requirements\" = \"adm_req_test\"))),\n                    plotOutput(\"plot_cost\")), full_screen = TRUE)"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#section-1",
-    "href": "slides/slides-03-code-style.html#section-1",
+    "objectID": "slides/slides-04-code-style.html#section-1",
+    "href": "slides/slides-04-code-style.html#section-1",
     "title": "Bit by Bit",
     "section": "",
     "text": "card(card_header(\"Cost vs Earnings\"),\n     layout_sidebar(sidebar = sidebar(\n                    open = FALSE, position = \"right\",\n                    radioButtons(\"cost_group_by\",\n                                 \"Group By\",\n                                 choices = c(\"Predominant Degree\" = \"deg_predominant\",\n                                             \"Campus Setting\" = \"locale_type\",\n                                             \"Testing Requirements\" = \"adm_req_test\"))),\n                    plotOutput(\"plot_cost\")), full_screen = TRUE)"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#section-2",
-    "href": "slides/slides-03-code-style.html#section-2",
+    "objectID": "slides/slides-04-code-style.html#section-2",
+    "href": "slides/slides-04-code-style.html#section-2",
     "title": "Bit by Bit",
     "section": "",
     "text": "card(\n  card_header(\"Cost vs Earnings\"),\n  layout_sidebar(\n    sidebar = sidebar(\n      open = FALSE,\n      position = \"right\",\n      radioButtons(\n        \"cost_group_by\",\n        \"Group By\",\n        choices = c(\n          \"Predominant Degree\" = \"deg_predominant\",\n          \"Campus Setting\" = \"locale_type\",\n          \"Testing Requirements\" = \"adm_req_test\"\n        ),\n      ),\n    ),\n    plotOutput(\"plot_cost\"),\n  ),\n  full_screen = TRUE\n)"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#section-3",
-    "href": "slides/slides-03-code-style.html#section-3",
+    "objectID": "slides/slides-04-code-style.html#section-3",
+    "href": "slides/slides-04-code-style.html#section-3",
     "title": "Bit by Bit",
     "section": "",
     "text": "card(\n  card_header(\"Cost vs Earnings\"),\n  layout_sidebar(\n    sidebar = sidebar(\n      open = FALSE,\n      position = \"right\",\n      radioButtons(\n        \"cost_group_by\",\n        \"Group By\",\n        choices = c(\n          \"Predominant Degree\" = \"deg_predominant\",\n          \"Campus Setting\" = \"locale_type\",\n          \"Testing Requirements\" = \"adm_req_test\"\n        ),\n      ),\n    ),\n    plotOutput(\"plot_cost\"),\n  ),\n  full_screen = TRUE\n)"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#section-4",
-    "href": "slides/slides-03-code-style.html#section-4",
+    "objectID": "slides/slides-04-code-style.html#section-4",
+    "href": "slides/slides-04-code-style.html#section-4",
     "title": "Bit by Bit",
     "section": "",
     "text": "card(\n  card_header(\"Cost vs Earnings\"),\n  layout_sidebar(\n    sidebar = sidebar(\n      open = FALSE,\n      position = \"right\",\n      radioButtons(\n        \"cost_group_by\",\n        \"Group By\",\n        choices = c(\n          \"Predominant Degree\" = \"deg_predominant\",\n          \"Campus Setting\" = \"locale_type\",\n          \"Testing Requirements\" = \"adm_req_test\"\n        ),\n      ),\n    ),\n    plotOutput(\"plot_cost\"),\n  ),\n  full_screen = TRUE\n)"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#code-folding",
-    "href": "slides/slides-03-code-style.html#code-folding",
+    "objectID": "slides/slides-04-code-style.html#code-folding",
+    "href": "slides/slides-04-code-style.html#code-folding",
     "title": "Bit by Bit",
     "section": "Code Folding",
     "text": "Code Folding"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#automating-code-styling",
-    "href": "slides/slides-03-code-style.html#automating-code-styling",
+    "objectID": "slides/slides-04-code-style.html#automating-code-styling",
+    "href": "slides/slides-04-code-style.html#automating-code-styling",
     "title": "Bit by Bit",
     "section": "Automating code styling",
     "text": "Automating code styling\n{styler}: tidyverse style in a package"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#automating-code-styling-1",
-    "href": "slides/slides-03-code-style.html#automating-code-styling-1",
+    "objectID": "slides/slides-04-code-style.html#automating-code-styling-1",
+    "href": "slides/slides-04-code-style.html#automating-code-styling-1",
     "title": "Bit by Bit",
     "section": "Automating code styling",
     "text": "Automating code styling\n{grkstyle}: MY style in a package\n# In ~/.Rprofile or Console\ngrkstyle::use_grk_style()\n\n# Then use {styler} addins as normal\n\n# Easily switch between tabs and spaces\ngrkstyle::grk_reindent_tabs_dir()\ngrkstyle::grk_reindent_spaces_dir()"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#section-5",
-    "href": "slides/slides-03-code-style.html#section-5",
+    "objectID": "slides/slides-04-code-style.html#section-5",
+    "href": "slides/slides-04-code-style.html#section-5",
     "title": "Bit by Bit",
     "section": "",
     "text": "card_example &lt;- r\"(\ncard(card_header(\"Cost vs Earnings\"),\n     layout_sidebar(sidebar = sidebar(\n                    open = FALSE, position = \"right\",\n                    radioButtons(\"cost_group_by\",\n                                 \"Group By\",\n                                 choices = c(\"Predominant Degree\" = \"deg_predominant\",\n                                             \"Campus Setting\" = \"locale_type\",\n                                             \"Testing Requirements\" = \"adm_req_test\"))),\n                    plotOutput(\"plot_cost\")), full_screen = TRUE)\n)\""
   },
   {
-    "objectID": "slides/slides-03-code-style.html#section-6",
-    "href": "slides/slides-03-code-style.html#section-6",
+    "objectID": "slides/slides-04-code-style.html#section-6",
+    "href": "slides/slides-04-code-style.html#section-6",
     "title": "Bit by Bit",
     "section": "",
     "text": "styler::style_text(card_example)\n\ncard(card_header(\"Cost vs Earnings\"),\n  layout_sidebar(\n    sidebar = sidebar(\n      open = FALSE, position = \"right\",\n      radioButtons(\"cost_group_by\",\n        \"Group By\",\n        choices = c(\n          \"Predominant Degree\" = \"deg_predominant\",\n          \"Campus Setting\" = \"locale_type\",\n          \"Testing Requirements\" = \"adm_req_test\"\n        )\n      )\n    ),\n    plotOutput(\"plot_cost\")\n  ),\n  full_screen = TRUE\n)\n\n\n\n\n\ngrkstyle::grk_style_text(card_example)\n\ncard(\n  card_header(\"Cost vs Earnings\"),\n  layout_sidebar(\n    sidebar = sidebar(\n      open = FALSE,\n      position = \"right\",\n      radioButtons(\n        \"cost_group_by\",\n        \"Group By\",\n        choices = c(\n          \"Predominant Degree\" = \"deg_predominant\",\n          \"Campus Setting\" = \"locale_type\",\n          \"Testing Requirements\" = \"adm_req_test\"\n        )\n      )\n    ),\n    plotOutput(\"plot_cost\")\n  ),\n  full_screen = TRUE\n)"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#garricks-golden-guideline",
-    "href": "slides/slides-03-code-style.html#garricks-golden-guideline",
+    "objectID": "slides/slides-04-code-style.html#garricks-golden-guideline",
+    "href": "slides/slides-04-code-style.html#garricks-golden-guideline",
     "title": "Bit by Bit",
     "section": "Garrick’s Golden Guideline",
     "text": "Garrick’s Golden Guideline\n\n\nA function call fits on a single line\nOr it has one argument per line\nOh, and closing parentheses are on their own line"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#code-comments",
-    "href": "slides/slides-03-code-style.html#code-comments",
+    "objectID": "slides/slides-04-code-style.html#code-comments",
+    "href": "slides/slides-04-code-style.html#code-comments",
     "title": "Bit by Bit",
     "section": "Code comments",
     "text": "Code comments"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#comments-provide",
-    "href": "slides/slides-03-code-style.html#comments-provide",
+    "objectID": "slides/slides-04-code-style.html#comments-provide",
+    "href": "slides/slides-04-code-style.html#comments-provide",
     "title": "Bit by Bit",
     "section": "Comments provide",
     "text": "Comments provide\n\n# Information and context\n\n# Structure ----\n\n\n#' Documentation\n#'\n#' @param output The output file path"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#structural-comments",
-    "href": "slides/slides-03-code-style.html#structural-comments",
+    "objectID": "slides/slides-04-code-style.html#structural-comments",
+    "href": "slides/slides-04-code-style.html#structural-comments",
     "title": "Bit by Bit",
     "section": "Structural Comments",
-    "text": "Structural Comments\n# Setup -----------------------------------------------------------------------\n\n# UI --------------------------------------------------------------------------\n  # | Sidebar ----\n  # | - Accordion ----\n  # | - Other Inputs ----\n  # | Main ----\n  # | - Value Boxes ----\n  # | - Cards ----\n\n# Server ----------------------------------------------------------------------\nserver &lt;- function(input, output, session) {\n  # Value Boxes ----\n  # Plot ----\n  # Map ----\n}\nOpen _examples/01-bslib/99_app.R in the IDE as an example."
+    "text": "Structural Comments\n# Setup -----------------------------------------------------------------------\n\n# UI --------------------------------------------------------------------------\n  # | Sidebar ----\n  # | - Accordion ----\n  # | - Other Inputs ----\n  # | Main ----\n  # | - Value Boxes ----\n  # | - Cards ----\n\n# Server ----------------------------------------------------------------------\nserver &lt;- function(input, output, session) {\n  # Value Boxes ----\n  # Plot ----\n  # Map ----\n}\nOpen _examples/02-bslib/99_app.R in the IDE as an example."
   },
   {
-    "objectID": "slides/slides-03-code-style.html#section-7",
-    "href": "slides/slides-03-code-style.html#section-7",
+    "objectID": "slides/slides-04-code-style.html#section-7",
+    "href": "slides/slides-04-code-style.html#section-7",
     "title": "Bit by Bit",
     "section": "",
     "text": "# Load the Shiny library\nlibrary(shiny)\n\n# Define the user interface for the application\nui &lt;- fluidPage(\n  \n  # Create a title for the application\n  titlePanel(\"My Shiny App\"), \n  \n  # Create a sidebar layout\n  sidebarLayout(\n    \n    # Define the sidebar panel\n    sidebarPanel(\n      # Create a numeric input field\n      numericInput(\"num\", \"Enter a number:\", value = 10) \n    ),\n    \n    # Define the main panel\n    mainPanel(\n      # Output the result as a text\n      textOutput(\"result\") \n    )\n  )\n)\n\n# Define the server logic for the application\nserver &lt;- function(input, output) {\n  \n  # Create a reactive expression to calculate the square of the input\n  output$result &lt;- renderText({\n    # Calculate the square of the input number\n    input$num^2 \n  })\n}\n\n# Run the application\nshinyApp(ui = ui, server = server)"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#how-to-write-better-comments",
-    "href": "slides/slides-03-code-style.html#how-to-write-better-comments",
+    "objectID": "slides/slides-04-code-style.html#how-to-write-better-comments",
+    "href": "slides/slides-04-code-style.html#how-to-write-better-comments",
     "title": "Bit by Bit",
     "section": "How to write better comments",
     "text": "How to write better comments\n\n\nSome say: Comments should explain why, not what (or the how) NOPE! What, why and how are all allowed\nComments should help make the code easier to read and understand.\nExplain the code to someone else:\n\nWhat won’t they know unless they talk to you?\nWhat might they get wrong if weren’t there?"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#section-8",
-    "href": "slides/slides-03-code-style.html#section-8",
+    "objectID": "slides/slides-04-code-style.html#section-8",
+    "href": "slides/slides-04-code-style.html#section-8",
     "title": "Bit by Bit",
     "section": "",
     "text": "shiny/R/middleware.R\n\n# This file contains a general toolkit for routing and combining bits of\n# HTTP-handling logic. It is similar in spirit to Rook (and Rack, and WSGI, and\n# Connect, and...) but adds cascading and routing.\n#\n# This file is called \"middleware\" because that's the term used for these bits\n# of logic in these other frameworks. However, our code uses the word \"handler\"\n# so we'll stick to that for the rest of this document; just know that they're\n# basically the same concept.\n#\n# ## Intro to handlers\n#\n# A **handler** (or sometimes, **httpHandler**) is a function that takes a\n# `req` parameter--a request object as described in the Rook specification--and\n# returns `NULL`, or an `httpResponse`.\n#\n## ------------------------------------------------------------------------\n\n#' Create an HTTP response object\n#'\n#' @param status HTTP status code for the response.\n#' @param content_type The value for the `Content-Type` header.\n#' @param content The body of the response, given as a single-element character\n#'   vector (will be encoded as UTF-8) or a raw vector.\n#' @param headers A named list of additional headers to include. Do not include\n#'   `Content-Length` (as it is automatically calculated) or `Content-Type` (the\n#'   `content_type` argument is used instead).\n#'\n#' @examples\n#' httpResponse(\n#'   status = 405L,\n#'   content_type = \"text/plain\",\n#'   content = \"The requested method was not allowed\"\n#' )\n#'\n#' @keywords internal\n#' @export\nhttpResponse &lt;- function(\n    status = 200L,\n    content_type = \"text/html; charset=UTF-8\",\n    content = \"\",\n    headers = list()) {\n  # Make sure it's a list, not a vector\n  headers &lt;- as.list(headers)\n  if (is.null(headers$`X-UA-Compatible`)) {\n    headers$`X-UA-Compatible` &lt;- \"IE=edge,chrome=1\"\n  }\n  resp &lt;- list(\n    status = status, content_type = content_type, content = content,\n    headers = headers\n  )\n  class(resp) &lt;- \"httpResponse\"\n  return(resp)\n}\n\n#\n# You can think of a web application as being simply an aggregation of these\n# functions, each of which performs one kind of duty. Each handler in turn gets\n# a look at the request and can decide whether it knows how to handle it. If\n# so, it returns an `httpResponse` and processing terminates; if not, it\n# returns `NULL` and the next handler gets to execute. If the final handler\n# returns `NULL`, a 404 response should be returned.\n#\n# We have a similar construct for websockets: **websocket handlers** or\n# **wsHandlers**. These take a single `ws` argument which is the websocket\n# connection that was just opened, and they can either return `TRUE` if they\n# are handling the connection, and `NULL` to pass responsibility on to the next\n# wsHandler.\n#\n# ### Combining handlers\n#\n# Since it's so common for httpHandlers to be invoked in this \"cascading\"\n# fashion, we'll introduce a function that takes zero or more handlers and\n# returns a single handler. And while we're at it, making a directory of static\n# content available is such a common thing to do, we'll allow strings\n# representing paths to be used instead of handlers; any such strings we\n# encounter will be converted into `staticHandler` objects.\n#\n## ------------------------------------------------------------------------\njoinHandlers &lt;- function(handlers) {\n  # Zero handlers; return a null handler\n  if (length(handlers) == 0) {\n    return(function(req) NULL)\n  }\n\n  # Just one handler (function)? Return it.\n  if (is.function(handlers)) {\n    return(handlers)\n  }\n\n  handlers &lt;- lapply(handlers, function(h) {\n    if (is.character(h)) {\n      return(staticHandler(h))\n    } else {\n      return(h)\n    }\n  })\n\n  # Filter out NULL\n  handlers &lt;- handlers[!sapply(handlers, is.null)]\n\n  if (length(handlers) == 0) {\n    return(function(req) NULL)\n  }\n  if (length(handlers) == 1) {\n    return(handlers[[1]])\n  }\n\n  function(req) {\n    for (handler in handlers) {\n      response &lt;- handler(req)\n      if (!is.null(response)) {\n        return(response)\n      }\n    }\n    return(NULL)\n  }\n}\n\n#\n# Note that we don't have an equivalent of `joinHandlers` for wsHandlers. It's\n# easy to imagine it, we just haven't needed one.\n#\n# ### Handler routing\n#\n# Handlers do not have a built-in notion of routing. Conceptually, given a list\n# of handlers, all the handlers are peers and they all get to see every request\n# (well, up until the point that a handler returns a response).\n#\n# You could implement routing in each handler by checking the request's\n# `PATH_INFO` field, but since it's such a common need, let's make it simple by\n# introducing a `routeHandler` function. This is a handler\n# [decorator](http://en.wikipedia.org/wiki/Decorator_pattern) and it's\n# responsible for 1) filtering out requests that don't match the given route,\n# and 2) temporarily modifying the request object to take the matched part of\n# the route off of the `PATH_INFO` (and add it to the end of `SCRIPT_NAME`).\n# This way, the handler doesn't need to figure out about what part of its URL\n# path has already been matched via routing.\n#\n# (BTW, it's safe for `routeHandler` calls to nest.)\n#\n## -----------------------------------------------------------------------"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#section-9",
-    "href": "slides/slides-03-code-style.html#section-9",
+    "objectID": "slides/slides-04-code-style.html#section-9",
+    "href": "slides/slides-04-code-style.html#section-9",
     "title": "Bit by Bit",
     "section": "",
     "text": "shiny/R/knit.R\n\n# If there's an R Markdown runtime option set but it isn't set to Shiny, then\n# return a warning indicating the runtime is inappropriate for this object.\n# Returns NULL in all other cases.\nshiny_rmd_warning &lt;- function() {\n  runtime &lt;- knitr::opts_knit$get(\"rmarkdown.runtime\")\n  if (!is.null(runtime) && runtime != \"shiny\") {\n    # note that the RStudio IDE checks for this specific string to detect Shiny\n    # applications in static document\n    list(structure(\n      \"Shiny application in a static R Markdown document\",\n      class = \"rmd_warning\"\n    ))\n  } else {\n    NULL\n  }\n}"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#what-does-this-code-do",
-    "href": "slides/slides-03-code-style.html#what-does-this-code-do",
+    "objectID": "slides/slides-04-code-style.html#what-does-this-code-do",
+    "href": "slides/slides-04-code-style.html#what-does-this-code-do",
     "title": "Bit by Bit",
     "section": "What does this code do?",
     "text": "What does this code do?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nYou could use comments here to explain how file becomes src and the regular expression.\nBetter yet, use an explanatory variable for the grepl and an explanatory function for encode_file_as_data_uri()."
   },
   {
-    "objectID": "slides/slides-03-code-style.html#what-will-this-function-do",
-    "href": "slides/slides-03-code-style.html#what-will-this-function-do",
+    "objectID": "slides/slides-04-code-style.html#what-will-this-function-do",
+    "href": "slides/slides-04-code-style.html#what-will-this-function-do",
     "title": "Bit by Bit",
     "section": "What will this function do?",
     "text": "What will this function do?\n\navg_sat_scores(scorecard, \"2020-21\")\n\n\n\n\n\n\n\n\n\n\n\nWhat’s a better name?"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#feitelsons-three-step-plan",
-    "href": "slides/slides-03-code-style.html#feitelsons-three-step-plan",
+    "objectID": "slides/slides-04-code-style.html#feitelsons-three-step-plan",
+    "href": "slides/slides-04-code-style.html#feitelsons-three-step-plan",
     "title": "Bit by Bit",
     "section": "Feitelson’s three-step plan",
     "text": "Feitelson’s three-step plan\n\nSelect the concepts to include in the name.\nChoose the words to represent each concept.\nConstruct a name using these words.\n\n\n\nHow Developers Choose Names, Dror G. Fietelson\nThe Programmer’s Brain, Felienne Hermans\nExplaining variable, Pete Hodgson"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#give-this-function-a-better-name",
-    "href": "slides/slides-03-code-style.html#give-this-function-a-better-name",
+    "objectID": "slides/slides-04-code-style.html#give-this-function-a-better-name",
+    "href": "slides/slides-04-code-style.html#give-this-function-a-better-name",
     "title": "Bit by Bit",
     "section": "Give this function a better name",
     "text": "Give this function a better name\n\nlibrary(collegeScorecard)\nlibrary(dplyr)\nlibrary(ggplot2)\n\navg_sat_scores &lt;- function(scorecard, year_start = \"2020-21\") {\n  scorecard |&gt;\n    filter(\n      !is.na(score_sat_avg),\n      academic_year &gt;= year_start\n    ) |&gt;\n    mutate(\n      admissions_rate = case_when(\n        rate_admissions &lt; 0.5  ~ \"Highly Selective\",\n        rate_admissions &gt;= 0.5 ~ \"Wide Acceptance\",\n        .default = \"Unknown\"\n      )\n    ) |&gt;\n    ggplot() +\n    aes(score_sat_avg, fill = academic_year) +\n    geom_density(alpha = 0.5, show.legend = FALSE) +\n    facet_grid(academic_year ~ admissions_rate, switch = \"y\") +\n    labs(\n      x = \"Average SAT Score\",\n      y = NULL,\n    ) +\n    theme_minimal(18) +\n    theme(\n      strip.text.y.left = element_text(angle = 0),\n      axis.text.y = element_blank(),\n    )\n}"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#naming-shiny-things-outputs",
-    "href": "slides/slides-03-code-style.html#naming-shiny-things-outputs",
+    "objectID": "slides/slides-04-code-style.html#naming-shiny-things-outputs",
+    "href": "slides/slides-04-code-style.html#naming-shiny-things-outputs",
     "title": "Bit by Bit",
     "section": "Naming shiny things (outputs)",
-    "text": "Naming shiny things (outputs)\n\nplot_cost\nplot_cost_avg\nplot_cost_avg_by_month\n\n\ntext_n_undergrads\nui_n_undergrads\nvb_n_undergrads"
+    "text": "Naming shiny things (outputs)\n\nplot_cost\nplot_cost_avg\nplot_cost_avg_by_month\n\n\ntext_n_undergrads\nui_n_undergrads\nvb_n_undergrads\n\n\n\n\n\n\n\n\nDid you know\n\n\nAll IDs should be unique in an application. See ?shiny::NS()."
   },
   {
-    "objectID": "slides/slides-03-code-style.html#naming-shiny-things-inputs",
-    "href": "slides/slides-03-code-style.html#naming-shiny-things-inputs",
+    "objectID": "slides/slides-04-code-style.html#naming-shiny-things-inputs",
+    "href": "slides/slides-04-code-style.html#naming-shiny-things-inputs",
     "title": "Bit by Bit",
     "section": "Naming shiny things (inputs)",
     "text": "Naming shiny things (inputs)\nFollow the data and how it’s supposed to be used.\n\ninput$n_undergrads\ninput$cost_avg_range\ninput$cost_avg_min"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#naming-shiny-things-other-things",
-    "href": "slides/slides-03-code-style.html#naming-shiny-things-other-things",
+    "objectID": "slides/slides-04-code-style.html#naming-shiny-things-other-things",
+    "href": "slides/slides-04-code-style.html#naming-shiny-things-other-things",
     "title": "Bit by Bit",
     "section": "Naming shiny things (other things)",
     "text": "Naming shiny things (other things)\nWhat are some other useful prefixes in Shiny?\n\n* example_\n* example_\n* example_"
   },
   {
-    "objectID": "slides/slides-03-code-style.html#section-10",
-    "href": "slides/slides-03-code-style.html#section-10",
+    "objectID": "slides/slides-04-code-style.html#section-10",
+    "href": "slides/slides-04-code-style.html#section-10",
     "title": "Bit by Bit",
     "section": "",
     "text": "Please enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
-    "objectID": "slides/slides-03-code-style.html#section-11",
-    "href": "slides/slides-03-code-style.html#section-11",
+    "objectID": "slides/slides-04-code-style.html#section-11",
+    "href": "slides/slides-04-code-style.html#section-11",
     "title": "Bit by Bit",
     "section": "",
     "text": "switch(\n  input$type,\n  \"types\" = inspectdf::inspect_types(df),\n  \"cat\" = inspectdf::inspect_cat(df),\n  \"num\" = inspectdf::inspect_num(df),\n  \"na\" = inspectdf::inspect_na(df)\n)"
@@ -280,109 +280,36 @@
     "text": "File organization\n\n\n\n\n_exercises/\nFiles for Your Turn exercises\n\n\n_examples/\nFiles for my demo examples\n\n\nwebsite/\nThe website and slides\n\n\n./*\nLots of project related files you can ignore"
   },
   {
-    "objectID": "workshop-02.html",
-    "href": "workshop-02.html",
-    "title": "Modern layouts with bslib",
+    "objectID": "workshop-04.html",
+    "href": "workshop-04.html",
+    "title": "Code organization",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-02.html#topic-links",
-    "href": "workshop-02.html#topic-links",
-    "title": "Modern layouts with bslib",
-    "section": "Topic Links",
-    "text": "Topic Links\n\nbslib\nU.S. College Scorecard Data\n\ncollegeScorecard\n\nTheming with bslib\n\nbslib | Get Started | Theming\nbs_theme()\nBootstrap 5 theming variables\n\nbslib page functions\nFilling layouts with bslib\nbslib components:\n\ncard() · Article: Cards\nvalue_box() · Article: Value Boxes\nBuild-A-Box app\n\nbslib sidebar layouts:\n\npage_sidebar()\nsidebar()\nlayout_sidebar()\nArticle: Sidebar Layouts\n\nDetails on demand\n\naccordion()\ntooltip()\npopover()\nArticle: Tooltips and Popovers\n\nIcons\n\nfontawesome · Fontawesome Icons\nbsicons · Bootstrap Icons",
+    "objectID": "workshop-04.html#packages",
+    "href": "workshop-04.html#packages",
+    "title": "Code organization",
+    "section": "Packages",
+    "text": "Packages\n\nstyler\ngrkstyle",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-02.html#resources",
-    "href": "workshop-02.html#resources",
-    "title": "Modern layouts with bslib",
+    "objectID": "workshop-04.html#resources",
+    "href": "workshop-04.html#resources",
+    "title": "Code organization",
     "section": "Resources",
-    "text": "Resources\n\nCarson Sievert: Towards the next generation of Shiny UI (slides) (ShinyConf 2023)\nNext Generation Shiny Apps with {bslib} (Workshop at R/Medicine 2024)",
+    "text": "Resources\n\nHow Developers Choose Names, Dror G. Fietelson\nThe Programmer’s Brain, Felienne Hermans\nExplaining variable, Pete Hodgson\nWhy comment your code as little (and as well) as possible - R-hub blog\nCoding style, coding etiquette - R-hub blog\nCode smells and feels, Jenny Bryan\nThe Art of Readable Code, Dustin Boswell and Trevor Foucher\nRefactoring: Improving the Design of Existing Code, Martin Fowler\nObject of type ‘closure’ is not subsettable, Jenny Bryan (rstudio::conf(2020))",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
-    ]
-  },
-  {
-    "objectID": "about/index.html",
-    "href": "about/index.html",
-    "title": "Our Team",
-    "section": "",
-    "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "workshop-11.html",
-    "href": "workshop-11.html",
-    "title": "Closing cermonies",
-    "section": "",
-    "text": "🙏 Thanks for attending! 🙋 Any questions?",
-    "crumbs": [
-      "Workshop",
-      "Closing cermonies"
-    ]
-  },
-  {
-    "objectID": "workshop-09-break.html",
-    "href": "workshop-09-break.html",
-    "title": "☕ Break",
-    "section": "",
-    "text": "Image by DALL-E 3",
-    "crumbs": [
-      "Workshop",
-      "☕ Break"
-    ]
-  },
-  {
-    "objectID": "workshop-07-break.html",
-    "href": "workshop-07-break.html",
-    "title": "🍱 Lunch",
-    "section": "",
-    "text": "Image by DALL-E 3",
-    "crumbs": [
-      "Workshop",
-      "🍱 Lunch"
-    ]
-  },
-  {
-    "objectID": "workshop-03-break.html",
-    "href": "workshop-03-break.html",
-    "title": "☕ Break",
-    "section": "",
-    "text": "Image by DALL-E 3",
-    "crumbs": [
-      "Workshop",
-      "☕ Break"
-    ]
-  },
-  {
-    "objectID": "workshop.html",
-    "href": "workshop.html",
-    "title": "Overview",
-    "section": "",
-    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n9:15 - 10:30\n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n11:00 - 11:45\n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n11:45 - 12:10\n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n12:10 - 12:30\n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nFast, reactive apps\n\n\n13:30 - 15:00\n\n\nMastering reactivity for fast Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n15:30 - 16:30\n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Workshop",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "workshop.html#schedule",
-    "href": "workshop.html#schedule",
-    "title": "Overview",
-    "section": "",
-    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n9:15 - 10:30\n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n11:00 - 11:45\n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n11:45 - 12:10\n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n12:10 - 12:30\n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nFast, reactive apps\n\n\n13:30 - 15:00\n\n\nMastering reactivity for fast Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n15:30 - 16:30\n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Workshop",
-      "Overview"
+      "Code organization"
     ]
   },
   {
@@ -416,6 +343,112 @@
     "crumbs": [
       "Workshop",
       "Welcome and getting started"
+    ]
+  },
+  {
+    "objectID": "workshop.html",
+    "href": "workshop.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n9:15 - 10:30\n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n11:00 - 11:45\n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n11:45 - 12:10\n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n12:10 - 12:30\n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nFast, reactive apps\n\n\n13:30 - 15:00\n\n\nMastering reactivity for fast Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n15:30 - 16:30\n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Workshop",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "workshop.html#schedule",
+    "href": "workshop.html#schedule",
+    "title": "Overview",
+    "section": "",
+    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n9:15 - 10:30\n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n11:00 - 11:45\n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n11:45 - 12:10\n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n12:10 - 12:30\n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nFast, reactive apps\n\n\n13:30 - 15:00\n\n\nMastering reactivity for fast Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n15:30 - 16:30\n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Workshop",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "workshop-03-break.html",
+    "href": "workshop-03-break.html",
+    "title": "☕ Break",
+    "section": "",
+    "text": "Image by DALL-E 3",
+    "crumbs": [
+      "Workshop",
+      "☕ Break"
+    ]
+  },
+  {
+    "objectID": "workshop-07-break.html",
+    "href": "workshop-07-break.html",
+    "title": "🍱 Lunch",
+    "section": "",
+    "text": "Image by DALL-E 3",
+    "crumbs": [
+      "Workshop",
+      "🍱 Lunch"
+    ]
+  },
+  {
+    "objectID": "workshop-09-break.html",
+    "href": "workshop-09-break.html",
+    "title": "☕ Break",
+    "section": "",
+    "text": "Image by DALL-E 3",
+    "crumbs": [
+      "Workshop",
+      "☕ Break"
+    ]
+  },
+  {
+    "objectID": "workshop-11.html",
+    "href": "workshop-11.html",
+    "title": "Closing cermonies",
+    "section": "",
+    "text": "🙏 Thanks for attending! 🙋 Any questions?",
+    "crumbs": [
+      "Workshop",
+      "Closing cermonies"
+    ]
+  },
+  {
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "Our Team",
+    "section": "",
+    "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "workshop-02.html",
+    "href": "workshop-02.html",
+    "title": "Modern layouts with bslib",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Modern layouts with bslib"
+    ]
+  },
+  {
+    "objectID": "workshop-02.html#topic-links",
+    "href": "workshop-02.html#topic-links",
+    "title": "Modern layouts with bslib",
+    "section": "Topic Links",
+    "text": "Topic Links\n\nbslib\nU.S. College Scorecard Data\n\ncollegeScorecard\n\nTheming with bslib\n\nbslib | Get Started | Theming\nbs_theme()\nBootstrap 5 theming variables\n\nbslib page functions\nFilling layouts with bslib\nbslib components:\n\ncard() · Article: Cards\nvalue_box() · Article: Value Boxes\nBuild-A-Box app\n\nbslib sidebar layouts:\n\npage_sidebar()\nsidebar()\nlayout_sidebar()\nArticle: Sidebar Layouts\n\nDetails on demand\n\naccordion()\ntooltip()\npopover()\nArticle: Tooltips and Popovers\n\nIcons\n\nfontawesome · Fontawesome Icons\nbsicons · Bootstrap Icons",
+    "crumbs": [
+      "Workshop",
+      "Modern layouts with bslib"
+    ]
+  },
+  {
+    "objectID": "workshop-02.html#resources",
+    "href": "workshop-02.html#resources",
+    "title": "Modern layouts with bslib",
+    "section": "Resources",
+    "text": "Resources\n\nCarson Sievert: Towards the next generation of Shiny UI (slides) (ShinyConf 2023)\nNext Generation Shiny Apps with {bslib} (Workshop at R/Medicine 2024)",
+    "crumbs": [
+      "Workshop",
+      "Modern layouts with bslib"
     ]
   },
   {
@@ -535,7 +568,7 @@
     "href": "slides/slides-02-bslib.html#page-fillable",
     "title": "Modern UI with bslib",
     "section": "",
-    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(plotly)\nlibrary(collegeScorecard)\n\ncolors &lt;- c(\"#007bc2\", \"#f45100\", \"#bf007f\")\n\nui &lt;- page_fluid(\n  plotlyOutput(\"plot_control\")\n)\n\nserver &lt;- function(input, output, session) {\n  output$plot_control &lt;- renderPlotly({\n    plot_school_var(school, \"control\", title = \"School Governance\", color = colors[1])\n  })\n\n  output$plot_deg_predominant &lt;- renderPlotly({\n    plot_school_var(school, \"deg_predominant\", title = \"Predominant Degree\", colors[2])\n  })\n\n  output$plot_locale_type &lt;- renderPlotly({\n    plot_school_var(school, \"locale_type\", title = \"Locale Type\", colors[3])\n  })\n}\n\nplot_school_var &lt;- function(school, var, title = \"\", color = \"blue\") {\n  school |&gt;\n      plot_ly(\n        y = ~get(var),\n        type = \"histogram\",\n        color = I(color)\n      ) |&gt;\n      layout(\n        title = title,\n        xaxis = list(title = \"Number of Schools\"),\n        yaxis = list(title = \"\")\n      ) |&gt;\n      config(displayModeBar = FALSE)\n}\n\nshinyApp(ui, server)\n\n\n## file: notes.R\n# =&gt; examples/01-bslib/01_app.R\n# * Compare with page_fillable()\n# * fill items and fillable containers\n# * Add card()"
+    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(plotly)\nlibrary(collegeScorecard)\n\ncolors &lt;- c(\"#007bc2\", \"#f45100\", \"#bf007f\")\n\nui &lt;- page_fluid(\n  plotlyOutput(\"plot_control\")\n)\n\nserver &lt;- function(input, output, session) {\n  output$plot_control &lt;- renderPlotly({\n    plot_school_var(school, \"control\", title = \"School Governance\", color = colors[1])\n  })\n\n  output$plot_deg_predominant &lt;- renderPlotly({\n    plot_school_var(school, \"deg_predominant\", title = \"Predominant Degree\", colors[2])\n  })\n\n  output$plot_locale_type &lt;- renderPlotly({\n    plot_school_var(school, \"locale_type\", title = \"Locale Type\", colors[3])\n  })\n}\n\nplot_school_var &lt;- function(school, var, title = \"\", color = \"blue\") {\n  school |&gt;\n      plot_ly(\n        y = ~get(var),\n        type = \"histogram\",\n        color = I(color)\n      ) |&gt;\n      layout(\n        title = title,\n        xaxis = list(title = \"Number of Schools\"),\n        yaxis = list(title = \"\")\n      ) |&gt;\n      config(displayModeBar = FALSE)\n}\n\nshinyApp(ui, server)\n\n\n## file: notes.R\n# =&gt; examples/02-bslib/01_app.R\n# * Compare with page_fillable()\n# * fill items and fillable containers\n# * Add card()"
   },
   {
     "objectID": "slides/slides-02-bslib.html#filling-layouts",

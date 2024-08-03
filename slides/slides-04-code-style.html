@@ -679,7 +679,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"code":"card_image <- function(file = NULL, ..., src = NULL) {\n  if (is.null(src)) {\n    if (grepl(\"^([[:alnum:]]+:)?//|data:\", file)) {\n      src <- file\n    } else {\n      if (!file.exists(file)) {\n        rlang::abort(sprintf(\"`file` does not exist: %s\", file))\n      }\n      src <- base64enc::dataURI(\n        file = file,\n        mime = mime_type %||% mime::guess_type(file)\n      )\n    }\n  }\n  \n  htmltools::tags$img(src = src, ...)\n}","options":{"results":"markup","comment":"","label":"unnamed-chunk-1","read-only":"false","dpi":72,"output":"true","editor-word-wrap":"true","editor-max-height":"","out-width":"700px","message":"true","fig-width":7,"editor-font-scale":"0.5","context":"interactive","editor-quick-suggestions":"false","warning":"true","classes":"","autorun":"false","fig-cap":"","out-height":"","fig-height":5},"id":1},{"code":"input <- list(type = \"cat\")\n\nif (input$type == \"types\") {\n  inspectdf::inspect_types(df)\n} else if (input$type == \"cat\") {\n  inspectdf::inspect_cat(df)\n} else if (input$type == \"num\") {\n  inspectdf::inspect_num(df)\n} else if (input$type == \"na\") {\n  inspectdf::inspect_na(df)\n}","options":{"results":"markup","comment":"","label":"unnamed-chunk-2","read-only":"false","dpi":72,"output":"true","editor-word-wrap":"true","editor-max-height":"","out-width":"700px","message":"true","fig-width":7,"editor-font-scale":"0.5","context":"interactive","editor-quick-suggestions":"false","warning":"true","classes":"","autorun":"false","fig-cap":"","out-height":"","fig-height":5},"id":2}];
+  globalThis.qwebrCellDetails = [{"options":{"editor-word-wrap":"true","warning":"true","editor-max-height":"","editor-font-scale":"0.5","editor-quick-suggestions":"false","output":"true","autorun":"false","read-only":"false","context":"interactive","results":"markup","message":"true","comment":"","dpi":72,"fig-width":7,"out-height":"","out-width":"700px","label":"unnamed-chunk-1","fig-cap":"","classes":"","fig-height":5},"id":1,"code":"card_image <- function(file = NULL, ..., src = NULL) {\n  if (is.null(src)) {\n    if (grepl(\"^([[:alnum:]]+:)?//|data:\", file)) {\n      src <- file\n    } else {\n      if (!file.exists(file)) {\n        rlang::abort(sprintf(\"`file` does not exist: %s\", file))\n      }\n      src <- base64enc::dataURI(\n        file = file,\n        mime = mime_type %||% mime::guess_type(file)\n      )\n    }\n  }\n  \n  htmltools::tags$img(src = src, ...)\n}"},{"options":{"editor-word-wrap":"true","warning":"true","editor-max-height":"","editor-font-scale":"0.5","editor-quick-suggestions":"false","output":"true","autorun":"false","read-only":"false","context":"interactive","results":"markup","message":"true","comment":"","dpi":72,"fig-width":7,"out-height":"","out-width":"700px","label":"unnamed-chunk-2","fig-cap":"","classes":"","fig-height":5},"id":2,"code":"input <- list(type = \"cat\")\n\nif (input$type == \"types\") {\n  inspectdf::inspect_types(df)\n} else if (input$type == \"cat\") {\n  inspectdf::inspect_cat(df)\n} else if (input$type == \"num\") {\n  inspectdf::inspect_num(df)\n} else if (input$type == \"na\") {\n  inspectdf::inspect_na(df)\n}"}];
 
   </script>
   <script type="module">
@@ -2478,7 +2478,7 @@ document.querySelectorAll('.code-left-edge').forEach((block) => {
 <span id="cb15-14"><a></a>  <span class="co"># Plot ----</span></span>
 <span id="cb15-15"><a></a>  <span class="co"># Map ----</span></span>
 <span id="cb15-16"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Open <code>_examples/01-bslib/99_app.R</code> in the IDE as an example.</p>
+<p>Open <code>_examples/02-bslib/99_app.R</code> in the IDE as an example.</p>
 </section>
 <section id="section-7" class="slide level2">
 <h2></h2>
@@ -2741,7 +2741,7 @@ document.querySelectorAll('.code-left-edge').forEach((block) => {
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="slides-03-code-style_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+<p><img data-src="slides-04-code-style_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2810,6 +2810,21 @@ plot_cost_avg_by_month</code></pre>
 <pre><code>text_n_undergrads
 ui_n_undergrads
 vb_n_undergrads</code></pre>
+</div>
+<div class="fragment" title="Did you know">
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Did you know</strong></p>
+</div>
+<div class="callout-content">
+<p>All IDs should be unique in an application. See <a href="https://shiny.posit.co/r/reference/shiny/latest/ns"><code>?shiny::NS()</code></a>.</p>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="naming-shiny-things-inputs" class="slide level2">

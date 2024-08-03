@@ -69,6 +69,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+ 
+  <style>
+  .slide-deck {
+      border: 3px solid #dee2e6;
+      width: 100%;
+  }
+  </style>
+  
 
 
 <link rel="stylesheet" href="auto-dark-mode.css">
@@ -217,8 +225,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#packages" id="toc-packages" class="nav-link active" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/workshop-04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -248,8 +263,36 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="ratio ratio-16x9">
+    <p><a href="slides/slides-04-code-style.html" target="_blank">View slides in full screen</a></p>
+       <div>
+      <iframe class="slide-deck" src="slides/slides-04-code-style.html" height="475px"></iframe>
+    </div>
+  
+</div>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<ul>
+<li><a href="https://styler.r-lib.org/">styler</a></li>
+<li><a href="https://github.com/gadenbuie/grkstyle">grkstyle</a></li>
+</ul>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.cs.huji.ac.il/~feit/papers/Names20TSE.pdf">How Developers Choose Names</a>, Dror G. Fietelson</li>
+<li><a href="https://www.manning.com/books/the-programmers-brain">The Programmer’s Brain</a>, Felienne Hermans</li>
+<li><a href="https://blog.thepete.net/blog/2021/06/24/explaining-variable/">Explaining variable</a>, Pete Hodgson</li>
+<li><a href="https://blog.r-hub.io/2023/01/26/code-comments-self-explaining-code/">Why comment your code as little (and as well) as possible - R-hub blog</a></li>
+<li><a href="https://blog.r-hub.io/2022/03/21/code-style/">Coding style, coding etiquette - R-hub blog</a></li>
+<li><a href="https://www.youtube.com/watch?v=7oyiPBjLAWY">Code smells and feels</a>, Jenny Bryan</li>
+<li><a href="https://www.oreilly.com/library/view/the-art-of/9781449318482/">The Art of Readable Code</a>, Dustin Boswell and Trevor Foucher</li>
+<li><a href="https://www.oreilly.com/library/view/refactoring-improving-the/9780134757681/">Refactoring: Improving the Design of Existing Code</a>, Martin Fowler</li>
+<li><a href="https://www.youtube.com/watch?v=vgYS-F8opgE&amp;list=PLNH8Eqj5v_KbhyWsHjWvYbt2TGiD3OlPc">Object of type ‘closure’ is not subsettable</a>, Jenny Bryan (rstudio::conf(2020))</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -692,7 +735,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p><a href="https://posit.co/conference">posit::conf(2024)</a></p>
-<div class="toc-actions"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/workshop-04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/workshop-04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

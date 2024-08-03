@@ -315,12 +315,12 @@ server <- function(input, output, session) {
 }
 ```
 
-Open `_examples/01-bslib/99_app.R` in the IDE as an example.
+Open `_examples/02-bslib/99_app.R` in the IDE as an example.
 
 ##
 
 ```{.r}
-{{< include ../../_examples/02-style/shiny-with-comments.R >}}
+{{< include ../../_examples/04-style/shiny-with-comments.R >}}
 ```
 
 ## How to write better comments
@@ -339,7 +339,7 @@ Open `_examples/01-bslib/99_app.R` in the IDE as an example.
 ##
 
 ```{.r filename="shiny/R/middleware.R"}
-{{< include ../../_examples/02-style/middleware.R >}}
+{{< include ../../_examples/04-style/middleware.R >}}
 ```
 
 ## 
@@ -477,6 +477,10 @@ text_n_undergrads
 ui_n_undergrads
 vb_n_undergrads
 ```
+:::
+
+::: {.callout-caution title="Did you know" .fragment}
+All IDs should be unique in an application. See [`?shiny::NS()`](https://shiny.posit.co/r/reference/shiny/latest/ns).
 :::
 
 ## Naming shiny things (inputs)
