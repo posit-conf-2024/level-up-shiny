@@ -26,7 +26,9 @@ thematic::thematic_shiny()
 ui <- page_sidebar(
   title = "Find a School",
   class = "bslib-page-dashboard",
+  # | Sidebar ----
   sidebar = sidebar(
+    # | - Accordion ----
     accordion(
       multiple = FALSE,
       accordion_panel(
@@ -52,8 +54,11 @@ ui <- page_sidebar(
         sliderInput("cost_avg", "Average Cost", min = 0, max = 50000, value = c(0, 50000), step = 1000)
       )
     ),
+    # | - Other inputs ----
     input_dark_mode()
   ),
+  # | Main area ----
+  # | - Value Boxes ----
   layout_column_wrap(
     width = 1 / 3,
     fill = FALSE,
@@ -93,6 +98,7 @@ ui <- page_sidebar(
       showcase = fa_i("building")
     )
   ),
+  # | - Cards ----
   layout_columns(
     col_widths = c(8, 4),
     navset_card_pill(
@@ -259,7 +265,7 @@ server <- function(input, output, session) {
       )
   })
 
-  # Leaflet Map ----
+  # Maps ----
   output$map <- renderLeaflet({
     school_filtered <-
       school |>

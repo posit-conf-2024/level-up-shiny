@@ -50,6 +50,15 @@
   white-space: pre;
 }
 
+.highlight-line {
+  --_highlight-line-color: var(--highlight-line-color, oklab(0.95 -0.04 0.16 / 0.7));
+  background: var(--_highlight-line-color);
+  display: inline-block;
+  width: 100vw;
+  outline: 0.125lh solid var(--_highlight-line-color);
+  font-weight: 500;
+}
+
 .reveal .sourceCode:has(> .shinylive-wrapper) {
   border: none;
   background-color: inherit;

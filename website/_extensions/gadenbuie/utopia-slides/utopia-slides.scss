@@ -73,6 +73,10 @@ $presentation-heading-font-weight: 700;
   margin-bottom: 1rem !important;
 }
 
+.reveal pre code {
+  line-height: 1.5;
+}
+
 /*-- custom styles --*/
 .slides #title-slide {
   justify-content: center;
