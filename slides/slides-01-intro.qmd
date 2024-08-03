@@ -1,7 +1,7 @@
 ---
 title: Welcome!
-subtitle: Level Up with Shiny for R<br><code>posit::conf(2024)</code>
-author: Garrick Aden-Buie
+subtitle: Level Up with Shiny for R
+author: <code>posit::conf(2024)</code>
 date: last-modified
 
 format:
@@ -10,8 +10,8 @@ format:
     slide-level: 2
     theme:
       - slides.scss
-
-    
+    footer: >
+      [pos.it/level-up-shiny](https://pos.it/level-up-shiny)
 
 revealjs-plugins:
   - utopia-slides
@@ -25,6 +25,14 @@ editor:
 * Take a seat, etc.
 * Here's an important link
 * WiFI info
+
+```{=html}
+<style>
+.reveal .footer {
+  font-size: 1em !important;
+}
+</style>
+```
 
 # 🤝 Introductions 🤝 {.middle}
 
@@ -118,11 +126,13 @@ Great place to ask questions, post resources, memes, or most anything else befor
 
 You can use the following link to join the workshops RStudio cloud space,
 
+<!-- FIXME: Update cloud link -->
+
 ::: {.large style="text-align: center;"}
-[bit.ly/conf2023_shiny_cloud](https://bit.ly/conf2023_shiny_cloud)
+[pos.it/level-up-shiny](https://pos.it/level-up-shiny)
 :::
 
-Once you have joined you can then select the `get-started-shiny` assignment, 
+Once you have joined you can then select the `level-up-shiny` assignment, 
 
 TK Image of assignment
 

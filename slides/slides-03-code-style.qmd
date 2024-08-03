@@ -1,0 +1,377 @@
+---
+title: Bit by Bit
+subtitle: Elements of Code and Style
+author: Level Up with Shiny for R<br><code>posit::conf(2024)</code>
+date: last-modified
+
+format:
+  utopia-slides-revealjs:
+    html-math-method: plain
+    revealjs-url: slides/assets/reveal.js-4.5.0
+    slide-level: 2
+    # chalkboard: true
+    theme:
+      - slides.scss
+      - assets/code-blocked.scss
+
+revealjs-plugins:
+  - utopia-slides
+
+editor:
+  render-on-save: true
+---
+
+# Coding for humans {.middle}
+
+## 
+
+::: {.w-two-thirds .center}
+```{.r}
+card(card_header("Cost vs Earnings"),
+     layout_sidebar(sidebar = sidebar(
+                    open = FALSE, position = "right",
+                    radioButtons("cost_group_by",
+                                 "Group By",
+                                 choices = c("Predominant Degree" = "deg_predominant",
+                                             "Campus Setting" = "locale_type",
+                                             "Testing Requirements" = "adm_req_test"))),
+                    plotOutput("plot_cost")), full_screen = TRUE)
+```
+:::
+
+## {transition="fade"}
+
+::: {.w-two-thirds .center .code-blocked}
+```{.r}
+card(card_header("Cost vs Earnings"),
+     layout_sidebar(sidebar = sidebar(
+                    open = FALSE, position = "right",
+                    radioButtons("cost_group_by",
+                                 "Group By",
+                                 choices = c("Predominant Degree" = "deg_predominant",
+                                             "Campus Setting" = "locale_type",
+                                             "Testing Requirements" = "adm_req_test"))),
+                    plotOutput("plot_cost")), full_screen = TRUE)
+```
+:::
+
+## {transition="fade"}
+
+::: {.w-two-thirds .center .code-blocked}
+```{.r}
+card(
+  card_header("Cost vs Earnings"),
+  layout_sidebar(
+    sidebar = sidebar(
+      open = FALSE,
+      position = "right",
+      radioButtons(
+        "cost_group_by",
+        "Group By",
+        choices = c(
+          "Predominant Degree" = "deg_predominant",
+          "Campus Setting" = "locale_type",
+          "Testing Requirements" = "adm_req_test"
+        ),
+      ),
+    ),
+    plotOutput("plot_cost"),
+  ),
+  full_screen = TRUE
+)
+```
+:::
+
+## {transition="fade"}
+
+::: {.w-two-thirds .center}
+```{.r}
+card(
+  card_header("Cost vs Earnings"),
+  layout_sidebar(
+    sidebar = sidebar(
+      open = FALSE,
+      position = "right",
+      radioButtons(
+        "cost_group_by",
+        "Group By",
+        choices = c(
+          "Predominant Degree" = "deg_predominant",
+          "Campus Setting" = "locale_type",
+          "Testing Requirements" = "adm_req_test"
+        ),
+      ),
+    ),
+    plotOutput("plot_cost"),
+  ),
+  full_screen = TRUE
+)
+```
+:::
+
+##
+
+::: {.w-two-thirds .center .code-left-edge}
+```{.r}
+card(
+  card_header("Cost vs Earnings"),
+  layout_sidebar(
+    sidebar = sidebar(
+      open = FALSE,
+      position = "right",
+      radioButtons(
+        "cost_group_by",
+        "Group By",
+        choices = c(
+          "Predominant Degree" = "deg_predominant",
+          "Campus Setting" = "locale_type",
+          "Testing Requirements" = "adm_req_test"
+        ),
+      ),
+    ),
+    plotOutput("plot_cost"),
+  ),
+  full_screen = TRUE
+)
+```
+:::
+
+## Code Folding
+
+::: {.fragment .absolute}
+![](assets/code-folding-wide.png)
+:::
+
+::: {.fragment .absolute}
+![](assets/code-folding-wide-folded.png)
+:::
+
+::: {.fragment .absolute}
+![](assets/code-folding.png)
+:::
+
+```{=html}
+<script>
+document.querySelectorAll('.code-blocked').forEach((block) => {
+  const atSpans = block.querySelectorAll("span.at")
+  atSpans.forEach(span => {
+    span.textContent = span.textContent.replace(" =", "")
+    const newSpan = document.createElement("span")
+    newSpan.textContent = " ="
+    span.insertAdjacentElement("afterend", newSpan)
+  })
+});
+
+document.querySelectorAll('.code-left-edge').forEach((block) => {
+  const codeLines = block.querySelectorAll("code span[id]")
+  codeLines.forEach(span => {
+    if (span.querySelector("span")) return;
+    // move text node children into a span
+    span.childNodes.forEach(child => {
+      if (child.nodeType === Node.TEXT_NODE) {
+        // split text at first non-whitespace character
+        const text = child.textContent
+        const match = text.match(/^\s*/)
+        if (match) {
+          span.removeChild(child)
+          const whitespace = match[0]
+          const textNode = document.createTextNode(whitespace)
+          span.appendChild(textNode)
+          const newSpan = document.createElement('span')
+          newSpan.textContent = text.slice(whitespace.length)
+          span.appendChild(newSpan)
+        }
+      }
+    })
+  })
+});
+</script>
+```
+
+## Automating code styling
+
+### `{styler}`: tidyverse style in a package
+
+::: text-center
+![](assets/styler-active-file.png)
+:::
+
+## Automating code styling
+
+### `{grkstyle}`: MY style in a package
+
+```r
+# In ~/.Rprofile or Console
+grkstyle::use_grk_style()
+
+# Then use {styler} addins as normal
+
+# Easily switch between tabs and spaces
+grkstyle::grk_reindent_tabs_dir()
+grkstyle::grk_reindent_spaces_dir()
+```
+
+##
+
+```{r}
+card_example <- r"(
+card(card_header("Cost vs Earnings"),
+     layout_sidebar(sidebar = sidebar(
+                    open = FALSE, position = "right",
+                    radioButtons("cost_group_by",
+                                 "Group By",
+                                 choices = c("Predominant Degree" = "deg_predominant",
+                                             "Campus Setting" = "locale_type",
+                                             "Testing Requirements" = "adm_req_test"))),
+                    plotOutput("plot_cost")), full_screen = TRUE)
+)"
+```
+
+::: {.flex}
+::: {.w-50}
+```{r}
+#| echo: true
+styler::style_text(card_example)
+```
+:::
+
+::: {.w-50}
+```{r}
+#| echo: true
+#| attr.out:
+#|   height: auto
+grkstyle::grk_style_text(card_example)
+```
+:::
+:::
+
+## Garrick's Golden Guideline
+
+::: incremental
+* A function call fits on a single line
+
+* Or it has one argument per line
+
+* Oh, and closing parentheses are on their own line
+:::
+
+# Comments {.w-100 .middle .left}
+
+## Code comments {.text-center}
+
+::: {.w-50-l .center}
+![](assets/code-comments-2.png)
+:::
+
+## 
+
+```r
+# Load the Shiny library
+library(shiny)
+
+# Define the user interface for the application
+ui <- fluidPage(
+  
+  # Create a title for the application
+  titlePanel("My Shiny App"), 
+  
+  # Create a sidebar layout
+  sidebarLayout(
+    
+    # Define the sidebar panel
+    sidebarPanel(
+      # Create a numeric input field
+      numericInput("num", "Enter a number:", value = 10) 
+    ),
+    
+    # Define the main panel
+    mainPanel(
+      # Output the result as a text
+      textOutput("result") 
+    )
+  )
+)
+
+# Define the server logic for the application
+server <- function(input, output) {
+  
+  # Create a reactive expression to calculate the square of the input
+  output$result <- renderText({
+    # Calculate the square of the input number
+    input$num^2 
+  })
+}
+
+# Run the application
+shinyApp(ui = ui, server = server)
+```
+
+## Comment types
+
+::: {.fs-step-4}
+```
+# Structural ----
+```
+
+::: {.fragment .m-block-start-m}
+```
+#' Documentation
+#'
+#' @param output The output file path
+```
+:::
+
+::: {.fragment .m-block-start-m}
+```
+# Informational
+```
+:::
+:::
+
+## {auto-animate="true"}
+
+```{.r code-line-numbers="|1-3|5-7|8-13"}
+# If there's an R Markdown runtime option set but it isn't set to Shiny, then
+# return a warning indicating the runtime is inappropriate for this object.
+# Returns NULL in all other cases.
+shiny_rmd_warning <- function() {
+  # Check if the R markdown runtime option is set to something not Shiny
+  runtime <- knitr::opts_knit$get("rmarkdown.runtime")
+  if (!is.null(runtime) && runtime != "shiny") {
+    # note that the RStudio IDE checks for this specific string to detect Shiny
+    # applications in static document
+    list(structure(
+      "Shiny application in a static R Markdown document",
+      class = "rmd_warning"
+    ))
+  } else {
+    NULL
+  }
+}
+```
+
+## {auto-animate=true}
+
+```{.r}
+#' Warn if runtime option isn't "shiny"
+#' 
+#' If there's an R Markdown runtime option set but it isn't set to Shiny, then
+#' return a warning indicating the runtime is inappropriate for this object.
+#' 
+#' @return An `rmd_warning` object, or `NULL` if `runtime` is `NULL`
+#'   or `"shiny"`.
+#' @keywords internal
+shiny_rmd_warning <- function() {
+  runtime <- knitr::opts_knit$get("rmarkdown.runtime")
+  if (!is.null(runtime) && runtime != "shiny") {
+    # note that the RStudio IDE checks for this specific string to detect Shiny
+    # applications in static document
+    list(structure(
+      "Shiny application in a static R Markdown document",
+      class = "rmd_warning"
+    ))
+  } else {
+    NULL
+  }
+}
+```
