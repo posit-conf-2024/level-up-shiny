@@ -22,6 +22,7 @@ Imports:
     lorem,
     plotly,
     purrr,
+    roxygen2,
     shiny (>= 1.9.0),
     shinylive,
     styler,
