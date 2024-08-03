@@ -2,7 +2,7 @@
 title: Modern UI with bslib
 subtitle: Level Up with Shiny for R
 author: <code>posit::conf(2024)</code>
-date: last-modified
+date: 2024-08-12
 
 format:
   utopia-slides-revealjs:
@@ -70,7 +70,7 @@ ui <- fluidPage(
 )
 
 server <- function(input, output, session) {
-  
+
 }
 
 shinyApp(ui, server)
@@ -443,7 +443,7 @@ card(
 
   p("This is the body of the card"),
   p("Anything here becomes part of the card body."),
-  
+
   card_footer("Card footer. © bslib 2024")
 )
 ```
@@ -468,7 +468,7 @@ card(
     p("This is the body of the card"),
     p("Anything here becomes part of the card body.")
   ),
-  
+
   card_footer("Card footer. © bslib 2024")
 )
 ```
@@ -539,7 +539,7 @@ page_navbar(
     # other inputs
   ),
   nav_panel(
-    "Page 1", 
+    "Page 1",
     # Main content area
     plotOutput("plot")
   ),
@@ -614,7 +614,7 @@ Use `page_sidebar()` to move the state selector to a global sidebar.
   * `theme`
 :::
 
-## Build-A-Box 
+## Build-A-Box
 
 ::: text-center
 ```{=html}
@@ -795,7 +795,7 @@ shinyApp(ui, server)
 # * The target can be anything, typically a `button()` or icon
 #     * `{bsicons}` or `{fontawesome}`
 #     * Important to give the icon a title
-# 
+#
 # * The content can be anything, including inputs!
 
 popover(

@@ -2,7 +2,7 @@
 title: Welcome!
 subtitle: Level Up with Shiny for R
 author: <code>posit::conf(2024)</code>
-date: last-modified
+date: 2024-08-12
 
 format:
   utopia-slides-revealjs:
@@ -132,7 +132,7 @@ You can use the following link to join the workshops RStudio cloud space,
 [pos.it/level-up-shiny](https://pos.it/level-up-shiny)
 :::
 
-Once you have joined you can then select the `level-up-shiny` assignment, 
+Once you have joined you can then select the `level-up-shiny` assignment,
 
 TK Image of assignment
 

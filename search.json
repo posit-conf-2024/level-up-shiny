@@ -346,30 +346,19 @@
     ]
   },
   {
-    "objectID": "workshop.html",
-    "href": "workshop.html",
-    "title": "Overview",
+    "objectID": "workshop-11.html",
+    "href": "workshop-11.html",
+    "title": "Closing cermonies",
     "section": "",
-    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n9:15 - 10:30\n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n11:00 - 11:45\n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n11:45 - 12:10\n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n12:10 - 12:30\n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nFast, reactive apps\n\n\n13:30 - 15:00\n\n\nMastering reactivity for fast Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n15:30 - 16:30\n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
+    "text": "🙏 Thanks for attending! 🙋 Any questions?",
     "crumbs": [
       "Workshop",
-      "Overview"
+      "Closing cermonies"
     ]
   },
   {
-    "objectID": "workshop.html#schedule",
-    "href": "workshop.html#schedule",
-    "title": "Overview",
-    "section": "",
-    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n9:15 - 10:30\n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n11:00 - 11:45\n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n11:45 - 12:10\n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n12:10 - 12:30\n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nFast, reactive apps\n\n\n13:30 - 15:00\n\n\nMastering reactivity for fast Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n15:30 - 16:30\n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Workshop",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "workshop-03-break.html",
-    "href": "workshop-03-break.html",
+    "objectID": "workshop-09-break.html",
+    "href": "workshop-09-break.html",
     "title": "☕ Break",
     "section": "",
     "text": "Image by DALL-E 3",
@@ -390,8 +379,8 @@
     ]
   },
   {
-    "objectID": "workshop-09-break.html",
-    "href": "workshop-09-break.html",
+    "objectID": "workshop-03-break.html",
+    "href": "workshop-03-break.html",
     "title": "☕ Break",
     "section": "",
     "text": "Image by DALL-E 3",
@@ -401,14 +390,25 @@
     ]
   },
   {
-    "objectID": "workshop-11.html",
-    "href": "workshop-11.html",
-    "title": "Closing cermonies",
+    "objectID": "workshop.html",
+    "href": "workshop.html",
+    "title": "Overview",
     "section": "",
-    "text": "🙏 Thanks for attending! 🙋 Any questions?",
+    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n9:15 - 10:30\n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n11:00 - 11:45\n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n11:45 - 12:10\n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n12:10 - 12:30\n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nFast, reactive apps\n\n\n13:30 - 15:00\n\n\nMastering reactivity for fast Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n15:30 - 16:30\n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Workshop",
-      "Closing cermonies"
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "workshop.html#schedule",
+    "href": "workshop.html#schedule",
+    "title": "Overview",
+    "section": "",
+    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n9:15 - 10:30\n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n11:00 - 11:45\n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n11:45 - 12:10\n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n12:10 - 12:30\n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nFast, reactive apps\n\n\n13:30 - 15:00\n\n\nMastering reactivity for fast Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n15:30 - 16:30\n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Workshop",
+      "Overview"
     ]
   },
   {
@@ -484,7 +484,7 @@
     "href": "slides/slides-02-bslib.html#then-came-bslib",
     "title": "Modern UI with bslib",
     "section": "Then came bslib",
-    "text": "Then came bslib\n\n\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- fluidPage(\n  theme = bs_theme(version = 5),\n  selectInput(\n    \"pkg\",\n    \"Best Package\",\n    choices = c(\"shiny\", \"bslib\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  \n}\n\nshinyApp(ui, server)"
+    "text": "Then came bslib\n\n\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- fluidPage(\n  theme = bs_theme(version = 5),\n  selectInput(\n    \"pkg\",\n    \"Best Package\",\n    choices = c(\"shiny\", \"bslib\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n\n}\n\nshinyApp(ui, server)"
   },
   {
     "objectID": "slides/slides-02-bslib.html#bslib-1-line-bootstrap-upgrades",
@@ -603,14 +603,14 @@
     "href": "slides/slides-02-bslib.html#card-parts",
     "title": "Modern UI with bslib",
     "section": "Card Parts",
-    "text": "Card Parts\n\n\n\n\n\n\ncard(\n  card_header(\"Card Header\"),\n\n  p(\"This is the body of the card\"),\n  p(\"Anything here becomes part of the card body.\"),\n  \n  card_footer(\"Card footer. © bslib 2024\")\n)"
+    "text": "Card Parts\n\n\n\n\n\n\ncard(\n  card_header(\"Card Header\"),\n\n  p(\"This is the body of the card\"),\n  p(\"Anything here becomes part of the card body.\"),\n\n  card_footer(\"Card footer. © bslib 2024\")\n)"
   },
   {
     "objectID": "slides/slides-02-bslib.html#card-parts-1",
     "href": "slides/slides-02-bslib.html#card-parts-1",
     "title": "Modern UI with bslib",
     "section": "Card Parts",
-    "text": "Card Parts\n\n\n\n\n\n\ncard(\n  card_header(\"Card Header\"),\n\n  card_body(\n    fillable = FALSE,\n    p(\"This is the body of the card\"),\n    p(\"Anything here becomes part of the card body.\")\n  ),\n  \n  card_footer(\"Card footer. © bslib 2024\")\n)"
+    "text": "Card Parts\n\n\n\n\n\n\ncard(\n  card_header(\"Card Header\"),\n\n  card_body(\n    fillable = FALSE,\n    p(\"This is the body of the card\"),\n    p(\"Anything here becomes part of the card body.\")\n  ),\n\n  card_footer(\"Card footer. © bslib 2024\")\n)"
   },
   {
     "objectID": "slides/slides-02-bslib.html#full-screen-cards",
@@ -638,7 +638,7 @@
     "href": "slides/slides-02-bslib.html#a-global-page-level-sidebar-1",
     "title": "Modern UI with bslib",
     "section": "A global page-level sidebar",
-    "text": "A global page-level sidebar\npage_navbar(\n  sidebar = sidebar(\n    selectInput(...),\n    # other inputs\n  ),\n  nav_panel(\n    \"Page 1\", \n    # Main content area\n    plotOutput(\"plot\")\n  ),\n)"
+    "text": "A global page-level sidebar\npage_navbar(\n  sidebar = sidebar(\n    selectInput(...),\n    # other inputs\n  ),\n  nav_panel(\n    \"Page 1\",\n    # Main content area\n    plotOutput(\"plot\")\n  ),\n)"
   },
   {
     "objectID": "slides/slides-02-bslib.html#local-sidebars",
@@ -729,7 +729,7 @@
     "href": "slides/slides-02-bslib.html#popover",
     "title": "Modern UI with bslib",
     "section": "",
-    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(fontawesome)\n\nui &lt;- page_fillable(\n  class = \"justify-content-center align-items-center\",\n\n)\n\nserver &lt;- function(input, output, session) {\n\n}\n\nshinyApp(ui, server)\n\n## file: notes.R\n# * The target can be anything, typically a `button()` or icon\n#     * `{bsicons}` or `{fontawesome}`\n#     * Important to give the icon a title\n# \n# * The content can be anything, including inputs!\n\npopover(\n  fontawesome::fa_i(\"gear\", title = \"Settings\"),\n  title = \"Plot settings\",\n  \"I'm the popover content.\"\n)\n\ncard(\n  card_header(\"Card Title\"),\n  \"A map or a plot would go here.\",\n  max_height = 300\n)\n\ncard(\n  card_header(\n    class = \"hstack\",\n    \"Card Title\",\n    popover(\n      fontawesome::fa_i(\"gear\", title = \"Settings\", class = \"ms-auto\"),\n      title = \"Plot settings\",\n      checkboxInput(\"show_legend\", \"Show legend\", TRUE),\n      input_switch(\"show_legend\", \"Show legend\", TRUE)\n    )\n  ),\n  \"A map or a plot would go here.\",\n  max_height = 300\n)"
+    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(fontawesome)\n\nui &lt;- page_fillable(\n  class = \"justify-content-center align-items-center\",\n\n)\n\nserver &lt;- function(input, output, session) {\n\n}\n\nshinyApp(ui, server)\n\n## file: notes.R\n# * The target can be anything, typically a `button()` or icon\n#     * `{bsicons}` or `{fontawesome}`\n#     * Important to give the icon a title\n#\n# * The content can be anything, including inputs!\n\npopover(\n  fontawesome::fa_i(\"gear\", title = \"Settings\"),\n  title = \"Plot settings\",\n  \"I'm the popover content.\"\n)\n\ncard(\n  card_header(\"Card Title\"),\n  \"A map or a plot would go here.\",\n  max_height = 300\n)\n\ncard(\n  card_header(\n    class = \"hstack\",\n    \"Card Title\",\n    popover(\n      fontawesome::fa_i(\"gear\", title = \"Settings\", class = \"ms-auto\"),\n      title = \"Plot settings\",\n      checkboxInput(\"show_legend\", \"Show legend\", TRUE),\n      input_switch(\"show_legend\", \"Show legend\", TRUE)\n    )\n  ),\n  \"A map or a plot would go here.\",\n  max_height = 300\n)"
   },
   {
     "objectID": "slides/slides-02-bslib.html#popover-in-a-card-header",

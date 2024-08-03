@@ -2,7 +2,7 @@
 title: Bit by Bit
 subtitle: Elements of Code and Style
 author: Level Up with Shiny for R<br><code>posit::conf(2024)</code>
-date: last-modified
+date: 2024-08-12
 
 format:
   utopia-slides-revealjs:
@@ -20,7 +20,7 @@ revealjs-plugins:
 filters:
   - webr
 
-webr: 
+webr:
   show-startup-message: false
 
 editor:
@@ -29,7 +29,7 @@ editor:
 
 # Coding for humans {.middle}
 
-## 
+##
 
 ::: {.w-two-thirds .center}
 ```{.r}
@@ -342,7 +342,7 @@ Open `_examples/02-bslib/99_app.R` in the IDE as an example.
 {{< include ../../_examples/04-style/middleware.R >}}
 ```
 
-## 
+##
 
 ```{.r filename="shiny/R/knit.R" code-line-numbers="|7-8|1-3"}
 # If there's an R Markdown runtime option set but it isn't set to Shiny, then
@@ -380,7 +380,7 @@ card_image <- function(file = NULL, ..., src = NULL) {
       )
     }
   }
-  
+
   htmltools::tags$img(src = src, ...)
 }
 ```

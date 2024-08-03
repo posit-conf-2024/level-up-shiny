@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.55">
 
   <meta name="author" content="Level Up with Shiny for R posit::conf(2024)">
-  <meta name="dcterms.date" content="2024-08-03">
+  <meta name="dcterms.date" content="2024-08-12">
   <title>Level Up with Shiny for R – Bit by Bit</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -679,7 +679,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"options":{"editor-word-wrap":"true","warning":"true","editor-max-height":"","editor-font-scale":"0.5","editor-quick-suggestions":"false","output":"true","autorun":"false","read-only":"false","context":"interactive","results":"markup","message":"true","comment":"","dpi":72,"fig-width":7,"out-height":"","out-width":"700px","label":"unnamed-chunk-1","fig-cap":"","classes":"","fig-height":5},"id":1,"code":"card_image <- function(file = NULL, ..., src = NULL) {\n  if (is.null(src)) {\n    if (grepl(\"^([[:alnum:]]+:)?//|data:\", file)) {\n      src <- file\n    } else {\n      if (!file.exists(file)) {\n        rlang::abort(sprintf(\"`file` does not exist: %s\", file))\n      }\n      src <- base64enc::dataURI(\n        file = file,\n        mime = mime_type %||% mime::guess_type(file)\n      )\n    }\n  }\n  \n  htmltools::tags$img(src = src, ...)\n}"},{"options":{"editor-word-wrap":"true","warning":"true","editor-max-height":"","editor-font-scale":"0.5","editor-quick-suggestions":"false","output":"true","autorun":"false","read-only":"false","context":"interactive","results":"markup","message":"true","comment":"","dpi":72,"fig-width":7,"out-height":"","out-width":"700px","label":"unnamed-chunk-2","fig-cap":"","classes":"","fig-height":5},"id":2,"code":"input <- list(type = \"cat\")\n\nif (input$type == \"types\") {\n  inspectdf::inspect_types(df)\n} else if (input$type == \"cat\") {\n  inspectdf::inspect_cat(df)\n} else if (input$type == \"num\") {\n  inspectdf::inspect_num(df)\n} else if (input$type == \"na\") {\n  inspectdf::inspect_na(df)\n}"}];
+  globalThis.qwebrCellDetails = [{"code":"card_image <- function(file = NULL, ..., src = NULL) {\n  if (is.null(src)) {\n    if (grepl(\"^([[:alnum:]]+:)?//|data:\", file)) {\n      src <- file\n    } else {\n      if (!file.exists(file)) {\n        rlang::abort(sprintf(\"`file` does not exist: %s\", file))\n      }\n      src <- base64enc::dataURI(\n        file = file,\n        mime = mime_type %||% mime::guess_type(file)\n      )\n    }\n  }\n\n  htmltools::tags$img(src = src, ...)\n}","options":{"output":"true","fig-width":7,"editor-max-height":"","out-height":"","warning":"true","editor-word-wrap":"true","fig-height":5,"out-width":"700px","classes":"","context":"interactive","autorun":"false","label":"unnamed-chunk-1","read-only":"false","comment":"","results":"markup","editor-quick-suggestions":"false","editor-font-scale":"0.5","message":"true","fig-cap":"","dpi":72},"id":1},{"code":"input <- list(type = \"cat\")\n\nif (input$type == \"types\") {\n  inspectdf::inspect_types(df)\n} else if (input$type == \"cat\") {\n  inspectdf::inspect_cat(df)\n} else if (input$type == \"num\") {\n  inspectdf::inspect_num(df)\n} else if (input$type == \"na\") {\n  inspectdf::inspect_na(df)\n}","options":{"output":"true","fig-width":7,"editor-max-height":"","out-height":"","warning":"true","editor-word-wrap":"true","fig-height":5,"out-width":"700px","classes":"","context":"interactive","autorun":"false","label":"unnamed-chunk-2","read-only":"false","comment":"","results":"markup","editor-quick-suggestions":"false","editor-font-scale":"0.5","message":"true","fig-cap":"","dpi":72},"id":2}];
 
   </script>
   <script type="module">
@@ -2177,7 +2177,7 @@ Level Up with Shiny for R<br><code>posit::conf(2024)</code>
 </div>
 </div>
 
-  <p class="date">2024-08-03</p>
+  <p class="date">2024-08-12</p>
 </section>
 <section>
 <section id="coding-for-humans" class="title-slide slide level1 middle center">
