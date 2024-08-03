@@ -326,10 +326,10 @@ theme = bs_theme(
 #| orientation: horizontal
 #| viewerHeight: "100%"
 
-{{< include ../../_examples/01-bslib/01_app.R >}}
+{{< include ../../_examples/02-bslib/01_app.R >}}
 
 ## file: notes.R
-# => examples/01-bslib/01_app.R
+# => examples/02-bslib/01_app.R
 # * Compare with page_fillable()
 # * fill items and fillable containers
 # * Add card()
@@ -495,7 +495,7 @@ card(
 #| components: [viewer]
 #| viewerHeight: "400px"
 
-{{< include ../../_examples/01-bslib/03_app.R >}}
+{{< include ../../_examples/02-bslib/03_app.R >}}
 ```
 :::
 
@@ -568,7 +568,7 @@ layout_sidebar(
 #| orientation: horizontal
 #| viewerHeight: "100%"
 
-{{< include ../../_examples/01-bslib/03_app.R >}}
+{{< include ../../_examples/02-bslib/03_app.R >}}
 
 ## file: notes.R
 # * Use page_sidebar(), move state selector there
@@ -600,10 +600,10 @@ Use `page_sidebar()` to move the state selector to a global sidebar.
 #| orientation: horizontal
 #| viewerHeight: "100%"
 
-{{< include ../../_examples/01-bslib/04_app.R >}}
+{{< include ../../_examples/02-bslib/04_app.R >}}
 
 ## file: solution.R
-{{< include ../../_examples/01-bslib/04_end_app.R >}}
+{{< include ../../_examples/02-bslib/04_end_app.R >}}
 ```
 
 ::: notes
@@ -684,7 +684,7 @@ layout_columns(
 #| orientation: horizontal
 #| viewerHeight: "100%"
 
-{{< include ../../_examples/01-bslib/05_app.R >}}
+{{< include ../../_examples/02-bslib/05_app.R >}}
 
 ## file: notes.R
 value_box(
@@ -724,7 +724,7 @@ value_box(
 #| orientation: horizontal
 #| viewerHeight: "100%"
 
-{{< include ../../_examples/01-bslib/06_app.R >}}
+{{< include ../../_examples/02-bslib/06_app.R >}}
 
 ## file: notes.R
 # * accordion()
@@ -732,7 +732,7 @@ value_box(
 # * fa_i: map, users
 
 ## file: solution.R
-{{< include ../../_examples/01-bslib/06_end_app.R >}}
+{{< include ../../_examples/02-bslib/06_end_app.R >}}
 ```
 
 ## {#tooltip .fullscreen}
