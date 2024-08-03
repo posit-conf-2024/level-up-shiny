@@ -5,6 +5,7 @@
 .DS_Store
 
 /.quarto/
+/website/slides/.quarto
 /website/_site/
 /_dev
 
