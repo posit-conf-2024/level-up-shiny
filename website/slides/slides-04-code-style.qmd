@@ -479,6 +479,10 @@ vb_n_undergrads
 ```
 :::
 
+::: {.callout-caution title="Did you know" .fragment}
+All IDs should be unique in an application. See [`?shiny::NS()`](https://shiny.posit.co/r/reference/shiny/latest/ns).
+:::
+
 ## Naming shiny things (inputs)
 
 Follow the data and how it's supposed to be used.
