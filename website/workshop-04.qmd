@@ -5,3 +5,24 @@ description-short: Organizing and writing code for maintainability and readabili
 duration: 45min
 time: 11:00 - 11:45
 ---
+
+::: {.ratio .ratio-16x9}
+{{< revealjs "slides/slides-04-code-style.html" >}}
+:::
+
+## Packages
+
+* [styler](https://styler.r-lib.org/)
+* [grkstyle](https://github.com/gadenbuie/grkstyle)
+
+## Resources
+
+* [How Developers Choose Names](https://www.cs.huji.ac.il/~feit/papers/Names20TSE.pdf), Dror G. Fietelson
+* [The Programmer's Brain](https://www.manning.com/books/the-programmers-brain), Felienne Hermans
+* [Explaining variable](https://blog.thepete.net/blog/2021/06/24/explaining-variable/), Pete Hodgson
+* [Why comment your code as little (and as well) as possible - R-hub blog](https://blog.r-hub.io/2023/01/26/code-comments-self-explaining-code/)
+* [Coding style, coding etiquette - R-hub blog](https://blog.r-hub.io/2022/03/21/code-style/)
+* [Code smells and feels](https://www.youtube.com/watch?v=7oyiPBjLAWY), Jenny Bryan
+* [The Art of Readable Code](https://www.oreilly.com/library/view/the-art-of/9781449318482/), Dustin Boswell and Trevor Foucher
+* [Refactoring: Improving the Design of Existing Code](https://www.oreilly.com/library/view/refactoring-improving-the/9780134757681/), Martin Fowler
+* [Object of type ‘closure’ is not subsettable](https://www.youtube.com/watch?v=vgYS-F8opgE&list=PLNH8Eqj5v_KbhyWsHjWvYbt2TGiD3OlPc), Jenny Bryan (rstudio::conf(2020))
