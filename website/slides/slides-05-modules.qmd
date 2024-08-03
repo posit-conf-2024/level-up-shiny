@@ -1,0 +1,34 @@
+---
+title: "Module: module"
+subtitle: Level Up with Shiny for R
+author: <code>posit::conf(2024)</code>
+date: 2024-08-12
+
+format:
+  utopia-slides-revealjs:
+    html-math-method: plain
+    revealjs-url: slides/assets/reveal.js-4.5.0
+    slide-level: 2
+    # chalkboard: true
+    theme:
+      - slides.scss
+      - assets/code-blocked.scss
+
+revealjs-plugins:
+  - utopia-slides
+
+filters:
+  - webr
+
+webr:
+  show-startup-message: false
+
+editor:
+  render-on-save: true
+---
+
+# You might not need a module {.middle}
+
+# Modules {.middle}
+
+# Modules Plus {.middle}
