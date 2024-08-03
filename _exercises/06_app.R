@@ -36,26 +36,6 @@ ui <- page_sidebar(
     sliderInput("rate_admissions", "Admissions Rate", min = 0, max = 1, value = c(0, 1), step = 0.1),
     sliderInput("rate_completion", "Completion Rate", min = 0, max = 1, value = c(0, 1), step = 0.1),
     sliderInput("cost_avg", "Average Cost", min = 0, max = 50000, value = c(0, 50000), step = 1000)
-    accordion(
-      multiple = FALSE,
-      accordion_panel(
-        title = "Location",
-        icon = fa_i("map"),
-      ),
-      accordion_panel(
-        title = "Student Population",
-        icon = fa_i("users"),
-      ),
-      accordion_panel(
-        title = "Admissions",
-        icon = fa_i("graduation-cap"),
-      ),
-      accordion_panel(
-        title = "Cost",
-        icon = fa_i("money-check-dollar"),
-      )
-    ),
-    input_dark_mode()
   ),
   layout_column_wrap(
     width = 1 / 3,

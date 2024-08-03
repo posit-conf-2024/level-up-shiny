@@ -6,6 +6,8 @@ library(leaflet)
 library(fontawesome)
 library(collegeScorecard)
 
+thematic::thematic_shiny()
+
 # UI --------------------------------------------------------------------------
 
 ui <- page_sidebar(
