@@ -13,6 +13,8 @@ format:
     theme:
       - slides.scss
       - assets/code-blocked.scss
+    css:
+      - ../auto-dark-mode.css
 
 revealjs-plugins:
   - utopia-slides
@@ -391,6 +393,26 @@ You _could use comments_ here to explain how `file` becomes `src` and the regula
 Better yet, use an explanatory variable for the `grepl`
 and an explanatory function for `encode_file_as_data_uri()`.
 :::
+
+## Hot tip: Use early returns
+
+Use this one weird trick to make your code easier to read!
+
+```{webr-r}
+shiny_rmd_warning <- function() {
+  runtime <- knitr::opts_knit$get("rmarkdown.runtime")
+  if (!is.null(runtime) && runtime != "shiny") {
+    # note that the RStudio IDE checks for this specific string to detect Shiny
+    # applications in static document
+    list(structure(
+      "Shiny application in a static R Markdown document",
+      class = "rmd_warning"
+    ))
+  } else {
+    NULL
+  }
+}
+```
 
 # Naming things is hard {.middle}
 
