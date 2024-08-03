@@ -1,0 +1,56 @@
+/*-- scss:rules --*/
+// Define a Sass map with the class names and their corresponding background colors
+$code-colors: (
+  at: #657422,
+  ss: #20794d,
+  an: #5e5e5e,
+  fu: #4758ab,
+  st: #20794d,
+  cf: #003b4f,
+  op: #5e5e5e,
+  er: #ad0000,
+  bn: #ad0000,
+  al: #ad0000,
+  va: #111111,
+  pp: #ad0000,
+  in: #5e5e5e,
+  vs: #20794d,
+  wa: #5e5e5e,
+  do: #5e5e5e,
+  im: #00769e,
+  ch: #20794d,
+  dt: #ad0000,
+  fl: #ad0000,
+  co: #5e5e5e,
+  cv: #5e5e5e,
+  cn: #8f5902,
+  sc: #5e5e5e,
+  dv: #ad0000,
+  kw: #003b4f,
+);
+
+// Loop through the map and generate the styles
+.code-blocked {
+  @each $key, $value in $code-colors {
+    code span.#{$key} {
+      background-color: $value;
+      border-radius: 2px;
+      transition: background-color 250ms ease-in-out;
+    }
+    code span[id]:hover span.#{$key} {
+      background-color: rgba($value, 0.15);
+    }
+
+    code span[id]:hover + span[id] span.#{$key} {
+      background-color: rgba($value, 0.66);
+    }
+
+    code span[id]:has(+ span[id]:hover) span.#{$key} {
+      background-color: rgba($value, 0.66);
+    }
+  }
+}
+
+.code-left-edge code span[id] > span:first-of-type {
+  border-left: 2px solid red;
+}

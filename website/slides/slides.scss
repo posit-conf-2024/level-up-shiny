@@ -45,6 +45,11 @@
   max-height: 800px;
 }
 
+.reveal pre code {
+  max-height: none;
+  white-space: pre;
+}
+
 .reveal .sourceCode:has(> .shinylive-wrapper) {
   border: none;
   background-color: inherit;
