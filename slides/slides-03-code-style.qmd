@@ -17,6 +17,12 @@ format:
 revealjs-plugins:
   - utopia-slides
 
+filters:
+  - webr
+
+webr: 
+  show-startup-message: false
+
 editor:
   render-on-save: true
 ---
@@ -288,6 +294,48 @@ grkstyle::grk_style_text(card_example)
 :::
 :::
 
+## Structural Comments
+
+```{.r}
+# Setup -----------------------------------------------------------------------
+
+# UI --------------------------------------------------------------------------
+  # | Sidebar ----
+  # | - Accordion ----
+  # | - Other Inputs ----
+  # | Main ----
+  # | - Value Boxes ----
+  # | - Cards ----
+
+# Server ----------------------------------------------------------------------
+server <- function(input, output, session) {
+  # Value Boxes ----
+  # Plot ----
+  # Map ----
+}
+```
+
+Open `_examples/01-bslib/99_app.R` in the IDE as an example.
+
+##
+
+```{.r}
+{{< include ../../_examples/02-style/shiny-with-comments.R >}}
+```
+
+## How to write better comments
+
+::: incremental
+1. Some say: _Comments should explain why, not what (or the how)_<br>
+   [NOPE! What, why and how are all allowed]{.fragment .purple}
+
+1. Comments should help make the code **easier to read and understand**.
+
+1. Explain the code to someone else:
+    * What won't they know unless they talk to you?
+    * What might they get wrong if weren't there?
+:::
+
 ##
 
 ```{.r filename="shiny/R/middleware.R"}
@@ -315,4 +363,177 @@ shiny_rmd_warning <- function() {
 }
 ```
 
-## 
+## What does this code do?
+
+```{webr-r}
+card_image <- function(file = NULL, ..., src = NULL) {
+  if (is.null(src)) {
+    if (grepl("^([[:alnum:]]+:)?//|data:", file)) {
+      src <- file
+    } else {
+      if (!file.exists(file)) {
+        rlang::abort(sprintf("`file` does not exist: %s", file))
+      }
+      src <- base64enc::dataURI(
+        file = file,
+        mime = mime_type %||% mime::guess_type(file)
+      )
+    }
+  }
+  
+  htmltools::tags$img(src = src, ...)
+}
+```
+
+::: notes
+You _could use comments_ here to explain how `file` becomes `src` and the regular expression.
+
+Better yet, use an explanatory variable for the `grepl`
+and an explanatory function for `encode_file_as_data_uri()`.
+:::
+
+# Naming things is hard {.middle}
+
+## What will this function do?
+
+```{r avg-sat-scores}
+library(collegeScorecard)
+library(dplyr)
+library(ggplot2)
+
+avg_sat_scores <- function(scorecard, year_start = "2020-21") {
+  scorecard |>
+    filter(
+      !is.na(score_sat_avg),
+      academic_year >= year_start
+    ) |>
+    mutate(
+      admissions_rate = case_when(
+        rate_admissions < 0.5  ~ "Highly Selective",
+        rate_admissions >= 0.5 ~ "Wide Acceptance",
+        .default = "Unknown"
+      )
+    ) |>
+    ggplot() +
+    aes(score_sat_avg, fill = academic_year) +
+    geom_density(alpha = 0.5, show.legend = FALSE) +
+    facet_grid(academic_year ~ admissions_rate, switch = "y") +
+    labs(
+      x = "Average SAT Score",
+      y = NULL,
+    ) +
+    theme_minimal(18) +
+    theme(
+      strip.text.y.left = element_text(angle = 0),
+      axis.text.y = element_blank(),
+    )
+}
+```
+
+```{r}
+#| echo: true
+#| output-location: fragment
+#| fig.asp: 0.5
+avg_sat_scores(scorecard, "2020-21")
+```
+
+::: fragment
+**What's a better name?**
+:::
+
+## Feitelson's three-step plan
+
+1. Select the concepts to include in the name.
+1. Choose the words to represent each concept.
+1. Construct a name using these words.
+
+::: aside
+[How Developers Choose Names](https://www.cs.huji.ac.il/~feit/papers/Names20TSE.pdf), Dror G. Fietelson \
+[The Programmer's Brain](https://www.manning.com/books/the-programmers-brain), Felienne Hermans \
+[Explaining variable](https://blog.thepete.net/blog/2021/06/24/explaining-variable/), Pete Hodgson
+:::
+
+## Give this function a better name
+
+```{r}
+#| echo: true
+#| ref.label: avg-sat-scores
+
+```
+
+## Naming shiny things (outputs)
+
+::: {.text-center .fs-step-4}
+```
+plot_cost
+plot_cost_avg
+plot_cost_avg_by_month
+```
+:::
+
+::: {.text-center .fs-step-4 .fragment}
+```
+text_n_undergrads
+ui_n_undergrads
+vb_n_undergrads
+```
+:::
+
+## Naming shiny things (inputs)
+
+Follow the data and how it's supposed to be used.
+
+::: {.text-center .fs-step-4}
+```
+input$n_undergrads
+input$cost_avg_range
+input$cost_avg_min
+```
+:::
+
+## Naming shiny things (other things)
+
+What are some other useful prefixes in Shiny?
+
+::: {.text-center .fs-step-5}
+```{=html}
+<pre class="editable-code-block" onkeydown="(ev => ev.stopPropagation())(event)" onkeypress="(ev => ev.stopPropagation())(event)">
+<code contenteditable>* example_
+* example_
+* example_
+</code>
+</pre>
+```
+:::
+
+# Switch away from if {.middle}
+
+##
+
+::: {.fs-step-4}
+```{webr-r}
+input <- list(type = "cat")
+
+if (input$type == "types") {
+  inspectdf::inspect_types(df)
+} else if (input$type == "cat") {
+  inspectdf::inspect_cat(df)
+} else if (input$type == "num") {
+  inspectdf::inspect_num(df)
+} else if (input$type == "na") {
+  inspectdf::inspect_na(df)
+}
+```
+:::
+
+##
+
+```{.r}
+switch(
+  input$type,
+  "types" = inspectdf::inspect_types(df),
+  "cat" = inspectdf::inspect_cat(df),
+  "num" = inspectdf::inspect_num(df),
+  "na" = inspectdf::inspect_na(df)
+)
+```
