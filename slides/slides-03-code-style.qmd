@@ -214,6 +214,7 @@ grkstyle::grk_reindent_spaces_dir()
 ##
 
 ```{r}
+#| echo: true
 card_example <- r"(
 card(card_header("Cost vs Earnings"),
      layout_sidebar(sidebar = sidebar(
@@ -227,6 +228,8 @@ card(card_header("Cost vs Earnings"),
 )"
 ```
 
+##
+
 ::: {.flex}
 ::: {.w-50}
 ```{r}
@@ -235,7 +238,7 @@ styler::style_text(card_example)
 ```
 :::
 
-::: {.w-50}
+::: {.w-50 .fragment}
 ```{r}
 #| echo: true
 #| attr.out:
@@ -263,55 +266,18 @@ grkstyle::grk_style_text(card_example)
 ![](assets/code-comments-2.png)
 :::
 
-## 
-
-```r
-# Load the Shiny library
-library(shiny)
-
-# Define the user interface for the application
-ui <- fluidPage(
-  
-  # Create a title for the application
-  titlePanel("My Shiny App"), 
-  
-  # Create a sidebar layout
-  sidebarLayout(
-    
-    # Define the sidebar panel
-    sidebarPanel(
-      # Create a numeric input field
-      numericInput("num", "Enter a number:", value = 10) 
-    ),
-    
-    # Define the main panel
-    mainPanel(
-      # Output the result as a text
-      textOutput("result") 
-    )
-  )
-)
-
-# Define the server logic for the application
-server <- function(input, output) {
-  
-  # Create a reactive expression to calculate the square of the input
-  output$result <- renderText({
-    # Calculate the square of the input number
-    input$num^2 
-  })
-}
-
-# Run the application
-shinyApp(ui = ui, server = server)
-```
-
-## Comment types
+## Comments provide
 
 ::: {.fs-step-4}
 ```
-# Structural ----
+# Information and context
 ```
+
+::: {.fragment .m-block-start-m}
+```
+# Structure ----
+```
+:::
 
 ::: {.fragment .m-block-start-m}
 ```
@@ -320,22 +286,21 @@ shinyApp(ui = ui, server = server)
 #' @param output The output file path
 ```
 :::
-
-::: {.fragment .m-block-start-m}
-```
-# Informational
-```
-:::
 :::
 
-## {auto-animate="true"}
+##
 
-```{.r code-line-numbers="|1-3|5-7|8-13"}
+```{.r filename="shiny/R/middleware.R"}
+{{< include ../../_examples/02-style/middleware.R >}}
+```
+
+## 
+
+```{.r filename="shiny/R/knit.R" code-line-numbers="|7-8|1-3"}
 # If there's an R Markdown runtime option set but it isn't set to Shiny, then
 # return a warning indicating the runtime is inappropriate for this object.
 # Returns NULL in all other cases.
 shiny_rmd_warning <- function() {
-  # Check if the R markdown runtime option is set to something not Shiny
   runtime <- knitr::opts_knit$get("rmarkdown.runtime")
   if (!is.null(runtime) && runtime != "shiny") {
     # note that the RStudio IDE checks for this specific string to detect Shiny
@@ -350,28 +315,4 @@ shiny_rmd_warning <- function() {
 }
 ```
 
-## {auto-animate=true}
-
-```{.r}
-#' Warn if runtime option isn't "shiny"
-#' 
-#' If there's an R Markdown runtime option set but it isn't set to Shiny, then
-#' return a warning indicating the runtime is inappropriate for this object.
-#' 
-#' @return An `rmd_warning` object, or `NULL` if `runtime` is `NULL`
-#'   or `"shiny"`.
-#' @keywords internal
-shiny_rmd_warning <- function() {
-  runtime <- knitr::opts_knit$get("rmarkdown.runtime")
-  if (!is.null(runtime) && runtime != "shiny") {
-    # note that the RStudio IDE checks for this specific string to detect Shiny
-    # applications in static document
-    list(structure(
-      "Shiny application in a static R Markdown document",
-      class = "rmd_warning"
-    ))
-  } else {
-    NULL
-  }
-}
-```
+## 

@@ -584,10 +584,26 @@ document.querySelectorAll('.code-left-edge').forEach((block) => {
 </section>
 <section id="section-5" class="slide level2">
 <h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>card_example <span class="ot">&lt;-</span> r<span class="st">"(</span></span>
+<span id="cb7-2"><a></a><span class="st">card(card_header("</span>Cost vs Earnings<span class="st">"),</span></span>
+<span id="cb7-3"><a></a><span class="st">     layout_sidebar(sidebar = sidebar(</span></span>
+<span id="cb7-4"><a></a><span class="st">                    open = FALSE, position = "</span>right<span class="st">",</span></span>
+<span id="cb7-5"><a></a><span class="st">                    radioButtons("</span>cost_group_by<span class="st">",</span></span>
+<span id="cb7-6"><a></a><span class="st">                                 "</span>Group By<span class="st">",</span></span>
+<span id="cb7-7"><a></a><span class="st">                                 choices = c("</span>Predominant Degree<span class="st">" = "</span>deg_predominant<span class="st">",</span></span>
+<span id="cb7-8"><a></a><span class="st">                                             "</span>Campus Setting<span class="st">" = "</span>locale_type<span class="st">",</span></span>
+<span id="cb7-9"><a></a><span class="st">                                             "</span>Testing Requirements<span class="st">" = "</span>adm_req_test<span class="st">"))),</span></span>
+<span id="cb7-10"><a></a><span class="st">                    plotOutput("</span>plot_cost<span class="st">")), full_screen = TRUE)</span></span>
+<span id="cb7-11"><a></a><span class="st">)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
 <div class="flex">
 <div class="w-50">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>styler<span class="sc">::</span><span class="fu">style_text</span>(card_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>styler<span class="sc">::</span><span class="fu">style_text</span>(card_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>card(card_header("Cost vs Earnings"),
   layout_sidebar(
@@ -609,9 +625,9 @@ document.querySelectorAll('.code-left-edge').forEach((block) => {
 </div>
 </div>
 </div>
-<div class="w-50">
+<div class="w-50 fragment">
 <div class="cell" data-attr.out="{&quot;height&quot;:&quot;auto&quot;}">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>grkstyle<span class="sc">::</span><span class="fu">grk_style_text</span>(card_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>grkstyle<span class="sc">::</span><span class="fu">grk_style_text</span>(card_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>card(
   card_header("Cost vs Earnings"),
@@ -659,104 +675,195 @@ document.querySelectorAll('.code-left-edge').forEach((block) => {
 <p><img data-src="assets/code-comments-2.png"></p>
 </div>
 </section>
-<section id="section-6" class="slide level2">
-<h2></h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># Load the Shiny library</span></span>
-<span id="cb11-2"><a></a><span class="fu">library</span>(shiny)</span>
-<span id="cb11-3"><a></a></span>
-<span id="cb11-4"><a></a><span class="co"># Define the user interface for the application</span></span>
-<span id="cb11-5"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb11-6"><a></a>  </span>
-<span id="cb11-7"><a></a>  <span class="co"># Create a title for the application</span></span>
-<span id="cb11-8"><a></a>  <span class="fu">titlePanel</span>(<span class="st">"My Shiny App"</span>), </span>
-<span id="cb11-9"><a></a>  </span>
-<span id="cb11-10"><a></a>  <span class="co"># Create a sidebar layout</span></span>
-<span id="cb11-11"><a></a>  <span class="fu">sidebarLayout</span>(</span>
-<span id="cb11-12"><a></a>    </span>
-<span id="cb11-13"><a></a>    <span class="co"># Define the sidebar panel</span></span>
-<span id="cb11-14"><a></a>    <span class="fu">sidebarPanel</span>(</span>
-<span id="cb11-15"><a></a>      <span class="co"># Create a numeric input field</span></span>
-<span id="cb11-16"><a></a>      <span class="fu">numericInput</span>(<span class="st">"num"</span>, <span class="st">"Enter a number:"</span>, <span class="at">value =</span> <span class="dv">10</span>) </span>
-<span id="cb11-17"><a></a>    ),</span>
-<span id="cb11-18"><a></a>    </span>
-<span id="cb11-19"><a></a>    <span class="co"># Define the main panel</span></span>
-<span id="cb11-20"><a></a>    <span class="fu">mainPanel</span>(</span>
-<span id="cb11-21"><a></a>      <span class="co"># Output the result as a text</span></span>
-<span id="cb11-22"><a></a>      <span class="fu">textOutput</span>(<span class="st">"result"</span>) </span>
-<span id="cb11-23"><a></a>    )</span>
-<span id="cb11-24"><a></a>  )</span>
-<span id="cb11-25"><a></a>)</span>
-<span id="cb11-26"><a></a></span>
-<span id="cb11-27"><a></a><span class="co"># Define the server logic for the application</span></span>
-<span id="cb11-28"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb11-29"><a></a>  </span>
-<span id="cb11-30"><a></a>  <span class="co"># Create a reactive expression to calculate the square of the input</span></span>
-<span id="cb11-31"><a></a>  output<span class="sc">$</span>result <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
-<span id="cb11-32"><a></a>    <span class="co"># Calculate the square of the input number</span></span>
-<span id="cb11-33"><a></a>    input<span class="sc">$</span>num<span class="sc">^</span><span class="dv">2</span> </span>
-<span id="cb11-34"><a></a>  })</span>
-<span id="cb11-35"><a></a>}</span>
-<span id="cb11-36"><a></a></span>
-<span id="cb11-37"><a></a><span class="co"># Run the application</span></span>
-<span id="cb11-38"><a></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="comment-types" class="slide level2">
-<h2>Comment types</h2>
+<section id="comments-provide" class="slide level2">
+<h2>Comments provide</h2>
 <div class="fs-step-4">
-<pre><code># Structural ----</code></pre>
+<pre><code># Information and context</code></pre>
+<div class="fragment m-block-start-m">
+<pre><code># Structure ----</code></pre>
+</div>
 <div class="fragment m-block-start-m">
 <pre><code>#' Documentation
 #'
 #' @param output The output file path</code></pre>
 </div>
-<div class="fragment m-block-start-m">
-<pre><code># Informational</code></pre>
-</div>
 </div>
 </section>
-<section id="section-7" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
-<div class="sourceCode" id="cb15" data-code-line-numbers="|1-3|5-7|8-13"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb15-1" class="hljs-ln-code"><a></a><span class="co"># If there's an R Markdown runtime option set but it isn't set to Shiny, then</span></span>
-<span id="cb15-2" class="hljs-ln-code"><a></a><span class="co"># return a warning indicating the runtime is inappropriate for this object.</span></span>
-<span id="cb15-3" class="hljs-ln-code"><a></a><span class="co"># Returns NULL in all other cases.</span></span>
-<span id="cb15-4" class="hljs-ln-code"><a></a>shiny_rmd_warning <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb15-5" class="hljs-ln-code"><a></a>  <span class="co"># Check if the R markdown runtime option is set to something not Shiny</span></span>
-<span id="cb15-6" class="hljs-ln-code"><a></a>  runtime <span class="ot">&lt;-</span> knitr<span class="sc">::</span>opts_knit<span class="sc">$</span><span class="fu">get</span>(<span class="st">"rmarkdown.runtime"</span>)</span>
-<span id="cb15-7" class="hljs-ln-code"><a></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(runtime) <span class="sc">&amp;&amp;</span> runtime <span class="sc">!=</span> <span class="st">"shiny"</span>) {</span>
-<span id="cb15-8" class="hljs-ln-code"><a></a>    <span class="co"># note that the RStudio IDE checks for this specific string to detect Shiny</span></span>
-<span id="cb15-9" class="hljs-ln-code"><a></a>    <span class="co"># applications in static document</span></span>
-<span id="cb15-10" class="hljs-ln-code"><a></a>    <span class="fu">list</span>(<span class="fu">structure</span>(</span>
-<span id="cb15-11" class="hljs-ln-code"><a></a>      <span class="st">"Shiny application in a static R Markdown document"</span>,</span>
-<span id="cb15-12" class="hljs-ln-code"><a></a>      <span class="at">class =</span> <span class="st">"rmd_warning"</span></span>
-<span id="cb15-13" class="hljs-ln-code"><a></a>    ))</span>
-<span id="cb15-14" class="hljs-ln-code"><a></a>  } <span class="cf">else</span> {</span>
-<span id="cb15-15" class="hljs-ln-code"><a></a>    <span class="cn">NULL</span></span>
-<span id="cb15-16" class="hljs-ln-code"><a></a>  }</span>
-<span id="cb15-17" class="hljs-ln-code"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>shiny/R/middleware.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb15" data-filename="shiny/R/middleware.R"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># This file contains a general toolkit for routing and combining bits of</span></span>
+<span id="cb15-2"><a></a><span class="co"># HTTP-handling logic. It is similar in spirit to Rook (and Rack, and WSGI, and</span></span>
+<span id="cb15-3"><a></a><span class="co"># Connect, and...) but adds cascading and routing.</span></span>
+<span id="cb15-4"><a></a><span class="co">#</span></span>
+<span id="cb15-5"><a></a><span class="co"># This file is called "middleware" because that's the term used for these bits</span></span>
+<span id="cb15-6"><a></a><span class="co"># of logic in these other frameworks. However, our code uses the word "handler"</span></span>
+<span id="cb15-7"><a></a><span class="co"># so we'll stick to that for the rest of this document; just know that they're</span></span>
+<span id="cb15-8"><a></a><span class="co"># basically the same concept.</span></span>
+<span id="cb15-9"><a></a><span class="co">#</span></span>
+<span id="cb15-10"><a></a><span class="co"># ## Intro to handlers</span></span>
+<span id="cb15-11"><a></a><span class="co">#</span></span>
+<span id="cb15-12"><a></a><span class="co"># A **handler** (or sometimes, **httpHandler**) is a function that takes a</span></span>
+<span id="cb15-13"><a></a><span class="co"># `req` parameter--a request object as described in the Rook specification--and</span></span>
+<span id="cb15-14"><a></a><span class="co"># returns `NULL`, or an `httpResponse`.</span></span>
+<span id="cb15-15"><a></a><span class="co">#</span></span>
+<span id="cb15-16"><a></a><span class="do">## ------------------------------------------------------------------------</span></span>
+<span id="cb15-17"><a></a></span>
+<span id="cb15-18"><a></a><span class="co">#' Create an HTTP response object</span></span>
+<span id="cb15-19"><a></a><span class="co">#'</span></span>
+<span id="cb15-20"><a></a><span class="co">#' @param status HTTP status code for the response.</span></span>
+<span id="cb15-21"><a></a><span class="co">#' @param content_type The value for the `Content-Type` header.</span></span>
+<span id="cb15-22"><a></a><span class="co">#' @param content The body of the response, given as a single-element character</span></span>
+<span id="cb15-23"><a></a><span class="co">#'   vector (will be encoded as UTF-8) or a raw vector.</span></span>
+<span id="cb15-24"><a></a><span class="co">#' @param headers A named list of additional headers to include. Do not include</span></span>
+<span id="cb15-25"><a></a><span class="co">#'   `Content-Length` (as it is automatically calculated) or `Content-Type` (the</span></span>
+<span id="cb15-26"><a></a><span class="co">#'   `content_type` argument is used instead).</span></span>
+<span id="cb15-27"><a></a><span class="co">#'</span></span>
+<span id="cb15-28"><a></a><span class="co">#' @examples</span></span>
+<span id="cb15-29"><a></a><span class="co">#' httpResponse(</span></span>
+<span id="cb15-30"><a></a><span class="co">#'   status = 405L,</span></span>
+<span id="cb15-31"><a></a><span class="co">#'   content_type = "text/plain",</span></span>
+<span id="cb15-32"><a></a><span class="co">#'   content = "The requested method was not allowed"</span></span>
+<span id="cb15-33"><a></a><span class="co">#' )</span></span>
+<span id="cb15-34"><a></a><span class="co">#'</span></span>
+<span id="cb15-35"><a></a><span class="co">#' @keywords internal</span></span>
+<span id="cb15-36"><a></a><span class="co">#' @export</span></span>
+<span id="cb15-37"><a></a>httpResponse <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
+<span id="cb15-38"><a></a>    <span class="at">status =</span> <span class="dv">200</span>L,</span>
+<span id="cb15-39"><a></a>    <span class="at">content_type =</span> <span class="st">"text/html; charset=UTF-8"</span>,</span>
+<span id="cb15-40"><a></a>    <span class="at">content =</span> <span class="st">""</span>,</span>
+<span id="cb15-41"><a></a>    <span class="at">headers =</span> <span class="fu">list</span>()) {</span>
+<span id="cb15-42"><a></a>  <span class="co"># Make sure it's a list, not a vector</span></span>
+<span id="cb15-43"><a></a>  headers <span class="ot">&lt;-</span> <span class="fu">as.list</span>(headers)</span>
+<span id="cb15-44"><a></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(headers<span class="sc">$</span><span class="st">`</span><span class="at">X-UA-Compatible</span><span class="st">`</span>)) {</span>
+<span id="cb15-45"><a></a>    headers<span class="sc">$</span><span class="st">`</span><span class="at">X-UA-Compatible</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="st">"IE=edge,chrome=1"</span></span>
+<span id="cb15-46"><a></a>  }</span>
+<span id="cb15-47"><a></a>  resp <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb15-48"><a></a>    <span class="at">status =</span> status, <span class="at">content_type =</span> content_type, <span class="at">content =</span> content,</span>
+<span id="cb15-49"><a></a>    <span class="at">headers =</span> headers</span>
+<span id="cb15-50"><a></a>  )</span>
+<span id="cb15-51"><a></a>  <span class="fu">class</span>(resp) <span class="ot">&lt;-</span> <span class="st">"httpResponse"</span></span>
+<span id="cb15-52"><a></a>  <span class="fu">return</span>(resp)</span>
+<span id="cb15-53"><a></a>}</span>
+<span id="cb15-54"><a></a></span>
+<span id="cb15-55"><a></a><span class="co">#</span></span>
+<span id="cb15-56"><a></a><span class="co"># You can think of a web application as being simply an aggregation of these</span></span>
+<span id="cb15-57"><a></a><span class="co"># functions, each of which performs one kind of duty. Each handler in turn gets</span></span>
+<span id="cb15-58"><a></a><span class="co"># a look at the request and can decide whether it knows how to handle it. If</span></span>
+<span id="cb15-59"><a></a><span class="co"># so, it returns an `httpResponse` and processing terminates; if not, it</span></span>
+<span id="cb15-60"><a></a><span class="co"># returns `NULL` and the next handler gets to execute. If the final handler</span></span>
+<span id="cb15-61"><a></a><span class="co"># returns `NULL`, a 404 response should be returned.</span></span>
+<span id="cb15-62"><a></a><span class="co">#</span></span>
+<span id="cb15-63"><a></a><span class="co"># We have a similar construct for websockets: **websocket handlers** or</span></span>
+<span id="cb15-64"><a></a><span class="co"># **wsHandlers**. These take a single `ws` argument which is the websocket</span></span>
+<span id="cb15-65"><a></a><span class="co"># connection that was just opened, and they can either return `TRUE` if they</span></span>
+<span id="cb15-66"><a></a><span class="co"># are handling the connection, and `NULL` to pass responsibility on to the next</span></span>
+<span id="cb15-67"><a></a><span class="co"># wsHandler.</span></span>
+<span id="cb15-68"><a></a><span class="co">#</span></span>
+<span id="cb15-69"><a></a><span class="co"># </span><span class="al">###</span><span class="co"> Combining handlers</span></span>
+<span id="cb15-70"><a></a><span class="co">#</span></span>
+<span id="cb15-71"><a></a><span class="co"># Since it's so common for httpHandlers to be invoked in this "cascading"</span></span>
+<span id="cb15-72"><a></a><span class="co"># fashion, we'll introduce a function that takes zero or more handlers and</span></span>
+<span id="cb15-73"><a></a><span class="co"># returns a single handler. And while we're at it, making a directory of static</span></span>
+<span id="cb15-74"><a></a><span class="co"># content available is such a common thing to do, we'll allow strings</span></span>
+<span id="cb15-75"><a></a><span class="co"># representing paths to be used instead of handlers; any such strings we</span></span>
+<span id="cb15-76"><a></a><span class="co"># encounter will be converted into `staticHandler` objects.</span></span>
+<span id="cb15-77"><a></a><span class="co">#</span></span>
+<span id="cb15-78"><a></a><span class="do">## ------------------------------------------------------------------------</span></span>
+<span id="cb15-79"><a></a>joinHandlers <span class="ot">&lt;-</span> <span class="cf">function</span>(handlers) {</span>
+<span id="cb15-80"><a></a>  <span class="co"># Zero handlers; return a null handler</span></span>
+<span id="cb15-81"><a></a>  <span class="cf">if</span> (<span class="fu">length</span>(handlers) <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb15-82"><a></a>    <span class="fu">return</span>(<span class="cf">function</span>(req) <span class="cn">NULL</span>)</span>
+<span id="cb15-83"><a></a>  }</span>
+<span id="cb15-84"><a></a></span>
+<span id="cb15-85"><a></a>  <span class="co"># Just one handler (function)? Return it.</span></span>
+<span id="cb15-86"><a></a>  <span class="cf">if</span> (<span class="fu">is.function</span>(handlers)) {</span>
+<span id="cb15-87"><a></a>    <span class="fu">return</span>(handlers)</span>
+<span id="cb15-88"><a></a>  }</span>
+<span id="cb15-89"><a></a></span>
+<span id="cb15-90"><a></a>  handlers <span class="ot">&lt;-</span> <span class="fu">lapply</span>(handlers, <span class="cf">function</span>(h) {</span>
+<span id="cb15-91"><a></a>    <span class="cf">if</span> (<span class="fu">is.character</span>(h)) {</span>
+<span id="cb15-92"><a></a>      <span class="fu">return</span>(<span class="fu">staticHandler</span>(h))</span>
+<span id="cb15-93"><a></a>    } <span class="cf">else</span> {</span>
+<span id="cb15-94"><a></a>      <span class="fu">return</span>(h)</span>
+<span id="cb15-95"><a></a>    }</span>
+<span id="cb15-96"><a></a>  })</span>
+<span id="cb15-97"><a></a></span>
+<span id="cb15-98"><a></a>  <span class="co"># Filter out NULL</span></span>
+<span id="cb15-99"><a></a>  handlers <span class="ot">&lt;-</span> handlers[<span class="sc">!</span><span class="fu">sapply</span>(handlers, is.null)]</span>
+<span id="cb15-100"><a></a></span>
+<span id="cb15-101"><a></a>  <span class="cf">if</span> (<span class="fu">length</span>(handlers) <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb15-102"><a></a>    <span class="fu">return</span>(<span class="cf">function</span>(req) <span class="cn">NULL</span>)</span>
+<span id="cb15-103"><a></a>  }</span>
+<span id="cb15-104"><a></a>  <span class="cf">if</span> (<span class="fu">length</span>(handlers) <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb15-105"><a></a>    <span class="fu">return</span>(handlers[[<span class="dv">1</span>]])</span>
+<span id="cb15-106"><a></a>  }</span>
+<span id="cb15-107"><a></a></span>
+<span id="cb15-108"><a></a>  <span class="cf">function</span>(req) {</span>
+<span id="cb15-109"><a></a>    <span class="cf">for</span> (handler <span class="cf">in</span> handlers) {</span>
+<span id="cb15-110"><a></a>      response <span class="ot">&lt;-</span> <span class="fu">handler</span>(req)</span>
+<span id="cb15-111"><a></a>      <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(response)) {</span>
+<span id="cb15-112"><a></a>        <span class="fu">return</span>(response)</span>
+<span id="cb15-113"><a></a>      }</span>
+<span id="cb15-114"><a></a>    }</span>
+<span id="cb15-115"><a></a>    <span class="fu">return</span>(<span class="cn">NULL</span>)</span>
+<span id="cb15-116"><a></a>  }</span>
+<span id="cb15-117"><a></a>}</span>
+<span id="cb15-118"><a></a></span>
+<span id="cb15-119"><a></a><span class="co">#</span></span>
+<span id="cb15-120"><a></a><span class="co"># Note that we don't have an equivalent of `joinHandlers` for wsHandlers. It's</span></span>
+<span id="cb15-121"><a></a><span class="co"># easy to imagine it, we just haven't needed one.</span></span>
+<span id="cb15-122"><a></a><span class="co">#</span></span>
+<span id="cb15-123"><a></a><span class="co"># </span><span class="al">###</span><span class="co"> Handler routing</span></span>
+<span id="cb15-124"><a></a><span class="co">#</span></span>
+<span id="cb15-125"><a></a><span class="co"># Handlers do not have a built-in notion of routing. Conceptually, given a list</span></span>
+<span id="cb15-126"><a></a><span class="co"># of handlers, all the handlers are peers and they all get to see every request</span></span>
+<span id="cb15-127"><a></a><span class="co"># (well, up until the point that a handler returns a response).</span></span>
+<span id="cb15-128"><a></a><span class="co">#</span></span>
+<span id="cb15-129"><a></a><span class="co"># You could implement routing in each handler by checking the request's</span></span>
+<span id="cb15-130"><a></a><span class="co"># `PATH_INFO` field, but since it's such a common need, let's make it simple by</span></span>
+<span id="cb15-131"><a></a><span class="co"># introducing a `routeHandler` function. This is a handler</span></span>
+<span id="cb15-132"><a></a><span class="co"># [decorator](http://en.wikipedia.org/wiki/Decorator_pattern) and it's</span></span>
+<span id="cb15-133"><a></a><span class="co"># responsible for 1) filtering out requests that don't match the given route,</span></span>
+<span id="cb15-134"><a></a><span class="co"># and 2) temporarily modifying the request object to take the matched part of</span></span>
+<span id="cb15-135"><a></a><span class="co"># the route off of the `PATH_INFO` (and add it to the end of `SCRIPT_NAME`).</span></span>
+<span id="cb15-136"><a></a><span class="co"># This way, the handler doesn't need to figure out about what part of its URL</span></span>
+<span id="cb15-137"><a></a><span class="co"># path has already been matched via routing.</span></span>
+<span id="cb15-138"><a></a><span class="co">#</span></span>
+<span id="cb15-139"><a></a><span class="co"># (BTW, it's safe for `routeHandler` calls to nest.)</span></span>
+<span id="cb15-140"><a></a><span class="co">#</span></span>
+<span id="cb15-141"><a></a><span class="do">## -----------------------------------------------------------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="section-8" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb16-1" class="hljs-ln-code"><a></a><span class="co">#' Warn if runtime option isn't "shiny"</span></span>
-<span id="cb16-2" class="hljs-ln-code"><a></a><span class="co">#' </span></span>
-<span id="cb16-3" class="hljs-ln-code"><a></a><span class="co">#' If there's an R Markdown runtime option set but it isn't set to Shiny, then</span></span>
-<span id="cb16-4" class="hljs-ln-code"><a></a><span class="co">#' return a warning indicating the runtime is inappropriate for this object.</span></span>
-<span id="cb16-5" class="hljs-ln-code"><a></a><span class="co">#' </span></span>
-<span id="cb16-6" class="hljs-ln-code"><a></a><span class="co">#' @return An `rmd_warning` object, or `NULL` if `runtime` is `NULL`</span></span>
-<span id="cb16-7" class="hljs-ln-code"><a></a><span class="co">#'   or `"shiny"`.</span></span>
-<span id="cb16-8" class="hljs-ln-code"><a></a><span class="co">#' @keywords internal</span></span>
-<span id="cb16-9" class="hljs-ln-code"><a></a>shiny_rmd_warning <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb16-10" class="hljs-ln-code"><a></a>  runtime <span class="ot">&lt;-</span> knitr<span class="sc">::</span>opts_knit<span class="sc">$</span><span class="fu">get</span>(<span class="st">"rmarkdown.runtime"</span>)</span>
-<span id="cb16-11" class="hljs-ln-code"><a></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(runtime) <span class="sc">&amp;&amp;</span> runtime <span class="sc">!=</span> <span class="st">"shiny"</span>) {</span>
-<span id="cb16-12" class="hljs-ln-code"><a></a>    <span class="co"># note that the RStudio IDE checks for this specific string to detect Shiny</span></span>
-<span id="cb16-13" class="hljs-ln-code"><a></a>    <span class="co"># applications in static document</span></span>
-<span id="cb16-14" class="hljs-ln-code"><a></a>    <span class="fu">list</span>(<span class="fu">structure</span>(</span>
-<span id="cb16-15" class="hljs-ln-code"><a></a>      <span class="st">"Shiny application in a static R Markdown document"</span>,</span>
-<span id="cb16-16" class="hljs-ln-code"><a></a>      <span class="at">class =</span> <span class="st">"rmd_warning"</span></span>
-<span id="cb16-17" class="hljs-ln-code"><a></a>    ))</span>
-<span id="cb16-18" class="hljs-ln-code"><a></a>  } <span class="cf">else</span> {</span>
-<span id="cb16-19" class="hljs-ln-code"><a></a>    <span class="cn">NULL</span></span>
-<span id="cb16-20" class="hljs-ln-code"><a></a>  }</span>
-<span id="cb16-21" class="hljs-ln-code"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>shiny/R/knit.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb16" data-filename="shiny/R/knit.R" data-code-line-numbers="|7-8|1-3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># If there's an R Markdown runtime option set but it isn't set to Shiny, then</span></span>
+<span id="cb16-2"><a></a><span class="co"># return a warning indicating the runtime is inappropriate for this object.</span></span>
+<span id="cb16-3"><a></a><span class="co"># Returns NULL in all other cases.</span></span>
+<span id="cb16-4"><a></a>shiny_rmd_warning <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb16-5"><a></a>  runtime <span class="ot">&lt;-</span> knitr<span class="sc">::</span>opts_knit<span class="sc">$</span><span class="fu">get</span>(<span class="st">"rmarkdown.runtime"</span>)</span>
+<span id="cb16-6"><a></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(runtime) <span class="sc">&amp;&amp;</span> runtime <span class="sc">!=</span> <span class="st">"shiny"</span>) {</span>
+<span id="cb16-7"><a></a>    <span class="co"># note that the RStudio IDE checks for this specific string to detect Shiny</span></span>
+<span id="cb16-8"><a></a>    <span class="co"># applications in static document</span></span>
+<span id="cb16-9"><a></a>    <span class="fu">list</span>(<span class="fu">structure</span>(</span>
+<span id="cb16-10"><a></a>      <span class="st">"Shiny application in a static R Markdown document"</span>,</span>
+<span id="cb16-11"><a></a>      <span class="at">class =</span> <span class="st">"rmd_warning"</span></span>
+<span id="cb16-12"><a></a>    ))</span>
+<span id="cb16-13"><a></a>  } <span class="cf">else</span> {</span>
+<span id="cb16-14"><a></a>    <span class="cn">NULL</span></span>
+<span id="cb16-15"><a></a>  }</span>
+<span id="cb16-16"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
