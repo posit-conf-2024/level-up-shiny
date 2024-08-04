@@ -16,6 +16,7 @@ listing:
       description-short: Description
     contents:
       - "workshop-*.qmd"
+      - "!workshop-06-chat*.qmd"
 ---
 
 ## Schedule

@@ -1,0 +1,84 @@
+---
+title: "A Spoonful of JavaScript"
+subtitle: Level Up with Shiny for R
+author: <code>posit::conf(2024)</code>
+date: 2024-08-12
+
+format:
+  utopia-slides-revealjs:
+    html-math-method: plain
+    revealjs-url: slides/assets/reveal.js-4.5.0
+    slide-level: 2
+    # chalkboard: true
+    theme:
+      - slides.scss
+      - assets/code-blocked.scss
+    css:
+      - ../auto-dark-mode.css
+
+revealjs-plugins:
+  - utopia-slides
+
+# filters:
+#   - webr
+
+webr:
+  show-startup-message: false
+
+editor:
+  render-on-save: true
+---
+
+# The 🤖 in the Room {.middle}
+
+## 
+
+* Have you ever used a large language model like ChatGPT?
+
+* Have you used an LLM to help you write code?
+
+* Have you used an LLM to help you learn a programming language?
+
+* Have you used an LLM to write a Shiny app?
+
+* Have you used an LLM to write a workshop about Shiny?
+
+## 
+
+* What do LLMs do best?
+
+  {{< partial ../partials/content-editable-code.html text="- situation" >}}
+
+* When do LLMs perform poorly?
+
+  {{< partial ../partials/content-editable-code.html text="- situation" >}} 
+
+
+## Our Task
+
+We want to update our college comparison app to remember the colleges
+that the user was comparing.
+
+We've decided that [bookmarking](https://mastering-shiny.org/action-bookmark.html)
+is too involved, 
+we just want the app to remember automatically.
+
+## Your Turn {.slide-your-turn}
+
+1. I had [a conversation with ChatGPT](../workshop-06-chat.qmd) about this task. \
+   **What strategy does the 🤖 suggest?** Find:
+
+   * the browser JavaScript API
+   * the Shiny JavaScript API
+   * where to put this JavaScript code in our app
+   * the server-side logic that connects JS &harr; R
+
+2. What made my prompt to ChatGPT **effective**?
+
+{{< countdown 08:00 bottom="2rem" right="2rem" >}}
+
+## Live Code Together
+
+1. Use the chat to give our comparison app a memory.
+
+2. What works about the prompt? What strategies did I use to increase the chances I'd get a useful response?

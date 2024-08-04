@@ -1,0 +1,286 @@
+---
+title: LocalStorage Usage Guide
+description: > 
+  A conversation with ChatGPT 4o about storing data in the browser using JavaScript with Shiny.
+  [See the original conversation on OpenAI.](https://chatgpt.com/share/08095212-e0b0-482a-b75d-47dd80b96471)
+
+editor:
+  markdown:
+    wrap: 80
+    canonical: true
+---
+
+## Prompt {.chat-user}
+
+I'm in a workshop at posit::conf(2024) learning about using JavaScript with
+Shiny for R. Can you show me how to write to and read from local storage in the
+browser using JavaScript? Show me just the JavaScript snippets I need to know
+with a little bit of explanation. Don't show me a full HTML example, though,
+because I'll be using this in a Shiny app.
+
+## ChatGPT {.chat-assistant}
+
+Sure! Here are the JavaScript snippets you need to work with local storage in a
+browser:
+
+### Writing to Local Storage
+
+To save data to local storage, you use the `localStorage.setItem` method. Here's
+a simple example:
+
+``` js
+// Save a string value localStorage.setItem('key', 'value');
+// Save a JavaScript object (you need to stringify it first)
+const myObject = { name: 'John', age: 30 };
+localStorage.setItem('myObject', JSON.stringify(myObject));
+```
+
+### Reading from Local Storage
+
+To retrieve data from local storage, you use the `localStorage.getItem` method.
+Here's how you do it:
+
+``` js
+// Retrieve a string value
+const value = localStorage.getItem('key');
+console.log(value);  // Outputs: 'value'
+
+// Retrieve a JavaScript object (you need to parse it back to an object)
+const retrievedObject = JSON.parse(localStorage.getItem('myObject'));
+console.log(retrievedObject);  // Outputs: { name: 'John', age: 30 }
+```
+
+### Removing an Item from Local Storage
+
+If you need to remove an item from local storage, you can use the
+`localStorage.removeItem` method:
+
+``` js
+localStorage.removeItem('key');
+```
+
+### Clearing All Local Storage
+
+To clear all data from local storage, you can use the `localStorage.clear`
+method:
+
+``` js
+localStorage.clear();
+```
+
+These snippets cover the basic operations for working with local storage. You
+can integrate them into your Shiny app's JavaScript code as needed.
+
+## Prompt {.chat-user}
+
+I'm writing a Shiny for R app and want to store a variable in local storage so
+that the next time the user starts the app, I can retrieve the stored value,
+send it to the server, and initialize an input with the stored value. Show me
+how to do this, including a simple example. Use bslib for the UI. Don't explain
+everything in the example app, just explain the JavaScript portion
+
+## ChatGPT {.chat-assistant}
+
+Sure! Here's how you can achieve this in a Shiny app with bslib for the UI. The
+key parts are the JavaScript snippets for storing and retrieving the value from
+local storage and sending it to the server.
+
+### Shiny App Example
+
+``` r
+library(shiny)
+library(bslib)
+
+ui <- fluidPage(
+  theme = bs_theme(bootswatch = "flatly"),
+  tags$head(
+    tags$script(HTML(
+      "
+      // Store a variable in local storage when the user inputs a value
+      Shiny.addCustomMessageHandler('storeValue', function(message) {
+        localStorage.setItem('storedValue', message.value);
+      });
+
+      // Retrieve the stored value from local storage when the app initializes
+      document.addEventListener('DOMContentLoaded', function() {
+        var storedValue = localStorage.getItem('storedValue');
+        if (storedValue !== null) {
+          Shiny.setInputValue('storedValue', storedValue);
+        }
+      });
+      "
+    ))
+  ),
+  titlePanel("Shiny Local Storage Example"),
+  sidebarLayout(
+    sidebarPanel(
+      textInput("inputText", "Enter some text:", value = ""),
+      actionButton("saveBtn", "Save to Local Storage")
+    ),
+    mainPanel(
+      textOutput("outputText")
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  observeEvent(input$saveBtn, {
+    session$sendCustomMessage("storeValue", list(value = input$inputText))
+  })
+  
+  observeEvent(input$storedValue, {
+    updateTextInput(session, "inputText", value = input$storedValue)
+  })
+  
+  output$outputText <- renderText({
+    paste("Stored value is:", input$inputText)
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+### JavaScript Explanation
+
+1.  **Storing the Value:**
+
+    -   The JavaScript code listens for a custom message (`storeValue`) from the
+        Shiny server.
+    -   When the message is received, it stores the value in local storage using
+        `localStorage.setItem`.
+
+2.  **Retrieving the Value:**
+
+    -   When the document is loaded (`DOMContentLoaded` event), the JavaScript
+        code checks if there's a stored value in local storage.
+    -   If a value exists, it sets this value to a Shiny input (`storedValue`)
+        using `Shiny.setInputValue`.
+
+By incorporating these JavaScript snippets into your Shiny app, you can store
+and retrieve values from local storage, allowing for persistent input across
+sessions.
+
+## Prompt {.chat-user}
+
+In the release notes for Shiny 1.9.0, I read the following:
+
+> the `Shiny` object has a new property `initializedPromise`, which is a
+> Promise-like object that can be awaited or chained with `.then()`. This
+> Promise-like object corresponds to the `shiny:sessioninitialized` JavaScript
+> event, but is easier to use because it can be used both before and after the
+> events have occurred.
+
+Can you update your example to take advantage of this new property?
+
+## ChatGPT {.chat-assistant}
+
+Certainly! Here's the updated example that uses the `Shiny.initializedPromise`
+to handle the initialization of the session. This makes sure that the local
+storage value is set after the Shiny session has been properly initialized.
+
+### Updated Shiny App Example
+
+``` r
+library(shiny)
+library(bslib)
+
+ui <- fluidPage(
+  theme = bs_theme(bootswatch = "flatly"),
+  tags$head(
+    tags$script(HTML(
+      "
+      // Store a variable in local storage when the user inputs a value
+      Shiny.addCustomMessageHandler('storeValue', function(message) {
+        localStorage.setItem('storedValue', message.value);
+      });
+
+      // Retrieve the stored value from local storage using initializedPromise
+      Shiny.initializedPromise.then(function() {
+        var storedValue = localStorage.getItem('storedValue');
+        if (storedValue !== null) {
+          Shiny.setInputValue('storedValue', storedValue);
+        }
+      });
+      "
+    ))
+  ),
+  titlePanel("Shiny Local Storage Example"),
+  sidebarLayout(
+    sidebarPanel(
+      textInput("inputText", "Enter some text:", value = ""),
+      actionButton("saveBtn", "Save to Local Storage")
+    ),
+    mainPanel(
+      textOutput("outputText")
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  observeEvent(input$saveBtn, {
+    session$sendCustomMessage("storeValue", list(value = input$inputText))
+  })
+  
+  observeEvent(input$storedValue, {
+    updateTextInput(session, "inputText", value = input$storedValue)
+  })
+  
+  output$outputText <- renderText({
+    paste("Stored value is:", input$inputText)
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+### JavaScript Explanation with `Shiny.initializedPromise`
+
+1.  **Storing the Value:**
+
+    -   The JavaScript code listens for a custom message (`storeValue`) from the
+        Shiny server.
+    -   When the message is received, it stores the value in local storage using
+        `localStorage.setItem`.
+
+2.  **Retrieving the Value:**
+
+    -   Instead of directly listening to the `DOMContentLoaded` event, the code
+        now uses `Shiny.initializedPromise`.
+    -   `Shiny.initializedPromise` is a Promise-like object that can be awaited
+        or chained with `.then()`.
+    -   When the Shiny session is initialized, the `then` function is executed,
+        retrieving the stored value from local storage and setting it to a Shiny
+        input (`storedValue`) using `Shiny.setInputValue`.
+
+This updated approach ensures that the value from local storage is set only
+after the Shiny session has been fully initialized, improving the reliability of
+your app.
+
+<style>
+section.chat-user {
+    --_color-rgb: var(--bs-info-rgb);
+    border-left: 4px solid rgba(var(--_color-rgb), 0.8);
+    margin-inline-start: -1em;
+    padding-inline: 1em;
+    padding-block-end: 0.25em;
+    background-color: rgba(var(--_color-rgb), 0.02);
+}
+
+section.chat-assistant {
+    --_color-rgb: var(--bs-warning-rgb);
+    border-left: 4px solid rgba(var(--_color-rgb), 0.8);
+    margin-inline-start: -1em;
+    padding-inline: 1em;
+    padding-block-end: 0.25em;
+    background-color: rgba(var(--_color-rgb), 0.02);
+}
+</style>
+
+## Prompt {.chat-user}
+
+Thanks for your help!
+
+## ChatGPT {.chat-assistant}
+
+You're welcome! If you have any more questions or need further assistance, feel
+free to ask. Enjoy the rest of your workshop at posit::conf(2024)!
