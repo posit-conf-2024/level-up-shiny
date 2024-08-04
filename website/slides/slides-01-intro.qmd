@@ -8,8 +8,6 @@ format:
   utopia-slides-revealjs:
     html-math-method: plain
     slide-level: 2
-    theme:
-      - slides.scss
     footer: >
       [pos.it/level-up-shiny](https://pos.it/level-up-shiny)
     theme:
