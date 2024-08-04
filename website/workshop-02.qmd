@@ -10,7 +10,7 @@ editor: { render-on-save: true }
 ---
 
 ::: {.ratio .ratio-16x9}
-{{< revealjs "slides/slides-02-bslib.html" >}}
+{{< revealjs "slides/slides-02-bslib.html" class="ratio ratio-16x9" >}}
 :::
 
 ## Topic Links
