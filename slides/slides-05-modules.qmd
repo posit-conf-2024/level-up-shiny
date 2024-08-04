@@ -19,11 +19,20 @@ format:
 revealjs-plugins:
   - utopia-slides
 
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: "#>"
+
 filters:
   - webr
 
 webr:
   show-startup-message: false
+  packages:
+    - dplyr
+    - collegeScorecard
+    - htmltools
 
 editor:
   render-on-save: true
@@ -31,39 +40,253 @@ editor:
 
 # You might not need a module {.middle .text-center}
 
-## Server-side functions
+## {.middle}
 
-Replacing server-side logic with functions, or simplifying server side logic with functions.
+::: {.flex}
+::: w-50
+[Why use **Shiny modules**?]{.fs-step-2 .font-heading .b}
 
-## Your turn
+::: {.fragment}
+* Avoid repeating logic \
+  &nbsp;
 
-TK: `_exercises/07_app.R`
+* Make your code more reusable \
+  &nbsp;
+:::
+:::
+:::
 
-Use functions to simplify the server-side logic of the bar plots we saw earlier.
-The exercise is around around comparing two schools.
+## {.middle}
 
-(Use `_exercises/02_solution_app.R` as a starting point.)
+::: {.flex}
+::: w-50
+[Why use [functions]{.b .orange}?]{.fs-step-2 .font-heading .b}
 
-## UI functions
+* Avoid repeating logic \
+  &nbsp;
 
-Same idea, but for UI functions.
+* Make your code more reusable \
+  &nbsp;
+:::
 
-Examples:
+::: {.w-50 .fragment}
+[Why use [Shiny modules]{.b .blue}?]{.fs-step-2 .font-heading .b}
 
-* A `card_dark()` with a title and custom class.
+::: {.incremental}
+* Avoid repeating \
+  **Shiny UI/Server logic**
 
-* A `sidebar_right()`
+* Make your code more reusable \
+  **to Shiny app developers**
+:::
+:::
+:::
 
-* Some other Bootstrap component
-    * `<span class="badge text-bg-secondary">New</span>`
-    * [Badges · Bootstrap v5.3](https://getbootstrap.com/docs/5.3/components/badge/)
+# Maybe you could use a function? {.text-center .middle .bg-gradient-yellow-peach style="--slide-heading-color: white"}
 
+```{=html}
+<style>
+.bg-gradient-yellow-peach {
+  background: hsla(29, 92%, 55%, 1);
+  background: linear-gradient(315deg, hsla(29, 92%, 55%, 1) 0%, hsla(0, 87%, 62%, 1) 57%);
+  background: -moz-linear-gradient(315deg, hsla(29, 92%, 55%, 1) 0%, hsla(0, 87%, 62%, 1) 57%);
+  background: -webkit-linear-gradient(315deg, hsla(29, 92%, 55%, 1) 0%, hsla(0, 87%, 62%, 1) 57%);
+}
+</style>
+```
 
-## Your turn
+## {auto-animate=true}
 
-TK: `_exercises/08_app.R`
+```{r}
+library(dplyr)
+library(collegeScorecard)
+```
 
-Make a `card_dark()`
+```{r}
+#| echo: true
+school |>
+  filter(
+    state == "CA",
+    control == "Public",
+  ) |>
+  count() |>
+  pull(n)
+```
+
+## {auto-animate=true}
+
+```{r}
+#| echo: true
+school |>
+  filter(state == "CA") |>
+  filter(control == "Public") |>
+  count() |>
+  pull(n)
+```
+
+## {auto-animate=true}
+
+```{r}
+#| echo: true
+#| code-line-numbers: true
+school |>
+  filter(state == "CA") |>
+  filter(control == "Public") |>
+  count() |>
+  pull(n)
+
+school |>
+  filter(state == "CA") |>
+  filter(control == "Nonprofit") |>
+  count() |>
+  pull(n)
+```
+
+## {auto-animate=true}
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|1,2,4,5,8,9,11,12,15,16,18,19|3,10,17|1-2|3-5"
+school |>
+  filter(state == "CA") |>
+  filter(control == "Public") |>
+  count() |>
+  pull(n)
+
+school |>
+  filter(state == "CA") |>
+  filter(control == "Nonprofit") |>
+  count() |>
+  pull(n)
+
+school |>
+  filter(state == "CA") |>
+  filter(control == "For-profit") |>
+  count() |>
+  pull(n)
+```
+
+## 
+
+::: {.fs-step-1}
+```{webr-r}
+school |>
+  filter(state == "CA") |>
+  filter(control == "Public") |>
+  count() |>
+  pull(n)
+```
+:::
+
+::: notes
+```{.r}
+school_count_control <- function(school, control) {
+  school |>
+    filter(control == !!control) |>
+    count() |>
+    pull(n)
+}
+```
+
+Note, `{{ control }}` or `!!control` work here.
+When to embrace and when to double bang?
+Try one, if it doesn't work, try the other.
+:::
+
+## Your Turn `_exercises/07_app.R` {#your-turn-1 .slide-your-turn}
+
+{{< countdown 6:00 bottom="2rem" right="2rem" >}}
+
+::: w-90
+1. **Refactor the code for the two plots into a single function.**
+   You can put this function in this app file in the server section around the
+   `## Put your function here ##` line.
+
+2. **Replace the the duplicated code** with your new function.
+
+3. 🤔 What logic is encapsulated in your function? \
+   How could your function be used outside of this app? \
+   How well will your function compose with other functions?
+:::
+
+# Maybe you could UI a function? {.text-center .middle .bg-gradient-yellow-peach style="--slide-heading-color: white"}
+
+## Pick your own defaults {auto-animate=true}
+
+```{.r}
+card(
+  layout_sidebar(
+    sidebar = sidebar(
+      position = "right",
+      open = FALSE,
+      selectInput("state", "State", choices = state.abb)
+    ),
+    plotOutput("plot_state")
+  )
+)
+```
+
+## Pick your own defaults {auto-animate=true}
+
+```{.r}
+sidebar_right <- function(...) {
+  sidebar(
+    position = "right",
+    open = FALSE,
+    ...
+  )
+}
+
+card(
+  layout_sidebar(
+    sidebar = sidebar_right(
+      selectInput("state", "State", choices = state.abb)
+    ),
+    plotOutput("plot_state")
+  )
+)
+```
+
+## Make your own components
+
+Let's make a [Bootstrap badge](https://getbootstrap.com/docs/5.3/components/badge/) together.
+
+## {#my-turn-badge .fullscreen}
+
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+#| orientation: horizontal
+#| viewerHeight: "100%"
+
+{{< include ../../_examples/05-modules/01_app.R >}}
+
+## file: notes.R
+# Bootstrap: https://getbootstrap.com/docs/5.3/components/badge
+#
+# <span class="badge text-bg-primary">Primary</span>
+#
+# <span class="badge text-bg-secondary">New</span>
+#
+# <span class="badge rounded-pill text-bg-success">Success</span>
+
+## file: solution.R
+{{< include ../../_examples/05-modules/01_solution_app.R >}}
+```
+
+## Your Turn `_exercises/08_app.R` {#your-turn-8-inst .slide-your-turn}
+
+{{< countdown 5:00 bottom="2rem" right="2rem" >}}
+
+::: w-80
+1. Create a `card_dark()` function to make a dark card with a title and no
+   padding. Use the first "Location" card as a template.
+
+2. As you fill in the implementation of `card_dark()`, check your work by
+   comparing the School B card with the School A location card.
+
+3. Once both cards look the same, use `card_dark()` for both.
+:::
 
 
 ## Where to put those functions?

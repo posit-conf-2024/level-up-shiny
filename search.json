@@ -210,167 +210,270 @@
     "text": "switch(\n  input$type,\n  \"types\" = inspectdf::inspect_types(df),\n  \"cat\" = inspectdf::inspect_cat(df),\n  \"num\" = inspectdf::inspect_num(df),\n  \"na\" = inspectdf::inspect_na(df)\n)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
-    "href": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
-    "title": "Welcome!",
-    "section": "Welcome to Level Up with Shiny for R",
-    "text": "Welcome to Level Up with Shiny for R\n\nTake a seat, etc.\nHere’s an important link\nWiFI info"
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#meet-us",
-    "href": "slides/slides-01-intro.html#meet-us",
-    "title": "Welcome!",
-    "section": "Meet us",
-    "text": "Meet us\n\nGarrick\nCarson\nKalau\nAndrew"
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#code-of-conduct",
-    "href": "slides/slides-01-intro.html#code-of-conduct",
-    "title": "Welcome!",
-    "section": "Code of Conduct",
-    "text": "Code of Conduct\nCode of Conduct and COVID policies. Please Review\n\n💙 Treat everyone with respect\n🧡 Everyone should feel welcome and safe\n\nReporting:\n\n🗣️ any posit::conf staff member (t-shirt) or Info desk\n📧 conf@posit.com"
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#meet-each-other",
-    "href": "slides/slides-01-intro.html#meet-each-other",
-    "title": "Welcome!",
-    "section": "Meet each other",
-    "text": "Meet each other\nTK: activity"
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#wifi",
-    "href": "slides/slides-01-intro.html#wifi",
-    "title": "Welcome!",
-    "section": "WiFi",
-    "text": "WiFi\nWiFi: Posit Conf 2024\nPassword: conf2024"
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#positconf2024-things-to-know",
-    "href": "slides/slides-01-intro.html#positconf2024-things-to-know",
-    "title": "Welcome!",
-    "section": "posit::conf(2024) Things to Know",
-    "text": "posit::conf(2024) Things to Know\n\n\nThere will be a gender-neutral bathroom on levels 3:7\nMeditation/prayer room: 503\n\nMon & Tues 7am - 7pm\nWed 7am - 5pm\n\nMothers room: 509\nRed lanyards available to those who don’t wish to be photographed"
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#stickies",
-    "href": "slides/slides-01-intro.html#stickies",
-    "title": "Welcome!",
-    "section": "Stickies",
-    "text": "Stickies\n\n\n🟩\nAll good\nI’m done\n\n\n🟥\nNot great\nNeed time or help"
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#shedule",
-    "href": "slides/slides-01-intro.html#shedule",
-    "title": "Welcome!",
-    "section": "Shedule",
-    "text": "Shedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#shedule-1",
-    "href": "slides/slides-01-intro.html#shedule-1",
-    "title": "Welcome!",
-    "section": "Shedule",
-    "text": "Shedule\n\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#discord",
-    "href": "slides/slides-01-intro.html#discord",
-    "title": "Welcome!",
-    "section": "Discord",
-    "text": "Discord\nGo posit.co/conference, click Login. Click image to connect to the posit::conf() Discord server.\nThis workshop has a private channel under Workshops.\n\n#level-up-shiny\n\nGreat place to ask questions, post resources, memes, or most anything else before, during, and after the workshop."
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#rstudio-cloud",
-    "href": "slides/slides-01-intro.html#rstudio-cloud",
-    "title": "Welcome!",
-    "section": "RStudio Cloud",
-    "text": "RStudio Cloud\nYou can use the following link to join the workshops RStudio cloud space,\n\n\npos.it/level-up-shiny\n\nOnce you have joined you can then select the level-up-shiny assignment,\nTK Image of assignment\nwhich should then create a copy of all materials and launch a cloud session for you."
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#cloud-session",
-    "href": "slides/slides-01-intro.html#cloud-session",
-    "title": "Welcome!",
-    "section": "Cloud session",
-    "text": "Cloud session\nIf everything is working you should see something very close to the following,\nTK image of cloud session"
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#file-organization",
-    "href": "slides/slides-01-intro.html#file-organization",
-    "title": "Welcome!",
-    "section": "File organization",
-    "text": "File organization\n\n\n\n\n_exercises/\nFiles for Your Turn exercises\n\n\n_examples/\nFiles for my demo examples\n\n\nwebsite/\nThe website and slides\n\n\n./*\nLots of project related files you can ignore"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Level Up with Shiny for R",
+    "objectID": "slides/slides-05-modules.html#section",
+    "href": "slides/slides-05-modules.html#section",
+    "title": "The module module",
     "section": "",
-    "text": "Workshop at posit::conf(2024)August 12, 202409:00 - 17:00ROOM TBA"
+    "text": "Why use Shiny modules?\n\n\nAvoid repeating logic\n \nMake your code more reusable"
   },
   {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Level Up with Shiny for R",
-    "section": "Introduction",
-    "text": "Introduction\nShiny lets you quickly create rich, data-driven web applications for yourself, your clients, your students, or your colleagues. This workshop will give you the skills you need to build complex applications with brilliant user interfaces.\nYou’ll learn how to make the most of recent developments in the Shiny ecosystem, while mastering techniques for modularizing and structuring your applications for growth and maintainability. Along the way, you’ll encounter new techniques to speed up your applications using caching and databases for a smooth user experience."
+    "objectID": "slides/slides-05-modules.html#section-1",
+    "href": "slides/slides-05-modules.html#section-1",
+    "title": "The module module",
+    "section": "",
+    "text": "Why use functions?\n\nAvoid repeating logic\n \nMake your code more reusable\n \n\n\n\nWhy use Shiny modules?\n\n\nAvoid repeating\nShiny UI/Server logic\nMake your code more reusable\nto Shiny app developers"
   },
   {
-    "objectID": "index.html#setup",
-    "href": "index.html#setup",
-    "title": "Level Up with Shiny for R",
-    "section": "Setup",
-    "text": "Setup\n\n📘 Website (you are here!)\n🧑‍💻 Join Posit Cloud Space (Only for workshop participants)\n📦 Repository\n\n\nUsing Posit Cloud\n\n\n\n\n\n\nWarning\n\n\n\n\nThese instructions will be updated.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the rmedicine-2024-bslib space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the rmedicine-2024-bslib space, select the rmedicine-2024-bslib assignment to create and launch a new project just for you."
+    "objectID": "slides/slides-05-modules.html#section-2",
+    "href": "slides/slides-05-modules.html#section-2",
+    "title": "The module module",
+    "section": "",
+    "text": "school |&gt;\n  filter(\n    state == \"CA\",\n    control == \"Public\",\n  ) |&gt;\n  count() |&gt;\n  pull(n)\n#&gt; [1] 188"
   },
   {
-    "objectID": "workshop-05.html",
-    "href": "workshop-05.html",
-    "title": "Modules",
+    "objectID": "slides/slides-05-modules.html#section-3",
+    "href": "slides/slides-05-modules.html#section-3",
+    "title": "The module module",
+    "section": "",
+    "text": "school |&gt;\n  filter(state == \"CA\") |&gt;\n  filter(control == \"Public\") |&gt;\n  count() |&gt;\n  pull(n)\n#&gt; [1] 188"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#section-4",
+    "href": "slides/slides-05-modules.html#section-4",
+    "title": "The module module",
+    "section": "",
+    "text": "school |&gt;\n  filter(state == \"CA\") |&gt;\n  filter(control == \"Public\") |&gt;\n  count() |&gt;\n  pull(n)\n#&gt; [1] 188\n\nschool |&gt;\n  filter(state == \"CA\") |&gt;\n  filter(control == \"Nonprofit\") |&gt;\n  count() |&gt;\n  pull(n)\n#&gt; [1] 275"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#section-5",
+    "href": "slides/slides-05-modules.html#section-5",
+    "title": "The module module",
+    "section": "",
+    "text": "school |&gt;\n  filter(state == \"CA\") |&gt;\n  filter(control == \"Public\") |&gt;\n  count() |&gt;\n  pull(n)\n#&gt; [1] 188\n\nschool |&gt;\n  filter(state == \"CA\") |&gt;\n  filter(control == \"Nonprofit\") |&gt;\n  count() |&gt;\n  pull(n)\n#&gt; [1] 275\n\nschool |&gt;\n  filter(state == \"CA\") |&gt;\n  filter(control == \"For-profit\") |&gt;\n  count() |&gt;\n  pull(n)\n#&gt; [1] 773"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#section-6",
+    "href": "slides/slides-05-modules.html#section-6",
+    "title": "The module module",
+    "section": "",
+    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.\n\n\nschool_count_control &lt;- function(school, control) {\n  school |&gt;\n    filter(control == !!control) |&gt;\n    count() |&gt;\n    pull(n)\n}\nNote, { control } or !!control work here. When to embrace and when to double bang? Try one, if it doesn’t work, try the other."
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#your-turn-1",
+    "href": "slides/slides-05-modules.html#your-turn-1",
+    "title": "The module module",
+    "section": "Your Turn _exercises/07_app.R",
+    "text": "Your Turn _exercises/07_app.R\n\n  \n    −\n    +\n \n 06:00\n \n\n\nRefactor the code for the two plots into a single function. You can put this function in this app file in the server section around the ## Put your function here ## line.\nReplace the the duplicated code with your new function.\n🤔 What logic is encapsulated in your function?\nHow could your function be used outside of this app?\nHow well will your function compose with other functions?"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#pick-your-own-defaults",
+    "href": "slides/slides-05-modules.html#pick-your-own-defaults",
+    "title": "The module module",
+    "section": "Pick your own defaults",
+    "text": "Pick your own defaults\ncard(\n  layout_sidebar(\n    sidebar = sidebar(\n      position = \"right\",\n      open = FALSE,\n      selectInput(\"state\", \"State\", choices = state.abb)\n    ),\n    plotOutput(\"plot_state\")\n  )\n)"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#pick-your-own-defaults-1",
+    "href": "slides/slides-05-modules.html#pick-your-own-defaults-1",
+    "title": "The module module",
+    "section": "Pick your own defaults",
+    "text": "Pick your own defaults\nsidebar_right &lt;- function(...) {\n  sidebar(\n    position = \"right\",\n    open = FALSE,\n    ...\n  )\n}\n\ncard(\n  layout_sidebar(\n    sidebar = sidebar_right(\n      selectInput(\"state\", \"State\", choices = state.abb)\n    ),\n    plotOutput(\"plot_state\")\n  )\n)"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#make-your-own-components",
+    "href": "slides/slides-05-modules.html#make-your-own-components",
+    "title": "The module module",
+    "section": "Make your own components",
+    "text": "Make your own components\nLet’s make a Bootstrap badge together."
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#my-turn-badge",
+    "href": "slides/slides-05-modules.html#my-turn-badge",
+    "title": "The module module",
+    "section": "",
+    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\n\nbadge &lt;- function(text) {\n  text\n}\n\nui &lt;- page_fluid(\n  h2(\"Example heading\", badge(\"New\")),\n  h2(\"Example heading\", badge(\"Draft\")),\n  h2(\"Example heading\", badge(\"Live\"))\n)\n\nserver &lt;- function(input, output, session) {\n\n}\n\nshinyApp(ui, server)\n\n\n## file: notes.R\n# Bootstrap: https://getbootstrap.com/docs/5.3/components/badge\n#\n# &lt;span class=\"badge text-bg-primary\"&gt;Primary&lt;/span&gt;\n#\n# &lt;span class=\"badge text-bg-secondary\"&gt;New&lt;/span&gt;\n#\n# &lt;span class=\"badge rounded-pill text-bg-success\"&gt;Success&lt;/span&gt;\n\n## file: solution.R\nlibrary(shiny)\nlibrary(bslib)\n\nbadge &lt;- function(text, theme = \"primary\", pill = FALSE, ...) {\n  span(\n    class = \"badge\",\n    class = paste0(\"text-bg-\", theme),\n    class = if (pill) \"rounded-pill\",\n    text,\n    ...\n  )\n}\n\nui &lt;- page_fluid(\n  h2(\"Example heading\", badge(\"New\")),\n  h2(\"Example heading\", badge(\"New\", \"danger\")),\n  h2(\"Example heading\", badge(\"Live\", \"info\", pill = TRUE))\n)\n\nserver &lt;- function(input, output, session) {\n\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#your-turn-8-inst",
+    "href": "slides/slides-05-modules.html#your-turn-8-inst",
+    "title": "The module module",
+    "section": "Your Turn _exercises/08_app.R",
+    "text": "Your Turn _exercises/08_app.R\n\n  \n    −\n    +\n \n 05:00\n \n\n\nCreate a card_dark() function to make a dark card with a title and no padding. Use the first “Location” card as a template.\nAs you fill in the implementation of card_dark(), check your work by comparing the School B card with the School A location card.\nOnce both cards look the same, use card_dark() for both."
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#where-to-put-those-functions",
+    "href": "slides/slides-05-modules.html#where-to-put-those-functions",
+    "title": "The module module",
+    "section": "Where to put those functions?",
+    "text": "Where to put those functions?\nloadSupport()"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#lets-make-a-map-card",
+    "href": "slides/slides-05-modules.html#lets-make-a-map-card",
+    "title": "The module module",
+    "section": "Let’s make a map card",
+    "text": "Let’s make a map card\n\nPut a leafletOutput() in the card\nFind out we’re repeating a bunch of to avoid ID conflicts\nThis is why you need a module\nWork through turning card_dark() into card_map()"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#your-turn",
+    "href": "slides/slides-05-modules.html#your-turn",
+    "title": "The module module",
+    "section": "Your turn",
+    "text": "Your turn\nTK: _exercises/09_app.R\nModules for value box, example from https://github.com/gadenbuie/slides/blob/gh-pages/bslib-modern-dashboards/jeep-weather/app-bslib.R Except, part of an app that compares two schools.\nGoal is a module that looks like this:\nui_forecast_value_box &lt;- function(id) {\n  ns &lt;- NS(id)\n\n  value_box(\n    title = textOutput(ns(\"wday\")),\n    value = uiOutput(ns(\"weather\")),\n    showcase = uiOutput(ns(\"icon\")),\n    showcase_layout = \"top right\",\n    theme = \"bg-gradient-blue-purple\"\n  )\n}"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#modules-can-call-other-modules",
+    "href": "slides/slides-05-modules.html#modules-can-call-other-modules",
+    "title": "The module module",
+    "section": "Modules can call other modules",
+    "text": "Modules can call other modules\nIf you’re in a module, just forget for a second, pretend like you aren’t and call the other module"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#your-turn-2",
+    "href": "slides/slides-05-modules.html#your-turn-2",
+    "title": "The module module",
+    "section": "Your turn",
+    "text": "Your turn\nTK: _exercises/10_app.R\nTurn each comparison column into a full module:\n\ncollege selector\nvalue box\nbar plot\nmap card"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#communicating-with-your-module",
+    "href": "slides/slides-05-modules.html#communicating-with-your-module",
+    "title": "The module module",
+    "section": "Communicating with your module",
+    "text": "Communicating with your module\nSuppose you put this module into your app and realize that actually, you’d like to\n\nKnow which college is selected\nSet the college, e.g. pick a random school"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#return-values-from-your-module",
+    "href": "slides/slides-05-modules.html#return-values-from-your-module",
+    "title": "The module module",
+    "section": "Return values from your module",
+    "text": "Return values from your module\nReport which school was selected from the module."
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#take-reactive-values",
+    "href": "slides/slides-05-modules.html#take-reactive-values",
+    "title": "The module module",
+    "section": "Take reactive values",
+    "text": "Take reactive values\nReceive a reactive value that sets the selected school."
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#return-anything",
+    "href": "slides/slides-05-modules.html#return-anything",
+    "title": "The module module",
+    "section": "Return anything!",
+    "text": "Return anything!\nReturn the reported school and an update_school() function."
+  },
+  {
+    "objectID": "slides/slides-06-javascript.html#section",
+    "href": "slides/slides-06-javascript.html#section",
+    "title": "A Spoonful of JavaScript",
+    "section": "",
+    "text": "Have you ever used a large language model like ChatGPT?\nHave you used an LLM to help you write code?\nHave you used an LLM to help you learn a programming language?\nHave you used an LLM to write a Shiny app?\nHave you used an LLM to write a workshop about Shiny?"
+  },
+  {
+    "objectID": "slides/slides-06-javascript.html#section-1",
+    "href": "slides/slides-06-javascript.html#section-1",
+    "title": "A Spoonful of JavaScript",
+    "section": "",
+    "text": "What do LLMs do best?\n- situation\n\nWhen do LLMs perform poorly?\n- situation"
+  },
+  {
+    "objectID": "slides/slides-06-javascript.html#our-task",
+    "href": "slides/slides-06-javascript.html#our-task",
+    "title": "A Spoonful of JavaScript",
+    "section": "Our Task",
+    "text": "Our Task\nWe want to update our college comparison app to remember the colleges that the user was comparing.\nWe’ve decided that bookmarking is too involved, we just want the app to remember automatically."
+  },
+  {
+    "objectID": "slides/slides-06-javascript.html#your-turn",
+    "href": "slides/slides-06-javascript.html#your-turn",
+    "title": "A Spoonful of JavaScript",
+    "section": "Your Turn",
+    "text": "Your Turn\n\nI had a conversation with ChatGPT about this task.\nWhat strategy does the 🤖 suggest? Find:\n\nthe browser JavaScript API\nthe Shiny JavaScript API\nwhere to put this JavaScript code in our app\nthe server-side logic that connects JS ↔︎ R\n\nWhat made my prompt to ChatGPT effective?\n\n\n  \n    −\n    +\n \n 08:00"
+  },
+  {
+    "objectID": "slides/slides-06-javascript.html#live-code-together",
+    "href": "slides/slides-06-javascript.html#live-code-together",
+    "title": "A Spoonful of JavaScript",
+    "section": "Live Code Together",
+    "text": "Live Code Together\n\nUse the chat to give our comparison app a memory.\nWhat works about the prompt? What strategies did I use to increase the chances I’d get a useful response?"
+  },
+  {
+    "objectID": "workshop-06.html",
+    "href": "workshop-06.html",
+    "title": "Just a little JavaScript",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Just a little JavaScript"
     ]
   },
   {
-    "objectID": "workshop-02.html",
-    "href": "workshop-02.html",
-    "title": "Modern layouts with bslib",
+    "objectID": "workshop-04.html",
+    "href": "workshop-04.html",
+    "title": "Code organization",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-02.html#topic-links",
-    "href": "workshop-02.html#topic-links",
-    "title": "Modern layouts with bslib",
-    "section": "Topic Links",
-    "text": "Topic Links\n\nbslib\nU.S. College Scorecard Data\n\ncollegeScorecard\n\nTheming with bslib\n\nbslib | Get Started | Theming\nbs_theme()\nBootstrap 5 theming variables\n\nbslib page functions\nFilling layouts with bslib\nbslib components:\n\ncard() · Article: Cards\nvalue_box() · Article: Value Boxes\nBuild-A-Box app\n\nbslib sidebar layouts:\n\npage_sidebar()\nsidebar()\nlayout_sidebar()\nArticle: Sidebar Layouts\n\nDetails on demand\n\naccordion()\ntooltip()\npopover()\nArticle: Tooltips and Popovers\n\nIcons\n\nfontawesome · Fontawesome Icons\nbsicons · Bootstrap Icons",
+    "objectID": "workshop-04.html#packages",
+    "href": "workshop-04.html#packages",
+    "title": "Code organization",
+    "section": "Packages",
+    "text": "Packages\n\nstyler\ngrkstyle",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-02.html#resources",
-    "href": "workshop-02.html#resources",
-    "title": "Modern layouts with bslib",
+    "objectID": "workshop-04.html#resources",
+    "href": "workshop-04.html#resources",
+    "title": "Code organization",
     "section": "Resources",
-    "text": "Resources\n\nCarson Sievert: Towards the next generation of Shiny UI (slides) (ShinyConf 2023)\nNext Generation Shiny Apps with {bslib} (Workshop at R/Medicine 2024)",
+    "text": "Resources\n\nHow Developers Choose Names, Dror G. Fietelson\nThe Programmer’s Brain, Felienne Hermans\nExplaining variable, Pete Hodgson\nWhy comment your code as little (and as well) as possible - R-hub blog\nCoding style, coding etiquette - R-hub blog\nCode smells and feels, Jenny Bryan\nThe Art of Readable Code, Dustin Boswell and Trevor Foucher\nRefactoring: Improving the Design of Existing Code, Martin Fowler\nObject of type ‘closure’ is not subsettable, Jenny Bryan (rstudio::conf(2020))",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Code organization"
     ]
   },
   {
-    "objectID": "about/index.html",
-    "href": "about/index.html",
-    "title": "Our Team",
+    "objectID": "workshop-01.html",
+    "href": "workshop-01.html",
+    "title": "Welcome and getting started",
     "section": "",
-    "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Welcome and getting started"
+    ]
+  },
+  {
+    "objectID": "workshop-01.html#outline",
+    "href": "workshop-01.html#outline",
+    "title": "Welcome and getting started",
+    "section": "Outline",
+    "text": "Outline\n\nWelcome to posit::conf(2024)!\nIntroductions and meet your neighbors\nAbout the workshop, conference, goals and ground rules",
+    "crumbs": [
+      "Workshop",
+      "Welcome and getting started"
+    ]
+  },
+  {
+    "objectID": "workshop-01.html#your-turn",
+    "href": "workshop-01.html#your-turn",
+    "title": "Welcome and getting started",
+    "section": "🧑‍💻 Your Turn",
+    "text": "🧑‍💻 Your Turn",
+    "crumbs": [
+      "Workshop",
+      "Welcome and getting started"
+    ]
   },
   {
     "objectID": "workshop.html",
@@ -502,207 +605,167 @@
     ]
   },
   {
-    "objectID": "slides/slides-05-modules.html#server-side-functions",
-    "href": "slides/slides-05-modules.html#server-side-functions",
-    "title": "The module module",
-    "section": "Server-side functions",
-    "text": "Server-side functions\nReplacing server-side logic with functions, or simplifying server side logic with functions."
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "Our Team",
+    "section": "",
+    "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
   },
   {
-    "objectID": "slides/slides-05-modules.html#your-turn",
-    "href": "slides/slides-05-modules.html#your-turn",
-    "title": "The module module",
-    "section": "Your turn",
-    "text": "Your turn\nTK: _exercises/07_app.R\nUse functions to simplify the server-side logic of the bar plots we saw earlier. The exercise is around around comparing two schools.\n(Use _exercises/02_solution_app.R as a starting point.)"
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#ui-functions",
-    "href": "slides/slides-05-modules.html#ui-functions",
-    "title": "The module module",
-    "section": "UI functions",
-    "text": "UI functions\nSame idea, but for UI functions.\nExamples:\n\nA card_dark() with a title and custom class.\nA sidebar_right()\nSome other Bootstrap component\n\n&lt;span class=\"badge text-bg-secondary\"&gt;New&lt;/span&gt;\nBadges · Bootstrap v5.3"
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#your-turn-1",
-    "href": "slides/slides-05-modules.html#your-turn-1",
-    "title": "The module module",
-    "section": "Your turn",
-    "text": "Your turn\nTK: _exercises/08_app.R\nMake a card_dark()"
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#where-to-put-those-functions",
-    "href": "slides/slides-05-modules.html#where-to-put-those-functions",
-    "title": "The module module",
-    "section": "Where to put those functions?",
-    "text": "Where to put those functions?\nloadSupport()"
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#lets-make-a-map-card",
-    "href": "slides/slides-05-modules.html#lets-make-a-map-card",
-    "title": "The module module",
-    "section": "Let’s make a map card",
-    "text": "Let’s make a map card\n\nPut a leafletOutput() in the card\nFind out we’re repeating a bunch of to avoid ID conflicts\nThis is why you need a module\nWork through turning card_dark() into card_map()"
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#your-turn-2",
-    "href": "slides/slides-05-modules.html#your-turn-2",
-    "title": "The module module",
-    "section": "Your turn",
-    "text": "Your turn\nTK: _exercises/09_app.R\nModules for value box, example from https://github.com/gadenbuie/slides/blob/gh-pages/bslib-modern-dashboards/jeep-weather/app-bslib.R Except, part of an app that compares two schools.\nGoal is a module that looks like this:\nui_forecast_value_box &lt;- function(id) {\n  ns &lt;- NS(id)\n\n  value_box(\n    title = textOutput(ns(\"wday\")),\n    value = uiOutput(ns(\"weather\")),\n    showcase = uiOutput(ns(\"icon\")),\n    showcase_layout = \"top right\",\n    theme = \"bg-gradient-blue-purple\"\n  )\n}"
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#modules-can-call-other-modules",
-    "href": "slides/slides-05-modules.html#modules-can-call-other-modules",
-    "title": "The module module",
-    "section": "Modules can call other modules",
-    "text": "Modules can call other modules\nIf you’re in a module, just forget for a second, pretend like you aren’t and call the other module"
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#your-turn-3",
-    "href": "slides/slides-05-modules.html#your-turn-3",
-    "title": "The module module",
-    "section": "Your turn",
-    "text": "Your turn\nTK: _exercises/10_app.R\nTurn each comparison column into a full module:\n\ncollege selector\nvalue box\nbar plot\nmap card"
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#communicating-with-your-module",
-    "href": "slides/slides-05-modules.html#communicating-with-your-module",
-    "title": "The module module",
-    "section": "Communicating with your module",
-    "text": "Communicating with your module\nSuppose you put this module into your app and realize that actually, you’d like to\n\nKnow which college is selected\nSet the college, e.g. pick a random school"
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#return-values-from-your-module",
-    "href": "slides/slides-05-modules.html#return-values-from-your-module",
-    "title": "The module module",
-    "section": "Return values from your module",
-    "text": "Return values from your module\nReport which school was selected from the module."
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#take-reactive-values",
-    "href": "slides/slides-05-modules.html#take-reactive-values",
-    "title": "The module module",
-    "section": "Take reactive values",
-    "text": "Take reactive values\nReceive a reactive value that sets the selected school."
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#return-anything",
-    "href": "slides/slides-05-modules.html#return-anything",
-    "title": "The module module",
-    "section": "Return anything!",
-    "text": "Return anything!\nReturn the reported school and an update_school() function."
-  },
-  {
-    "objectID": "workshop-01.html",
-    "href": "workshop-01.html",
-    "title": "Welcome and getting started",
+    "objectID": "workshop-02.html",
+    "href": "workshop-02.html",
+    "title": "Modern layouts with bslib",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modern layouts with bslib"
     ]
   },
   {
-    "objectID": "workshop-01.html#outline",
-    "href": "workshop-01.html#outline",
-    "title": "Welcome and getting started",
-    "section": "Outline",
-    "text": "Outline\n\nWelcome to posit::conf(2024)!\nIntroductions and meet your neighbors\nAbout the workshop, conference, goals and ground rules",
+    "objectID": "workshop-02.html#topic-links",
+    "href": "workshop-02.html#topic-links",
+    "title": "Modern layouts with bslib",
+    "section": "Topic Links",
+    "text": "Topic Links\n\nbslib\nU.S. College Scorecard Data\n\ncollegeScorecard\n\nTheming with bslib\n\nbslib | Get Started | Theming\nbs_theme()\nBootstrap 5 theming variables\n\nbslib page functions\nFilling layouts with bslib\nbslib components:\n\ncard() · Article: Cards\nvalue_box() · Article: Value Boxes\nBuild-A-Box app\n\nbslib sidebar layouts:\n\npage_sidebar()\nsidebar()\nlayout_sidebar()\nArticle: Sidebar Layouts\n\nDetails on demand\n\naccordion()\ntooltip()\npopover()\nArticle: Tooltips and Popovers\n\nIcons\n\nfontawesome · Fontawesome Icons\nbsicons · Bootstrap Icons",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modern layouts with bslib"
     ]
   },
   {
-    "objectID": "workshop-01.html#your-turn",
-    "href": "workshop-01.html#your-turn",
-    "title": "Welcome and getting started",
-    "section": "🧑‍💻 Your Turn",
-    "text": "🧑‍💻 Your Turn",
-    "crumbs": [
-      "Workshop",
-      "Welcome and getting started"
-    ]
-  },
-  {
-    "objectID": "workshop-04.html",
-    "href": "workshop-04.html",
-    "title": "Code organization",
-    "section": "",
-    "text": "View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Code organization"
-    ]
-  },
-  {
-    "objectID": "workshop-04.html#packages",
-    "href": "workshop-04.html#packages",
-    "title": "Code organization",
-    "section": "Packages",
-    "text": "Packages\n\nstyler\ngrkstyle",
-    "crumbs": [
-      "Workshop",
-      "Code organization"
-    ]
-  },
-  {
-    "objectID": "workshop-04.html#resources",
-    "href": "workshop-04.html#resources",
-    "title": "Code organization",
+    "objectID": "workshop-02.html#resources",
+    "href": "workshop-02.html#resources",
+    "title": "Modern layouts with bslib",
     "section": "Resources",
-    "text": "Resources\n\nHow Developers Choose Names, Dror G. Fietelson\nThe Programmer’s Brain, Felienne Hermans\nExplaining variable, Pete Hodgson\nWhy comment your code as little (and as well) as possible - R-hub blog\nCoding style, coding etiquette - R-hub blog\nCode smells and feels, Jenny Bryan\nThe Art of Readable Code, Dustin Boswell and Trevor Foucher\nRefactoring: Improving the Design of Existing Code, Martin Fowler\nObject of type ‘closure’ is not subsettable, Jenny Bryan (rstudio::conf(2020))",
+    "text": "Resources\n\nCarson Sievert: Towards the next generation of Shiny UI (slides) (ShinyConf 2023)\nNext Generation Shiny Apps with {bslib} (Workshop at R/Medicine 2024)",
     "crumbs": [
       "Workshop",
-      "Code organization"
+      "Modern layouts with bslib"
     ]
   },
   {
-    "objectID": "workshop-06.html",
-    "href": "workshop-06.html",
-    "title": "Just a little JavaScript",
+    "objectID": "workshop-05.html",
+    "href": "workshop-05.html",
+    "title": "Modules",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Just a little JavaScript"
+      "Modules"
     ]
   },
   {
-    "objectID": "slides/slides-06-javascript.html#section",
-    "href": "slides/slides-06-javascript.html#section",
-    "title": "A Spoonful of JavaScript",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Level Up with Shiny for R",
     "section": "",
-    "text": "Have you ever used a large language model like ChatGPT?\nHave you used an LLM to help you write code?\nHave you used an LLM to help you learn a programming language?\nHave you used an LLM to write a Shiny app?\nHave you used an LLM to write a workshop about Shiny?"
+    "text": "Workshop at posit::conf(2024)August 12, 202409:00 - 17:00ROOM TBA"
   },
   {
-    "objectID": "slides/slides-06-javascript.html#section-1",
-    "href": "slides/slides-06-javascript.html#section-1",
-    "title": "A Spoonful of JavaScript",
-    "section": "",
-    "text": "What do LLMs do best?\n- situation\n\nWhen do LLMs perform poorly?\n- situation"
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Level Up with Shiny for R",
+    "section": "Introduction",
+    "text": "Introduction\nShiny lets you quickly create rich, data-driven web applications for yourself, your clients, your students, or your colleagues. This workshop will give you the skills you need to build complex applications with brilliant user interfaces.\nYou’ll learn how to make the most of recent developments in the Shiny ecosystem, while mastering techniques for modularizing and structuring your applications for growth and maintainability. Along the way, you’ll encounter new techniques to speed up your applications using caching and databases for a smooth user experience."
   },
   {
-    "objectID": "slides/slides-06-javascript.html#our-task",
-    "href": "slides/slides-06-javascript.html#our-task",
-    "title": "A Spoonful of JavaScript",
-    "section": "Our Task",
-    "text": "Our Task\nWe want to update our college comparison app to remember the colleges that the user was comparing.\nWe’ve decided that bookmarking is too involved, we just want the app to remember automatically."
+    "objectID": "index.html#setup",
+    "href": "index.html#setup",
+    "title": "Level Up with Shiny for R",
+    "section": "Setup",
+    "text": "Setup\n\n📘 Website (you are here!)\n🧑‍💻 Join Posit Cloud Space (Only for workshop participants)\n📦 Repository\n\n\nUsing Posit Cloud\n\n\n\n\n\n\nWarning\n\n\n\n\nThese instructions will be updated.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the rmedicine-2024-bslib space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the rmedicine-2024-bslib space, select the rmedicine-2024-bslib assignment to create and launch a new project just for you."
   },
   {
-    "objectID": "slides/slides-06-javascript.html#your-turn",
-    "href": "slides/slides-06-javascript.html#your-turn",
-    "title": "A Spoonful of JavaScript",
-    "section": "Your Turn",
-    "text": "Your Turn\n\nI had a conversation with ChatGPT about this task.\nWhat strategy does the 🤖 suggest? Find:\n\nthe browser JavaScript API\nthe Shiny JavaScript API\nwhere to put this JavaScript code in our app\nthe server-side logic that connects JS ↔︎ R\n\nWhat made my prompt to ChatGPT effective?\n\n\n  \n    −\n    +\n \n 08:00"
+    "objectID": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
+    "href": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
+    "title": "Welcome!",
+    "section": "Welcome to Level Up with Shiny for R",
+    "text": "Welcome to Level Up with Shiny for R\n\nTake a seat, etc.\nHere’s an important link\nWiFI info"
   },
   {
-    "objectID": "slides/slides-06-javascript.html#live-code-together",
-    "href": "slides/slides-06-javascript.html#live-code-together",
-    "title": "A Spoonful of JavaScript",
-    "section": "Live Code Together",
-    "text": "Live Code Together\n\nUse the chat to give our comparison app a memory.\nWhat works about the prompt? What strategies did I use to increase the chances I’d get a useful response?"
+    "objectID": "slides/slides-01-intro.html#meet-us",
+    "href": "slides/slides-01-intro.html#meet-us",
+    "title": "Welcome!",
+    "section": "Meet us",
+    "text": "Meet us\n\nGarrick\nCarson\nKalau\nAndrew"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#code-of-conduct",
+    "href": "slides/slides-01-intro.html#code-of-conduct",
+    "title": "Welcome!",
+    "section": "Code of Conduct",
+    "text": "Code of Conduct\nCode of Conduct and COVID policies. Please Review\n\n💙 Treat everyone with respect\n🧡 Everyone should feel welcome and safe\n\nReporting:\n\n🗣️ any posit::conf staff member (t-shirt) or Info desk\n📧 conf@posit.com"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#meet-each-other",
+    "href": "slides/slides-01-intro.html#meet-each-other",
+    "title": "Welcome!",
+    "section": "Meet each other",
+    "text": "Meet each other\nTK: activity"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#wifi",
+    "href": "slides/slides-01-intro.html#wifi",
+    "title": "Welcome!",
+    "section": "WiFi",
+    "text": "WiFi\nWiFi: Posit Conf 2024\nPassword: conf2024"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#positconf2024-things-to-know",
+    "href": "slides/slides-01-intro.html#positconf2024-things-to-know",
+    "title": "Welcome!",
+    "section": "posit::conf(2024) Things to Know",
+    "text": "posit::conf(2024) Things to Know\n\n\nThere will be a gender-neutral bathroom on levels 3:7\nMeditation/prayer room: 503\n\nMon & Tues 7am - 7pm\nWed 7am - 5pm\n\nMothers room: 509\nRed lanyards available to those who don’t wish to be photographed"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#stickies",
+    "href": "slides/slides-01-intro.html#stickies",
+    "title": "Welcome!",
+    "section": "Stickies",
+    "text": "Stickies\n\n\n🟩\nAll good\nI’m done\n\n\n🟥\nNot great\nNeed time or help"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#shedule",
+    "href": "slides/slides-01-intro.html#shedule",
+    "title": "Welcome!",
+    "section": "Shedule",
+    "text": "Shedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#shedule-1",
+    "href": "slides/slides-01-intro.html#shedule-1",
+    "title": "Welcome!",
+    "section": "Shedule",
+    "text": "Shedule\n\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#discord",
+    "href": "slides/slides-01-intro.html#discord",
+    "title": "Welcome!",
+    "section": "Discord",
+    "text": "Discord\nGo posit.co/conference, click Login. Click image to connect to the posit::conf() Discord server.\nThis workshop has a private channel under Workshops.\n\n#level-up-shiny\n\nGreat place to ask questions, post resources, memes, or most anything else before, during, and after the workshop."
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#rstudio-cloud",
+    "href": "slides/slides-01-intro.html#rstudio-cloud",
+    "title": "Welcome!",
+    "section": "RStudio Cloud",
+    "text": "RStudio Cloud\nYou can use the following link to join the workshops RStudio cloud space,\n\n\npos.it/level-up-shiny\n\nOnce you have joined you can then select the level-up-shiny assignment,\nTK Image of assignment\nwhich should then create a copy of all materials and launch a cloud session for you."
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#cloud-session",
+    "href": "slides/slides-01-intro.html#cloud-session",
+    "title": "Welcome!",
+    "section": "Cloud session",
+    "text": "Cloud session\nIf everything is working you should see something very close to the following,\nTK image of cloud session"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#file-organization",
+    "href": "slides/slides-01-intro.html#file-organization",
+    "title": "Welcome!",
+    "section": "File organization",
+    "text": "File organization\n\n\n\n\n_exercises/\nFiles for Your Turn exercises\n\n\n_examples/\nFiles for my demo examples\n\n\nwebsite/\nThe website and slides\n\n\n./*\nLots of project related files you can ignore"
   },
   {
     "objectID": "slides/slides-02-bslib.html#at-first-there-was-shiny",
