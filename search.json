@@ -322,6 +322,17 @@
     "text": "Setup\n\n📘 Website (you are here!)\n🧑‍💻 Join Posit Cloud Space (Only for workshop participants)\n📦 Repository\n\n\nUsing Posit Cloud\n\n\n\n\n\n\nWarning\n\n\n\n\nThese instructions will be updated.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the rmedicine-2024-bslib space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the rmedicine-2024-bslib space, select the rmedicine-2024-bslib assignment to create and launch a new project just for you."
   },
   {
+    "objectID": "workshop-05.html",
+    "href": "workshop-05.html",
+    "title": "Modules",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Modules"
+    ]
+  },
+  {
     "objectID": "workshop-02.html",
     "href": "workshop-02.html",
     "title": "Modern layouts with bslib",
@@ -381,17 +392,6 @@
     "crumbs": [
       "Workshop",
       "Overview"
-    ]
-  },
-  {
-    "objectID": "workshop-03-break.html",
-    "href": "workshop-03-break.html",
-    "title": "☕ Break",
-    "section": "",
-    "text": "Image by DALL-E 3",
-    "crumbs": [
-      "Workshop",
-      "☕ Break"
     ]
   },
   {
@@ -456,6 +456,17 @@
     "title": "LocalStorage Usage Guide",
     "section": "ChatGPT",
     "text": "ChatGPT\nYou’re welcome! If you have any more questions or need further assistance, feel free to ask. Enjoy the rest of your workshop at posit::conf(2024)!"
+  },
+  {
+    "objectID": "workshop-03-break.html",
+    "href": "workshop-03-break.html",
+    "title": "☕ Break",
+    "section": "",
+    "text": "Image by DALL-E 3",
+    "crumbs": [
+      "Workshop",
+      "☕ Break"
+    ]
   },
   {
     "objectID": "workshop-07-break.html",
@@ -645,6 +656,17 @@
     "crumbs": [
       "Workshop",
       "Code organization"
+    ]
+  },
+  {
+    "objectID": "workshop-06.html",
+    "href": "workshop-06.html",
+    "title": "Just a little JavaScript",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Just a little JavaScript"
     ]
   },
   {
