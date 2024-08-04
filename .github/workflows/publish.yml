@@ -37,6 +37,7 @@ jobs:
         uses: r-lib/actions/setup-renv@v2
         env:
           RENV_CONFIG_PAK_ENABLED: true
+        with:
           cache-version: 2
 
       - name: 📰 Render and Publish to GitHub Pages
