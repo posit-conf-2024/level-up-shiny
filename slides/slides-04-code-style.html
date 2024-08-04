@@ -680,7 +680,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"options":{"comment":"","output":"true","warning":"true","context":"interactive","dpi":72,"out-height":"","results":"markup","editor-word-wrap":"true","read-only":"false","fig-width":7,"autorun":"false","classes":"","out-width":"700px","label":"unnamed-chunk-1","message":"true","fig-height":5,"fig-cap":"","editor-font-scale":"0.5","editor-max-height":"","editor-quick-suggestions":"false"},"code":"card_image <- function(file = NULL, ..., src = NULL) {\n  if (is.null(src)) {\n    if (grepl(\"^([[:alnum:]]+:)?//|data:\", file)) {\n      src <- file\n    } else {\n      if (!file.exists(file)) {\n        rlang::abort(sprintf(\"`file` does not exist: %s\", file))\n      }\n      src <- base64enc::dataURI(\n        file = file,\n        mime = mime_type %||% mime::guess_type(file)\n      )\n    }\n  }\n\n  htmltools::tags$img(src = src, ...)\n}","id":1},{"options":{"comment":"","output":"true","warning":"true","context":"interactive","dpi":72,"out-height":"","results":"markup","editor-word-wrap":"true","read-only":"false","fig-width":7,"autorun":"false","classes":"","out-width":"700px","label":"unnamed-chunk-2","message":"true","fig-height":5,"fig-cap":"","editor-font-scale":"0.5","editor-max-height":"","editor-quick-suggestions":"false"},"code":"shiny_rmd_warning <- function() {\n  runtime <- knitr::opts_knit$get(\"rmarkdown.runtime\")\n  if (!is.null(runtime) && runtime != \"shiny\") {\n    # note that the RStudio IDE checks for this specific string to detect Shiny\n    # applications in static document\n    list(structure(\n      \"Shiny application in a static R Markdown document\",\n      class = \"rmd_warning\"\n    ))\n  } else {\n    NULL\n  }\n}","id":2},{"options":{"comment":"","output":"true","warning":"true","context":"interactive","dpi":72,"out-height":"","results":"markup","editor-word-wrap":"true","read-only":"false","fig-width":7,"autorun":"false","classes":"","out-width":"700px","label":"unnamed-chunk-3","message":"true","fig-height":5,"fig-cap":"","editor-font-scale":"0.5","editor-max-height":"","editor-quick-suggestions":"false"},"code":"input <- list(type = \"cat\")\n\nif (input$type == \"types\") {\n  inspectdf::inspect_types(df)\n} else if (input$type == \"cat\") {\n  inspectdf::inspect_cat(df)\n} else if (input$type == \"num\") {\n  inspectdf::inspect_num(df)\n} else if (input$type == \"na\") {\n  inspectdf::inspect_na(df)\n}","id":3}];
+  globalThis.qwebrCellDetails = [{"options":{"fig-width":7,"read-only":"false","output":"true","fig-height":5,"results":"markup","out-height":"","comment":"","editor-quick-suggestions":"false","editor-word-wrap":"true","context":"interactive","message":"true","editor-max-height":"","classes":"","dpi":72,"warning":"true","out-width":"700px","label":"unnamed-chunk-1","editor-font-scale":"0.5","autorun":"false","fig-cap":""},"id":1,"code":"card_image <- function(file = NULL, ..., src = NULL) {\n  if (is.null(src)) {\n    if (grepl(\"^([[:alnum:]]+:)?//|data:\", file)) {\n      src <- file\n    } else {\n      if (!file.exists(file)) {\n        rlang::abort(sprintf(\"`file` does not exist: %s\", file))\n      }\n      src <- base64enc::dataURI(\n        file = file,\n        mime = mime_type %||% mime::guess_type(file)\n      )\n    }\n  }\n\n  htmltools::tags$img(src = src, ...)\n}"},{"options":{"fig-width":7,"read-only":"false","output":"true","fig-height":5,"results":"markup","out-height":"","comment":"","editor-quick-suggestions":"false","editor-word-wrap":"true","context":"interactive","message":"true","editor-max-height":"","classes":"","dpi":72,"warning":"true","out-width":"700px","label":"unnamed-chunk-2","editor-font-scale":"0.5","autorun":"false","fig-cap":""},"id":2,"code":"shiny_rmd_warning <- function() {\n  runtime <- knitr::opts_knit$get(\"rmarkdown.runtime\")\n  if (!is.null(runtime) && runtime != \"shiny\") {\n    # note that the RStudio IDE checks for this specific string to detect Shiny\n    # applications in static document\n    list(structure(\n      \"Shiny application in a static R Markdown document\",\n      class = \"rmd_warning\"\n    ))\n  } else {\n    NULL\n  }\n}"},{"options":{"fig-width":7,"read-only":"false","output":"true","fig-height":5,"results":"markup","out-height":"","comment":"","editor-quick-suggestions":"false","editor-word-wrap":"true","context":"interactive","message":"true","editor-max-height":"","classes":"","dpi":72,"warning":"true","out-width":"700px","label":"unnamed-chunk-3","editor-font-scale":"0.5","autorun":"false","fig-cap":""},"id":3,"code":"input <- list(type = \"cat\")\n\nif (input$type == \"types\") {\n  inspectdf::inspect_types(df)\n} else if (input$type == \"cat\") {\n  inspectdf::inspect_cat(df)\n} else if (input$type == \"num\") {\n  inspectdf::inspect_num(df)\n} else if (input$type == \"na\") {\n  inspectdf::inspect_na(df)\n}"}];
 
   </script>
   <script type="module">
@@ -2481,8 +2481,8 @@ document.querySelectorAll('.code-left-edge').forEach((block) => {
 <span id="cb15-16"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Open <code>_examples/02-bslib/99_app.R</code> in the IDE as an example.</p>
 </section>
-<section id="section-7" class="slide level2">
-<h2></h2>
+<section id="informational-comments" class="slide level2">
+<h2>Informational Comments?</h2>
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># Load the Shiny library</span></span>
 <span id="cb16-2"><a></a><span class="fu">library</span>(shiny)</span>
 <span id="cb16-3"><a></a></span>
@@ -2536,8 +2536,8 @@ document.querySelectorAll('.code-left-edge').forEach((block) => {
 </ol>
 </div>
 </section>
-<section id="section-8" class="slide level2">
-<h2></h2>
+<section id="case-study-joe-cheng" class="slide level2">
+<h2>Case Study: Joe Cheng</h2>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>shiny/R/middleware.R</strong></pre>
@@ -2685,28 +2685,73 @@ document.querySelectorAll('.code-left-edge').forEach((block) => {
 <span id="cb17-141"><a></a><span class="do">## -----------------------------------------------------------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-9" class="slide level2">
+<section id="case-study-davis-vaughn" class="slide level2">
+<h2>Case Study: Davis Vaughn</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>dplyr/R/across.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb18" data-filename="dplyr/R/across.R" data-ln-start-from="293"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># Loop in such an order that all functions are applied</span></span>
+<span id="cb18-2"><a></a><span class="co"># to a single column before moving on to the next column</span></span>
+<span id="cb18-3"><a></a><span class="cf">for</span> (i <span class="cf">in</span> seq_n_cols) {</span>
+<span id="cb18-4"><a></a>  var <span class="ot">&lt;-</span> vars[[i]]</span>
+<span id="cb18-5"><a></a>  col <span class="ot">&lt;-</span> data[[i]]</span>
+<span id="cb18-6"><a></a></span>
+<span id="cb18-7"><a></a>  <span class="fu">context_poke</span>(<span class="st">"column"</span>, var)</span>
+<span id="cb18-8"><a></a></span>
+<span id="cb18-9"><a></a>  <span class="cf">for</span> (j <span class="cf">in</span> seq_fns) {</span>
+<span id="cb18-10"><a></a>    fn <span class="ot">&lt;-</span> fns[[j]]</span>
+<span id="cb18-11"><a></a>    out[[k]] <span class="ot">&lt;-</span> <span class="fu">fn</span>(col, ...)</span>
+<span id="cb18-12"><a></a>    k <span class="ot">&lt;-</span> k <span class="sc">+</span> <span class="dv">1</span>L</span>
+<span id="cb18-13"><a></a>  }</span>
+<span id="cb18-14"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<aside><div>
+<p>📘 🤓 <a href="https://github.com/tidyverse/dplyr/blob/main/R/across.R#L283-L313" class="uri">https://github.com/tidyverse/dplyr/blob/main/R/across.R#L283-L313</a></p>
+</div></aside></section>
+<section id="case-study-davis-vaughn-1" class="slide level2">
+<h2>Case Study: Davis Vaughn</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>dplyr/R/across.R</strong></pre>
+</div>
+<div class="sourceCode" id="cb19" data-filename="dplyr/R/across.R" data-ln-start-from="293"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># Loop in such an order that all functions are applied</span></span>
+<span id="cb19-2"><a></a><span class="co"># to a single column before moving on to the next column</span></span>
+<span id="cb19-3"><a></a><span class="cf">for</span> (i <span class="cf">in</span> seq_n_cols) {</span>
+<span id="cb19-4"><a></a>  var <span class="ot">&lt;-</span> vars[[i]]</span>
+<span id="cb19-5"><a></a>  col <span class="ot">&lt;-</span> data[[i]]</span>
+<span id="cb19-6"><a></a>  <span class="fu">context_poke</span>(<span class="st">"column"</span>, var)</span>
+<span id="cb19-7"><a></a>  <span class="cf">for</span> (j <span class="cf">in</span> seq_fns) {</span>
+<span id="cb19-8"><a></a>    fn <span class="ot">&lt;-</span> fns[[j]]</span>
+<span id="cb19-9"><a></a>    out[[k]] <span class="ot">&lt;-</span> <span class="fu">fn</span>(col, ...)</span>
+<span id="cb19-10"><a></a>    k <span class="ot">&lt;-</span> k <span class="sc">+</span> <span class="dv">1</span>L</span>
+<span id="cb19-11"><a></a>  }</span>
+<span id="cb19-12"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-7" class="slide level2">
 <h2></h2>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>shiny/R/knit.R</strong></pre>
 </div>
-<div class="sourceCode" id="cb18" data-filename="shiny/R/knit.R" data-code-line-numbers="|7-8|1-3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># If there's an R Markdown runtime option set but it isn't set to Shiny, then</span></span>
-<span id="cb18-2"><a></a><span class="co"># return a warning indicating the runtime is inappropriate for this object.</span></span>
-<span id="cb18-3"><a></a><span class="co"># Returns NULL in all other cases.</span></span>
-<span id="cb18-4"><a></a>shiny_rmd_warning <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb18-5"><a></a>  runtime <span class="ot">&lt;-</span> knitr<span class="sc">::</span>opts_knit<span class="sc">$</span><span class="fu">get</span>(<span class="st">"rmarkdown.runtime"</span>)</span>
-<span id="cb18-6"><a></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(runtime) <span class="sc">&amp;&amp;</span> runtime <span class="sc">!=</span> <span class="st">"shiny"</span>) {</span>
-<span id="cb18-7"><a></a>    <span class="co"># note that the RStudio IDE checks for this specific string to detect Shiny</span></span>
-<span id="cb18-8"><a></a>    <span class="co"># applications in static document</span></span>
-<span id="cb18-9"><a></a>    <span class="fu">list</span>(<span class="fu">structure</span>(</span>
-<span id="cb18-10"><a></a>      <span class="st">"Shiny application in a static R Markdown document"</span>,</span>
-<span id="cb18-11"><a></a>      <span class="at">class =</span> <span class="st">"rmd_warning"</span></span>
-<span id="cb18-12"><a></a>    ))</span>
-<span id="cb18-13"><a></a>  } <span class="cf">else</span> {</span>
-<span id="cb18-14"><a></a>    <span class="cn">NULL</span></span>
-<span id="cb18-15"><a></a>  }</span>
-<span id="cb18-16"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20" data-filename="shiny/R/knit.R" data-code-line-numbers="|7-8|1-3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># If there's an R Markdown runtime option set but it isn't set to Shiny, then</span></span>
+<span id="cb20-2"><a></a><span class="co"># return a warning indicating the runtime is inappropriate for this object.</span></span>
+<span id="cb20-3"><a></a><span class="co"># Returns NULL in all other cases.</span></span>
+<span id="cb20-4"><a></a>shiny_rmd_warning <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb20-5"><a></a>  runtime <span class="ot">&lt;-</span> knitr<span class="sc">::</span>opts_knit<span class="sc">$</span><span class="fu">get</span>(<span class="st">"rmarkdown.runtime"</span>)</span>
+<span id="cb20-6"><a></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(runtime) <span class="sc">&amp;&amp;</span> runtime <span class="sc">!=</span> <span class="st">"shiny"</span>) {</span>
+<span id="cb20-7"><a></a>    <span class="co"># note that the RStudio IDE checks for this specific string to detect Shiny</span></span>
+<span id="cb20-8"><a></a>    <span class="co"># applications in static document</span></span>
+<span id="cb20-9"><a></a>    <span class="fu">list</span>(<span class="fu">structure</span>(</span>
+<span id="cb20-10"><a></a>      <span class="st">"Shiny application in a static R Markdown document"</span>,</span>
+<span id="cb20-11"><a></a>      <span class="at">class =</span> <span class="st">"rmd_warning"</span></span>
+<span id="cb20-12"><a></a>    ))</span>
+<span id="cb20-13"><a></a>  } <span class="cf">else</span> {</span>
+<span id="cb20-14"><a></a>    <span class="cn">NULL</span></span>
+<span id="cb20-15"><a></a>  }</span>
+<span id="cb20-16"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="what-does-this-code-do" class="slide level2">
@@ -2742,7 +2787,7 @@ document.querySelectorAll('.code-left-edge').forEach((block) => {
 <section id="what-will-this-function-do" class="slide level2">
 <h2>What will this function do?</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">avg_sat_scores</span>(scorecard, <span class="st">"2020-21"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">avg_sat_scores</span>(scorecard, <span class="st">"2020-21"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output-display">
@@ -2773,37 +2818,37 @@ document.querySelectorAll('.code-left-edge').forEach((block) => {
 <section id="give-this-function-a-better-name" class="slide level2">
 <h2>Give this function a better name</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">library</span>(collegeScorecard)</span>
-<span id="cb20-2"><a></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb20-3"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb20-4"><a></a></span>
-<span id="cb20-5"><a></a>avg_sat_scores <span class="ot">&lt;-</span> <span class="cf">function</span>(scorecard, <span class="at">year_start =</span> <span class="st">"2020-21"</span>) {</span>
-<span id="cb20-6"><a></a>  scorecard <span class="sc">|&gt;</span></span>
-<span id="cb20-7"><a></a>    <span class="fu">filter</span>(</span>
-<span id="cb20-8"><a></a>      <span class="sc">!</span><span class="fu">is.na</span>(score_sat_avg),</span>
-<span id="cb20-9"><a></a>      academic_year <span class="sc">&gt;=</span> year_start</span>
-<span id="cb20-10"><a></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb20-11"><a></a>    <span class="fu">mutate</span>(</span>
-<span id="cb20-12"><a></a>      <span class="at">admissions_rate =</span> <span class="fu">case_when</span>(</span>
-<span id="cb20-13"><a></a>        rate_admissions <span class="sc">&lt;</span> <span class="fl">0.5</span>  <span class="sc">~</span> <span class="st">"Highly Selective"</span>,</span>
-<span id="cb20-14"><a></a>        rate_admissions <span class="sc">&gt;=</span> <span class="fl">0.5</span> <span class="sc">~</span> <span class="st">"Wide Acceptance"</span>,</span>
-<span id="cb20-15"><a></a>        <span class="at">.default =</span> <span class="st">"Unknown"</span></span>
-<span id="cb20-16"><a></a>      )</span>
-<span id="cb20-17"><a></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb20-18"><a></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb20-19"><a></a>    <span class="fu">aes</span>(score_sat_avg, <span class="at">fill =</span> academic_year) <span class="sc">+</span></span>
-<span id="cb20-20"><a></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb20-21"><a></a>    <span class="fu">facet_grid</span>(academic_year <span class="sc">~</span> admissions_rate, <span class="at">switch =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
-<span id="cb20-22"><a></a>    <span class="fu">labs</span>(</span>
-<span id="cb20-23"><a></a>      <span class="at">x =</span> <span class="st">"Average SAT Score"</span>,</span>
-<span id="cb20-24"><a></a>      <span class="at">y =</span> <span class="cn">NULL</span>,</span>
-<span id="cb20-25"><a></a>    ) <span class="sc">+</span></span>
-<span id="cb20-26"><a></a>    <span class="fu">theme_minimal</span>(<span class="dv">18</span>) <span class="sc">+</span></span>
-<span id="cb20-27"><a></a>    <span class="fu">theme</span>(</span>
-<span id="cb20-28"><a></a>      <span class="at">strip.text.y.left =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>),</span>
-<span id="cb20-29"><a></a>      <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb20-30"><a></a>    )</span>
-<span id="cb20-31"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">library</span>(collegeScorecard)</span>
+<span id="cb22-2"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb22-3"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb22-4"><a></a></span>
+<span id="cb22-5"><a></a>avg_sat_scores <span class="ot">&lt;-</span> <span class="cf">function</span>(scorecard, <span class="at">year_start =</span> <span class="st">"2020-21"</span>) {</span>
+<span id="cb22-6"><a></a>  scorecard <span class="sc">|&gt;</span></span>
+<span id="cb22-7"><a></a>    <span class="fu">filter</span>(</span>
+<span id="cb22-8"><a></a>      <span class="sc">!</span><span class="fu">is.na</span>(score_sat_avg),</span>
+<span id="cb22-9"><a></a>      academic_year <span class="sc">&gt;=</span> year_start</span>
+<span id="cb22-10"><a></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb22-11"><a></a>    <span class="fu">mutate</span>(</span>
+<span id="cb22-12"><a></a>      <span class="at">admissions_rate =</span> <span class="fu">case_when</span>(</span>
+<span id="cb22-13"><a></a>        rate_admissions <span class="sc">&lt;</span> <span class="fl">0.5</span>  <span class="sc">~</span> <span class="st">"Highly Selective"</span>,</span>
+<span id="cb22-14"><a></a>        rate_admissions <span class="sc">&gt;=</span> <span class="fl">0.5</span> <span class="sc">~</span> <span class="st">"Wide Acceptance"</span>,</span>
+<span id="cb22-15"><a></a>        <span class="at">.default =</span> <span class="st">"Unknown"</span></span>
+<span id="cb22-16"><a></a>      )</span>
+<span id="cb22-17"><a></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb22-18"><a></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb22-19"><a></a>    <span class="fu">aes</span>(score_sat_avg, <span class="at">fill =</span> academic_year) <span class="sc">+</span></span>
+<span id="cb22-20"><a></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb22-21"><a></a>    <span class="fu">facet_grid</span>(academic_year <span class="sc">~</span> admissions_rate, <span class="at">switch =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
+<span id="cb22-22"><a></a>    <span class="fu">labs</span>(</span>
+<span id="cb22-23"><a></a>      <span class="at">x =</span> <span class="st">"Average SAT Score"</span>,</span>
+<span id="cb22-24"><a></a>      <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb22-25"><a></a>    ) <span class="sc">+</span></span>
+<span id="cb22-26"><a></a>    <span class="fu">theme_minimal</span>(<span class="dv">18</span>) <span class="sc">+</span></span>
+<span id="cb22-27"><a></a>    <span class="fu">theme</span>(</span>
+<span id="cb22-28"><a></a>      <span class="at">strip.text.y.left =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>),</span>
+<span id="cb22-29"><a></a>      <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb22-30"><a></a>    )</span>
+<span id="cb22-31"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="naming-shiny-things-outputs" class="slide level2">
@@ -2856,22 +2901,22 @@ input$cost_avg_min</code></pre>
 <h1>Switch away from if</h1>
 
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <div class="fs-step-4">
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="cf">switch</span>(</span>
-<span id="cb24-2"><a></a>  input<span class="sc">$</span>type,</span>
-<span id="cb24-3"><a></a>  <span class="st">"types"</span> <span class="ot">=</span> inspectdf<span class="sc">::</span><span class="fu">inspect_types</span>(df),</span>
-<span id="cb24-4"><a></a>  <span class="st">"cat"</span> <span class="ot">=</span> inspectdf<span class="sc">::</span><span class="fu">inspect_cat</span>(df),</span>
-<span id="cb24-5"><a></a>  <span class="st">"num"</span> <span class="ot">=</span> inspectdf<span class="sc">::</span><span class="fu">inspect_num</span>(df),</span>
-<span id="cb24-6"><a></a>  <span class="st">"na"</span> <span class="ot">=</span> inspectdf<span class="sc">::</span><span class="fu">inspect_na</span>(df)</span>
-<span id="cb24-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="cf">switch</span>(</span>
+<span id="cb26-2"><a></a>  input<span class="sc">$</span>type,</span>
+<span id="cb26-3"><a></a>  <span class="st">"types"</span> <span class="ot">=</span> inspectdf<span class="sc">::</span><span class="fu">inspect_types</span>(df),</span>
+<span id="cb26-4"><a></a>  <span class="st">"cat"</span> <span class="ot">=</span> inspectdf<span class="sc">::</span><span class="fu">inspect_cat</span>(df),</span>
+<span id="cb26-5"><a></a>  <span class="st">"num"</span> <span class="ot">=</span> inspectdf<span class="sc">::</span><span class="fu">inspect_num</span>(df),</span>
+<span id="cb26-6"><a></a>  <span class="st">"na"</span> <span class="ot">=</span> inspectdf<span class="sc">::</span><span class="fu">inspect_na</span>(df)</span>
+<span id="cb26-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
