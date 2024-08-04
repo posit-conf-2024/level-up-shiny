@@ -19,11 +19,19 @@ format:
 revealjs-plugins:
   - utopia-slides
 
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: "#>"
+
 filters:
   - webr
 
 webr:
   show-startup-message: false
+  packages:
+    - dplyr
+    - collegeScorecard
 
 editor:
   render-on-save: true
@@ -31,18 +39,174 @@ editor:
 
 # You might not need a module {.middle .text-center}
 
-## Server-side functions
+## {.middle}
 
-Replacing server-side logic with functions, or simplifying server side logic with functions.
+::: {.flex}
+::: w-50
+[Why use **Shiny modules**?]{.fs-step-2 .font-heading .b}
 
-## Your turn
+::: {.fragment}
+* Avoid repeating logic \
+  &nbsp;
 
-TK: `_exercises/07_app.R`
+* Make your code more reusable \
+  &nbsp;
+:::
+:::
+:::
 
-Use functions to simplify the server-side logic of the bar plots we saw earlier.
-The exercise is around around comparing two schools.
+## {.middle}
 
-(Use `_exercises/02_solution_app.R` as a starting point.)
+::: {.flex}
+::: w-50
+[Why use [functions]{.b .orange}?]{.fs-step-2 .font-heading .b}
+
+* Avoid repeating logic \
+  &nbsp;
+
+* Make your code more reusable \
+  &nbsp;
+:::
+
+::: {.w-50 .fragment}
+[Why use [Shiny modules]{.b .blue}?]{.fs-step-2 .font-heading .b}
+
+::: {.incremental}
+* Avoid repeating \
+  **Shiny UI/Server logic**
+
+* Make your code more reusable \
+  **to Shiny app developers**
+:::
+:::
+:::
+
+## Maybe you could use a function? {.text-center .middle .bg-gradient-yellow-peach style="--slide-heading-color: white"}
+
+```{=html}
+<style>
+.bg-gradient-yellow-peach {
+  background: hsla(29, 92%, 55%, 1);
+  background: linear-gradient(315deg, hsla(29, 92%, 55%, 1) 0%, hsla(0, 87%, 62%, 1) 57%);
+  background: -moz-linear-gradient(315deg, hsla(29, 92%, 55%, 1) 0%, hsla(0, 87%, 62%, 1) 57%);
+  background: -webkit-linear-gradient(315deg, hsla(29, 92%, 55%, 1) 0%, hsla(0, 87%, 62%, 1) 57%);
+}
+</style>
+```
+
+## {auto-animate=true}
+
+```{r}
+library(dplyr)
+library(collegeScorecard)
+```
+
+```{r}
+#| echo: true
+school |>
+  filter(
+    state == "CA",
+    control == "Public",
+  ) |>
+  count() |>
+  pull(n)
+```
+
+## {auto-animate=true}
+
+```{r}
+#| echo: true
+school |>
+  filter(state == "CA") |>
+  filter(control == "Public") |>
+  count() |>
+  pull(n)
+```
+
+## {auto-animate=true}
+
+```{r}
+#| echo: true
+#| code-line-numbers: true
+school |>
+  filter(state == "CA") |>
+  filter(control == "Public") |>
+  count() |>
+  pull(n)
+
+school |>
+  filter(state == "CA") |>
+  filter(control == "Nonprofit") |>
+  count() |>
+  pull(n)
+```
+
+## {auto-animate=true}
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|1,2,4,5,8,9,11,12,15,16,18,19|3,10,17|1-2|3-5"
+school |>
+  filter(state == "CA") |>
+  filter(control == "Public") |>
+  count() |>
+  pull(n)
+
+school |>
+  filter(state == "CA") |>
+  filter(control == "Nonprofit") |>
+  count() |>
+  pull(n)
+
+school |>
+  filter(state == "CA") |>
+  filter(control == "For-profit") |>
+  count() |>
+  pull(n)
+```
+
+## 
+
+::: {.fs-step-1}
+```{webr-r}
+school |>
+  filter(state == "CA") |>
+  filter(control == "Public") |>
+  count() |>
+  pull(n)
+```
+:::
+
+::: notes
+```{.r}
+school_count_control <- function(school, control) {
+  school |>
+    filter(control == !!control) |>
+    count() |>
+    pull(n)
+}
+```
+
+Note, `{{ control }}` or `!!control` work here.
+When to embrace and when to double bang?
+Try one, if it doesn't work, try the other.
+:::
+
+## Your Turn `_exercises/07_app.R` {#your-turn-1 .slide-your-turn}
+
+{{< countdown 6:00 bottom="2rem" right="2rem" >}}
+
+::: w-90
+1. **Refactor the code for the two plots into a single function.**
+   You can put this function in this app file in the server section around the
+   `## Put your function here ##` line.
+
+2. **Replace the the duplicated code** with your new function.
+
+3. 🤔 What logic is encapsulated in your function? \
+   How could your function be used outside of this app? \
+   How well will your function compose with other functions?
+:::
 
 ## UI functions
 
