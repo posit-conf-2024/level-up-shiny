@@ -522,14 +522,7 @@ input$cost_avg_min
 What are some other useful prefixes in Shiny?
 
 ::: {.text-center .fs-step-5}
-```{=html}
-<pre class="editable-code-block" onkeydown="(ev => ev.stopPropagation())(event)" onkeypress="(ev => ev.stopPropagation())(event)">
-<code contenteditable>* example_
-* example_
-* example_
-</code>
-</pre>
-```
+{{< partial ../partials/content-editable-code.html text="* example_" >}}
 :::
 
 # Switch away from if {.middle}
