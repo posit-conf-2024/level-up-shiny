@@ -291,7 +291,7 @@ Let's make a [Bootstrap badge](https://getbootstrap.com/docs/5.3/components/badg
 
 # A 🏡 for your functions {.middle}
 
-## Put your functions in helpers in `R/`
+## Put your functions in `R/`
 
 ::: incremental
 * They're loaded automatically by Shiny
@@ -309,12 +309,336 @@ Let's make a [Bootstrap badge](https://getbootstrap.com/docs/5.3/components/badg
 
 # Modules {.middle}
 
-## Let's make a map card
+## Am I repeating myself?
 
-* Put a `leafletOutput()` in the card
-* Find out we're repeating a bunch of to avoid ID conflicts
-* This is why you need a module
-* Work through turning `card_dark()` into `card_map()`
+::: {.flex .gap-s}
+::: {.w-50}
+```{.r}
+# UI ----
+selectInput("school_a", "School A", choices = school_names, selected = school_a, width = "100%"),
+card(
+  card_header("Cost of Tuition (In State)"),
+  plotOutput("plot_school_a")
+)
+
+# Server ----
+output$plot_school_a <- renderPlot({
+  req(input$school_a)
+
+  scorecard |>
+    filter_scorecard_by_school_name(school, input$school_a) |>
+    plot_cost_tuition(colors[1])
+})
+```
+:::
+
+::: {.w-50}
+```{.r}
+# UI ----
+selectInput("school_a", "School A", choices = school_names, selected = school_a, width = "100%"),
+card(
+  card_header("Cost of Tuition (In State)"),
+  plotOutput("plot_school_a")
+)
+
+# Server ----
+output$plot_school_b <- renderPlot({
+  req(input$school_b)
+
+  scorecard |>
+    filter_scorecard_by_school_name(school, input$school_b) |>
+    plot_cost_tuition(colors[2])
+})
+```
+:::
+:::
+
+## Step 1: Module UI
+
+::: {.flex .gap-s}
+::: {.w-50}
+```{.r}
+# UI ----
+selectInput("school_a", "School A", choices = school_names, selected = school_a, width = "100%"),
+card(
+  card_header("Cost of Tuition (In State)"),
+  plotOutput("plot_school_a")
+)
+```
+:::
+
+::: {.w-50}
+```{.r}
+# UI ----
+selectInput("school_a", "School A", choices = school_names, selected = school_a, width = "100%"),
+card(
+  card_header("Cost of Tuition (In State)"),
+  plotOutput("plot_school_a")
+)
+```
+:::
+:::
+
+::: {.w-two-thirds .fragment .center}
+```{.r}
+mod_school_ui <- function(id) {
+  list(
+    selectInput(paste0("school_", id), "School A", choices = school_names, selected = school_a, width = "100%"),
+    card(
+      card_header("Cost of Tuition (In State)"),
+      plotOutput(paste0("plot_school_", id))
+    )
+  )
+}
+
+mod_school_ui("a")
+mod_school_ui("b")
+```
+:::
+
+
+## Step 1: Module UI
+
+::: {.w-two-thirds .center}
+```{.r}
+mod_school_ui <- function(id) {
+  list(
+    selectInput(NS(id, "school"), "School A", choices = school_names, selected = school_a, width = "100%"),
+    card(
+      card_header("Cost of Tuition (In State)"),
+      plotOutput(NS(id, "plot_school"))
+    )
+  )
+}
+
+mod_school_ui("a")
+mod_school_ui("b")
+```
+:::
+
+## Step 1: Module UI
+
+::: {.w-two-thirds .center}
+```{.r}
+mod_school_ui <- function(id) {
+  ns <- NS(id)
+
+  list(
+    selectInput(ns("school"), "School A", choices = school_names, selected = school_a, width = "100%"),
+    card(
+      card_header("Cost of Tuition (In State)"),
+      plotOutput(ns("plot_school"))
+    )
+  )
+}
+
+mod_school_ui("a")
+mod_school_ui("b")
+```
+:::
+
+## Modules aren't magic 🥱
+
+::: {.fs-step-2}
+```{r}
+#| echo: true
+shiny::NS("a", "plot_school")
+
+ns <- shiny::NS("b")
+ns("plot_school")
+```
+:::
+
+## Step 1: Module UI
+
+::: {.w-two-thirds .center}
+```{.r}
+mod_school_ui <- function(id) {
+  ns <- NS(id)
+
+  list(
+    selectInput(ns("school"), "School A", choices = school_names, selected = school_a, width = "100%"),
+    card(
+      card_header("Cost of Tuition (In State)"),
+      plotOutput(ns("plot_school"))
+    )
+  )
+}
+
+mod_school_ui("a")
+mod_school_ui("b")
+```
+:::
+
+## Step 1: Module UI
+
+::: {.w-two-thirds .center}
+```{.r}
+mod_school_ui <- function(id, label, initial) {
+  ns <- NS(id)
+
+  list(
+    selectInput(ns("school"), label, choices = school_names, selected = initial, width = "100%"),
+    card(
+      card_header("Cost of Tuition (In State)"),
+      plotOutput(ns("plot_school"))
+    )
+  )
+}
+
+mod_school_ui("a", "School A", school_a)
+mod_school_ui("b", "School B", school_b)
+```
+:::
+
+::: {.fragment .w-50 .center}
+inputs: **school** \
+outputs: **plot_school**
+:::
+
+## Step 2: Module Server
+
+::: {.flex .gap-s}
+::: {.w-50}
+```{.r}
+output$plot_school_a <- renderPlot({
+  req(input$school_a)
+
+  scorecard |>
+    filter_scorecard_by_school_name(school, input$school_a) |>
+    plot_cost_tuition(colors[1])
+})
+```
+:::
+
+::: {.w-50}
+```{.r}
+output$plot_school_b <- renderPlot({
+  req(input$school_b)
+
+  scorecard |>
+    filter_scorecard_by_school_name(school, input$school_b) |>
+    plot_cost_tuition(colors[2])
+})
+```
+:::
+:::
+
+## Step 2: Module Server
+
+::: {.flex .gap-s}
+::: {.w-50}
+```{.r}
+server <- function(input, output, session) {
+  output$plot_school_a <- renderPlot({
+    req(input$school_a)
+
+    scorecard |>
+      filter_scorecard_by_school_name(school, input$school_a) |>
+      plot_cost_tuition(colors[1])
+  })
+}
+```
+:::
+
+::: {.w-50}
+```{.r}
+server <- function(input, output, session) {
+  output$plot_school_b <- renderPlot({
+    req(input$school_b)
+
+    scorecard |>
+      filter_scorecard_by_school_name(school, input$school_b) |>
+      plot_cost_tuition(colors[2])
+  })
+}
+```
+:::
+:::
+
+::: {.w-75 .fragment .center}
+```{.r}
+mod_school_server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$plot_school_b <- renderPlot({
+      req(input$school_b)
+
+      scorecard |>
+        filter_scorecard_by_school_name(school, input$school_b) |>
+        plot_cost_tuition(colors[2])
+    })
+  })
+}
+```
+:::
+
+## Step 2: Module Server
+
+::: {.w-75 .center}
+```{.r code-line-numbers="|3,4,7"}
+mod_school_server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$plot_school_b <- renderPlot({
+      req(input$school_b)
+
+      scorecard |>
+        filter_scorecard_by_school_name(school, input$school_b) |>
+        plot_cost_tuition(colors[2])
+    })
+  })
+}
+```
+:::
+
+## Step 2: Module Server
+
+::: {.w-75 .center}
+```{.r}
+mod_school_server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$plot_school <- renderPlot({
+      req(input$school)
+
+      scorecard |>
+        filter_scorecard_by_school_name(school, input$school) |>
+        plot_cost_tuition(colors[2])
+    })
+  })
+}
+
+mod_school_server("a")
+mod_school_server("b")
+```
+::: {.fragment .text-center}
+✨ There is some magic in modules, after all ✨
+:::
+:::
+
+## Step 2: Module Server
+
+::: {.w-75 .center}
+```{.r}
+mod_school_server <- function(id, plot_color) {
+  moduleServer(id, function(input, output, session) {
+    output$plot_school <- renderPlot({
+      req(input$school)
+
+      scorecard |>
+        filter_scorecard_by_school_name(school, input$school) |>
+        plot_cost_tuition(plot_color)
+    })
+  })
+}
+
+mod_school_server("a", colors[1])
+mod_school_server("b", colors[2])
+```
+:::
+
+::: notes
+Working app at this point: `_examples/05-modules/03_app.R`
+:::
+
 
 ## Your turn
 
