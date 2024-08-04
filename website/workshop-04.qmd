@@ -6,9 +6,7 @@ duration: 45min
 time: 11:00 - 11:45
 ---
 
-::: {.ratio .ratio-16x9}
 {{< revealjs "slides/slides-04-code-style.html" class="ratio ratio-16x9" >}}
-:::
 
 ## Packages
 
