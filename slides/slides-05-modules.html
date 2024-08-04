@@ -12,7 +12,7 @@
 
   <meta name="author" content="posit::conf(2024)">
   <meta name="dcterms.date" content="2024-08-12">
-  <title>Level Up with Shiny for R – Module: module</title>
+  <title>Level Up with Shiny for R – The module module</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,10 +31,76 @@
       vertical-align: middle;
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="../site_libs/quarto-contrib/quarto-project/gadenbuie/utopia-slides/utopia.css">
   <link rel="stylesheet" href="../site_libs/quarto-contrib/quarto-project/gadenbuie/utopia-slides/tachyons.css">
+  <link rel="stylesheet" href="../auto-dark-mode.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -330,7 +396,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Module: module</h1>
+  <h1 class="title">The module module</h1>
   <p class="subtitle">Level Up with Shiny for R</p>
 
 <div class="quarto-title-authors">
@@ -343,25 +409,121 @@
 
   <p class="date">2024-08-12</p>
 </section>
-<section id="you-might-not-need-a-module" class="title-slide slide level1 middle center">
+<section>
+<section id="you-might-not-need-a-module" class="title-slide slide level1 middle text-center center">
 <h1>You might not need a module</h1>
 
 </section>
-
+<section id="server-side-functions" class="slide level2">
+<h2>Server-side functions</h2>
+<p>Replacing server-side logic with functions, or simplifying server side logic with functions.</p>
+</section>
+<section id="your-turn" class="slide level2">
+<h2>Your turn</h2>
+<p>TK: <code>_exercises/07_app.R</code></p>
+<p>Use functions to simplify the server-side logic of the bar plots we saw earlier. The exercise is around around comparing two schools.</p>
+<p>(Use <code>_exercises/02_solution_app.R</code> as a starting point.)</p>
+</section>
+<section id="ui-functions" class="slide level2">
+<h2>UI functions</h2>
+<p>Same idea, but for UI functions.</p>
+<p>Examples:</p>
+<ul>
+<li><p>A <code>card_dark()</code> with a title and custom class.</p></li>
+<li><p>A <code>sidebar_right()</code></p></li>
+<li><p>Some other Bootstrap component</p>
+<ul>
+<li><code>&lt;span class="badge text-bg-secondary"&gt;New&lt;/span&gt;</code></li>
+<li><a href="https://getbootstrap.com/docs/5.3/components/badge/">Badges · Bootstrap v5.3</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="your-turn-1" class="slide level2">
+<h2>Your turn</h2>
+<p>TK: <code>_exercises/08_app.R</code></p>
+<p>Make a <code>card_dark()</code></p>
+</section>
+<section id="where-to-put-those-functions" class="slide level2">
+<h2>Where to put those functions?</h2>
+<p><code>loadSupport()</code></p>
+</section></section>
+<section>
 <section id="modules" class="title-slide slide level1 middle center">
 <h1>Modules</h1>
 
 </section>
-
+<section id="lets-make-a-map-card" class="slide level2">
+<h2>Let’s make a map card</h2>
+<ul>
+<li>Put a <code>leafletOutput()</code> in the card</li>
+<li>Find out we’re repeating a bunch of to avoid ID conflicts</li>
+<li>This is why you need a module</li>
+<li>Work through turning <code>card_dark()</code> into <code>card_map()</code></li>
+</ul>
+</section>
+<section id="your-turn-2" class="slide level2">
+<h2>Your turn</h2>
+<p>TK: <code>_exercises/09_app.R</code></p>
+<p>Modules for value box, example from https://github.com/gadenbuie/slides/blob/gh-pages/bslib-modern-dashboards/jeep-weather/app-bslib.R Except, part of an app that compares two schools.</p>
+<p>Goal is a module that looks like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>ui_forecast_value_box <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb1-2"><a></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a>  <span class="fu">value_box</span>(</span>
+<span id="cb1-5"><a></a>    <span class="at">title =</span> <span class="fu">textOutput</span>(<span class="fu">ns</span>(<span class="st">"wday"</span>)),</span>
+<span id="cb1-6"><a></a>    <span class="at">value =</span> <span class="fu">uiOutput</span>(<span class="fu">ns</span>(<span class="st">"weather"</span>)),</span>
+<span id="cb1-7"><a></a>    <span class="at">showcase =</span> <span class="fu">uiOutput</span>(<span class="fu">ns</span>(<span class="st">"icon"</span>)),</span>
+<span id="cb1-8"><a></a>    <span class="at">showcase_layout =</span> <span class="st">"top right"</span>,</span>
+<span id="cb1-9"><a></a>    <span class="at">theme =</span> <span class="st">"bg-gradient-blue-purple"</span></span>
+<span id="cb1-10"><a></a>  )</span>
+<span id="cb1-11"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
 <section id="modules-plus" class="title-slide slide level1 middle center">
 <h1>Modules Plus</h1>
+
+</section>
+<section id="modules-can-call-other-modules" class="slide level2">
+<h2>Modules can call other modules</h2>
+<p>If you’re in a module, just forget for a second, pretend like you aren’t and call the other module</p>
+</section>
+<section id="your-turn-3" class="slide level2">
+<h2>Your turn</h2>
+<p>TK: <code>_exercises/10_app.R</code></p>
+<p>Turn each comparison column into a full module:</p>
+<ul>
+<li>college selector</li>
+<li>value box</li>
+<li>bar plot</li>
+<li>map card</li>
+</ul>
+</section>
+<section id="communicating-with-your-module" class="slide level2">
+<h2>Communicating with your module</h2>
+<p>Suppose you put this module into your app and realize that actually, you’d like to</p>
+<ol type="a">
+<li>Know which college is selected</li>
+<li>Set the college, e.g.&nbsp;pick a random school</li>
+</ol>
+</section>
+<section id="return-values-from-your-module" class="slide level2">
+<h2>Return values from your module</h2>
+<p>Report which school was selected from the module.</p>
+</section>
+<section id="take-reactive-values" class="slide level2">
+<h2>Take reactive values</h2>
+<p>Receive a reactive value that sets the selected school.</p>
+</section>
+<section id="return-anything" class="slide level2">
+<h2>Return anything!</h2>
+<p>Return the reported school and an <code>update_school()</code> function.</p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

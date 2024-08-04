@@ -7,12 +7,14 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/countdown-0.5.0/countdown.js"></script>
+<link href="../site_libs/quarto-contrib/countdown-0.5.0/countdown.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.55">
 
   <meta name="author" content="posit::conf(2024)">
   <meta name="dcterms.date" content="2024-08-12">
-  <title>Level Up with Shiny for R – Welcome!</title>
+  <title>Level Up with Shiny for R – A Spoonful of JavaScript</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -331,7 +333,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Welcome!</h1>
+  <h1 class="title">A Spoonful of JavaScript</h1>
   <p class="subtitle">Level Up with Shiny for R</p>
 
 <div class="quarto-title-authors">
@@ -344,238 +346,71 @@
 
   <p class="date">2024-08-12</p>
 </section>
-<section id="welcome-to-level-up-with-shiny-for-r" class="slide level2">
-<h2>Welcome to Level&nbsp;Up&nbsp;with Shiny&nbsp;for&nbsp;R</h2>
-<ul>
-<li>Take a seat, etc.</li>
-<li>Here’s an important link</li>
-<li>WiFI info</li>
-</ul>
-<style>
-.reveal .footer {
-  font-size: 1em !important;
-}
-</style>
-</section>
 <section>
-<section id="introductions" class="title-slide slide level1 middle center">
-<h1>🤝 Introductions 🤝</h1>
+<section id="the-in-the-room" class="title-slide slide level1 middle center">
+<h1>The 🤖 in the Room</h1>
 
 </section>
-<section id="meet-us" class="slide level2">
-<h2>Meet us</h2>
+<section id="section" class="slide level2">
+<h2></h2>
 <ul>
-<li>Garrick</li>
-<li>Carson</li>
-<li>Kalau</li>
-<li>Andrew</li>
+<li><p>Have you ever used a large language model like ChatGPT?</p></li>
+<li><p>Have you used an LLM to help you write code?</p></li>
+<li><p>Have you used an LLM to help you learn a programming language?</p></li>
+<li><p>Have you used an LLM to write a Shiny app?</p></li>
+<li><p>Have you used an LLM to write a workshop about Shiny?</p></li>
 </ul>
 </section>
-<section id="code-of-conduct" class="slide level2">
-<h2>Code of Conduct</h2>
-<p><a href="https://posit.co/code-of-conduct/">Code of Conduct and COVID policies</a>. <strong>Please Review</strong></p>
+<section id="section-1" class="slide level2">
+<h2></h2>
 <ul>
-<li>💙 Treat everyone with respect</li>
-<li>🧡 Everyone should feel welcome and safe</li>
-</ul>
-<p>Reporting:</p>
-<ul>
-<li>🗣️ any posit::conf staff member (t-shirt) or Info desk</li>
-<li>📧 <code>conf@posit.com</code></li>
+<li><p>What do LLMs do best?</p>
+<pre class="editable-code-block" onkeydown="(ev => ev.stopPropagation())(event)" onkeypress="(ev => ev.stopPropagation())(event)"><code contenteditable="">- situation</code>
+</pre></li>
+<li><p>When do LLMs perform poorly?</p>
+<pre class="editable-code-block" onkeydown="(ev => ev.stopPropagation())(event)" onkeypress="(ev => ev.stopPropagation())(event)"><code contenteditable="">- situation</code>
+</pre></li>
 </ul>
 </section>
-<section id="meet-each-other" class="slide level2">
-<h2>Meet each other</h2>
-<p>TK: activity</p>
-</section></section>
-<section>
-<section id="about-this-workshop" class="title-slide slide level1 middle center">
-<h1>About this workshop</h1>
-
+<section id="our-task" class="slide level2">
+<h2>Our Task</h2>
+<p>We want to update our college comparison app to remember the colleges that the user was comparing.</p>
+<p>We’ve decided that <a href="https://mastering-shiny.org/action-bookmark.html">bookmarking</a> is too involved, we just want the app to remember automatically.</p>
 </section>
-<section id="wifi" class="slide level2 center middle">
-<h2>WiFi</h2>
-<p>WiFi: Posit Conf 2024<br>
-Password: <code>conf2024</code></p>
-</section>
-<section id="positconf2024-things-to-know" class="slide level2">
-<h2>posit::conf(2024) Things to Know</h2>
-<div>
+<section id="your-turn" class="slide level2 slide-your-turn">
+<h2>Your Turn</h2>
+<ol type="1">
+<li><p>I had <a href="../workshop-06-chat.html">a conversation with ChatGPT</a> about this task.<br>
+<strong>What strategy does the 🤖 suggest?</strong> Find:</p>
 <ul>
-<li class="fragment">There will be a gender-neutral bathroom on levels <code>3:7</code></li>
-<li class="fragment">Meditation/prayer room: 503
-<ul>
-<li class="fragment">Mon &amp; Tues 7am - 7pm</li>
-<li class="fragment">Wed 7am - 5pm</li>
+<li>the browser JavaScript API</li>
+<li>the Shiny JavaScript API</li>
+<li>where to put this JavaScript code in our app</li>
+<li>the server-side logic that connects JS ↔︎ R</li>
 </ul></li>
-<li class="fragment">Mothers room: 509</li>
-<li class="fragment"><span class="red b">Red lanyards</span> available to those who don’t wish to be photographed</li>
-</ul>
-</div>
+<li><p>What made my prompt to ChatGPT <strong>effective</strong>?</p></li>
+</ol>
+<div id="timer_d5158aa75a62fd6c480216cbebdc8c91f1d26f8d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">08</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
 </section>
-<section id="stickies" class="slide level2">
-<h2>Stickies</h2>
-<div class="flex" style="margin-top: var(--space-xl); font-size: var(--step-3);">
-<div class="flex flex-column items-center justify-center w-50 text-center">
-<p>🟩</p>
-<p>All good<br>
-I’m done</p>
-</div>
-<div class="flex flex-column items-center justify-center w-50 text-center">
-<p>🟥</p>
-<p>Not great<br>
-Need time or help</p>
-</div>
-</div>
-</section>
-<section id="shedule" class="slide level2">
-<h2>Shedule</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Time</th>
-<th style="text-align: left;">Activity</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">09:00</td>
-<td style="text-align: left;">Modern UI with bslib</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">10:30</td>
-<td style="text-align: left;"><em>Coffee break</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">11:00</td>
-<td style="text-align: left;">Organizing your Shiny apps</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">12:30</td>
-<td style="text-align: left;"><em>Lunch break</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">13:30</td>
-<td style="text-align: left;">Mastering reactivity</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">15:00</td>
-<td style="text-align: left;"><em>Coffee break</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">15:30</td>
-<td style="text-align: left;">Push to prod</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="shedule-1" class="slide level2">
-<h2>Shedule</h2>
-<div class="table-highlight-even">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Time</th>
-<th style="text-align: left;">Activity</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">09:00</td>
-<td style="text-align: left;">Modern UI with bslib</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">10:30</td>
-<td style="text-align: left;"><em>Coffee break</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">11:00</td>
-<td style="text-align: left;">Organizing your Shiny apps</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">12:30</td>
-<td style="text-align: left;"><em>Lunch break</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">13:30</td>
-<td style="text-align: left;">Mastering reactivity</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">15:00</td>
-<td style="text-align: left;"><em>Coffee break</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">15:30</td>
-<td style="text-align: left;">Push to prod</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="discord" class="slide level2">
-<h2>Discord</h2>
-<p>Go <a href="https://posit.co/conference">posit.co/conference</a>, click <strong>Login</strong>. Click image to connect to the <code>posit::conf()</code> Discord server.</p>
-<p>This workshop has a private channel under Workshops.</p>
-<div class="text-center code purple">
-<p>#level-up-shiny</p>
-</div>
-<p>Great place to ask questions, post resources, memes, or most anything else before, during, and after the workshop.</p>
-</section></section>
-<section>
-<section id="computational-environment" class="title-slide slide level1 middle center">
-<h1>Computational Environment</h1>
-
-</section>
-<section id="rstudio-cloud" class="slide level2">
-<h2>RStudio Cloud</h2>
-<p>You can use the following link to join the workshops RStudio cloud space,</p>
-<!-- FIXME: Update cloud link -->
-<div class="large" style="text-align: center;">
-<p><a href="https://pos.it/level-up-shiny">pos.it/level-up-shiny</a></p>
-</div>
-<p>Once you have joined you can then select the <code>level-up-shiny</code> assignment,</p>
-<p>TK Image of assignment</p>
-<p>which should then create a copy of all materials and launch a cloud session for you.</p>
-</section>
-<section id="cloud-session" class="slide level2">
-<h2>Cloud session</h2>
-<p>If everything is working you should see something very close to the following,</p>
-<p>TK image of cloud session</p>
-</section>
-<section id="file-organization" class="slide level2">
-<h2>File organization</h2>
-<div class="table-no-border" style="--row-padding: var(--space-xs);">
-<table class="caption-top">
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>_exercises/</code></td>
-<td style="text-align: left;">Files for <strong>Your Turn</strong> exercises</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>_examples/</code></td>
-<td style="text-align: left;">Files for my demo examples</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>website/</code></td>
-<td style="text-align: left;">The website and slides</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>./*</code></td>
-<td style="text-align: left;">Lots of project related files you can ignore</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section></section>
-<section id="lets-dive-in" class="title-slide slide level1 middle center">
-<h1>Let’s Dive In!</h1>
+<section id="live-code-together" class="slide level2">
+<h2>Live Code Together</h2>
+<ol type="1">
+<li><p>Use the chat to give our comparison app a memory.</p></li>
+<li><p>What works about the prompt? What strategies did I use to increase the chances I’d get a useful response?</p></li>
+</ol>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
-<p><a href="https://pos.it/level-up-shiny">pos.it/level-up-shiny</a></p>
+
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

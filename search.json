@@ -133,6 +133,13 @@
     "text": "What does this code do?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nYou could use comments here to explain how file becomes src and the regular expression.\nBetter yet, use an explanatory variable for the grepl and an explanatory function for encode_file_as_data_uri()."
   },
   {
+    "objectID": "slides/slides-04-code-style.html#hot-tip-use-early-returns",
+    "href": "slides/slides-04-code-style.html#hot-tip-use-early-returns",
+    "title": "Bit by Bit",
+    "section": "Hot tip: Use early returns",
+    "text": "Hot tip: Use early returns\nUse this one weird trick to make your code easier to read!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
     "objectID": "slides/slides-04-code-style.html#what-will-this-function-do",
     "href": "slides/slides-04-code-style.html#what-will-this-function-do",
     "title": "Bit by Bit",
@@ -172,7 +179,7 @@
     "href": "slides/slides-04-code-style.html#naming-shiny-things-other-things",
     "title": "Bit by Bit",
     "section": "Naming shiny things (other things)",
-    "text": "Naming shiny things (other things)\nWhat are some other useful prefixes in Shiny?\n\n* example_\n* example_\n* example_"
+    "text": "Naming shiny things (other things)\nWhat are some other useful prefixes in Shiny?\n\n* example_"
   },
   {
     "objectID": "slides/slides-04-code-style.html#section-10",
@@ -280,143 +287,25 @@
     "text": "File organization\n\n\n\n\n_exercises/\nFiles for Your Turn exercises\n\n\n_examples/\nFiles for my demo examples\n\n\nwebsite/\nThe website and slides\n\n\n./*\nLots of project related files you can ignore"
   },
   {
-    "objectID": "workshop-04.html",
-    "href": "workshop-04.html",
-    "title": "Code organization",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Level Up with Shiny for R",
     "section": "",
-    "text": "View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Code organization"
-    ]
+    "text": "Workshop at posit::conf(2024)August 12, 202409:00 - 17:00ROOM TBA"
   },
   {
-    "objectID": "workshop-04.html#packages",
-    "href": "workshop-04.html#packages",
-    "title": "Code organization",
-    "section": "Packages",
-    "text": "Packages\n\nstyler\ngrkstyle",
-    "crumbs": [
-      "Workshop",
-      "Code organization"
-    ]
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Level Up with Shiny for R",
+    "section": "Introduction",
+    "text": "Introduction\nShiny lets you quickly create rich, data-driven web applications for yourself, your clients, your students, or your colleagues. This workshop will give you the skills you need to build complex applications with brilliant user interfaces.\nYou’ll learn how to make the most of recent developments in the Shiny ecosystem, while mastering techniques for modularizing and structuring your applications for growth and maintainability. Along the way, you’ll encounter new techniques to speed up your applications using caching and databases for a smooth user experience."
   },
   {
-    "objectID": "workshop-04.html#resources",
-    "href": "workshop-04.html#resources",
-    "title": "Code organization",
-    "section": "Resources",
-    "text": "Resources\n\nHow Developers Choose Names, Dror G. Fietelson\nThe Programmer’s Brain, Felienne Hermans\nExplaining variable, Pete Hodgson\nWhy comment your code as little (and as well) as possible - R-hub blog\nCoding style, coding etiquette - R-hub blog\nCode smells and feels, Jenny Bryan\nThe Art of Readable Code, Dustin Boswell and Trevor Foucher\nRefactoring: Improving the Design of Existing Code, Martin Fowler\nObject of type ‘closure’ is not subsettable, Jenny Bryan (rstudio::conf(2020))",
-    "crumbs": [
-      "Workshop",
-      "Code organization"
-    ]
-  },
-  {
-    "objectID": "workshop-01.html",
-    "href": "workshop-01.html",
-    "title": "Welcome and getting started",
-    "section": "",
-    "text": "View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Welcome and getting started"
-    ]
-  },
-  {
-    "objectID": "workshop-01.html#outline",
-    "href": "workshop-01.html#outline",
-    "title": "Welcome and getting started",
-    "section": "Outline",
-    "text": "Outline\n\nWelcome to posit::conf(2024)!\nIntroductions and meet your neighbors\nAbout the workshop, conference, goals and ground rules",
-    "crumbs": [
-      "Workshop",
-      "Welcome and getting started"
-    ]
-  },
-  {
-    "objectID": "workshop-01.html#your-turn",
-    "href": "workshop-01.html#your-turn",
-    "title": "Welcome and getting started",
-    "section": "🧑‍💻 Your Turn",
-    "text": "🧑‍💻 Your Turn",
-    "crumbs": [
-      "Workshop",
-      "Welcome and getting started"
-    ]
-  },
-  {
-    "objectID": "workshop-11.html",
-    "href": "workshop-11.html",
-    "title": "Closing cermonies",
-    "section": "",
-    "text": "🙏 Thanks for attending! 🙋 Any questions?",
-    "crumbs": [
-      "Workshop",
-      "Closing cermonies"
-    ]
-  },
-  {
-    "objectID": "workshop-09-break.html",
-    "href": "workshop-09-break.html",
-    "title": "☕ Break",
-    "section": "",
-    "text": "Image by DALL-E 3",
-    "crumbs": [
-      "Workshop",
-      "☕ Break"
-    ]
-  },
-  {
-    "objectID": "workshop-07-break.html",
-    "href": "workshop-07-break.html",
-    "title": "🍱 Lunch",
-    "section": "",
-    "text": "Image by DALL-E 3",
-    "crumbs": [
-      "Workshop",
-      "🍱 Lunch"
-    ]
-  },
-  {
-    "objectID": "workshop-03-break.html",
-    "href": "workshop-03-break.html",
-    "title": "☕ Break",
-    "section": "",
-    "text": "Image by DALL-E 3",
-    "crumbs": [
-      "Workshop",
-      "☕ Break"
-    ]
-  },
-  {
-    "objectID": "workshop.html",
-    "href": "workshop.html",
-    "title": "Overview",
-    "section": "",
-    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n9:15 - 10:30\n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n11:00 - 11:45\n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n11:45 - 12:10\n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n12:10 - 12:30\n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nFast, reactive apps\n\n\n13:30 - 15:00\n\n\nMastering reactivity for fast Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n15:30 - 16:30\n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Workshop",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "workshop.html#schedule",
-    "href": "workshop.html#schedule",
-    "title": "Overview",
-    "section": "",
-    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n9:15 - 10:30\n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n11:00 - 11:45\n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n11:45 - 12:10\n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n12:10 - 12:30\n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nFast, reactive apps\n\n\n13:30 - 15:00\n\n\nMastering reactivity for fast Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n15:30 - 16:30\n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Workshop",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "about/index.html",
-    "href": "about/index.html",
-    "title": "Our Team",
-    "section": "",
-    "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
+    "objectID": "index.html#setup",
+    "href": "index.html#setup",
+    "title": "Level Up with Shiny for R",
+    "section": "Setup",
+    "text": "Setup\n\n📘 Website (you are here!)\n🧑‍💻 Join Posit Cloud Space (Only for workshop participants)\n📦 Repository\n\n\nUsing Posit Cloud\n\n\n\n\n\n\nWarning\n\n\n\n\nThese instructions will be updated.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the rmedicine-2024-bslib space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the rmedicine-2024-bslib space, select the rmedicine-2024-bslib assignment to create and launch a new project just for you."
   },
   {
     "objectID": "workshop-02.html",
@@ -452,25 +341,332 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Level Up with Shiny for R",
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "Our Team",
     "section": "",
-    "text": "Workshop at posit::conf(2024)August 12, 202409:00 - 17:00ROOM TBA"
+    "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
   },
   {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Level Up with Shiny for R",
-    "section": "Introduction",
-    "text": "Introduction\nShiny lets you quickly create rich, data-driven web applications for yourself, your clients, your students, or your colleagues. This workshop will give you the skills you need to build complex applications with brilliant user interfaces.\nYou’ll learn how to make the most of recent developments in the Shiny ecosystem, while mastering techniques for modularizing and structuring your applications for growth and maintainability. Along the way, you’ll encounter new techniques to speed up your applications using caching and databases for a smooth user experience."
+    "objectID": "workshop.html",
+    "href": "workshop.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n9:15 - 10:30\n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n11:00 - 11:45\n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n11:45 - 12:10\n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n12:10 - 12:30\n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nFast, reactive apps\n\n\n13:30 - 15:00\n\n\nMastering reactivity for fast Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n15:30 - 16:30\n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Workshop",
+      "Overview"
+    ]
   },
   {
-    "objectID": "index.html#setup",
-    "href": "index.html#setup",
-    "title": "Level Up with Shiny for R",
-    "section": "Setup",
-    "text": "Setup\n\n📘 Website (you are here!)\n🧑‍💻 Join Posit Cloud Space (Only for workshop participants)\n📦 Repository\n\n\nUsing Posit Cloud\n\n\n\n\n\n\nWarning\n\n\n\n\nThese instructions will be updated.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the rmedicine-2024-bslib space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the rmedicine-2024-bslib space, select the rmedicine-2024-bslib assignment to create and launch a new project just for you."
+    "objectID": "workshop.html#schedule",
+    "href": "workshop.html#schedule",
+    "title": "Overview",
+    "section": "",
+    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n9:15 - 10:30\n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n11:00 - 11:45\n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n11:45 - 12:10\n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n12:10 - 12:30\n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nFast, reactive apps\n\n\n13:30 - 15:00\n\n\nMastering reactivity for fast Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n15:30 - 16:30\n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Workshop",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "workshop-03-break.html",
+    "href": "workshop-03-break.html",
+    "title": "☕ Break",
+    "section": "",
+    "text": "Image by DALL-E 3",
+    "crumbs": [
+      "Workshop",
+      "☕ Break"
+    ]
+  },
+  {
+    "objectID": "workshop-06-chat.html",
+    "href": "workshop-06-chat.html",
+    "title": "LocalStorage Usage Guide",
+    "section": "",
+    "text": "I’m in a workshop at posit::conf(2024) learning about using JavaScript with Shiny for R. Can you show me how to write to and read from local storage in the browser using JavaScript? Show me just the JavaScript snippets I need to know with a little bit of explanation. Don’t show me a full HTML example, though, because I’ll be using this in a Shiny app."
+  },
+  {
+    "objectID": "workshop-06-chat.html#prompt",
+    "href": "workshop-06-chat.html#prompt",
+    "title": "LocalStorage Usage Guide",
+    "section": "",
+    "text": "I’m in a workshop at posit::conf(2024) learning about using JavaScript with Shiny for R. Can you show me how to write to and read from local storage in the browser using JavaScript? Show me just the JavaScript snippets I need to know with a little bit of explanation. Don’t show me a full HTML example, though, because I’ll be using this in a Shiny app."
+  },
+  {
+    "objectID": "workshop-06-chat.html#chatgpt",
+    "href": "workshop-06-chat.html#chatgpt",
+    "title": "LocalStorage Usage Guide",
+    "section": "ChatGPT",
+    "text": "ChatGPT\nSure! Here are the JavaScript snippets you need to work with local storage in a browser:\n\nWriting to Local Storage\nTo save data to local storage, you use the localStorage.setItem method. Here’s a simple example:\n// Save a string value localStorage.setItem('key', 'value');\n// Save a JavaScript object (you need to stringify it first)\nconst myObject = { name: 'John', age: 30 };\nlocalStorage.setItem('myObject', JSON.stringify(myObject));\n\n\nReading from Local Storage\nTo retrieve data from local storage, you use the localStorage.getItem method. Here’s how you do it:\n// Retrieve a string value\nconst value = localStorage.getItem('key');\nconsole.log(value);  // Outputs: 'value'\n\n// Retrieve a JavaScript object (you need to parse it back to an object)\nconst retrievedObject = JSON.parse(localStorage.getItem('myObject'));\nconsole.log(retrievedObject);  // Outputs: { name: 'John', age: 30 }\n\n\nRemoving an Item from Local Storage\nIf you need to remove an item from local storage, you can use the localStorage.removeItem method:\nlocalStorage.removeItem('key');\n\n\nClearing All Local Storage\nTo clear all data from local storage, you can use the localStorage.clear method:\nlocalStorage.clear();\nThese snippets cover the basic operations for working with local storage. You can integrate them into your Shiny app’s JavaScript code as needed."
+  },
+  {
+    "objectID": "workshop-06-chat.html#prompt-1",
+    "href": "workshop-06-chat.html#prompt-1",
+    "title": "LocalStorage Usage Guide",
+    "section": "Prompt",
+    "text": "Prompt\nI’m writing a Shiny for R app and want to store a variable in local storage so that the next time the user starts the app, I can retrieve the stored value, send it to the server, and initialize an input with the stored value. Show me how to do this, including a simple example. Use bslib for the UI. Don’t explain everything in the example app, just explain the JavaScript portion"
+  },
+  {
+    "objectID": "workshop-06-chat.html#chatgpt-1",
+    "href": "workshop-06-chat.html#chatgpt-1",
+    "title": "LocalStorage Usage Guide",
+    "section": "ChatGPT",
+    "text": "ChatGPT\nSure! Here’s how you can achieve this in a Shiny app with bslib for the UI. The key parts are the JavaScript snippets for storing and retrieving the value from local storage and sending it to the server.\n\nShiny App Example\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- fluidPage(\n  theme = bs_theme(bootswatch = \"flatly\"),\n  tags$head(\n    tags$script(HTML(\n      \"\n      // Store a variable in local storage when the user inputs a value\n      Shiny.addCustomMessageHandler('storeValue', function(message) {\n        localStorage.setItem('storedValue', message.value);\n      });\n\n      // Retrieve the stored value from local storage when the app initializes\n      document.addEventListener('DOMContentLoaded', function() {\n        var storedValue = localStorage.getItem('storedValue');\n        if (storedValue !== null) {\n          Shiny.setInputValue('storedValue', storedValue);\n        }\n      });\n      \"\n    ))\n  ),\n  titlePanel(\"Shiny Local Storage Example\"),\n  sidebarLayout(\n    sidebarPanel(\n      textInput(\"inputText\", \"Enter some text:\", value = \"\"),\n      actionButton(\"saveBtn\", \"Save to Local Storage\")\n    ),\n    mainPanel(\n      textOutput(\"outputText\")\n    )\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  observeEvent(input$saveBtn, {\n    session$sendCustomMessage(\"storeValue\", list(value = input$inputText))\n  })\n  \n  observeEvent(input$storedValue, {\n    updateTextInput(session, \"inputText\", value = input$storedValue)\n  })\n  \n  output$outputText &lt;- renderText({\n    paste(\"Stored value is:\", input$inputText)\n  })\n}\n\nshinyApp(ui = ui, server = server)\n\n\nJavaScript Explanation\n\nStoring the Value:\n\nThe JavaScript code listens for a custom message (storeValue) from the Shiny server.\nWhen the message is received, it stores the value in local storage using localStorage.setItem.\n\nRetrieving the Value:\n\nWhen the document is loaded (DOMContentLoaded event), the JavaScript code checks if there’s a stored value in local storage.\nIf a value exists, it sets this value to a Shiny input (storedValue) using Shiny.setInputValue.\n\n\nBy incorporating these JavaScript snippets into your Shiny app, you can store and retrieve values from local storage, allowing for persistent input across sessions."
+  },
+  {
+    "objectID": "workshop-06-chat.html#prompt-2",
+    "href": "workshop-06-chat.html#prompt-2",
+    "title": "LocalStorage Usage Guide",
+    "section": "Prompt",
+    "text": "Prompt\nIn the release notes for Shiny 1.9.0, I read the following:\n\nthe Shiny object has a new property initializedPromise, which is a Promise-like object that can be awaited or chained with .then(). This Promise-like object corresponds to the shiny:sessioninitialized JavaScript event, but is easier to use because it can be used both before and after the events have occurred.\n\nCan you update your example to take advantage of this new property?"
+  },
+  {
+    "objectID": "workshop-06-chat.html#chatgpt-2",
+    "href": "workshop-06-chat.html#chatgpt-2",
+    "title": "LocalStorage Usage Guide",
+    "section": "ChatGPT",
+    "text": "ChatGPT\nCertainly! Here’s the updated example that uses the Shiny.initializedPromise to handle the initialization of the session. This makes sure that the local storage value is set after the Shiny session has been properly initialized.\n\nUpdated Shiny App Example\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- fluidPage(\n  theme = bs_theme(bootswatch = \"flatly\"),\n  tags$head(\n    tags$script(HTML(\n      \"\n      // Store a variable in local storage when the user inputs a value\n      Shiny.addCustomMessageHandler('storeValue', function(message) {\n        localStorage.setItem('storedValue', message.value);\n      });\n\n      // Retrieve the stored value from local storage using initializedPromise\n      Shiny.initializedPromise.then(function() {\n        var storedValue = localStorage.getItem('storedValue');\n        if (storedValue !== null) {\n          Shiny.setInputValue('storedValue', storedValue);\n        }\n      });\n      \"\n    ))\n  ),\n  titlePanel(\"Shiny Local Storage Example\"),\n  sidebarLayout(\n    sidebarPanel(\n      textInput(\"inputText\", \"Enter some text:\", value = \"\"),\n      actionButton(\"saveBtn\", \"Save to Local Storage\")\n    ),\n    mainPanel(\n      textOutput(\"outputText\")\n    )\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  observeEvent(input$saveBtn, {\n    session$sendCustomMessage(\"storeValue\", list(value = input$inputText))\n  })\n  \n  observeEvent(input$storedValue, {\n    updateTextInput(session, \"inputText\", value = input$storedValue)\n  })\n  \n  output$outputText &lt;- renderText({\n    paste(\"Stored value is:\", input$inputText)\n  })\n}\n\nshinyApp(ui = ui, server = server)\n\n\nJavaScript Explanation with Shiny.initializedPromise\n\nStoring the Value:\n\nThe JavaScript code listens for a custom message (storeValue) from the Shiny server.\nWhen the message is received, it stores the value in local storage using localStorage.setItem.\n\nRetrieving the Value:\n\nInstead of directly listening to the DOMContentLoaded event, the code now uses Shiny.initializedPromise.\nShiny.initializedPromise is a Promise-like object that can be awaited or chained with .then().\nWhen the Shiny session is initialized, the then function is executed, retrieving the stored value from local storage and setting it to a Shiny input (storedValue) using Shiny.setInputValue.\n\n\nThis updated approach ensures that the value from local storage is set only after the Shiny session has been fully initialized, improving the reliability of your app."
+  },
+  {
+    "objectID": "workshop-06-chat.html#prompt-3",
+    "href": "workshop-06-chat.html#prompt-3",
+    "title": "LocalStorage Usage Guide",
+    "section": "Prompt",
+    "text": "Prompt\nThanks for your help!"
+  },
+  {
+    "objectID": "workshop-06-chat.html#chatgpt-3",
+    "href": "workshop-06-chat.html#chatgpt-3",
+    "title": "LocalStorage Usage Guide",
+    "section": "ChatGPT",
+    "text": "ChatGPT\nYou’re welcome! If you have any more questions or need further assistance, feel free to ask. Enjoy the rest of your workshop at posit::conf(2024)!"
+  },
+  {
+    "objectID": "workshop-07-break.html",
+    "href": "workshop-07-break.html",
+    "title": "🍱 Lunch",
+    "section": "",
+    "text": "Image by DALL-E 3",
+    "crumbs": [
+      "Workshop",
+      "🍱 Lunch"
+    ]
+  },
+  {
+    "objectID": "workshop-09-break.html",
+    "href": "workshop-09-break.html",
+    "title": "☕ Break",
+    "section": "",
+    "text": "Image by DALL-E 3",
+    "crumbs": [
+      "Workshop",
+      "☕ Break"
+    ]
+  },
+  {
+    "objectID": "workshop-11.html",
+    "href": "workshop-11.html",
+    "title": "Closing cermonies",
+    "section": "",
+    "text": "🙏 Thanks for attending! 🙋 Any questions?",
+    "crumbs": [
+      "Workshop",
+      "Closing cermonies"
+    ]
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#server-side-functions",
+    "href": "slides/slides-05-modules.html#server-side-functions",
+    "title": "The module module",
+    "section": "Server-side functions",
+    "text": "Server-side functions\nReplacing server-side logic with functions, or simplifying server side logic with functions."
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#your-turn",
+    "href": "slides/slides-05-modules.html#your-turn",
+    "title": "The module module",
+    "section": "Your turn",
+    "text": "Your turn\nTK: _exercises/07_app.R\nUse functions to simplify the server-side logic of the bar plots we saw earlier. The exercise is around around comparing two schools.\n(Use _exercises/02_solution_app.R as a starting point.)"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#ui-functions",
+    "href": "slides/slides-05-modules.html#ui-functions",
+    "title": "The module module",
+    "section": "UI functions",
+    "text": "UI functions\nSame idea, but for UI functions.\nExamples:\n\nA card_dark() with a title and custom class.\nA sidebar_right()\nSome other Bootstrap component\n\n&lt;span class=\"badge text-bg-secondary\"&gt;New&lt;/span&gt;\nBadges · Bootstrap v5.3"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#your-turn-1",
+    "href": "slides/slides-05-modules.html#your-turn-1",
+    "title": "The module module",
+    "section": "Your turn",
+    "text": "Your turn\nTK: _exercises/08_app.R\nMake a card_dark()"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#where-to-put-those-functions",
+    "href": "slides/slides-05-modules.html#where-to-put-those-functions",
+    "title": "The module module",
+    "section": "Where to put those functions?",
+    "text": "Where to put those functions?\nloadSupport()"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#lets-make-a-map-card",
+    "href": "slides/slides-05-modules.html#lets-make-a-map-card",
+    "title": "The module module",
+    "section": "Let’s make a map card",
+    "text": "Let’s make a map card\n\nPut a leafletOutput() in the card\nFind out we’re repeating a bunch of to avoid ID conflicts\nThis is why you need a module\nWork through turning card_dark() into card_map()"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#your-turn-2",
+    "href": "slides/slides-05-modules.html#your-turn-2",
+    "title": "The module module",
+    "section": "Your turn",
+    "text": "Your turn\nTK: _exercises/09_app.R\nModules for value box, example from https://github.com/gadenbuie/slides/blob/gh-pages/bslib-modern-dashboards/jeep-weather/app-bslib.R Except, part of an app that compares two schools.\nGoal is a module that looks like this:\nui_forecast_value_box &lt;- function(id) {\n  ns &lt;- NS(id)\n\n  value_box(\n    title = textOutput(ns(\"wday\")),\n    value = uiOutput(ns(\"weather\")),\n    showcase = uiOutput(ns(\"icon\")),\n    showcase_layout = \"top right\",\n    theme = \"bg-gradient-blue-purple\"\n  )\n}"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#modules-can-call-other-modules",
+    "href": "slides/slides-05-modules.html#modules-can-call-other-modules",
+    "title": "The module module",
+    "section": "Modules can call other modules",
+    "text": "Modules can call other modules\nIf you’re in a module, just forget for a second, pretend like you aren’t and call the other module"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#your-turn-3",
+    "href": "slides/slides-05-modules.html#your-turn-3",
+    "title": "The module module",
+    "section": "Your turn",
+    "text": "Your turn\nTK: _exercises/10_app.R\nTurn each comparison column into a full module:\n\ncollege selector\nvalue box\nbar plot\nmap card"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#communicating-with-your-module",
+    "href": "slides/slides-05-modules.html#communicating-with-your-module",
+    "title": "The module module",
+    "section": "Communicating with your module",
+    "text": "Communicating with your module\nSuppose you put this module into your app and realize that actually, you’d like to\n\nKnow which college is selected\nSet the college, e.g. pick a random school"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#return-values-from-your-module",
+    "href": "slides/slides-05-modules.html#return-values-from-your-module",
+    "title": "The module module",
+    "section": "Return values from your module",
+    "text": "Return values from your module\nReport which school was selected from the module."
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#take-reactive-values",
+    "href": "slides/slides-05-modules.html#take-reactive-values",
+    "title": "The module module",
+    "section": "Take reactive values",
+    "text": "Take reactive values\nReceive a reactive value that sets the selected school."
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#return-anything",
+    "href": "slides/slides-05-modules.html#return-anything",
+    "title": "The module module",
+    "section": "Return anything!",
+    "text": "Return anything!\nReturn the reported school and an update_school() function."
+  },
+  {
+    "objectID": "workshop-01.html",
+    "href": "workshop-01.html",
+    "title": "Welcome and getting started",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Welcome and getting started"
+    ]
+  },
+  {
+    "objectID": "workshop-01.html#outline",
+    "href": "workshop-01.html#outline",
+    "title": "Welcome and getting started",
+    "section": "Outline",
+    "text": "Outline\n\nWelcome to posit::conf(2024)!\nIntroductions and meet your neighbors\nAbout the workshop, conference, goals and ground rules",
+    "crumbs": [
+      "Workshop",
+      "Welcome and getting started"
+    ]
+  },
+  {
+    "objectID": "workshop-01.html#your-turn",
+    "href": "workshop-01.html#your-turn",
+    "title": "Welcome and getting started",
+    "section": "🧑‍💻 Your Turn",
+    "text": "🧑‍💻 Your Turn",
+    "crumbs": [
+      "Workshop",
+      "Welcome and getting started"
+    ]
+  },
+  {
+    "objectID": "workshop-04.html",
+    "href": "workshop-04.html",
+    "title": "Code organization",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Code organization"
+    ]
+  },
+  {
+    "objectID": "workshop-04.html#packages",
+    "href": "workshop-04.html#packages",
+    "title": "Code organization",
+    "section": "Packages",
+    "text": "Packages\n\nstyler\ngrkstyle",
+    "crumbs": [
+      "Workshop",
+      "Code organization"
+    ]
+  },
+  {
+    "objectID": "workshop-04.html#resources",
+    "href": "workshop-04.html#resources",
+    "title": "Code organization",
+    "section": "Resources",
+    "text": "Resources\n\nHow Developers Choose Names, Dror G. Fietelson\nThe Programmer’s Brain, Felienne Hermans\nExplaining variable, Pete Hodgson\nWhy comment your code as little (and as well) as possible - R-hub blog\nCoding style, coding etiquette - R-hub blog\nCode smells and feels, Jenny Bryan\nThe Art of Readable Code, Dustin Boswell and Trevor Foucher\nRefactoring: Improving the Design of Existing Code, Martin Fowler\nObject of type ‘closure’ is not subsettable, Jenny Bryan (rstudio::conf(2020))",
+    "crumbs": [
+      "Workshop",
+      "Code organization"
+    ]
+  },
+  {
+    "objectID": "slides/slides-06-javascript.html#section",
+    "href": "slides/slides-06-javascript.html#section",
+    "title": "A Spoonful of JavaScript",
+    "section": "",
+    "text": "Have you ever used a large language model like ChatGPT?\nHave you used an LLM to help you write code?\nHave you used an LLM to help you learn a programming language?\nHave you used an LLM to write a Shiny app?\nHave you used an LLM to write a workshop about Shiny?"
+  },
+  {
+    "objectID": "slides/slides-06-javascript.html#section-1",
+    "href": "slides/slides-06-javascript.html#section-1",
+    "title": "A Spoonful of JavaScript",
+    "section": "",
+    "text": "What do LLMs do best?\n- situation\n\nWhen do LLMs perform poorly?\n- situation"
+  },
+  {
+    "objectID": "slides/slides-06-javascript.html#our-task",
+    "href": "slides/slides-06-javascript.html#our-task",
+    "title": "A Spoonful of JavaScript",
+    "section": "Our Task",
+    "text": "Our Task\nWe want to update our college comparison app to remember the colleges that the user was comparing.\nWe’ve decided that bookmarking is too involved, we just want the app to remember automatically."
+  },
+  {
+    "objectID": "slides/slides-06-javascript.html#your-turn",
+    "href": "slides/slides-06-javascript.html#your-turn",
+    "title": "A Spoonful of JavaScript",
+    "section": "Your Turn",
+    "text": "Your Turn\n\nI had a conversation with ChatGPT about this task.\nWhat strategy does the 🤖 suggest? Find:\n\nthe browser JavaScript API\nthe Shiny JavaScript API\nwhere to put this JavaScript code in our app\nthe server-side logic that connects JS ↔︎ R\n\nWhat made my prompt to ChatGPT effective?\n\n\n  \n    −\n    +\n \n 08:00"
+  },
+  {
+    "objectID": "slides/slides-06-javascript.html#live-code-together",
+    "href": "slides/slides-06-javascript.html#live-code-together",
+    "title": "A Spoonful of JavaScript",
+    "section": "Live Code Together",
+    "text": "Live Code Together\n\nUse the chat to give our comparison app a memory.\nWhat works about the prompt? What strategies did I use to increase the chances I’d get a useful response?"
   },
   {
     "objectID": "slides/slides-02-bslib.html#at-first-there-was-shiny",

@@ -1,5 +1,5 @@
 ---
-title: "Module: module"
+title: "The module module"
 subtitle: Level Up with Shiny for R
 author: <code>posit::conf(2024)</code>
 date: 2024-08-12
@@ -13,6 +13,8 @@ format:
     theme:
       - slides.scss
       - assets/code-blocked.scss
+    css:
+      - ../auto-dark-mode.css
 
 revealjs-plugins:
   - utopia-slides
@@ -27,8 +29,111 @@ editor:
   render-on-save: true
 ---
 
-# You might not need a module {.middle}
+# You might not need a module {.middle .text-center}
+
+## Server-side functions
+
+Replacing server-side logic with functions, or simplifying server side logic with functions.
+
+## Your turn
+
+TK: `_exercises/07_app.R`
+
+Use functions to simplify the server-side logic of the bar plots we saw earlier.
+The exercise is around around comparing two schools.
+
+(Use `_exercises/02_solution_app.R` as a starting point.)
+
+## UI functions
+
+Same idea, but for UI functions.
+
+Examples:
+
+* A `card_dark()` with a title and custom class.
+
+* A `sidebar_right()`
+
+* Some other Bootstrap component
+    * `<span class="badge text-bg-secondary">New</span>`
+    * [Badges · Bootstrap v5.3](https://getbootstrap.com/docs/5.3/components/badge/)
+
+
+## Your turn
+
+TK: `_exercises/08_app.R`
+
+Make a `card_dark()`
+
+
+## Where to put those functions?
+
+`loadSupport()`
 
 # Modules {.middle}
 
+## Let's make a map card
+
+* Put a `leafletOutput()` in the card
+* Find out we're repeating a bunch of to avoid ID conflicts
+* This is why you need a module
+* Work through turning `card_dark()` into `card_map()`
+
+## Your turn
+
+TK: `_exercises/09_app.R`
+
+Modules for value box, example from https://github.com/gadenbuie/slides/blob/gh-pages/bslib-modern-dashboards/jeep-weather/app-bslib.R
+Except, part of an app that compares two schools.
+
+Goal is a module that looks like this:
+
+```{.r}
+ui_forecast_value_box <- function(id) {
+  ns <- NS(id)
+
+  value_box(
+    title = textOutput(ns("wday")),
+    value = uiOutput(ns("weather")),
+    showcase = uiOutput(ns("icon")),
+    showcase_layout = "top right",
+    theme = "bg-gradient-blue-purple"
+  )
+}
+```
+
 # Modules Plus {.middle}
+
+## Modules can call other modules
+
+If you're in a module, just forget for a second, pretend like you aren't and call the other module
+
+## Your turn
+
+TK: `_exercises/10_app.R`
+
+Turn each comparison column into a full module:
+
+* college selector
+* value box
+* bar plot
+* map card
+
+## Communicating with your module
+
+Suppose you put this module into your app and realize that actually, you'd like to
+
+a. Know which college is selected
+b. Set the college, e.g. pick a random school
+
+## Return values from your module
+
+Report which school was selected from the module.
+
+## Take reactive values
+
+Receive a reactive value that sets the selected school.
+
+## Return anything!
+
+Return the reported school and an `update_school()` function.

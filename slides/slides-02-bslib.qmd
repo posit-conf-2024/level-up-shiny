@@ -12,6 +12,8 @@ format:
     chalkboard: true
     theme:
       - slides.scss
+    css:
+      - ../auto-dark-mode.css
 
 revealjs-plugins:
   - utopia-slides

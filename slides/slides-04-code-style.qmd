@@ -13,6 +13,8 @@ format:
     theme:
       - slides.scss
       - assets/code-blocked.scss
+    css:
+      - ../auto-dark-mode.css
 
 revealjs-plugins:
   - utopia-slides
@@ -392,6 +394,26 @@ Better yet, use an explanatory variable for the `grepl`
 and an explanatory function for `encode_file_as_data_uri()`.
 :::
 
+## Hot tip: Use early returns
+
+Use this one weird trick to make your code easier to read!
+
+```{webr-r}
+shiny_rmd_warning <- function() {
+  runtime <- knitr::opts_knit$get("rmarkdown.runtime")
+  if (!is.null(runtime) && runtime != "shiny") {
+    # note that the RStudio IDE checks for this specific string to detect Shiny
+    # applications in static document
+    list(structure(
+      "Shiny application in a static R Markdown document",
+      class = "rmd_warning"
+    ))
+  } else {
+    NULL
+  }
+}
+```
+
 # Naming things is hard {.middle}
 
 ## What will this function do?
@@ -500,14 +522,7 @@ input$cost_avg_min
 What are some other useful prefixes in Shiny?
 
 ::: {.text-center .fs-step-5}
-```{=html}
-<pre class="editable-code-block" onkeydown="(ev => ev.stopPropagation())(event)" onkeypress="(ev => ev.stopPropagation())(event)">
-<code contenteditable>* example_
-* example_
-* example_
-</code>
-</pre>
-```
+{{< partial ../partials/content-editable-code.html text="* example_" >}}
 :::
 
 # Switch away from if {.middle}

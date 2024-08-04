@@ -100,6 +100,7 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="../site_libs/quarto-contrib/quarto-project/gadenbuie/utopia-slides/utopia.css">
   <link rel="stylesheet" href="../site_libs/quarto-contrib/quarto-project/gadenbuie/utopia-slides/tachyons.css">
+  <link rel="stylesheet" href="../auto-dark-mode.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -679,7 +680,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"code":"card_image <- function(file = NULL, ..., src = NULL) {\n  if (is.null(src)) {\n    if (grepl(\"^([[:alnum:]]+:)?//|data:\", file)) {\n      src <- file\n    } else {\n      if (!file.exists(file)) {\n        rlang::abort(sprintf(\"`file` does not exist: %s\", file))\n      }\n      src <- base64enc::dataURI(\n        file = file,\n        mime = mime_type %||% mime::guess_type(file)\n      )\n    }\n  }\n\n  htmltools::tags$img(src = src, ...)\n}","options":{"output":"true","fig-width":7,"editor-max-height":"","out-height":"","warning":"true","editor-word-wrap":"true","fig-height":5,"out-width":"700px","classes":"","context":"interactive","autorun":"false","label":"unnamed-chunk-1","read-only":"false","comment":"","results":"markup","editor-quick-suggestions":"false","editor-font-scale":"0.5","message":"true","fig-cap":"","dpi":72},"id":1},{"code":"input <- list(type = \"cat\")\n\nif (input$type == \"types\") {\n  inspectdf::inspect_types(df)\n} else if (input$type == \"cat\") {\n  inspectdf::inspect_cat(df)\n} else if (input$type == \"num\") {\n  inspectdf::inspect_num(df)\n} else if (input$type == \"na\") {\n  inspectdf::inspect_na(df)\n}","options":{"output":"true","fig-width":7,"editor-max-height":"","out-height":"","warning":"true","editor-word-wrap":"true","fig-height":5,"out-width":"700px","classes":"","context":"interactive","autorun":"false","label":"unnamed-chunk-2","read-only":"false","comment":"","results":"markup","editor-quick-suggestions":"false","editor-font-scale":"0.5","message":"true","fig-cap":"","dpi":72},"id":2}];
+  globalThis.qwebrCellDetails = [{"options":{"comment":"","output":"true","warning":"true","context":"interactive","dpi":72,"out-height":"","results":"markup","editor-word-wrap":"true","read-only":"false","fig-width":7,"autorun":"false","classes":"","out-width":"700px","label":"unnamed-chunk-1","message":"true","fig-height":5,"fig-cap":"","editor-font-scale":"0.5","editor-max-height":"","editor-quick-suggestions":"false"},"code":"card_image <- function(file = NULL, ..., src = NULL) {\n  if (is.null(src)) {\n    if (grepl(\"^([[:alnum:]]+:)?//|data:\", file)) {\n      src <- file\n    } else {\n      if (!file.exists(file)) {\n        rlang::abort(sprintf(\"`file` does not exist: %s\", file))\n      }\n      src <- base64enc::dataURI(\n        file = file,\n        mime = mime_type %||% mime::guess_type(file)\n      )\n    }\n  }\n\n  htmltools::tags$img(src = src, ...)\n}","id":1},{"options":{"comment":"","output":"true","warning":"true","context":"interactive","dpi":72,"out-height":"","results":"markup","editor-word-wrap":"true","read-only":"false","fig-width":7,"autorun":"false","classes":"","out-width":"700px","label":"unnamed-chunk-2","message":"true","fig-height":5,"fig-cap":"","editor-font-scale":"0.5","editor-max-height":"","editor-quick-suggestions":"false"},"code":"shiny_rmd_warning <- function() {\n  runtime <- knitr::opts_knit$get(\"rmarkdown.runtime\")\n  if (!is.null(runtime) && runtime != \"shiny\") {\n    # note that the RStudio IDE checks for this specific string to detect Shiny\n    # applications in static document\n    list(structure(\n      \"Shiny application in a static R Markdown document\",\n      class = \"rmd_warning\"\n    ))\n  } else {\n    NULL\n  }\n}","id":2},{"options":{"comment":"","output":"true","warning":"true","context":"interactive","dpi":72,"out-height":"","results":"markup","editor-word-wrap":"true","read-only":"false","fig-width":7,"autorun":"false","classes":"","out-width":"700px","label":"unnamed-chunk-3","message":"true","fig-height":5,"fig-cap":"","editor-font-scale":"0.5","editor-max-height":"","editor-quick-suggestions":"false"},"code":"input <- list(type = \"cat\")\n\nif (input$type == \"types\") {\n  inspectdf::inspect_types(df)\n} else if (input$type == \"cat\") {\n  inspectdf::inspect_cat(df)\n} else if (input$type == \"num\") {\n  inspectdf::inspect_num(df)\n} else if (input$type == \"na\") {\n  inspectdf::inspect_na(df)\n}","id":3}];
 
   </script>
   <script type="module">
@@ -2726,6 +2727,12 @@ document.querySelectorAll('.code-left-edge').forEach((block) => {
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="hot-tip-use-early-returns" class="slide level2">
+<h2>Hot tip: Use early returns</h2>
+<p>Use this one weird trick to make your code easier to read!</p>
+<div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section></section>
 <section>
 <section id="naming-things-is-hard" class="title-slide slide level1 middle center">
@@ -2840,10 +2847,7 @@ input$cost_avg_min</code></pre>
 <h2>Naming shiny things (other things)</h2>
 <p>What are some other useful prefixes in Shiny?</p>
 <div class="text-center fs-step-5">
-<pre class="editable-code-block" onkeydown="(ev => ev.stopPropagation())(event)" onkeypress="(ev => ev.stopPropagation())(event)"><code contenteditable="">* example_
-* example_
-* example_
-</code>
+<pre class="editable-code-block" onkeydown="(ev => ev.stopPropagation())(event)" onkeypress="(ev => ev.stopPropagation())(event)"><code contenteditable="">* example_</code>
 </pre>
 </div>
 </section></section>
@@ -2855,7 +2859,7 @@ input$cost_avg_min</code></pre>
 <section id="section-10" class="slide level2">
 <h2></h2>
 <div class="fs-step-4">
-<div id="qwebr-insertion-location-2"></div>
+<div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </section>
