@@ -289,9 +289,23 @@ Let's make a [Bootstrap badge](https://getbootstrap.com/docs/5.3/components/badg
 :::
 
 
-## Where to put those functions?
+# A 🏡 for your functions {.middle}
 
-`loadSupport()`
+## Put your functions in helpers in `R/`
+
+::: incremental
+* They're loaded automatically by Shiny
+
+* Or you can load them with `shiny::loadSupport()`
+
+* Or you can create use a local-only package structure:
+   * `usethis::create_package("my-app", check_name = FALSE)`
+   * Adds a `DESCRIPTION` file
+   * Now you can use `devtools::load_all()`
+
+* Walk through `_exercises/05-modules/02-load-support/`
+:::
+
 
 # Modules {.middle}
 

@@ -687,7 +687,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"code":"school |>\n  filter(state == \"CA\") |>\n  filter(control == \"Public\") |>\n  count() |>\n  pull(n)","options":{"fig-width":7,"autorun":"false","label":"unnamed-chunk-1","context":"interactive","output":"true","editor-font-scale":"0.5","results":"markup","classes":"","comment":"","warning":"true","message":"true","editor-word-wrap":"true","out-width":"700px","fig-cap":"","dpi":72,"read-only":"false","fig-height":5,"out-height":"","editor-max-height":"","editor-quick-suggestions":"false"},"id":1}];
+  globalThis.qwebrCellDetails = [{"id":1,"options":{"results":"markup","out-height":"","context":"interactive","message":"true","output":"true","dpi":72,"out-width":"700px","fig-width":7,"editor-font-scale":"0.5","fig-height":5,"autorun":"false","editor-word-wrap":"true","editor-max-height":"","comment":"","editor-quick-suggestions":"false","label":"unnamed-chunk-1","classes":"","fig-cap":"","warning":"true","read-only":"false"},"code":"school |>\n  filter(state == \"CA\") |>\n  filter(control == \"Public\") |>\n  count() |>\n  pull(n)"}];
 
   </script>
   <script type="module">
@@ -2340,7 +2340,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="your-turn-1" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/07_app.R</code></h2>
-<div id="timer_8275124680400f6c6d250f1e132f4dbbcf8a160e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_a401664f76b9e8a4136f5a6416998ec0bbfad7af" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2462,7 +2462,7 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="your-turn-8-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/08_app.R</code></h2>
-<div id="timer_8275124680400f6c6d250f1e132f4dbbcf8a160e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_a401664f76b9e8a4136f5a6416998ec0bbfad7af" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2476,10 +2476,27 @@ How well will your function compose with other functions?</p></li>
 <li><p>Once both cards look the same, use <code>card_dark()</code> for both.</p></li>
 </ol>
 </div>
+</section></section>
+<section>
+<section id="a-for-your-functions" class="title-slide slide level1 middle center">
+<h1>A 🏡 for your functions</h1>
+
 </section>
-<section id="where-to-put-those-functions" class="slide level2">
-<h2>Where to put those functions?</h2>
-<p><code>loadSupport()</code></p>
+<section id="put-your-functions-in-helpers-in-r" class="slide level2">
+<h2>Put your functions in helpers in <code>R/</code></h2>
+<div>
+<ul>
+<li class="fragment"><p>They’re loaded automatically by Shiny</p></li>
+<li class="fragment"><p>Or you can load them with <code>shiny::loadSupport()</code></p></li>
+<li class="fragment"><p>Or you can create use a local-only package structure:</p>
+<ul>
+<li class="fragment"><code>usethis::create_package("my-app", check_name = FALSE)</code></li>
+<li class="fragment">Adds a <code>DESCRIPTION</code> file</li>
+<li class="fragment">Now you can use <code>devtools::load_all()</code></li>
+</ul></li>
+<li class="fragment"><p>Walk through <code>_exercises/05-modules/02-load-support/</code></p></li>
+</ul>
+</div>
 </section></section>
 <section>
 <section id="modules" class="title-slide slide level1 middle center">

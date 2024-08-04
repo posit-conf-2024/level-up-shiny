@@ -301,11 +301,11 @@
     "text": "Your Turn _exercises/08_app.R\n\n  \n    −\n    +\n \n 05:00\n \n\n\nCreate a card_dark() function to make a dark card with a title and no padding. Use the first “Location” card as a template.\nAs you fill in the implementation of card_dark(), check your work by comparing the School B card with the School A location card.\nOnce both cards look the same, use card_dark() for both."
   },
   {
-    "objectID": "slides/slides-05-modules.html#where-to-put-those-functions",
-    "href": "slides/slides-05-modules.html#where-to-put-those-functions",
+    "objectID": "slides/slides-05-modules.html#put-your-functions-in-helpers-in-r",
+    "href": "slides/slides-05-modules.html#put-your-functions-in-helpers-in-r",
     "title": "The module module",
-    "section": "Where to put those functions?",
-    "text": "Where to put those functions?\nloadSupport()"
+    "section": "Put your functions in helpers in R/",
+    "text": "Put your functions in helpers in R/\n\n\nThey’re loaded automatically by Shiny\nOr you can load them with shiny::loadSupport()\nOr you can create use a local-only package structure:\n\nusethis::create_package(\"my-app\", check_name = FALSE)\nAdds a DESCRIPTION file\nNow you can use devtools::load_all()\n\nWalk through _exercises/05-modules/02-load-support/"
   },
   {
     "objectID": "slides/slides-05-modules.html#lets-make-a-map-card",
