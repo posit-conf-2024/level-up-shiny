@@ -2,6 +2,7 @@ library(shiny)
 library(bslib)
 library(dplyr)
 library(ggplot2)
+library(leaflet)
 library(collegeScorecard)
 
 # Setup ----------------------------------------------------------------------
@@ -25,23 +26,45 @@ school_100 <-
   left_join(school, by = join_by(id))
 
 school_names <- c("Pick a School" = "", school_100$name)
+school_a <- sample(school_names, 1)
+school_b <- sample(school_names, 1)
+
+# Functions (UI) ------------------------------------------------------------
+card_dark <- function(title, ...) {
+  card(
+    card_header(title),
+    class = "text-bg-dark",
+    card_body(
+      padding = 0,
+      ...
+    )
+  )
+}
 
 # UI -------------------------------------------------------------------------
 
 ui <- page_fillable(
   layout_columns(
     div(
-      selectInput("school_a", "School A", choices = school_names),
+      selectInput("school_a", "School A", choices = school_names, selected = school_a, width = "100%"),
       card(
         card_header("Cost of Tuition (In State)"),
         plotOutput("plot_school_a")
+      ),
+      card_dark(
+        title = "Location",
+        leafletOutput("map_school_a")
       )
     ),
     div(
-      selectInput("school_b", "School B", choices = school_names),
+      selectInput("school_b", "School B", choices = school_names, selected = school_b, width = "100%"),
       card(
         card_header("Cost of Tuition (In State)"),
         plotOutput("plot_school_b")
+      ),
+      card_dark(
+        title = "Location",
+        leafletOutput("map_school_b")
       )
     )
   )
@@ -71,6 +94,18 @@ filter_scorecard_by_school_name <- function(scorecard, school, name) {
     semi_join(school_by_name, by = "id")
 }
 
+map_school <- function(school, name) {
+  the_school <- school |> filter(name == {{ name }})
+
+  leaflet() |>
+    addTiles() |>
+    addMarkers(
+      lng = the_school$longitude,
+      lat = the_school$latitude,
+      popup = the_school$name
+    )
+}
+
 # Server ---------------------------------------------------------------------
 
 server <- function(input, output, session) {
@@ -88,6 +123,16 @@ server <- function(input, output, session) {
     scorecard |>
       filter_scorecard_by_school_name(school, input$school_b) |>
       plot_cost_tuition(colors[2])
+  })
+
+  output$map_school_a <- renderLeaflet({
+    req(input$school_a)
+    map_school(school, input$school_a)
+  })
+
+  output$map_school_b <- renderLeaflet({
+    req(input$school_b)
+    map_school(school, input$school_b)
   })
 }
 

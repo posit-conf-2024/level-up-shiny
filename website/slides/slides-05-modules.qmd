@@ -32,6 +32,7 @@ webr:
   packages:
     - dplyr
     - collegeScorecard
+    - htmltools
 
 editor:
   render-on-save: true
@@ -81,7 +82,7 @@ editor:
 :::
 :::
 
-## Maybe you could use a function? {.text-center .middle .bg-gradient-yellow-peach style="--slide-heading-color: white"}
+# Maybe you could use a function? {.text-center .middle .bg-gradient-yellow-peach style="--slide-heading-color: white"}
 
 ```{=html}
 <style>
@@ -208,26 +209,84 @@ Try one, if it doesn't work, try the other.
    How well will your function compose with other functions?
 :::
 
-## UI functions
+# Maybe you could UI a function? {.text-center .middle .bg-gradient-yellow-peach style="--slide-heading-color: white"}
 
-Same idea, but for UI functions.
+## Pick your own defaults {auto-animate=true}
 
-Examples:
+```{.r}
+card(
+  layout_sidebar(
+    sidebar = sidebar(
+      position = "right",
+      open = FALSE,
+      selectInput("state", "State", choices = state.abb)
+    ),
+    plotOutput("plot_state")
+  )
+)
+```
 
-* A `card_dark()` with a title and custom class.
+## Pick your own defaults {auto-animate=true}
 
-* A `sidebar_right()`
+```{.r}
+sidebar_right <- function(...) {
+  sidebar(
+    position = "right",
+    open = FALSE,
+    ...
+  )
+}
 
-* Some other Bootstrap component
-    * `<span class="badge text-bg-secondary">New</span>`
-    * [Badges · Bootstrap v5.3](https://getbootstrap.com/docs/5.3/components/badge/)
+card(
+  layout_sidebar(
+    sidebar = sidebar_right(
+      selectInput("state", "State", choices = state.abb)
+    ),
+    plotOutput("plot_state")
+  )
+)
+```
 
+## Make your own components
 
-## Your turn
+Let's make a [Bootstrap badge](https://getbootstrap.com/docs/5.3/components/badge/) together.
 
-TK: `_exercises/08_app.R`
+## {#my-turn-badge .fullscreen}
 
-Make a `card_dark()`
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+#| orientation: horizontal
+#| viewerHeight: "100%"
+
+{{< include ../../_examples/05-modules/01_app.R >}}
+
+## file: notes.R
+# Bootstrap: https://getbootstrap.com/docs/5.3/components/badge
+#
+# <span class="badge text-bg-primary">Primary</span>
+#
+# <span class="badge text-bg-secondary">New</span>
+#
+# <span class="badge rounded-pill text-bg-success">Success</span>
+
+## file: solution.R
+{{< include ../../_examples/05-modules/01_solution_app.R >}}
+```
+
+## Your Turn `_exercises/08_app.R` {#your-turn-8-inst .slide-your-turn}
+
+{{< countdown 5:00 bottom="2rem" right="2rem" >}}
+
+::: w-80
+1. Create a `card_dark()` function to make a dark card with a title and no
+   padding. Use the first "Location" card as a template.
+
+2. As you fill in the implementation of `card_dark()`, check your work by
+   comparing the School B card with the School A location card.
+
+3. Once both cards look the same, use `card_dark()` for both.
+:::
 
 
 ## Where to put those functions?

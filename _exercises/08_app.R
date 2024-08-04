@@ -1,7 +1,23 @@
+# ┌ level-up-shiny ──────────────────────────────────┐
+# │                                                  │
+# │                    Exercise 8                    │
+# │                                                  │
+# └─────────────────────────────── posit::conf(2024) ┘
+#
+# TASKS:
+# 1. Create a `card_dark()` function to make a dark card with a title and no
+#    padding. Use the first "Location" card as a template.
+#
+# 2. As you fill in the implementation of `card_dark()`, check your work by
+#    comparing the School B card with the School A location card.
+#
+# 3. Once both cards look the same, use `card_dark()` for both.
+
 library(shiny)
 library(bslib)
 library(dplyr)
 library(ggplot2)
+library(leaflet)
 library(collegeScorecard)
 
 # Setup ----------------------------------------------------------------------
@@ -25,23 +41,46 @@ school_100 <-
   left_join(school, by = join_by(id))
 
 school_names <- c("Pick a School" = "", school_100$name)
+school_a <- sample(school_names, 1)
+school_b <- sample(school_names, 1)
+
+# Functions (UI) ------------------------------------------------------------
+card_dark <- function(...) {
+  # !! Fill in the details of this function, using the first Location card
+  # !! below as a template.
+  card(...)
+}
 
 # UI -------------------------------------------------------------------------
 
 ui <- page_fillable(
   layout_columns(
     div(
-      selectInput("school_a", "School A", choices = school_names),
+      selectInput("school_a", "School A", choices = school_names, selected = school_a, width = "100%"),
       card(
         card_header("Cost of Tuition (In State)"),
         plotOutput("plot_school_a")
+      ),
+      # !! Use this card as a template !!
+      card(
+        card_header("Location"),
+        class = "text-bg-dark",
+        card_body(
+          padding = 0,
+          leafletOutput("map_school_a")
+        )
       )
     ),
     div(
-      selectInput("school_b", "School B", choices = school_names),
+      selectInput("school_b", "School B", choices = school_names, selected = school_b, width = "100%"),
       card(
         card_header("Cost of Tuition (In State)"),
         plotOutput("plot_school_b")
+      ),
+      # !! When card_dark() works, this card will look like the one above !!
+      card_dark(
+        title = "Location",
+        leafletOutput("map_school_b")
       )
     )
   )
@@ -71,6 +110,18 @@ filter_scorecard_by_school_name <- function(scorecard, school, name) {
     semi_join(school_by_name, by = "id")
 }
 
+map_school <- function(school, name) {
+  the_school <- school |> filter(name == {{ name }})
+
+  leaflet() |>
+    addTiles() |>
+    addMarkers(
+      lng = the_school$longitude,
+      lat = the_school$latitude,
+      popup = the_school$name
+    )
+}
+
 # Server ---------------------------------------------------------------------
 
 server <- function(input, output, session) {
@@ -88,6 +139,16 @@ server <- function(input, output, session) {
     scorecard |>
       filter_scorecard_by_school_name(school, input$school_b) |>
       plot_cost_tuition(colors[2])
+  })
+
+  output$map_school_a <- renderLeaflet({
+    req(input$school_a)
+    map_school(school, input$school_a)
+  })
+
+  output$map_school_b <- renderLeaflet({
+    req(input$school_b)
+    map_school(school, input$school_b)
   })
 }
 

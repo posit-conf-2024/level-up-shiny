@@ -49,11 +49,17 @@ ui <- page_fillable(
   layout_columns(
     div(
       selectInput("school_a", "School A", choices = school_names),
-      plotOutput("plot_school_a")
+      card(
+        card_header("Cost of Tuition (In State)"),
+        plotOutput("plot_school_a")
+      )
     ),
     div(
       selectInput("school_b", "School B", choices = school_names),
-      plotOutput("plot_school_b")
+      card(
+        card_header("Cost of Tuition (In State)"),
+        plotOutput("plot_school_b")
+      )
     )
   )
 )
@@ -77,7 +83,6 @@ server <- function(input, output, session) {
       aes(x = academic_year, y = cost_tuition_in) +
       geom_col(fill = colors[1], na.rm = TRUE) +
       labs(
-        title = "Cost of Tuition (In State)",
         x = "Academic Year",
         y = NULL
       ) +
@@ -96,7 +101,6 @@ server <- function(input, output, session) {
       aes(x = academic_year, y = cost_tuition_in) +
       geom_col(fill = colors[2], na.rm = TRUE) +
       labs(
-        title = "Cost of Tuition (In State)",
         x = "Academic Year",
         y = NULL
       ) +
