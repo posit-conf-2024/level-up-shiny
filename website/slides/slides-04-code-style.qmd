@@ -319,7 +319,7 @@ server <- function(input, output, session) {
 
 Open `_examples/02-bslib/99_app.R` in the IDE as an example.
 
-##
+## Informational Comments?
 
 ```{.r}
 {{< include ../../_examples/04-style/shiny-with-comments.R >}}
@@ -338,10 +338,50 @@ Open `_examples/02-bslib/99_app.R` in the IDE as an example.
     * What might they get wrong if weren't there?
 :::
 
-##
+## Case Study: Joe Cheng
 
 ```{.r filename="shiny/R/middleware.R"}
 {{< include ../../_examples/04-style/middleware.R >}}
+```
+
+## Case Study: Davis Vaughn
+
+```{.r filename="dplyr/R/across.R" ln-start-from="293"}
+# Loop in such an order that all functions are applied
+# to a single column before moving on to the next column
+for (i in seq_n_cols) {
+  var <- vars[[i]]
+  col <- data[[i]]
+
+  context_poke("column", var)
+
+  for (j in seq_fns) {
+    fn <- fns[[j]]
+    out[[k]] <- fn(col, ...)
+    k <- k + 1L
+  }
+}
+```
+
+::: aside
+📘 🤓 <https://github.com/tidyverse/dplyr/blob/main/R/across.R#L283-L313>
+:::
+
+## Case Study: Davis Vaughn
+
+```{.r filename="dplyr/R/across.R" ln-start-from="293"}
+# Loop in such an order that all functions are applied
+# to a single column before moving on to the next column
+for (i in seq_n_cols) {
+  var <- vars[[i]]
+  col <- data[[i]]
+  context_poke("column", var)
+  for (j in seq_fns) {
+    fn <- fns[[j]]
+    out[[k]] <- fn(col, ...)
+    k <- k + 1L
+  }
+}
 ```
 
 ##
