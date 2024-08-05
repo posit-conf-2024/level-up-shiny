@@ -7,3 +7,25 @@ time: 11:45 - 12:10
 ---
 
 {{< revealjs "slides/slides-05-modules.html" class="ratio ratio-16x9" >}}
+
+## Packages
+
+* [usethis](https://usethis.r-lib.org/)
+
+## Resources
+
+* [Leveraging Shiny Modules](https://talks.cpsievert.me/20231214/index.pdf), Carson Sievert (slides)
+
+* *Mastering Shiny*, Hadley Wickham:
+
+    * [Chapter 18 Functions | Mastering Shiny](https://mastering-shiny.org/scaling-functions.html)
+
+    * [Chapter 19 Shiny modules | Mastering Shiny](https://mastering-shiny.org/scaling-modules.html)
+
+    * [Chapter 20 Packages | Mastering Shiny](https://mastering-shiny.org/scaling-packaging.html)
+
+* [R Packages (2nd Edition)](https://r-pkgs.org/)
+
+* [A beginner’s guide to Shiny modules](https://emilyriederer.netlify.app/post/shiny-modules/), Emily Riederer
+
+* [Shiny Modules in 100 Seconds](https://www.youtube.com/watch?v=BufC0agHnzw), Albert Rapp
