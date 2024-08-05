@@ -2,6 +2,13 @@
 title: Getting Setup
 ---
 
+### What to bring
+
+**Bring your [personal laptop]{.text-danger} and a power cord.**
+This is going to be a hands-on workshop, meaning that you’ll be writing code and collaborating with new friends you’ll make at the workshop. 
+
+We’ll be using [Posit Cloud](https://posit.cloud) ([details below](#using-posit-cloud)), so you don’t need to set up anything on your computer.
+
 ## Create Accounts
 
 In this workshop, we'll be using a few different online services.
@@ -11,6 +18,7 @@ If you don't already have accounts with these services, you'll need to create th
 
 * [GitHub](https://github.com/join)
   * Used to login to the Posit Connect instance set up for this workshop.
+  * Did you know? You can use your GitHub account to log in to Posit Cloud, too!
 
 * [Discord](https://discord.com/register)
   * Used to communicate during the workshop and ask questions via text. Also used for general online participation during the conference.
@@ -61,9 +69,9 @@ You can use the [usethis](https://usethis.r-lib.org) package to quickly clone th
 
 ```r
 usethis::create_from_github(
-  "gadenbuie/rmedicine-2024-bslib",
+  "posit-conf-2024/level-up-shiny",
   # Decide where to put the project here:
-  destdir = "~/Desktop/rmedicine-2024-bslib"
+  destdir = "~/Desktop/level-up-shiny"
 )
 ```
 
