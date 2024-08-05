@@ -10,7 +10,7 @@ by Garrick Aden-Buie
 :spiral_calendar: August 12, 2024  
 :alarm_clock:     09:00 - 17:00  
 :hotel:           ROOM TBD  
-:writing_hand:    [pos.it/conf](http://pos.it/conf)
+:writing_hand:    [pos.it/level-up-shiny-24](http://pos.it/level-up-shiny-24)
 
 -----
 
@@ -32,7 +32,11 @@ This workshop is for you if
 
 ## Prework
 
-TBA
+See the [Getting Started](https://posit-conf-2024.github.io/level-up-shiny/setup.html) page for instructions on how to prepare for the workshop.
+
+In short, we'll use [Posit Cloud](https://cloud.posit.co) to run RStudio in the cloud, so you don't need to install anything on your computer.
+We'll also use [Discord](https://discord.com) for chat and Q&A during the workshop and [GitHub](https://github.com) for sharing code and materials.
+A [GitHub](https://github.com) account is required to deploy Shiny apps to Connect during the workshop.
 
 ## Schedule
 
