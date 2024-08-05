@@ -483,39 +483,95 @@
     "text": "Your Turn _exercises/06_app.R\n\n  \n    −\n    +\n \n 08:00\n \n\nUse accordion() and accordion_panel() to organize the sidebar inputs. See the exercise header for links to search icons.\nAdd informational tooltips to the value box titles.\n\nPublic: “Supported by public funds and operated by elected or appointed officials.”\nNonprofit: “Private institutions that are not operated for profit.”\nFor-Profit: “Operated by private, profit-seeking businesses.”\n\nStretch: Replace the local sidebar with a popover element."
   },
   {
-    "objectID": "slides/slides-06-javascript.html#section",
-    "href": "slides/slides-06-javascript.html#section",
-    "title": "A Spoonful of JavaScript",
-    "section": "",
-    "text": "Have you ever used a large language model like ChatGPT?\nHave you used an LLM to help you write code?\nHave you used an LLM to help you learn a programming language?\nHave you used an LLM to write a Shiny app?\nHave you used an LLM to write a workshop about Shiny?"
+    "objectID": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
+    "href": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
+    "title": "Welcome!",
+    "section": "Welcome to Level Up with Shiny for R",
+    "text": "Welcome to Level Up with Shiny for R\n\nTake a seat, etc.\nHere’s an important link\nWiFI info"
   },
   {
-    "objectID": "slides/slides-06-javascript.html#section-1",
-    "href": "slides/slides-06-javascript.html#section-1",
-    "title": "A Spoonful of JavaScript",
-    "section": "",
-    "text": "What do LLMs do best?\n- situation\n\nWhen do LLMs perform poorly?\n- situation"
+    "objectID": "slides/slides-01-intro.html#meet-us",
+    "href": "slides/slides-01-intro.html#meet-us",
+    "title": "Welcome!",
+    "section": "Meet us",
+    "text": "Meet us\n\nGarrick\nCarson\nKalau\nAndrew"
   },
   {
-    "objectID": "slides/slides-06-javascript.html#our-task",
-    "href": "slides/slides-06-javascript.html#our-task",
-    "title": "A Spoonful of JavaScript",
-    "section": "Our Task",
-    "text": "Our Task\nWe want to update our college comparison app to remember the colleges that the user was comparing.\nWe’ve decided that bookmarking is too involved, we just want the app to remember automatically."
+    "objectID": "slides/slides-01-intro.html#code-of-conduct",
+    "href": "slides/slides-01-intro.html#code-of-conduct",
+    "title": "Welcome!",
+    "section": "Code of Conduct",
+    "text": "Code of Conduct\nCode of Conduct and COVID policies. Please Review\n\n💙 Treat everyone with respect\n🧡 Everyone should feel welcome and safe\n\nReporting:\n\n🗣️ any posit::conf staff member (t-shirt) or Info desk\n📧 conf@posit.com"
   },
   {
-    "objectID": "slides/slides-06-javascript.html#your-turn",
-    "href": "slides/slides-06-javascript.html#your-turn",
-    "title": "A Spoonful of JavaScript",
-    "section": "Your Turn",
-    "text": "Your Turn\n\nI had a conversation with ChatGPT about this task.\nWhat strategy does the 🤖 suggest? Find:\n\nthe browser JavaScript API\nthe Shiny JavaScript API\nwhere to put this JavaScript code in our app\nthe server-side logic that connects JS ↔︎ R\n\nWhat made my prompt to ChatGPT effective?\n\n\n  \n    −\n    +\n \n 08:00"
+    "objectID": "slides/slides-01-intro.html#meet-each-other",
+    "href": "slides/slides-01-intro.html#meet-each-other",
+    "title": "Welcome!",
+    "section": "Meet each other",
+    "text": "Meet each other\nTK: activity"
   },
   {
-    "objectID": "slides/slides-06-javascript.html#live-code-together",
-    "href": "slides/slides-06-javascript.html#live-code-together",
-    "title": "A Spoonful of JavaScript",
-    "section": "Live Code Together",
-    "text": "Live Code Together\n\nUse the chat to give our comparison app a memory.\nWhat works about the prompt? What strategies did I use to increase the chances I’d get a useful response?"
+    "objectID": "slides/slides-01-intro.html#wifi",
+    "href": "slides/slides-01-intro.html#wifi",
+    "title": "Welcome!",
+    "section": "WiFi",
+    "text": "WiFi\nWiFi: Posit Conf 2024\nPassword: conf2024"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#positconf2024-things-to-know",
+    "href": "slides/slides-01-intro.html#positconf2024-things-to-know",
+    "title": "Welcome!",
+    "section": "posit::conf(2024) Things to Know",
+    "text": "posit::conf(2024) Things to Know\n\n\nThere will be a gender-neutral bathroom on levels 3:7\nMeditation/prayer room: 503\n\nMon & Tues 7am - 7pm\nWed 7am - 5pm\n\nMothers room: 509\nRed lanyards available to those who don’t wish to be photographed"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#stickies",
+    "href": "slides/slides-01-intro.html#stickies",
+    "title": "Welcome!",
+    "section": "Stickies",
+    "text": "Stickies\n\n\n🟩\nAll good\nI’m done\n\n\n🟥\nNot great\nNeed time or help"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#shedule",
+    "href": "slides/slides-01-intro.html#shedule",
+    "title": "Welcome!",
+    "section": "Shedule",
+    "text": "Shedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#shedule-1",
+    "href": "slides/slides-01-intro.html#shedule-1",
+    "title": "Welcome!",
+    "section": "Shedule",
+    "text": "Shedule\n\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#discord",
+    "href": "slides/slides-01-intro.html#discord",
+    "title": "Welcome!",
+    "section": "Discord",
+    "text": "Discord\nGo posit.co/conference, click Login. Click image to connect to the posit::conf() Discord server.\nThis workshop has a private channel under Workshops.\n\n#level-up-shiny\n\nGreat place to ask questions, post resources, memes, or most anything else before, during, and after the workshop."
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#rstudio-cloud",
+    "href": "slides/slides-01-intro.html#rstudio-cloud",
+    "title": "Welcome!",
+    "section": "RStudio Cloud",
+    "text": "RStudio Cloud\nYou can use the following link to join the workshops RStudio cloud space,\n\n\npos.it/level-up-shiny\n\nOnce you have joined you can then select the level-up-shiny assignment,\nTK Image of assignment\nwhich should then create a copy of all materials and launch a cloud session for you."
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#cloud-session",
+    "href": "slides/slides-01-intro.html#cloud-session",
+    "title": "Welcome!",
+    "section": "Cloud session",
+    "text": "Cloud session\nIf everything is working you should see something very close to the following,\nTK image of cloud session"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#file-organization",
+    "href": "slides/slides-01-intro.html#file-organization",
+    "title": "Welcome!",
+    "section": "File organization",
+    "text": "File organization\n\n\n\n\n_exercises/\nFiles for Your Turn exercises\n\n\n_examples/\nFiles for my demo examples\n\n\nwebsite/\nThe website and slides\n\n\n./*\nLots of project related files you can ignore"
   },
   {
     "objectID": "workshop-06.html",
@@ -534,6 +590,17 @@
     "title": "Just a little JavaScript",
     "section": "",
     "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Just a little JavaScript"
+    ]
+  },
+  {
+    "objectID": "workshop-06.html#links",
+    "href": "workshop-06.html#links",
+    "title": "Just a little JavaScript",
+    "section": "Links",
+    "text": "Links\n\nA conversation with ChatGPT 4o",
     "crumbs": [
       "Workshop",
       "Just a little JavaScript"
@@ -901,95 +968,60 @@
     "text": "Links\n\n📘 Workshop Materials\n🔧 Getting Setup\n🧑‍💻 Join Posit Cloud Space\n👾 Discord (TBA) \n📦 Repository\n🎡 posit::conf(2024)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
-    "href": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
-    "title": "Welcome!",
-    "section": "Welcome to Level Up with Shiny for R",
-    "text": "Welcome to Level Up with Shiny for R\n\nTake a seat, etc.\nHere’s an important link\nWiFI info"
+    "objectID": "slides/slides-06-javascript.html#section",
+    "href": "slides/slides-06-javascript.html#section",
+    "title": "A Spoonful of JavaScript",
+    "section": "",
+    "text": "Have you ever used a large language model like ChatGPT?\nHave you used an LLM to help you write code?\nHave you used an LLM to help you learn a programming language?\nHave you used an LLM to write a Shiny app?\nHave you used an LLM to write a workshop about Shiny?"
   },
   {
-    "objectID": "slides/slides-01-intro.html#meet-us",
-    "href": "slides/slides-01-intro.html#meet-us",
-    "title": "Welcome!",
-    "section": "Meet us",
-    "text": "Meet us\n\nGarrick\nCarson\nKalau\nAndrew"
+    "objectID": "slides/slides-06-javascript.html#section-1",
+    "href": "slides/slides-06-javascript.html#section-1",
+    "title": "A Spoonful of JavaScript",
+    "section": "",
+    "text": "What do LLMs do best?\n- situation\n\nWhen do LLMs perform poorly?\n- situation"
   },
   {
-    "objectID": "slides/slides-01-intro.html#code-of-conduct",
-    "href": "slides/slides-01-intro.html#code-of-conduct",
-    "title": "Welcome!",
-    "section": "Code of Conduct",
-    "text": "Code of Conduct\nCode of Conduct and COVID policies. Please Review\n\n💙 Treat everyone with respect\n🧡 Everyone should feel welcome and safe\n\nReporting:\n\n🗣️ any posit::conf staff member (t-shirt) or Info desk\n📧 conf@posit.com"
+    "objectID": "slides/slides-06-javascript.html#our-task",
+    "href": "slides/slides-06-javascript.html#our-task",
+    "title": "A Spoonful of JavaScript",
+    "section": "Our Task",
+    "text": "Our Task\nWe want to update our college comparison app to remember the colleges that the user was comparing.\nWe’ve decided that bookmarking is too involved, we just want the app to remember automatically."
   },
   {
-    "objectID": "slides/slides-01-intro.html#meet-each-other",
-    "href": "slides/slides-01-intro.html#meet-each-other",
-    "title": "Welcome!",
-    "section": "Meet each other",
-    "text": "Meet each other\nTK: activity"
+    "objectID": "slides/slides-06-javascript.html#your-turn",
+    "href": "slides/slides-06-javascript.html#your-turn",
+    "title": "A Spoonful of JavaScript",
+    "section": "Your Turn",
+    "text": "Your Turn\n\nI had a conversation with ChatGPT about this task.\nWhat strategy does the 🤖 suggest? Find:\n\nthe browser JavaScript API\nthe Shiny JavaScript API\nwhere to put this JavaScript code in our app\nthe server-side logic that connects JS ↔︎ R\n\nWhat made my prompt to ChatGPT effective?\n\n\n  \n    −\n    +\n \n 08:00"
   },
   {
-    "objectID": "slides/slides-01-intro.html#wifi",
-    "href": "slides/slides-01-intro.html#wifi",
-    "title": "Welcome!",
-    "section": "WiFi",
-    "text": "WiFi\nWiFi: Posit Conf 2024\nPassword: conf2024"
+    "objectID": "slides/slides-06-javascript.html#storing-values-in-the-browser",
+    "href": "slides/slides-06-javascript.html#storing-values-in-the-browser",
+    "title": "A Spoonful of JavaScript",
+    "section": "Storing values in the browser",
+    "text": "Storing values in the browser\n\n\nHow can you store values in the browser?\n...\n\nHow can you retrieve values in the browser?\n...\n\n\n\n\nTry this in your own fancy JavaScript IDE: about:blank\n\n\nlocalStorage.setItem(key, value)\n// key is a string, value is a string\n// value = JSON.stringify(obj)\n\nvalue = localStorage.getItem(key)\nJSON.parse(value)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#positconf2024-things-to-know",
-    "href": "slides/slides-01-intro.html#positconf2024-things-to-know",
-    "title": "Welcome!",
-    "section": "posit::conf(2024) Things to Know",
-    "text": "posit::conf(2024) Things to Know\n\n\nThere will be a gender-neutral bathroom on levels 3:7\nMeditation/prayer room: 503\n\nMon & Tues 7am - 7pm\nWed 7am - 5pm\n\nMothers room: 509\nRed lanyards available to those who don’t wish to be photographed"
+    "objectID": "slides/slides-06-javascript.html#sending-data-from-the-browser-to-r",
+    "href": "slides/slides-06-javascript.html#sending-data-from-the-browser-to-r",
+    "title": "A Spoonful of JavaScript",
+    "section": "Sending data from the browser to R",
+    "text": "Sending data from the browser to R\n\n\nWhat function sends data from the browser to R?\n...\n\nWhat function receives data from R in the browser?\n...\n\nAnd how do you send data from R to the browser?\n...\n\n\n\n\nShiny.setInputValue(inputId, value)\n\nShiny.addCustomMessageHandler(messageName, function(data) {\n  // do something with data\n})\nsession$sendCustomMessage(messageName, data)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#stickies",
-    "href": "slides/slides-01-intro.html#stickies",
-    "title": "Welcome!",
-    "section": "Stickies",
-    "text": "Stickies\n\n\n🟩\nAll good\nI’m done\n\n\n🟥\nNot great\nNeed time or help"
+    "objectID": "slides/slides-06-javascript.html#strategies-for-success-with-llms",
+    "href": "slides/slides-06-javascript.html#strategies-for-success-with-llms",
+    "title": "A Spoonful of JavaScript",
+    "section": "Strategies for Success with LLMs",
+    "text": "Strategies for Success with LLMs\n- Idea 1\\n- Idea 2"
   },
   {
-    "objectID": "slides/slides-01-intro.html#shedule",
-    "href": "slides/slides-01-intro.html#shedule",
-    "title": "Welcome!",
-    "section": "Shedule",
-    "text": "Shedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#shedule-1",
-    "href": "slides/slides-01-intro.html#shedule-1",
-    "title": "Welcome!",
-    "section": "Shedule",
-    "text": "Shedule\n\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#discord",
-    "href": "slides/slides-01-intro.html#discord",
-    "title": "Welcome!",
-    "section": "Discord",
-    "text": "Discord\nGo posit.co/conference, click Login. Click image to connect to the posit::conf() Discord server.\nThis workshop has a private channel under Workshops.\n\n#level-up-shiny\n\nGreat place to ask questions, post resources, memes, or most anything else before, during, and after the workshop."
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#rstudio-cloud",
-    "href": "slides/slides-01-intro.html#rstudio-cloud",
-    "title": "Welcome!",
-    "section": "RStudio Cloud",
-    "text": "RStudio Cloud\nYou can use the following link to join the workshops RStudio cloud space,\n\n\npos.it/level-up-shiny\n\nOnce you have joined you can then select the level-up-shiny assignment,\nTK Image of assignment\nwhich should then create a copy of all materials and launch a cloud session for you."
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#cloud-session",
-    "href": "slides/slides-01-intro.html#cloud-session",
-    "title": "Welcome!",
-    "section": "Cloud session",
-    "text": "Cloud session\nIf everything is working you should see something very close to the following,\nTK image of cloud session"
-  },
-  {
-    "objectID": "slides/slides-01-intro.html#file-organization",
-    "href": "slides/slides-01-intro.html#file-organization",
-    "title": "Welcome!",
-    "section": "File organization",
-    "text": "File organization\n\n\n\n\n_exercises/\nFiles for Your Turn exercises\n\n\n_examples/\nFiles for my demo examples\n\n\nwebsite/\nThe website and slides\n\n\n./*\nLots of project related files you can ignore"
+    "objectID": "slides/slides-06-javascript.html#live-code-together",
+    "href": "slides/slides-06-javascript.html#live-code-together",
+    "title": "A Spoonful of JavaScript",
+    "section": "Live Code Together",
+    "text": "Live Code Together\nUse the chat to give our comparison app a memory."
   },
   {
     "objectID": "slides/slides-04-code-style.html#section",
