@@ -36,9 +36,9 @@ jobs:
       - name: 📦 Install dependencies with renv
         uses: r-lib/actions/setup-renv@v2
         env:
-          RENV_CONFIG_PAK_ENABLED: true
+          RENV_CONFIG_PAK_ENABLED: false
         with:
-          cache-version: 2
+          cache-version: 3
 
       - name: 📰 Render and Publish to GitHub Pages
         uses: gadenbuie/quarto-actions/publish@quarto-render-working-dir
