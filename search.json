@@ -803,6 +803,28 @@
     ]
   },
   {
+    "objectID": "workshop-05.html#packages",
+    "href": "workshop-05.html#packages",
+    "title": "Modules",
+    "section": "Packages",
+    "text": "Packages\n\nusethis",
+    "crumbs": [
+      "Workshop",
+      "Modules"
+    ]
+  },
+  {
+    "objectID": "workshop-05.html#resources",
+    "href": "workshop-05.html#resources",
+    "title": "Modules",
+    "section": "Resources",
+    "text": "Resources\n\nLeveraging Shiny Modules, Carson Sievert (slides)\nMastering Shiny, Hadley Wickham:\n\nChapter 18 Functions | Mastering Shiny\nChapter 19 Shiny modules | Mastering Shiny\nChapter 20 Packages | Mastering Shiny\n\nR Packages (2nd Edition)\nA beginner’s guide to Shiny modules, Emily Riederer\nShiny Modules in 100 Seconds, Albert Rapp",
+    "crumbs": [
+      "Workshop",
+      "Modules"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Level Up with Shiny for R",
