@@ -52,8 +52,10 @@ website:
     tools:
       - icon: github
         href: https://github.com/posit-conf-2024/level-up-shiny
+        aria-label: Workshop materials
       - icon: pc-display
         href: https://posit.cloud/spaces/517274/
+        aria-label: Posit Conf Workspace
   
   page-navigation: true
   
@@ -90,6 +92,16 @@ format:
     lightbox: true
     include-before-body:
       - text: <script>document.querySelector('.navbar').dataset.bsTheme = 'light';</script>
+      - text: |
+          <script>
+            const icons = document.querySelectorAll(".quarto-navigation-tool")
+            icons.forEach(icon => {
+              icon.dataset.bsToggle = "tooltip"
+              icon.dataset.bsPlacement = "bottom"
+              icon.dataset.bsTitle = icon.getAttribute("aria-label")
+              new bootstrap.Tooltip(icon)
+            })
+          </script>
 
 filters:
   - shinylive
