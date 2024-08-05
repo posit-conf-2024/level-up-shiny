@@ -39,9 +39,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -100,6 +97,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Workshop</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./setup.html"> 
+<span class="menu-text">Setup</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./about/index.html"> 
 <span class="menu-text">Team</span></a>
   </li>  
@@ -139,10 +140,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a>
-  <ul class="collapse">
-  <li><a href="#using-posit-cloud" id="toc-using-posit-cloud" class="nav-link" data-scroll-target="#using-posit-cloud">Using Posit Cloud</a></li>
-  </ul></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -202,66 +200,17 @@ document.addEventListener("DOMContentLoaded", setHue)
 <p>Shiny lets you quickly create rich, data-driven web applications for yourself, your clients, your students, or your colleagues. This workshop will give you the skills you need to build complex applications with brilliant user interfaces.</p>
 <p>You’ll learn how to make the most of recent developments in the Shiny ecosystem, while mastering techniques for modularizing and structuring your applications for growth and maintainability. Along the way, you’ll encounter new techniques to speed up your applications using caching and databases for a smooth user experience.</p>
 </section>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<div class="lead">
-<p>📘 <a href="https://posit-conf-2024.github.io/level-up-shiny">Website</a> (you are here!)</p>
-<p>🧑‍💻 <a href="https://posit.cloud/spaces/517274/">Join Posit Cloud Space</a> (Only for workshop participants)</p>
+<section id="links" class="level2">
+<h2 class="anchored" data-anchor-id="links">Links</h2>
+<div class="lead fs-3">
+<p>📘 <a href="./workshop.html">Workshop Materials</a></p>
+<p>🔧 <a href="./setup.html">Getting Setup</a></p>
+<p>🧑‍💻 <a href="https://posit.cloud/spaces/517274/">Join Posit Cloud Space</a></p>
 <p>📦 <a href="https://github.com/posit-conf-2024/level-up-shiny">Repository</a></p>
+<p>🎡 <a href="https:://posi.it/conf-event-portal">posit::conf(2024)</a></p>
 </div>
-<section id="using-posit-cloud" class="level3">
-<h3 class="anchored" data-anchor-id="using-posit-cloud">Using Posit Cloud</h3>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<!-- FIXME setup instructions -->
-<p>These instructions will be updated.</p>
-</div>
-</div>
-<p>I’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!</p>
-<p>If you already have a Posit Cloud account, first <a href="https://posit.cloud/spaces/517274/">join the rmedicine-2024-bslib space on Posit Cloud</a>. Otherwise <a href="https://cloud.posit.org/signup">sign up for a free account</a> and then join the space. You can create an account with your email or login with Google, GitHub or Clever.</p>
-<p>Once you’re part of the <a href="https://posit.cloud/spaces/517274/">rmedicine-2024-bslib space</a>, select the <code>rmedicine-2024-bslib</code> assignment to create and launch a new project just for you.</p>
-<p><a href="assets/posit-cloud-project.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="assets/posit-cloud-project.png" class="shadow-lg img-fluid" alt=""></a></p>
-<!--
-### Using Your Own Computer
-
-If you prefer to use your own computer, you can clone the repository and install the necessary packages.
-I used [R 4.4](https://r-project.org) but any recent version of R (>= 4.1) should work.
-
-You can use the [usethis](https://usethis.r-lib.org) package to quickly clone the repository:
-
-```r
-usethis::create_from_github(
-  "gadenbuie/rmedicine-2024-bslib",
-  # Decide where to put the project here:
-  destdir = "~/Desktop/rmedicine-2024-bslib"
-)
-```
-
-This will download the repository and open the project in RStudio.
-Inside the project, use the `renv` package to install the necessary packages:
-
-```r
-renv::restore()
-```
-
-For very speedy installation, I recommend telling renv to use [pak](https://pak.r-lib.org/) to install packages:
-
-```r
-Sys.setenv(RENV_CONFIG_PAK_ENABLED = "true")
-renv::restore()
-```
--->
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -692,45 +641,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p><a href="https://posit.co/conference">posit::conf(2024)</a></p>
+<p><a href="https:://posi.it/conf-event-portal">posit::conf(2024)</a></p>
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

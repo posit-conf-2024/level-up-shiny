@@ -680,6 +680,34 @@
     "text": "ChatGPT\nYou’re welcome! If you have any more questions or need further assistance, feel free to ask. Enjoy the rest of your workshop at posit::conf(2024)!"
   },
   {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Getting Setup",
+    "section": "",
+    "text": "In this workshop, we’ll be using a few different online services. If you don’t already have accounts with these services, you’ll need to create them before we get started.\n\nPosit Cloud\nGitHub\n\nUsed to login to the Posit Connect instance set up for this workshop.\n\nDiscord\n\nUsed to communicate during the workshop and ask questions via text. Also used for general online participation during the conference.\nMake sure your display name is the one you used to register for the conference.\nCloser to the conference start, you’ll be able to join the posit::conf(2024) Discord server via the event portal at https:://posi.it/conf-event-portal.\nOur workshop channel is #workshop-level-up-shiny."
+  },
+  {
+    "objectID": "setup.html#create-accounts",
+    "href": "setup.html#create-accounts",
+    "title": "Getting Setup",
+    "section": "",
+    "text": "In this workshop, we’ll be using a few different online services. If you don’t already have accounts with these services, you’ll need to create them before we get started.\n\nPosit Cloud\nGitHub\n\nUsed to login to the Posit Connect instance set up for this workshop.\n\nDiscord\n\nUsed to communicate during the workshop and ask questions via text. Also used for general online participation during the conference.\nMake sure your display name is the one you used to register for the conference.\nCloser to the conference start, you’ll be able to join the posit::conf(2024) Discord server via the event portal at https:://posi.it/conf-event-portal.\nOur workshop channel is #workshop-level-up-shiny."
+  },
+  {
+    "objectID": "setup.html#using-posit-cloud",
+    "href": "setup.html#using-posit-cloud",
+    "title": "Getting Setup",
+    "section": "Using Posit Cloud",
+    "text": "Using Posit Cloud\n\n\n\n\n\n\nRecommended Workflow\n\n\n\nThe easiest way to get started is to use the Posit Cloud workspace I’ve prepared for you.\n\n\n\n\n\n\n\n\nWarning\n\n\n\n\nThe link to join the space is not yet available. This page will be updated on the day of the workshop.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the level-up-shiny space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the level-up-shiny space, select the level-up-shiny assignment to create and launch a new project just for you."
+  },
+  {
+    "objectID": "setup.html#using-your-own-computer",
+    "href": "setup.html#using-your-own-computer",
+    "title": "Getting Setup",
+    "section": "Using Your Own Computer",
+    "text": "Using Your Own Computer\n\n\n\n\n\n\nAdvanced Workflow\n\n\n\nThis is not the recommended workflow. I recommend using the Posit Cloud workspace to avoid having to set everything up yourself.\nThat said, if you prefer to use your own computer, it’s entirely possible.\n\n\nIf you prefer to use your own computer, you can clone the repository and install the necessary packages. I used R 4.4 but any recent version of R (&gt;= 4.1) should work.\nYou can use the usethis package to quickly clone the repository:\nusethis::create_from_github(\n  \"gadenbuie/rmedicine-2024-bslib\",\n  # Decide where to put the project here:\n  destdir = \"~/Desktop/rmedicine-2024-bslib\"\n)\nThis will download the repository and open the project in RStudio.\n\nWith renv\nInside the project, use the renv package to install the necessary packages:\nrenv::restore()\nFor very speedy installation, I recommend telling renv to use pak to install packages:\nSys.setenv(RENV_CONFIG_PAK_ENABLED = \"true\")\nrenv::restore()\n\n\nWithout renv\nSometimes renv can be a little tricky to get set up. Fortunately, there’s an alternative installation method that should work just as well.\nFirst, disable renv:\nrenv::deactivate()\nThen install use pak to install the necessary packages:\n# install.packages(\"pak\")\npak::local_install_deps(dependencies = TRUE)\nOr with remotes:\n# install.packages(\"remotes\")\nremotes::install_deps(dependencies = TRUE)"
+  },
+  {
     "objectID": "workshop-03-break.html",
     "href": "workshop-03-break.html",
     "title": "☕ Break",
@@ -789,11 +817,11 @@
     "text": "Introduction\nShiny lets you quickly create rich, data-driven web applications for yourself, your clients, your students, or your colleagues. This workshop will give you the skills you need to build complex applications with brilliant user interfaces.\nYou’ll learn how to make the most of recent developments in the Shiny ecosystem, while mastering techniques for modularizing and structuring your applications for growth and maintainability. Along the way, you’ll encounter new techniques to speed up your applications using caching and databases for a smooth user experience."
   },
   {
-    "objectID": "index.html#setup",
-    "href": "index.html#setup",
+    "objectID": "index.html#links",
+    "href": "index.html#links",
     "title": "Level Up with Shiny for R",
-    "section": "Setup",
-    "text": "Setup\n\n📘 Website (you are here!)\n🧑‍💻 Join Posit Cloud Space (Only for workshop participants)\n📦 Repository\n\n\nUsing Posit Cloud\n\n\n\n\n\n\nWarning\n\n\n\n\nThese instructions will be updated.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the rmedicine-2024-bslib space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the rmedicine-2024-bslib space, select the rmedicine-2024-bslib assignment to create and launch a new project just for you."
+    "section": "Links",
+    "text": "Links\n\n📘 Workshop Materials\n🔧 Getting Setup\n🧑‍💻 Join Posit Cloud Space\n📦 Repository\n🎡 posit::conf(2024)"
   },
   {
     "objectID": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
