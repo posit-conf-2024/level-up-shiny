@@ -26,15 +26,17 @@ school_100 <-
   left_join(school, by = join_by(id))
 
 school_names <- c("Pick a School" = "", school_100$name)
-school_a <- sample(school_names, 1)
-school_b <- sample(school_names, 1)
 
 # Modules --------------------------------------------------------------------
-mod_school_ui <- function(id, label, initial) {
+mod_school_ui <- function(id, label, choices, selected = NULL) {
   ns <- NS(id)
 
+  if (is.null(selected)) {
+    selected <- sample(choices, 1)
+  }
+
   list(
-    selectInput(ns("school"), label, choices = school_names, selected = initial, width = "100%"),
+    selectInput(ns("school"), label, choices = choices, selected = selected, width = "100%"),
     card(
       card_header("Cost of Tuition (In State)"),
       plotOutput(ns("plot_school"))
@@ -71,14 +73,14 @@ card_dark <- function(title, ...) {
 ui <- page_fillable(
   layout_columns(
     div(
-      mod_school_ui("a", "School A", school_a),
+      mod_school_ui("a", "School A", school_names),
       card_dark(
         title = "Location",
         leafletOutput("map_school_a")
       )
     ),
     div(
-      mod_school_ui("b", "School B", school_b),
+      mod_school_ui("b", "School B", school_names),
       card_dark(
         title = "Location",
         leafletOutput("map_school_b")

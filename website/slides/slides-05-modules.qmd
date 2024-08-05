@@ -399,7 +399,7 @@ mod_school_ui("b")
 
 ## Step 1: Module UI
 
-::: {.w-two-thirds .center}
+::: {.w-80 .center}
 ```{.r}
 mod_school_ui <- function(id) {
   list(
@@ -418,7 +418,7 @@ mod_school_ui("b")
 
 ## Step 1: Module UI
 
-::: {.w-two-thirds .center}
+::: {.w-80 .center}
 ```{.r}
 mod_school_ui <- function(id) {
   ns <- NS(id)
@@ -451,7 +451,7 @@ ns("plot_school")
 
 ## Step 1: Module UI
 
-::: {.w-two-thirds .center}
+::: {.w-80 .center}
 ```{.r}
 mod_school_ui <- function(id) {
   ns <- NS(id)
@@ -472,13 +472,13 @@ mod_school_ui("b")
 
 ## Step 1: Module UI
 
-::: {.w-two-thirds .center}
+::: {.w-80 .center}
 ```{.r}
-mod_school_ui <- function(id, label, initial) {
+mod_school_ui <- function(id, label, choices, selected = NULL) {
   ns <- NS(id)
 
   list(
-    selectInput(ns("school"), label, choices = school_names, selected = initial, width = "100%"),
+    selectInput(ns("school"), label, choices = choices, selected = selected, width = "100%"),
     card(
       card_header("Cost of Tuition (In State)"),
       plotOutput(ns("plot_school"))
@@ -486,12 +486,37 @@ mod_school_ui <- function(id, label, initial) {
   )
 }
 
-mod_school_ui("a", "School A", school_a)
-mod_school_ui("b", "School B", school_b)
+mod_school_ui("a", "School A", school_names, school_a)
+mod_school_ui("b", "School B", school_names, school_b)
 ```
 :::
 
-::: {.fragment .w-50 .center}
+## Step 1: Module UI
+
+::: {.w-80 .center}
+```{.r}
+mod_school_ui <- function(id, label, choices, selected = NULL) {
+  ns <- NS(id)
+
+  if (is.null(selected)) {
+    selected <- sample(choices, 1)
+  }
+
+  list(
+    selectInput(ns("school"), label, choices = choices, selected = selected, width = "100%"),
+    card(
+      card_header("Cost of Tuition (In State)"),
+      plotOutput(ns("plot_school"))
+    )
+  )
+}
+
+mod_school_ui("a", "School A", school_names)
+mod_school_ui("b", "School B", school_names)
+```
+:::
+
+::: {.fragment .bg-white .b--black-60 .ba .br3 .bw1 .p-s .absolute .bottom-2 .right-2 .shadow-2}
 inputs: **school** \
 outputs: **plot_school**
 :::
@@ -575,6 +600,22 @@ mod_school_server <- function(id) {
 ## Step 2: Module Server
 
 ::: {.w-75 .center}
+```{.r}
+moduleServer(id, function(input, output, session) {
+  output$plot_school_b <- renderPlot({
+    req(input$school_b)
+
+    scorecard |>
+      filter_scorecard_by_school_name(school, input$school_b) |>
+      plot_cost_tuition(colors[2])
+  })
+})
+```
+:::
+
+## Step 2: Module Server
+
+::: {.w-75 .center}
 ```{.r code-line-numbers="|3,4,7"}
 mod_school_server <- function(id) {
   moduleServer(id, function(input, output, session) {
@@ -639,62 +680,41 @@ mod_school_server("b", colors[2])
 Working app at this point: `_examples/05-modules/03_app.R`
 :::
 
+## Your Turn `09_modules/app.R` {#your-turn-9 .slide-your-turn}
 
-## Your turn
+{{< countdown 5:00 bottom="2rem" right="2rem" >}}
 
-TK: `_exercises/09_app.R`
 
-Modules for value box, example from https://github.com/gadenbuie/slides/blob/gh-pages/bslib-modern-dashboards/jeep-weather/app-bslib.R
-Except, part of an app that compares two schools.
+::: w-80
+Add the school map card to the `mod_school` ui/server functions.
+You can find the module in `R/mod_school.R`. 
+    
+Having the module in a separate file makes it easier to have both the app
+and the module open at the same time.
+:::
 
-Goal is a module that looks like this:
+## {#my-turn-module .fullscreen}
 
-```{.r}
-ui_forecast_value_box <- function(id) {
-  ns <- NS(id)
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+#| orientation: horizontal
+#| viewerHeight: "100%"
 
-  value_box(
-    title = textOutput(ns("wday")),
-    value = uiOutput(ns("weather")),
-    showcase = uiOutput(ns("icon")),
-    showcase_layout = "top right",
-    theme = "bg-gradient-blue-purple"
-  )
-}
-```
+{{< include ../../_exercises/09_modules/solution/app_solution.R >}}
 
-# Modules Plus {.middle}
+## file: mod_school.R
+{{< include ../../_exercises/09_modules/solution/R/mod_school.R >}}
 
-## Modules can call other modules
+## file: functions.R
+{{< include ../../_exercises/09_modules/solution/R/functions.R >}}
 
-If you're in a module, just forget for a second, pretend like you aren't and call the other module
-
-## Your turn
-
-TK: `_exercises/10_app.R`
-
-Turn each comparison column into a full module:
-
-* college selector
-* value box
-* bar plot
-* map card
-
-## Communicating with your module
-
+## file: notes.md
 Suppose you put this module into your app and realize that actually, you'd like to
 
 a. Know which college is selected
+    * Add a return value to server module
 b. Set the college, e.g. pick a random school
-
-## Return values from your module
-
-Report which school was selected from the module.
-
-## Take reactive values
-
-Receive a reactive value that sets the selected school.
-
-## Return anything!
-
-Return the reported school and an `update_school()` function.
+    * Pass in a school as a reactive value
+    * Update the return value to include an updat "method"
+```
