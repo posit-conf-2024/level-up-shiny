@@ -9,6 +9,8 @@ time: 9:15 - 10:30
 editor: { render-on-save: true }
 ---
 
+## Slides
+
 {{< revealjs "slides/slides-02-bslib.html" class="ratio ratio-16x9" >}}
 
 ## Topic Links

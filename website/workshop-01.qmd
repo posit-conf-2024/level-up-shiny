@@ -8,6 +8,8 @@ time: 9:00 - 9:15
 editor: { render-on-save: true }
 ---
 
+## Slides
+
 {{< revealjs "slides/slides-01-intro.html" height="600px" class="ratio ratio-16x9" >}}
 
 ## Outline
