@@ -30,10 +30,11 @@ Imports:
     tidyr
 Suggests: 
     duckdb,
-    grkstyle (>= 0.2.1)
+    grkstyle (>= 0.2.1),
+    usethis
 Remotes: 
     gadenbuie/grkstyle
-Config/Needs/dev: lionel-/codegrip, styler, usethis
+Config/Needs/dev: lionel-/codegrip
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
