@@ -687,7 +687,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"options":{"out-height":"","label":"unnamed-chunk-1","classes":"","editor-max-height":"","autorun":"false","editor-font-scale":"0.5","fig-width":7,"out-width":"700px","comment":"","editor-word-wrap":"true","context":"interactive","results":"markup","editor-quick-suggestions":"false","message":"true","output":"true","warning":"true","dpi":72,"fig-cap":"","fig-height":5,"read-only":"false"},"id":1,"code":"school |>\n  filter(state == \"CA\") |>\n  filter(control == \"Public\") |>\n  count() |>\n  pull(n)"}];
+  globalThis.qwebrCellDetails = [{"id":1,"options":{"warning":"true","out-height":"","fig-height":5,"output":"true","classes":"","autorun":"false","read-only":"false","context":"interactive","editor-max-height":"","editor-quick-suggestions":"false","comment":"","label":"unnamed-chunk-1","message":"true","editor-word-wrap":"true","editor-font-scale":"0.5","fig-width":7,"dpi":72,"fig-cap":"","out-width":"700px","results":"markup"},"code":"school |>\n  filter(state == \"CA\") |>\n  filter(control == \"Public\") |>\n  count() |>\n  pull(n)"}];
 
   </script>
   <script type="module">
@@ -2340,7 +2340,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="your-turn-1" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/07_app.R</code></h2>
-<div id="timer_2b8917ada0bfc12abc8eb21a32b8f78bc8af163b" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_5283649bf422738a5d4a5d6af853ac68b16c12d5" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2462,7 +2462,7 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="your-turn-8-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/08_app.R</code></h2>
-<div id="timer_2b8917ada0bfc12abc8eb21a32b8f78bc8af163b" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_5283649bf422738a5d4a5d6af853ac68b16c12d5" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2579,7 +2579,7 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="step-1-module-ui-1" class="slide level2">
 <h2>Step 1: Module UI</h2>
-<div class="w-two-thirds center">
+<div class="w-80 center">
 <div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>mod_school_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
 <span id="cb14-2"><a></a>  <span class="fu">list</span>(</span>
 <span id="cb14-3"><a></a>    <span class="fu">selectInput</span>(<span class="fu">NS</span>(id, <span class="st">"school"</span>), <span class="st">"School A"</span>, <span class="at">choices =</span> school_names, <span class="at">selected =</span> school_a, <span class="at">width =</span> <span class="st">"100%"</span>),</span>
@@ -2596,7 +2596,7 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="step-1-module-ui-2" class="slide level2">
 <h2>Step 1: Module UI</h2>
-<div class="w-two-thirds center">
+<div class="w-80 center">
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>mod_school_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
 <span id="cb15-2"><a></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
 <span id="cb15-3"><a></a></span>
@@ -2628,7 +2628,7 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="step-1-module-ui-3" class="slide level2">
 <h2>Step 1: Module UI</h2>
-<div class="w-two-thirds center">
+<div class="w-80 center">
 <div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>mod_school_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
 <span id="cb17-2"><a></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
 <span id="cb17-3"><a></a></span>
@@ -2647,12 +2647,12 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="step-1-module-ui-4" class="slide level2">
 <h2>Step 1: Module UI</h2>
-<div class="w-two-thirds center">
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>mod_school_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id, label, initial) {</span>
+<div class="w-80 center">
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>mod_school_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id, label, choices, <span class="at">selected =</span> <span class="cn">NULL</span>) {</span>
 <span id="cb18-2"><a></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
 <span id="cb18-3"><a></a></span>
 <span id="cb18-4"><a></a>  <span class="fu">list</span>(</span>
-<span id="cb18-5"><a></a>    <span class="fu">selectInput</span>(<span class="fu">ns</span>(<span class="st">"school"</span>), label, <span class="at">choices =</span> school_names, <span class="at">selected =</span> initial, <span class="at">width =</span> <span class="st">"100%"</span>),</span>
+<span id="cb18-5"><a></a>    <span class="fu">selectInput</span>(<span class="fu">ns</span>(<span class="st">"school"</span>), label, <span class="at">choices =</span> choices, <span class="at">selected =</span> selected, <span class="at">width =</span> <span class="st">"100%"</span>),</span>
 <span id="cb18-6"><a></a>    <span class="fu">card</span>(</span>
 <span id="cb18-7"><a></a>      <span class="fu">card_header</span>(<span class="st">"Cost of Tuition (In State)"</span>),</span>
 <span id="cb18-8"><a></a>      <span class="fu">plotOutput</span>(<span class="fu">ns</span>(<span class="st">"plot_school"</span>))</span>
@@ -2660,10 +2660,33 @@ How well will your function compose with other functions?</p></li>
 <span id="cb18-10"><a></a>  )</span>
 <span id="cb18-11"><a></a>}</span>
 <span id="cb18-12"><a></a></span>
-<span id="cb18-13"><a></a><span class="fu">mod_school_ui</span>(<span class="st">"a"</span>, <span class="st">"School A"</span>, school_a)</span>
-<span id="cb18-14"><a></a><span class="fu">mod_school_ui</span>(<span class="st">"b"</span>, <span class="st">"School B"</span>, school_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-13"><a></a><span class="fu">mod_school_ui</span>(<span class="st">"a"</span>, <span class="st">"School A"</span>, school_names, school_a)</span>
+<span id="cb18-14"><a></a><span class="fu">mod_school_ui</span>(<span class="st">"b"</span>, <span class="st">"School B"</span>, school_names, school_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="fragment w-50 center">
+</section>
+<section id="step-1-module-ui-5" class="slide level2">
+<h2>Step 1: Module UI</h2>
+<div class="w-80 center">
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>mod_school_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id, label, choices, <span class="at">selected =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb19-2"><a></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb19-3"><a></a></span>
+<span id="cb19-4"><a></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(selected)) {</span>
+<span id="cb19-5"><a></a>    selected <span class="ot">&lt;-</span> <span class="fu">sample</span>(choices, <span class="dv">1</span>)</span>
+<span id="cb19-6"><a></a>  }</span>
+<span id="cb19-7"><a></a></span>
+<span id="cb19-8"><a></a>  <span class="fu">list</span>(</span>
+<span id="cb19-9"><a></a>    <span class="fu">selectInput</span>(<span class="fu">ns</span>(<span class="st">"school"</span>), label, <span class="at">choices =</span> choices, <span class="at">selected =</span> selected, <span class="at">width =</span> <span class="st">"100%"</span>),</span>
+<span id="cb19-10"><a></a>    <span class="fu">card</span>(</span>
+<span id="cb19-11"><a></a>      <span class="fu">card_header</span>(<span class="st">"Cost of Tuition (In State)"</span>),</span>
+<span id="cb19-12"><a></a>      <span class="fu">plotOutput</span>(<span class="fu">ns</span>(<span class="st">"plot_school"</span>))</span>
+<span id="cb19-13"><a></a>    )</span>
+<span id="cb19-14"><a></a>  )</span>
+<span id="cb19-15"><a></a>}</span>
+<span id="cb19-16"><a></a></span>
+<span id="cb19-17"><a></a><span class="fu">mod_school_ui</span>(<span class="st">"a"</span>, <span class="st">"School A"</span>, school_names)</span>
+<span id="cb19-18"><a></a><span class="fu">mod_school_ui</span>(<span class="st">"b"</span>, <span class="st">"School B"</span>, school_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment bg-white b--black-60 ba br3 bw1 p-s absolute bottom-2 right-2 shadow-2" style="">
 <p>inputs: <strong>school</strong><br>
 outputs: <strong>plot_school</strong></p>
 </div>
@@ -2672,22 +2695,22 @@ outputs: <strong>plot_school</strong></p>
 <h2>Step 2: Module Server</h2>
 <div class="flex gap-s">
 <div class="w-50">
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>output<span class="sc">$</span>plot_school_a <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb19-2"><a></a>  <span class="fu">req</span>(input<span class="sc">$</span>school_a)</span>
-<span id="cb19-3"><a></a></span>
-<span id="cb19-4"><a></a>  scorecard <span class="sc">|&gt;</span></span>
-<span id="cb19-5"><a></a>    <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school_a) <span class="sc">|&gt;</span></span>
-<span id="cb19-6"><a></a>    <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">1</span>])</span>
-<span id="cb19-7"><a></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="w-50">
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>output<span class="sc">$</span>plot_school_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb20-2"><a></a>  <span class="fu">req</span>(input<span class="sc">$</span>school_b)</span>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>output<span class="sc">$</span>plot_school_a <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb20-2"><a></a>  <span class="fu">req</span>(input<span class="sc">$</span>school_a)</span>
 <span id="cb20-3"><a></a></span>
 <span id="cb20-4"><a></a>  scorecard <span class="sc">|&gt;</span></span>
-<span id="cb20-5"><a></a>    <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school_b) <span class="sc">|&gt;</span></span>
-<span id="cb20-6"><a></a>    <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">2</span>])</span>
+<span id="cb20-5"><a></a>    <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school_a) <span class="sc">|&gt;</span></span>
+<span id="cb20-6"><a></a>    <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">1</span>])</span>
 <span id="cb20-7"><a></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="w-50">
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>output<span class="sc">$</span>plot_school_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb21-2"><a></a>  <span class="fu">req</span>(input<span class="sc">$</span>school_b)</span>
+<span id="cb21-3"><a></a></span>
+<span id="cb21-4"><a></a>  scorecard <span class="sc">|&gt;</span></span>
+<span id="cb21-5"><a></a>    <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school_b) <span class="sc">|&gt;</span></span>
+<span id="cb21-6"><a></a>    <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">2</span>])</span>
+<span id="cb21-7"><a></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -2695,46 +2718,30 @@ outputs: <strong>plot_school</strong></p>
 <h2>Step 2: Module Server</h2>
 <div class="flex gap-s">
 <div class="w-50">
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb21-2"><a></a>  output<span class="sc">$</span>plot_school_a <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb21-3"><a></a>    <span class="fu">req</span>(input<span class="sc">$</span>school_a)</span>
-<span id="cb21-4"><a></a></span>
-<span id="cb21-5"><a></a>    scorecard <span class="sc">|&gt;</span></span>
-<span id="cb21-6"><a></a>      <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school_a) <span class="sc">|&gt;</span></span>
-<span id="cb21-7"><a></a>      <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">1</span>])</span>
-<span id="cb21-8"><a></a>  })</span>
-<span id="cb21-9"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="w-50">
 <div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb22-2"><a></a>  output<span class="sc">$</span>plot_school_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb22-3"><a></a>    <span class="fu">req</span>(input<span class="sc">$</span>school_b)</span>
+<span id="cb22-2"><a></a>  output<span class="sc">$</span>plot_school_a <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb22-3"><a></a>    <span class="fu">req</span>(input<span class="sc">$</span>school_a)</span>
 <span id="cb22-4"><a></a></span>
 <span id="cb22-5"><a></a>    scorecard <span class="sc">|&gt;</span></span>
-<span id="cb22-6"><a></a>      <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school_b) <span class="sc">|&gt;</span></span>
-<span id="cb22-7"><a></a>      <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">2</span>])</span>
+<span id="cb22-6"><a></a>      <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school_a) <span class="sc">|&gt;</span></span>
+<span id="cb22-7"><a></a>      <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">1</span>])</span>
 <span id="cb22-8"><a></a>  })</span>
 <span id="cb22-9"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="w-50">
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb23-2"><a></a>  output<span class="sc">$</span>plot_school_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb23-3"><a></a>    <span class="fu">req</span>(input<span class="sc">$</span>school_b)</span>
+<span id="cb23-4"><a></a></span>
+<span id="cb23-5"><a></a>    scorecard <span class="sc">|&gt;</span></span>
+<span id="cb23-6"><a></a>      <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school_b) <span class="sc">|&gt;</span></span>
+<span id="cb23-7"><a></a>      <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">2</span>])</span>
+<span id="cb23-8"><a></a>  })</span>
+<span id="cb23-9"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <div class="w-75 fragment center">
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>mod_school_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb23-2"><a></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb23-3"><a></a>    output<span class="sc">$</span>plot_school_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb23-4"><a></a>      <span class="fu">req</span>(input<span class="sc">$</span>school_b)</span>
-<span id="cb23-5"><a></a></span>
-<span id="cb23-6"><a></a>      scorecard <span class="sc">|&gt;</span></span>
-<span id="cb23-7"><a></a>        <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school_b) <span class="sc">|&gt;</span></span>
-<span id="cb23-8"><a></a>        <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">2</span>])</span>
-<span id="cb23-9"><a></a>    })</span>
-<span id="cb23-10"><a></a>  })</span>
-<span id="cb23-11"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="step-2-module-server-2" class="slide level2">
-<h2>Step 2: Module Server</h2>
-<div class="w-75 center">
-<div class="sourceCode" id="cb24" data-code-line-numbers="|3,4,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>mod_school_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>mod_school_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
 <span id="cb24-2"><a></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
 <span id="cb24-3"><a></a>    output<span class="sc">$</span>plot_school_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
 <span id="cb24-4"><a></a>      <span class="fu">req</span>(input<span class="sc">$</span>school_b)</span>
@@ -2747,45 +2754,75 @@ outputs: <strong>plot_school</strong></p>
 <span id="cb24-11"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="step-2-module-server-2" class="slide level2">
+<h2>Step 2: Module Server</h2>
+<div class="w-75 center">
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb25-2"><a></a>  output<span class="sc">$</span>plot_school_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb25-3"><a></a>    <span class="fu">req</span>(input<span class="sc">$</span>school_b)</span>
+<span id="cb25-4"><a></a></span>
+<span id="cb25-5"><a></a>    scorecard <span class="sc">|&gt;</span></span>
+<span id="cb25-6"><a></a>      <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school_b) <span class="sc">|&gt;</span></span>
+<span id="cb25-7"><a></a>      <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">2</span>])</span>
+<span id="cb25-8"><a></a>  })</span>
+<span id="cb25-9"><a></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 <section id="step-2-module-server-3" class="slide level2">
 <h2>Step 2: Module Server</h2>
 <div class="w-75 center">
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>mod_school_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb25-2"><a></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb25-3"><a></a>    output<span class="sc">$</span>plot_school <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb25-4"><a></a>      <span class="fu">req</span>(input<span class="sc">$</span>school)</span>
-<span id="cb25-5"><a></a></span>
-<span id="cb25-6"><a></a>      scorecard <span class="sc">|&gt;</span></span>
-<span id="cb25-7"><a></a>        <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school) <span class="sc">|&gt;</span></span>
-<span id="cb25-8"><a></a>        <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">2</span>])</span>
-<span id="cb25-9"><a></a>    })</span>
-<span id="cb25-10"><a></a>  })</span>
-<span id="cb25-11"><a></a>}</span>
-<span id="cb25-12"><a></a></span>
-<span id="cb25-13"><a></a><span class="fu">mod_school_server</span>(<span class="st">"a"</span>)</span>
-<span id="cb25-14"><a></a><span class="fu">mod_school_server</span>(<span class="st">"b"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="fragment text-center">
-<p>✨ There is some magic in modules, after all ✨</p>
-</div>
+<div class="sourceCode" id="cb26" data-code-line-numbers="|3,4,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>mod_school_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb26-2"><a></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb26-3"><a></a>    output<span class="sc">$</span>plot_school_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb26-4"><a></a>      <span class="fu">req</span>(input<span class="sc">$</span>school_b)</span>
+<span id="cb26-5"><a></a></span>
+<span id="cb26-6"><a></a>      scorecard <span class="sc">|&gt;</span></span>
+<span id="cb26-7"><a></a>        <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school_b) <span class="sc">|&gt;</span></span>
+<span id="cb26-8"><a></a>        <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">2</span>])</span>
+<span id="cb26-9"><a></a>    })</span>
+<span id="cb26-10"><a></a>  })</span>
+<span id="cb26-11"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="step-2-module-server-4" class="slide level2">
 <h2>Step 2: Module Server</h2>
 <div class="w-75 center">
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>mod_school_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id, plot_color) {</span>
-<span id="cb26-2"><a></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb26-3"><a></a>    output<span class="sc">$</span>plot_school <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb26-4"><a></a>      <span class="fu">req</span>(input<span class="sc">$</span>school)</span>
-<span id="cb26-5"><a></a></span>
-<span id="cb26-6"><a></a>      scorecard <span class="sc">|&gt;</span></span>
-<span id="cb26-7"><a></a>        <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school) <span class="sc">|&gt;</span></span>
-<span id="cb26-8"><a></a>        <span class="fu">plot_cost_tuition</span>(plot_color)</span>
-<span id="cb26-9"><a></a>    })</span>
-<span id="cb26-10"><a></a>  })</span>
-<span id="cb26-11"><a></a>}</span>
-<span id="cb26-12"><a></a></span>
-<span id="cb26-13"><a></a><span class="fu">mod_school_server</span>(<span class="st">"a"</span>, colors[<span class="dv">1</span>])</span>
-<span id="cb26-14"><a></a><span class="fu">mod_school_server</span>(<span class="st">"b"</span>, colors[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>mod_school_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb27-2"><a></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb27-3"><a></a>    output<span class="sc">$</span>plot_school <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb27-4"><a></a>      <span class="fu">req</span>(input<span class="sc">$</span>school)</span>
+<span id="cb27-5"><a></a></span>
+<span id="cb27-6"><a></a>      scorecard <span class="sc">|&gt;</span></span>
+<span id="cb27-7"><a></a>        <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school) <span class="sc">|&gt;</span></span>
+<span id="cb27-8"><a></a>        <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">2</span>])</span>
+<span id="cb27-9"><a></a>    })</span>
+<span id="cb27-10"><a></a>  })</span>
+<span id="cb27-11"><a></a>}</span>
+<span id="cb27-12"><a></a></span>
+<span id="cb27-13"><a></a><span class="fu">mod_school_server</span>(<span class="st">"a"</span>)</span>
+<span id="cb27-14"><a></a><span class="fu">mod_school_server</span>(<span class="st">"b"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment text-center">
+<p>✨ There is some magic in modules, after all ✨</p>
+</div>
+</div>
+</section>
+<section id="step-2-module-server-5" class="slide level2">
+<h2>Step 2: Module Server</h2>
+<div class="w-75 center">
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>mod_school_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id, plot_color) {</span>
+<span id="cb28-2"><a></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb28-3"><a></a>    output<span class="sc">$</span>plot_school <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb28-4"><a></a>      <span class="fu">req</span>(input<span class="sc">$</span>school)</span>
+<span id="cb28-5"><a></a></span>
+<span id="cb28-6"><a></a>      scorecard <span class="sc">|&gt;</span></span>
+<span id="cb28-7"><a></a>        <span class="fu">filter_scorecard_by_school_name</span>(school, input<span class="sc">$</span>school) <span class="sc">|&gt;</span></span>
+<span id="cb28-8"><a></a>        <span class="fu">plot_cost_tuition</span>(plot_color)</span>
+<span id="cb28-9"><a></a>    })</span>
+<span id="cb28-10"><a></a>  })</span>
+<span id="cb28-11"><a></a>}</span>
+<span id="cb28-12"><a></a></span>
+<span id="cb28-13"><a></a><span class="fu">mod_school_server</span>(<span class="st">"a"</span>, colors[<span class="dv">1</span>])</span>
+<span id="cb28-14"><a></a><span class="fu">mod_school_server</span>(<span class="st">"b"</span>, colors[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p>Working app at this point: <code>_examples/05-modules/03_app.R</code></p>
@@ -2801,62 +2838,174 @@ outputs: <strong>plot_school</strong></p>
           display:block!important;
       }</style></aside>
 </section>
-<section id="your-turn" class="slide level2">
-<h2>Your turn</h2>
-<p>TK: <code>_exercises/09_app.R</code></p>
-<p>Modules for value box, example from https://github.com/gadenbuie/slides/blob/gh-pages/bslib-modern-dashboards/jeep-weather/app-bslib.R Except, part of an app that compares two schools.</p>
-<p>Goal is a module that looks like this:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>ui_forecast_value_box <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb27-2"><a></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
-<span id="cb27-3"><a></a></span>
-<span id="cb27-4"><a></a>  <span class="fu">value_box</span>(</span>
-<span id="cb27-5"><a></a>    <span class="at">title =</span> <span class="fu">textOutput</span>(<span class="fu">ns</span>(<span class="st">"wday"</span>)),</span>
-<span id="cb27-6"><a></a>    <span class="at">value =</span> <span class="fu">uiOutput</span>(<span class="fu">ns</span>(<span class="st">"weather"</span>)),</span>
-<span id="cb27-7"><a></a>    <span class="at">showcase =</span> <span class="fu">uiOutput</span>(<span class="fu">ns</span>(<span class="st">"icon"</span>)),</span>
-<span id="cb27-8"><a></a>    <span class="at">showcase_layout =</span> <span class="st">"top right"</span>,</span>
-<span id="cb27-9"><a></a>    <span class="at">theme =</span> <span class="st">"bg-gradient-blue-purple"</span></span>
-<span id="cb27-10"><a></a>  )</span>
-<span id="cb27-11"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section></section>
-<section>
-<section id="modules-plus" class="title-slide slide level1 middle center">
-<h1>Modules Plus</h1>
-
+<section id="your-turn-9" class="slide level2 slide-your-turn">
+<h2>Your Turn <code>09_modules/app.R</code></h2>
+<div id="timer_5283649bf422738a5d4a5d6af853ac68b16c12d5" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+  <div class="countdown-controls">
+    <button class="countdown-bump-down">−</button>
+    <button class="countdown-bump-up">+</button>
+ </div>
+ <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+ </div>
+<div class="w-80">
+<p>Add the school map card to the <code>mod_school</code> ui/server functions. You can find the module in <code>R/mod_school.R</code>.</p>
+<p>Having the module in a separate file makes it easier to have both the app and the module open at the same time.</p>
+</div>
 </section>
-<section id="modules-can-call-other-modules" class="slide level2">
-<h2>Modules can call other modules</h2>
-<p>If you’re in a module, just forget for a second, pretend like you aren’t and call the other module</p>
-</section>
-<section id="your-turn-2" class="slide level2">
-<h2>Your turn</h2>
-<p>TK: <code>_exercises/10_app.R</code></p>
-<p>Turn each comparison column into a full module:</p>
-<ul>
-<li>college selector</li>
-<li>value box</li>
-<li>bar plot</li>
-<li>map card</li>
-</ul>
-</section>
-<section id="communicating-with-your-module" class="slide level2">
-<h2>Communicating with your module</h2>
-<p>Suppose you put this module into your app and realize that actually, you’d like to</p>
-<ol type="a">
-<li>Know which college is selected</li>
-<li>Set the college, e.g.&nbsp;pick a random school</li>
-</ol>
-</section>
-<section id="return-values-from-your-module" class="slide level2">
-<h2>Return values from your module</h2>
-<p>Report which school was selected from the module.</p>
-</section>
-<section id="take-reactive-values" class="slide level2">
-<h2>Take reactive values</h2>
-<p>Receive a reactive value that sets the selected school.</p>
-</section>
-<section id="return-anything" class="slide level2">
-<h2>Return anything!</h2>
-<p>Return the reported school and an <code>update_school()</code> function.</p>
+<section id="my-turn-module" class="slide level2 fullscreen">
+<h2></h2>
+<div class="sourceCode" id="cb29" data-engine="r"><pre class="sourceCode numberSource shinylive-r number-lines code-with-copy"><code class="sourceCode"><span id="cb29-1"><a></a>#| standalone: true</span>
+<span id="cb29-2"><a></a>#| components: [editor, viewer]</span>
+<span id="cb29-3"><a></a>#| orientation: horizontal</span>
+<span id="cb29-4"><a></a>#| viewerHeight: "100%"</span>
+<span id="cb29-5"><a></a></span>
+<span id="cb29-6"><a></a>library(shiny)</span>
+<span id="cb29-7"><a></a>library(bslib)</span>
+<span id="cb29-8"><a></a>library(dplyr)</span>
+<span id="cb29-9"><a></a>library(ggplot2)</span>
+<span id="cb29-10"><a></a>library(leaflet)</span>
+<span id="cb29-11"><a></a>library(collegeScorecard)</span>
+<span id="cb29-12"><a></a></span>
+<span id="cb29-13"><a></a># Setup ----------------------------------------------------------------------</span>
+<span id="cb29-14"><a></a></span>
+<span id="cb29-15"><a></a>colors &lt;- c("#007bc2", "#f45100", "#bf007f")</span>
+<span id="cb29-16"><a></a></span>
+<span id="cb29-17"><a></a>theme_set(</span>
+<span id="cb29-18"><a></a>  theme_minimal(18) +</span>
+<span id="cb29-19"><a></a>    theme(</span>
+<span id="cb29-20"><a></a>      panel.grid.minor = element_blank(),</span>
+<span id="cb29-21"><a></a>      panel.grid.major.y = element_blank(),</span>
+<span id="cb29-22"><a></a>      axis.title = element_text(size = 14)</span>
+<span id="cb29-23"><a></a>    )</span>
+<span id="cb29-24"><a></a>)</span>
+<span id="cb29-25"><a></a></span>
+<span id="cb29-26"><a></a>school_100 &lt;-</span>
+<span id="cb29-27"><a></a>  scorecard |&gt;</span>
+<span id="cb29-28"><a></a>  slice_max(academic_year) |&gt;</span>
+<span id="cb29-29"><a></a>  slice_max(n_undergrads, n = 100, with_ties = FALSE) |&gt;</span>
+<span id="cb29-30"><a></a>  select(id, n_undergrads) |&gt;</span>
+<span id="cb29-31"><a></a>  left_join(school, by = join_by(id))</span>
+<span id="cb29-32"><a></a></span>
+<span id="cb29-33"><a></a>school_names &lt;- c("Pick a School" = "", school_100$name)</span>
+<span id="cb29-34"><a></a></span>
+<span id="cb29-35"><a></a># UI -------------------------------------------------------------------------</span>
+<span id="cb29-36"><a></a></span>
+<span id="cb29-37"><a></a>ui &lt;- page_fillable(</span>
+<span id="cb29-38"><a></a>  layout_columns(</span>
+<span id="cb29-39"><a></a>    div(</span>
+<span id="cb29-40"><a></a>      mod_school_ui("a", "School A", school_names)</span>
+<span id="cb29-41"><a></a>    ),</span>
+<span id="cb29-42"><a></a>    div(</span>
+<span id="cb29-43"><a></a>      mod_school_ui("b", "School B", school_names)</span>
+<span id="cb29-44"><a></a>    )</span>
+<span id="cb29-45"><a></a>  )</span>
+<span id="cb29-46"><a></a>)</span>
+<span id="cb29-47"><a></a></span>
+<span id="cb29-48"><a></a># Server ---------------------------------------------------------------------</span>
+<span id="cb29-49"><a></a></span>
+<span id="cb29-50"><a></a>server &lt;- function(input, output, session) {</span>
+<span id="cb29-51"><a></a>  mod_school_server("a", colors[1])</span>
+<span id="cb29-52"><a></a>  mod_school_server("b", colors[2])</span>
+<span id="cb29-53"><a></a>}</span>
+<span id="cb29-54"><a></a></span>
+<span id="cb29-55"><a></a>shinyApp(ui, server)</span>
+<span id="cb29-56"><a></a></span>
+<span id="cb29-57"><a></a></span>
+<span id="cb29-58"><a></a>## file: mod_school.R</span>
+<span id="cb29-59"><a></a>mod_school_ui &lt;- function(id, label, choices, selected = NULL) {</span>
+<span id="cb29-60"><a></a>  ns &lt;- NS(id)</span>
+<span id="cb29-61"><a></a></span>
+<span id="cb29-62"><a></a>  if (is.null(selected)) {</span>
+<span id="cb29-63"><a></a>    selected &lt;- sample(choices, 1)</span>
+<span id="cb29-64"><a></a>  }</span>
+<span id="cb29-65"><a></a></span>
+<span id="cb29-66"><a></a>  list(</span>
+<span id="cb29-67"><a></a>    selectInput(ns("school"), label, choices = choices, selected = selected, width = "100%"),</span>
+<span id="cb29-68"><a></a>    card(</span>
+<span id="cb29-69"><a></a>      card_header("Cost of Tuition (In State)"),</span>
+<span id="cb29-70"><a></a>      plotOutput(ns("plot_school"))</span>
+<span id="cb29-71"><a></a>    ),</span>
+<span id="cb29-72"><a></a>    card_dark(</span>
+<span id="cb29-73"><a></a>      title = "Location",</span>
+<span id="cb29-74"><a></a>      leafletOutput(ns("map_school"))</span>
+<span id="cb29-75"><a></a>    )</span>
+<span id="cb29-76"><a></a>  )</span>
+<span id="cb29-77"><a></a>}</span>
+<span id="cb29-78"><a></a></span>
+<span id="cb29-79"><a></a>mod_school_server &lt;- function(id, plot_color) {</span>
+<span id="cb29-80"><a></a>  moduleServer(id, function(input, output, session) {</span>
+<span id="cb29-81"><a></a>    output$plot_school &lt;- renderPlot({</span>
+<span id="cb29-82"><a></a>      req(input$school)</span>
+<span id="cb29-83"><a></a></span>
+<span id="cb29-84"><a></a>      scorecard |&gt;</span>
+<span id="cb29-85"><a></a>        filter_scorecard_by_school_name(school, input$school) |&gt;</span>
+<span id="cb29-86"><a></a>        plot_cost_tuition(plot_color)</span>
+<span id="cb29-87"><a></a>    })</span>
+<span id="cb29-88"><a></a></span>
+<span id="cb29-89"><a></a>    output$map_school &lt;- renderLeaflet({</span>
+<span id="cb29-90"><a></a>      req(input$school)</span>
+<span id="cb29-91"><a></a>      map_school(school, input$school)</span>
+<span id="cb29-92"><a></a>    })</span>
+<span id="cb29-93"><a></a>  })</span>
+<span id="cb29-94"><a></a>}</span>
+<span id="cb29-95"><a></a></span>
+<span id="cb29-96"><a></a></span>
+<span id="cb29-97"><a></a>## file: functions.R</span>
+<span id="cb29-98"><a></a>card_dark &lt;- function(title, ...) {</span>
+<span id="cb29-99"><a></a>  card(</span>
+<span id="cb29-100"><a></a>    card_header(title),</span>
+<span id="cb29-101"><a></a>    class = "text-bg-dark",</span>
+<span id="cb29-102"><a></a>    card_body(</span>
+<span id="cb29-103"><a></a>      padding = 0,</span>
+<span id="cb29-104"><a></a>      ...</span>
+<span id="cb29-105"><a></a>    )</span>
+<span id="cb29-106"><a></a>  )</span>
+<span id="cb29-107"><a></a>}</span>
+<span id="cb29-108"><a></a></span>
+<span id="cb29-109"><a></a></span>
+<span id="cb29-110"><a></a>plot_cost_tuition &lt;- function(scorecard, fill_color = "#007bc2") {</span>
+<span id="cb29-111"><a></a>  scorecard |&gt;</span>
+<span id="cb29-112"><a></a>    mutate(academic_year = as.integer(substr(academic_year, 1, 4))) |&gt;</span>
+<span id="cb29-113"><a></a>    ggplot() +</span>
+<span id="cb29-114"><a></a>    aes(x = academic_year, y = cost_tuition_in) +</span>
+<span id="cb29-115"><a></a>    geom_col(fill = fill_color, na.rm = TRUE) +</span>
+<span id="cb29-116"><a></a>    labs(</span>
+<span id="cb29-117"><a></a>      x = "Academic Year",</span>
+<span id="cb29-118"><a></a>      y = NULL</span>
+<span id="cb29-119"><a></a>    ) +</span>
+<span id="cb29-120"><a></a>    scale_y_continuous(labels = scales::label_dollar())</span>
+<span id="cb29-121"><a></a>}</span>
+<span id="cb29-122"><a></a></span>
+<span id="cb29-123"><a></a>filter_scorecard_by_school_name &lt;- function(scorecard, school, name) {</span>
+<span id="cb29-124"><a></a>  school_by_name &lt;- </span>
+<span id="cb29-125"><a></a>    school |&gt;</span>
+<span id="cb29-126"><a></a>    filter(name == {{ name }})</span>
+<span id="cb29-127"><a></a></span>
+<span id="cb29-128"><a></a>  scorecard |&gt;</span>
+<span id="cb29-129"><a></a>    semi_join(school_by_name, by = "id")</span>
+<span id="cb29-130"><a></a>}</span>
+<span id="cb29-131"><a></a></span>
+<span id="cb29-132"><a></a>map_school &lt;- function(school, name) {</span>
+<span id="cb29-133"><a></a>  the_school &lt;- school |&gt; filter(name == {{ name }})</span>
+<span id="cb29-134"><a></a></span>
+<span id="cb29-135"><a></a>  leaflet() |&gt;</span>
+<span id="cb29-136"><a></a>    addTiles() |&gt;</span>
+<span id="cb29-137"><a></a>    addMarkers(</span>
+<span id="cb29-138"><a></a>      lng = the_school$longitude,</span>
+<span id="cb29-139"><a></a>      lat = the_school$latitude,</span>
+<span id="cb29-140"><a></a>      popup = the_school$name</span>
+<span id="cb29-141"><a></a>    )</span>
+<span id="cb29-142"><a></a>}</span>
+<span id="cb29-143"><a></a></span>
+<span id="cb29-144"><a></a></span>
+<span id="cb29-145"><a></a>## file: notes.md</span>
+<span id="cb29-146"><a></a>Suppose you put this module into your app and realize that actually, you'd like to</span>
+<span id="cb29-147"><a></a></span>
+<span id="cb29-148"><a></a>a. Know which college is selected</span>
+<span id="cb29-149"><a></a>    * Add a return value to server module</span>
+<span id="cb29-150"><a></a>b. Set the college, e.g. pick a random school</span>
+<span id="cb29-151"><a></a>    * Pass in a school as a reactive value</span>
+<span id="cb29-152"><a></a>    * Update the return value to include an updat "method"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

@@ -144,7 +144,14 @@
     "href": "slides/slides-05-modules.html#step-1-module-ui-4",
     "title": "The module module",
     "section": "Step 1: Module UI",
-    "text": "Step 1: Module UI\n\nmod_school_ui &lt;- function(id, label, initial) {\n  ns &lt;- NS(id)\n\n  list(\n    selectInput(ns(\"school\"), label, choices = school_names, selected = initial, width = \"100%\"),\n    card(\n      card_header(\"Cost of Tuition (In State)\"),\n      plotOutput(ns(\"plot_school\"))\n    )\n  )\n}\n\nmod_school_ui(\"a\", \"School A\", school_a)\nmod_school_ui(\"b\", \"School B\", school_b)\n\n\ninputs: school\noutputs: plot_school"
+    "text": "Step 1: Module UI\n\nmod_school_ui &lt;- function(id, label, choices, selected = NULL) {\n  ns &lt;- NS(id)\n\n  list(\n    selectInput(ns(\"school\"), label, choices = choices, selected = selected, width = \"100%\"),\n    card(\n      card_header(\"Cost of Tuition (In State)\"),\n      plotOutput(ns(\"plot_school\"))\n    )\n  )\n}\n\nmod_school_ui(\"a\", \"School A\", school_names, school_a)\nmod_school_ui(\"b\", \"School B\", school_names, school_b)"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#step-1-module-ui-5",
+    "href": "slides/slides-05-modules.html#step-1-module-ui-5",
+    "title": "The module module",
+    "section": "Step 1: Module UI",
+    "text": "Step 1: Module UI\n\nmod_school_ui &lt;- function(id, label, choices, selected = NULL) {\n  ns &lt;- NS(id)\n\n  if (is.null(selected)) {\n    selected &lt;- sample(choices, 1)\n  }\n\n  list(\n    selectInput(ns(\"school\"), label, choices = choices, selected = selected, width = \"100%\"),\n    card(\n      card_header(\"Cost of Tuition (In State)\"),\n      plotOutput(ns(\"plot_school\"))\n    )\n  )\n}\n\nmod_school_ui(\"a\", \"School A\", school_names)\nmod_school_ui(\"b\", \"School B\", school_names)\n\n\ninputs: school\noutputs: plot_school"
   },
   {
     "objectID": "slides/slides-05-modules.html#step-2-module-server",
@@ -165,70 +172,42 @@
     "href": "slides/slides-05-modules.html#step-2-module-server-2",
     "title": "The module module",
     "section": "Step 2: Module Server",
-    "text": "Step 2: Module Server\n\nmod_school_server &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    output$plot_school_b &lt;- renderPlot({\n      req(input$school_b)\n\n      scorecard |&gt;\n        filter_scorecard_by_school_name(school, input$school_b) |&gt;\n        plot_cost_tuition(colors[2])\n    })\n  })\n}"
+    "text": "Step 2: Module Server\n\nmoduleServer(id, function(input, output, session) {\n  output$plot_school_b &lt;- renderPlot({\n    req(input$school_b)\n\n    scorecard |&gt;\n      filter_scorecard_by_school_name(school, input$school_b) |&gt;\n      plot_cost_tuition(colors[2])\n  })\n})"
   },
   {
     "objectID": "slides/slides-05-modules.html#step-2-module-server-3",
     "href": "slides/slides-05-modules.html#step-2-module-server-3",
     "title": "The module module",
     "section": "Step 2: Module Server",
-    "text": "Step 2: Module Server\n\nmod_school_server &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    output$plot_school &lt;- renderPlot({\n      req(input$school)\n\n      scorecard |&gt;\n        filter_scorecard_by_school_name(school, input$school) |&gt;\n        plot_cost_tuition(colors[2])\n    })\n  })\n}\n\nmod_school_server(\"a\")\nmod_school_server(\"b\")\n\n✨ There is some magic in modules, after all ✨"
+    "text": "Step 2: Module Server\n\nmod_school_server &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    output$plot_school_b &lt;- renderPlot({\n      req(input$school_b)\n\n      scorecard |&gt;\n        filter_scorecard_by_school_name(school, input$school_b) |&gt;\n        plot_cost_tuition(colors[2])\n    })\n  })\n}"
   },
   {
     "objectID": "slides/slides-05-modules.html#step-2-module-server-4",
     "href": "slides/slides-05-modules.html#step-2-module-server-4",
     "title": "The module module",
     "section": "Step 2: Module Server",
+    "text": "Step 2: Module Server\n\nmod_school_server &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    output$plot_school &lt;- renderPlot({\n      req(input$school)\n\n      scorecard |&gt;\n        filter_scorecard_by_school_name(school, input$school) |&gt;\n        plot_cost_tuition(colors[2])\n    })\n  })\n}\n\nmod_school_server(\"a\")\nmod_school_server(\"b\")\n\n✨ There is some magic in modules, after all ✨"
+  },
+  {
+    "objectID": "slides/slides-05-modules.html#step-2-module-server-5",
+    "href": "slides/slides-05-modules.html#step-2-module-server-5",
+    "title": "The module module",
+    "section": "Step 2: Module Server",
     "text": "Step 2: Module Server\n\nmod_school_server &lt;- function(id, plot_color) {\n  moduleServer(id, function(input, output, session) {\n    output$plot_school &lt;- renderPlot({\n      req(input$school)\n\n      scorecard |&gt;\n        filter_scorecard_by_school_name(school, input$school) |&gt;\n        plot_cost_tuition(plot_color)\n    })\n  })\n}\n\nmod_school_server(\"a\", colors[1])\nmod_school_server(\"b\", colors[2])\n\n\nWorking app at this point: _examples/05-modules/03_app.R"
   },
   {
-    "objectID": "slides/slides-05-modules.html#your-turn",
-    "href": "slides/slides-05-modules.html#your-turn",
+    "objectID": "slides/slides-05-modules.html#your-turn-9",
+    "href": "slides/slides-05-modules.html#your-turn-9",
     "title": "The module module",
-    "section": "Your turn",
-    "text": "Your turn\nTK: _exercises/09_app.R\nModules for value box, example from https://github.com/gadenbuie/slides/blob/gh-pages/bslib-modern-dashboards/jeep-weather/app-bslib.R Except, part of an app that compares two schools.\nGoal is a module that looks like this:\nui_forecast_value_box &lt;- function(id) {\n  ns &lt;- NS(id)\n\n  value_box(\n    title = textOutput(ns(\"wday\")),\n    value = uiOutput(ns(\"weather\")),\n    showcase = uiOutput(ns(\"icon\")),\n    showcase_layout = \"top right\",\n    theme = \"bg-gradient-blue-purple\"\n  )\n}"
+    "section": "Your Turn 09_modules/app.R",
+    "text": "Your Turn 09_modules/app.R\n\n  \n    −\n    +\n \n 05:00\n \n\nAdd the school map card to the mod_school ui/server functions. You can find the module in R/mod_school.R.\nHaving the module in a separate file makes it easier to have both the app and the module open at the same time."
   },
   {
-    "objectID": "slides/slides-05-modules.html#modules-can-call-other-modules",
-    "href": "slides/slides-05-modules.html#modules-can-call-other-modules",
+    "objectID": "slides/slides-05-modules.html#my-turn-module",
+    "href": "slides/slides-05-modules.html#my-turn-module",
     "title": "The module module",
-    "section": "Modules can call other modules",
-    "text": "Modules can call other modules\nIf you’re in a module, just forget for a second, pretend like you aren’t and call the other module"
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#your-turn-2",
-    "href": "slides/slides-05-modules.html#your-turn-2",
-    "title": "The module module",
-    "section": "Your turn",
-    "text": "Your turn\nTK: _exercises/10_app.R\nTurn each comparison column into a full module:\n\ncollege selector\nvalue box\nbar plot\nmap card"
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#communicating-with-your-module",
-    "href": "slides/slides-05-modules.html#communicating-with-your-module",
-    "title": "The module module",
-    "section": "Communicating with your module",
-    "text": "Communicating with your module\nSuppose you put this module into your app and realize that actually, you’d like to\n\nKnow which college is selected\nSet the college, e.g. pick a random school"
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#return-values-from-your-module",
-    "href": "slides/slides-05-modules.html#return-values-from-your-module",
-    "title": "The module module",
-    "section": "Return values from your module",
-    "text": "Return values from your module\nReport which school was selected from the module."
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#take-reactive-values",
-    "href": "slides/slides-05-modules.html#take-reactive-values",
-    "title": "The module module",
-    "section": "Take reactive values",
-    "text": "Take reactive values\nReceive a reactive value that sets the selected school."
-  },
-  {
-    "objectID": "slides/slides-05-modules.html#return-anything",
-    "href": "slides/slides-05-modules.html#return-anything",
-    "title": "The module module",
-    "section": "Return anything!",
-    "text": "Return anything!\nReturn the reported school and an update_school() function."
+    "section": "",
+    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(leaflet)\nlibrary(collegeScorecard)\n\n# Setup ----------------------------------------------------------------------\n\ncolors &lt;- c(\"#007bc2\", \"#f45100\", \"#bf007f\")\n\ntheme_set(\n  theme_minimal(18) +\n    theme(\n      panel.grid.minor = element_blank(),\n      panel.grid.major.y = element_blank(),\n      axis.title = element_text(size = 14)\n    )\n)\n\nschool_100 &lt;-\n  scorecard |&gt;\n  slice_max(academic_year) |&gt;\n  slice_max(n_undergrads, n = 100, with_ties = FALSE) |&gt;\n  select(id, n_undergrads) |&gt;\n  left_join(school, by = join_by(id))\n\nschool_names &lt;- c(\"Pick a School\" = \"\", school_100$name)\n\n# UI -------------------------------------------------------------------------\n\nui &lt;- page_fillable(\n  layout_columns(\n    div(\n      mod_school_ui(\"a\", \"School A\", school_names)\n    ),\n    div(\n      mod_school_ui(\"b\", \"School B\", school_names)\n    )\n  )\n)\n\n# Server ---------------------------------------------------------------------\n\nserver &lt;- function(input, output, session) {\n  mod_school_server(\"a\", colors[1])\n  mod_school_server(\"b\", colors[2])\n}\n\nshinyApp(ui, server)\n\n\n## file: mod_school.R\nmod_school_ui &lt;- function(id, label, choices, selected = NULL) {\n  ns &lt;- NS(id)\n\n  if (is.null(selected)) {\n    selected &lt;- sample(choices, 1)\n  }\n\n  list(\n    selectInput(ns(\"school\"), label, choices = choices, selected = selected, width = \"100%\"),\n    card(\n      card_header(\"Cost of Tuition (In State)\"),\n      plotOutput(ns(\"plot_school\"))\n    ),\n    card_dark(\n      title = \"Location\",\n      leafletOutput(ns(\"map_school\"))\n    )\n  )\n}\n\nmod_school_server &lt;- function(id, plot_color) {\n  moduleServer(id, function(input, output, session) {\n    output$plot_school &lt;- renderPlot({\n      req(input$school)\n\n      scorecard |&gt;\n        filter_scorecard_by_school_name(school, input$school) |&gt;\n        plot_cost_tuition(plot_color)\n    })\n\n    output$map_school &lt;- renderLeaflet({\n      req(input$school)\n      map_school(school, input$school)\n    })\n  })\n}\n\n\n## file: functions.R\ncard_dark &lt;- function(title, ...) {\n  card(\n    card_header(title),\n    class = \"text-bg-dark\",\n    card_body(\n      padding = 0,\n      ...\n    )\n  )\n}\n\n\nplot_cost_tuition &lt;- function(scorecard, fill_color = \"#007bc2\") {\n  scorecard |&gt;\n    mutate(academic_year = as.integer(substr(academic_year, 1, 4))) |&gt;\n    ggplot() +\n    aes(x = academic_year, y = cost_tuition_in) +\n    geom_col(fill = fill_color, na.rm = TRUE) +\n    labs(\n      x = \"Academic Year\",\n      y = NULL\n    ) +\n    scale_y_continuous(labels = scales::label_dollar())\n}\n\nfilter_scorecard_by_school_name &lt;- function(scorecard, school, name) {\n  school_by_name &lt;- \n    school |&gt;\n    filter(name == {{ name }})\n\n  scorecard |&gt;\n    semi_join(school_by_name, by = \"id\")\n}\n\nmap_school &lt;- function(school, name) {\n  the_school &lt;- school |&gt; filter(name == {{ name }})\n\n  leaflet() |&gt;\n    addTiles() |&gt;\n    addMarkers(\n      lng = the_school$longitude,\n      lat = the_school$latitude,\n      popup = the_school$name\n    )\n}\n\n\n## file: notes.md\nSuppose you put this module into your app and realize that actually, you'd like to\n\na. Know which college is selected\n    * Add a return value to server module\nb. Set the college, e.g. pick a random school\n    * Pass in a school as a reactive value\n    * Update the return value to include an updat \"method\""
   },
   {
     "objectID": "slides/slides-02-bslib.html#at-first-there-was-shiny",
