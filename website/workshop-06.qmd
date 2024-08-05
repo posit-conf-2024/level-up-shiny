@@ -9,3 +9,7 @@ time: 12:10 - 12:30
 ## Slides
 
 {{< revealjs "slides/slides-06-javascript.html" class="ratio ratio-16x9" >}}
+
+## Links
+
+* [A conversation with ChatGPT 4o](workshop-06-chat.qmd)

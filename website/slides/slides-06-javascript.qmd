@@ -77,8 +77,67 @@ we just want the app to remember automatically.
 
 {{< countdown 08:00 bottom="2rem" right="2rem" >}}
 
+## Storing values in the browser
+
+::: incremental
+* How can you store values in the browser?
+
+  {{< partial ../partials/content-editable-code.html text="..." >}}
+
+* How can you retrieve values in the browser?
+
+  {{< partial ../partials/content-editable-code.html text="..." >}}
+:::
+
+::: fragment
+Try this in your own fancy JavaScript IDE: `<a href="about:blank" target="_blank">about:blank</a>`{=html}
+:::
+
+::: notes
+```js
+localStorage.setItem(key, value)
+// key is a string, value is a string
+// value = JSON.stringify(obj)
+
+value = localStorage.getItem(key)
+JSON.parse(value)
+```
+:::
+
+## Sending data from the browser to R
+
+::: incremental
+* What function sends data from the browser to R?
+
+  {{< partial ../partials/content-editable-code.html text="..." >}}
+
+* What function receives data from R in the browser?
+
+  {{< partial ../partials/content-editable-code.html text="..." >}}
+
+* And how do you send data from R to the browser?
+
+  {{< partial ../partials/content-editable-code.html text="..." >}}
+:::
+
+::: notes
+```js
+Shiny.setInputValue(inputId, value)
+
+Shiny.addCustomMessageHandler(messageName, function(data) {
+  // do something with data
+})
+```
+
+```r
+session$sendCustomMessage(messageName, data)
+```
+:::
+
+## Strategies for Success with LLMs
+
+{{< partial ../partials/content-editable-code.html text="- Idea 1\n- Idea 2" >}}
+
 ## Live Code Together
 
-1. Use the chat to give our comparison app a memory.
-
-2. What works about the prompt? What strategies did I use to increase the chances I'd get a useful response?
+Use the chat to give our comparison app a memory.
