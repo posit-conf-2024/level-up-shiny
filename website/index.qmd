@@ -75,6 +75,8 @@ You’ll learn how to make the most of recent developments in the Shiny ecosyste
 
 🧑‍💻 [Join Posit Cloud Space]({{< meta workshop.links.cloud >}})
 
+👾 Discord (TBA) <!-- FIXME discord link -->
+
 📦 [Repository]({{< meta workshop.links.repo >}})
 
 🎡 [{{< meta workshop.links.conf.name >}}]({{< meta workshop.links.conf.href >}})
