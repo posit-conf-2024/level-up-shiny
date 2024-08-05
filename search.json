@@ -529,8 +529,30 @@
     ]
   },
   {
+    "objectID": "workshop-06.html#slides",
+    "href": "workshop-06.html#slides",
+    "title": "Just a little JavaScript",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Just a little JavaScript"
+    ]
+  },
+  {
     "objectID": "workshop-04.html",
     "href": "workshop-04.html",
+    "title": "Code organization",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Code organization"
+    ]
+  },
+  {
+    "objectID": "workshop-04.html#slides",
+    "href": "workshop-04.html#slides",
     "title": "Code organization",
     "section": "",
     "text": "View slides in full screen",
@@ -564,6 +586,17 @@
   {
     "objectID": "workshop-01.html",
     "href": "workshop-01.html",
+    "title": "Welcome and getting started",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Welcome and getting started"
+    ]
+  },
+  {
+    "objectID": "workshop-01.html#slides",
+    "href": "workshop-01.html#slides",
     "title": "Welcome and getting started",
     "section": "",
     "text": "View slides in full screen",
@@ -770,6 +803,17 @@
     ]
   },
   {
+    "objectID": "workshop-02.html#slides",
+    "href": "workshop-02.html#slides",
+    "title": "Modern layouts with bslib",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Modern layouts with bslib"
+    ]
+  },
+  {
     "objectID": "workshop-02.html#topic-links",
     "href": "workshop-02.html#topic-links",
     "title": "Modern layouts with bslib",
@@ -794,6 +838,17 @@
   {
     "objectID": "workshop-05.html",
     "href": "workshop-05.html",
+    "title": "Modules",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Modules"
+    ]
+  },
+  {
+    "objectID": "workshop-05.html#slides",
+    "href": "workshop-05.html#slides",
     "title": "Modules",
     "section": "",
     "text": "View slides in full screen",
