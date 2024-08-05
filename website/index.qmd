@@ -4,6 +4,12 @@ subtitle: posit::conf(2024)
 
 image: assets/kanhaiya-sharma-T_l246EK19I-unsplash.jpg
 
+twitter-card:
+  image: assets/open-graph-card.png
+
+open-graph:
+  image: assets/open-graph-card.png
+
 title-block-banner: true
 title-block-style: default
 
