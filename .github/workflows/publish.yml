@@ -36,7 +36,7 @@ jobs:
       - name: 📦 Install dependencies with renv
         uses: r-lib/actions/setup-renv@v2
         env:
-          RENV_CONFIG_PAK_ENABLED: false
+          RENV_CONFIG_PAK_ENABLED: true
         with:
           cache-version: 3
 
