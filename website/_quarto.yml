@@ -12,17 +12,30 @@ project:
 website:
   title: "Level Up with Shiny for R"
   description: "Take your Shiny skills to the next level."
+  site-url: https://posit-conf-2024.github.io/level-up-shiny
+
+  favicon: assets/posit-conf-favicon.png
+  twitter-card:
+    creator: "@grrrck"
+    site: "@posit-dev"
+    image: assets/open-graph-card-2.png
+  open-graph:
+    image: assets/open-graph-card-2.png
+
   # FIXME: remove announcement
   announcement:
     icon: cone-striped
     dismissible: true
     content: This page is under active development. **See you at the workshop!**
     type: warning
+  
   page-footer: |
     <a href="https:://posi.it/conf-event-portal">posit::conf(2024)</a>
+  
   repo-url: https://github.com/posit-conf-2024/level-up-shiny
   repo-subdir: website
   repo-actions: [edit, issue]
+  
   navbar:
     title: "Level Up Shiny"
     foreground: black
@@ -41,7 +54,9 @@ website:
         href: https://github.com/posit-conf-2024/level-up-shiny
       - icon: pc-display
         href: https://posit.cloud/spaces/517274/
+  
   page-navigation: true
+  
   sidebar:
     - id: workshop
       style: docked
