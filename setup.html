@@ -177,7 +177,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#create-accounts" id="toc-create-accounts" class="nav-link active" data-scroll-target="#create-accounts">Create Accounts</a></li>
+  <li><a href="#what-to-bring" id="toc-what-to-bring" class="nav-link active" data-scroll-target="#what-to-bring">What to bring</a></li>
+  <li><a href="#create-accounts" id="toc-create-accounts" class="nav-link" data-scroll-target="#create-accounts">Create Accounts</a></li>
   <li><a href="#using-posit-cloud" id="toc-using-posit-cloud" class="nav-link" data-scroll-target="#using-posit-cloud">Using Posit Cloud</a></li>
   <li><a href="#using-your-own-computer" id="toc-using-your-own-computer" class="nav-link" data-scroll-target="#using-your-own-computer">Using Your Own Computer</a>
   <ul class="collapse">
@@ -210,6 +211,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="what-to-bring" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-bring">What to bring</h3>
+<p><strong>Bring your <span class="text-danger">personal laptop</span> and a power cord.</strong> This is going to be a hands-on workshop, meaning that you’ll be writing code and collaborating with new friends you’ll make at the workshop.</p>
+<p>We’ll be using <a href="https://posit.cloud">Posit Cloud</a> (<a href="#using-posit-cloud">details below</a>), so you don’t need to set up anything on your computer.</p>
+</section>
 <section id="create-accounts" class="level2">
 <h2 class="anchored" data-anchor-id="create-accounts">Create Accounts</h2>
 <p>In this workshop, we’ll be using a few different online services. If you don’t already have accounts with these services, you’ll need to create them before we get started.</p>
@@ -218,6 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><a href="https://github.com/join">GitHub</a></p>
 <ul>
 <li>Used to login to the Posit Connect instance set up for this workshop.</li>
+<li>Did you know? You can use your GitHub account to log in to Posit Cloud, too!</li>
 </ul></li>
 <li><p><a href="https://discord.com/register">Discord</a></p>
 <ul>
@@ -283,9 +290,9 @@ Advanced Workflow
 <p>If you prefer to use your own computer, you can <a href="https://github.com/posit-conf-2024/level-up-shiny">clone the repository</a> and install the necessary packages. I used <a href="https://r-project.org">R 4.4</a> but any recent version of R (&gt;= 4.1) should work.</p>
 <p>You can use the <a href="https://usethis.r-lib.org">usethis</a> package to quickly clone the repository:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_from_github</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"gadenbuie/rmedicine-2024-bslib"</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"posit-conf-2024/level-up-shiny"</span>,</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Decide where to put the project here:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">destdir =</span> <span class="st">"~/Desktop/rmedicine-2024-bslib"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">destdir =</span> <span class="st">"~/Desktop/level-up-shiny"</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will download the repository and open the project in RStudio.</p>
 <section id="with-renv" class="level3">
@@ -747,7 +754,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
