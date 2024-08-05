@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<link href="../assets/posit-conf-favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -680,7 +681,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"code":"card_image <- function(file = NULL, ..., src = NULL) {\n  if (is.null(src)) {\n    if (grepl(\"^([[:alnum:]]+:)?//|data:\", file)) {\n      src <- file\n    } else {\n      if (!file.exists(file)) {\n        rlang::abort(sprintf(\"`file` does not exist: %s\", file))\n      }\n      src <- base64enc::dataURI(\n        file = file,\n        mime = mime_type %||% mime::guess_type(file)\n      )\n    }\n  }\n\n  htmltools::tags$img(src = src, ...)\n}","options":{"editor-max-height":"","output":"true","warning":"true","label":"unnamed-chunk-1","editor-quick-suggestions":"false","editor-font-scale":"0.5","dpi":72,"autorun":"false","results":"markup","context":"interactive","out-width":"700px","out-height":"","read-only":"false","editor-word-wrap":"true","classes":"","fig-width":7,"comment":"","fig-cap":"","fig-height":5,"message":"true"},"id":1},{"code":"shiny_rmd_warning <- function() {\n  runtime <- knitr::opts_knit$get(\"rmarkdown.runtime\")\n  if (!is.null(runtime) && runtime != \"shiny\") {\n    # note that the RStudio IDE checks for this specific string to detect Shiny\n    # applications in static document\n    list(structure(\n      \"Shiny application in a static R Markdown document\",\n      class = \"rmd_warning\"\n    ))\n  } else {\n    NULL\n  }\n}","options":{"editor-max-height":"","output":"true","warning":"true","label":"unnamed-chunk-2","editor-quick-suggestions":"false","editor-font-scale":"0.5","dpi":72,"autorun":"false","results":"markup","context":"interactive","out-width":"700px","out-height":"","read-only":"false","editor-word-wrap":"true","classes":"","fig-width":7,"comment":"","fig-cap":"","fig-height":5,"message":"true"},"id":2},{"code":"input <- list(type = \"cat\")\n\nif (input$type == \"types\") {\n  inspectdf::inspect_types(df)\n} else if (input$type == \"cat\") {\n  inspectdf::inspect_cat(df)\n} else if (input$type == \"num\") {\n  inspectdf::inspect_num(df)\n} else if (input$type == \"na\") {\n  inspectdf::inspect_na(df)\n}","options":{"editor-max-height":"","output":"true","warning":"true","label":"unnamed-chunk-3","editor-quick-suggestions":"false","editor-font-scale":"0.5","dpi":72,"autorun":"false","results":"markup","context":"interactive","out-width":"700px","out-height":"","read-only":"false","editor-word-wrap":"true","classes":"","fig-width":7,"comment":"","fig-cap":"","fig-height":5,"message":"true"},"id":3}];
+  globalThis.qwebrCellDetails = [{"options":{"message":"true","editor-font-scale":"0.5","fig-cap":"","read-only":"false","editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","label":"unnamed-chunk-1","warning":"true","output":"true","classes":"","comment":"","editor-word-wrap":"true","fig-width":7,"autorun":"false","results":"markup","dpi":72,"out-height":"","fig-height":5,"context":"interactive"},"code":"card_image <- function(file = NULL, ..., src = NULL) {\n  if (is.null(src)) {\n    if (grepl(\"^([[:alnum:]]+:)?//|data:\", file)) {\n      src <- file\n    } else {\n      if (!file.exists(file)) {\n        rlang::abort(sprintf(\"`file` does not exist: %s\", file))\n      }\n      src <- base64enc::dataURI(\n        file = file,\n        mime = mime_type %||% mime::guess_type(file)\n      )\n    }\n  }\n\n  htmltools::tags$img(src = src, ...)\n}","id":1},{"options":{"message":"true","editor-font-scale":"0.5","fig-cap":"","read-only":"false","editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","label":"unnamed-chunk-2","warning":"true","output":"true","classes":"","comment":"","editor-word-wrap":"true","fig-width":7,"autorun":"false","results":"markup","dpi":72,"out-height":"","fig-height":5,"context":"interactive"},"code":"shiny_rmd_warning <- function() {\n  runtime <- knitr::opts_knit$get(\"rmarkdown.runtime\")\n  if (!is.null(runtime) && runtime != \"shiny\") {\n    # note that the RStudio IDE checks for this specific string to detect Shiny\n    # applications in static document\n    list(structure(\n      \"Shiny application in a static R Markdown document\",\n      class = \"rmd_warning\"\n    ))\n  } else {\n    NULL\n  }\n}","id":2},{"options":{"message":"true","editor-font-scale":"0.5","fig-cap":"","read-only":"false","editor-max-height":"","editor-quick-suggestions":"false","out-width":"700px","label":"unnamed-chunk-3","warning":"true","output":"true","classes":"","comment":"","editor-word-wrap":"true","fig-width":7,"autorun":"false","results":"markup","dpi":72,"out-height":"","fig-height":5,"context":"interactive"},"code":"input <- list(type = \"cat\")\n\nif (input$type == \"types\") {\n  inspectdf::inspect_types(df)\n} else if (input$type == \"cat\") {\n  inspectdf::inspect_cat(df)\n} else if (input$type == \"num\") {\n  inspectdf::inspect_num(df)\n} else if (input$type == \"na\") {\n  inspectdf::inspect_na(df)\n}","id":3}];
 
   </script>
   <script type="module">
@@ -1877,6 +1878,16 @@
   }
 
   </script>
+<meta property="og:title" content="Bit by Bit – Level Up with Shiny for R">
+<meta property="og:description" content="Elements of Code and Style">
+<meta property="og:image" content="https://posit-conf-2024.github.io/level-up-shiny/slides/assets/open-graph-card-2.png">
+<meta property="og:site_name" content="Level Up with Shiny for R">
+<meta name="twitter:title" content="Bit by Bit – Level Up with Shiny for R">
+<meta name="twitter:description" content="Elements of Code and Style">
+<meta name="twitter:image" content="https://posit-conf-2024.github.io/level-up-shiny/slides/assets/open-graph-card-2.png">
+<meta name="twitter:creator" content="@grrrck">
+<meta name="twitter:site" content="@posit-dev">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body class="quarto-light">
 <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script>
@@ -3243,7 +3254,7 @@ input$cost_avg_min</code></pre>
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/posit-conf-2024\.github\.io\/level-up-shiny\/");
+          var filterRegex = new RegExp("https:\/\/posit-conf-2024\.github\.io\/level-up-shiny");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
