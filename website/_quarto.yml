@@ -13,7 +13,7 @@ website:
   title: "Level Up with Shiny for R"
   description: "Take your Shiny skills to the next level."
   page-footer: |
-    <a href="https://posit.co/conference">posit::conf(2024)</a>
+    <a href="https:://posi.it/conf-event-portal">posit::conf(2024)</a>
   repo-url: https://github.com/posit-conf-2024/level-up-shiny
   repo-subdir: website
   repo-actions: [edit, issue]
@@ -26,6 +26,8 @@ website:
         text: Home
       - href: workshop.qmd
         text: Workshop
+      - href: setup.qmd
+        text: Setup
       - href: about/index.qmd
         text: Team
     tools:

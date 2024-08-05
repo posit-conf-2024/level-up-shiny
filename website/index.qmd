@@ -66,64 +66,16 @@ Shiny lets you quickly create rich, data-driven web applications for yourself, y
 
 You’ll learn how to make the most of recent developments in the Shiny ecosystem, while mastering techniques for modularizing and structuring your applications for growth and maintainability. Along the way, you’ll encounter new techniques to speed up your applications using caching and databases for a smooth user experience.
 
-## Setup
+## Links
 
-::: lead
-📘 [Website]({{< meta workshop.links.website >}}) (you are here!)
+::: {.lead .fs-3}
+📘 [Workshop Materials](workshop.qmd)
 
+🔧 [Getting Setup](setup.qmd)
 
-🧑‍💻 [Join Posit Cloud Space]({{< meta workshop.links.cloud >}}) (Only for workshop participants)
+🧑‍💻 [Join Posit Cloud Space]({{< meta workshop.links.cloud >}})
 
 📦 [Repository]({{< meta workshop.links.repo >}})
+
+🎡 [{{< meta workshop.links.conf.name >}}]({{< meta workshop.links.conf.href >}})
 :::
-
-### Using Posit Cloud
-
-::: {.callout-warning}
-<!-- FIXME setup instructions -->
-These instructions will be updated.
-:::
-
-I've prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together.
-The project contains all of the files and packages pre-installed and ready to go.
-All you need to do is log in and start coding!
-
-If you already have a Posit Cloud account, first [join the rmedicine-2024-bslib space on Posit Cloud]({{< meta workshop.links.cloud >}}).
-Otherwise [sign up for a free account](https://cloud.posit.org/signup) and then join the space.
-You can create an account with your email or login with Google, GitHub or Clever.
-
-Once you're part of the [rmedicine-2024-bslib space]({{< meta workshop.links.cloud >}}), select the `rmedicine-2024-bslib` assignment to create and launch a new project just for you.
-
-![](assets/posit-cloud-project.png){.shadow-lg .img-fluid alt=""}
-
-
-<!--
-### Using Your Own Computer
-
-If you prefer to use your own computer, you can clone the repository and install the necessary packages.
-I used [R 4.4](https://r-project.org) but any recent version of R (>= 4.1) should work.
-
-You can use the [usethis](https://usethis.r-lib.org) package to quickly clone the repository:
-
-```r
-usethis::create_from_github(
-  "gadenbuie/rmedicine-2024-bslib",
-  # Decide where to put the project here:
-  destdir = "~/Desktop/rmedicine-2024-bslib"
-)
-```
-
-This will download the repository and open the project in RStudio.
-Inside the project, use the `renv` package to install the necessary packages:
-
-```r
-renv::restore()
-```
-
-For very speedy installation, I recommend telling renv to use [pak](https://pak.r-lib.org/) to install packages:
-
-```r
-Sys.setenv(RENV_CONFIG_PAK_ENABLED = "true")
-renv::restore()
-```
--->
