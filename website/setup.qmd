@@ -37,6 +37,9 @@ The easiest way to get started is to use the Posit Cloud workspace I've prepared
 <!-- FIXME cloud link: remove note -->
 The link to join the space is not yet available.
 This page will be updated on the day of the workshop.
+
+You will need a Posit Cloud account and you can create one for free at [posit.cloud/plans](https://posit.cloud/plans).
+Click "Learn more" under the Free plan to sign up.
 :::
 
 I've prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together.
@@ -44,7 +47,7 @@ The project contains all of the files and packages pre-installed and ready to go
 All you need to do is log in and start coding!
 
 If you already have a Posit Cloud account, first [join the level-up-shiny space on Posit Cloud]({{< meta workshop.links.cloud >}}).
-Otherwise [sign up for a free account](https://cloud.posit.org/signup) and then join the space.
+Otherwise [sign up for a free account](https://posit.cloud/plans) and then join the space.
 You can create an account with your email or login with Google, GitHub or Clever.
 
 Once you're part of the [level-up-shiny space]({{< meta workshop.links.cloud >}}), select the `level-up-shiny` assignment to create and launch a new project just for you.
