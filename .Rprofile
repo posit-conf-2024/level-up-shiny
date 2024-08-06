@@ -10,6 +10,10 @@ if (!exists(".__r_profile_loaded") || !isTRUE(.__r_profile_loaded)) {
     library(usethis)
   }
 
-  message("i Loaded project root .Rprofile.")
+  .renv_restore <- function() {
+    source("renv/activate.R")
+    renv::restore()
+  }
+  
   .__r_profile_loaded <<- TRUE
 }  
