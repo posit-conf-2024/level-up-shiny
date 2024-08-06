@@ -5,3 +5,19 @@ description-short: Mastering reactivity for fast Shiny apps
 duration: 90min
 time: 13:30 - 15:00
 ---
+
+## Slides
+
+{{< revealjs "slides/slides-08-reactivity.html" class="ratio ratio-16x9" >}}
+
+## Demo App
+
+::: {.column-body-outset-right}
+```{shinylive-r}
+#| standalone: true
+#| components: viewer
+#| viewerHeight: 675
+
+{{< include ../_examples/08-reactivity/01-simple/app.R >}}
+```
+:::
