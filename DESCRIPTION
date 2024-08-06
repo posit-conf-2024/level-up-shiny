@@ -21,6 +21,7 @@ Imports:
     leaflet,
     lorem,
     plotly,
+    profvis,
     purrr,
     roxygen2,
     shiny (>= 1.9.0),
