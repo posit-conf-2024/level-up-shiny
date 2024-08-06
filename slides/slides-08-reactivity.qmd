@@ -1,0 +1,136 @@
+---
+title: "The Reactive Graph"
+subtitle: Level Up with Shiny for R
+author: <code>posit::conf(2024)</code>
+date: 2024-08-12
+
+format:
+  utopia-slides-revealjs:
+    html-math-method: plain
+    revealjs-url: slides/assets/reveal.js-4.5.0
+    slide-level: 2
+    chalkboard: true
+    theme:
+      - slides.scss
+      - assets/code-blocked.scss
+    css:
+      - ../auto-dark-mode.css
+
+revealjs-plugins:
+  - utopia-slides
+
+# filters:
+#   - webr
+
+webr:
+  show-startup-message: false
+
+editor:
+  render-on-save: true
+---
+
+# Your Turn {.middle}
+
+## Your Turn {#your-turn-inst .slide-your-turn}
+
+{{< countdown 4:00 bottom="2rem" right="2rem" >}}
+
+* Working with a partner, look at the demo app in [the Reactivity page](../workshop-08.qmd#demo-app).
+
+* How are the inputs connected to the outputs?
+
+* Draw a picture mapping inputs to the outputs.
+  Do you think there are any hidden dependencies?
+
+# The three atoms of reactivity {.middle}
+
+## {#value-expression-observer .top}
+
+::: {.flex}
+::: {.w-third .text-center}
+[Reactive values]{.b .font-heading .fs-step-1}
+
+```{=html}
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 193.00409411530165 140.87286487055474" width="193.00409411530165" height="140.87286487055474"><rect x="0" y="0" width="193.00409411530165" height="140.87286487055474" fill="#ffffff"></rect><g stroke-linecap="round"><g transform="translate(36.25210236296846 -15.766639444081704) rotate(270 60.43643243527737 86.20307187935913)" fill-rule="evenodd"><path d="M1.49 0.82 L121.63 -1.89 L121.67 112.83 L56.75 173.57 L3.71 115.51 L0.07 0.95" stroke="none" stroke-width="0" fill="#e9ecef" fill-rule="evenodd"></path><path d="M0 0 C46.77 -0.83, 97.21 0.27, 120.87 -0.11 M0 0 C41.04 -0.92, 81.36 -0.28, 120.87 -0.11 M120.87 -0.11 C120.67 25.11, 118.64 47.47, 119.84 114.61 M120.87 -0.11 C119.67 25.61, 119.51 53.11, 119.84 114.61 M119.84 114.61 C97.27 137.32, 69.91 159.22, 57.9 172.52 M119.84 114.61 C106.99 127.3, 93.15 139.32, 57.9 172.52 M57.9 172.52 C35.5 151.46, 17.73 131.11, 1.9 113.91 M57.9 172.52 C41.47 157.18, 26.96 141.19, 1.9 113.91 M1.9 113.91 C0.25 71.02, 0.34 25.6, 0 0 M1.9 113.91 C2.99 87.28, 2.25 59.97, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#000000" stroke-width="1" fill="none"></path></g></g><mask></mask></svg>
+```
+:::
+
+::: {.w-third .text-center}
+[Reactive expressions]{.b .font-heading .fs-step-1}
+
+```{=html}
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 183.9240873841121 141.55118018266603" width="183.9240873841121" height="141.55118018266603"><rect x="0" y="0" width="183.9240873841121" height="141.55118018266603" fill="#ffffff"></rect><g stroke-linecap="round"><g transform="translate(31.525611256778575 -11.323590018603397) rotate(270 60.43643243527737 81.84955625435916)" fill-rule="evenodd"><path d="M0.06 0.21 L60.23 56.56 L122.3 1.24 L120.85 116.41 L60.24 163.83 L1.81 113.31 L-1.4 -1.01" stroke="none" stroke-width="0" fill="#e9ecef" fill-rule="evenodd"></path><path d="M0 0 C15.18 15.89, 32.64 30.02, 59.21 56.97 M0 0 C15.95 16.13, 34.15 33.17, 59.21 56.97 M59.21 56.97 C79.9 37.86, 99.76 21.59, 120.87 -0.11 M59.21 56.97 C83.02 35.27, 104.2 14.79, 120.87 -0.11 M120.87 -0.11 C120.06 25.83, 122.14 47.67, 119.84 114.61 M120.87 -0.11 C120.66 27.03, 120.23 54.1, 119.84 114.61 M119.84 114.61 C100.24 130.68, 83.71 148.05, 61.58 163.81 M119.84 114.61 C99.66 131.39, 78.81 147.05, 61.58 163.81 M61.58 163.81 C48.63 150.8, 33.29 136.6, 1.9 113.91 M61.58 163.81 C39.27 145.7, 17.75 128.3, 1.9 113.91 M1.9 113.91 C1.1 72.87, -1.82 29.23, 0 0 M1.9 113.91 C1.53 86.82, 1.61 57.47, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#000000" stroke-width="1" fill="none"></path></g></g><mask></mask></svg>
+```
+:::
+
+::: {.w-third .text-center}
+[Observers]{.b .font-heading .fs-step-1}
+
+```{=html}
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197.70207619713824 143.76015393351105" width="197.70207619713824" height="143.76015393351105"><rect x="0" y="0" width="197.70207619713824" height="143.76015393351105" fill="#ffffff"></rect><g stroke-linecap="round"><g transform="translate(39.03028070135588 -16.633957407390994) rotate(89.99999999999994 59.29451450714316 88.21230777080228)" fill-rule="evenodd"><path d="M-0.06 1.28 L120.4 -1.43 L119.35 176.29 L60.29 127.07 L-0.36 175.03 L0.41 -1.65" stroke="none" stroke-width="0" fill="#e9ecef" fill-rule="evenodd"></path><path d="M0 0 C40.21 -1.38, 79.78 -1.68, 120.87 -0.11 M0 0 C40.59 0.53, 81.03 -0.57, 120.87 -0.11 M120.87 -0.11 C120.93 47.09, 122.29 89.67, 120.73 176.54 M120.87 -0.11 C121.54 55.34, 121.26 111.7, 120.73 176.54 M120.73 176.54 C109.5 166.06, 94.3 155.88, 59.36 125.07 M120.73 176.54 C106.01 165.17, 91.86 153.33, 59.36 125.07 M59.36 125.07 C39.72 143.42, 20.02 156.99, -2.28 175.95 M59.36 125.07 C44.94 135.67, 31.52 147.22, -2.28 175.95 M-2.28 175.95 C-1.41 114.45, -1.3 58.34, 0 0 M-2.28 175.95 C-1.16 109.73, 1.3 45.2, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#000000" stroke-width="1" fill="none"></path></g></g><mask></mask></svg>
+```
+:::
+:::
+
+```{r}
+#| output: asis
+
+reactive_bg_files <- fs::dir_ls(glob = "assets/reactivity-*", recurse = TRUE)
+reactive_name <- fs::path_file(reactive_bg_files) |> fs::path_ext_remove()
+slides_md <- glue::glue(
+  '## {{#{reactive_name} background-image="{reactive_bg_files}" background-size="85%" background-position="center"}}',
+  .comment = ""
+)
+
+cat(paste(slides_md[1:6], collapse = "\n\n\n"))
+```
+
+
+## {#reative-state .top}
+
+::: {.flex}
+::: {.w-third .text-center}
+[Invalidated]{.b .font-heading .fs-step-1}
+
+```{=html}
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 193.00409411530165 140.87286487055474" width="193.00409411530165" height="140.87286487055474"><rect x="0" y="0" width="193.00409411530165" height="140.87286487055474" fill="#ffffff"></rect><g stroke-linecap="round"><g transform="translate(36.25210236296846 -15.766639444081704) rotate(270 60.43643243527737 86.20307187935913)" fill-rule="evenodd"><path d="M1.49 0.82 L121.63 -1.89 L121.67 112.83 L56.75 173.57 L3.71 115.51 L0.07 0.95" stroke="none" stroke-width="0" fill="#e9ecef" fill-rule="evenodd"></path><path d="M0 0 C46.77 -0.83, 97.21 0.27, 120.87 -0.11 M0 0 C41.04 -0.92, 81.36 -0.28, 120.87 -0.11 M120.87 -0.11 C120.67 25.11, 118.64 47.47, 119.84 114.61 M120.87 -0.11 C119.67 25.61, 119.51 53.11, 119.84 114.61 M119.84 114.61 C97.27 137.32, 69.91 159.22, 57.9 172.52 M119.84 114.61 C106.99 127.3, 93.15 139.32, 57.9 172.52 M57.9 172.52 C35.5 151.46, 17.73 131.11, 1.9 113.91 M57.9 172.52 C41.47 157.18, 26.96 141.19, 1.9 113.91 M1.9 113.91 C0.25 71.02, 0.34 25.6, 0 0 M1.9 113.91 C2.99 87.28, 2.25 59.97, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#000000" stroke-width="1" fill="none"></path></g></g><mask></mask></svg>
+```
+:::
+
+::: {.w-third .text-center}
+[Evaluating]{.b .font-heading .fs-step-1}
+
+```{=html}
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 183.9240873841121 141.55118018266603" width="183.9240873841121" height="141.55118018266603"><rect x="0" y="0" width="183.9240873841121" height="141.55118018266603" fill="#ffffff"></rect><g stroke-linecap="round"><g transform="translate(31.525611256778575 -11.323590018603397) rotate(270 60.43643243527737 81.84955625435916)" fill-rule="evenodd"><path d="M0.06 0.21 L60.23 56.56 L122.3 1.24 L120.85 116.41 L60.24 163.83 L1.81 113.31 L-1.4 -1.01" stroke="none" stroke-width="0" fill="#ffec99" fill-rule="evenodd"></path><path d="M0 0 C15.18 15.89, 32.64 30.02, 59.21 56.97 M0 0 C15.95 16.13, 34.15 33.17, 59.21 56.97 M59.21 56.97 C79.9 37.86, 99.76 21.59, 120.87 -0.11 M59.21 56.97 C83.02 35.27, 104.2 14.79, 120.87 -0.11 M120.87 -0.11 C120.06 25.83, 122.14 47.67, 119.84 114.61 M120.87 -0.11 C120.66 27.03, 120.23 54.1, 119.84 114.61 M119.84 114.61 C100.24 130.68, 83.71 148.05, 61.58 163.81 M119.84 114.61 C99.66 131.39, 78.81 147.05, 61.58 163.81 M61.58 163.81 C48.63 150.8, 33.29 136.6, 1.9 113.91 M61.58 163.81 C39.27 145.7, 17.75 128.3, 1.9 113.91 M1.9 113.91 C1.1 72.87, -1.82 29.23, 0 0 M1.9 113.91 C1.53 86.82, 1.61 57.47, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#f08c00" stroke-width="1" fill="none"></path></g></g><mask></mask></svg>
+```
+:::
+
+::: {.w-third .text-center}
+[Ready]{.b .font-heading .fs-step-1}
+
+```{=html}
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197.70207619713824 143.76015393351105" width="197.70207619713824" height="143.76015393351105"><rect x="0" y="0" width="197.70207619713824" height="143.76015393351105" fill="#ffffff"></rect><g stroke-linecap="round"><g transform="translate(39.03028070135588 -16.633957407390994) rotate(89.99999999999994 59.29451450714316 88.21230777080228)" fill-rule="evenodd"><path d="M-0.06 1.28 L120.4 -1.43 L119.35 176.29 L60.29 127.07 L-0.36 175.03 L0.41 -1.65" stroke="none" stroke-width="0" fill="#38d9a9" fill-rule="evenodd"></path><path d="M0 0 C40.21 -1.38, 79.78 -1.68, 120.87 -0.11 M0 0 C40.59 0.53, 81.03 -0.57, 120.87 -0.11 M120.87 -0.11 C120.93 47.09, 122.29 89.67, 120.73 176.54 M120.87 -0.11 C121.54 55.34, 121.26 111.7, 120.73 176.54 M120.73 176.54 C109.5 166.06, 94.3 155.88, 59.36 125.07 M120.73 176.54 C106.01 165.17, 91.86 153.33, 59.36 125.07 M59.36 125.07 C39.72 143.42, 20.02 156.99, -2.28 175.95 M59.36 125.07 C44.94 135.67, 31.52 147.22, -2.28 175.95 M-2.28 175.95 C-1.41 114.45, -1.3 58.34, 0 0 M-2.28 175.95 C-1.16 109.73, 1.3 45.2, 0 0 M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0" stroke="#099268" stroke-width="1" fill="none"></path></g></g><mask></mask></svg>
+```
+:::
+:::
+
+```{r}
+#| output: asis
+
+slides_md <- sub("reactivity-06-final", "reactivity-06-final-2", slides_md, fixed = TRUE)
+slides_md <- sub('background-size="85%"', 'background-size="80%"', slides_md, fixed = TRUE)
+cat(paste(slides_md[-1:-5], collapse = "\n\n\n"))
+```
+
+## 
+
+TK: Income bracket toggle with reactlog embedded
+
+
+# Your Turn {.middle}
+
+## Invent this app {#your-turn-2-inst}
+
+{{< countdown 4:00 bottom="2rem" right="2rem" >}}
+
+![](assets/make-this-reactive-graph.svg){height="650px"}

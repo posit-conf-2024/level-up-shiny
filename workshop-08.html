@@ -43,6 +43,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<meta name="shinylive:serviceworker_dir" content=".">
+<script src="site_libs/quarto-contrib/shinylive-0.5.0/shinylive/load-shinylive-sw.js" type="module"></script>
+<script src="site_libs/quarto-contrib/shinylive-0.5.0/shinylive/run-python-blocks.js" type="module"></script>
+<link href="site_libs/quarto-contrib/shinylive-0.5.0/shinylive/shinylive.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,6 +75,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+ 
+  <style>
+  .slide-deck {
+      border: 3px solid #dee2e6;
+      width: 100%;
+  }
+  </style>
+  
 
 
 <link rel="stylesheet" href="auto-dark-mode.css">
@@ -239,11 +252,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#demo-app" id="toc-demo-app" class="nav-link" data-scroll-target="#demo-app">Demo App</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/workshop-08.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 <script>document.querySelector('.navbar').dataset.bsTheme = 'light';</script>
 <script>
   const icons = document.querySelectorAll(".quarto-navigation-tool")
@@ -279,8 +299,102 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+    <p><a href="slides/slides-08-reactivity.html" target="_blank">View slides in full screen</a></p>
+       <div class="ratio ratio-16x9">
+      <iframe class="slide-deck" src="slides/slides-08-reactivity.html" height="475px"></iframe>
+    </div>
+  
+</section>
+<section id="demo-app" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="demo-app">Demo App</h2>
+<div class="column-body-outset-right">
+<pre class="shinylive-r" data-engine="r"><code>#| standalone: true
+#| components: viewer
+#| viewerHeight: 675
+
+library(shiny)
+library(collegeScorecard)
+library(bslib)
+library(dplyr)
+
+# UI
+ui &lt;- page_sidebar(
+  theme = bs_theme(version = 5),
+  title = "College Affordability Analyzer",
+  fill = FALSE,
+  sidebar = sidebar(
+    open = list(mobile = "always-above"),
+    selectInput("state", "State", choices = setNames(state.abb, state.name), selected = "WA"),
+    sliderInput("sat_score", "Minimum SAT Score", min = 800, max = 1200, value = 1000, step = 10),
+    radioButtons(
+      "income_bracket",
+      "Income Bracket",
+      inline = TRUE,
+      choices = c(
+        "&lt; $30k" = "cost_avg_income_0_30k",
+        "$30 - $48k" = "cost_avg_income_30_48k",
+        "$48 - $75k" = "cost_avg_income_48_75k",
+        "$75 - $110k" = "cost_avg_income_75_110k",
+        "$110k+" = "cost_avg_income_110k_plus"
+      )
+    )
+  ),
+  value_box(
+    "Average 10-year Median Earnings",
+    textOutput("txt_avg_output"),
+    showcase = bsicons::bs_icon("wallet-fill")
+  ),
+  value_box(
+    "Average 4-year Cost",
+    textOutput("txt_four_year_cost"),
+    "For the selected income bracket",
+    showcase = bsicons::bs_icon("cash-stack")
+  )
+)
+
+# Server
+server &lt;- function(input, output, session) {
+  filtered_data &lt;- reactive({
+    scorecard |&gt;
+      filter(
+        academic_year == "2020-21",
+        !is.na(cost_avg),
+        !is.na(amnt_earnings_med_10y)
+      ) |&gt;
+      select(id, cost_avg, amnt_earnings_med_10y, score_sat_avg, starts_with("cost_avg_income")) |&gt;
+      left_join(school, by = join_by(id)) |&gt;
+      filter(
+        state == input$state,
+        score_sat_avg &gt;= input$sat_score
+      )
+  })
+
+  output$txt_avg_output &lt;- renderText({
+    filtered_data() |&gt;
+      pull(amnt_earnings_med_10y) |&gt;
+      mean(na.rm = TRUE) |&gt; 
+      scales::dollar(accuracy = 10)
+  })
+
+  output$txt_four_year_cost &lt;- renderText({
+    avg_cost &lt;- 
+      filtered_data() |&gt;
+      pull(!!input$income_bracket) |&gt;
+      mean(na.rm = TRUE)
+
+    scales::dollar(avg_cost * 4, accuracy = 10)
+  })
+}
+
+# Run the app
+shinyApp(ui, server)
+</code></pre>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -723,7 +837,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p><a href="https:://posi.it/conf-event-portal">posit::conf(2024)</a></p>
-<div class="toc-actions"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/workshop-08.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/workshop-08.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
