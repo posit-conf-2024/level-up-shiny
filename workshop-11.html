@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Wrap up, review, survey">
+<meta name="description" content="Deploying your app to production">
 
-<title>Closing cermonies – Level Up with Shiny for R</title>
+<title>Push to prod – Level Up with Shiny for R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./workshop-10.html" rel="prev">
+<link href="./workshop-12.html" rel="next">
+<link href="./workshop-10-break.html" rel="prev">
 <link href="./assets/posit-conf-favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -72,14 +73,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="auto-dark-mode.css">
-<meta property="og:title" content="Closing cermonies – Level Up with Shiny for R">
-<meta property="og:description" content="Wrap up, review, survey">
+<meta property="og:title" content="Push to prod – Level Up with Shiny for R">
+<meta property="og:description" content="Deploying your app to production">
 <meta property="og:image" content="https://posit-conf-2024.github.io/level-up-shiny/assets/open-graph-card-2.png">
 <meta property="og:site_name" content="Level Up with Shiny for R">
 <meta property="og:image:height" content="400">
 <meta property="og:image:width" content="765">
-<meta name="twitter:title" content="Closing cermonies – Level Up with Shiny for R">
-<meta name="twitter:description" content="Wrap up, review, survey">
+<meta name="twitter:title" content="Push to prod – Level Up with Shiny for R">
+<meta name="twitter:description" content="Deploying your app to production">
 <meta name="twitter:image" content="https://posit-conf-2024.github.io/level-up-shiny/assets/open-graph-card-2.png">
 <meta name="twitter:creator" content="@grrrck">
 <meta name="twitter:site" content="@posit-dev">
@@ -137,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workshop-11.html">Closing cermonies</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workshop-11.html">Push to prod</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -209,12 +210,18 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workshop-08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fast, reactive apps</span></a>
+ <span class="menu-text">The Reactive Graph</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workshop-09-break.html" class="sidebar-item-text sidebar-link">
+  <a href="./workshop-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fast Apps</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-10-break.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">☕ Break</span></a>
   </div>
 </li>
@@ -223,13 +230,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workshop-10.html" class="sidebar-item-text sidebar-link">
+  <a href="./workshop-11.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Push to prod</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workshop-11.html" class="sidebar-item-text sidebar-link active">
+  <a href="./workshop-12.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Closing cermonies</span></a>
   </div>
 </li>
@@ -256,12 +263,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Closing cermonies</h1>
+<h1 class="title">Push to prod</h1>
 </div>
 
 <div>
   <div class="description">
-    Wrap up, review, survey
+    Deploying your app to production
   </div>
 </div>
 
@@ -278,10 +285,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="lead">
-<p>🙏 Thanks for attending!<br> 🙋 Any questions?</p>
-</div>
-<!-- FIXME link to survey -->
 
 
 
@@ -708,11 +711,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./workshop-10.html" class="pagination-link" aria-label="Push to prod">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Push to prod</span>
+      <a href="./workshop-10-break.html" class="pagination-link" aria-label="☕ Break">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">☕ Break</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./workshop-12.html" class="pagination-link" aria-label="Closing cermonies">
+        <span class="nav-page-text">Closing cermonies</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

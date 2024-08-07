@@ -478,34 +478,34 @@
   {
     "objectID": "workshop-08.html",
     "href": "workshop-08.html",
-    "title": "Fast, reactive apps",
+    "title": "The Reactive Graph",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Fast, reactive apps"
+      "The Reactive Graph"
     ]
   },
   {
     "objectID": "workshop-08.html#slides",
     "href": "workshop-08.html#slides",
-    "title": "Fast, reactive apps",
+    "title": "The Reactive Graph",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Fast, reactive apps"
+      "The Reactive Graph"
     ]
   },
   {
     "objectID": "workshop-08.html#demo-app",
     "href": "workshop-08.html#demo-app",
-    "title": "Fast, reactive apps",
+    "title": "The Reactive Graph",
     "section": "Demo App",
     "text": "Demo App\n\n#| standalone: true\n#| components: viewer\n#| viewerHeight: 675\n\nlibrary(shiny)\nlibrary(collegeScorecard)\nlibrary(bslib)\nlibrary(dplyr)\n\n# UI\nui &lt;- page_sidebar(\n  theme = bs_theme(version = 5),\n  title = \"College Affordability Analyzer\",\n  fill = FALSE,\n  sidebar = sidebar(\n    open = list(mobile = \"always-above\"),\n    selectInput(\"state\", \"State\", choices = setNames(state.abb, state.name), selected = \"WA\"),\n    sliderInput(\"sat_score\", \"Minimum SAT Score\", min = 800, max = 1200, value = 1000, step = 10),\n    radioButtons(\n      \"income_bracket\",\n      \"Income Bracket\",\n      inline = TRUE,\n      choices = c(\n        \"&lt; $30k\" = \"cost_avg_income_0_30k\",\n        \"$30 - $48k\" = \"cost_avg_income_30_48k\",\n        \"$48 - $75k\" = \"cost_avg_income_48_75k\",\n        \"$75 - $110k\" = \"cost_avg_income_75_110k\",\n        \"$110k+\" = \"cost_avg_income_110k_plus\"\n      )\n    )\n  ),\n  value_box(\n    \"Average 10-year Median Earnings\",\n    textOutput(\"txt_avg_output\"),\n    showcase = bsicons::bs_icon(\"wallet-fill\")\n  ),\n  value_box(\n    \"Average 4-year Cost\",\n    textOutput(\"txt_four_year_cost\"),\n    \"For the selected income bracket\",\n    showcase = bsicons::bs_icon(\"cash-stack\")\n  )\n)\n\n# Server\nserver &lt;- function(input, output, session) {\n  filtered_data &lt;- reactive({\n    scorecard |&gt;\n      filter(\n        academic_year == \"2020-21\",\n        !is.na(cost_avg),\n        !is.na(amnt_earnings_med_10y)\n      ) |&gt;\n      select(id, cost_avg, amnt_earnings_med_10y, score_sat_avg, starts_with(\"cost_avg_income\")) |&gt;\n      left_join(school, by = join_by(id)) |&gt;\n      filter(\n        state == input$state,\n        score_sat_avg &gt;= input$sat_score\n      )\n  })\n\n  output$txt_avg_output &lt;- renderText({\n    filtered_data() |&gt;\n      pull(amnt_earnings_med_10y) |&gt;\n      mean(na.rm = TRUE) |&gt; \n      scales::dollar(accuracy = 10)\n  })\n\n  output$txt_four_year_cost &lt;- renderText({\n    avg_cost &lt;- \n      filtered_data() |&gt;\n      pull(!!input$income_bracket) |&gt;\n      mean(na.rm = TRUE)\n\n    scales::dollar(avg_cost * 4, accuracy = 10)\n  })\n}\n\n# Run the app\nshinyApp(ui, server)",
     "crumbs": [
       "Workshop",
-      "Fast, reactive apps"
+      "The Reactive Graph"
     ]
   },
   {
@@ -634,7 +634,7 @@
     "href": "workshop.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n9:15 - 10:30\n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n11:00 - 11:45\n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n11:45 - 12:10\n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n12:10 - 12:30\n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nFast, reactive apps\n\n\n13:30 - 15:00\n\n\nMastering reactivity for fast Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n15:30 - 16:30\n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
+    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n \n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n \n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n \n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n \n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nThe Reactive Graph\n\n\n \n\n\nMastering reactivity\n\n\n\n\nFast Apps\n\n\n \n\n\nSpeeding up Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n \n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Workshop",
       "Overview"
@@ -645,61 +645,11 @@
     "href": "workshop.html#schedule",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n9:15 - 10:30\n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n11:00 - 11:45\n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n11:45 - 12:10\n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n12:10 - 12:30\n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nFast, reactive apps\n\n\n13:30 - 15:00\n\n\nMastering reactivity for fast Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n15:30 - 16:30\n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
+    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n \n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n \n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n \n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n \n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nThe Reactive Graph\n\n\n \n\n\nMastering reactivity\n\n\n\n\nFast Apps\n\n\n \n\n\nSpeeding up Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n \n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Workshop",
       "Overview"
     ]
-  },
-  {
-    "objectID": "workshop-07-break.html",
-    "href": "workshop-07-break.html",
-    "title": "🍱 Lunch",
-    "section": "",
-    "text": "Image by DALL-E 3",
-    "crumbs": [
-      "Workshop",
-      "🍱 Lunch"
-    ]
-  },
-  {
-    "objectID": "workshop-03-break.html",
-    "href": "workshop-03-break.html",
-    "title": "☕ Break",
-    "section": "",
-    "text": "Image by DALL-E 3",
-    "crumbs": [
-      "Workshop",
-      "☕ Break"
-    ]
-  },
-  {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Getting Setup",
-    "section": "",
-    "text": "Bring your personal laptop and a power cord. This is going to be a hands-on workshop, meaning that you’ll be writing code and collaborating with new friends you’ll make at the workshop.\nWe’ll be using Posit Cloud (details below), so you don’t need to set up anything on your computer."
-  },
-  {
-    "objectID": "setup.html#create-accounts",
-    "href": "setup.html#create-accounts",
-    "title": "Getting Setup",
-    "section": "Create Accounts",
-    "text": "Create Accounts\nIn this workshop, we’ll be using a few different online services. If you don’t already have accounts with these services, you’ll need to create them before we get started.\n\nPosit Cloud\nGitHub\n\nUsed to login to the Posit Connect instance set up for this workshop.\nDid you know? You can use your GitHub account to log in to Posit Cloud, too!\n\nDiscord\n\nUsed to communicate during the workshop and ask questions via text. Also used for general online participation during the conference.\nMake sure your display name is the one you used to register for the conference.\nCloser to the conference start, you’ll be able to join the posit::conf(2024) Discord server via the event portal at https:://posi.it/conf-event-portal.\nOur workshop channel is #workshop-level-up-shiny."
-  },
-  {
-    "objectID": "setup.html#using-posit-cloud",
-    "href": "setup.html#using-posit-cloud",
-    "title": "Getting Setup",
-    "section": "Using Posit Cloud",
-    "text": "Using Posit Cloud\n\n\n\n\n\n\nRecommended Workflow\n\n\n\nThe easiest way to get started is to use the Posit Cloud workspace I’ve prepared for you.\n\n\n\n\n\n\n\n\nWarning\n\n\n\n\nThe link to join the space is not yet available. This page will be updated on the day of the workshop.\nYou will need a Posit Cloud account and you can create one for free at posit.cloud/plans. Click “Learn more” under the Free plan to sign up.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the level-up-shiny space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the level-up-shiny space, select the level-up-shiny assignment to create and launch a new project just for you."
-  },
-  {
-    "objectID": "setup.html#using-your-own-computer",
-    "href": "setup.html#using-your-own-computer",
-    "title": "Getting Setup",
-    "section": "Using Your Own Computer",
-    "text": "Using Your Own Computer\n\n\n\n\n\n\nAdvanced Workflow\n\n\n\nThis is not the recommended workflow. I recommend using the Posit Cloud workspace to avoid having to set everything up yourself.\nThat said, if you prefer to use your own computer, it’s entirely possible.\n\n\nIf you prefer to use your own computer, you can clone the repository and install the necessary packages. I used R 4.4 but any recent version of R (&gt;= 4.1) should work.\nYou can use the usethis package to quickly clone the repository:\nusethis::create_from_github(\n  \"posit-conf-2024/level-up-shiny\",\n  # Decide where to put the project here:\n  destdir = \"~/Desktop/level-up-shiny\"\n)\nThis will download the repository and open the project in RStudio.\n\nWith renv\nInside the project, use the renv package to install the necessary packages:\nrenv::restore()\nFor very speedy installation, I recommend telling renv to use pak to install packages:\nSys.setenv(RENV_CONFIG_PAK_ENABLED = \"true\")\nrenv::restore()\n\n\nWithout renv\nSometimes renv can be a little tricky to get set up. Fortunately, there’s an alternative installation method that should work just as well.\nFirst, disable renv:\nrenv::deactivate()\nThen install use pak to install the necessary packages:\n# install.packages(\"pak\")\npak::local_install_deps(dependencies = TRUE)\nOr with remotes:\n# install.packages(\"remotes\")\nremotes::install_deps(dependencies = TRUE)"
   },
   {
     "objectID": "workshop-06-chat.html",
@@ -765,8 +715,36 @@
     "text": "ChatGPT\nYou’re welcome! If you have any more questions or need further assistance, feel free to ask. Enjoy the rest of your workshop at posit::conf(2024)!"
   },
   {
-    "objectID": "workshop-09-break.html",
-    "href": "workshop-09-break.html",
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Getting Setup",
+    "section": "",
+    "text": "Bring your personal laptop and a power cord. This is going to be a hands-on workshop, meaning that you’ll be writing code and collaborating with new friends you’ll make at the workshop.\nWe’ll be using Posit Cloud (details below), so you don’t need to set up anything on your computer."
+  },
+  {
+    "objectID": "setup.html#create-accounts",
+    "href": "setup.html#create-accounts",
+    "title": "Getting Setup",
+    "section": "Create Accounts",
+    "text": "Create Accounts\nIn this workshop, we’ll be using a few different online services. If you don’t already have accounts with these services, you’ll need to create them before we get started.\n\nPosit Cloud\nGitHub\n\nUsed to login to the Posit Connect instance set up for this workshop.\nDid you know? You can use your GitHub account to log in to Posit Cloud, too!\n\nDiscord\n\nUsed to communicate during the workshop and ask questions via text. Also used for general online participation during the conference.\nMake sure your display name is the one you used to register for the conference.\nCloser to the conference start, you’ll be able to join the posit::conf(2024) Discord server via the event portal at https:://posi.it/conf-event-portal.\nOur workshop channel is #workshop-level-up-shiny."
+  },
+  {
+    "objectID": "setup.html#using-posit-cloud",
+    "href": "setup.html#using-posit-cloud",
+    "title": "Getting Setup",
+    "section": "Using Posit Cloud",
+    "text": "Using Posit Cloud\n\n\n\n\n\n\nRecommended Workflow\n\n\n\nThe easiest way to get started is to use the Posit Cloud workspace I’ve prepared for you.\n\n\n\n\n\n\n\n\nWarning\n\n\n\n\nThe link to join the space is not yet available. This page will be updated on the day of the workshop.\nYou will need a Posit Cloud account and you can create one for free at posit.cloud/plans. Click “Learn more” under the Free plan to sign up.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the level-up-shiny space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the level-up-shiny space, select the level-up-shiny assignment to create and launch a new project just for you."
+  },
+  {
+    "objectID": "setup.html#using-your-own-computer",
+    "href": "setup.html#using-your-own-computer",
+    "title": "Getting Setup",
+    "section": "Using Your Own Computer",
+    "text": "Using Your Own Computer\n\n\n\n\n\n\nAdvanced Workflow\n\n\n\nThis is not the recommended workflow. I recommend using the Posit Cloud workspace to avoid having to set everything up yourself.\nThat said, if you prefer to use your own computer, it’s entirely possible.\n\n\nIf you prefer to use your own computer, you can clone the repository and install the necessary packages. I used R 4.4 but any recent version of R (&gt;= 4.1) should work.\nYou can use the usethis package to quickly clone the repository:\nusethis::create_from_github(\n  \"posit-conf-2024/level-up-shiny\",\n  # Decide where to put the project here:\n  destdir = \"~/Desktop/level-up-shiny\"\n)\nThis will download the repository and open the project in RStudio.\n\nWith renv\nInside the project, use the renv package to install the necessary packages:\nrenv::restore()\nFor very speedy installation, I recommend telling renv to use pak to install packages:\nSys.setenv(RENV_CONFIG_PAK_ENABLED = \"true\")\nrenv::restore()\n\n\nWithout renv\nSometimes renv can be a little tricky to get set up. Fortunately, there’s an alternative installation method that should work just as well.\nFirst, disable renv:\nrenv::deactivate()\nThen install use pak to install the necessary packages:\n# install.packages(\"pak\")\npak::local_install_deps(dependencies = TRUE)\nOr with remotes:\n# install.packages(\"remotes\")\nremotes::install_deps(dependencies = TRUE)"
+  },
+  {
+    "objectID": "workshop-03-break.html",
+    "href": "workshop-03-break.html",
     "title": "☕ Break",
     "section": "",
     "text": "Image by DALL-E 3",
@@ -776,8 +754,30 @@
     ]
   },
   {
-    "objectID": "workshop-11.html",
-    "href": "workshop-11.html",
+    "objectID": "workshop-07-break.html",
+    "href": "workshop-07-break.html",
+    "title": "🍱 Lunch",
+    "section": "",
+    "text": "Image by DALL-E 3",
+    "crumbs": [
+      "Workshop",
+      "🍱 Lunch"
+    ]
+  },
+  {
+    "objectID": "workshop-10-break.html",
+    "href": "workshop-10-break.html",
+    "title": "☕ Break",
+    "section": "",
+    "text": "Image by DALL-E 3",
+    "crumbs": [
+      "Workshop",
+      "☕ Break"
+    ]
+  },
+  {
+    "objectID": "workshop-12.html",
+    "href": "workshop-12.html",
     "title": "Closing cermonies",
     "section": "",
     "text": "🙏 Thanks for attending! 🙋 Any questions?",

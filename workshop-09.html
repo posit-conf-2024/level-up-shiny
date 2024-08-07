@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Go touch grass! We’ll be back here at 15:30.">
+<meta name="description" content="Speeding up Shiny apps">
 
-<title>☕ Break – Level Up with Shiny for R</title>
+<title>Fast Apps – Level Up with Shiny for R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./workshop-10.html" rel="next">
+<link href="./workshop-10-break.html" rel="next">
 <link href="./workshop-08.html" rel="prev">
 <link href="./assets/posit-conf-favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -43,9 +43,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -76,14 +73,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="auto-dark-mode.css">
-<meta property="og:title" content="☕ Break – Level Up with Shiny for R">
-<meta property="og:description" content="Go touch grass! We’ll be back here at 15:30.">
+<meta property="og:title" content="Fast Apps – Level Up with Shiny for R">
+<meta property="og:description" content="Speeding up Shiny apps">
 <meta property="og:image" content="https://posit-conf-2024.github.io/level-up-shiny/assets/open-graph-card-2.png">
 <meta property="og:site_name" content="Level Up with Shiny for R">
 <meta property="og:image:height" content="400">
 <meta property="og:image:width" content="765">
-<meta name="twitter:title" content="☕ Break – Level Up with Shiny for R">
-<meta name="twitter:description" content="Go touch grass! We’ll be back here at 15:30.">
+<meta name="twitter:title" content="Fast Apps – Level Up with Shiny for R">
+<meta name="twitter:description" content="Speeding up Shiny apps">
 <meta name="twitter:image" content="https://posit-conf-2024.github.io/level-up-shiny/assets/open-graph-card-2.png">
 <meta name="twitter:creator" content="@grrrck">
 <meta name="twitter:site" content="@posit-dev">
@@ -141,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workshop-09-break.html">☕ Break</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workshop-09.html">Fast Apps</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -213,12 +210,18 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./workshop-08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fast, reactive apps</span></a>
+ <span class="menu-text">The Reactive Graph</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workshop-09-break.html" class="sidebar-item-text sidebar-link active">
+  <a href="./workshop-09.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Fast Apps</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-10-break.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">☕ Break</span></a>
   </div>
 </li>
@@ -227,13 +230,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workshop-10.html" class="sidebar-item-text sidebar-link">
+  <a href="./workshop-11.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Push to prod</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workshop-11.html" class="sidebar-item-text sidebar-link">
+  <a href="./workshop-12.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Closing cermonies</span></a>
   </div>
 </li>
@@ -260,12 +263,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">☕ Break</h1>
+<h1 class="title">Fast Apps</h1>
 </div>
 
 <div>
   <div class="description">
-    <p>Go touch grass! We’ll be back here at 15:30.</p>
+    Speeding up Shiny apps
   </div>
 </div>
 
@@ -282,12 +285,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/gen-ai/data-scientist-coffee-bench.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Image by DALL-E 3"><img src="assets/gen-ai/data-scientist-coffee-bench.png" class="img-fluid figure-img" alt="Image by DALL-E 3"></a></p>
-<figcaption>Image by DALL-E 3</figcaption>
-</figure>
-</div>
 
 
 
@@ -714,13 +711,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./workshop-08.html" class="pagination-link" aria-label="Fast, reactive apps">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Fast, reactive apps</span>
+      <a href="./workshop-08.html" class="pagination-link" aria-label="The Reactive Graph">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">The Reactive Graph</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./workshop-10.html" class="pagination-link" aria-label="Push to prod">
-        <span class="nav-page-text">Push to prod</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./workshop-10-break.html" class="pagination-link" aria-label="☕ Break">
+        <span class="nav-page-text">☕ Break</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -732,44 +729,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p><a href="https:://posi.it/conf-event-portal">posit::conf(2024)</a></p>
-<div class="toc-actions"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/workshop-09-break.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/workshop-09.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

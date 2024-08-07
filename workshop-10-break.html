@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Organizing and writing code for maintainability and readability">
+<meta name="description" content="Go touch grass! We’ll be back here at 15:30.">
 
-<title>Code organization – Level Up with Shiny for R</title>
+<title>☕ Break – Level Up with Shiny for R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./workshop-05.html" rel="next">
-<link href="./workshop-03-break.html" rel="prev">
+<link href="./workshop-11.html" rel="next">
+<link href="./workshop-09.html" rel="prev">
 <link href="./assets/posit-conf-favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -43,6 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,25 +73,17 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
- 
-  <style>
-  .slide-deck {
-      border: 3px solid #dee2e6;
-      width: 100%;
-  }
-  </style>
-  
 
 
 <link rel="stylesheet" href="auto-dark-mode.css">
-<meta property="og:title" content="Code organization – Level Up with Shiny for R">
-<meta property="og:description" content="Organizing and writing code for maintainability and readability">
+<meta property="og:title" content="☕ Break – Level Up with Shiny for R">
+<meta property="og:description" content="Go touch grass! We’ll be back here at 15:30.">
 <meta property="og:image" content="https://posit-conf-2024.github.io/level-up-shiny/assets/open-graph-card-2.png">
 <meta property="og:site_name" content="Level Up with Shiny for R">
 <meta property="og:image:height" content="400">
 <meta property="og:image:width" content="765">
-<meta name="twitter:title" content="Code organization – Level Up with Shiny for R">
-<meta name="twitter:description" content="Organizing and writing code for maintainability and readability">
+<meta name="twitter:title" content="☕ Break – Level Up with Shiny for R">
+<meta name="twitter:description" content="Go touch grass! We’ll be back here at 15:30.">
 <meta name="twitter:image" content="https://posit-conf-2024.github.io/level-up-shiny/assets/open-graph-card-2.png">
 <meta name="twitter:creator" content="@grrrck">
 <meta name="twitter:site" content="@posit-dev">
@@ -146,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workshop-04.html">Code organization</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workshop-10-break.html">☕ Break</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -190,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workshop-04.html" class="sidebar-item-text sidebar-link active">
+  <a href="./workshop-04.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Code organization</span></a>
   </div>
 </li>
@@ -229,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workshop-10-break.html" class="sidebar-item-text sidebar-link">
+  <a href="./workshop-10-break.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">☕ Break</span></a>
   </div>
 </li>
@@ -253,16 +248,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/workshop-04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -279,12 +266,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Code organization</h1>
+<h1 class="title">☕ Break</h1>
 </div>
 
 <div>
   <div class="description">
-    Organizing and writing code for maintainability and readability
+    <p>Go touch grass! We’ll be back here at 15:30.</p>
   </div>
 </div>
 
@@ -301,37 +288,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
-    <p><a href="slides/slides-04-code-style.html" target="_blank">View slides in full screen</a></p>
-       <div class="ratio ratio-16x9">
-      <iframe class="slide-deck" src="slides/slides-04-code-style.html" height="475px"></iframe>
-    </div>
-  
-</section>
-<section id="packages" class="level2">
-<h2 class="anchored" data-anchor-id="packages">Packages</h2>
-<ul>
-<li><a href="https://styler.r-lib.org/">styler</a></li>
-<li><a href="https://github.com/gadenbuie/grkstyle">grkstyle</a></li>
-</ul>
-</section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<ul>
-<li><a href="https://www.cs.huji.ac.il/~feit/papers/Names20TSE.pdf">How Developers Choose Names</a>, Dror G. Fietelson</li>
-<li><a href="https://www.manning.com/books/the-programmers-brain">The Programmer’s Brain</a>, Felienne Hermans</li>
-<li><a href="https://blog.thepete.net/blog/2021/06/24/explaining-variable/">Explaining variable</a>, Pete Hodgson</li>
-<li><a href="https://blog.r-hub.io/2023/01/26/code-comments-self-explaining-code/">Why comment your code as little (and as well) as possible - R-hub blog</a></li>
-<li><a href="https://blog.r-hub.io/2022/03/21/code-style/">Coding style, coding etiquette - R-hub blog</a></li>
-<li><a href="https://www.youtube.com/watch?v=7oyiPBjLAWY">Code smells and feels</a>, Jenny Bryan</li>
-<li><a href="https://www.oreilly.com/library/view/the-art-of/9781449318482/">The Art of Readable Code</a>, Dustin Boswell and Trevor Foucher</li>
-<li><a href="https://www.oreilly.com/library/view/refactoring-improving-the/9780134757681/">Refactoring: Improving the Design of Existing Code</a>, Martin Fowler</li>
-<li><a href="https://www.youtube.com/watch?v=vgYS-F8opgE&amp;list=PLNH8Eqj5v_KbhyWsHjWvYbt2TGiD3OlPc">Object of type ‘closure’ is not subsettable</a>, Jenny Bryan (rstudio::conf(2020))</li>
-</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/gen-ai/data-scientist-coffee-bench.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Image by DALL-E 3"><img src="assets/gen-ai/data-scientist-coffee-bench.png" class="img-fluid figure-img" alt="Image by DALL-E 3"></a></p>
+<figcaption>Image by DALL-E 3</figcaption>
+</figure>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -756,13 +720,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./workshop-03-break.html" class="pagination-link" aria-label="☕ Break">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">☕ Break</span>
+      <a href="./workshop-09.html" class="pagination-link" aria-label="Fast Apps">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Fast Apps</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./workshop-05.html" class="pagination-link" aria-label="Modules">
-        <span class="nav-page-text">Modules</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./workshop-11.html" class="pagination-link" aria-label="Push to prod">
+        <span class="nav-page-text">Push to prod</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -774,12 +738,44 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p><a href="https:://posi.it/conf-event-portal">posit::conf(2024)</a></p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/workshop-04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/workshop-10-break.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
