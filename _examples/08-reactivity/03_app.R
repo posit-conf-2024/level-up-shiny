@@ -1,7 +1,7 @@
 library(shiny)
-library(collegeScorecard)
 library(bslib)
 library(dplyr)
+library(collegeScorecard)
 reactlog::reactlog_enable()
 
 
