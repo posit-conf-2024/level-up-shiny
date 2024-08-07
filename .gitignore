@@ -8,6 +8,7 @@
 /website/slides/.quarto
 /website/_site/
 /_dev
+/.secrets
 
 level-up-shiny.Rcheck/
 level-up-shiny*.tar.gz
