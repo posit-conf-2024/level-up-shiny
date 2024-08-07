@@ -29,7 +29,7 @@ ui <- page_sidebar(
   ),
   value_box(
     "Average 10-year Median Earnings",
-    textOutput("txt_avg_output"),
+    textOutput("txt_amnt_earnings"),
     showcase = bsicons::bs_icon("wallet-fill")
   ),
   value_box(
@@ -59,7 +59,7 @@ server <- function(input, output, session) {
       )
   })
 
-  output$txt_avg_output <- renderText({
+  output$txt_amnt_earnings <- renderText({
     filtered_data() |>
       pull(amnt_earnings_med_10y) |>
       mean(na.rm = TRUE) |> 
