@@ -3,7 +3,7 @@ title: Modules
 description: Level up your Shiny modules
 description-short: Level up your Shiny modules
 duration: 25min
-time: 11:45 - 12:10
+# time: 11:45 - 12:10
 ---
 
 ## Slides

@@ -3,7 +3,7 @@ title: Just a little JavaScript
 description: A spoonful of JavaScript helps the medicine go down.
 description-short: A spoonful of JavaScript helps the medicine go down
 duration: 20min
-time: 12:10 - 12:30
+# time: 12:10 - 12:30
 ---
 
 ## Slides

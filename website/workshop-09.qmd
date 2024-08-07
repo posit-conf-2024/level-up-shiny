@@ -1,0 +1,7 @@
+---
+title: Fast Apps
+description: Speeding up Shiny apps
+description-short: Speeding up Shiny apps
+duration: 30min
+# time: 14:00
+---

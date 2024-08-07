@@ -1,14 +1,7 @@
 ---
-title: Closing cermonies
-description: Wrap up, review, survey
-description-short: Wrap up, review, survey
-duration: 30min
-time: 16:30 - 17:00
+title: Push to prod
+description: Deploying your app to production
+description-short: Deploying your app to production
+duration: 60min
+# time: 15:30 - 16:30
 ---
-
-::: lead
-🙏 Thanks for attending!<br>
-🙋 Any questions?
-:::
-
-<!-- FIXME link to survey -->

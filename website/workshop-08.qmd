@@ -1,9 +1,9 @@
 ---
-title: Fast, reactive apps
-description: Mastering reactivity for fast Shiny apps
-description-short: Mastering reactivity for fast Shiny apps
-duration: 90min
-time: 13:30 - 15:00
+title: The Reactive Graph
+description: Mastering reactivity
+description-short: Mastering reactivity
+duration: 30min
+# time: 13:30
 ---
 
 ## Slides

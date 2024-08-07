@@ -3,7 +3,7 @@ title: Code organization
 description: Organizing and writing code for maintainability and readability
 description-short: Organizing and writing code for maintainability and readability
 duration: 45min
-time: 11:00 - 11:45
+# time: 11:00 - 11:45
 ---
 
 ## Slides
