@@ -27,6 +27,7 @@ Imports:
     leaflet,
     logger,
     lorem,
+    plogr,
     plotly,
     pool,
     profvis,
