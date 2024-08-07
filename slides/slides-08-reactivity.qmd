@@ -31,16 +31,19 @@ editor:
 
 # Your Turn {.middle}
 
-## Your Turn {#your-turn-inst .slide-your-turn}
+## Your Turn (with a partner) {#your-turn-inst .slide-your-turn}
 
 {{< countdown 4:00 bottom="2rem" right="2rem" >}}
 
-* Working with a partner, look at the demo app in [the Reactivity page](../workshop-08.qmd#demo-app).
+::: w-90
+* Play with the app in [the Reactivity page](../workshop-08.qmd#demo-app). \
+  (It's also `_examples/08-reactivity/01-simple`, but don't look at the code.)
 
 * How are the inputs connected to the outputs?
 
-* Draw a picture mapping inputs to the outputs.
+* Draw a picture mapping inputs to the outputs. \
   Do you think there are any hidden dependencies?
+:::
 
 # The three atoms of reactivity {.middle}
 
@@ -82,7 +85,7 @@ slides_md <- glue::glue(
   .comment = ""
 )
 
-cat(paste(slides_md[1:6], collapse = "\n\n\n"))
+cat(paste(slides_md[1:7], collapse = "\n\n\n"))
 ```
 
 
@@ -119,13 +122,45 @@ cat(paste(slides_md[1:6], collapse = "\n\n\n"))
 
 slides_md <- sub("reactivity-06-final", "reactivity-06-final-2", slides_md, fixed = TRUE)
 slides_md <- sub('background-size="85%"', 'background-size="80%"', slides_md, fixed = TRUE)
-cat(paste(slides_md[-1:-5], collapse = "\n\n\n"))
+cat(paste(slides_md[c(-1:-5, -7)], collapse = "\n\n\n"))
 ```
 
-## 
+## Using reactlog
 
-TK: Income bracket toggle with reactlog embedded
+```{.r}
+reactlog::reactlog_enable()
 
+shiny::runApp("app.R")
+```
+
+::: fragment
+💡 While the app is running, press <kbd>Cmd/Ctrl</kbd> + <kbd>F4</kbd> \
+to add markers in the timeline.
+:::
+
+::: fragment
+Close the app and run `shiny::reactlogShow()` in the console.
+:::
+
+## {.fullscreen}
+
+```{shinylive-r}
+#| standalone: true
+#| components: [viewer]
+#| viewerHeight: "100%"
+
+{{< include ../../_examples/08-reactivity/01-simple/app_reactlog.R >}}
+```
+
+## {.fullscreen}
+
+```{shinylive-r}
+#| standalone: true
+#| components: [viewer]
+#| viewerHeight: "100%"
+
+{{< include ../../_examples/08-reactivity/02_app.R >}}
+```
 
 # Your Turn {.middle}
 
@@ -134,3 +169,37 @@ TK: Income bracket toggle with reactlog embedded
 {{< countdown 4:00 bottom="2rem" right="2rem" >}}
 
 ![](assets/make-this-reactive-graph.svg){height="650px"}
+
+## Describe the app
+
+<details class="fs-step--1"><summary>Extra bits</summary>
+
+```md
+I'm working on an example Shiny for R app for a workshop. I'm using the US College Scorecard dataset from the `collegeScorecard` package which provides the data separated into "school" and "scorecard" tables with these columns:
+
+school: id, name, city, state, zip, latitude, longitude, url, deg_predominant, deg_highest, control, locale_type, locale_size, adm_req_test, is_hbcu, is_pbi, is_annhi, is_tribal, is_aanapii, is_hsi, is_nanti, is_only_men, is_only_women, is_only_distance, religious_affiliation
+
+scorecard: id, academic_year, n_undergrads, cost_tuition_in, cost_tuition_out, cost_books, cost_room_board_on, cost_room_board_off, cost_avg, cost_avg_income_0_30k, cost_avg_income_30_48k, cost_avg_income_48_75k, cost_avg_income_75_110k, cost_avg_income_110k_plus, amnt_earnings_med_10y, rate_completion, rate_admissions, score_sat_avg, score_act_p25, score_act_p75, score_sat_verbal_p25, score_sat_verbal_p75, score_sat_math_p25, score_sat_math_p75
+
+I'd like to have a VERY SIMPLE app that has:
+* Four inputs
+* Two reactive expressions. The first uses only two inputs. The second uses the third input and the first reactive expression.
+* The fourth input is used in an observer to update an input.
+* There are two outputs, each powered by one of the reactive expressions.
+```
+
+</details>
+
+::: fs-step-2
+{{< partial ../partials/content-editable-code.html text="This app..." >}}
+:::
+
+## {.fullscreen}
+
+```{shinylive-r}
+#| standalone: true
+#| components: [viewer]
+#| viewerHeight: "100%"
+
+{{< include ../../_examples/08-reactivity/03_app.R >}}
+```
