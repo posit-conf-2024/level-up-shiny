@@ -3,7 +3,9 @@ library(collegeScorecard)
 library(bslib)
 library(dplyr)
 
-# UI
+
+# UI ----------------------------------------------------------------------
+
 ui <- page_sidebar(
   theme = bs_theme(version = 5),
   title = "College Affordability Analyzer",
@@ -38,7 +40,9 @@ ui <- page_sidebar(
   )
 )
 
-# Server
+
+# Server ------------------------------------------------------------------
+
 server <- function(input, output, session) {
   filtered_data <- reactive({
     scorecard |>
@@ -72,5 +76,5 @@ server <- function(input, output, session) {
   })
 }
 
-# Run the app
+
 shinyApp(ui, server)

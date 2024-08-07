@@ -4,7 +4,9 @@ library(bslib)
 library(dplyr)
 reactlog::reactlog_enable()
 
-# UI
+
+# UI ----------------------------------------------------------------------
+
 ui <- page_sidebar(
   theme = bs_theme(version = 5),
   title = "College Affordability Analyzer",
@@ -44,10 +46,10 @@ ui <- page_sidebar(
   )
 )
 
-# Server
+# Server ------------------------------------------------------------------
 server <- function(input, output, session) {
   reactlog::reactlog_module_server(height = "100%")
-  
+
   filtered_data <- reactive({
     scorecard |>
       filter(
@@ -86,5 +88,5 @@ server <- function(input, output, session) {
   })
 }
 
-# Run the app
+
 shinyApp(ui, server)
