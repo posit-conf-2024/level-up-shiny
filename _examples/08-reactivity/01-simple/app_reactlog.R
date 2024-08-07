@@ -39,7 +39,9 @@ ui <- page_sidebar(
     "For the selected income bracket",
     showcase = bsicons::bs_icon("cash-stack")
   ),
-  reactlog::reactlog_module_ui()
+  card(
+    reactlog::reactlog_module_ui()
+  )
 )
 
 
