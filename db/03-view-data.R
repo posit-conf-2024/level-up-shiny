@@ -3,7 +3,10 @@ library(dbplyr)
 library(DBI)
 library(collegeScorecard)
 
-dotenv::load_dot_env(here::here(".secrets/db-user.env"))
+staging_env <- here::here("secrets/db-staging.env")
+prod_env <- here::here("secrets/db-prod.env")
+
+dotenv::load_dot_env(staging_env)
 
 con <- DBI::dbConnect(
   RPostgres::Postgres(),
