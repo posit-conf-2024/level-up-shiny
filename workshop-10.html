@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Long running, non-blocking tasks">
 
-<title>Getting Setup – Level Up with Shiny for R</title>
+<title>Extended Tasks – Level Up with Shiny for R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,6 +31,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./workshop-11-break.html" rel="next">
+<link href="./workshop-09.html" rel="prev">
 <link href="./assets/posit-conf-favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -74,9 +43,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,17 +70,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+ 
+  <style>
+  .slide-deck {
+      border: 3px solid #dee2e6;
+      width: 100%;
+  }
+  </style>
+  
 
 
 <link rel="stylesheet" href="auto-dark-mode.css">
-<meta property="og:title" content="Getting Setup – Level Up with Shiny for R">
-<meta property="og:description" content="Take your Shiny skills to the next level.">
+<meta property="og:title" content="Extended Tasks – Level Up with Shiny for R">
+<meta property="og:description" content="Long running, non-blocking tasks">
 <meta property="og:image" content="https://posit-conf-2024.github.io/level-up-shiny/assets/open-graph-card-2.png">
 <meta property="og:site_name" content="Level Up with Shiny for R">
 <meta property="og:image:height" content="400">
 <meta property="og:image:width" content="765">
-<meta name="twitter:title" content="Getting Setup – Level Up with Shiny for R">
-<meta name="twitter:description" content="Take your Shiny skills to the next level.">
+<meta name="twitter:title" content="Extended Tasks – Level Up with Shiny for R">
+<meta name="twitter:description" content="Long running, non-blocking tasks">
 <meta name="twitter:image" content="https://posit-conf-2024.github.io/level-up-shiny/assets/open-graph-card-2.png">
 <meta name="twitter:creator" content="@grrrck">
 <meta name="twitter:site" content="@posit-dev">
@@ -123,7 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -148,11 +122,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./workshop.html"> 
+    <a class="nav-link active" href="./workshop.html" aria-current="page"> 
 <span class="menu-text">Workshop</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./setup.html" aria-current="page"> 
+    <a class="nav-link" href="./setup.html"> 
 <span class="menu-text">Setup</span></a>
   </li>  
   <li class="nav-item">
@@ -167,26 +141,133 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workshop-10.html">Extended Tasks</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+ <span class="menu-text"><div class="sidebar-divider font-monospace">Morning 1</div></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome and getting started</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modern layouts with bslib</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-03-break.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">☕ Break</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+ <span class="menu-text"><div class="sidebar-divider font-monospace">Morning 2</div></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code organization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modules</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Just a little JavaScript</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-07-break.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🍱 Lunch</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+ <span class="menu-text"><div class="sidebar-divider font-monospace">Afternoon 1</div></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Reactive Graph</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fast Apps</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-10.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Extended Tasks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-11-break.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">☕ Break</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+ <span class="menu-text"><div class="sidebar-divider font-monospace">Afternoon 2</div></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Push to prod</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workshop-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Closing cermonies</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-to-bring" id="toc-what-to-bring" class="nav-link active" data-scroll-target="#what-to-bring">What to bring</a></li>
-  <li><a href="#create-accounts" id="toc-create-accounts" class="nav-link" data-scroll-target="#create-accounts">Create Accounts</a></li>
-  <li><a href="#using-posit-cloud" id="toc-using-posit-cloud" class="nav-link" data-scroll-target="#using-posit-cloud">Using Posit Cloud</a></li>
-  <li><a href="#using-your-own-computer" id="toc-using-your-own-computer" class="nav-link" data-scroll-target="#using-your-own-computer">Using Your Own Computer</a>
-  <ul class="collapse">
-  <li><a href="#with-renv" id="toc-with-renv" class="nav-link" data-scroll-target="#with-renv">With renv</a></li>
-  <li><a href="#without-renv" id="toc-without-renv" class="nav-link" data-scroll-target="#without-renv">Without renv</a></li>
-  </ul></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/workshop-10.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -203,9 +284,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Getting Setup</h1>
+<h1 class="title">Extended Tasks</h1>
 </div>
 
+<div>
+  <div class="description">
+    Long running, non-blocking tasks
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -220,113 +306,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="what-to-bring" class="level3">
-<h3 class="anchored" data-anchor-id="what-to-bring">What to bring</h3>
-<p><strong>Bring your <span class="text-danger">personal laptop</span> and a power cord.</strong> This is going to be a hands-on workshop, meaning that you’ll be writing code and collaborating with new friends you’ll make at the workshop.</p>
-<p>We’ll be using <a href="https://posit.cloud">Posit Cloud</a> (<a href="#using-posit-cloud">details below</a>), so you don’t need to set up anything on your computer.</p>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+    <p><a href="slides/slides-10-extended-tasks.html" target="_blank">View slides in full screen</a></p>
+       <div class="ratio ratio-16x9">
+      <iframe class="slide-deck" src="slides/slides-10-extended-tasks.html" height="475px"></iframe>
+    </div>
+  
 </section>
-<section id="create-accounts" class="level2">
-<h2 class="anchored" data-anchor-id="create-accounts">Create Accounts</h2>
-<p>In this workshop, we’ll be using a few different online services. If you don’t already have accounts with these services, you’ll need to create them before we get started.</p>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <ul>
-<li><p><a href="#using-posit-cloud">Posit Cloud</a></p></li>
-<li><p><a href="https://github.com/join">GitHub</a></p>
-<ul>
-<li>Used to login to the Posit Connect instance set up for this workshop.</li>
-<li>Did you know? You can use your GitHub account to log in to Posit Cloud, too!</li>
-</ul></li>
-<li><p><a href="https://discord.com/register">Discord</a></p>
-<ul>
-<li>Used to communicate during the workshop and ask questions via text. Also used for general online participation during the conference.</li>
-<li>Make sure your <a href="https://support.discord.com/hc/en-us/articles/12620128861463-New-Usernames-Display-Names#h_01GXPQABMYGEHGPRJJXJMPHF5C">display name</a> is the one you used to register for the conference.</li>
-<li>Closer to the conference start, you’ll be able to join the <code>posit::conf(2024)</code> Discord server via the event portal at <a href="https:://posi.it/conf-event-portal" class="uri">https:://posi.it/conf-event-portal</a>.</li>
-<li>Our workshop channel is <code>#workshop-level-up-shiny</code>.</li>
-</ul></li>
+<li><p><a href="https://shiny.posit.co/r/articles/improve/nonblocking/">Shiny - Non-blocking operations</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=GhX0PcEm3CY">YouTube: Managing long-running operations in Shiny | Posit</a>, Joe Cheng</p></li>
+<li><p><a href="https://shiny.posit.co/r/reference/shiny/latest/extendedtask">Task or computation that proceeds in the background — ExtendedTask</a></p></li>
 </ul>
-</section>
-<section id="using-posit-cloud" class="level2">
-<h2 class="anchored" data-anchor-id="using-posit-cloud">Using Posit Cloud</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Recommended Workflow">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Recommended Workflow
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The easiest way to get started is to use the Posit Cloud workspace I’ve prepared for you.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<!-- FIXME cloud link: remove note -->
-<p>The link to join the space is not yet available. This page will be updated on the day of the workshop.</p>
-<p>You will need a Posit Cloud account and you can create one for free at <a href="https://posit.cloud/plans">posit.cloud/plans</a>. Click “Learn more” under the Free plan to sign up.</p>
-</div>
-</div>
-<p>I’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!</p>
-<p>If you already have a Posit Cloud account, first <a href="https://posit.cloud/spaces/517274/">join the level-up-shiny space on Posit Cloud</a>. Otherwise <a href="https://posit.cloud/plans">sign up for a free account</a> and then join the space. You can create an account with your email or login with Google, GitHub or Clever.</p>
-<p>Once you’re part of the <a href="https://posit.cloud/spaces/517274/">level-up-shiny space</a>, select the <code>level-up-shiny</code> assignment to create and launch a new project just for you.</p>
-<div class="shadow-lg p-2 border border-1 rounded-2 text-center">
-<p><a href="assets/posit-cloud-project.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="assets/posit-cloud-project.png" class="img-fluid" alt=""></a></p>
-</div>
-</section>
-<section id="using-your-own-computer" class="level2">
-<h2 class="anchored" data-anchor-id="using-your-own-computer">Using Your Own Computer</h2>
-<div class="callout callout-style-default callout-caution callout-titled" title="Advanced Workflow">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Advanced Workflow
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>This is not the recommended workflow.</strong> I recommend <a href="#using-posit-cloud">using the Posit Cloud workspace</a> to avoid having to set everything up yourself.</p>
-<p>That said, if you prefer to use your own computer, it’s entirely possible.</p>
-</div>
-</div>
-<p>If you prefer to use your own computer, you can <a href="https://github.com/posit-conf-2024/level-up-shiny">clone the repository</a> and install the necessary packages. I used <a href="https://r-project.org">R 4.4</a> but any recent version of R (&gt;= 4.1) should work.</p>
-<p>You can use the <a href="https://usethis.r-lib.org">usethis</a> package to quickly clone the repository:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_from_github</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"posit-conf-2024/level-up-shiny"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Decide where to put the project here:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">destdir =</span> <span class="st">"~/Desktop/level-up-shiny"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This will download the repository and open the project in RStudio.</p>
-<section id="with-renv" class="level3">
-<h3 class="anchored" data-anchor-id="with-renv">With renv</h3>
-<p>Inside the project, use the <code>renv</code> package to install the necessary packages:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For very speedy installation, I recommend telling renv to use <a href="https://pak.r-lib.org/">pak</a> to install packages:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">RENV_CONFIG_PAK_ENABLED =</span> <span class="st">"true"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="without-renv" class="level3">
-<h3 class="anchored" data-anchor-id="without-renv">Without renv</h3>
-<p>Sometimes <code>renv</code> can be a little tricky to get set up. Fortunately, there’s an alternative installation method that should work just as well.</p>
-<p>First, disable <code>renv</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">deactivate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then install use <a href="https://pak.r-lib.org">pak</a> to install the necessary packages:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("pak")</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">local_install_deps</span>(<span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Or with <a href="https://remotes.r-lib.org">remotes</a>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("remotes")</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_deps</span>(<span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -750,6 +746,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./workshop-09.html" class="pagination-link" aria-label="Fast Apps">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Fast Apps</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./workshop-11-break.html" class="pagination-link" aria-label="☕ Break">
+        <span class="nav-page-text">☕ Break</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -758,44 +766,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p><a href="https:://posi.it/conf-event-portal">posit::conf(2024)</a></p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/posit-conf-2024/level-up-shiny/edit/main/website/workshop-10.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/posit-conf-2024/level-up-shiny/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

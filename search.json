@@ -88,14 +88,14 @@
     "href": "slides/slides-09-fast-apps.html#benchmark-your-options-2",
     "title": "Fast Apps 🏎️💨",
     "section": "Benchmark your options",
-    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  check = FALSE\n)\n\n\n\n# A tibble: 2 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   85.66ms  106.6ms      8.84     382MB     77.8\n2 second_try(10000)   7.33ms   7.49ms    125.      78.2KB     19.9\n\n\n\nthird_try &lt;- function(n) {\n  seq_len(n) + runif(n)\n}"
+    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  check = FALSE\n)\n\n\n\n# A tibble: 2 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   83.13ms 105.42ms      9.17     382MB     80.7\n2 second_try(10000)   7.44ms   7.56ms    125.      78.2KB     19.8\n\n\n\nthird_try &lt;- function(n) {\n  seq_len(n) + runif(n)\n}"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#benchmark-your-options-3",
     "href": "slides/slides-09-fast-apps.html#benchmark-your-options-3",
     "title": "Fast Apps 🏎️💨",
     "section": "Benchmark your options",
-    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  third_try(1e4),\n  check = FALSE\n)\n\n# A tibble: 3 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   93.39ms  94.68ms      10.5     382MB     99.8\n2 second_try(10000)   7.38ms   7.52ms     123.     78.2KB     23.9\n3 third_try(10000)   95.53µs  97.61µs    8174.    117.3KB     20.0"
+    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  third_try(1e4),\n  check = FALSE\n)\n\n# A tibble: 3 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   92.63ms   95.6ms      10.4     382MB     99.2\n2 second_try(10000)   7.45ms    7.6ms     121.     78.2KB     23.9\n3 third_try(10000)    95.8µs   97.8µs    8026.    117.3KB     20.0"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#benchmark-your-options-4",
@@ -560,132 +560,139 @@
     "text": "Links\n\n📘 Workshop Materials\n🔧 Getting Setup\n🧑‍💻 Join Posit Cloud Space\n👾 Discord (TBA) \n📦 Repository\n🎡 posit::conf(2024)"
   },
   {
-    "objectID": "workshop-06.html",
-    "href": "workshop-06.html",
-    "title": "Just a little JavaScript",
+    "objectID": "workshop-09.html",
+    "href": "workshop-09.html",
+    "title": "Fast Apps",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Just a little JavaScript"
+      "Fast Apps"
     ]
   },
   {
-    "objectID": "workshop-06.html#slides",
-    "href": "workshop-06.html#slides",
-    "title": "Just a little JavaScript",
+    "objectID": "workshop-09.html#slides",
+    "href": "workshop-09.html#slides",
+    "title": "Fast Apps",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Just a little JavaScript"
+      "Fast Apps"
     ]
   },
   {
-    "objectID": "workshop-06.html#links",
-    "href": "workshop-06.html#links",
-    "title": "Just a little JavaScript",
-    "section": "Links",
-    "text": "Links\n\nA conversation with ChatGPT 4o",
-    "crumbs": [
-      "Workshop",
-      "Just a little JavaScript"
-    ]
-  },
-  {
-    "objectID": "workshop-04.html",
-    "href": "workshop-04.html",
-    "title": "Code organization",
-    "section": "",
-    "text": "View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Code organization"
-    ]
-  },
-  {
-    "objectID": "workshop-04.html#slides",
-    "href": "workshop-04.html#slides",
-    "title": "Code organization",
-    "section": "",
-    "text": "View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Code organization"
-    ]
-  },
-  {
-    "objectID": "workshop-04.html#packages",
-    "href": "workshop-04.html#packages",
-    "title": "Code organization",
-    "section": "Packages",
-    "text": "Packages\n\nstyler\ngrkstyle",
-    "crumbs": [
-      "Workshop",
-      "Code organization"
-    ]
-  },
-  {
-    "objectID": "workshop-04.html#resources",
-    "href": "workshop-04.html#resources",
-    "title": "Code organization",
+    "objectID": "workshop-09.html#resources",
+    "href": "workshop-09.html#resources",
+    "title": "Fast Apps",
     "section": "Resources",
-    "text": "Resources\n\nHow Developers Choose Names, Dror G. Fietelson\nThe Programmer’s Brain, Felienne Hermans\nExplaining variable, Pete Hodgson\nWhy comment your code as little (and as well) as possible - R-hub blog\nCoding style, coding etiquette - R-hub blog\nCode smells and feels, Jenny Bryan\nThe Art of Readable Code, Dustin Boswell and Trevor Foucher\nRefactoring: Improving the Design of Existing Code, Martin Fowler\nObject of type ‘closure’ is not subsettable, Jenny Bryan (rstudio::conf(2020))",
+    "text": "Resources\n\nShiny - Using caching in Shiny to maximize performance\nShiny - Profiling your Shiny app\nShiny - Performance\nExpandable Sparklines • Value boxes • bslib",
     "crumbs": [
       "Workshop",
-      "Code organization"
+      "Fast Apps"
     ]
   },
   {
-    "objectID": "workshop-01.html",
-    "href": "workshop-01.html",
-    "title": "Welcome and getting started",
+    "objectID": "workshop-05.html",
+    "href": "workshop-05.html",
+    "title": "Modules",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-01.html#slides",
-    "href": "workshop-01.html#slides",
-    "title": "Welcome and getting started",
+    "objectID": "workshop-05.html#slides",
+    "href": "workshop-05.html#slides",
+    "title": "Modules",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-01.html#outline",
-    "href": "workshop-01.html#outline",
-    "title": "Welcome and getting started",
-    "section": "Outline",
-    "text": "Outline\n\nWelcome to posit::conf(2024)!\nIntroductions and meet your neighbors\nAbout the workshop, conference, goals and ground rules",
+    "objectID": "workshop-05.html#packages",
+    "href": "workshop-05.html#packages",
+    "title": "Modules",
+    "section": "Packages",
+    "text": "Packages\n\nusethis",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-01.html#your-turn",
-    "href": "workshop-01.html#your-turn",
-    "title": "Welcome and getting started",
-    "section": "🧑‍💻 Your Turn",
-    "text": "🧑‍💻 Your Turn",
+    "objectID": "workshop-05.html#resources",
+    "href": "workshop-05.html#resources",
+    "title": "Modules",
+    "section": "Resources",
+    "text": "Resources\n\nLeveraging Shiny Modules, Carson Sievert (slides)\nMastering Shiny, Hadley Wickham:\n\nChapter 18 Functions | Mastering Shiny\nChapter 19 Shiny modules | Mastering Shiny\nChapter 20 Packages | Mastering Shiny\n\nR Packages (2nd Edition)\nA beginner’s guide to Shiny modules, Emily Riederer\nShiny Modules in 100 Seconds, Albert Rapp",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modules"
     ]
+  },
+  {
+    "objectID": "workshop-02.html",
+    "href": "workshop-02.html",
+    "title": "Modern layouts with bslib",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Modern layouts with bslib"
+    ]
+  },
+  {
+    "objectID": "workshop-02.html#slides",
+    "href": "workshop-02.html#slides",
+    "title": "Modern layouts with bslib",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Modern layouts with bslib"
+    ]
+  },
+  {
+    "objectID": "workshop-02.html#topic-links",
+    "href": "workshop-02.html#topic-links",
+    "title": "Modern layouts with bslib",
+    "section": "Topic Links",
+    "text": "Topic Links\n\nbslib\nU.S. College Scorecard Data\n\ncollegeScorecard\n\nTheming with bslib\n\nbslib | Get Started | Theming\nbs_theme()\nBootstrap 5 theming variables\n\nbslib page functions\nFilling layouts with bslib\nbslib components:\n\ncard() · Article: Cards\nvalue_box() · Article: Value Boxes\nBuild-A-Box app\n\nbslib sidebar layouts:\n\npage_sidebar()\nsidebar()\nlayout_sidebar()\nArticle: Sidebar Layouts\n\nDetails on demand\n\naccordion()\ntooltip()\npopover()\nArticle: Tooltips and Popovers\n\nIcons\n\nfontawesome · Fontawesome Icons\nbsicons · Bootstrap Icons",
+    "crumbs": [
+      "Workshop",
+      "Modern layouts with bslib"
+    ]
+  },
+  {
+    "objectID": "workshop-02.html#resources",
+    "href": "workshop-02.html#resources",
+    "title": "Modern layouts with bslib",
+    "section": "Resources",
+    "text": "Resources\n\nCarson Sievert: Towards the next generation of Shiny UI (slides) (ShinyConf 2023)\nNext Generation Shiny Apps with {bslib} (Workshop at R/Medicine 2024)",
+    "crumbs": [
+      "Workshop",
+      "Modern layouts with bslib"
+    ]
+  },
+  {
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "Our Team",
+    "section": "",
+    "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
   },
   {
     "objectID": "workshop.html",
     "href": "workshop.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n \n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n \n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n \n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n \n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nThe Reactive Graph\n\n\n \n\n\nMastering reactivity\n\n\n\n\nFast Apps\n\n\n \n\n\nSpeeding up Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n \n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
+    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n \n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n \n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n \n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n \n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nThe Reactive Graph\n\n\n \n\n\nMastering reactivity\n\n\n\n\nFast Apps\n\n\n \n\n\nSpeeding up Shiny apps\n\n\n\n\nExtended Tasks\n\n\n \n\n\nLong running, non-blocking tasks\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n \n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Workshop",
       "Overview"
@@ -696,7 +703,7 @@
     "href": "workshop.html#schedule",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n \n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n \n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n \n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n \n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nThe Reactive Graph\n\n\n \n\n\nMastering reactivity\n\n\n\n\nFast Apps\n\n\n \n\n\nSpeeding up Shiny apps\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n \n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
+    "text": "Title\n\n\ntime\n\n\nDescription\n\n\n\n\n\n\nWelcome and getting started\n\n\n9:00 - 9:15\n\n\nHello and welcome to the workshop!\n\n\n\n\nModern layouts with bslib\n\n\n \n\n\nLevel up your UI with bslib\n\n\n\n\n☕ Break\n\n\n10:30 - 11:00\n\n\n \n\n\n\n\nCode organization\n\n\n \n\n\nOrganizing and writing code for maintainability and readability\n\n\n\n\nModules\n\n\n \n\n\nLevel up your Shiny modules\n\n\n\n\nJust a little JavaScript\n\n\n \n\n\nA spoonful of JavaScript helps the medicine go down\n\n\n\n\n🍱 Lunch\n\n\n12:30 - 13:30\n\n\n \n\n\n\n\nThe Reactive Graph\n\n\n \n\n\nMastering reactivity\n\n\n\n\nFast Apps\n\n\n \n\n\nSpeeding up Shiny apps\n\n\n\n\nExtended Tasks\n\n\n \n\n\nLong running, non-blocking tasks\n\n\n\n\n☕ Break\n\n\n15:00 - 15:30\n\n\n \n\n\n\n\nPush to prod\n\n\n \n\n\nDeploying your app to production\n\n\n\n\nClosing cermonies\n\n\n16:30 - 17:00\n\n\nWrap up, review, survey\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Workshop",
       "Overview"
@@ -816,8 +823,8 @@
     "text": "ChatGPT\nYou’re welcome! If you have any more questions or need further assistance, feel free to ask. Enjoy the rest of your workshop at posit::conf(2024)!"
   },
   {
-    "objectID": "workshop-10-break.html",
-    "href": "workshop-10-break.html",
+    "objectID": "workshop-11-break.html",
+    "href": "workshop-11-break.html",
     "title": "☕ Break",
     "section": "",
     "text": "Image by DALL-E 3",
@@ -827,8 +834,8 @@
     ]
   },
   {
-    "objectID": "workshop-12.html",
-    "href": "workshop-12.html",
+    "objectID": "workshop-13.html",
+    "href": "workshop-13.html",
     "title": "Closing cermonies",
     "section": "",
     "text": "🙏 Thanks for attending! 🙋 Any questions?",
@@ -838,131 +845,164 @@
     ]
   },
   {
-    "objectID": "about/index.html",
-    "href": "about/index.html",
-    "title": "Our Team",
-    "section": "",
-    "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
+    "objectID": "slides/slides-10-extended-tasks.html#long-running-non-blocking-tasks",
+    "href": "slides/slides-10-extended-tasks.html#long-running-non-blocking-tasks",
+    "title": "Extended Tasks",
+    "section": "Long Running, Non-Blocking Tasks",
+    "text": "Long Running, Non-Blocking Tasks"
   },
   {
-    "objectID": "workshop-02.html",
-    "href": "workshop-02.html",
-    "title": "Modern layouts with bslib",
-    "section": "",
-    "text": "View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Modern layouts with bslib"
-    ]
-  },
-  {
-    "objectID": "workshop-02.html#slides",
-    "href": "workshop-02.html#slides",
-    "title": "Modern layouts with bslib",
+    "objectID": "workshop-01.html",
+    "href": "workshop-01.html",
+    "title": "Welcome and getting started",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Welcome and getting started"
     ]
   },
   {
-    "objectID": "workshop-02.html#topic-links",
-    "href": "workshop-02.html#topic-links",
-    "title": "Modern layouts with bslib",
-    "section": "Topic Links",
-    "text": "Topic Links\n\nbslib\nU.S. College Scorecard Data\n\ncollegeScorecard\n\nTheming with bslib\n\nbslib | Get Started | Theming\nbs_theme()\nBootstrap 5 theming variables\n\nbslib page functions\nFilling layouts with bslib\nbslib components:\n\ncard() · Article: Cards\nvalue_box() · Article: Value Boxes\nBuild-A-Box app\n\nbslib sidebar layouts:\n\npage_sidebar()\nsidebar()\nlayout_sidebar()\nArticle: Sidebar Layouts\n\nDetails on demand\n\naccordion()\ntooltip()\npopover()\nArticle: Tooltips and Popovers\n\nIcons\n\nfontawesome · Fontawesome Icons\nbsicons · Bootstrap Icons",
-    "crumbs": [
-      "Workshop",
-      "Modern layouts with bslib"
-    ]
-  },
-  {
-    "objectID": "workshop-02.html#resources",
-    "href": "workshop-02.html#resources",
-    "title": "Modern layouts with bslib",
-    "section": "Resources",
-    "text": "Resources\n\nCarson Sievert: Towards the next generation of Shiny UI (slides) (ShinyConf 2023)\nNext Generation Shiny Apps with {bslib} (Workshop at R/Medicine 2024)",
-    "crumbs": [
-      "Workshop",
-      "Modern layouts with bslib"
-    ]
-  },
-  {
-    "objectID": "workshop-05.html",
-    "href": "workshop-05.html",
-    "title": "Modules",
+    "objectID": "workshop-01.html#slides",
+    "href": "workshop-01.html#slides",
+    "title": "Welcome and getting started",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Welcome and getting started"
     ]
   },
   {
-    "objectID": "workshop-05.html#slides",
-    "href": "workshop-05.html#slides",
-    "title": "Modules",
+    "objectID": "workshop-01.html#outline",
+    "href": "workshop-01.html#outline",
+    "title": "Welcome and getting started",
+    "section": "Outline",
+    "text": "Outline\n\nWelcome to posit::conf(2024)!\nIntroductions and meet your neighbors\nAbout the workshop, conference, goals and ground rules",
+    "crumbs": [
+      "Workshop",
+      "Welcome and getting started"
+    ]
+  },
+  {
+    "objectID": "workshop-01.html#your-turn",
+    "href": "workshop-01.html#your-turn",
+    "title": "Welcome and getting started",
+    "section": "🧑‍💻 Your Turn",
+    "text": "🧑‍💻 Your Turn",
+    "crumbs": [
+      "Workshop",
+      "Welcome and getting started"
+    ]
+  },
+  {
+    "objectID": "workshop-04.html",
+    "href": "workshop-04.html",
+    "title": "Code organization",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-05.html#packages",
-    "href": "workshop-05.html#packages",
-    "title": "Modules",
+    "objectID": "workshop-04.html#slides",
+    "href": "workshop-04.html#slides",
+    "title": "Code organization",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Code organization"
+    ]
+  },
+  {
+    "objectID": "workshop-04.html#packages",
+    "href": "workshop-04.html#packages",
+    "title": "Code organization",
     "section": "Packages",
-    "text": "Packages\n\nusethis",
+    "text": "Packages\n\nstyler\ngrkstyle",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-05.html#resources",
-    "href": "workshop-05.html#resources",
-    "title": "Modules",
+    "objectID": "workshop-04.html#resources",
+    "href": "workshop-04.html#resources",
+    "title": "Code organization",
     "section": "Resources",
-    "text": "Resources\n\nLeveraging Shiny Modules, Carson Sievert (slides)\nMastering Shiny, Hadley Wickham:\n\nChapter 18 Functions | Mastering Shiny\nChapter 19 Shiny modules | Mastering Shiny\nChapter 20 Packages | Mastering Shiny\n\nR Packages (2nd Edition)\nA beginner’s guide to Shiny modules, Emily Riederer\nShiny Modules in 100 Seconds, Albert Rapp",
+    "text": "Resources\n\nHow Developers Choose Names, Dror G. Fietelson\nThe Programmer’s Brain, Felienne Hermans\nExplaining variable, Pete Hodgson\nWhy comment your code as little (and as well) as possible - R-hub blog\nCoding style, coding etiquette - R-hub blog\nCode smells and feels, Jenny Bryan\nThe Art of Readable Code, Dustin Boswell and Trevor Foucher\nRefactoring: Improving the Design of Existing Code, Martin Fowler\nObject of type ‘closure’ is not subsettable, Jenny Bryan (rstudio::conf(2020))",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-09.html",
-    "href": "workshop-09.html",
-    "title": "Fast Apps",
+    "objectID": "workshop-06.html",
+    "href": "workshop-06.html",
+    "title": "Just a little JavaScript",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Fast Apps"
+      "Just a little JavaScript"
     ]
   },
   {
-    "objectID": "workshop-09.html#slides",
-    "href": "workshop-09.html#slides",
-    "title": "Fast Apps",
+    "objectID": "workshop-06.html#slides",
+    "href": "workshop-06.html#slides",
+    "title": "Just a little JavaScript",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Fast Apps"
+      "Just a little JavaScript"
     ]
   },
   {
-    "objectID": "workshop-09.html#resources",
-    "href": "workshop-09.html#resources",
-    "title": "Fast Apps",
-    "section": "Resources",
-    "text": "Resources\n\nExpandable Sparklines • Value boxes • bslib\nShiny - Using caching in Shiny to maximize performance",
+    "objectID": "workshop-06.html#links",
+    "href": "workshop-06.html#links",
+    "title": "Just a little JavaScript",
+    "section": "Links",
+    "text": "Links\n\nA conversation with ChatGPT 4o",
     "crumbs": [
       "Workshop",
-      "Fast Apps"
+      "Just a little JavaScript"
+    ]
+  },
+  {
+    "objectID": "workshop-10.html",
+    "href": "workshop-10.html",
+    "title": "Extended Tasks",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Extended Tasks"
+    ]
+  },
+  {
+    "objectID": "workshop-10.html#slides",
+    "href": "workshop-10.html#slides",
+    "title": "Extended Tasks",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Extended Tasks"
+    ]
+  },
+  {
+    "objectID": "workshop-10.html#resources",
+    "href": "workshop-10.html#resources",
+    "title": "Extended Tasks",
+    "section": "Resources",
+    "text": "Resources\n\nShiny - Non-blocking operations\nYouTube: Managing long-running operations in Shiny | Posit, Joe Cheng\nTask or computation that proceeds in the background — ExtendedTask",
+    "crumbs": [
+      "Workshop",
+      "Extended Tasks"
     ]
   },
   {
