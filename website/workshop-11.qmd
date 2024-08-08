@@ -1,7 +1,0 @@
----
-title: Push to prod
-description: Deploying your app to production
-description-short: Deploying your app to production
-duration: 60min
-# time: 15:30 - 16:30
----

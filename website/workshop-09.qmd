@@ -8,10 +8,15 @@ duration: 30min
 
 ## Slides
 
-{{< revealjs "slides/slides-08-reactivity.html" class="ratio ratio-16x9" >}}
+{{< revealjs "slides/slides-09-fast-apps.html" class="ratio ratio-16x9" >}}
 
 ## Resources
 
+* [Shiny - Using caching in Shiny to maximize performance](https://shiny.posit.co/r/articles/improve/caching/)
+
+* [Shiny - Profiling your Shiny app](https://shiny.posit.co/r/articles/improve/profiling/)
+
+* [Shiny - Performance](https://shiny.posit.co/r/articles/improve/performance/)
+
 * [Expandable Sparklines • Value boxes • bslib](https://rstudio.github.io/bslib/articles/value-boxes/index.html#expandable-sparklines)
 
-* [Shiny - Using caching in Shiny to maximize performance](https://shiny.posit.co/r/articles/improve/caching/)

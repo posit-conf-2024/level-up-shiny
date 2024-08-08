@@ -1,0 +1,14 @@
+---
+title: Closing cermonies
+description: Wrap up, review, survey
+description-short: Wrap up, review, survey
+duration: 30min
+time: 16:30 - 17:00
+---
+
+::: lead
+🙏 Thanks for attending!<br>
+🙋 Any questions?
+:::
+
+<!-- FIXME link to survey -->

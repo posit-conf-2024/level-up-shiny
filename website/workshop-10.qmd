@@ -1,0 +1,19 @@
+---
+title: Extended Tasks
+description: Long running, non-blocking tasks
+description-short: Long running, non-blocking tasks
+duration: 30min
+# time: 14:00
+---
+
+## Slides
+
+{{< revealjs "slides/slides-10-extended-tasks.html" class="ratio ratio-16x9" >}}
+
+## Resources
+
+* [Shiny - Non-blocking operations](https://shiny.posit.co/r/articles/improve/nonblocking/)
+
+* [YouTube: Managing long-running operations in Shiny | Posit](https://www.youtube.com/watch?v=GhX0PcEm3CY), Joe Cheng
+
+* [Task or computation that proceeds in the background — ExtendedTask](https://shiny.posit.co/r/reference/shiny/latest/extendedtask)

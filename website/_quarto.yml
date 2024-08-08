@@ -79,10 +79,11 @@ website:
         - text: '<div class="sidebar-divider font-monospace">Afternoon 1</div>'
         - workshop-08.qmd
         - workshop-09.qmd
-        - workshop-10-break.qmd
+        - workshop-10.qmd
+        - workshop-11-break.qmd
         - text: '<div class="sidebar-divider font-monospace">Afternoon 2</div>'
-        - workshop-11.qmd
         - workshop-12.qmd
+        - workshop-13.qmd
 
 format:
   html:
