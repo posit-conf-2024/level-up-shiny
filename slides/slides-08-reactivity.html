@@ -436,7 +436,7 @@
 </section>
 <section id="your-turn-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn (with a partner)</h2>
-<div id="timer_e46f58e0aeda0b9b65d8ac5dc0a28c732ec611ea" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_6b56f3c9f7350cd1c5aa88054a815b0330ab0529" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -623,85 +623,91 @@ to add markers in the timeline.</p>
 <span id="cb2-3"><a></a>#| viewerHeight: "100%"</span>
 <span id="cb2-4"><a></a></span>
 <span id="cb2-5"><a></a>library(shiny)</span>
-<span id="cb2-6"><a></a>library(collegeScorecard)</span>
-<span id="cb2-7"><a></a>library(bslib)</span>
-<span id="cb2-8"><a></a>library(dplyr)</span>
+<span id="cb2-6"><a></a>library(bslib)</span>
+<span id="cb2-7"><a></a>library(dplyr)</span>
+<span id="cb2-8"><a></a>library(collegeScorecard)</span>
 <span id="cb2-9"><a></a>reactlog::reactlog_enable()</span>
 <span id="cb2-10"><a></a></span>
-<span id="cb2-11"><a></a># UI</span>
-<span id="cb2-12"><a></a>ui &lt;- page_sidebar(</span>
-<span id="cb2-13"><a></a>  theme = bs_theme(version = 5),</span>
-<span id="cb2-14"><a></a>  title = "College Affordability Analyzer",</span>
-<span id="cb2-15"><a></a>  fill = FALSE,</span>
-<span id="cb2-16"><a></a>  sidebar = sidebar(</span>
-<span id="cb2-17"><a></a>    open = list(mobile = "always-above"),</span>
-<span id="cb2-18"><a></a>    selectInput("state", "State", choices = setNames(state.abb, state.name), selected = "WA"),</span>
-<span id="cb2-19"><a></a>    sliderInput("sat_score", "Minimum SAT Score", min = 800, max = 1200, value = 1000, step = 10),</span>
-<span id="cb2-20"><a></a>    radioButtons(</span>
-<span id="cb2-21"><a></a>      "income_bracket",</span>
-<span id="cb2-22"><a></a>      "Income Bracket",</span>
-<span id="cb2-23"><a></a>      inline = TRUE,</span>
-<span id="cb2-24"><a></a>      choices = c(</span>
-<span id="cb2-25"><a></a>        "&lt; $30k" = "cost_avg_income_0_30k",</span>
-<span id="cb2-26"><a></a>        "$30 - $48k" = "cost_avg_income_30_48k",</span>
-<span id="cb2-27"><a></a>        "$48 - $75k" = "cost_avg_income_48_75k",</span>
-<span id="cb2-28"><a></a>        "$75 - $110k" = "cost_avg_income_75_110k",</span>
-<span id="cb2-29"><a></a>        "$110k+" = "cost_avg_income_110k_plus"</span>
-<span id="cb2-30"><a></a>      )</span>
-<span id="cb2-31"><a></a>    )</span>
-<span id="cb2-32"><a></a>  ),</span>
-<span id="cb2-33"><a></a>  value_box(</span>
-<span id="cb2-34"><a></a>    "Average 10-year Median Earnings",</span>
-<span id="cb2-35"><a></a>    textOutput("txt_avg_output"),</span>
-<span id="cb2-36"><a></a>    showcase = bsicons::bs_icon("wallet-fill")</span>
-<span id="cb2-37"><a></a>  ),</span>
-<span id="cb2-38"><a></a>  value_box(</span>
-<span id="cb2-39"><a></a>    "Average 4-year Cost",</span>
-<span id="cb2-40"><a></a>    textOutput("txt_four_year_cost"),</span>
-<span id="cb2-41"><a></a>    "For the selected income bracket",</span>
-<span id="cb2-42"><a></a>    showcase = bsicons::bs_icon("cash-stack")</span>
-<span id="cb2-43"><a></a>  ),</span>
-<span id="cb2-44"><a></a>  reactlog::reactlog_module_ui()</span>
-<span id="cb2-45"><a></a>)</span>
-<span id="cb2-46"><a></a></span>
-<span id="cb2-47"><a></a># Server</span>
-<span id="cb2-48"><a></a>server &lt;- function(input, output, session) {</span>
-<span id="cb2-49"><a></a>  reactlog::reactlog_module_server()</span>
-<span id="cb2-50"><a></a>  </span>
-<span id="cb2-51"><a></a>  filtered_data &lt;- reactive({</span>
-<span id="cb2-52"><a></a>    scorecard |&gt;</span>
-<span id="cb2-53"><a></a>      filter(</span>
-<span id="cb2-54"><a></a>        academic_year == "2020-21",</span>
-<span id="cb2-55"><a></a>        !is.na(cost_avg),</span>
-<span id="cb2-56"><a></a>        !is.na(amnt_earnings_med_10y)</span>
-<span id="cb2-57"><a></a>      ) |&gt;</span>
-<span id="cb2-58"><a></a>      select(id, cost_avg, amnt_earnings_med_10y, score_sat_avg, starts_with("cost_avg_income")) |&gt;</span>
-<span id="cb2-59"><a></a>      left_join(school, by = join_by(id)) |&gt;</span>
-<span id="cb2-60"><a></a>      filter(</span>
-<span id="cb2-61"><a></a>        state == input$state,</span>
-<span id="cb2-62"><a></a>        score_sat_avg &gt;= input$sat_score</span>
-<span id="cb2-63"><a></a>      )</span>
-<span id="cb2-64"><a></a>  })</span>
-<span id="cb2-65"><a></a></span>
-<span id="cb2-66"><a></a>  output$txt_avg_output &lt;- renderText({</span>
-<span id="cb2-67"><a></a>    filtered_data() |&gt;</span>
-<span id="cb2-68"><a></a>      pull(amnt_earnings_med_10y) |&gt;</span>
-<span id="cb2-69"><a></a>      mean(na.rm = TRUE) |&gt; </span>
-<span id="cb2-70"><a></a>      scales::dollar(accuracy = 10)</span>
-<span id="cb2-71"><a></a>  })</span>
-<span id="cb2-72"><a></a></span>
-<span id="cb2-73"><a></a>  output$txt_four_year_cost &lt;- renderText({</span>
-<span id="cb2-74"><a></a>    avg_cost &lt;- </span>
-<span id="cb2-75"><a></a>      filtered_data() |&gt;</span>
-<span id="cb2-76"><a></a>      pull(!!input$income_bracket) |&gt;</span>
-<span id="cb2-77"><a></a>      mean(na.rm = TRUE)</span>
+<span id="cb2-11"><a></a></span>
+<span id="cb2-12"><a></a># UI ----------------------------------------------------------------------</span>
+<span id="cb2-13"><a></a></span>
+<span id="cb2-14"><a></a>ui &lt;- page_sidebar(</span>
+<span id="cb2-15"><a></a>  theme = bs_theme(version = 5),</span>
+<span id="cb2-16"><a></a>  title = "College Affordability Analyzer",</span>
+<span id="cb2-17"><a></a>  fill = FALSE,</span>
+<span id="cb2-18"><a></a>  sidebar = sidebar(</span>
+<span id="cb2-19"><a></a>    open = list(mobile = "always-above"),</span>
+<span id="cb2-20"><a></a>    selectInput("state", "State", choices = setNames(state.abb, state.name), selected = "WA"),</span>
+<span id="cb2-21"><a></a>    sliderInput("sat_score", "Minimum SAT Score", min = 800, max = 1200, value = 1000, step = 10),</span>
+<span id="cb2-22"><a></a>    radioButtons(</span>
+<span id="cb2-23"><a></a>      "income_bracket",</span>
+<span id="cb2-24"><a></a>      "Income Bracket",</span>
+<span id="cb2-25"><a></a>      inline = TRUE,</span>
+<span id="cb2-26"><a></a>      choices = c(</span>
+<span id="cb2-27"><a></a>        "&lt; $30k" = "cost_avg_income_0_30k",</span>
+<span id="cb2-28"><a></a>        "$30 - $48k" = "cost_avg_income_30_48k",</span>
+<span id="cb2-29"><a></a>        "$48 - $75k" = "cost_avg_income_48_75k",</span>
+<span id="cb2-30"><a></a>        "$75 - $110k" = "cost_avg_income_75_110k",</span>
+<span id="cb2-31"><a></a>        "$110k+" = "cost_avg_income_110k_plus"</span>
+<span id="cb2-32"><a></a>      )</span>
+<span id="cb2-33"><a></a>    )</span>
+<span id="cb2-34"><a></a>  ),</span>
+<span id="cb2-35"><a></a>  value_box(</span>
+<span id="cb2-36"><a></a>    "Average 10-year Median Earnings",</span>
+<span id="cb2-37"><a></a>    textOutput("txt_amnt_earnings"),</span>
+<span id="cb2-38"><a></a>    showcase = bsicons::bs_icon("wallet-fill")</span>
+<span id="cb2-39"><a></a>  ),</span>
+<span id="cb2-40"><a></a>  value_box(</span>
+<span id="cb2-41"><a></a>    "Average 4-year Cost",</span>
+<span id="cb2-42"><a></a>    textOutput("txt_four_year_cost"),</span>
+<span id="cb2-43"><a></a>    "For the selected income bracket",</span>
+<span id="cb2-44"><a></a>    showcase = bsicons::bs_icon("cash-stack")</span>
+<span id="cb2-45"><a></a>  ),</span>
+<span id="cb2-46"><a></a>  card(</span>
+<span id="cb2-47"><a></a>    reactlog::reactlog_module_ui()</span>
+<span id="cb2-48"><a></a>  )</span>
+<span id="cb2-49"><a></a>)</span>
+<span id="cb2-50"><a></a></span>
+<span id="cb2-51"><a></a></span>
+<span id="cb2-52"><a></a># Server ------------------------------------------------------------------</span>
+<span id="cb2-53"><a></a></span>
+<span id="cb2-54"><a></a>server &lt;- function(input, output, session) {</span>
+<span id="cb2-55"><a></a>  reactlog::reactlog_module_server()</span>
+<span id="cb2-56"><a></a>  </span>
+<span id="cb2-57"><a></a>  filtered_data &lt;- reactive({</span>
+<span id="cb2-58"><a></a>    scorecard |&gt;</span>
+<span id="cb2-59"><a></a>      filter(</span>
+<span id="cb2-60"><a></a>        academic_year == "2020-21",</span>
+<span id="cb2-61"><a></a>        !is.na(cost_avg),</span>
+<span id="cb2-62"><a></a>        !is.na(amnt_earnings_med_10y)</span>
+<span id="cb2-63"><a></a>      ) |&gt;</span>
+<span id="cb2-64"><a></a>      select(id, cost_avg, amnt_earnings_med_10y, score_sat_avg, starts_with("cost_avg_income")) |&gt;</span>
+<span id="cb2-65"><a></a>      left_join(school, by = join_by(id)) |&gt;</span>
+<span id="cb2-66"><a></a>      filter(</span>
+<span id="cb2-67"><a></a>        state == input$state,</span>
+<span id="cb2-68"><a></a>        score_sat_avg &gt;= input$sat_score</span>
+<span id="cb2-69"><a></a>      )</span>
+<span id="cb2-70"><a></a>  })</span>
+<span id="cb2-71"><a></a></span>
+<span id="cb2-72"><a></a>  output$txt_amnt_earnings &lt;- renderText({</span>
+<span id="cb2-73"><a></a>    filtered_data() |&gt;</span>
+<span id="cb2-74"><a></a>      pull(amnt_earnings_med_10y) |&gt;</span>
+<span id="cb2-75"><a></a>      mean(na.rm = TRUE) |&gt; </span>
+<span id="cb2-76"><a></a>      scales::dollar(accuracy = 10)</span>
+<span id="cb2-77"><a></a>  })</span>
 <span id="cb2-78"><a></a></span>
-<span id="cb2-79"><a></a>    scales::dollar(avg_cost * 4, accuracy = 10)</span>
-<span id="cb2-80"><a></a>  })</span>
-<span id="cb2-81"><a></a>}</span>
-<span id="cb2-82"><a></a></span>
-<span id="cb2-83"><a></a># Run the app</span>
-<span id="cb2-84"><a></a>shinyApp(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-79"><a></a>  output$txt_four_year_cost &lt;- renderText({</span>
+<span id="cb2-80"><a></a>    avg_cost &lt;- </span>
+<span id="cb2-81"><a></a>      filtered_data() |&gt;</span>
+<span id="cb2-82"><a></a>      pull(!!input$income_bracket) |&gt;</span>
+<span id="cb2-83"><a></a>      mean(na.rm = TRUE)</span>
+<span id="cb2-84"><a></a></span>
+<span id="cb2-85"><a></a>    scales::dollar(avg_cost * 4, accuracy = 10)</span>
+<span id="cb2-86"><a></a>  })</span>
+<span id="cb2-87"><a></a>}</span>
+<span id="cb2-88"><a></a></span>
+<span id="cb2-89"><a></a></span>
+<span id="cb2-90"><a></a>shinyApp(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="section-1" class="slide level2 fullscreen">
 <h2></h2>
@@ -710,95 +716,97 @@ to add markers in the timeline.</p>
 <span id="cb3-3"><a></a>#| viewerHeight: "100%"</span>
 <span id="cb3-4"><a></a></span>
 <span id="cb3-5"><a></a>library(shiny)</span>
-<span id="cb3-6"><a></a>library(collegeScorecard)</span>
-<span id="cb3-7"><a></a>library(bslib)</span>
-<span id="cb3-8"><a></a>library(dplyr)</span>
+<span id="cb3-6"><a></a>library(bslib)</span>
+<span id="cb3-7"><a></a>library(dplyr)</span>
+<span id="cb3-8"><a></a>library(collegeScorecard)</span>
 <span id="cb3-9"><a></a>reactlog::reactlog_enable()</span>
 <span id="cb3-10"><a></a></span>
-<span id="cb3-11"><a></a># UI</span>
-<span id="cb3-12"><a></a>ui &lt;- page_sidebar(</span>
-<span id="cb3-13"><a></a>  theme = bs_theme(version = 5),</span>
-<span id="cb3-14"><a></a>  title = "College Affordability Analyzer",</span>
-<span id="cb3-15"><a></a>  sidebar = sidebar(</span>
-<span id="cb3-16"><a></a>    open = list(mobile = "always-above"),</span>
-<span id="cb3-17"><a></a>    selectInput("state", "State", choices = setNames(state.abb, state.name), selected = "WA"),</span>
-<span id="cb3-18"><a></a>    sliderInput("sat_score", "Minimum SAT Score", min = 800, max = 1200, value = 1000, step = 10),</span>
-<span id="cb3-19"><a></a>    input_switch("by_income_bracket", "By Income Bracket", value = TRUE),</span>
-<span id="cb3-20"><a></a>    radioButtons(</span>
-<span id="cb3-21"><a></a>      "income_bracket",</span>
-<span id="cb3-22"><a></a>      "Income Bracket",</span>
-<span id="cb3-23"><a></a>      inline = TRUE,</span>
-<span id="cb3-24"><a></a>      choices = c(</span>
-<span id="cb3-25"><a></a>        "&lt; $30k" = "cost_avg_income_0_30k",</span>
-<span id="cb3-26"><a></a>        "$30 - $48k" = "cost_avg_income_30_48k",</span>
-<span id="cb3-27"><a></a>        "$48 - $75k" = "cost_avg_income_48_75k",</span>
-<span id="cb3-28"><a></a>        "$75 - $110k" = "cost_avg_income_75_110k",</span>
-<span id="cb3-29"><a></a>        "$110k+" = "cost_avg_income_110k_plus"</span>
-<span id="cb3-30"><a></a>      )</span>
-<span id="cb3-31"><a></a>    )</span>
-<span id="cb3-32"><a></a>  ),</span>
-<span id="cb3-33"><a></a>  value_box(</span>
-<span id="cb3-34"><a></a>    "Average 10-year Median Earnings",</span>
-<span id="cb3-35"><a></a>    textOutput("txt_avg_output"),</span>
-<span id="cb3-36"><a></a>    showcase = bsicons::bs_icon("wallet-fill"),</span>
-<span id="cb3-37"><a></a>    fill = FALSE</span>
-<span id="cb3-38"><a></a>  ),</span>
-<span id="cb3-39"><a></a>  value_box(</span>
-<span id="cb3-40"><a></a>    "Average 4-year Cost",</span>
-<span id="cb3-41"><a></a>    textOutput("txt_four_year_cost"),</span>
-<span id="cb3-42"><a></a>    "For the selected income bracket",</span>
-<span id="cb3-43"><a></a>    showcase = bsicons::bs_icon("cash-stack"),</span>
-<span id="cb3-44"><a></a>    fill = FALSE</span>
-<span id="cb3-45"><a></a>  ),</span>
-<span id="cb3-46"><a></a>  card(</span>
-<span id="cb3-47"><a></a>    reactlog::reactlog_module_ui()</span>
-<span id="cb3-48"><a></a>  )</span>
-<span id="cb3-49"><a></a>)</span>
-<span id="cb3-50"><a></a></span>
-<span id="cb3-51"><a></a># Server</span>
-<span id="cb3-52"><a></a>server &lt;- function(input, output, session) {</span>
-<span id="cb3-53"><a></a>  reactlog::reactlog_module_server(height = "100%")</span>
-<span id="cb3-54"><a></a>  </span>
-<span id="cb3-55"><a></a>  filtered_data &lt;- reactive({</span>
-<span id="cb3-56"><a></a>    scorecard |&gt;</span>
-<span id="cb3-57"><a></a>      filter(</span>
-<span id="cb3-58"><a></a>        academic_year == "2020-21",</span>
-<span id="cb3-59"><a></a>        !is.na(cost_avg),</span>
-<span id="cb3-60"><a></a>        !is.na(amnt_earnings_med_10y)</span>
-<span id="cb3-61"><a></a>      ) |&gt;</span>
-<span id="cb3-62"><a></a>      select(id, amnt_earnings_med_10y, score_sat_avg, starts_with("cost_avg")) |&gt;</span>
-<span id="cb3-63"><a></a>      left_join(school, by = join_by(id)) |&gt;</span>
-<span id="cb3-64"><a></a>      filter(</span>
-<span id="cb3-65"><a></a>        state == input$state,</span>
-<span id="cb3-66"><a></a>        score_sat_avg &gt;= input$sat_score</span>
-<span id="cb3-67"><a></a>      )</span>
-<span id="cb3-68"><a></a>  })</span>
-<span id="cb3-69"><a></a></span>
-<span id="cb3-70"><a></a>  output$txt_avg_output &lt;- renderText({</span>
-<span id="cb3-71"><a></a>    filtered_data() |&gt;</span>
-<span id="cb3-72"><a></a>      pull(amnt_earnings_med_10y) |&gt;</span>
-<span id="cb3-73"><a></a>      mean(na.rm = TRUE) |&gt; </span>
-<span id="cb3-74"><a></a>      scales::dollar(accuracy = 10)</span>
-<span id="cb3-75"><a></a>  })</span>
-<span id="cb3-76"><a></a></span>
-<span id="cb3-77"><a></a>  output$txt_four_year_cost &lt;- renderText({</span>
-<span id="cb3-78"><a></a>    cost_var &lt;- if (input$by_income_bracket) {</span>
-<span id="cb3-79"><a></a>      input$income_bracket</span>
-<span id="cb3-80"><a></a>    } else {</span>
-<span id="cb3-81"><a></a>      "cost_avg"</span>
-<span id="cb3-82"><a></a>    }</span>
-<span id="cb3-83"><a></a></span>
-<span id="cb3-84"><a></a>    avg_cost &lt;- </span>
-<span id="cb3-85"><a></a>      filtered_data() |&gt;</span>
-<span id="cb3-86"><a></a>      pull(!!cost_var) |&gt;</span>
-<span id="cb3-87"><a></a>      mean(na.rm = TRUE)</span>
-<span id="cb3-88"><a></a></span>
-<span id="cb3-89"><a></a>    scales::dollar(avg_cost * 4, accuracy = 10)</span>
-<span id="cb3-90"><a></a>  })</span>
-<span id="cb3-91"><a></a>}</span>
-<span id="cb3-92"><a></a></span>
-<span id="cb3-93"><a></a># Run the app</span>
-<span id="cb3-94"><a></a>shinyApp(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-11"><a></a></span>
+<span id="cb3-12"><a></a># UI ----------------------------------------------------------------------</span>
+<span id="cb3-13"><a></a></span>
+<span id="cb3-14"><a></a>ui &lt;- page_sidebar(</span>
+<span id="cb3-15"><a></a>  theme = bs_theme(version = 5),</span>
+<span id="cb3-16"><a></a>  title = "College Affordability Analyzer",</span>
+<span id="cb3-17"><a></a>  sidebar = sidebar(</span>
+<span id="cb3-18"><a></a>    open = list(mobile = "always-above"),</span>
+<span id="cb3-19"><a></a>    selectInput("state", "State", choices = setNames(state.abb, state.name), selected = "WA"),</span>
+<span id="cb3-20"><a></a>    sliderInput("sat_score", "Minimum SAT Score", min = 800, max = 1200, value = 1000, step = 10),</span>
+<span id="cb3-21"><a></a>    input_switch("by_income_bracket", "By Income Bracket", value = TRUE),</span>
+<span id="cb3-22"><a></a>    radioButtons(</span>
+<span id="cb3-23"><a></a>      "income_bracket",</span>
+<span id="cb3-24"><a></a>      "Income Bracket",</span>
+<span id="cb3-25"><a></a>      inline = TRUE,</span>
+<span id="cb3-26"><a></a>      choices = c(</span>
+<span id="cb3-27"><a></a>        "&lt; $30k" = "cost_avg_income_0_30k",</span>
+<span id="cb3-28"><a></a>        "$30 - $48k" = "cost_avg_income_30_48k",</span>
+<span id="cb3-29"><a></a>        "$48 - $75k" = "cost_avg_income_48_75k",</span>
+<span id="cb3-30"><a></a>        "$75 - $110k" = "cost_avg_income_75_110k",</span>
+<span id="cb3-31"><a></a>        "$110k+" = "cost_avg_income_110k_plus"</span>
+<span id="cb3-32"><a></a>      )</span>
+<span id="cb3-33"><a></a>    )</span>
+<span id="cb3-34"><a></a>  ),</span>
+<span id="cb3-35"><a></a>  value_box(</span>
+<span id="cb3-36"><a></a>    "Average 10-year Median Earnings",</span>
+<span id="cb3-37"><a></a>    textOutput("txt_amnt_earnings"),</span>
+<span id="cb3-38"><a></a>    showcase = bsicons::bs_icon("wallet-fill"),</span>
+<span id="cb3-39"><a></a>    fill = FALSE</span>
+<span id="cb3-40"><a></a>  ),</span>
+<span id="cb3-41"><a></a>  value_box(</span>
+<span id="cb3-42"><a></a>    "Average 4-year Cost",</span>
+<span id="cb3-43"><a></a>    textOutput("txt_four_year_cost"),</span>
+<span id="cb3-44"><a></a>    "For the selected income bracket",</span>
+<span id="cb3-45"><a></a>    showcase = bsicons::bs_icon("cash-stack"),</span>
+<span id="cb3-46"><a></a>    fill = FALSE</span>
+<span id="cb3-47"><a></a>  ),</span>
+<span id="cb3-48"><a></a>  card(</span>
+<span id="cb3-49"><a></a>    reactlog::reactlog_module_ui()</span>
+<span id="cb3-50"><a></a>  )</span>
+<span id="cb3-51"><a></a>)</span>
+<span id="cb3-52"><a></a></span>
+<span id="cb3-53"><a></a># Server ------------------------------------------------------------------</span>
+<span id="cb3-54"><a></a>server &lt;- function(input, output, session) {</span>
+<span id="cb3-55"><a></a>  reactlog::reactlog_module_server(height = "100%")</span>
+<span id="cb3-56"><a></a></span>
+<span id="cb3-57"><a></a>  filtered_data &lt;- reactive({</span>
+<span id="cb3-58"><a></a>    scorecard |&gt;</span>
+<span id="cb3-59"><a></a>      filter(</span>
+<span id="cb3-60"><a></a>        academic_year == "2020-21",</span>
+<span id="cb3-61"><a></a>        !is.na(cost_avg),</span>
+<span id="cb3-62"><a></a>        !is.na(amnt_earnings_med_10y)</span>
+<span id="cb3-63"><a></a>      ) |&gt;</span>
+<span id="cb3-64"><a></a>      select(id, amnt_earnings_med_10y, score_sat_avg, starts_with("cost_avg")) |&gt;</span>
+<span id="cb3-65"><a></a>      left_join(school, by = join_by(id)) |&gt;</span>
+<span id="cb3-66"><a></a>      filter(</span>
+<span id="cb3-67"><a></a>        state == input$state,</span>
+<span id="cb3-68"><a></a>        score_sat_avg &gt;= input$sat_score</span>
+<span id="cb3-69"><a></a>      )</span>
+<span id="cb3-70"><a></a>  })</span>
+<span id="cb3-71"><a></a></span>
+<span id="cb3-72"><a></a>  output$txt_amnt_earnings &lt;- renderText({</span>
+<span id="cb3-73"><a></a>    filtered_data() |&gt;</span>
+<span id="cb3-74"><a></a>      pull(amnt_earnings_med_10y) |&gt;</span>
+<span id="cb3-75"><a></a>      mean(na.rm = TRUE) |&gt; </span>
+<span id="cb3-76"><a></a>      scales::dollar(accuracy = 10)</span>
+<span id="cb3-77"><a></a>  })</span>
+<span id="cb3-78"><a></a></span>
+<span id="cb3-79"><a></a>  output$txt_four_year_cost &lt;- renderText({</span>
+<span id="cb3-80"><a></a>    cost_var &lt;- if (input$by_income_bracket) {</span>
+<span id="cb3-81"><a></a>      input$income_bracket</span>
+<span id="cb3-82"><a></a>    } else {</span>
+<span id="cb3-83"><a></a>      "cost_avg"</span>
+<span id="cb3-84"><a></a>    }</span>
+<span id="cb3-85"><a></a></span>
+<span id="cb3-86"><a></a>    avg_cost &lt;- </span>
+<span id="cb3-87"><a></a>      filtered_data() |&gt;</span>
+<span id="cb3-88"><a></a>      pull(!!cost_var) |&gt;</span>
+<span id="cb3-89"><a></a>      mean(na.rm = TRUE)</span>
+<span id="cb3-90"><a></a></span>
+<span id="cb3-91"><a></a>    scales::dollar(avg_cost * 4, accuracy = 10)</span>
+<span id="cb3-92"><a></a>  })</span>
+<span id="cb3-93"><a></a>}</span>
+<span id="cb3-94"><a></a></span>
+<span id="cb3-95"><a></a></span>
+<span id="cb3-96"><a></a>shinyApp(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="your-turn-1" class="title-slide slide level1 middle center">
@@ -807,7 +815,7 @@ to add markers in the timeline.</p>
 </section>
 <section id="your-turn-2-inst" class="slide level2">
 <h2>Invent this app</h2>
-<div id="timer_e46f58e0aeda0b9b65d8ac5dc0a28c732ec611ea" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_6b56f3c9f7350cd1c5aa88054a815b0330ab0529" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -846,97 +854,101 @@ Extra bits
 <span id="cb5-3"><a></a>#| viewerHeight: "100%"</span>
 <span id="cb5-4"><a></a></span>
 <span id="cb5-5"><a></a>library(shiny)</span>
-<span id="cb5-6"><a></a>library(collegeScorecard)</span>
-<span id="cb5-7"><a></a>library(bslib)</span>
-<span id="cb5-8"><a></a>library(dplyr)</span>
+<span id="cb5-6"><a></a>library(bslib)</span>
+<span id="cb5-7"><a></a>library(dplyr)</span>
+<span id="cb5-8"><a></a>library(collegeScorecard)</span>
 <span id="cb5-9"><a></a>reactlog::reactlog_enable()</span>
 <span id="cb5-10"><a></a></span>
-<span id="cb5-11"><a></a># UI</span>
-<span id="cb5-12"><a></a>ui &lt;- page_sidebar(</span>
-<span id="cb5-13"><a></a>  theme = bs_theme(version = 5),</span>
-<span id="cb5-14"><a></a>  title = "College Affordability Analyzer",</span>
-<span id="cb5-15"><a></a>  sidebar = sidebar(</span>
-<span id="cb5-16"><a></a>    open = list(mobile = "always-above"),</span>
-<span id="cb5-17"><a></a>    selectInput("state", "State", choices = setNames(state.abb, state.name), selected = "WA"),</span>
-<span id="cb5-18"><a></a>    sliderInput("sat_score", "Minimum SAT Score", min = 800, max = 1200, value = 1000, step = 10),</span>
-<span id="cb5-19"><a></a>    input_switch("by_income_bracket", "By Income Bracket", value = TRUE),</span>
-<span id="cb5-20"><a></a>    radioButtons(</span>
-<span id="cb5-21"><a></a>      "income_bracket",</span>
-<span id="cb5-22"><a></a>      "Income Bracket",</span>
-<span id="cb5-23"><a></a>      inline = TRUE,</span>
-<span id="cb5-24"><a></a>      choices = c(</span>
-<span id="cb5-25"><a></a>        "&lt; $30k" = "cost_avg_income_0_30k",</span>
-<span id="cb5-26"><a></a>        "$30 - $48k" = "cost_avg_income_30_48k",</span>
-<span id="cb5-27"><a></a>        "$48 - $75k" = "cost_avg_income_48_75k",</span>
-<span id="cb5-28"><a></a>        "$75 - $110k" = "cost_avg_income_75_110k",</span>
-<span id="cb5-29"><a></a>        "$110k+" = "cost_avg_income_110k_plus"</span>
-<span id="cb5-30"><a></a>      )</span>
-<span id="cb5-31"><a></a>    )</span>
-<span id="cb5-32"><a></a>  ),</span>
-<span id="cb5-33"><a></a>  value_box(</span>
-<span id="cb5-34"><a></a>    "Average 10-year Median Earnings",</span>
-<span id="cb5-35"><a></a>    textOutput("txt_avg_output"),</span>
-<span id="cb5-36"><a></a>    showcase = bsicons::bs_icon("wallet-fill"),</span>
-<span id="cb5-37"><a></a>    fill = FALSE</span>
-<span id="cb5-38"><a></a>  ),</span>
-<span id="cb5-39"><a></a>  value_box(</span>
-<span id="cb5-40"><a></a>    "Average 4-year Cost",</span>
-<span id="cb5-41"><a></a>    textOutput("txt_four_year_cost"),</span>
-<span id="cb5-42"><a></a>    "For the selected income bracket",</span>
-<span id="cb5-43"><a></a>    showcase = bsicons::bs_icon("cash-stack"),</span>
-<span id="cb5-44"><a></a>    fill = FALSE</span>
-<span id="cb5-45"><a></a>  ),</span>
-<span id="cb5-46"><a></a>  card(</span>
-<span id="cb5-47"><a></a>    reactlog::reactlog_module_ui()</span>
-<span id="cb5-48"><a></a>  )</span>
-<span id="cb5-49"><a></a>)</span>
-<span id="cb5-50"><a></a></span>
-<span id="cb5-51"><a></a># Server</span>
-<span id="cb5-52"><a></a>server &lt;- function(input, output, session) {</span>
-<span id="cb5-53"><a></a>  reactlog::reactlog_module_server(height = "100%")</span>
-<span id="cb5-54"><a></a>  </span>
-<span id="cb5-55"><a></a>  filtered_data &lt;- reactive({</span>
-<span id="cb5-56"><a></a>    scorecard |&gt;</span>
-<span id="cb5-57"><a></a>      filter(</span>
-<span id="cb5-58"><a></a>        academic_year == "2020-21",</span>
-<span id="cb5-59"><a></a>        !is.na(cost_avg),</span>
-<span id="cb5-60"><a></a>        !is.na(amnt_earnings_med_10y)</span>
-<span id="cb5-61"><a></a>      ) |&gt;</span>
-<span id="cb5-62"><a></a>      select(id, amnt_earnings_med_10y, score_sat_avg, starts_with("cost_avg")) |&gt;</span>
-<span id="cb5-63"><a></a>      left_join(school, by = join_by(id)) |&gt;</span>
-<span id="cb5-64"><a></a>      filter(</span>
-<span id="cb5-65"><a></a>        state == input$state,</span>
-<span id="cb5-66"><a></a>        score_sat_avg &gt;= input$sat_score</span>
-<span id="cb5-67"><a></a>      )</span>
-<span id="cb5-68"><a></a>  })</span>
-<span id="cb5-69"><a></a></span>
-<span id="cb5-70"><a></a>  observeEvent(input$state, {</span>
-<span id="cb5-71"><a></a>    output$txt_avg_output &lt;- renderText({</span>
-<span id="cb5-72"><a></a>      filtered_data() |&gt;</span>
-<span id="cb5-73"><a></a>        pull(amnt_earnings_med_10y) |&gt;</span>
-<span id="cb5-74"><a></a>        mean(na.rm = TRUE) |&gt;</span>
-<span id="cb5-75"><a></a>        scales::dollar(accuracy = 10)</span>
-<span id="cb5-76"><a></a>    })</span>
-<span id="cb5-77"><a></a>  })</span>
-<span id="cb5-78"><a></a></span>
-<span id="cb5-79"><a></a>  output$txt_four_year_cost &lt;- renderText({</span>
-<span id="cb5-80"><a></a>    cost_var &lt;- if (input$by_income_bracket) {</span>
-<span id="cb5-81"><a></a>      input$income_bracket</span>
-<span id="cb5-82"><a></a>    } else {</span>
-<span id="cb5-83"><a></a>      "cost_avg"</span>
-<span id="cb5-84"><a></a>    }</span>
-<span id="cb5-85"><a></a></span>
-<span id="cb5-86"><a></a>    avg_cost &lt;- </span>
-<span id="cb5-87"><a></a>      filtered_data() |&gt;</span>
-<span id="cb5-88"><a></a>      pull(!!cost_var) |&gt;</span>
-<span id="cb5-89"><a></a>      mean(na.rm = TRUE)</span>
-<span id="cb5-90"><a></a></span>
-<span id="cb5-91"><a></a>    scales::dollar(avg_cost * 4, accuracy = 10)</span>
-<span id="cb5-92"><a></a>  })</span>
-<span id="cb5-93"><a></a>}</span>
+<span id="cb5-11"><a></a></span>
+<span id="cb5-12"><a></a># UI ----------------------------------------------------------------------</span>
+<span id="cb5-13"><a></a></span>
+<span id="cb5-14"><a></a>ui &lt;- page_sidebar(</span>
+<span id="cb5-15"><a></a>  theme = bs_theme(version = 5),</span>
+<span id="cb5-16"><a></a>  title = "College Affordability Analyzer",</span>
+<span id="cb5-17"><a></a>  sidebar = sidebar(</span>
+<span id="cb5-18"><a></a>    open = list(mobile = "always-above"),</span>
+<span id="cb5-19"><a></a>    selectInput("state", "State", choices = setNames(state.abb, state.name), selected = "WA"),</span>
+<span id="cb5-20"><a></a>    sliderInput("sat_score", "Minimum SAT Score", min = 800, max = 1200, value = 1000, step = 10),</span>
+<span id="cb5-21"><a></a>    input_switch("by_income_bracket", "By Income Bracket", value = TRUE),</span>
+<span id="cb5-22"><a></a>    radioButtons(</span>
+<span id="cb5-23"><a></a>      "income_bracket",</span>
+<span id="cb5-24"><a></a>      "Income Bracket",</span>
+<span id="cb5-25"><a></a>      inline = TRUE,</span>
+<span id="cb5-26"><a></a>      choices = c(</span>
+<span id="cb5-27"><a></a>        "&lt; $30k" = "cost_avg_income_0_30k",</span>
+<span id="cb5-28"><a></a>        "$30 - $48k" = "cost_avg_income_30_48k",</span>
+<span id="cb5-29"><a></a>        "$48 - $75k" = "cost_avg_income_48_75k",</span>
+<span id="cb5-30"><a></a>        "$75 - $110k" = "cost_avg_income_75_110k",</span>
+<span id="cb5-31"><a></a>        "$110k+" = "cost_avg_income_110k_plus"</span>
+<span id="cb5-32"><a></a>      )</span>
+<span id="cb5-33"><a></a>    )</span>
+<span id="cb5-34"><a></a>  ),</span>
+<span id="cb5-35"><a></a>  value_box(</span>
+<span id="cb5-36"><a></a>    "Average 10-year Median Earnings",</span>
+<span id="cb5-37"><a></a>    textOutput("txt_amnt_earnings"),</span>
+<span id="cb5-38"><a></a>    showcase = bsicons::bs_icon("wallet-fill"),</span>
+<span id="cb5-39"><a></a>    fill = FALSE</span>
+<span id="cb5-40"><a></a>  ),</span>
+<span id="cb5-41"><a></a>  value_box(</span>
+<span id="cb5-42"><a></a>    "Average 4-year Cost",</span>
+<span id="cb5-43"><a></a>    textOutput("txt_four_year_cost"),</span>
+<span id="cb5-44"><a></a>    "For the selected income bracket",</span>
+<span id="cb5-45"><a></a>    showcase = bsicons::bs_icon("cash-stack"),</span>
+<span id="cb5-46"><a></a>    fill = FALSE</span>
+<span id="cb5-47"><a></a>  ),</span>
+<span id="cb5-48"><a></a>  card(</span>
+<span id="cb5-49"><a></a>    reactlog::reactlog_module_ui()</span>
+<span id="cb5-50"><a></a>  )</span>
+<span id="cb5-51"><a></a>)</span>
+<span id="cb5-52"><a></a></span>
+<span id="cb5-53"><a></a></span>
+<span id="cb5-54"><a></a># Server ------------------------------------------------------------------</span>
+<span id="cb5-55"><a></a></span>
+<span id="cb5-56"><a></a>server &lt;- function(input, output, session) {</span>
+<span id="cb5-57"><a></a>  reactlog::reactlog_module_server(height = "100%")</span>
+<span id="cb5-58"><a></a>  </span>
+<span id="cb5-59"><a></a>  filtered_data &lt;- reactive({</span>
+<span id="cb5-60"><a></a>    scorecard |&gt;</span>
+<span id="cb5-61"><a></a>      filter(</span>
+<span id="cb5-62"><a></a>        academic_year == "2020-21",</span>
+<span id="cb5-63"><a></a>        !is.na(cost_avg),</span>
+<span id="cb5-64"><a></a>        !is.na(amnt_earnings_med_10y)</span>
+<span id="cb5-65"><a></a>      ) |&gt;</span>
+<span id="cb5-66"><a></a>      select(id, amnt_earnings_med_10y, score_sat_avg, starts_with("cost_avg")) |&gt;</span>
+<span id="cb5-67"><a></a>      left_join(school, by = join_by(id)) |&gt;</span>
+<span id="cb5-68"><a></a>      filter(</span>
+<span id="cb5-69"><a></a>        state == input$state,</span>
+<span id="cb5-70"><a></a>        score_sat_avg &gt;= input$sat_score</span>
+<span id="cb5-71"><a></a>      )</span>
+<span id="cb5-72"><a></a>  })</span>
+<span id="cb5-73"><a></a></span>
+<span id="cb5-74"><a></a>  observeEvent(input$state, {</span>
+<span id="cb5-75"><a></a>    output$txt_amnt_earnings &lt;- renderText({</span>
+<span id="cb5-76"><a></a>      filtered_data() |&gt;</span>
+<span id="cb5-77"><a></a>        pull(amnt_earnings_med_10y) |&gt;</span>
+<span id="cb5-78"><a></a>        mean(na.rm = TRUE) |&gt;</span>
+<span id="cb5-79"><a></a>        scales::dollar(accuracy = 10)</span>
+<span id="cb5-80"><a></a>    })</span>
+<span id="cb5-81"><a></a>  })</span>
+<span id="cb5-82"><a></a></span>
+<span id="cb5-83"><a></a>  output$txt_four_year_cost &lt;- renderText({</span>
+<span id="cb5-84"><a></a>    cost_var &lt;- if (input$by_income_bracket) {</span>
+<span id="cb5-85"><a></a>      input$income_bracket</span>
+<span id="cb5-86"><a></a>    } else {</span>
+<span id="cb5-87"><a></a>      "cost_avg"</span>
+<span id="cb5-88"><a></a>    }</span>
+<span id="cb5-89"><a></a></span>
+<span id="cb5-90"><a></a>    avg_cost &lt;- </span>
+<span id="cb5-91"><a></a>      filtered_data() |&gt;</span>
+<span id="cb5-92"><a></a>      pull(!!cost_var) |&gt;</span>
+<span id="cb5-93"><a></a>      mean(na.rm = TRUE)</span>
 <span id="cb5-94"><a></a></span>
-<span id="cb5-95"><a></a># Run the app</span>
-<span id="cb5-96"><a></a>shinyApp(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-95"><a></a>    scales::dollar(avg_cost * 4, accuracy = 10)</span>
+<span id="cb5-96"><a></a>  })</span>
+<span id="cb5-97"><a></a>}</span>
+<span id="cb5-98"><a></a></span>
+<span id="cb5-99"><a></a></span>
+<span id="cb5-100"><a></a>shinyApp(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

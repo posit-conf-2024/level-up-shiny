@@ -321,11 +321,13 @@ ul.task-list li input[type="checkbox"] {
 #| viewerHeight: 675
 
 library(shiny)
-library(collegeScorecard)
 library(bslib)
 library(dplyr)
+library(collegeScorecard)
 
-# UI
+
+# UI ----------------------------------------------------------------------
+
 ui &lt;- page_sidebar(
   theme = bs_theme(version = 5),
   title = "College Affordability Analyzer",
@@ -349,7 +351,7 @@ ui &lt;- page_sidebar(
   ),
   value_box(
     "Average 10-year Median Earnings",
-    textOutput("txt_avg_output"),
+    textOutput("txt_amnt_earnings"),
     showcase = bsicons::bs_icon("wallet-fill")
   ),
   value_box(
@@ -360,7 +362,9 @@ ui &lt;- page_sidebar(
   )
 )
 
-# Server
+
+# Server ------------------------------------------------------------------
+
 server &lt;- function(input, output, session) {
   filtered_data &lt;- reactive({
     scorecard |&gt;
@@ -377,7 +381,7 @@ server &lt;- function(input, output, session) {
       )
   })
 
-  output$txt_avg_output &lt;- renderText({
+  output$txt_amnt_earnings &lt;- renderText({
     filtered_data() |&gt;
       pull(amnt_earnings_med_10y) |&gt;
       mean(na.rm = TRUE) |&gt; 
@@ -394,7 +398,7 @@ server &lt;- function(input, output, session) {
   })
 }
 
-# Run the app
+
 shinyApp(ui, server)
 </code></pre>
 </div>

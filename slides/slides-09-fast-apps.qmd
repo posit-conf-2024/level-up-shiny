@@ -1,0 +1,332 @@
+---
+title: "Fast Apps 🏎️💨"
+subtitle: Level Up with Shiny for R
+author: <code>posit::conf(2024)</code>
+date: 2024-08-12
+
+format:
+  utopia-slides-revealjs:
+    html-math-method: plain
+    revealjs-url: slides/assets/reveal.js-4.5.0
+    slide-level: 2
+    chalkboard: true
+    theme:
+      - slides.scss
+      - assets/code-blocked.scss
+    css:
+      - ../auto-dark-mode.css
+
+revealjs-plugins:
+  - utopia-slides
+
+filters:
+  - webr
+
+webr:
+  show-startup-message: false
+
+editor:
+  render-on-save: true
+---
+
+## Is this app fast? {#fast-app .middle}
+
+`shiny::runApp("_examples/09-fast-apps/01_app.R")`
+
+## Is _this_ app fast? {.middle}
+
+`shiny::runApp("_examples/09-fast-apps/02_app.R")`
+
+## How long does this take?
+
+::: {.flex .flex-column .flex-row-ns .items-center .justify-around style="min-height: 600px"}
+::: {.flex .flex-column .gap-m .items-center .justify-center .w-50-ns}
+```{=html}
+<div>
+<button class="bg-dark-pink br3 dib fs-step-2 mb2 ph5 pv3 white grow" onClick="doWork()">
+Task 1
+</button>
+</div>
+
+<div>
+<button class="bg-dark-blue br3 dib fs-step-2 mb2 ph5 pv3 white grow" onClick="doWork(true)">
+Task 2
+</button>
+</div>
+```
+:::
+
+::: {.flex .flex-column .gap-m .items-center .justify-center .w-50-ns}
+::: {#fake-output .working .fs-step-2}
+<p class="done">Done!</p>
+
+```{=html}
+<svg stroke="#095098" height="9rem" width="9rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_V8m1{transform-origin:center;animation:spinner_zKoa 2s linear infinite}.spinner_V8m1 circle{stroke-linecap:round;animation:spinner_YpZS 1.5s ease-in-out infinite}@keyframes spinner_zKoa{100%{transform:rotate(360deg)}}@keyframes spinner_YpZS{0%{stroke-dasharray:0 150;stroke-dashoffset:0}47.5%{stroke-dasharray:42 150;stroke-dashoffset:-16}95%,100%{stroke-dasharray:42 150;stroke-dashoffset:-59}}</style><g class="spinner_V8m1"><circle cx="12" cy="12" r="9.5" fill="none" stroke-width="3"></circle></g></svg>
+```
+:::
+:::
+
+:::
+
+```{=html}
+<style>
+  .working .done {
+    display: none;
+  }
+  #fake-output:not(.with-spinner) svg {
+    display: none;
+  }
+  .working.with-spinner svg {
+    display: block;
+  }
+</style>
+<script>
+function doWork(withSpinner = false) {
+  const output = document.getElementById("fake-output");
+  output.classList.add("working");
+  if (withSpinner) {
+    setTimeout(() => {
+      output.classList.add("with-spinner");
+    }, 500);
+  }
+  setTimeout(() => {
+    output.classList.remove("working");
+    output.classList.remove("with-spinner");
+  }, 3000);
+}
+</script>
+```
+
+# Your Turn {.middle}
+
+## Your Turn `_exercises/10_app.R` {#your-turn-10-inst .slide-your-turn}
+
+{{< countdown 4:00 bottom="2rem" right="2rem" >}}
+
+1. Add `useBusyIndicators()` to the UI (anywhere you want, really).
+
+2. Use `busyIndicatorOptions()` to pick a different spinner type or color.
+
+3. Stretch: Use the `spinner_selector` argument to pick a different spinner
+   type for each card. (Hint: each card has a unique class.)
+
+# Caching {.middle .fullscreen .text-center}
+
+::: {.absolute .bottom-0 .h-100 .left-0 .right-0 .top-0 .w-100 .zindex-bottom style="background-image:url(assets/ryan-stone-U3cctUBucn0-unsplash.jpg); background-size: cover;"}
+
+:::
+
+::: {.fragment .fs-step3}
+It's still slow, but at least it's only slow once!
+:::
+
+## bindCache() {auto-animate=true}
+
+```{.r}
+output$slow_plot <- renderPlot({
+  data() |>
+    why_does_this_take_so_long(input$plot_type)
+})
+```
+
+## bindCache() {auto-animate=true}
+
+```{.r}
+output$slow_plot <- renderPlot({
+  data() |>
+    why_does_this_take_so_long(input$plot_type)
+}) |>
+  bindCache(data(), input$plot_type)
+```
+
+## bindCache() {auto-animate=true}
+
+```{.r}
+output$slow_plot <- renderPlot({
+  data() |>
+    why_does_this_take_so_long(input$plot_type)
+}) |>
+  bindCache(data(), input$plot_type)
+
+slow_data <- reactive({
+  fetch_from_slow_api(input$data_type)
+})
+```
+
+## bindCache() {auto-animate=true}
+
+```{.r}
+output$slow_plot <- renderPlot({
+  data() |>
+    why_does_this_take_so_long(input$plot_type)
+}) |>
+  bindCache(data(), input$plot_type)
+
+slow_data <- reactive({
+  fetch_from_slow_api(input$data_type)
+}) |>
+  bindCache(input$data_type)
+```
+
+::: {.fragment .callout-tip .fs-step-1 title="More about caching"}
+[Shiny - Using caching in Shiny to maximize performance](https://shiny.posit.co/r/articles/improve/caching/)
+:::
+
+# Your Turn {.middle}
+
+## Your Turn `_exercises/11_app.R` {#your-turn-11-inst .slide-your-turn}
+
+{{< countdown 4:00 bottom="2rem" right="2rem" >}}
+
+1. Use `bindCache()` in your server logic to speed up the app.
+
+2. Stretch: Is it better to cache the data or the plots? Why?
+
+# Make it faster {.middle}
+
+# Why is it slow? {.middle}
+
+## Enter `profvis`
+
+```{.r}
+profvis::profvis(
+  shiny::runApp("_exercises/10_solution_app.R")
+)
+```
+
+::: notes
+Talk through what you see in profvis
+:::
+
+## Benchmark your options {auto-animate=true}
+
+::: {.flex .gap-s}
+::: {.w-50}
+```{r}
+#| echo: true
+first_try <- function(n) {
+  x <- c()
+  for (i in seq_len(n)) {
+    x <- c(x, i + runif(1))
+  }
+  x
+}
+```
+:::
+
+::: {.w-50}
+```{r}
+#| echo: true
+second_try <- function(n) {
+  x <- numeric(n)
+  for (i in seq_len(n)) {
+    x[i] <- i + runif(1)
+  }
+  x
+}
+```
+:::
+:::
+
+```{webr-r}
+#| context: setup
+first_try <- function(n) {
+  x <- c()
+  for (i in seq_len(n)) {
+    x <- c(x, i + runif(1))
+  }
+  x
+}
+
+second_try <- function(n) {
+  x <- numeric(n)
+  for (i in seq_len(n)) {
+    x[i] <- i + runif(1)
+  }
+  x
+}
+
+third_try <- function(n) {
+  seq_len(n) + runif(n)
+}
+```
+
+
+::: fragment
+```{webr-r}
+iters <- 100
+system.time(first_try(iters))
+system.time(second_try(iters))
+```
+:::
+
+## Benchmark your options {auto-animate=true}
+
+```{r}
+#| echo: true
+#| error: true
+#| output-location: fragment
+bench::mark(
+  first_try(1e4),
+  second_try(1e4)
+)
+```
+
+## Benchmark your options {auto-animate=true}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+bench::mark(
+  first_try(1e4),
+  second_try(1e4),
+  check = FALSE
+)
+```
+
+```{r}
+#| echo: true
+third_try <- function(n) {
+  seq_len(n) + runif(n)
+}
+```
+
+## Benchmark your options {auto-animate=true}
+
+```{r}
+#| echo: true
+bench::mark(
+  first_try(1e4),
+  second_try(1e4),
+  third_try(1e4),
+  check = FALSE
+)
+```
+
+## Benchmark your options {auto-animate=true}
+
+```{r}
+#| echo: true
+res <- bench::mark(
+  first_try(1e4), second_try(1e4), third_try(1e4),
+  check = FALSE
+)
+plot(res)
+```
+
+# Your Turn {.middle}
+
+## Your Turn `_exercises/12_slow_app/app.R` {#your-turn-12-inst .slide-your-turn}
+
+{{< countdown 8:00 bottom="2rem" right="2rem" >}}
+
+1. Use `profvis` find the slow calls in the app.
+
+2. Use `reactlog` to figure out how the structure of the app makes the slow calls worse.
+
+3. Use `bench` to compare the performance of two API-calling functions:
+   `get_schools_in_state_with_sat()` and `get_schools_in_state()`.
+
+4. How fast can you make the app? Think through or outline your strategy.
+
+5. Stretch: Implement your strategy and see how much you can improve the app's performance.
