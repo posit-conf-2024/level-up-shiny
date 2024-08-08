@@ -5,3 +5,13 @@ description-short: Speeding up Shiny apps
 duration: 30min
 # time: 14:00
 ---
+
+## Slides
+
+{{< revealjs "slides/slides-08-reactivity.html" class="ratio ratio-16x9" >}}
+
+## Resources
+
+* [Expandable Sparklines • Value boxes • bslib](https://rstudio.github.io/bslib/articles/value-boxes/index.html#expandable-sparklines)
+
+* [Shiny - Using caching in Shiny to maximize performance](https://shiny.posit.co/r/articles/improve/caching/)
