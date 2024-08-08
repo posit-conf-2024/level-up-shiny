@@ -17,3 +17,7 @@ duration: 30min
 * [YouTube: Managing long-running operations in Shiny | Posit](https://www.youtube.com/watch?v=GhX0PcEm3CY), Joe Cheng
 
 * [Task or computation that proceeds in the background — ExtendedTask](https://shiny.posit.co/r/reference/shiny/latest/extendedtask)
+
+* [Button for launching longer-running operations — input_task_button • bslib](https://rstudio.github.io/bslib/reference/input_task_button.html)
+
+* [Ted Laderas: "Part 2: Reactivity" - vmst·io](https://vmst.io/@tladeras/112848747044210937)
