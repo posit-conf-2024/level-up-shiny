@@ -37,6 +37,7 @@ Imports:
     readr,
     roxygen2,
     RPostgres,
+    rsconnect,
     shiny (>= 1.9.0),
     shinylive,
     shinytest2,
