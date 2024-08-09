@@ -42,6 +42,7 @@ editor:
 
 - Garrick
 - Carson
+- Barret
 - Kalau
 - Andrew
 
@@ -76,8 +77,16 @@ Password: `conf2024`
     * Mon & Tues 7am - 7pm
     * Wed 7am - 5pm
 * Mothers room: 509
-* [Red lanyards]{.red .b} available to those who don't wish to be photographed
 :::
+
+## posit::conf(2024) Social Media
+
+* [Red lanyards]{.red .b} available to those who don't wish to be photographed
+
+* `#PositConf2024` for all things conf
+
+* `#LevelUpShiny` for this workshop
+
 
 ## Stickies
 
@@ -97,11 +106,11 @@ Need time or help
 :::
 
 
-## Shedule
+## Schedule
 
 {{< partial ../partials/schedule.qmd >}}
 
-## Shedule
+## Schedule
 
 ::: {.table-highlight-even}
 {{< partial ../partials/schedule.qmd >}}

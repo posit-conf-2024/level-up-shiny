@@ -685,7 +685,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"options":{"results":"markup","editor-font-scale":"0.5","message":"true","warning":"true","autorun":"true","context":"setup","dpi":72,"editor-quick-suggestions":"false","output":"true","fig-width":7,"editor-word-wrap":"true","read-only":"false","label":"unnamed-chunk-1","comment":"","fig-height":5,"classes":"","fig-cap":"","out-height":"","out-width":"700px","editor-max-height":""},"id":1,"code":"first_try <- function(n) {\n  x <- c()\n  for (i in seq_len(n)) {\n    x <- c(x, i + runif(1))\n  }\n  x\n}\n\nsecond_try <- function(n) {\n  x <- numeric(n)\n  for (i in seq_len(n)) {\n    x[i] <- i + runif(1)\n  }\n  x\n}\n\nthird_try <- function(n) {\n  seq_len(n) + runif(n)\n}"},{"options":{"results":"markup","editor-font-scale":"0.5","message":"true","warning":"true","autorun":"false","context":"interactive","dpi":72,"editor-quick-suggestions":"false","output":"true","fig-width":7,"editor-word-wrap":"true","read-only":"false","label":"unnamed-chunk-2","comment":"","fig-height":5,"classes":"","fig-cap":"","out-height":"","out-width":"700px","editor-max-height":""},"id":2,"code":"iters <- 100\nsystem.time(first_try(iters))\nsystem.time(second_try(iters))"}];
+  globalThis.qwebrCellDetails = [{"options":{"editor-max-height":"","fig-width":7,"message":"true","label":"unnamed-chunk-1","out-width":"700px","results":"markup","output":"true","classes":"","comment":"","out-height":"","read-only":"false","context":"setup","autorun":"true","dpi":72,"fig-cap":"","editor-word-wrap":"true","editor-quick-suggestions":"false","editor-font-scale":"0.5","warning":"true","fig-height":5},"id":1,"code":"first_try <- function(n) {\n  x <- c()\n  for (i in seq_len(n)) {\n    x <- c(x, i + runif(1))\n  }\n  x\n}\n\nsecond_try <- function(n) {\n  x <- numeric(n)\n  for (i in seq_len(n)) {\n    x[i] <- i + runif(1)\n  }\n  x\n}\n\nthird_try <- function(n) {\n  seq_len(n) + runif(n)\n}"},{"options":{"editor-max-height":"","fig-width":7,"message":"true","label":"unnamed-chunk-2","out-width":"700px","results":"markup","output":"true","classes":"","comment":"","out-height":"","read-only":"false","context":"interactive","autorun":"false","dpi":72,"fig-cap":"","editor-word-wrap":"true","editor-quick-suggestions":"false","editor-font-scale":"0.5","warning":"true","fig-height":5},"id":2,"code":"iters <- 100\nsystem.time(first_try(iters))\nsystem.time(second_try(iters))"}];
 
   </script>
   <script type="module">
@@ -2262,7 +2262,7 @@ function doWork(withSpinner = false) {
 </section>
 <section id="your-turn-10-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/10_app.R</code></h2>
-<div id="timer_5ad10d12f276d39c649f12429461ab6548cbcdd4" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_51a2fdaece70611303471dc6b36c85b81592ab80" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2347,7 +2347,7 @@ function doWork(withSpinner = false) {
 </section>
 <section id="your-turn-11-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/11_app.R</code></h2>
-<div id="timer_5ad10d12f276d39c649f12429461ab6548cbcdd4" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_51a2fdaece70611303471dc6b36c85b81592ab80" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2450,8 +2450,8 @@ function doWork(withSpinner = false) {
 <pre><code># A tibble: 2 × 6
   expression             min   median `itr/sec` mem_alloc `gc/sec`
   &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 first_try(10000)    85.9ms 112.82ms      8.72     382MB     76.7
-2 second_try(10000)    7.4ms   7.52ms    125.      78.2KB     19.8</code></pre>
+1 first_try(10000)    82.5ms 105.12ms      9.15     382MB     80.5
+2 second_try(10000)    7.4ms   7.54ms    126.      78.2KB     19.8</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -2473,9 +2473,9 @@ function doWork(withSpinner = false) {
 <pre><code># A tibble: 3 × 6
   expression             min   median `itr/sec` mem_alloc `gc/sec`
   &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 first_try(10000)    98.1ms 100.46ms      9.94     382MB     95.5
-2 second_try(10000)   7.49ms   7.63ms    121.      78.2KB     23.8
-3 third_try(10000)   95.65µs  97.74µs   8003.     117.3KB     19.9</code></pre>
+1 first_try(10000)    91.9ms  94.42ms      10.6     382MB    100. 
+2 second_try(10000)    7.5ms   7.66ms     120.     78.2KB     23.6
+3 third_try(10000)    95.6µs     98µs    8210.    117.3KB     20.0</code></pre>
 </div>
 </div>
 </section>
@@ -2497,7 +2497,7 @@ function doWork(withSpinner = false) {
 </section>
 <section id="your-turn-12-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/12_slow_app/app.R</code></h2>
-<div id="timer_5ad10d12f276d39c649f12429461ab6548cbcdd4" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_51a2fdaece70611303471dc6b36c85b81592ab80" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
