@@ -1,9 +1,5 @@
 [
   {
-    "listing": "/about/index.html",
-    "items": []
-  },
-  {
     "listing": "/workshop.html",
     "items": [
       "/workshop-01.html",
@@ -20,5 +16,9 @@
       "/workshop-12.html",
       "/workshop-13.html"
     ]
+  },
+  {
+    "listing": "/about/index.html",
+    "items": []
   }
 ]

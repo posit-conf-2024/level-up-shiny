@@ -2,106 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://posit-conf-2024.github.io/level-up-shiny/slides/slides-09-fast-apps.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
   </url>
   <url>
     <loc>https://posit-conf-2024.github.io/level-up-shiny/slides/slides-08-reactivity.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
   </url>
   <url>
     <loc>https://posit-conf-2024.github.io/level-up-shiny/slides/slides-02-bslib.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
   </url>
   <url>
     <loc>https://posit-conf-2024.github.io/level-up-shiny/slides/slides-01-intro.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/index.html</loc>
-    <lastmod>2024-08-09T12:46:20.479Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-09.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-05.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-02.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/about/index.html</loc>
-    <lastmod>2024-08-09T12:46:20.459Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-12.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-07-break.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-03-break.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/setup.html</loc>
-    <lastmod>2024-08-09T12:46:20.479Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-06-chat.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-11-break.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-13.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
+    <lastmod>2024-08-09T15:30:30.110Z</lastmod>
   </url>
   <url>
     <loc>https://posit-conf-2024.github.io/level-up-shiny/slides/slides-10-extended-tasks.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-01.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-04.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-06.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
   </url>
   <url>
     <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-10.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-06.html</loc>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-04.html</loc>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-01.html</loc>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop.html</loc>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-12.html</loc>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-07-break.html</loc>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-03-break.html</loc>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/setup.html</loc>
+    <lastmod>2024-08-09T15:30:30.058Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-06-chat.html</loc>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-11-break.html</loc>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-13.html</loc>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/about/index.html</loc>
+    <lastmod>2024-08-09T15:30:30.038Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-02.html</loc>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-05.html</loc>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-09.html</loc>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://posit-conf-2024.github.io/level-up-shiny/index.html</loc>
+    <lastmod>2024-08-09T15:30:30.058Z</lastmod>
   </url>
   <url>
     <loc>https://posit-conf-2024.github.io/level-up-shiny/workshop-08.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
   </url>
   <url>
     <loc>https://posit-conf-2024.github.io/level-up-shiny/slides/slides-06-javascript.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
   </url>
   <url>
     <loc>https://posit-conf-2024.github.io/level-up-shiny/slides/slides-04-code-style.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
   </url>
   <url>
     <loc>https://posit-conf-2024.github.io/level-up-shiny/slides/slides-05-modules.html</loc>
-    <lastmod>2024-08-09T12:46:20.535Z</lastmod>
+    <lastmod>2024-08-09T15:30:30.114Z</lastmod>
   </url>
 </urlset>

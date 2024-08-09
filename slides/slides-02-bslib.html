@@ -661,7 +661,7 @@ Data on cost, admission and completion rates, earnings and more
 <li>Add <code>thematic::thematic_shiny()</code> to the app to make the plots look better.</li>
 </ol>
 </div>
-<div id="timer_9d25ab9ec9e3a846b82845dbd7e3e5b6b39e7613" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_84fbaf4bd1f2365592d5f899ee9de960c7ba8009" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -681,65 +681,71 @@ Data on cost, admission and completion rates, earnings and more
 <span id="cb11-3"><a></a>#| orientation: horizontal</span>
 <span id="cb11-4"><a></a>#| viewerHeight: "100%"</span>
 <span id="cb11-5"><a></a></span>
-<span id="cb11-6"><a></a>library(shiny)</span>
-<span id="cb11-7"><a></a>library(bslib)</span>
-<span id="cb11-8"><a></a></span>
-<span id="cb11-9"><a></a>thematic::thematic_shiny()</span>
-<span id="cb11-10"><a></a></span>
-<span id="cb11-11"><a></a>ui &lt;- fluidPage(</span>
-<span id="cb11-12"><a></a>  theme = bs_theme(</span>
-<span id="cb11-13"><a></a>    version = 5,</span>
-<span id="cb11-14"><a></a>    bg = "#0B3954",</span>
-<span id="cb11-15"><a></a>    fg = "#bfd7ea",</span>
-<span id="cb11-16"><a></a>    primary = "#0BAFC1",</span>
-<span id="cb11-17"><a></a>  ),</span>
-<span id="cb11-18"><a></a>  selectizeInput("data", "Data set", choices = c("school", "scorecard"), selected = "school"),</span>
-<span id="cb11-19"><a></a>  radioButtons("type", "Inspection type", choices = c("Column Types" = "types", "Categorical" = "cat", "Numeric" = "num", "Missing" = "na"), inline = TRUE),</span>
-<span id="cb11-20"><a></a>  plotOutput("plot")</span>
-<span id="cb11-21"><a></a>)</span>
-<span id="cb11-22"><a></a></span>
-<span id="cb11-23"><a></a>server &lt;- function(input, output, session) {</span>
-<span id="cb11-24"><a></a>  data &lt;- reactive({</span>
-<span id="cb11-25"><a></a>    switch(</span>
-<span id="cb11-26"><a></a>      input$data,</span>
-<span id="cb11-27"><a></a>      "school" = collegeScorecard::school,</span>
-<span id="cb11-28"><a></a>      "scorecard" = collegeScorecard::scorecard</span>
-<span id="cb11-29"><a></a>    )</span>
-<span id="cb11-30"><a></a>  })</span>
-<span id="cb11-31"><a></a></span>
-<span id="cb11-32"><a></a>  output$plot &lt;- renderPlot({</span>
-<span id="cb11-33"><a></a>    req(data())</span>
-<span id="cb11-34"><a></a></span>
-<span id="cb11-35"><a></a>    df &lt;- data()</span>
-<span id="cb11-36"><a></a></span>
-<span id="cb11-37"><a></a>    inspected &lt;- switch(</span>
-<span id="cb11-38"><a></a>      input$type,</span>
-<span id="cb11-39"><a></a>      "types" = inspectdf::inspect_types(df),</span>
-<span id="cb11-40"><a></a>      "cat" = inspectdf::inspect_cat(df),</span>
-<span id="cb11-41"><a></a>      "num" = inspectdf::inspect_num(df),</span>
-<span id="cb11-42"><a></a>      "na" = inspectdf::inspect_na(df)</span>
-<span id="cb11-43"><a></a>    )</span>
-<span id="cb11-44"><a></a></span>
-<span id="cb11-45"><a></a>    inspectdf::show_plot(inspected, col_palette = 2)</span>
-<span id="cb11-46"><a></a>  })</span>
-<span id="cb11-47"><a></a>}</span>
-<span id="cb11-48"><a></a></span>
-<span id="cb11-49"><a></a>shinyApp(ui, server)</span>
+<span id="cb11-6"><a></a># ┌ level-up-shiny ──────────────────────────────────┐</span>
+<span id="cb11-7"><a></a># │                                                  │</span>
+<span id="cb11-8"><a></a># │                    Solution 1                    │</span>
+<span id="cb11-9"><a></a># │                                                  │</span>
+<span id="cb11-10"><a></a># └─────────────────────────────── posit::conf(2024) ┘</span>
+<span id="cb11-11"><a></a></span>
+<span id="cb11-12"><a></a>library(shiny)</span>
+<span id="cb11-13"><a></a>library(bslib)</span>
+<span id="cb11-14"><a></a></span>
+<span id="cb11-15"><a></a>thematic::thematic_shiny()</span>
+<span id="cb11-16"><a></a></span>
+<span id="cb11-17"><a></a>ui &lt;- fluidPage(</span>
+<span id="cb11-18"><a></a>  theme = bs_theme(</span>
+<span id="cb11-19"><a></a>    version = 5,</span>
+<span id="cb11-20"><a></a>    bg = "#0B3954",</span>
+<span id="cb11-21"><a></a>    fg = "#bfd7ea",</span>
+<span id="cb11-22"><a></a>    primary = "#0BAFC1",</span>
+<span id="cb11-23"><a></a>  ),</span>
+<span id="cb11-24"><a></a>  selectizeInput("data", "Data set", choices = c("school", "scorecard"), selected = "school"),</span>
+<span id="cb11-25"><a></a>  radioButtons("type", "Inspection type", choices = c("Column Types" = "types", "Categorical" = "cat", "Numeric" = "num", "Missing" = "na"), inline = TRUE),</span>
+<span id="cb11-26"><a></a>  plotOutput("plot")</span>
+<span id="cb11-27"><a></a>)</span>
+<span id="cb11-28"><a></a></span>
+<span id="cb11-29"><a></a>server &lt;- function(input, output, session) {</span>
+<span id="cb11-30"><a></a>  data &lt;- reactive({</span>
+<span id="cb11-31"><a></a>    switch(</span>
+<span id="cb11-32"><a></a>      input$data,</span>
+<span id="cb11-33"><a></a>      "school" = collegeScorecard::school,</span>
+<span id="cb11-34"><a></a>      "scorecard" = collegeScorecard::scorecard</span>
+<span id="cb11-35"><a></a>    )</span>
+<span id="cb11-36"><a></a>  })</span>
+<span id="cb11-37"><a></a></span>
+<span id="cb11-38"><a></a>  output$plot &lt;- renderPlot({</span>
+<span id="cb11-39"><a></a>    req(data())</span>
+<span id="cb11-40"><a></a></span>
+<span id="cb11-41"><a></a>    df &lt;- data()</span>
+<span id="cb11-42"><a></a></span>
+<span id="cb11-43"><a></a>    inspected &lt;- switch(</span>
+<span id="cb11-44"><a></a>      input$type,</span>
+<span id="cb11-45"><a></a>      "types" = inspectdf::inspect_types(df),</span>
+<span id="cb11-46"><a></a>      "cat" = inspectdf::inspect_cat(df),</span>
+<span id="cb11-47"><a></a>      "num" = inspectdf::inspect_num(df),</span>
+<span id="cb11-48"><a></a>      "na" = inspectdf::inspect_na(df)</span>
+<span id="cb11-49"><a></a>    )</span>
 <span id="cb11-50"><a></a></span>
-<span id="cb11-51"><a></a></span>
-<span id="cb11-52"><a></a></span>
-<span id="cb11-53"><a></a>## file: notes.R</span>
-<span id="cb11-54"><a></a># =&gt; _exercises/01_solution_app.R</span>
-<span id="cb11-55"><a></a></span>
-<span id="cb11-56"><a></a>theme = bs_theme(</span>
-<span id="cb11-57"><a></a>  version = 5,</span>
-<span id="cb11-58"><a></a>  bg = "#0B3954",</span>
-<span id="cb11-59"><a></a>  fg = "#bfd7ea",</span>
-<span id="cb11-60"><a></a>  primary = "#0BAFC1",</span>
-<span id="cb11-61"><a></a>)</span>
-<span id="cb11-62"><a></a></span>
-<span id="cb11-63"><a></a># * Add thematic::thematic_shiny() to the app</span>
-<span id="cb11-64"><a></a># * page_fluid()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-51"><a></a>    inspectdf::show_plot(inspected, col_palette = 2)</span>
+<span id="cb11-52"><a></a>  })</span>
+<span id="cb11-53"><a></a>}</span>
+<span id="cb11-54"><a></a></span>
+<span id="cb11-55"><a></a>shinyApp(ui, server)</span>
+<span id="cb11-56"><a></a></span>
+<span id="cb11-57"><a></a></span>
+<span id="cb11-58"><a></a></span>
+<span id="cb11-59"><a></a>## file: notes.R</span>
+<span id="cb11-60"><a></a># =&gt; _exercises/01_solution_app.R</span>
+<span id="cb11-61"><a></a></span>
+<span id="cb11-62"><a></a>theme = bs_theme(</span>
+<span id="cb11-63"><a></a>  version = 5,</span>
+<span id="cb11-64"><a></a>  bg = "#0B3954",</span>
+<span id="cb11-65"><a></a>  fg = "#bfd7ea",</span>
+<span id="cb11-66"><a></a>  primary = "#0BAFC1",</span>
+<span id="cb11-67"><a></a>)</span>
+<span id="cb11-68"><a></a></span>
+<span id="cb11-69"><a></a># * Add thematic::thematic_shiny() to the app</span>
+<span id="cb11-70"><a></a># * page_fluid()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="page-fillable" class="slide level2 fullscreen">
 <h2></h2>
@@ -1053,7 +1059,7 @@ Data on cost, admission and completion rates, earnings and more
 <li>How is the plotly plot different from the ggplot2 plot?</li>
 </ol>
 </div>
-<div id="timer_9d25ab9ec9e3a846b82845dbd7e3e5b6b39e7613" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_84fbaf4bd1f2365592d5f899ee9de960c7ba8009" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -1240,7 +1246,7 @@ Data on cost, admission and completion rates, earnings and more
 </section>
 <section id="your-turn-3-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/03_app.R</code></h2>
-<div id="timer_9d25ab9ec9e3a846b82845dbd7e3e5b6b39e7613" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_84fbaf4bd1f2365592d5f899ee9de960c7ba8009" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -1356,7 +1362,7 @@ Data on cost, admission and completion rates, earnings and more
 </section>
 <section id="your-turn-4-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/04_app.R</code></h2>
-<div id="timer_9d25ab9ec9e3a846b82845dbd7e3e5b6b39e7613" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_84fbaf4bd1f2365592d5f899ee9de960c7ba8009" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -1481,7 +1487,7 @@ Data on cost, admission and completion rates, earnings and more
 </section>
 <section id="your-turn-5-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/05_app.R</code></h2>
-<div id="timer_9d25ab9ec9e3a846b82845dbd7e3e5b6b39e7613" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_84fbaf4bd1f2365592d5f899ee9de960c7ba8009" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -1673,7 +1679,7 @@ Data on cost, admission and completion rates, earnings and more
 </section>
 <section id="your-turn-6-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/06_app.R</code></h2>
-<div id="timer_9d25ab9ec9e3a846b82845dbd7e3e5b6b39e7613" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_84fbaf4bd1f2365592d5f899ee9de960c7ba8009" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>

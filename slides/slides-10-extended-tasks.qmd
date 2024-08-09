@@ -15,6 +15,7 @@ format:
       - assets/code-blocked.scss
     css:
       - ../auto-dark-mode.css
+    code-annotations: hover
 
 revealjs-plugins:
   - utopia-slides
@@ -29,4 +30,214 @@ editor:
   render-on-save: true
 ---
 
-## Long Running, Non-Blocking Tasks
+# Long Running,<br>Non-Blocking Tasks {.middle}
+
+## Long Running Tasks
+
+Use long running task from before (long run when changing state)
+
+What if we solved this by adding a "submit button"?
+
+What goes wrong?
+
+# Your Turn {.middle}
+
+## Your Turn `_exercises/13_app.R` {#your-turn-13-inst .slide-your-turn}
+
+{{< countdown 4:00 bottom="2rem" right="2rem" >}}
+
+1. Add an `actionButton("get_state")` to the sidebar.
+
+2. Update the `schools_state` reactive to only fetch data when the button is clicked.
+
+3. Use the app. How can you break it?
+
+
+# Long Live The Reactive Graph {.middle}
+
+## Long Running but still Blocking
+
+Reactive graph for long running task
+
+## The Heart of Shiny
+
+```{.r}
+while (TRUE) {
+  changes <- get_output_changes()
+  changed_outputs <- recompute_all_affected_things(changes)
+  send_outputs(changed_outputs)
+}
+```
+
+## One User
+
+<!-- TK simple reactive graph for single user -->
+
+* Each reactive expression in your app is evaluated one after the other.
+* It takes as long as it takes to run the code.
+* And then you get your answer.
+
+## Two Users
+
+<!-- TK Reactive graph for two simultaneous users -->
+
+* Each user has their own reactive graph that's still evaluated one computation at a time.
+* But it could take longer than it takes to run the code.
+* If we both have the app open and I start the long running task, you'll have to wait for me to finish.
+* Then Shiny runs the code for your app.
+* And you get the answer.
+
+## Shiny Async with Two Users
+
+<!-- TK Reactive graph for two simultaneous users using promises -->
+
+* Each user has their own reactive graph that's still evaluated one computation at a time.
+* But they're now decoupled.
+* I only have to wait as long as it takes to the run the code for my app.
+* And you only have to wait as long as it takes to run the code for your app.
+* But we still have to wait... and we can't use our apps until our computation is done.
+
+# Enter [ExtendedTask]{.code} {.middle}
+
+## Shiny with Extended Task
+
+<!-- TK Shape of reactive expression -->
+
+<!-- TK Divide reactive expression into to pieces -->
+
+* Extended Tasks let you split a reactive expression into two pieces.
+  1. Observe incoming changes and decide when to run the task, and with what parameters.
+  2. Receive the results of the task and update dependent outputs.
+
+## Shiny with Extended Task
+
+<!-- TK Reactive graph with Extended Task -->
+
+* The reactive graph can now make it to equillibrium in each reactive tick.
+* The task is run in the background so it doesn't block either of our apps.
+* It still takes as long as it takes to run the code...
+* But I can also still use the app!
+
+## `ExtendedTask` - Step 1
+
+Define the task at hand. At its core, it's a function that returns a `future_promise()`
+
+```{.r}
+#| code-copy: false
+task_fetch_data <- ExtendedTask$new(function(data_type) { # <1>
+  future_promise({ # <2>
+    fetch_from_slow_api(data_type) # <1>
+  }) # <2>
+}) |>
+  bind_task_button("fetch_data") # <3>
+```
+1. Nothing reactive can happen here!
+2. Return a `future_promise()` to make it **potentially** non-blocking
+3. Bind the state of an `input_task_button()` to this task's state
+
+## `ExtendedTask` - Step 2
+
+Next, decide when the task will be invoked.
+
+```{.r}
+#| code-copy: false
+observeEvent(input$fetch_data, {
+  task_fetch_data$invoke(input$data_type) # <1>
+})
+```
+1. Anything reactive happens here in the observer or reactive expression.
+
+## `ExtendedTask` - Step 3
+
+Finally, use the task's result in a reactive context.
+
+```{.r}
+#| code-copy: false
+data <- reactive({
+  task_fetch_data$result() # <1>
+})
+```
+1. This only fires when the task is done.
+
+## `ExtendedTask` {auto-animate=true}
+
+```{.r}
+task_fetch_data <- ExtendedTask$new(function(data_type) {
+  future_promise({
+    fetch_from_slow_api(data_type)
+  })
+}) |>
+  bind_task_button("fetch_data")
+
+observeEvent(input$fetch_data, {
+  task_fetch_data$invoke(input$data_type)
+})
+
+data <- reactive({
+  task_fetch_data$result()
+})
+```
+
+## `ExtendedTask` {auto-animate=true}
+
+```{.r}
+server <- function(input, output, session) {
+  task_fetch_data <- ExtendedTask$new(function(data_type) {
+    future_promise({
+      fetch_from_slow_api(data_type)
+    })
+  }) |>
+    bind_task_button("fetch_data")
+
+  observeEvent(input$fetch_data, {
+    task_fetch_data$invoke(input$data_type)
+  })
+
+  data <- reactive({
+    task_fetch_data$result()
+  })
+}
+```
+
+## `ExtendedTask` {auto-animate=true}
+
+```{.r}
+library(future)
+library(promises)
+future::plan(multisession)
+
+server <- function(input, output, session) {
+  task_fetch_data <- ExtendedTask$new(function(data_type) {
+    future_promise({
+      fetch_from_slow_api(data_type)
+    })
+  }) |>
+    bind_task_button("fetch_data")
+
+  observeEvent(input$fetch_data, {
+    task_fetch_data$invoke(input$data_type)
+  })
+
+  data <- reactive({
+    task_fetch_data$result()
+  })
+}
+```
+
+# Your Turn {.middle}
+
+## Your Turn `_exercises/14_app.R` {#your-turn-14-inst .slide-your-turn}
+
+{{< countdown 6:00 bottom="2rem" right="2rem" >}}
+
+1. Replace the `actionButton("get_state")` with an `input_task_button()`.
+   How much does the task button help?
+
+2. Update the server logic to use `ExtendedTask` that uses `future_promise()`.
+   I've already loaded the packages you need.
+
+3. Can you use the app while fetching data from the API?
+   
+4. *Stretch: How could you keep the whole app running, including the plots
+   while the data is being fetched? Read `14_solution2_app.R` for an example.*
+   

@@ -688,7 +688,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"id":1,"code":"school |>\n  filter(state == \"CA\") |>\n  filter(control == \"Public\") |>\n  count() |>\n  pull(n)","options":{"context":"interactive","fig-cap":"","warning":"true","out-height":"","dpi":72,"label":"unnamed-chunk-1","output":"true","results":"markup","out-width":"700px","editor-quick-suggestions":"false","comment":"","editor-font-scale":"0.5","autorun":"false","fig-width":7,"message":"true","read-only":"false","fig-height":5,"classes":"","editor-max-height":"","editor-word-wrap":"true"}}];
+  globalThis.qwebrCellDetails = [{"code":"school |>\n  filter(state == \"CA\") |>\n  filter(control == \"Public\") |>\n  count() |>\n  pull(n)","options":{"autorun":"false","label":"unnamed-chunk-1","editor-quick-suggestions":"false","editor-font-scale":"0.5","warning":"true","results":"markup","fig-width":7,"out-height":"","fig-cap":"","comment":"","message":"true","read-only":"false","output":"true","context":"interactive","dpi":72,"fig-height":5,"out-width":"700px","classes":"","editor-max-height":"","editor-word-wrap":"true"},"id":1}];
 
   </script>
   <script type="module">
@@ -2351,7 +2351,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="your-turn-1" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/07_app.R</code></h2>
-<div id="timer_713dd2b64e7ab379f93ee6eef26a5b5ec7a45dc9" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_cc440095e12c347dd6c1b9d74d9548413200021f" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2473,7 +2473,7 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="your-turn-8-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/08_app.R</code></h2>
-<div id="timer_713dd2b64e7ab379f93ee6eef26a5b5ec7a45dc9" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_cc440095e12c347dd6c1b9d74d9548413200021f" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2851,7 +2851,7 @@ outputs: <strong>plot_school</strong></p>
 </section>
 <section id="your-turn-9" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>09_modules/app.R</code></h2>
-<div id="timer_713dd2b64e7ab379f93ee6eef26a5b5ec7a45dc9" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_cc440095e12c347dd6c1b9d74d9548413200021f" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2870,153 +2870,159 @@ outputs: <strong>plot_school</strong></p>
 <span id="cb29-3"><a></a>#| orientation: horizontal</span>
 <span id="cb29-4"><a></a>#| viewerHeight: "100%"</span>
 <span id="cb29-5"><a></a></span>
-<span id="cb29-6"><a></a>library(shiny)</span>
-<span id="cb29-7"><a></a>library(bslib)</span>
-<span id="cb29-8"><a></a>library(dplyr)</span>
-<span id="cb29-9"><a></a>library(ggplot2)</span>
-<span id="cb29-10"><a></a>library(leaflet)</span>
-<span id="cb29-11"><a></a>library(collegeScorecard)</span>
-<span id="cb29-12"><a></a></span>
-<span id="cb29-13"><a></a># Setup ----------------------------------------------------------------------</span>
-<span id="cb29-14"><a></a></span>
-<span id="cb29-15"><a></a>colors &lt;- c("#007bc2", "#f45100", "#bf007f")</span>
-<span id="cb29-16"><a></a></span>
-<span id="cb29-17"><a></a>theme_set(</span>
-<span id="cb29-18"><a></a>  theme_minimal(18) +</span>
-<span id="cb29-19"><a></a>    theme(</span>
-<span id="cb29-20"><a></a>      panel.grid.minor = element_blank(),</span>
-<span id="cb29-21"><a></a>      panel.grid.major.y = element_blank(),</span>
-<span id="cb29-22"><a></a>      axis.title = element_text(size = 14)</span>
-<span id="cb29-23"><a></a>    )</span>
-<span id="cb29-24"><a></a>)</span>
-<span id="cb29-25"><a></a></span>
-<span id="cb29-26"><a></a>school_100 &lt;-</span>
-<span id="cb29-27"><a></a>  scorecard |&gt;</span>
-<span id="cb29-28"><a></a>  slice_max(academic_year) |&gt;</span>
-<span id="cb29-29"><a></a>  slice_max(n_undergrads, n = 100, with_ties = FALSE) |&gt;</span>
-<span id="cb29-30"><a></a>  select(id, n_undergrads) |&gt;</span>
-<span id="cb29-31"><a></a>  left_join(school, by = join_by(id))</span>
-<span id="cb29-32"><a></a></span>
-<span id="cb29-33"><a></a>school_names &lt;- c("Pick a School" = "", school_100$name)</span>
-<span id="cb29-34"><a></a></span>
-<span id="cb29-35"><a></a># UI -------------------------------------------------------------------------</span>
-<span id="cb29-36"><a></a></span>
-<span id="cb29-37"><a></a>ui &lt;- page_fillable(</span>
-<span id="cb29-38"><a></a>  layout_columns(</span>
-<span id="cb29-39"><a></a>    div(</span>
-<span id="cb29-40"><a></a>      mod_school_ui("a", "School A", school_names)</span>
-<span id="cb29-41"><a></a>    ),</span>
-<span id="cb29-42"><a></a>    div(</span>
-<span id="cb29-43"><a></a>      mod_school_ui("b", "School B", school_names)</span>
-<span id="cb29-44"><a></a>    )</span>
-<span id="cb29-45"><a></a>  )</span>
-<span id="cb29-46"><a></a>)</span>
-<span id="cb29-47"><a></a></span>
-<span id="cb29-48"><a></a># Server ---------------------------------------------------------------------</span>
-<span id="cb29-49"><a></a></span>
-<span id="cb29-50"><a></a>server &lt;- function(input, output, session) {</span>
-<span id="cb29-51"><a></a>  mod_school_server("a", colors[1])</span>
-<span id="cb29-52"><a></a>  mod_school_server("b", colors[2])</span>
-<span id="cb29-53"><a></a>}</span>
-<span id="cb29-54"><a></a></span>
-<span id="cb29-55"><a></a>shinyApp(ui, server)</span>
-<span id="cb29-56"><a></a></span>
-<span id="cb29-57"><a></a></span>
-<span id="cb29-58"><a></a>## file: mod_school.R</span>
-<span id="cb29-59"><a></a>mod_school_ui &lt;- function(id, label, choices, selected = NULL) {</span>
-<span id="cb29-60"><a></a>  ns &lt;- NS(id)</span>
-<span id="cb29-61"><a></a></span>
-<span id="cb29-62"><a></a>  if (is.null(selected)) {</span>
-<span id="cb29-63"><a></a>    selected &lt;- sample(choices, 1)</span>
-<span id="cb29-64"><a></a>  }</span>
-<span id="cb29-65"><a></a></span>
-<span id="cb29-66"><a></a>  list(</span>
-<span id="cb29-67"><a></a>    selectInput(ns("school"), label, choices = choices, selected = selected, width = "100%"),</span>
-<span id="cb29-68"><a></a>    card(</span>
-<span id="cb29-69"><a></a>      card_header("Cost of Tuition (In State)"),</span>
-<span id="cb29-70"><a></a>      plotOutput(ns("plot_school"))</span>
-<span id="cb29-71"><a></a>    ),</span>
-<span id="cb29-72"><a></a>    card_dark(</span>
-<span id="cb29-73"><a></a>      title = "Location",</span>
-<span id="cb29-74"><a></a>      leafletOutput(ns("map_school"))</span>
-<span id="cb29-75"><a></a>    )</span>
-<span id="cb29-76"><a></a>  )</span>
-<span id="cb29-77"><a></a>}</span>
-<span id="cb29-78"><a></a></span>
-<span id="cb29-79"><a></a>mod_school_server &lt;- function(id, plot_color) {</span>
-<span id="cb29-80"><a></a>  moduleServer(id, function(input, output, session) {</span>
-<span id="cb29-81"><a></a>    output$plot_school &lt;- renderPlot({</span>
-<span id="cb29-82"><a></a>      req(input$school)</span>
-<span id="cb29-83"><a></a></span>
-<span id="cb29-84"><a></a>      scorecard |&gt;</span>
-<span id="cb29-85"><a></a>        filter_scorecard_by_school_name(school, input$school) |&gt;</span>
-<span id="cb29-86"><a></a>        plot_cost_tuition(plot_color)</span>
-<span id="cb29-87"><a></a>    })</span>
-<span id="cb29-88"><a></a></span>
-<span id="cb29-89"><a></a>    output$map_school &lt;- renderLeaflet({</span>
-<span id="cb29-90"><a></a>      req(input$school)</span>
-<span id="cb29-91"><a></a>      map_school(school, input$school)</span>
-<span id="cb29-92"><a></a>    })</span>
-<span id="cb29-93"><a></a>  })</span>
-<span id="cb29-94"><a></a>}</span>
-<span id="cb29-95"><a></a></span>
-<span id="cb29-96"><a></a></span>
-<span id="cb29-97"><a></a>## file: functions.R</span>
-<span id="cb29-98"><a></a>card_dark &lt;- function(title, ...) {</span>
-<span id="cb29-99"><a></a>  card(</span>
-<span id="cb29-100"><a></a>    card_header(title),</span>
-<span id="cb29-101"><a></a>    class = "text-bg-dark",</span>
-<span id="cb29-102"><a></a>    card_body(</span>
-<span id="cb29-103"><a></a>      padding = 0,</span>
-<span id="cb29-104"><a></a>      ...</span>
-<span id="cb29-105"><a></a>    )</span>
-<span id="cb29-106"><a></a>  )</span>
-<span id="cb29-107"><a></a>}</span>
-<span id="cb29-108"><a></a></span>
-<span id="cb29-109"><a></a></span>
-<span id="cb29-110"><a></a>plot_cost_tuition &lt;- function(scorecard, fill_color = "#007bc2") {</span>
-<span id="cb29-111"><a></a>  scorecard |&gt;</span>
-<span id="cb29-112"><a></a>    mutate(academic_year = as.integer(substr(academic_year, 1, 4))) |&gt;</span>
-<span id="cb29-113"><a></a>    ggplot() +</span>
-<span id="cb29-114"><a></a>    aes(x = academic_year, y = cost_tuition_in) +</span>
-<span id="cb29-115"><a></a>    geom_col(fill = fill_color, na.rm = TRUE) +</span>
-<span id="cb29-116"><a></a>    labs(</span>
-<span id="cb29-117"><a></a>      x = "Academic Year",</span>
-<span id="cb29-118"><a></a>      y = NULL</span>
-<span id="cb29-119"><a></a>    ) +</span>
-<span id="cb29-120"><a></a>    scale_y_continuous(labels = scales::label_dollar())</span>
-<span id="cb29-121"><a></a>}</span>
-<span id="cb29-122"><a></a></span>
-<span id="cb29-123"><a></a>filter_scorecard_by_school_name &lt;- function(scorecard, school, name) {</span>
-<span id="cb29-124"><a></a>  school_by_name &lt;- </span>
-<span id="cb29-125"><a></a>    school |&gt;</span>
-<span id="cb29-126"><a></a>    filter(name == {{ name }})</span>
-<span id="cb29-127"><a></a></span>
-<span id="cb29-128"><a></a>  scorecard |&gt;</span>
-<span id="cb29-129"><a></a>    semi_join(school_by_name, by = "id")</span>
-<span id="cb29-130"><a></a>}</span>
-<span id="cb29-131"><a></a></span>
-<span id="cb29-132"><a></a>map_school &lt;- function(school, name) {</span>
-<span id="cb29-133"><a></a>  the_school &lt;- school |&gt; filter(name == {{ name }})</span>
-<span id="cb29-134"><a></a></span>
-<span id="cb29-135"><a></a>  leaflet() |&gt;</span>
-<span id="cb29-136"><a></a>    addTiles() |&gt;</span>
-<span id="cb29-137"><a></a>    addMarkers(</span>
-<span id="cb29-138"><a></a>      lng = the_school$longitude,</span>
-<span id="cb29-139"><a></a>      lat = the_school$latitude,</span>
-<span id="cb29-140"><a></a>      popup = the_school$name</span>
-<span id="cb29-141"><a></a>    )</span>
-<span id="cb29-142"><a></a>}</span>
-<span id="cb29-143"><a></a></span>
-<span id="cb29-144"><a></a></span>
-<span id="cb29-145"><a></a>## file: notes.md</span>
-<span id="cb29-146"><a></a>Suppose you put this module into your app and realize that actually, you'd like to</span>
-<span id="cb29-147"><a></a></span>
-<span id="cb29-148"><a></a>a. Know which college is selected</span>
-<span id="cb29-149"><a></a>    * Add a return value to server module</span>
-<span id="cb29-150"><a></a>b. Set the college, e.g. pick a random school</span>
-<span id="cb29-151"><a></a>    * Pass in a school as a reactive value</span>
-<span id="cb29-152"><a></a>    * Update the return value to include an updat "method"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-6"><a></a># ┌ level-up-shiny ──────────────────────────────────┐</span>
+<span id="cb29-7"><a></a># │                                                  │</span>
+<span id="cb29-8"><a></a># │                    Solution 9                    │</span>
+<span id="cb29-9"><a></a># │                                                  │</span>
+<span id="cb29-10"><a></a># └─────────────────────────────── posit::conf(2024) ┘</span>
+<span id="cb29-11"><a></a></span>
+<span id="cb29-12"><a></a>library(shiny)</span>
+<span id="cb29-13"><a></a>library(bslib)</span>
+<span id="cb29-14"><a></a>library(dplyr)</span>
+<span id="cb29-15"><a></a>library(ggplot2)</span>
+<span id="cb29-16"><a></a>library(leaflet)</span>
+<span id="cb29-17"><a></a>library(collegeScorecard)</span>
+<span id="cb29-18"><a></a></span>
+<span id="cb29-19"><a></a># Setup ----------------------------------------------------------------------</span>
+<span id="cb29-20"><a></a></span>
+<span id="cb29-21"><a></a>colors &lt;- c("#007bc2", "#f45100", "#bf007f")</span>
+<span id="cb29-22"><a></a></span>
+<span id="cb29-23"><a></a>theme_set(</span>
+<span id="cb29-24"><a></a>  theme_minimal(18) +</span>
+<span id="cb29-25"><a></a>    theme(</span>
+<span id="cb29-26"><a></a>      panel.grid.minor = element_blank(),</span>
+<span id="cb29-27"><a></a>      panel.grid.major.y = element_blank(),</span>
+<span id="cb29-28"><a></a>      axis.title = element_text(size = 14)</span>
+<span id="cb29-29"><a></a>    )</span>
+<span id="cb29-30"><a></a>)</span>
+<span id="cb29-31"><a></a></span>
+<span id="cb29-32"><a></a>school_100 &lt;-</span>
+<span id="cb29-33"><a></a>  scorecard |&gt;</span>
+<span id="cb29-34"><a></a>  slice_max(academic_year) |&gt;</span>
+<span id="cb29-35"><a></a>  slice_max(n_undergrads, n = 100, with_ties = FALSE) |&gt;</span>
+<span id="cb29-36"><a></a>  select(id, n_undergrads) |&gt;</span>
+<span id="cb29-37"><a></a>  left_join(school, by = join_by(id))</span>
+<span id="cb29-38"><a></a></span>
+<span id="cb29-39"><a></a>school_names &lt;- c("Pick a School" = "", school_100$name)</span>
+<span id="cb29-40"><a></a></span>
+<span id="cb29-41"><a></a># UI -------------------------------------------------------------------------</span>
+<span id="cb29-42"><a></a></span>
+<span id="cb29-43"><a></a>ui &lt;- page_fillable(</span>
+<span id="cb29-44"><a></a>  layout_columns(</span>
+<span id="cb29-45"><a></a>    div(</span>
+<span id="cb29-46"><a></a>      mod_school_ui("a", "School A", school_names)</span>
+<span id="cb29-47"><a></a>    ),</span>
+<span id="cb29-48"><a></a>    div(</span>
+<span id="cb29-49"><a></a>      mod_school_ui("b", "School B", school_names)</span>
+<span id="cb29-50"><a></a>    )</span>
+<span id="cb29-51"><a></a>  )</span>
+<span id="cb29-52"><a></a>)</span>
+<span id="cb29-53"><a></a></span>
+<span id="cb29-54"><a></a># Server ---------------------------------------------------------------------</span>
+<span id="cb29-55"><a></a></span>
+<span id="cb29-56"><a></a>server &lt;- function(input, output, session) {</span>
+<span id="cb29-57"><a></a>  mod_school_server("a", colors[1])</span>
+<span id="cb29-58"><a></a>  mod_school_server("b", colors[2])</span>
+<span id="cb29-59"><a></a>}</span>
+<span id="cb29-60"><a></a></span>
+<span id="cb29-61"><a></a>shinyApp(ui, server)</span>
+<span id="cb29-62"><a></a></span>
+<span id="cb29-63"><a></a></span>
+<span id="cb29-64"><a></a>## file: mod_school.R</span>
+<span id="cb29-65"><a></a>mod_school_ui &lt;- function(id, label, choices, selected = NULL) {</span>
+<span id="cb29-66"><a></a>  ns &lt;- NS(id)</span>
+<span id="cb29-67"><a></a></span>
+<span id="cb29-68"><a></a>  if (is.null(selected)) {</span>
+<span id="cb29-69"><a></a>    selected &lt;- sample(choices, 1)</span>
+<span id="cb29-70"><a></a>  }</span>
+<span id="cb29-71"><a></a></span>
+<span id="cb29-72"><a></a>  list(</span>
+<span id="cb29-73"><a></a>    selectInput(ns("school"), label, choices = choices, selected = selected, width = "100%"),</span>
+<span id="cb29-74"><a></a>    card(</span>
+<span id="cb29-75"><a></a>      card_header("Cost of Tuition (In State)"),</span>
+<span id="cb29-76"><a></a>      plotOutput(ns("plot_school"))</span>
+<span id="cb29-77"><a></a>    ),</span>
+<span id="cb29-78"><a></a>    card_dark(</span>
+<span id="cb29-79"><a></a>      title = "Location",</span>
+<span id="cb29-80"><a></a>      leafletOutput(ns("map_school"))</span>
+<span id="cb29-81"><a></a>    )</span>
+<span id="cb29-82"><a></a>  )</span>
+<span id="cb29-83"><a></a>}</span>
+<span id="cb29-84"><a></a></span>
+<span id="cb29-85"><a></a>mod_school_server &lt;- function(id, plot_color) {</span>
+<span id="cb29-86"><a></a>  moduleServer(id, function(input, output, session) {</span>
+<span id="cb29-87"><a></a>    output$plot_school &lt;- renderPlot({</span>
+<span id="cb29-88"><a></a>      req(input$school)</span>
+<span id="cb29-89"><a></a></span>
+<span id="cb29-90"><a></a>      scorecard |&gt;</span>
+<span id="cb29-91"><a></a>        filter_scorecard_by_school_name(school, input$school) |&gt;</span>
+<span id="cb29-92"><a></a>        plot_cost_tuition(plot_color)</span>
+<span id="cb29-93"><a></a>    })</span>
+<span id="cb29-94"><a></a></span>
+<span id="cb29-95"><a></a>    output$map_school &lt;- renderLeaflet({</span>
+<span id="cb29-96"><a></a>      req(input$school)</span>
+<span id="cb29-97"><a></a>      map_school(school, input$school)</span>
+<span id="cb29-98"><a></a>    })</span>
+<span id="cb29-99"><a></a>  })</span>
+<span id="cb29-100"><a></a>}</span>
+<span id="cb29-101"><a></a></span>
+<span id="cb29-102"><a></a></span>
+<span id="cb29-103"><a></a>## file: functions.R</span>
+<span id="cb29-104"><a></a>card_dark &lt;- function(title, ...) {</span>
+<span id="cb29-105"><a></a>  card(</span>
+<span id="cb29-106"><a></a>    card_header(title),</span>
+<span id="cb29-107"><a></a>    class = "text-bg-dark",</span>
+<span id="cb29-108"><a></a>    card_body(</span>
+<span id="cb29-109"><a></a>      padding = 0,</span>
+<span id="cb29-110"><a></a>      ...</span>
+<span id="cb29-111"><a></a>    )</span>
+<span id="cb29-112"><a></a>  )</span>
+<span id="cb29-113"><a></a>}</span>
+<span id="cb29-114"><a></a></span>
+<span id="cb29-115"><a></a></span>
+<span id="cb29-116"><a></a>plot_cost_tuition &lt;- function(scorecard, fill_color = "#007bc2") {</span>
+<span id="cb29-117"><a></a>  scorecard |&gt;</span>
+<span id="cb29-118"><a></a>    mutate(academic_year = as.integer(substr(academic_year, 1, 4))) |&gt;</span>
+<span id="cb29-119"><a></a>    ggplot() +</span>
+<span id="cb29-120"><a></a>    aes(x = academic_year, y = cost_tuition_in) +</span>
+<span id="cb29-121"><a></a>    geom_col(fill = fill_color, na.rm = TRUE) +</span>
+<span id="cb29-122"><a></a>    labs(</span>
+<span id="cb29-123"><a></a>      x = "Academic Year",</span>
+<span id="cb29-124"><a></a>      y = NULL</span>
+<span id="cb29-125"><a></a>    ) +</span>
+<span id="cb29-126"><a></a>    scale_y_continuous(labels = scales::label_dollar())</span>
+<span id="cb29-127"><a></a>}</span>
+<span id="cb29-128"><a></a></span>
+<span id="cb29-129"><a></a>filter_scorecard_by_school_name &lt;- function(scorecard, school, name) {</span>
+<span id="cb29-130"><a></a>  school_by_name &lt;- </span>
+<span id="cb29-131"><a></a>    school |&gt;</span>
+<span id="cb29-132"><a></a>    filter(name == {{ name }})</span>
+<span id="cb29-133"><a></a></span>
+<span id="cb29-134"><a></a>  scorecard |&gt;</span>
+<span id="cb29-135"><a></a>    semi_join(school_by_name, by = "id")</span>
+<span id="cb29-136"><a></a>}</span>
+<span id="cb29-137"><a></a></span>
+<span id="cb29-138"><a></a>map_school &lt;- function(school, name) {</span>
+<span id="cb29-139"><a></a>  the_school &lt;- school |&gt; filter(name == {{ name }})</span>
+<span id="cb29-140"><a></a></span>
+<span id="cb29-141"><a></a>  leaflet() |&gt;</span>
+<span id="cb29-142"><a></a>    addTiles() |&gt;</span>
+<span id="cb29-143"><a></a>    addMarkers(</span>
+<span id="cb29-144"><a></a>      lng = the_school$longitude,</span>
+<span id="cb29-145"><a></a>      lat = the_school$latitude,</span>
+<span id="cb29-146"><a></a>      popup = the_school$name</span>
+<span id="cb29-147"><a></a>    )</span>
+<span id="cb29-148"><a></a>}</span>
+<span id="cb29-149"><a></a></span>
+<span id="cb29-150"><a></a></span>
+<span id="cb29-151"><a></a>## file: notes.md</span>
+<span id="cb29-152"><a></a>Suppose you put this module into your app and realize that actually, you'd like to</span>
+<span id="cb29-153"><a></a></span>
+<span id="cb29-154"><a></a>a. Know which college is selected</span>
+<span id="cb29-155"><a></a>    * Add a return value to server module</span>
+<span id="cb29-156"><a></a>b. Set the college, e.g. pick a random school</span>
+<span id="cb29-157"><a></a>    * Pass in a school as a reactive value</span>
+<span id="cb29-158"><a></a>    * Update the return value to include an updat "method"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

@@ -88,14 +88,14 @@
     "href": "slides/slides-09-fast-apps.html#benchmark-your-options-2",
     "title": "Fast Apps 🏎️💨",
     "section": "Benchmark your options",
-    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  check = FALSE\n)\n\n\n\n# A tibble: 2 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   81.97ms 107.59ms      9.05     382MB     79.6\n2 second_try(10000)   7.46ms   7.54ms    125.      78.2KB     19.8\n\n\n\nthird_try &lt;- function(n) {\n  seq_len(n) + runif(n)\n}"
+    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  check = FALSE\n)\n\n\n\n# A tibble: 2 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)    85.9ms 112.82ms      8.72     382MB     76.7\n2 second_try(10000)    7.4ms   7.52ms    125.      78.2KB     19.8\n\n\n\nthird_try &lt;- function(n) {\n  seq_len(n) + runif(n)\n}"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#benchmark-your-options-3",
     "href": "slides/slides-09-fast-apps.html#benchmark-your-options-3",
     "title": "Fast Apps 🏎️💨",
     "section": "Benchmark your options",
-    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  third_try(1e4),\n  check = FALSE\n)\n\n# A tibble: 3 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   90.13ms  94.28ms      10.7     382MB    102. \n2 second_try(10000)   7.45ms   7.63ms     121.     78.2KB     23.9\n3 third_try(10000)   95.54µs  97.64µs    8299.    117.3KB     20.0"
+    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  third_try(1e4),\n  check = FALSE\n)\n\n# A tibble: 3 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)    98.1ms 100.46ms      9.94     382MB     95.5\n2 second_try(10000)   7.49ms   7.63ms    121.      78.2KB     23.8\n3 third_try(10000)   95.65µs  97.74µs   8003.     117.3KB     19.9"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#benchmark-your-options-4",
@@ -263,7 +263,7 @@
     "href": "slides/slides-02-bslib.html#my-turn-shinylive",
     "title": "Modern UI with bslib",
     "section": "",
-    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\n\nthematic::thematic_shiny()\n\nui &lt;- fluidPage(\n  theme = bs_theme(\n    version = 5,\n    bg = \"#0B3954\",\n    fg = \"#bfd7ea\",\n    primary = \"#0BAFC1\",\n  ),\n  selectizeInput(\"data\", \"Data set\", choices = c(\"school\", \"scorecard\"), selected = \"school\"),\n  radioButtons(\"type\", \"Inspection type\", choices = c(\"Column Types\" = \"types\", \"Categorical\" = \"cat\", \"Numeric\" = \"num\", \"Missing\" = \"na\"), inline = TRUE),\n  plotOutput(\"plot\")\n)\n\nserver &lt;- function(input, output, session) {\n  data &lt;- reactive({\n    switch(\n      input$data,\n      \"school\" = collegeScorecard::school,\n      \"scorecard\" = collegeScorecard::scorecard\n    )\n  })\n\n  output$plot &lt;- renderPlot({\n    req(data())\n\n    df &lt;- data()\n\n    inspected &lt;- switch(\n      input$type,\n      \"types\" = inspectdf::inspect_types(df),\n      \"cat\" = inspectdf::inspect_cat(df),\n      \"num\" = inspectdf::inspect_num(df),\n      \"na\" = inspectdf::inspect_na(df)\n    )\n\n    inspectdf::show_plot(inspected, col_palette = 2)\n  })\n}\n\nshinyApp(ui, server)\n\n\n\n## file: notes.R\n# =&gt; _exercises/01_solution_app.R\n\ntheme = bs_theme(\n  version = 5,\n  bg = \"#0B3954\",\n  fg = \"#bfd7ea\",\n  primary = \"#0BAFC1\",\n)\n\n# * Add thematic::thematic_shiny() to the app\n# * page_fluid()"
+    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\n# ┌ level-up-shiny ──────────────────────────────────┐\n# │                                                  │\n# │                    Solution 1                    │\n# │                                                  │\n# └─────────────────────────────── posit::conf(2024) ┘\n\nlibrary(shiny)\nlibrary(bslib)\n\nthematic::thematic_shiny()\n\nui &lt;- fluidPage(\n  theme = bs_theme(\n    version = 5,\n    bg = \"#0B3954\",\n    fg = \"#bfd7ea\",\n    primary = \"#0BAFC1\",\n  ),\n  selectizeInput(\"data\", \"Data set\", choices = c(\"school\", \"scorecard\"), selected = \"school\"),\n  radioButtons(\"type\", \"Inspection type\", choices = c(\"Column Types\" = \"types\", \"Categorical\" = \"cat\", \"Numeric\" = \"num\", \"Missing\" = \"na\"), inline = TRUE),\n  plotOutput(\"plot\")\n)\n\nserver &lt;- function(input, output, session) {\n  data &lt;- reactive({\n    switch(\n      input$data,\n      \"school\" = collegeScorecard::school,\n      \"scorecard\" = collegeScorecard::scorecard\n    )\n  })\n\n  output$plot &lt;- renderPlot({\n    req(data())\n\n    df &lt;- data()\n\n    inspected &lt;- switch(\n      input$type,\n      \"types\" = inspectdf::inspect_types(df),\n      \"cat\" = inspectdf::inspect_cat(df),\n      \"num\" = inspectdf::inspect_num(df),\n      \"na\" = inspectdf::inspect_na(df)\n    )\n\n    inspectdf::show_plot(inspected, col_palette = 2)\n  })\n}\n\nshinyApp(ui, server)\n\n\n\n## file: notes.R\n# =&gt; _exercises/01_solution_app.R\n\ntheme = bs_theme(\n  version = 5,\n  bg = \"#0B3954\",\n  fg = \"#bfd7ea\",\n  primary = \"#0BAFC1\",\n)\n\n# * Add thematic::thematic_shiny() to the app\n# * page_fluid()"
   },
   {
     "objectID": "slides/slides-02-bslib.html#page-fillable",
@@ -539,153 +539,270 @@
     "text": "File organization\n\n\n\n\n_exercises/\nFiles for Your Turn exercises\n\n\n_examples/\nFiles for my demo examples\n\n\nwebsite/\nThe website and slides\n\n\n./*\nLots of project related files you can ignore"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Level Up with Shiny for R",
+    "objectID": "slides/slides-10-extended-tasks.html#long-running-tasks",
+    "href": "slides/slides-10-extended-tasks.html#long-running-tasks",
+    "title": "Extended Tasks",
+    "section": "Long Running Tasks",
+    "text": "Long Running Tasks\nUse long running task from before (long run when changing state)\nWhat if we solved this by adding a “submit button”?\nWhat goes wrong?"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#your-turn-13-inst",
+    "href": "slides/slides-10-extended-tasks.html#your-turn-13-inst",
+    "title": "Extended Tasks",
+    "section": "Your Turn _exercises/13_app.R",
+    "text": "Your Turn _exercises/13_app.R\n\n  \n    −\n    +\n \n 04:00\n \n\nAdd an actionButton(\"get_state\") to the sidebar.\nUpdate the schools_state reactive to only fetch data when the button is clicked.\nUse the app. How can you break it?"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#long-running-but-still-blocking",
+    "href": "slides/slides-10-extended-tasks.html#long-running-but-still-blocking",
+    "title": "Extended Tasks",
+    "section": "Long Running but still Blocking",
+    "text": "Long Running but still Blocking\nReactive graph for long running task"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#the-heart-of-shiny",
+    "href": "slides/slides-10-extended-tasks.html#the-heart-of-shiny",
+    "title": "Extended Tasks",
+    "section": "The Heart of Shiny",
+    "text": "The Heart of Shiny\nwhile (TRUE) {\n  changes &lt;- get_output_changes()\n  changed_outputs &lt;- recompute_all_affected_things(changes)\n  send_outputs(changed_outputs)\n}"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#one-user",
+    "href": "slides/slides-10-extended-tasks.html#one-user",
+    "title": "Extended Tasks",
+    "section": "One User",
+    "text": "One User\n\n\nEach reactive expression in your app is evaluated one after the other.\nIt takes as long as it takes to run the code.\nAnd then you get your answer."
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#two-users",
+    "href": "slides/slides-10-extended-tasks.html#two-users",
+    "title": "Extended Tasks",
+    "section": "Two Users",
+    "text": "Two Users\n\n\nEach user has their own reactive graph that’s still evaluated one computation at a time.\nBut it could take longer than it takes to run the code.\nIf we both have the app open and I start the long running task, you’ll have to wait for me to finish.\nThen Shiny runs the code for your app.\nAnd you get the answer."
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#shiny-async-with-two-users",
+    "href": "slides/slides-10-extended-tasks.html#shiny-async-with-two-users",
+    "title": "Extended Tasks",
+    "section": "Shiny Async with Two Users",
+    "text": "Shiny Async with Two Users\n\n\nEach user has their own reactive graph that’s still evaluated one computation at a time.\nBut they’re now decoupled.\nI only have to wait as long as it takes to the run the code for my app.\nAnd you only have to wait as long as it takes to run the code for your app.\nBut we still have to wait… and we can’t use our apps until our computation is done."
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#shiny-with-extended-task",
+    "href": "slides/slides-10-extended-tasks.html#shiny-with-extended-task",
+    "title": "Extended Tasks",
+    "section": "Shiny with Extended Task",
+    "text": "Shiny with Extended Task\n\n\n\nExtended Tasks let you split a reactive expression into two pieces.\n\nObserve incoming changes and decide when to run the task, and with what parameters.\nReceive the results of the task and update dependent outputs."
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#shiny-with-extended-task-1",
+    "href": "slides/slides-10-extended-tasks.html#shiny-with-extended-task-1",
+    "title": "Extended Tasks",
+    "section": "Shiny with Extended Task",
+    "text": "Shiny with Extended Task\n\n\nThe reactive graph can now make it to equillibrium in each reactive tick.\nThe task is run in the background so it doesn’t block either of our apps.\nIt still takes as long as it takes to run the code…\nBut I can also still use the app!"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#extendedtask---step-1",
+    "href": "slides/slides-10-extended-tasks.html#extendedtask---step-1",
+    "title": "Extended Tasks",
+    "section": "ExtendedTask - Step 1",
+    "text": "ExtendedTask - Step 1\nDefine the task at hand. At its core, it’s a function that returns a future_promise()\n#| code-copy: false\n1task_fetch_data &lt;- ExtendedTask$new(function(data_type) {\n2  future_promise({\n    fetch_from_slow_api(data_type)\n  })\n}) |&gt;\n3  bind_task_button(\"fetch_data\")\n\n1\n\nNothing reactive can happen here!\n\n2\n\nReturn a future_promise() to make it potentially non-blocking\n\n3\n\nBind the state of an input_task_button() to this task’s state"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#extendedtask---step-2",
+    "href": "slides/slides-10-extended-tasks.html#extendedtask---step-2",
+    "title": "Extended Tasks",
+    "section": "ExtendedTask - Step 2",
+    "text": "ExtendedTask - Step 2\nNext, decide when the task will be invoked.\n#| code-copy: false\nobserveEvent(input$fetch_data, {\n1  task_fetch_data$invoke(input$data_type)\n})\n\n1\n\nAnything reactive happens here in the observer or reactive expression."
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#extendedtask---step-3",
+    "href": "slides/slides-10-extended-tasks.html#extendedtask---step-3",
+    "title": "Extended Tasks",
+    "section": "ExtendedTask - Step 3",
+    "text": "ExtendedTask - Step 3\nFinally, use the task’s result in a reactive context.\n#| code-copy: false\ndata &lt;- reactive({\n1  task_fetch_data$result()\n})\n\n1\n\nThis only fires when the task is done."
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#extendedtask",
+    "href": "slides/slides-10-extended-tasks.html#extendedtask",
+    "title": "Extended Tasks",
+    "section": "ExtendedTask",
+    "text": "ExtendedTask\ntask_fetch_data &lt;- ExtendedTask$new(function(data_type) {\n  future_promise({\n    fetch_from_slow_api(data_type)\n  })\n}) |&gt;\n  bind_task_button(\"fetch_data\")\n\nobserveEvent(input$fetch_data, {\n  task_fetch_data$invoke(input$data_type)\n})\n\ndata &lt;- reactive({\n  task_fetch_data$result()\n})"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#extendedtask-1",
+    "href": "slides/slides-10-extended-tasks.html#extendedtask-1",
+    "title": "Extended Tasks",
+    "section": "ExtendedTask",
+    "text": "ExtendedTask\nserver &lt;- function(input, output, session) {\n  task_fetch_data &lt;- ExtendedTask$new(function(data_type) {\n    future_promise({\n      fetch_from_slow_api(data_type)\n    })\n  }) |&gt;\n    bind_task_button(\"fetch_data\")\n\n  observeEvent(input$fetch_data, {\n    task_fetch_data$invoke(input$data_type)\n  })\n\n  data &lt;- reactive({\n    task_fetch_data$result()\n  })\n}"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#extendedtask-2",
+    "href": "slides/slides-10-extended-tasks.html#extendedtask-2",
+    "title": "Extended Tasks",
+    "section": "ExtendedTask",
+    "text": "ExtendedTask\nlibrary(future)\nlibrary(promises)\nfuture::plan(multisession)\n\nserver &lt;- function(input, output, session) {\n  task_fetch_data &lt;- ExtendedTask$new(function(data_type) {\n    future_promise({\n      fetch_from_slow_api(data_type)\n    })\n  }) |&gt;\n    bind_task_button(\"fetch_data\")\n\n  observeEvent(input$fetch_data, {\n    task_fetch_data$invoke(input$data_type)\n  })\n\n  data &lt;- reactive({\n    task_fetch_data$result()\n  })\n}"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#your-turn-14-inst",
+    "href": "slides/slides-10-extended-tasks.html#your-turn-14-inst",
+    "title": "Extended Tasks",
+    "section": "Your Turn _exercises/14_app.R",
+    "text": "Your Turn _exercises/14_app.R\n\n  \n    −\n    +\n \n 06:00\n \n\nReplace the actionButton(\"get_state\") with an input_task_button(). How much does the task button help?\nUpdate the server logic to use ExtendedTask that uses future_promise(). I’ve already loaded the packages you need.\nCan you use the app while fetching data from the API?\nStretch: How could you keep the whole app running, including the plots while the data is being fetched? Read 14_solution2_app.R for an example."
+  },
+  {
+    "objectID": "workshop-10.html",
+    "href": "workshop-10.html",
+    "title": "Extended Tasks",
     "section": "",
-    "text": "Workshop at posit::conf(2024)August 12, 202409:00 - 17:00ROOM TBA"
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Extended Tasks"
+    ]
   },
   {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Level Up with Shiny for R",
-    "section": "Introduction",
-    "text": "Introduction\nShiny lets you quickly create rich, data-driven web applications for yourself, your clients, your students, or your colleagues. This workshop will give you the skills you need to build complex applications with brilliant user interfaces.\nYou’ll learn how to make the most of recent developments in the Shiny ecosystem, while mastering techniques for modularizing and structuring your applications for growth and maintainability. Along the way, you’ll encounter new techniques to speed up your applications using caching and databases for a smooth user experience."
+    "objectID": "workshop-10.html#slides",
+    "href": "workshop-10.html#slides",
+    "title": "Extended Tasks",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Extended Tasks"
+    ]
   },
   {
-    "objectID": "index.html#links",
-    "href": "index.html#links",
-    "title": "Level Up with Shiny for R",
+    "objectID": "workshop-10.html#resources",
+    "href": "workshop-10.html#resources",
+    "title": "Extended Tasks",
+    "section": "Resources",
+    "text": "Resources\n\nShiny - Non-blocking operations\nYouTube: Managing long-running operations in Shiny | Posit, Joe Cheng\nTask or computation that proceeds in the background — ExtendedTask\nButton for launching longer-running operations — input_task_button • bslib\nTed Laderas: “Part 2: Reactivity” - vmst·io",
+    "crumbs": [
+      "Workshop",
+      "Extended Tasks"
+    ]
+  },
+  {
+    "objectID": "workshop-06.html",
+    "href": "workshop-06.html",
+    "title": "Just a little JavaScript",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Just a little JavaScript"
+    ]
+  },
+  {
+    "objectID": "workshop-06.html#slides",
+    "href": "workshop-06.html#slides",
+    "title": "Just a little JavaScript",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Just a little JavaScript"
+    ]
+  },
+  {
+    "objectID": "workshop-06.html#links",
+    "href": "workshop-06.html#links",
+    "title": "Just a little JavaScript",
     "section": "Links",
-    "text": "Links\n\n📘 Workshop Materials\n🔧 Getting Setup\n🧑‍💻 Join Posit Cloud Space\n👾 Discord (TBA) \n📦 Repository\n🎡 posit::conf(2024)"
+    "text": "Links\n\nA conversation with ChatGPT 4o",
+    "crumbs": [
+      "Workshop",
+      "Just a little JavaScript"
+    ]
   },
   {
-    "objectID": "workshop-09.html",
-    "href": "workshop-09.html",
-    "title": "Fast Apps",
+    "objectID": "workshop-04.html",
+    "href": "workshop-04.html",
+    "title": "Code organization",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Fast Apps"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-09.html#slides",
-    "href": "workshop-09.html#slides",
-    "title": "Fast Apps",
+    "objectID": "workshop-04.html#slides",
+    "href": "workshop-04.html#slides",
+    "title": "Code organization",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Fast Apps"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-09.html#resources",
-    "href": "workshop-09.html#resources",
-    "title": "Fast Apps",
-    "section": "Resources",
-    "text": "Resources\n\nShiny - Using caching in Shiny to maximize performance\nShiny - Profiling your Shiny app\nShiny - Performance\nExpandable Sparklines • Value boxes • bslib",
-    "crumbs": [
-      "Workshop",
-      "Fast Apps"
-    ]
-  },
-  {
-    "objectID": "workshop-05.html",
-    "href": "workshop-05.html",
-    "title": "Modules",
-    "section": "",
-    "text": "View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Modules"
-    ]
-  },
-  {
-    "objectID": "workshop-05.html#slides",
-    "href": "workshop-05.html#slides",
-    "title": "Modules",
-    "section": "",
-    "text": "View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Modules"
-    ]
-  },
-  {
-    "objectID": "workshop-05.html#packages",
-    "href": "workshop-05.html#packages",
-    "title": "Modules",
+    "objectID": "workshop-04.html#packages",
+    "href": "workshop-04.html#packages",
+    "title": "Code organization",
     "section": "Packages",
-    "text": "Packages\n\nusethis",
+    "text": "Packages\n\nstyler\ngrkstyle",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-05.html#resources",
-    "href": "workshop-05.html#resources",
-    "title": "Modules",
+    "objectID": "workshop-04.html#resources",
+    "href": "workshop-04.html#resources",
+    "title": "Code organization",
     "section": "Resources",
-    "text": "Resources\n\nLeveraging Shiny Modules, Carson Sievert (slides)\nMastering Shiny, Hadley Wickham:\n\nChapter 18 Functions | Mastering Shiny\nChapter 19 Shiny modules | Mastering Shiny\nChapter 20 Packages | Mastering Shiny\n\nR Packages (2nd Edition)\nA beginner’s guide to Shiny modules, Emily Riederer\nShiny Modules in 100 Seconds, Albert Rapp",
+    "text": "Resources\n\nHow Developers Choose Names, Dror G. Fietelson\nThe Programmer’s Brain, Felienne Hermans\nExplaining variable, Pete Hodgson\nWhy comment your code as little (and as well) as possible - R-hub blog\nCoding style, coding etiquette - R-hub blog\nCode smells and feels, Jenny Bryan\nThe Art of Readable Code, Dustin Boswell and Trevor Foucher\nRefactoring: Improving the Design of Existing Code, Martin Fowler\nObject of type ‘closure’ is not subsettable, Jenny Bryan (rstudio::conf(2020))",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-02.html",
-    "href": "workshop-02.html",
-    "title": "Modern layouts with bslib",
+    "objectID": "workshop-01.html",
+    "href": "workshop-01.html",
+    "title": "Welcome and getting started",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Welcome and getting started"
     ]
   },
   {
-    "objectID": "workshop-02.html#slides",
-    "href": "workshop-02.html#slides",
-    "title": "Modern layouts with bslib",
+    "objectID": "workshop-01.html#slides",
+    "href": "workshop-01.html#slides",
+    "title": "Welcome and getting started",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Welcome and getting started"
     ]
   },
   {
-    "objectID": "workshop-02.html#topic-links",
-    "href": "workshop-02.html#topic-links",
-    "title": "Modern layouts with bslib",
-    "section": "Topic Links",
-    "text": "Topic Links\n\nbslib\nU.S. College Scorecard Data\n\ncollegeScorecard\n\nTheming with bslib\n\nbslib | Get Started | Theming\nbs_theme()\nBootstrap 5 theming variables\n\nbslib page functions\nFilling layouts with bslib\nbslib components:\n\ncard() · Article: Cards\nvalue_box() · Article: Value Boxes\nBuild-A-Box app\n\nbslib sidebar layouts:\n\npage_sidebar()\nsidebar()\nlayout_sidebar()\nArticle: Sidebar Layouts\n\nDetails on demand\n\naccordion()\ntooltip()\npopover()\nArticle: Tooltips and Popovers\n\nIcons\n\nfontawesome · Fontawesome Icons\nbsicons · Bootstrap Icons",
+    "objectID": "workshop-01.html#outline",
+    "href": "workshop-01.html#outline",
+    "title": "Welcome and getting started",
+    "section": "Outline",
+    "text": "Outline\n\nWelcome to posit::conf(2024)!\nIntroductions and meet your neighbors\nAbout the workshop, conference, goals and ground rules",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Welcome and getting started"
     ]
   },
   {
-    "objectID": "workshop-02.html#resources",
-    "href": "workshop-02.html#resources",
-    "title": "Modern layouts with bslib",
-    "section": "Resources",
-    "text": "Resources\n\nCarson Sievert: Towards the next generation of Shiny UI (slides) (ShinyConf 2023)\nNext Generation Shiny Apps with {bslib} (Workshop at R/Medicine 2024)",
+    "objectID": "workshop-01.html#your-turn",
+    "href": "workshop-01.html#your-turn",
+    "title": "Welcome and getting started",
+    "section": "🧑‍💻 Your Turn",
+    "text": "🧑‍💻 Your Turn",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Welcome and getting started"
     ]
-  },
-  {
-    "objectID": "about/index.html",
-    "href": "about/index.html",
-    "title": "Our Team",
-    "section": "",
-    "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
   },
   {
     "objectID": "workshop.html",
@@ -845,165 +962,153 @@
     ]
   },
   {
-    "objectID": "slides/slides-10-extended-tasks.html#long-running-non-blocking-tasks",
-    "href": "slides/slides-10-extended-tasks.html#long-running-non-blocking-tasks",
-    "title": "Extended Tasks",
-    "section": "Long Running, Non-Blocking Tasks",
-    "text": "Long Running, Non-Blocking Tasks"
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "Our Team",
+    "section": "",
+    "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
   },
   {
-    "objectID": "workshop-01.html",
-    "href": "workshop-01.html",
-    "title": "Welcome and getting started",
+    "objectID": "workshop-02.html",
+    "href": "workshop-02.html",
+    "title": "Modern layouts with bslib",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modern layouts with bslib"
     ]
   },
   {
-    "objectID": "workshop-01.html#slides",
-    "href": "workshop-01.html#slides",
-    "title": "Welcome and getting started",
+    "objectID": "workshop-02.html#slides",
+    "href": "workshop-02.html#slides",
+    "title": "Modern layouts with bslib",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modern layouts with bslib"
     ]
   },
   {
-    "objectID": "workshop-01.html#outline",
-    "href": "workshop-01.html#outline",
-    "title": "Welcome and getting started",
-    "section": "Outline",
-    "text": "Outline\n\nWelcome to posit::conf(2024)!\nIntroductions and meet your neighbors\nAbout the workshop, conference, goals and ground rules",
+    "objectID": "workshop-02.html#topic-links",
+    "href": "workshop-02.html#topic-links",
+    "title": "Modern layouts with bslib",
+    "section": "Topic Links",
+    "text": "Topic Links\n\nbslib\nU.S. College Scorecard Data\n\ncollegeScorecard\n\nTheming with bslib\n\nbslib | Get Started | Theming\nbs_theme()\nBootstrap 5 theming variables\n\nbslib page functions\nFilling layouts with bslib\nbslib components:\n\ncard() · Article: Cards\nvalue_box() · Article: Value Boxes\nBuild-A-Box app\n\nbslib sidebar layouts:\n\npage_sidebar()\nsidebar()\nlayout_sidebar()\nArticle: Sidebar Layouts\n\nDetails on demand\n\naccordion()\ntooltip()\npopover()\nArticle: Tooltips and Popovers\n\nIcons\n\nfontawesome · Fontawesome Icons\nbsicons · Bootstrap Icons",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modern layouts with bslib"
     ]
   },
   {
-    "objectID": "workshop-01.html#your-turn",
-    "href": "workshop-01.html#your-turn",
-    "title": "Welcome and getting started",
-    "section": "🧑‍💻 Your Turn",
-    "text": "🧑‍💻 Your Turn",
+    "objectID": "workshop-02.html#resources",
+    "href": "workshop-02.html#resources",
+    "title": "Modern layouts with bslib",
+    "section": "Resources",
+    "text": "Resources\n\nCarson Sievert: Towards the next generation of Shiny UI (slides) (ShinyConf 2023)\nNext Generation Shiny Apps with {bslib} (Workshop at R/Medicine 2024)",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modern layouts with bslib"
     ]
   },
   {
-    "objectID": "workshop-04.html",
-    "href": "workshop-04.html",
-    "title": "Code organization",
+    "objectID": "workshop-05.html",
+    "href": "workshop-05.html",
+    "title": "Modules",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Code organization"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-04.html#slides",
-    "href": "workshop-04.html#slides",
-    "title": "Code organization",
+    "objectID": "workshop-05.html#slides",
+    "href": "workshop-05.html#slides",
+    "title": "Modules",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Code organization"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-04.html#packages",
-    "href": "workshop-04.html#packages",
-    "title": "Code organization",
+    "objectID": "workshop-05.html#packages",
+    "href": "workshop-05.html#packages",
+    "title": "Modules",
     "section": "Packages",
-    "text": "Packages\n\nstyler\ngrkstyle",
+    "text": "Packages\n\nusethis",
     "crumbs": [
       "Workshop",
-      "Code organization"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-04.html#resources",
-    "href": "workshop-04.html#resources",
-    "title": "Code organization",
+    "objectID": "workshop-05.html#resources",
+    "href": "workshop-05.html#resources",
+    "title": "Modules",
     "section": "Resources",
-    "text": "Resources\n\nHow Developers Choose Names, Dror G. Fietelson\nThe Programmer’s Brain, Felienne Hermans\nExplaining variable, Pete Hodgson\nWhy comment your code as little (and as well) as possible - R-hub blog\nCoding style, coding etiquette - R-hub blog\nCode smells and feels, Jenny Bryan\nThe Art of Readable Code, Dustin Boswell and Trevor Foucher\nRefactoring: Improving the Design of Existing Code, Martin Fowler\nObject of type ‘closure’ is not subsettable, Jenny Bryan (rstudio::conf(2020))",
+    "text": "Resources\n\nLeveraging Shiny Modules, Carson Sievert (slides)\nMastering Shiny, Hadley Wickham:\n\nChapter 18 Functions | Mastering Shiny\nChapter 19 Shiny modules | Mastering Shiny\nChapter 20 Packages | Mastering Shiny\n\nR Packages (2nd Edition)\nA beginner’s guide to Shiny modules, Emily Riederer\nShiny Modules in 100 Seconds, Albert Rapp",
     "crumbs": [
       "Workshop",
-      "Code organization"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-06.html",
-    "href": "workshop-06.html",
-    "title": "Just a little JavaScript",
+    "objectID": "workshop-09.html",
+    "href": "workshop-09.html",
+    "title": "Fast Apps",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Just a little JavaScript"
+      "Fast Apps"
     ]
   },
   {
-    "objectID": "workshop-06.html#slides",
-    "href": "workshop-06.html#slides",
-    "title": "Just a little JavaScript",
+    "objectID": "workshop-09.html#slides",
+    "href": "workshop-09.html#slides",
+    "title": "Fast Apps",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Just a little JavaScript"
+      "Fast Apps"
     ]
   },
   {
-    "objectID": "workshop-06.html#links",
-    "href": "workshop-06.html#links",
-    "title": "Just a little JavaScript",
+    "objectID": "workshop-09.html#resources",
+    "href": "workshop-09.html#resources",
+    "title": "Fast Apps",
+    "section": "Resources",
+    "text": "Resources\n\nShiny - Using caching in Shiny to maximize performance\nShiny - Profiling your Shiny app\nShiny - Performance\nExpandable Sparklines • Value boxes • bslib",
+    "crumbs": [
+      "Workshop",
+      "Fast Apps"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Level Up with Shiny for R",
+    "section": "",
+    "text": "Workshop at posit::conf(2024)August 12, 202409:00 - 17:00ROOM TBA"
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Level Up with Shiny for R",
+    "section": "Introduction",
+    "text": "Introduction\nShiny lets you quickly create rich, data-driven web applications for yourself, your clients, your students, or your colleagues. This workshop will give you the skills you need to build complex applications with brilliant user interfaces.\nYou’ll learn how to make the most of recent developments in the Shiny ecosystem, while mastering techniques for modularizing and structuring your applications for growth and maintainability. Along the way, you’ll encounter new techniques to speed up your applications using caching and databases for a smooth user experience."
+  },
+  {
+    "objectID": "index.html#links",
+    "href": "index.html#links",
+    "title": "Level Up with Shiny for R",
     "section": "Links",
-    "text": "Links\n\nA conversation with ChatGPT 4o",
-    "crumbs": [
-      "Workshop",
-      "Just a little JavaScript"
-    ]
-  },
-  {
-    "objectID": "workshop-10.html",
-    "href": "workshop-10.html",
-    "title": "Extended Tasks",
-    "section": "",
-    "text": "View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Extended Tasks"
-    ]
-  },
-  {
-    "objectID": "workshop-10.html#slides",
-    "href": "workshop-10.html#slides",
-    "title": "Extended Tasks",
-    "section": "",
-    "text": "View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Extended Tasks"
-    ]
-  },
-  {
-    "objectID": "workshop-10.html#resources",
-    "href": "workshop-10.html#resources",
-    "title": "Extended Tasks",
-    "section": "Resources",
-    "text": "Resources\n\nShiny - Non-blocking operations\nYouTube: Managing long-running operations in Shiny | Posit, Joe Cheng\nTask or computation that proceeds in the background — ExtendedTask\nButton for launching longer-running operations — input_task_button • bslib\nTed Laderas: “Part 2: Reactivity” - vmst·io",
-    "crumbs": [
-      "Workshop",
-      "Extended Tasks"
-    ]
+    "text": "Links\n\n📘 Workshop Materials\n🔧 Getting Setup\n🧑‍💻 Join Posit Cloud Space\n👾 Discord (TBA) \n📦 Repository\n🎡 posit::conf(2024)"
   },
   {
     "objectID": "workshop-08.html",
@@ -1512,6 +1617,6 @@
     "href": "slides/slides-05-modules.html#my-turn-module",
     "title": "The module module",
     "section": "",
-    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(leaflet)\nlibrary(collegeScorecard)\n\n# Setup ----------------------------------------------------------------------\n\ncolors &lt;- c(\"#007bc2\", \"#f45100\", \"#bf007f\")\n\ntheme_set(\n  theme_minimal(18) +\n    theme(\n      panel.grid.minor = element_blank(),\n      panel.grid.major.y = element_blank(),\n      axis.title = element_text(size = 14)\n    )\n)\n\nschool_100 &lt;-\n  scorecard |&gt;\n  slice_max(academic_year) |&gt;\n  slice_max(n_undergrads, n = 100, with_ties = FALSE) |&gt;\n  select(id, n_undergrads) |&gt;\n  left_join(school, by = join_by(id))\n\nschool_names &lt;- c(\"Pick a School\" = \"\", school_100$name)\n\n# UI -------------------------------------------------------------------------\n\nui &lt;- page_fillable(\n  layout_columns(\n    div(\n      mod_school_ui(\"a\", \"School A\", school_names)\n    ),\n    div(\n      mod_school_ui(\"b\", \"School B\", school_names)\n    )\n  )\n)\n\n# Server ---------------------------------------------------------------------\n\nserver &lt;- function(input, output, session) {\n  mod_school_server(\"a\", colors[1])\n  mod_school_server(\"b\", colors[2])\n}\n\nshinyApp(ui, server)\n\n\n## file: mod_school.R\nmod_school_ui &lt;- function(id, label, choices, selected = NULL) {\n  ns &lt;- NS(id)\n\n  if (is.null(selected)) {\n    selected &lt;- sample(choices, 1)\n  }\n\n  list(\n    selectInput(ns(\"school\"), label, choices = choices, selected = selected, width = \"100%\"),\n    card(\n      card_header(\"Cost of Tuition (In State)\"),\n      plotOutput(ns(\"plot_school\"))\n    ),\n    card_dark(\n      title = \"Location\",\n      leafletOutput(ns(\"map_school\"))\n    )\n  )\n}\n\nmod_school_server &lt;- function(id, plot_color) {\n  moduleServer(id, function(input, output, session) {\n    output$plot_school &lt;- renderPlot({\n      req(input$school)\n\n      scorecard |&gt;\n        filter_scorecard_by_school_name(school, input$school) |&gt;\n        plot_cost_tuition(plot_color)\n    })\n\n    output$map_school &lt;- renderLeaflet({\n      req(input$school)\n      map_school(school, input$school)\n    })\n  })\n}\n\n\n## file: functions.R\ncard_dark &lt;- function(title, ...) {\n  card(\n    card_header(title),\n    class = \"text-bg-dark\",\n    card_body(\n      padding = 0,\n      ...\n    )\n  )\n}\n\n\nplot_cost_tuition &lt;- function(scorecard, fill_color = \"#007bc2\") {\n  scorecard |&gt;\n    mutate(academic_year = as.integer(substr(academic_year, 1, 4))) |&gt;\n    ggplot() +\n    aes(x = academic_year, y = cost_tuition_in) +\n    geom_col(fill = fill_color, na.rm = TRUE) +\n    labs(\n      x = \"Academic Year\",\n      y = NULL\n    ) +\n    scale_y_continuous(labels = scales::label_dollar())\n}\n\nfilter_scorecard_by_school_name &lt;- function(scorecard, school, name) {\n  school_by_name &lt;- \n    school |&gt;\n    filter(name == {{ name }})\n\n  scorecard |&gt;\n    semi_join(school_by_name, by = \"id\")\n}\n\nmap_school &lt;- function(school, name) {\n  the_school &lt;- school |&gt; filter(name == {{ name }})\n\n  leaflet() |&gt;\n    addTiles() |&gt;\n    addMarkers(\n      lng = the_school$longitude,\n      lat = the_school$latitude,\n      popup = the_school$name\n    )\n}\n\n\n## file: notes.md\nSuppose you put this module into your app and realize that actually, you'd like to\n\na. Know which college is selected\n    * Add a return value to server module\nb. Set the college, e.g. pick a random school\n    * Pass in a school as a reactive value\n    * Update the return value to include an updat \"method\""
+    "text": "#| standalone: true\n#| components: [editor, viewer]\n#| orientation: horizontal\n#| viewerHeight: \"100%\"\n\n# ┌ level-up-shiny ──────────────────────────────────┐\n# │                                                  │\n# │                    Solution 9                    │\n# │                                                  │\n# └─────────────────────────────── posit::conf(2024) ┘\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(leaflet)\nlibrary(collegeScorecard)\n\n# Setup ----------------------------------------------------------------------\n\ncolors &lt;- c(\"#007bc2\", \"#f45100\", \"#bf007f\")\n\ntheme_set(\n  theme_minimal(18) +\n    theme(\n      panel.grid.minor = element_blank(),\n      panel.grid.major.y = element_blank(),\n      axis.title = element_text(size = 14)\n    )\n)\n\nschool_100 &lt;-\n  scorecard |&gt;\n  slice_max(academic_year) |&gt;\n  slice_max(n_undergrads, n = 100, with_ties = FALSE) |&gt;\n  select(id, n_undergrads) |&gt;\n  left_join(school, by = join_by(id))\n\nschool_names &lt;- c(\"Pick a School\" = \"\", school_100$name)\n\n# UI -------------------------------------------------------------------------\n\nui &lt;- page_fillable(\n  layout_columns(\n    div(\n      mod_school_ui(\"a\", \"School A\", school_names)\n    ),\n    div(\n      mod_school_ui(\"b\", \"School B\", school_names)\n    )\n  )\n)\n\n# Server ---------------------------------------------------------------------\n\nserver &lt;- function(input, output, session) {\n  mod_school_server(\"a\", colors[1])\n  mod_school_server(\"b\", colors[2])\n}\n\nshinyApp(ui, server)\n\n\n## file: mod_school.R\nmod_school_ui &lt;- function(id, label, choices, selected = NULL) {\n  ns &lt;- NS(id)\n\n  if (is.null(selected)) {\n    selected &lt;- sample(choices, 1)\n  }\n\n  list(\n    selectInput(ns(\"school\"), label, choices = choices, selected = selected, width = \"100%\"),\n    card(\n      card_header(\"Cost of Tuition (In State)\"),\n      plotOutput(ns(\"plot_school\"))\n    ),\n    card_dark(\n      title = \"Location\",\n      leafletOutput(ns(\"map_school\"))\n    )\n  )\n}\n\nmod_school_server &lt;- function(id, plot_color) {\n  moduleServer(id, function(input, output, session) {\n    output$plot_school &lt;- renderPlot({\n      req(input$school)\n\n      scorecard |&gt;\n        filter_scorecard_by_school_name(school, input$school) |&gt;\n        plot_cost_tuition(plot_color)\n    })\n\n    output$map_school &lt;- renderLeaflet({\n      req(input$school)\n      map_school(school, input$school)\n    })\n  })\n}\n\n\n## file: functions.R\ncard_dark &lt;- function(title, ...) {\n  card(\n    card_header(title),\n    class = \"text-bg-dark\",\n    card_body(\n      padding = 0,\n      ...\n    )\n  )\n}\n\n\nplot_cost_tuition &lt;- function(scorecard, fill_color = \"#007bc2\") {\n  scorecard |&gt;\n    mutate(academic_year = as.integer(substr(academic_year, 1, 4))) |&gt;\n    ggplot() +\n    aes(x = academic_year, y = cost_tuition_in) +\n    geom_col(fill = fill_color, na.rm = TRUE) +\n    labs(\n      x = \"Academic Year\",\n      y = NULL\n    ) +\n    scale_y_continuous(labels = scales::label_dollar())\n}\n\nfilter_scorecard_by_school_name &lt;- function(scorecard, school, name) {\n  school_by_name &lt;- \n    school |&gt;\n    filter(name == {{ name }})\n\n  scorecard |&gt;\n    semi_join(school_by_name, by = \"id\")\n}\n\nmap_school &lt;- function(school, name) {\n  the_school &lt;- school |&gt; filter(name == {{ name }})\n\n  leaflet() |&gt;\n    addTiles() |&gt;\n    addMarkers(\n      lng = the_school$longitude,\n      lat = the_school$latitude,\n      popup = the_school$name\n    )\n}\n\n\n## file: notes.md\nSuppose you put this module into your app and realize that actually, you'd like to\n\na. Know which college is selected\n    * Add a return value to server module\nb. Set the college, e.g. pick a random school\n    * Pass in a school as a reactive value\n    * Update the return value to include an updat \"method\""
   }
 ]
