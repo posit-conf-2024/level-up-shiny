@@ -5,3 +5,47 @@ description-short: Deploying your app to production
 duration: 60min
 # time: 15:30 - 16:30
 ---
+
+## Slides
+
+{{< revealjs "slides/slides-12-deploy.html" class="ratio ratio-16x9" >}}
+
+## Connecting RStudio with Connect
+
+**Step 1**: Open [pub.conf.posit.team](https://pub.conf.posit.team) and click the "Log In" button.
+
+![](assets/connect-steps/step-1.png)
+
+**Step 2**: Log in with your GitHub account.
+
+![](assets/connect-steps/step-2.png)
+
+**Step 3**: With the app to deploy open, click on the "Publish Application" button.
+
+![](assets/connect-steps/step-3.png)
+
+**Step 4**: This opens the "Publish to Server" dialog, but your `pub.conf.posit.team` account isn't connected, yet. Click "Add new account".
+
+![](assets/connect-steps/step-4.png)
+
+**Step 5:** Enter `pub.conf.posit.team` for the public URL of the Posit Connect server.
+
+![](assets/connect-steps/step-5.png)
+
+**Step 6:** Select "Posit Connect" from the account type menu.
+
+![](assets/connect-steps/step-6.png)
+
+**Step 7:** This opens a new window on https://pub.conf.posit.team. From here, click "Connect" to connect Posit Cloud with Posit Connect.
+
+![](assets/connect-steps/step-7.png)
+
+**Step 8:** Return to Posit Cloud and click "Connect Account" to add the account to RStudio.
+
+![](assets/connect-steps/step-8.png)
+
+**Step 9:** Chose the newly added `pub.conf.posit.team` account, give your app a title, and click Publish to kick off the publish step!
+
+![](assets/connect-steps/step-9.png)
+
+**Great work!** Give yourself a pat on the back and see if any of your neighbors need help getting set up.
