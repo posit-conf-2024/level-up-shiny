@@ -88,14 +88,14 @@
     "href": "slides/slides-09-fast-apps.html#benchmark-your-options-2",
     "title": "Fast Apps 🏎️💨",
     "section": "Benchmark your options",
-    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  check = FALSE\n)\n\n\n\n# A tibble: 2 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)    82.5ms 105.12ms      9.15     382MB     80.5\n2 second_try(10000)    7.4ms   7.54ms    126.      78.2KB     19.8\n\n\n\nthird_try &lt;- function(n) {\n  seq_len(n) + runif(n)\n}"
+    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  check = FALSE\n)\n\n\n\n# A tibble: 2 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)    80.1ms  100.5ms      9.28     382MB     83.6\n2 second_try(10000)    7.3ms   7.48ms    127.      78.2KB     19.8\n\n\n\nthird_try &lt;- function(n) {\n  seq_len(n) + runif(n)\n}"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#benchmark-your-options-3",
     "href": "slides/slides-09-fast-apps.html#benchmark-your-options-3",
     "title": "Fast Apps 🏎️💨",
     "section": "Benchmark your options",
-    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  third_try(1e4),\n  check = FALSE\n)\n\n# A tibble: 3 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)    91.9ms  94.42ms      10.6     382MB    100. \n2 second_try(10000)    7.5ms   7.66ms     120.     78.2KB     23.6\n3 third_try(10000)    95.6µs     98µs    8210.    117.3KB     20.0"
+    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  third_try(1e4),\n  check = FALSE\n)\n\n# A tibble: 3 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)    89.9ms  94.39ms      10.6     382MB    103. \n2 second_try(10000)   7.37ms   7.51ms     123.     78.2KB     23.8\n3 third_try(10000)   95.65µs  97.65µs    8265.    117.3KB     20.0"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#benchmark-your-options-4",
@@ -658,158 +658,165 @@
     "text": "Your Turn _exercises/14_app.R\n\n  \n    −\n    +\n \n 06:00\n \n\nReplace the actionButton(\"get_state\") with an input_task_button(). How much does the task button help?\nUpdate the server logic to use ExtendedTask that uses future_promise(). I’ve already loaded the packages you need.\nCan you use the app while fetching data from the API?\nStretch: How could you keep the whole app running, including the plots while the data is being fetched? Read 14_solution2_app.R for an example."
   },
   {
-    "objectID": "workshop-10.html",
-    "href": "workshop-10.html",
-    "title": "Extended Tasks",
+    "objectID": "workshop-12.html",
+    "href": "workshop-12.html",
+    "title": "Push to prod",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Extended Tasks"
+      "Push to prod"
     ]
   },
   {
-    "objectID": "workshop-10.html#slides",
-    "href": "workshop-10.html#slides",
-    "title": "Extended Tasks",
+    "objectID": "workshop-12.html#slides",
+    "href": "workshop-12.html#slides",
+    "title": "Push to prod",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Extended Tasks"
+      "Push to prod"
     ]
   },
   {
-    "objectID": "workshop-10.html#resources",
-    "href": "workshop-10.html#resources",
-    "title": "Extended Tasks",
+    "objectID": "workshop-12.html#connecting-rstudio-with-connect",
+    "href": "workshop-12.html#connecting-rstudio-with-connect",
+    "title": "Push to prod",
+    "section": "Connecting RStudio with Connect",
+    "text": "Connecting RStudio with Connect\nStep 1: Open pub.conf.posit.team and click the “Log In” button.\n\nStep 2: Log in with your GitHub account.\n\nStep 3: With the app to deploy open, click on the “Publish Application” button.\n\nStep 4: This opens the “Publish to Server” dialog, but your pub.conf.posit.team account isn’t connected, yet. Click “Add new account”.\n\nStep 5: Enter pub.conf.posit.team for the public URL of the Posit Connect server.\n\nStep 6: Select “Posit Connect” from the account type menu.\n\nStep 7: This opens a new window on https://pub.conf.posit.team. From here, click “Connect” to connect Posit Cloud with Posit Connect.\n\nStep 8: Return to Posit Cloud and click “Connect Account” to add the account to RStudio.\n\nStep 9: Chose the newly added pub.conf.posit.team account, give your app a title, and click Publish to kick off the publish step!\n\nGreat work! Give yourself a pat on the back and see if any of your neighbors need help getting set up.",
+    "crumbs": [
+      "Workshop",
+      "Push to prod"
+    ]
+  },
+  {
+    "objectID": "workshop-09.html",
+    "href": "workshop-09.html",
+    "title": "Fast Apps",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Fast Apps"
+    ]
+  },
+  {
+    "objectID": "workshop-09.html#slides",
+    "href": "workshop-09.html#slides",
+    "title": "Fast Apps",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Fast Apps"
+    ]
+  },
+  {
+    "objectID": "workshop-09.html#resources",
+    "href": "workshop-09.html#resources",
+    "title": "Fast Apps",
     "section": "Resources",
-    "text": "Resources\n\nShiny - Non-blocking operations\nYouTube: Managing long-running operations in Shiny | Posit, Joe Cheng\nTask or computation that proceeds in the background — ExtendedTask\nButton for launching longer-running operations — input_task_button • bslib\nTed Laderas: “Part 2: Reactivity” - vmst·io",
+    "text": "Resources\n\nShiny - Using caching in Shiny to maximize performance\nShiny - Profiling your Shiny app\nShiny - Performance\nExpandable Sparklines • Value boxes • bslib",
     "crumbs": [
       "Workshop",
-      "Extended Tasks"
+      "Fast Apps"
     ]
   },
   {
-    "objectID": "workshop-06.html",
-    "href": "workshop-06.html",
-    "title": "Just a little JavaScript",
+    "objectID": "workshop-05.html",
+    "href": "workshop-05.html",
+    "title": "Modules",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Just a little JavaScript"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-06.html#slides",
-    "href": "workshop-06.html#slides",
-    "title": "Just a little JavaScript",
+    "objectID": "workshop-05.html#slides",
+    "href": "workshop-05.html#slides",
+    "title": "Modules",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Just a little JavaScript"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-06.html#links",
-    "href": "workshop-06.html#links",
-    "title": "Just a little JavaScript",
-    "section": "Links",
-    "text": "Links\n\nA conversation with ChatGPT 4o",
-    "crumbs": [
-      "Workshop",
-      "Just a little JavaScript"
-    ]
-  },
-  {
-    "objectID": "workshop-04.html",
-    "href": "workshop-04.html",
-    "title": "Code organization",
-    "section": "",
-    "text": "View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Code organization"
-    ]
-  },
-  {
-    "objectID": "workshop-04.html#slides",
-    "href": "workshop-04.html#slides",
-    "title": "Code organization",
-    "section": "",
-    "text": "View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Code organization"
-    ]
-  },
-  {
-    "objectID": "workshop-04.html#packages",
-    "href": "workshop-04.html#packages",
-    "title": "Code organization",
+    "objectID": "workshop-05.html#packages",
+    "href": "workshop-05.html#packages",
+    "title": "Modules",
     "section": "Packages",
-    "text": "Packages\n\nstyler\ngrkstyle",
+    "text": "Packages\n\nusethis",
     "crumbs": [
       "Workshop",
-      "Code organization"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-04.html#resources",
-    "href": "workshop-04.html#resources",
-    "title": "Code organization",
+    "objectID": "workshop-05.html#resources",
+    "href": "workshop-05.html#resources",
+    "title": "Modules",
     "section": "Resources",
-    "text": "Resources\n\nHow Developers Choose Names, Dror G. Fietelson\nThe Programmer’s Brain, Felienne Hermans\nExplaining variable, Pete Hodgson\nWhy comment your code as little (and as well) as possible - R-hub blog\nCoding style, coding etiquette - R-hub blog\nCode smells and feels, Jenny Bryan\nThe Art of Readable Code, Dustin Boswell and Trevor Foucher\nRefactoring: Improving the Design of Existing Code, Martin Fowler\nObject of type ‘closure’ is not subsettable, Jenny Bryan (rstudio::conf(2020))",
+    "text": "Resources\n\nLeveraging Shiny Modules, Carson Sievert (slides)\nMastering Shiny, Hadley Wickham:\n\nChapter 18 Functions | Mastering Shiny\nChapter 19 Shiny modules | Mastering Shiny\nChapter 20 Packages | Mastering Shiny\n\nR Packages (2nd Edition)\nA beginner’s guide to Shiny modules, Emily Riederer\nShiny Modules in 100 Seconds, Albert Rapp",
     "crumbs": [
       "Workshop",
-      "Code organization"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-01.html",
-    "href": "workshop-01.html",
-    "title": "Welcome and getting started",
+    "objectID": "workshop-02.html",
+    "href": "workshop-02.html",
+    "title": "Modern layouts with bslib",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modern layouts with bslib"
     ]
   },
   {
-    "objectID": "workshop-01.html#slides",
-    "href": "workshop-01.html#slides",
-    "title": "Welcome and getting started",
+    "objectID": "workshop-02.html#slides",
+    "href": "workshop-02.html#slides",
+    "title": "Modern layouts with bslib",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modern layouts with bslib"
     ]
   },
   {
-    "objectID": "workshop-01.html#outline",
-    "href": "workshop-01.html#outline",
-    "title": "Welcome and getting started",
-    "section": "Outline",
-    "text": "Outline\n\nWelcome to posit::conf(2024)!\nIntroductions and meet your neighbors\nAbout the workshop, conference, goals and ground rules",
+    "objectID": "workshop-02.html#topic-links",
+    "href": "workshop-02.html#topic-links",
+    "title": "Modern layouts with bslib",
+    "section": "Topic Links",
+    "text": "Topic Links\n\nbslib\nU.S. College Scorecard Data\n\ncollegeScorecard\n\nTheming with bslib\n\nbslib | Get Started | Theming\nbs_theme()\nBootstrap 5 theming variables\n\nbslib page functions\nFilling layouts with bslib\nbslib components:\n\ncard() · Article: Cards\nvalue_box() · Article: Value Boxes\nBuild-A-Box app\n\nbslib sidebar layouts:\n\npage_sidebar()\nsidebar()\nlayout_sidebar()\nArticle: Sidebar Layouts\n\nDetails on demand\n\naccordion()\ntooltip()\npopover()\nArticle: Tooltips and Popovers\n\nIcons\n\nfontawesome · Fontawesome Icons\nbsicons · Bootstrap Icons",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modern layouts with bslib"
     ]
   },
   {
-    "objectID": "workshop-01.html#your-turn",
-    "href": "workshop-01.html#your-turn",
-    "title": "Welcome and getting started",
-    "section": "🧑‍💻 Your Turn",
-    "text": "🧑‍💻 Your Turn",
+    "objectID": "workshop-02.html#resources",
+    "href": "workshop-02.html#resources",
+    "title": "Modern layouts with bslib",
+    "section": "Resources",
+    "text": "Resources\n\nCarson Sievert: Towards the next generation of Shiny UI (slides) (ShinyConf 2023)\nNext Generation Shiny Apps with {bslib} (Workshop at R/Medicine 2024)",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modern layouts with bslib"
     ]
+  },
+  {
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "Our Team",
+    "section": "",
+    "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Barret Schloerke\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
   },
   {
     "objectID": "workshop.html",
@@ -834,19 +841,8 @@
     ]
   },
   {
-    "objectID": "workshop-07-break.html",
-    "href": "workshop-07-break.html",
-    "title": "🍱 Lunch",
-    "section": "",
-    "text": "Image by DALL-E 3",
-    "crumbs": [
-      "Workshop",
-      "🍱 Lunch"
-    ]
-  },
-  {
-    "objectID": "workshop-03-break.html",
-    "href": "workshop-03-break.html",
+    "objectID": "workshop-11-break.html",
+    "href": "workshop-11-break.html",
     "title": "☕ Break",
     "section": "",
     "text": "Image by DALL-E 3",
@@ -854,34 +850,6 @@
       "Workshop",
       "☕ Break"
     ]
-  },
-  {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Getting Setup",
-    "section": "",
-    "text": "Bring your personal laptop and a power cord. This is going to be a hands-on workshop, meaning that you’ll be writing code and collaborating with new friends you’ll make at the workshop.\nWe’ll be using Posit Cloud (details below), so you don’t need to set up anything on your computer."
-  },
-  {
-    "objectID": "setup.html#create-accounts",
-    "href": "setup.html#create-accounts",
-    "title": "Getting Setup",
-    "section": "Create Accounts",
-    "text": "Create Accounts\nIn this workshop, we’ll be using a few different online services. If you don’t already have accounts with these services, you’ll need to create them before we get started.\n\nPosit Cloud\nGitHub\n\nUsed to login to the Posit Connect instance set up for this workshop.\nDid you know? You can use your GitHub account to log in to Posit Cloud, too!\n\nDiscord\n\nUsed to communicate during the workshop and ask questions via text. Also used for general online participation during the conference.\nMake sure your display name is the one you used to register for the conference.\nCloser to the conference start, you’ll be able to join the posit::conf(2024) Discord server via the event portal at https:://posi.it/conf-event-portal.\nOur workshop channel is #workshop-level-up-shiny."
-  },
-  {
-    "objectID": "setup.html#using-posit-cloud",
-    "href": "setup.html#using-posit-cloud",
-    "title": "Getting Setup",
-    "section": "Using Posit Cloud",
-    "text": "Using Posit Cloud\n\n\n\n\n\n\nRecommended Workflow\n\n\n\nThe easiest way to get started is to use the Posit Cloud workspace I’ve prepared for you.\n\n\n\n\n\n\n\n\nWarning\n\n\n\n\nThe link to join the space is not yet available. This page will be updated on the day of the workshop.\nYou will need a Posit Cloud account and you can create one for free at posit.cloud/plans. Click “Learn more” under the Free plan to sign up.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the level-up-shiny space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the level-up-shiny space, select the level-up-shiny assignment to create and launch a new project just for you."
-  },
-  {
-    "objectID": "setup.html#using-your-own-computer",
-    "href": "setup.html#using-your-own-computer",
-    "title": "Getting Setup",
-    "section": "Using Your Own Computer",
-    "text": "Using Your Own Computer\n\n\n\n\n\n\nAdvanced Workflow\n\n\n\nThis is not the recommended workflow. I recommend using the Posit Cloud workspace to avoid having to set everything up yourself.\nThat said, if you prefer to use your own computer, it’s entirely possible.\n\n\nIf you prefer to use your own computer, you can clone the repository and install the necessary packages. I used R 4.4 but any recent version of R (&gt;= 4.1) should work.\nYou can use the usethis package to quickly clone the repository:\nusethis::create_from_github(\n  \"posit-conf-2024/level-up-shiny\",\n  # Decide where to put the project here:\n  destdir = \"~/Desktop/level-up-shiny\"\n)\nThis will download the repository and open the project in RStudio.\n\nWith renv\nInside the project, use the renv package to install the necessary packages:\nrenv::restore()\nFor very speedy installation, I recommend telling renv to use pak to install packages:\nSys.setenv(RENV_CONFIG_PAK_ENABLED = \"true\")\nrenv::restore()\n\n\nWithout renv\nSometimes renv can be a little tricky to get set up. Fortunately, there’s an alternative installation method that should work just as well.\nFirst, disable renv:\nrenv::deactivate()\nThen install use pak to install the necessary packages:\n# install.packages(\"pak\")\npak::local_install_deps(dependencies = TRUE)\nOr with remotes:\n# install.packages(\"remotes\")\nremotes::install_deps(dependencies = TRUE)"
   },
   {
     "objectID": "workshop-06-chat.html",
@@ -947,14 +915,53 @@
     "text": "ChatGPT\nYou’re welcome! If you have any more questions or need further assistance, feel free to ask. Enjoy the rest of your workshop at posit::conf(2024)!"
   },
   {
-    "objectID": "workshop-11-break.html",
-    "href": "workshop-11-break.html",
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Getting Setup",
+    "section": "",
+    "text": "Bring your personal laptop and a power cord. This is going to be a hands-on workshop, meaning that you’ll be writing code and collaborating with new friends you’ll make at the workshop.\nWe’ll be using Posit Cloud (details below), so you don’t need to set up anything on your computer."
+  },
+  {
+    "objectID": "setup.html#create-accounts",
+    "href": "setup.html#create-accounts",
+    "title": "Getting Setup",
+    "section": "Create Accounts",
+    "text": "Create Accounts\nIn this workshop, we’ll be using a few different online services. If you don’t already have accounts with these services, you’ll need to create them before we get started.\n\nPosit Cloud\nGitHub\n\nUsed to login to the Posit Connect instance set up for this workshop.\nDid you know? You can use your GitHub account to log in to Posit Cloud, too!\n\nDiscord\n\nUsed to communicate during the workshop and ask questions via text. Also used for general online participation during the conference.\nMake sure your display name is the one you used to register for the conference.\nCloser to the conference start, you’ll be able to join the posit::conf(2024) Discord server via the event portal at https:://posi.it/conf-event-portal.\nOur workshop channel is #workshop-level-up-shiny."
+  },
+  {
+    "objectID": "setup.html#using-posit-cloud",
+    "href": "setup.html#using-posit-cloud",
+    "title": "Getting Setup",
+    "section": "Using Posit Cloud",
+    "text": "Using Posit Cloud\n\n\n\n\n\n\nRecommended Workflow\n\n\n\nThe easiest way to get started is to use the Posit Cloud workspace I’ve prepared for you.\n\n\n\n\n\n\n\n\nWarning\n\n\n\n\nThe link to join the space is not yet available. This page will be updated on the day of the workshop.\nYou will need a Posit Cloud account and you can create one for free at posit.cloud/plans. Click “Learn more” under the Free plan to sign up.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the level-up-shiny space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the level-up-shiny space, select the level-up-shiny assignment to create and launch a new project just for you."
+  },
+  {
+    "objectID": "setup.html#using-your-own-computer",
+    "href": "setup.html#using-your-own-computer",
+    "title": "Getting Setup",
+    "section": "Using Your Own Computer",
+    "text": "Using Your Own Computer\n\n\n\n\n\n\nAdvanced Workflow\n\n\n\nThis is not the recommended workflow. I recommend using the Posit Cloud workspace to avoid having to set everything up yourself.\nThat said, if you prefer to use your own computer, it’s entirely possible.\n\n\nIf you prefer to use your own computer, you can clone the repository and install the necessary packages. I used R 4.4 but any recent version of R (&gt;= 4.1) should work.\nYou can use the usethis package to quickly clone the repository:\nusethis::create_from_github(\n  \"posit-conf-2024/level-up-shiny\",\n  # Decide where to put the project here:\n  destdir = \"~/Desktop/level-up-shiny\"\n)\nThis will download the repository and open the project in RStudio.\n\nWith renv\nInside the project, use the renv package to install the necessary packages:\nrenv::restore()\nFor very speedy installation, I recommend telling renv to use pak to install packages:\nSys.setenv(RENV_CONFIG_PAK_ENABLED = \"true\")\nrenv::restore()\n\n\nWithout renv\nSometimes renv can be a little tricky to get set up. Fortunately, there’s an alternative installation method that should work just as well.\nFirst, disable renv:\nrenv::deactivate()\nThen install use pak to install the necessary packages:\n# install.packages(\"pak\")\npak::local_install_deps(dependencies = TRUE)\nOr with remotes:\n# install.packages(\"remotes\")\nremotes::install_deps(dependencies = TRUE)"
+  },
+  {
+    "objectID": "workshop-03-break.html",
+    "href": "workshop-03-break.html",
     "title": "☕ Break",
     "section": "",
     "text": "Image by DALL-E 3",
     "crumbs": [
       "Workshop",
       "☕ Break"
+    ]
+  },
+  {
+    "objectID": "workshop-07-break.html",
+    "href": "workshop-07-break.html",
+    "title": "🍱 Lunch",
+    "section": "",
+    "text": "Image by DALL-E 3",
+    "crumbs": [
+      "Workshop",
+      "🍱 Lunch"
     ]
   },
   {
@@ -969,131 +976,157 @@
     ]
   },
   {
-    "objectID": "about/index.html",
-    "href": "about/index.html",
-    "title": "Our Team",
-    "section": "",
-    "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Barret Schloerke\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "workshop-02.html",
-    "href": "workshop-02.html",
-    "title": "Modern layouts with bslib",
+    "objectID": "workshop-01.html",
+    "href": "workshop-01.html",
+    "title": "Welcome and getting started",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Welcome and getting started"
     ]
   },
   {
-    "objectID": "workshop-02.html#slides",
-    "href": "workshop-02.html#slides",
-    "title": "Modern layouts with bslib",
+    "objectID": "workshop-01.html#slides",
+    "href": "workshop-01.html#slides",
+    "title": "Welcome and getting started",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Welcome and getting started"
     ]
   },
   {
-    "objectID": "workshop-02.html#topic-links",
-    "href": "workshop-02.html#topic-links",
-    "title": "Modern layouts with bslib",
-    "section": "Topic Links",
-    "text": "Topic Links\n\nbslib\nU.S. College Scorecard Data\n\ncollegeScorecard\n\nTheming with bslib\n\nbslib | Get Started | Theming\nbs_theme()\nBootstrap 5 theming variables\n\nbslib page functions\nFilling layouts with bslib\nbslib components:\n\ncard() · Article: Cards\nvalue_box() · Article: Value Boxes\nBuild-A-Box app\n\nbslib sidebar layouts:\n\npage_sidebar()\nsidebar()\nlayout_sidebar()\nArticle: Sidebar Layouts\n\nDetails on demand\n\naccordion()\ntooltip()\npopover()\nArticle: Tooltips and Popovers\n\nIcons\n\nfontawesome · Fontawesome Icons\nbsicons · Bootstrap Icons",
+    "objectID": "workshop-01.html#outline",
+    "href": "workshop-01.html#outline",
+    "title": "Welcome and getting started",
+    "section": "Outline",
+    "text": "Outline\n\nWelcome to posit::conf(2024)!\nIntroductions and meet your neighbors\nAbout the workshop, conference, goals and ground rules",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Welcome and getting started"
     ]
   },
   {
-    "objectID": "workshop-02.html#resources",
-    "href": "workshop-02.html#resources",
-    "title": "Modern layouts with bslib",
-    "section": "Resources",
-    "text": "Resources\n\nCarson Sievert: Towards the next generation of Shiny UI (slides) (ShinyConf 2023)\nNext Generation Shiny Apps with {bslib} (Workshop at R/Medicine 2024)",
+    "objectID": "workshop-01.html#your-turn",
+    "href": "workshop-01.html#your-turn",
+    "title": "Welcome and getting started",
+    "section": "🧑‍💻 Your Turn",
+    "text": "🧑‍💻 Your Turn",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Welcome and getting started"
     ]
   },
   {
-    "objectID": "workshop-05.html",
-    "href": "workshop-05.html",
-    "title": "Modules",
+    "objectID": "workshop-04.html",
+    "href": "workshop-04.html",
+    "title": "Code organization",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-05.html#slides",
-    "href": "workshop-05.html#slides",
-    "title": "Modules",
+    "objectID": "workshop-04.html#slides",
+    "href": "workshop-04.html#slides",
+    "title": "Code organization",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-05.html#packages",
-    "href": "workshop-05.html#packages",
-    "title": "Modules",
+    "objectID": "workshop-04.html#packages",
+    "href": "workshop-04.html#packages",
+    "title": "Code organization",
     "section": "Packages",
-    "text": "Packages\n\nusethis",
+    "text": "Packages\n\nstyler\ngrkstyle",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-05.html#resources",
-    "href": "workshop-05.html#resources",
-    "title": "Modules",
+    "objectID": "workshop-04.html#resources",
+    "href": "workshop-04.html#resources",
+    "title": "Code organization",
     "section": "Resources",
-    "text": "Resources\n\nLeveraging Shiny Modules, Carson Sievert (slides)\nMastering Shiny, Hadley Wickham:\n\nChapter 18 Functions | Mastering Shiny\nChapter 19 Shiny modules | Mastering Shiny\nChapter 20 Packages | Mastering Shiny\n\nR Packages (2nd Edition)\nA beginner’s guide to Shiny modules, Emily Riederer\nShiny Modules in 100 Seconds, Albert Rapp",
+    "text": "Resources\n\nHow Developers Choose Names, Dror G. Fietelson\nThe Programmer’s Brain, Felienne Hermans\nExplaining variable, Pete Hodgson\nWhy comment your code as little (and as well) as possible - R-hub blog\nCoding style, coding etiquette - R-hub blog\nCode smells and feels, Jenny Bryan\nThe Art of Readable Code, Dustin Boswell and Trevor Foucher\nRefactoring: Improving the Design of Existing Code, Martin Fowler\nObject of type ‘closure’ is not subsettable, Jenny Bryan (rstudio::conf(2020))",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-09.html",
-    "href": "workshop-09.html",
-    "title": "Fast Apps",
+    "objectID": "workshop-06.html",
+    "href": "workshop-06.html",
+    "title": "Just a little JavaScript",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Fast Apps"
+      "Just a little JavaScript"
     ]
   },
   {
-    "objectID": "workshop-09.html#slides",
-    "href": "workshop-09.html#slides",
-    "title": "Fast Apps",
+    "objectID": "workshop-06.html#slides",
+    "href": "workshop-06.html#slides",
+    "title": "Just a little JavaScript",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Fast Apps"
+      "Just a little JavaScript"
     ]
   },
   {
-    "objectID": "workshop-09.html#resources",
-    "href": "workshop-09.html#resources",
-    "title": "Fast Apps",
-    "section": "Resources",
-    "text": "Resources\n\nShiny - Using caching in Shiny to maximize performance\nShiny - Profiling your Shiny app\nShiny - Performance\nExpandable Sparklines • Value boxes • bslib",
+    "objectID": "workshop-06.html#links",
+    "href": "workshop-06.html#links",
+    "title": "Just a little JavaScript",
+    "section": "Links",
+    "text": "Links\n\nA conversation with ChatGPT 4o",
     "crumbs": [
       "Workshop",
-      "Fast Apps"
+      "Just a little JavaScript"
+    ]
+  },
+  {
+    "objectID": "workshop-10.html",
+    "href": "workshop-10.html",
+    "title": "Extended Tasks",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Extended Tasks"
+    ]
+  },
+  {
+    "objectID": "workshop-10.html#slides",
+    "href": "workshop-10.html#slides",
+    "title": "Extended Tasks",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Extended Tasks"
+    ]
+  },
+  {
+    "objectID": "workshop-10.html#resources",
+    "href": "workshop-10.html#resources",
+    "title": "Extended Tasks",
+    "section": "Resources",
+    "text": "Resources\n\nShiny - Non-blocking operations\nYouTube: Managing long-running operations in Shiny | Posit, Joe Cheng\nTask or computation that proceeds in the background — ExtendedTask\nButton for launching longer-running operations — input_task_button • bslib\nTed Laderas: “Part 2: Reactivity” - vmst·io",
+    "crumbs": [
+      "Workshop",
+      "Extended Tasks"
     ]
   },
   {
@@ -1101,7 +1134,7 @@
     "href": "index.html",
     "title": "Level Up with Shiny for R",
     "section": "",
-    "text": "Workshop at posit::conf(2024)August 12, 202409:00 - 17:00ROOM TBA"
+    "text": "Workshop at posit::conf(2024)August 12, 202409:00 - 17:00300 | Columbia C"
   },
   {
     "objectID": "index.html#introduction",

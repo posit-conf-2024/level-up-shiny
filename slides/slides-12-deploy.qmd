@@ -1,0 +1,41 @@
+---
+title: "Push to Prod"
+subtitle: Level Up with Shiny for R
+author: <code>posit::conf(2024)</code>
+date: 2024-08-12
+
+format:
+  utopia-slides-revealjs:
+    html-math-method: plain
+    revealjs-url: slides/assets/reveal.js-4.5.0
+    slide-level: 2
+    chalkboard: true
+    theme:
+      - slides.scss
+      - assets/code-blocked.scss
+    css:
+      - ../auto-dark-mode.css
+    code-annotations: hover
+
+revealjs-plugins:
+  - utopia-slides
+
+# filters:
+#   - webr
+
+webr:
+  show-startup-message: false
+
+editor:
+  render-on-save: true
+---
+
+## {background-image="assets/mark-bosky-w58KovW_d0A-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
+
+## {background-image="assets/adrianna-geo-j80rnXkPrg0-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
+
+## {background-image="assets/persnickety-prints-qztXD0YoEMM-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
+
+## {background-image="assets/anastasia-palagutina-txbXuzTJdSA-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
+
+## {background-image="assets/diego-fernandez-6Vg8N8u61aI-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
