@@ -10,6 +10,12 @@ if (!exists(".__r_profile_loaded") || !isTRUE(.__r_profile_loaded)) {
     library(usethis)
   }
 
+  if (Sys.getenv("R_CONFIG_ACTIVE") == "rstudio_cloud") {
+    if (!"https://p3m.dev/cran/latest" %in% getOption("repos")) {
+      options(repos = c("https://p3m.dev/cran/latest", getOption("repos")))
+    }
+  }
+
   .update_packages <- function() {
     source("renv/activate.R")
     renv::restore()
