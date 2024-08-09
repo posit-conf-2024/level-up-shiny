@@ -40,6 +40,11 @@ jobs:
         with:
           cache-version: 4
 
+      - name: 📦 Install website dependencies
+        run: |
+          renv::activate()
+          pak::pak(dependencies = "Config/Needs/website")
+
       - name: 📰 Render and Publish to GitHub Pages
         uses: gadenbuie/quarto-actions/publish@quarto-render-working-dir
         with:
