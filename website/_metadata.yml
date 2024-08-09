@@ -11,6 +11,7 @@ workshop:
     website: https://posit-conf-2024.github.io/level-up-shiny
     # FIXME cloud link
     cloud: https://posit.cloud/spaces/517274/
+    discord: https://discord.com/channels/1223312405552173208/1265345602108260365
     conf:
       name: posit::conf(2024)
       href: https:://posi.it/conf-event-portal

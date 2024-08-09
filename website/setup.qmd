@@ -24,7 +24,7 @@ If you don't already have accounts with these services, you'll need to create th
   * Used to communicate during the workshop and ask questions via text. Also used for general online participation during the conference.
   * Make sure your [display name](https://support.discord.com/hc/en-us/articles/12620128861463-New-Usernames-Display-Names#h_01GXPQABMYGEHGPRJJXJMPHF5C) is the one you used to register for the conference.
   * Closer to the conference start, you'll be able to join the `posit::conf(2024)` Discord server via the event portal at <https:://posi.it/conf-event-portal>.
-  * Our workshop channel is `#workshop-level-up-shiny`.
+  * Our workshop channel is [`#workshop-level-up-shiny`]({{< meta workshop.links.discord >}}).
 
 
 ## Using Posit Cloud
