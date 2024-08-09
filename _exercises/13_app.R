@@ -1,16 +1,15 @@
 # ┌ level-up-shiny ──────────────────────────────────┐
 # │                                                  │
-# │                    Exercise 11                   │
+# │                    Exercise 13                   │
 # │                                                  │
 # └─────────────────────────────── posit::conf(2024) ┘
 #
 # TASKS:
-# Work in the server function.
+# 1. Add an `actionButton("get_state")` to the sidebar.
+# 
+# 2. Update the `schools_state` reactive to only fetch data when the button is clicked.
 #
-# 1. Use `bindCache()` in your server logic to speed up the app.
-#
-# 2. Stretch: Is it better to cache the data or the plots? Why?
-
+# 3. Use the app. How can you break it?
 
 library(shiny)
 library(bslib)
@@ -18,18 +17,15 @@ library(dplyr)
 library(ggplot2)
 library(collegeScorecard)
 
-colors <- c(
-  "Public" = "#007bc2",
-  "Nonprofit" = "#f45100",
-  "For-profit" = "#bf007f"
-)
-
 # UI --------------------------------------------------------------------------
 
 ui <- page_sidebar(
   title = "Cost of Tuition (In State)",
   sidebar = sidebar(
-    selectInput("state", "State", choices = setNames(state.abb, state.name), selected = "NY")
+    selectInput("state", "State", choices = setNames(state.abb, state.name), selected = "NY"),
+    # ADD ACTION BUTTON HERE
+    hr(class = "m-0"),
+    sliderInput("tuition_range", "Tuition Range", min = 0, max = 50000, value = c(0, 50000), ticks = FALSE)
   ),
   useBusyIndicators(),
   card(
@@ -52,35 +48,46 @@ ui <- page_sidebar(
 # Server ----------------------------------------------------------------------
 
 server <- function(input, output, session) {
+  # UPDATE THIS REACTIVE TO ONLY FETCH DATA WHEN THE GET STATE BUTTON IS CLICKED
   schools_state <- reactive({
-    Sys.sleep(4)
-
-    school |>
-      filter(state == input$state) |>
-      inner_join(scorecard, y = _, by = "id") |>
-      filter(!is.na(cost_tuition_in)) |>
-      slice_max(academic_year, n = 1, by = id)
+    fetch_college_data(input$state)
   })
 
+  # Plots ----
   output$plot_cost_tuition_public <- renderPlot({
-    Sys.sleep(3)
-    plot_cost_tuition(schools_state(), "Public")
+    req(schools_state())
+
+    schools_state() |>
+      plot_cost_tuition("Public", input$tuition_range)
   })
 
   output$plot_cost_tuition_nonprofit <- renderPlot({
-    plot_cost_tuition(schools_state(), "Nonprofit")
+    req(schools_state())
+
+    schools_state() |>
+      plot_cost_tuition("Nonprofit", input$tuition_range)
   })
 
   output$plot_cost_tuition_for_profit <- renderPlot({
-    plot_cost_tuition(schools_state(), "For-profit")
+    req(schools_state())
+
+    schools_state() |>
+      plot_cost_tuition("For-profit", input$tuition_range)
   })
 }
 
-plot_cost_tuition <- function(data, control) {
-  range <- range(data$cost_tuition_in, na.rm = TRUE)
+# Support ---------------------------------------------------------------------
 
+colors <- c(
+  "Public" = "#007bc2",
+  "Nonprofit" = "#f45100",
+  "For-profit" = "#bf007f"
+)
+
+plot_cost_tuition <- function(data, control, tuition_range) {
   data |>
     filter(control == !!control) |>
+    filter(between(cost_tuition_in, tuition_range[1], tuition_range[2])) |>
     ggplot(aes(x = cost_tuition_in)) +
     geom_histogram(
       position = "identity",
@@ -90,9 +97,22 @@ plot_cost_tuition <- function(data, control) {
     labs(x = NULL, y = NULL) +
     scale_x_continuous(
       labels = scales::label_dollar(),
-      limits = c(floor(range[1] / 1000) * 1000, ceiling(range[2] / 1000) * 1000)
+      limits = tuition_range
     ) +
     theme_minimal(18)
 }
+
+fetch_college_data <- function(state, tuition_range) {
+  # Pretend we're fetching the data from an API ;)
+  Sys.sleep(4)
+
+  school |>
+    filter(state == !!state) |>
+    inner_join(scorecard, y = _, by = "id") |>
+    filter(!is.na(cost_tuition_in)) |>
+    slice_max(academic_year, n = 1, by = id)
+}
+
+
 
 shinyApp(ui, server)

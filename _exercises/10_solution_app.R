@@ -13,7 +13,7 @@ colors <- c(
 # UI --------------------------------------------------------------------------
 
 ui <- page_sidebar(
-  title = "Cost of Tutition (In State)",
+  title = "Cost of Tuition (In State)",
   sidebar = sidebar(
     selectInput("state", "State", choices = setNames(state.abb, state.name), selected = "NY")
   ),
