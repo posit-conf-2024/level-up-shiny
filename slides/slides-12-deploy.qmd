@@ -9,7 +9,7 @@ format:
     html-math-method: plain
     revealjs-url: slides/assets/reveal.js-4.5.0
     slide-level: 2
-    chalkboard: true
+    # chalkboard: true
     theme:
       - slides.scss
       - assets/code-blocked.scss
@@ -30,12 +30,24 @@ editor:
   render-on-save: true
 ---
 
-## {background-image="assets/mark-bosky-w58KovW_d0A-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
+# Deploying Shiny Apps
 
-## {background-image="assets/adrianna-geo-j80rnXkPrg0-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
+## Connect with Connect
 
-## {background-image="assets/persnickety-prints-qztXD0YoEMM-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
+The easiest way to deploy your app is with RStudio's Publish App button, right next to the Run App button.
 
-## {background-image="assets/anastasia-palagutina-txbXuzTJdSA-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
+![](assets/run-app-publish-buttons.png)
 
-## {background-image="assets/diego-fernandez-6Vg8N8u61aI-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
+Follow [the instructions to get connected with Posit Connect](../workshop-12.qmd#connecting-rstudio-with-connect).
+
+
+
+##  {background-image="assets/mark-bosky-w58KovW_d0A-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
+
+##  {background-image="assets/adrianna-geo-j80rnXkPrg0-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
+
+##  {background-image="assets/persnickety-prints-qztXD0YoEMM-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
+
+##  {background-image="assets/anastasia-palagutina-txbXuzTJdSA-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
+
+##  {background-image="assets/diego-fernandez-6Vg8N8u61aI-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}

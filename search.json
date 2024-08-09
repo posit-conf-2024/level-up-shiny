@@ -88,14 +88,14 @@
     "href": "slides/slides-09-fast-apps.html#benchmark-your-options-2",
     "title": "Fast Apps 🏎️💨",
     "section": "Benchmark your options",
-    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  check = FALSE\n)\n\n\n\n# A tibble: 2 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)    80.1ms  100.5ms      9.28     382MB     83.6\n2 second_try(10000)    7.3ms   7.48ms    127.      78.2KB     19.8\n\n\n\nthird_try &lt;- function(n) {\n  seq_len(n) + runif(n)\n}"
+    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  check = FALSE\n)\n\n\n\n# A tibble: 2 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   79.11ms  96.88ms      9.54     382MB     85.8\n2 second_try(10000)   7.45ms   7.59ms    126.      78.2KB     19.7\n\n\n\nthird_try &lt;- function(n) {\n  seq_len(n) + runif(n)\n}"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#benchmark-your-options-3",
     "href": "slides/slides-09-fast-apps.html#benchmark-your-options-3",
     "title": "Fast Apps 🏎️💨",
     "section": "Benchmark your options",
-    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  third_try(1e4),\n  check = FALSE\n)\n\n# A tibble: 3 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)    89.9ms  94.39ms      10.6     382MB    103. \n2 second_try(10000)   7.37ms   7.51ms     123.     78.2KB     23.8\n3 third_try(10000)   95.65µs  97.65µs    8265.    117.3KB     20.0"
+    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  third_try(1e4),\n  check = FALSE\n)\n\n# A tibble: 3 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   89.06ms  91.86ms      10.9     382MB    105. \n2 second_try(10000)   7.42ms   7.54ms     124.     78.2KB     24.0\n3 third_try(10000)   95.75µs  97.55µs    8419.    117.3KB     20.0"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#benchmark-your-options-4",
@@ -684,7 +684,7 @@
     "href": "workshop-12.html#connecting-rstudio-with-connect",
     "title": "Push to prod",
     "section": "Connecting RStudio with Connect",
-    "text": "Connecting RStudio with Connect\nStep 1: Open pub.conf.posit.team and click the “Log In” button.\n\nStep 2: Log in with your GitHub account.\n\nStep 3: With the app to deploy open, click on the “Publish Application” button.\n\nStep 4: This opens the “Publish to Server” dialog, but your pub.conf.posit.team account isn’t connected, yet. Click “Add new account”.\n\nStep 5: Enter pub.conf.posit.team for the public URL of the Posit Connect server.\n\nStep 6: Select “Posit Connect” from the account type menu.\n\nStep 7: This opens a new window on https://pub.conf.posit.team. From here, click “Connect” to connect Posit Cloud with Posit Connect.\n\nStep 8: Return to Posit Cloud and click “Connect Account” to add the account to RStudio.\n\nStep 9: Chose the newly added pub.conf.posit.team account, give your app a title, and click Publish to kick off the publish step!\n\nGreat work! Give yourself a pat on the back and see if any of your neighbors need help getting set up.",
+    "text": "Connecting RStudio with Connect\nStep 1: Open pub.conf.posit.team and click the “Log In” button.\n\nStep 2: Log in with your GitHub account.\n\nStep 3: With the app to deploy open, click on the “Publish Application” button.\n\nStep 4: This opens the “Publish to Server” dialog, but your pub.conf.posit.team account isn’t connected, yet. Click “Add new account”.\n\nStep 5: Enter pub.conf.posit.team for the public URL of the Posit Connect server.\n\nStep 6: Select “Posit Connect” from the account type menu.\n\nStep 7: This opens a new window on https://pub.conf.posit.team. From here, click “Connect” to connect Posit Cloud with Posit Connect.\n\nStep 8: Return to Posit Cloud and click “Connect Account” to add the account to RStudio.\n\nStep 9: Chose the newly added pub.conf.posit.team account, give your app a title, and click Publish to kick off the publish step!\n\nGreat work! Give yourself a pat on the back. Check on your neighbors to see if they need help getting set up.",
     "crumbs": [
       "Workshop",
       "Push to prod"
@@ -974,6 +974,13 @@
       "Workshop",
       "Closing cermonies"
     ]
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#connect-with-connect",
+    "href": "slides/slides-12-deploy.html#connect-with-connect",
+    "title": "Push to Prod",
+    "section": "Connect with Connect",
+    "text": "Connect with Connect\nThe easiest way to deploy your app is with RStudio’s Publish App button, right next to the Run App button.\n\nFollow the instructions to get connected with Posit Connect."
   },
   {
     "objectID": "workshop-01.html",
