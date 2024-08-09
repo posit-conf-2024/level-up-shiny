@@ -41,6 +41,7 @@ jobs:
           cache-version: 4
 
       - name: 📦 Install website dependencies
+        shell: Rscript {0}
         run: |
           renv::activate()
           pak::pak(dependencies = "Config/Needs/website")
