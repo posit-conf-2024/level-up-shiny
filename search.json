@@ -88,14 +88,14 @@
     "href": "slides/slides-09-fast-apps.html#benchmark-your-options-2",
     "title": "Fast Apps 🏎️💨",
     "section": "Benchmark your options",
-    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  check = FALSE\n)\n\n\n\n# A tibble: 2 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   83.13ms 105.42ms      9.17     382MB     80.7\n2 second_try(10000)   7.44ms   7.56ms    125.      78.2KB     19.8\n\n\n\nthird_try &lt;- function(n) {\n  seq_len(n) + runif(n)\n}"
+    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  check = FALSE\n)\n\n\n\n# A tibble: 2 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   81.97ms 107.59ms      9.05     382MB     79.6\n2 second_try(10000)   7.46ms   7.54ms    125.      78.2KB     19.8\n\n\n\nthird_try &lt;- function(n) {\n  seq_len(n) + runif(n)\n}"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#benchmark-your-options-3",
     "href": "slides/slides-09-fast-apps.html#benchmark-your-options-3",
     "title": "Fast Apps 🏎️💨",
     "section": "Benchmark your options",
-    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  third_try(1e4),\n  check = FALSE\n)\n\n# A tibble: 3 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   92.63ms   95.6ms      10.4     382MB     99.2\n2 second_try(10000)   7.45ms    7.6ms     121.     78.2KB     23.9\n3 third_try(10000)    95.8µs   97.8µs    8026.    117.3KB     20.0"
+    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  third_try(1e4),\n  check = FALSE\n)\n\n# A tibble: 3 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   90.13ms  94.28ms      10.7     382MB    102. \n2 second_try(10000)   7.45ms   7.63ms     121.     78.2KB     23.9\n3 third_try(10000)   95.54µs  97.64µs    8299.    117.3KB     20.0"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#benchmark-your-options-4",
@@ -999,7 +999,7 @@
     "href": "workshop-10.html#resources",
     "title": "Extended Tasks",
     "section": "Resources",
-    "text": "Resources\n\nShiny - Non-blocking operations\nYouTube: Managing long-running operations in Shiny | Posit, Joe Cheng\nTask or computation that proceeds in the background — ExtendedTask",
+    "text": "Resources\n\nShiny - Non-blocking operations\nYouTube: Managing long-running operations in Shiny | Posit, Joe Cheng\nTask or computation that proceeds in the background — ExtendedTask\nButton for launching longer-running operations — input_task_button • bslib\nTed Laderas: “Part 2: Reactivity” - vmst·io",
     "crumbs": [
       "Workshop",
       "Extended Tasks"
