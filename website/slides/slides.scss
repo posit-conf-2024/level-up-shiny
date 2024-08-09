@@ -16,6 +16,10 @@
   }
 }
 
+:root {
+  --title-slide-background-color: #419599;
+}
+
 .reveal .progress {
   color: var(--title-slide-background-color);
 }
