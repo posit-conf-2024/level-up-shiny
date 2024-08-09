@@ -35,6 +35,16 @@ listing:
       - icon: linkedin
         text: LinkedIn
         href: https://www.linkedin.com/in/carsonsievert/
+    - name: Barret Schloerke
+      role: "Software Engineer, Shiny"
+      image: barret.png
+      links:
+      - icon: github
+        text: GitHub
+        href: https://github.com/schloerke
+      - icon: linkedin
+        text: LinkedIn
+        href: https://www.linkedin.com/in/schloerke/
     - name: Kalau Tanaka-Pesamino
       role: Solutions Engineer, Posit
       image: kalau.png

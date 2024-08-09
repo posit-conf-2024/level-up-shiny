@@ -42,6 +42,7 @@ editor:
 
 - Garrick
 - Carson
+- Barret
 - Kalau
 - Andrew
 
