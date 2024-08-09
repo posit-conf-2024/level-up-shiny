@@ -1,3 +1,9 @@
+# ┌ level-up-shiny ──────────────────────────────────┐
+# │                                                  │
+# │                    Solution 12                   │
+# │                                                  │
+# └─────────────────────────────── posit::conf(2024) ┘
+
 library(shiny)
 library(bslib)
 library(dplyr)
