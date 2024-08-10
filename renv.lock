@@ -1177,6 +1177,17 @@
       ],
       "Hash": "c0b81ad9d5d932772f7a457ac398cf36"
     },
+    "lgr": {
+      "Package": "lgr",
+      "Version": "0.4.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "R6"
+      ],
+      "Hash": "a6bc51765d7e9eeb2b225a11805527aa"
+    },
     "lifecycle": {
       "Package": "lifecycle",
       "Version": "1.0.4",
