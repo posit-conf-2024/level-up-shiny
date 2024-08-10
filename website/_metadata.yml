@@ -11,6 +11,10 @@ workshop:
     website: https://posit-conf-2024.github.io/level-up-shiny
     # FIXME cloud link
     cloud: https://posit.cloud/spaces/517274/
+    # FIXME cloud shortlink
+    cloud_short: 
+      href: https://pos.it/level-up-shiny-24
+      text: "pos.it/level-up-shiny-24"
     discord: https://discord.com/channels/1223312405552173208/1265345602108260365
     conf:
       name: posit::conf(2024)

@@ -33,7 +33,7 @@ If you don't already have accounts with these services, you'll need to create th
 The easiest way to get started is to use the Posit Cloud workspace I've prepared for you.
 :::
 
-::: {.callout-warning}
+::: {.callout-warning title="Posit Cloud Space Not Yet Available"}
 <!-- FIXME cloud link: remove note -->
 The link to join the space is not yet available.
 This page will be updated on the day of the workshop.
