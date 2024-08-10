@@ -7,35 +7,24 @@
 library(shiny)
 library(bslib)
 library(dplyr)
-library(dbplyr)
 library(ggplot2)
 library(leaflet)
 library(fontawesome)
+library(collegeScorecard)
+library(lgr)
+
+lgr$set_threshold("debug")
 
 thematic::thematic_shiny()
 
 # Data -----------------------------------------------------------------------
-db_env <- here::here("secrets/db-staging.env")
-if (file.exists(db_env)) {
-  dotenv::load_dot_env(db_env)
-}
-
-con <- DBI::dbConnect(
-  RPostgres::Postgres(),
-  host = Sys.getenv("DB_HOST"),
-  port = Sys.getenv("DB_PORT"),
-  dbname = Sys.getenv("DB_DATABASE"),
-  user = Sys.getenv("DB_USER"),
-  password = Sys.getenv("DB_PASSWORD")
-)
-
-school <- tbl(con, "school")
-scorecard <- tbl(con, "scorecard")
+school <- collegeScorecard::school
+scorecard <- collegeScorecard::scorecard
 
 scorecard_latest <-
   scorecard |>
   group_by(id) |>
-  window_order(academic_year) |>
+  arrange(academic_year) |>
   tidyr::fill(
     n_undergrads,
     rate_admissions,
@@ -83,7 +72,7 @@ ui <- page_sidebar(
         sliderInput("cost_avg", "Average Cost", min = 0, max = 50000, value = c(0, 50000), step = 1000)
       )
     ),
-    input_dark_mode()
+    input_dark_mode(id = "color_mode")
   ),
   layout_column_wrap(
     width = 1 / 3,
@@ -152,7 +141,8 @@ ui <- page_sidebar(
       card_body(
         padding = 0,
         leafletOutput("map")
-      )
+      ),
+      full_screen = TRUE
     )
   )
 )
@@ -178,37 +168,36 @@ server <- function(input, output, session) {
       filter(
         state == input$state,
         locale_type %in% input$locale_type,
-        between(n_undergrads, !!input$n_undergrads[1], !!input$n_undergrads[2]),
-        between(rate_admissions, !!input$rate_admissions[1], !!input$rate_admissions[2]),
-        between(rate_completion, !!input$rate_completion[1], !!input$rate_completion[2]),
-        between(cost_avg, !!input$cost_avg[1], !!input$cost_avg[2])
-      ) |>
-      collect()
+        between(n_undergrads, input$n_undergrads[1], input$n_undergrads[2]),
+        between(rate_admissions, input$rate_admissions[1], input$rate_admissions[2]),
+        between(rate_completion, input$rate_completion[1], input$rate_completion[2]),
+        between(cost_avg, input$cost_avg[1], input$cost_avg[2])
+      )
   })
-
+  
   # Value Boxes ----
   output$vb_public <- renderText({
     schools() |>
       filter(control == "Public") |>
       nrow()
   })
-
+  
   output$vb_nonprofit <- renderText({
     schools() |>
       filter(control == "Nonprofit") |>
       nrow()
   })
-
+  
   output$vb_for_profit <- renderText({
     schools() |>
       filter(control == "For-Profit") |>
       nrow()
   })
-
+  
   # Plots ----
   output$plot_cost <- renderPlot({
     label_dollars <- scales::label_dollar(scale_cut = scales::cut_long_scale())
-
+    
     schools() |>
       ggplot() +
       aes(
@@ -241,11 +230,22 @@ server <- function(input, output, session) {
         panel.grid.major.y = element_line()
       )
   })
-
+  
   # Leaflet Map ----
   output$map <- renderLeaflet({
+    addColorModeTiles <- function(map) {
+      lgr$debug("Rendering map with color mode", color_mode = input$color_mode)
+      if (input$color_mode == "light") {
+        lgr$debug("Choosing OpenStreetMap.Mapnik tiles")
+        addProviderTiles(map, "OpenStreetMap.Mapnik")
+      } else if (input$color_mode == "dark") {
+        lgr$debug("Choosing CartoDB.DarkMatter tiles")
+        addProviderTiles(map, "CartoDB.DarkMatter")
+      }
+    }
+    
     leaflet() |>
-      addTiles() |>
+      addColorModeTiles() |>
       addMarkers(
         data = schools(),
         lng = ~longitude,
@@ -254,10 +254,5 @@ server <- function(input, output, session) {
       )
   })
 }
-
-# Don't forget to disconnect from the database when you stop the app!
-onStop(function() {
-  DBI::dbDisconnect(con)
-})
 
 shinyApp(ui, server)

@@ -69,7 +69,7 @@ ui <- page_sidebar(
         sliderInput("cost_avg", "Average Cost", min = 0, max = 50000, value = c(0, 50000), step = 1000)
       )
     ),
-    input_dark_mode()
+    input_dark_mode(id = "color_mode")
   ),
   layout_column_wrap(
     width = 1 / 3,
@@ -138,7 +138,8 @@ ui <- page_sidebar(
       card_body(
         padding = 0,
         leafletOutput("map")
-      )
+      ),
+      full_screen = TRUE
     )
   )
 )

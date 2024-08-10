@@ -20,8 +20,8 @@ format:
 revealjs-plugins:
   - utopia-slides
 
-# filters:
-#   - webr
+# filters {.middle}:
+#    {.middle}- webr
 
 webr:
   show-startup-message: false
@@ -30,7 +30,7 @@ editor:
   render-on-save: true
 ---
 
-# Deploying Shiny Apps
+# Deploying Shiny Apps {.middle}
 
 ## Connect with Connect
 
@@ -40,7 +40,207 @@ The easiest way to deploy your app is with RStudio's Publish App button, right n
 
 Follow [the instructions to get connected with Posit Connect](../workshop-12.qmd#connecting-rstudio-with-connect).
 
+##
 
+`_exercises/15_deploy/15_01_app.R`
+
+Let's just get this onto Connect.
+
+Then, we'll switch to a programmatic deployment using `rsconnect::deployApp()`.
+
+From here on out, I'll work in the same file, but everyone else can change `appPrimaryDoc` to each step.
+
+# Logging {.middle}
+
+## Tracing app behavior
+
+How do we know it's running well? Look at logs of deployed app.
+
+Check out `_examples/15-deploy/01_error_app.R` for an example of logged errors.
+
+<!-- TK: deploy 01_error_app.R and add link to connect here -->
+
+## Overview of logging
+
+## Intro to `lgr`
+
+## App + logging
+
+<!-- TK: deploy 02_log_app.R and add link to connect here -->
+
+## Leads to fixed app
+
+<!-- TK: _exercises/15_deploy/15_02_app.R -->
+
+# Config {.middle}
+
+## Overview of `{config}`
+
+```{.yml filename="config.yml"}
+default:
+  log_level: debug
+
+rsconnect:
+  log_level: info
+```
+
+```{r}
+config_file <- withr::local_tempfile(fileext = ".yml")
+config <- list(
+  default = list(log_level = "debug"),
+  rsconnect = list(log_level = "info")
+)
+yaml::write_yaml(config, config_file)
+```
+
+```{.r filename="Local"}
+config::get("log_level")
+```
+```{r}
+config::with_config(config_file, config::get("log_level"))
+```
+
+```{.r filename="Posit Connect"}
+config::get("log_level")
+```
+```{r}
+config::with_config(config_file, config::get("log_level"), "rsconnect")
+```
+
+## About environment variables
+
+## Table of `{config}` values
+
+| Service | `R_CONFIG_ACTIVE` |
+|---------|------------------|
+| Posit Connect | `rsconnect` |
+| Post Cloud | `rstudio_cloud` |
+| shinyapps.io | `shinyapps` |
+| Shinylive | `shinylive` |
+
+## Set config log level
+
+<!-- TK: _exercises/15_deploy/15_03_app.R -->
+
+# Databases {.middle}
+
+## Get Connected
+
+**You:** Hi, how do I get connected to the database?
+
+**IT:** Sure thing, here's the connection string.
+
+```
+postgres://dbuser:$3cur3C0d3!@ec2-54-123-45-67.compute-1.amazonaws.com:5432/mydatabase
+```
+
+{{< partial ../partials/content-editable-code.html text="host: <br>port: <br>dbname: <br>user: <br>password: " >}}
+
+## Hello, Boilerplate
+
+```{.r code-line-numbers="|2|3-7|"}
+con <- DBI::dbConnect(
+  RPostgres::Postgres(),
+  host = "ec2-54-123-45-67.compute-1.amazonaws.com",
+  port = 5432,
+  dbname = "mydatabase",
+  user = "dbuser",
+  password = "$3cur3C0d3!"
+)
+```
+
+## Hello, `{dotenv}`
+
+```{.default filename="db.env"}
+DB_HOST=ec2-54-123-45-67.compute-1.amazonaws.com
+DB_PORT=5432
+DB_DATABASE=mydatabase
+DB_USER=dbuser
+DB_PASSWORD=$3cur3C0d3!
+```
+
+```{.r}
+dotenv::load("db.env")
+```
+
+```{.r}
+con <- DBI::dbConnect(
+  RPostgres::Postgres(),
+  host = Sys.getenv("DB_HOST"),
+  port = Sys.getenv("DB_PORT"),
+  dbname = Sys.getenv("DB_DATABASE"),
+  user = Sys.getenv("DB_USER"),
+  password = Sys.getenv("DB_PASSWORD")
+)
+```
+
+## In the project
+
+```{.r}
+library(dplyr)
+
+staging_env <- here::here("secrets/db-staging.env")
+prod_env <- here::here("secrets/db-prod.env")
+
+dotenv::load_dot_env(staging_env)
+
+con <- DBI::dbConnect(
+  RPostgres::Postgres(),
+  host = Sys.getenv("DB_HOST"),
+  port = Sys.getenv("DB_PORT"),
+  dbname = Sys.getenv("DB_DATABASE"),
+  user = Sys.getenv("DB_USER"),
+  password = Sys.getenv("DB_PASSWORD")
+)
+
+tbl(con, "school")
+tbl(con, "scorecard")
+```
+
+## In the app
+
+* Switch to using the database
+* Get credentials from `secrets/db-staging.env` or `secrets/db-prod.env`
+* Preview score/scorecard tables at the start of the app
+* Don't forget to close the connection
+* Update the rest of the app to use the database
+  * `arrange()` --> `window_order()`
+  * use `!!` in the `between()` calls
+  * `collect()` the data in the `schools` reactive
+  * maybe we could cache the data at this point?
+* Add logging throughout the app
+
+<!-- TK: _exercises/15_deploy/15_04_app.R -->
+
+# Now that it works {.middle}
+
+## Make life easier for future you {.middle}
+
+## renv
+
+This is a good time for renv.
+
+Is it working now with these packages? Good, lock it down.
+
+## shinytest2
+
+Now that it's working, let's test it.
+
+This might sound backwards. But testing shiny apps isn't like testing package code.
+
+Your tests are most helpful when they keep you from breaking something that was working without knowing it.
+
+## shinytest2
+
+```{.r}
+shinytest2::record_test("app-dir/")
+```
+
+```{.r}
+shinytest2::test_app("app-dir/")
+```
+
+# Frameworks {.middle}
 
 ##  {background-image="assets/mark-bosky-w58KovW_d0A-unsplash.jpg" background-size="cover" background-position="center" background-repeat="no-repeat"}
 

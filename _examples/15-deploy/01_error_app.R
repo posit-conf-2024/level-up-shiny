@@ -1,48 +1,27 @@
 # ┌ level-up-shiny ──────────────────────────────────┐
 # │                                                  │
-# │                  Exercise 15.4                   │
+# │                  Exercise 15.1                   │
 # │                                                  │
 # └─────────────────────────────── posit::conf(2024) ┘
 
 library(shiny)
 library(bslib)
 library(dplyr)
-library(dbplyr)
 library(ggplot2)
 library(leaflet)
 library(fontawesome)
-library(lgr)
-
-lgr$set_threshold(config::get("log_level"))
-lgr$info("Using config", config = Sys.getenv("R_CONFIG_ACTIVE", "default"))
+library(collegeScorecard)
 
 thematic::thematic_shiny()
 
 # Data -----------------------------------------------------------------------
-db_env <- here::here("secrets", config::get("db_env"))
-if (file.exists(db_env)) {
-  dotenv::load_dot_env(db_env)
-  lgr$info("Using db.env", db_env = db_env)
-}
-
-con <- DBI::dbConnect(
-  RPostgres::Postgres(),
-  host = Sys.getenv("DB_HOST"),
-  port = Sys.getenv("DB_PORT"),
-  dbname = Sys.getenv("DB_DATABASE"),
-  user = Sys.getenv("DB_USER"),
-  password = Sys.getenv("DB_PASSWORD")
-)
-
-lgr$info("Connected to database", dbname = Sys.getenv("DB_DATABASE"), user = Sys.getenv("DB_USER"), host = Sys.getenv("DB_HOST"))
-
-school <- tbl(con, "school")
-scorecard <- tbl(con, "scorecard")
+school <- collegeScorecard::school
+scorecard <- collegeScorecard::scorecard
 
 scorecard_latest <-
   scorecard |>
   group_by(id) |>
-  window_order(academic_year) |>
+  arrange(academic_year) |>
   tidyr::fill(
     n_undergrads,
     rate_admissions,
@@ -62,7 +41,7 @@ school_locales <- c("City", "Suburb", "Town", "Rural")
 # UI --------------------------------------------------------------------------
 
 ui <- page_sidebar(
-  title = config::get("title"),
+  title = "Find a School",
   class = "bslib-page-dashboard",
   sidebar = sidebar(
     accordion(
@@ -159,8 +138,7 @@ ui <- page_sidebar(
       card_body(
         padding = 0,
         leafletOutput("map")
-      ),
-      full_screen = TRUE
+      )
     )
   )
 )
@@ -186,12 +164,11 @@ server <- function(input, output, session) {
       filter(
         state == input$state,
         locale_type %in% input$locale_type,
-        between(n_undergrads, !!input$n_undergrads[1], !!input$n_undergrads[2]),
-        between(rate_admissions, !!input$rate_admissions[1], !!input$rate_admissions[2]),
-        between(rate_completion, !!input$rate_completion[1], !!input$rate_completion[2]),
-        between(cost_avg, !!input$cost_avg[1], !!input$cost_avg[2])
-      ) |>
-      collect()
+        between(n_undergrads, input$n_undergrads[1], input$n_undergrads[2]),
+        between(rate_admissions, input$rate_admissions[1], input$rate_admissions[2]),
+        between(rate_completion, input$rate_completion[1], input$rate_completion[2]),
+        between(cost_avg, input$cost_avg[1], input$cost_avg[2])
+      )
   })
   
   # Value Boxes ----
@@ -253,12 +230,9 @@ server <- function(input, output, session) {
   # Leaflet Map ----
   output$map <- renderLeaflet({
     addColorModeTiles <- function(map) {
-      lgr$debug("Rendering map with color mode", color_mode = input$color_mode)
       if (input$color_mode == "light") {
-        lgr$debug("Choosing OpenStreetMap.Mapnik tiles")
         addProviderTiles(map, "OpenStreetMap.Mapnik")
-      } else if (input$color_mode == "dark") {
-        lgr$debug("Choosing CartoDB.DarkMatter tiles")
+      } else if (input$color_mode == "night") {
         addProviderTiles(map, "CartoDB.DarkMatter")
       }
     }

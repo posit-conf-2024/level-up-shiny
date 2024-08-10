@@ -44,7 +44,11 @@ duration: 60min
 
 ![](assets/connect-steps/step-8.png){style="max-height: 450px"}
 
-**Step 9:** Chose the newly added `pub.conf.posit.team` account, give your app a title, and click Publish to kick off the publish step!
+**Step 9:** Chose the newly added `pub.conf.posit.team` account, and then...
+
+1. Pick the files to deploy. For the first deployment, choose `15_01_app.R`.
+2. Give your app a title, like `find-a-school`. 
+3. Click _Publish_ to kick off the publish step!
 
 ![](assets/connect-steps/step-9.png){style="max-height: 450px"}
 
