@@ -508,7 +508,7 @@
     "href": "slides/slides-01-intro.html#code-of-conduct",
     "title": "Welcome!",
     "section": "Code of Conduct",
-    "text": "Code of Conduct\nCode of Conduct and COVID policies. Please Review\n\n💙 Treat everyone with respect\n🧡 Everyone should feel welcome and safe\n\nReporting:\n\n🗣️ any posit::conf staff member (t-shirt) or Info desk\n📧 conf@posit.com"
+    "text": "Code of Conduct\nPlease Review: posit.co/code-of-conduct\n💙 Treat everyone with respect\n🧡 Everyone should feel welcome and safe\nReporting:\n🗣️ any posit::conf staff member (t-shirt) or Info desk\n📧 conf@posit.com"
   },
   {
     "objectID": "slides/slides-01-intro.html#meet-each-other",
@@ -522,7 +522,7 @@
     "href": "slides/slides-01-intro.html#wifi",
     "title": "Welcome!",
     "section": "WiFi",
-    "text": "WiFi\nWiFi: Posit Conf 2024\nPassword: conf2024"
+    "text": "WiFi\n\n\n\n\nWiFi\nPosit Conf 2024\n\n\n\n\nPass\nconf2024"
   },
   {
     "objectID": "slides/slides-01-intro.html#positconf2024-things-to-know",
@@ -567,18 +567,18 @@
     "text": "Discord\nGo posit.co/conference, click Login. Click image to connect to the posit::conf() Discord server.\nThis workshop has a private channel under Workshops.\n\n#level-up-shiny\n\nGreat place to ask questions, post resources, memes, or most anything else before, during, and after the workshop."
   },
   {
-    "objectID": "slides/slides-01-intro.html#rstudio-cloud",
-    "href": "slides/slides-01-intro.html#rstudio-cloud",
+    "objectID": "slides/slides-01-intro.html#posit-cloud",
+    "href": "slides/slides-01-intro.html#posit-cloud",
     "title": "Welcome!",
-    "section": "RStudio Cloud",
-    "text": "RStudio Cloud\nYou can use the following link to join the workshops RStudio cloud space,\n\n\npos.it/level-up-shiny\n\nOnce you have joined you can then select the level-up-shiny assignment,\nTK Image of assignment\nwhich should then create a copy of all materials and launch a cloud session for you."
+    "section": "Posit Cloud",
+    "text": "Posit Cloud\n\nStep 1. Join pos.it/level-up-shiny-24\n\nStep 2. Start level-up-shiny assignment"
   },
   {
     "objectID": "slides/slides-01-intro.html#cloud-session",
     "href": "slides/slides-01-intro.html#cloud-session",
     "title": "Welcome!",
     "section": "Cloud session",
-    "text": "Cloud session\nIf everything is working you should see something very close to the following,\nTK image of cloud session"
+    "text": "Cloud session"
   },
   {
     "objectID": "slides/slides-01-intro.html#file-organization",
@@ -975,7 +975,7 @@
     "href": "setup.html#using-posit-cloud",
     "title": "Getting Setup",
     "section": "Using Posit Cloud",
-    "text": "Using Posit Cloud\n\n\n\n\n\n\nRecommended Workflow\n\n\n\nThe easiest way to get started is to use the Posit Cloud workspace I’ve prepared for you.\n\n\n\n\n\n\n\n\nWarning\n\n\n\n\nThe link to join the space is not yet available. This page will be updated on the day of the workshop.\nYou will need a Posit Cloud account and you can create one for free at posit.cloud/plans. Click “Learn more” under the Free plan to sign up.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the level-up-shiny space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the level-up-shiny space, select the level-up-shiny assignment to create and launch a new project just for you."
+    "text": "Using Posit Cloud\n\n\n\n\n\n\nRecommended Workflow\n\n\n\nThe easiest way to get started is to use the Posit Cloud workspace I’ve prepared for you.\n\n\n\n\n\n\n\n\nPosit Cloud Space Not Yet Available\n\n\n\n\nThe link to join the space is not yet available. This page will be updated on the day of the workshop.\nYou will need a Posit Cloud account and you can create one for free at posit.cloud/plans. Click “Learn more” under the Free plan to sign up.\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the level-up-shiny space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the level-up-shiny space, select the level-up-shiny assignment to create and launch a new project just for you."
   },
   {
     "objectID": "setup.html#using-your-own-computer",

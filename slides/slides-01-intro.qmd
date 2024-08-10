@@ -48,15 +48,15 @@ editor:
 
 ## Code of Conduct
 
-[Code of Conduct and COVID policies](https://posit.co/code-of-conduct/). **Please Review**
+**Please Review:** [posit.co/code-of-conduct](https://posit.co/code-of-conduct/)
 
--   💙 Treat everyone with respect
--   🧡 Everyone should feel welcome and safe
+💙 Treat everyone with respect \
+🧡 Everyone should feel welcome and safe
 
-Reporting:
+**Reporting:**
 
--   🗣️ any posit::conf staff member (t-shirt) or Info desk
--   📧 `conf@posit.com`
+🗣️ any posit::conf staff member (t-shirt) or Info desk \
+📧 `conf@posit.com`
 
 ## Meet each other
 
@@ -64,10 +64,14 @@ TK: activity
 
 # About this workshop {.middle}
 
-## WiFi {.center .middle}
+## WiFi {.text-center .middle}
 
-WiFi: Posit Conf 2024 \
-Password: `conf2024`
+::: {.fs-step-3 style="min-width: 500px"}
+| WiFi | Posit Conf 2024 |
+|------|-----------------|
+| Pass | `conf2024`      |
+:::
+
 
 ## posit::conf(2024) Things to Know
 
@@ -116,6 +120,8 @@ Need time or help
 {{< partial ../partials/schedule.qmd >}}
 :::
 
+<!-- TODO another table with activity and break times highlighted -->
+
 ## Discord
 
 Go [posit.co/conference](https://posit.co/conference), click **Login**.
@@ -133,28 +139,25 @@ Great place to ask questions, post resources, memes, or most anything else befor
 
 # Computational Environment {.middle}
 
-## RStudio Cloud
+## Posit Cloud
 
-You can use the following link to join the workshops RStudio cloud space,
+::: {.fs-step-3}
+**Step 1.** Join
+<!-- FIXME: cloud link -->[pos.it/level-up-shiny-24](https://pos.it/level-up-shiny-24)
 
-<!-- FIXME: Update cloud link -->
+::: fragment
+**Step 2.** Start `level-up-shiny` assignment
 
-::: {.large style="text-align: center;"}
-[pos.it/level-up-shiny](https://pos.it/level-up-shiny)
+::: text-center
+![](../assets/posit-cloud-project.png){width="80%"}
+:::
+:::
 :::
 
-Once you have joined you can then select the `level-up-shiny` assignment,
 
-TK Image of assignment
+## Cloud session {.text-center}
 
-which should then create a copy of all materials and launch a cloud session for you.
-
-
-## Cloud session
-
-If everything is working you should see something very close to the following,
-
-TK image of cloud session
+![](../assets/posit-cloud-project-session.png){style="max-height: 700px"}
 
 
 ## File organization
@@ -167,6 +170,5 @@ TK image of cloud session
 | `website/` | The website and slides |
 | `./*` | Lots of project related files you can ignore |
 :::
-
 
 # Let's Dive In! {.middle}
