@@ -1,0 +1,13 @@
+default:
+  title: "Find a School (local dev)"
+  db_env: "db-staging.env"
+  log_level: "debug"
+
+rstudio_cloud:
+  title: "Find a School (staging)"
+  db_env: "db-staging.env"
+
+rsconnect:
+  title: "Find a School"
+  db_env: "db-prod.env"
+  log_level: "info"
