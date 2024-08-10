@@ -88,14 +88,14 @@
     "href": "slides/slides-09-fast-apps.html#benchmark-your-options-2",
     "title": "Fast Apps 🏎️💨",
     "section": "Benchmark your options",
-    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  check = FALSE\n)\n\n\n\n# A tibble: 2 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   133.8ms 136.34ms      7.33     382MB     64.1\n2 second_try(10000)   4.07ms   4.25ms    220.      78.2KB     18.0\n\n\n\nthird_try &lt;- function(n) {\n  seq_len(n) + runif(n)\n}"
+    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  check = FALSE\n)\n\n\n\n# A tibble: 2 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)  128.02ms  132.4ms      7.58     382MB     66.4\n2 second_try(10000)   4.05ms   4.24ms    224.      78.2KB     18.0\n\n\n\nthird_try &lt;- function(n) {\n  seq_len(n) + runif(n)\n}"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#benchmark-your-options-3",
     "href": "slides/slides-09-fast-apps.html#benchmark-your-options-3",
     "title": "Fast Apps 🏎️💨",
     "section": "Benchmark your options",
-    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  third_try(1e4),\n  check = FALSE\n)\n\n# A tibble: 3 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)  139.26ms 139.39ms      7.13     382MB     69.5\n2 second_try(10000)   4.07ms   4.22ms    223.      78.2KB     19.9\n3 third_try(10000)   61.25µs  70.36µs  10863.     117.3KB     30.0"
+    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  third_try(1e4),\n  check = FALSE\n)\n\n# A tibble: 3 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)     130ms 135.36ms      7.35     382MB     71.7\n2 second_try(10000)   4.08ms   4.28ms    221.      78.2KB     19.9\n3 third_try(10000)   61.46µs   70.4µs  10511.     117.3KB     30.0"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#benchmark-your-options-4",
@@ -130,7 +130,7 @@
     "href": "slides/slides-09-fast-apps.html#how-where-you-load-data-matters",
     "title": "Fast Apps 🏎️💨",
     "section": "How & where you load data matters",
-    "text": "How & where you load data matters\n\n\n# A tibble: 2 × 2\n  path                 size\n  &lt;chr&gt;         &lt;fs::bytes&gt;\n1 scorecard.csv        338M\n2 scorecard.rds        668M\n\n\n\n\nbench::mark(\n  readr::read_csv(scorecard_csv),\n  readr::read_rds(scorecard_rds),\n  check = FALSE\n)\n\n# A tibble: 2 × 6\n  expression                          min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;                     &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 readr::read_csv(scorecard_csv)    1.47s    1.47s     0.681     674MB    0.681\n2 readr::read_rds(scorecard_rds) 940.42ms 940.42ms     1.06      643MB    0"
+    "text": "How & where you load data matters\n\n\n# A tibble: 2 × 2\n  path                 size\n  &lt;chr&gt;         &lt;fs::bytes&gt;\n1 scorecard.csv        338M\n2 scorecard.rds        668M\n\n\n\n\nbench::mark(\n  readr::read_csv(scorecard_csv),\n  readr::read_rds(scorecard_rds),\n  check = FALSE\n)\n\n# A tibble: 2 × 6\n  expression                          min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;                     &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 readr::read_csv(scorecard_csv)    1.55s    1.55s     0.647     674MB    0.647\n2 readr::read_rds(scorecard_rds) 942.47ms 942.47ms     1.06      643MB    0"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#its-a-duckdb-world-now",
@@ -144,14 +144,14 @@
     "href": "slides/slides-09-fast-apps.html#its-a-duckdb-world-now-1",
     "title": "Fast Apps 🏎️💨",
     "section": "It’s a duckdb world now",
-    "text": "It’s a duckdb world now\n\n\n# A tibble: 3 × 6\n  expression                           min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;                      &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 readr::read_csv(scorecard_csv)     1.43s    1.43s     0.699     672MB    0.699\n2 readr::read_rds(scorecard_rds)  851.07ms 851.07ms     1.17      643MB    1.17 \n3 duckdb::tbl_file(con, scorecar…   49.3ms  50.43ms    19.8        52KB    0"
+    "text": "It’s a duckdb world now\n\n\n# A tibble: 3 × 6\n  expression                           min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;                      &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 readr::read_csv(scorecard_csv)     1.52s    1.52s     0.656     672MB    0.656\n2 readr::read_rds(scorecard_rds)  885.77ms 885.77ms     1.13      643MB    1.13 \n3 duckdb::tbl_file(con, scorecar…  50.77ms  51.91ms    19.3        52KB    0"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#duckdb-and-parquet-is-an-unbeatable-combo",
     "href": "slides/slides-09-fast-apps.html#duckdb-and-parquet-is-an-unbeatable-combo",
     "title": "Fast Apps 🏎️💨",
     "section": "duckdb and parquet is an unbeatable combo",
-    "text": "duckdb and parquet is an unbeatable combo\n\n\n# A tibble: 2 × 6\n  expression          min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;     &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 duckdb_csv      51.12ms  52.03ms      19.2      52KB     0   \n2 duckdb_parquet   4.71ms   5.31ms     186.     59.1KB     8.57\n\n\n\n\n.csv file ~ 330 MB\n.rds file ~ 670 MB\n.parquet file ~ 120 MB\n\n\n\nscorecard &lt;- tbl(con, \"read_parquet('scorecard.parquet')\")"
+    "text": "duckdb and parquet is an unbeatable combo\n\n\n# A tibble: 2 × 6\n  expression          min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;     &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 duckdb_csv      51.12ms  51.86ms      19.2      52KB     0   \n2 duckdb_parquet   4.95ms   5.82ms     168.     59.1KB     8.60\n\n\n\n\n.csv file ~ 330 MB\n.rds file ~ 670 MB\n.parquet file ~ 120 MB\n\n\n\nscorecard &lt;- tbl(con, \"read_parquet('scorecard.parquet')\")"
   },
   {
     "objectID": "slides/slides-08-reactivity.html#your-turn-inst",

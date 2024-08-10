@@ -685,7 +685,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"id":1,"code":"first_try <- function(n) {\n  x <- c()\n  for (i in seq_len(n)) {\n    x <- c(x, i + runif(1))\n  }\n  x\n}\n\nsecond_try <- function(n) {\n  x <- numeric(n)\n  for (i in seq_len(n)) {\n    x[i] <- i + runif(1)\n  }\n  x\n}\n\nthird_try <- function(n) {\n  seq_len(n) + runif(n)\n}","options":{"fig-width":7,"read-only":"false","context":"setup","results":"markup","editor-quick-suggestions":"false","editor-max-height":"","editor-word-wrap":"true","message":"true","autorun":"true","dpi":72,"out-width":"700px","warning":"true","comment":"","fig-height":5,"label":"unnamed-chunk-1","output":"true","classes":"","out-height":"","fig-cap":"","editor-font-scale":"0.5"}},{"id":2,"code":"iters <- 100\nsystem.time(first_try(iters))\nsystem.time(second_try(iters))","options":{"fig-width":7,"read-only":"false","context":"interactive","results":"markup","editor-quick-suggestions":"false","editor-max-height":"","editor-word-wrap":"true","message":"true","autorun":"false","dpi":72,"out-width":"700px","warning":"true","comment":"","fig-height":5,"label":"unnamed-chunk-2","output":"true","classes":"","out-height":"","fig-cap":"","editor-font-scale":"0.5"}}];
+  globalThis.qwebrCellDetails = [{"id":1,"options":{"read-only":"false","editor-max-height":"","comment":"","classes":"","dpi":72,"editor-quick-suggestions":"false","out-height":"","editor-word-wrap":"true","output":"true","results":"markup","autorun":"true","message":"true","fig-cap":"","out-width":"700px","label":"unnamed-chunk-1","context":"setup","editor-font-scale":"0.5","fig-height":5,"warning":"true","fig-width":7},"code":"first_try <- function(n) {\n  x <- c()\n  for (i in seq_len(n)) {\n    x <- c(x, i + runif(1))\n  }\n  x\n}\n\nsecond_try <- function(n) {\n  x <- numeric(n)\n  for (i in seq_len(n)) {\n    x[i] <- i + runif(1)\n  }\n  x\n}\n\nthird_try <- function(n) {\n  seq_len(n) + runif(n)\n}"},{"id":2,"options":{"read-only":"false","editor-max-height":"","comment":"","classes":"","dpi":72,"editor-quick-suggestions":"false","out-height":"","editor-word-wrap":"true","output":"true","results":"markup","autorun":"false","message":"true","fig-cap":"","out-width":"700px","label":"unnamed-chunk-2","context":"interactive","editor-font-scale":"0.5","fig-height":5,"warning":"true","fig-width":7},"code":"iters <- 100\nsystem.time(first_try(iters))\nsystem.time(second_try(iters))"}];
 
   </script>
   <script type="module">
@@ -2262,7 +2262,7 @@ function doWork(withSpinner = false) {
 </section>
 <section id="your-turn-10-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/10_app.R</code></h2>
-<div id="timer_d9bdb28c1ad21417e18c47b61e2a2ce16da5091c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_a28db5f392b654401c3054925bbf1896c0b9717e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2347,7 +2347,7 @@ function doWork(withSpinner = false) {
 </section>
 <section id="your-turn-11-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/11_app.R</code></h2>
-<div id="timer_d9bdb28c1ad21417e18c47b61e2a2ce16da5091c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_a28db5f392b654401c3054925bbf1896c0b9717e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2450,8 +2450,8 @@ function doWork(withSpinner = false) {
 <pre><code># A tibble: 2 × 6
   expression             min   median `itr/sec` mem_alloc `gc/sec`
   &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 first_try(10000)   133.8ms 136.34ms      7.33     382MB     64.1
-2 second_try(10000)   4.07ms   4.25ms    220.      78.2KB     18.0</code></pre>
+1 first_try(10000)  128.02ms  132.4ms      7.58     382MB     66.4
+2 second_try(10000)   4.05ms   4.24ms    224.      78.2KB     18.0</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -2473,9 +2473,9 @@ function doWork(withSpinner = false) {
 <pre><code># A tibble: 3 × 6
   expression             min   median `itr/sec` mem_alloc `gc/sec`
   &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 first_try(10000)  139.26ms 139.39ms      7.13     382MB     69.5
-2 second_try(10000)   4.07ms   4.22ms    223.      78.2KB     19.9
-3 third_try(10000)   61.25µs  70.36µs  10863.     117.3KB     30.0</code></pre>
+1 first_try(10000)     130ms 135.36ms      7.35     382MB     71.7
+2 second_try(10000)   4.08ms   4.28ms    221.      78.2KB     19.9
+3 third_try(10000)   61.46µs   70.4µs  10511.     117.3KB     30.0</code></pre>
 </div>
 </div>
 </section>
@@ -2497,7 +2497,7 @@ function doWork(withSpinner = false) {
 </section>
 <section id="your-turn-12-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/12_slow_app/app.R</code></h2>
-<div id="timer_d9bdb28c1ad21417e18c47b61e2a2ce16da5091c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_a28db5f392b654401c3054925bbf1896c0b9717e" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2573,8 +2573,8 @@ function doWork(withSpinner = false) {
 <pre><code># A tibble: 2 × 6
   expression                          min   median `itr/sec` mem_alloc `gc/sec`
   &lt;bch:expr&gt;                     &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 readr::read_csv(scorecard_csv)    1.47s    1.47s     0.681     674MB    0.681
-2 readr::read_rds(scorecard_rds) 940.42ms 940.42ms     1.06      643MB    0    </code></pre>
+1 readr::read_csv(scorecard_csv)    1.55s    1.55s     0.647     674MB    0.647
+2 readr::read_rds(scorecard_rds) 942.47ms 942.47ms     1.06      643MB    0    </code></pre>
 </div>
 </div>
 </div>
@@ -2666,9 +2666,9 @@ function doWork(withSpinner = false) {
 <pre><code># A tibble: 3 × 6
   expression                           min   median `itr/sec` mem_alloc `gc/sec`
   &lt;bch:expr&gt;                      &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 readr::read_csv(scorecard_csv)     1.43s    1.43s     0.699     672MB    0.699
-2 readr::read_rds(scorecard_rds)  851.07ms 851.07ms     1.17      643MB    1.17 
-3 duckdb::tbl_file(con, scorecar…   49.3ms  50.43ms    19.8        52KB    0    </code></pre>
+1 readr::read_csv(scorecard_csv)     1.52s    1.52s     0.656     672MB    0.656
+2 readr::read_rds(scorecard_rds)  885.77ms 885.77ms     1.13      643MB    1.13 
+3 duckdb::tbl_file(con, scorecar…  50.77ms  51.91ms    19.3        52KB    0    </code></pre>
 </div>
 </div>
 </section>
@@ -2679,8 +2679,8 @@ function doWork(withSpinner = false) {
 <pre><code># A tibble: 2 × 6
   expression          min   median `itr/sec` mem_alloc `gc/sec`
   &lt;bch:expr&gt;     &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 duckdb_csv      51.12ms  52.03ms      19.2      52KB     0   
-2 duckdb_parquet   4.71ms   5.31ms     186.     59.1KB     8.57</code></pre>
+1 duckdb_csv      51.12ms  51.86ms      19.2      52KB     0   
+2 duckdb_parquet   4.95ms   5.82ms     168.     59.1KB     8.60</code></pre>
 </div>
 </div>
 <div class="fragment">
