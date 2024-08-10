@@ -12,7 +12,7 @@ if (!exists(".__r_profile_loaded") || !isTRUE(.__r_profile_loaded)) {
 
   if (Sys.getenv("R_CONFIG_ACTIVE") == "rstudio_cloud") {
     if (!"https://p3m.dev/cran/latest" %in% getOption("repos")) {
-      options(repos = c("https://p3m.dev/cran/latest", getOption("repos")))
+      options(repos = c("P3M" = "https://p3m.dev/cran/latest", getOption("repos")))
     }
   }
 
