@@ -20,3 +20,4 @@ duration: 30min
 
 * [Expandable Sparklines • Value boxes • bslib](https://rstudio.github.io/bslib/articles/value-boxes/index.html#expandable-sparklines)
 
+* [DuckDB - R API](https://duckdb.org/docs/api/r)
