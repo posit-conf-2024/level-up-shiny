@@ -685,7 +685,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"options":{"results":"markup","editor-max-height":"","fig-width":7,"editor-word-wrap":"true","dpi":72,"editor-font-scale":"0.5","out-height":"","fig-cap":"","out-width":"700px","message":"true","output":"true","autorun":"true","read-only":"false","fig-height":5,"classes":"","warning":"true","comment":"","editor-quick-suggestions":"false","label":"unnamed-chunk-1","context":"setup"},"id":1,"code":"first_try <- function(n) {\n  x <- c()\n  for (i in seq_len(n)) {\n    x <- c(x, i + runif(1))\n  }\n  x\n}\n\nsecond_try <- function(n) {\n  x <- numeric(n)\n  for (i in seq_len(n)) {\n    x[i] <- i + runif(1)\n  }\n  x\n}\n\nthird_try <- function(n) {\n  seq_len(n) + runif(n)\n}"},{"options":{"results":"markup","editor-max-height":"","fig-width":7,"editor-word-wrap":"true","dpi":72,"editor-font-scale":"0.5","out-height":"","fig-cap":"","out-width":"700px","message":"true","output":"true","autorun":"false","read-only":"false","fig-height":5,"classes":"","warning":"true","comment":"","editor-quick-suggestions":"false","label":"unnamed-chunk-2","context":"interactive"},"id":2,"code":"iters <- 100\nsystem.time(first_try(iters))\nsystem.time(second_try(iters))"}];
+  globalThis.qwebrCellDetails = [{"id":1,"code":"first_try <- function(n) {\n  x <- c()\n  for (i in seq_len(n)) {\n    x <- c(x, i + runif(1))\n  }\n  x\n}\n\nsecond_try <- function(n) {\n  x <- numeric(n)\n  for (i in seq_len(n)) {\n    x[i] <- i + runif(1)\n  }\n  x\n}\n\nthird_try <- function(n) {\n  seq_len(n) + runif(n)\n}","options":{"fig-width":7,"read-only":"false","context":"setup","results":"markup","editor-quick-suggestions":"false","editor-max-height":"","editor-word-wrap":"true","message":"true","autorun":"true","dpi":72,"out-width":"700px","warning":"true","comment":"","fig-height":5,"label":"unnamed-chunk-1","output":"true","classes":"","out-height":"","fig-cap":"","editor-font-scale":"0.5"}},{"id":2,"code":"iters <- 100\nsystem.time(first_try(iters))\nsystem.time(second_try(iters))","options":{"fig-width":7,"read-only":"false","context":"interactive","results":"markup","editor-quick-suggestions":"false","editor-max-height":"","editor-word-wrap":"true","message":"true","autorun":"false","dpi":72,"out-width":"700px","warning":"true","comment":"","fig-height":5,"label":"unnamed-chunk-2","output":"true","classes":"","out-height":"","fig-cap":"","editor-font-scale":"0.5"}}];
 
   </script>
   <script type="module">
@@ -2262,7 +2262,7 @@ function doWork(withSpinner = false) {
 </section>
 <section id="your-turn-10-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/10_app.R</code></h2>
-<div id="timer_59e027d7146733cdb927f956b3c9811e1ee1738d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_d9bdb28c1ad21417e18c47b61e2a2ce16da5091c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2347,7 +2347,7 @@ function doWork(withSpinner = false) {
 </section>
 <section id="your-turn-11-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/11_app.R</code></h2>
-<div id="timer_59e027d7146733cdb927f956b3c9811e1ee1738d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_d9bdb28c1ad21417e18c47b61e2a2ce16da5091c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2450,8 +2450,8 @@ function doWork(withSpinner = false) {
 <pre><code># A tibble: 2 × 6
   expression             min   median `itr/sec` mem_alloc `gc/sec`
   &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 first_try(10000)   79.11ms  96.88ms      9.54     382MB     85.8
-2 second_try(10000)   7.45ms   7.59ms    126.      78.2KB     19.7</code></pre>
+1 first_try(10000)   133.8ms 136.34ms      7.33     382MB     64.1
+2 second_try(10000)   4.07ms   4.25ms    220.      78.2KB     18.0</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -2473,9 +2473,9 @@ function doWork(withSpinner = false) {
 <pre><code># A tibble: 3 × 6
   expression             min   median `itr/sec` mem_alloc `gc/sec`
   &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 first_try(10000)   89.06ms  91.86ms      10.9     382MB    105. 
-2 second_try(10000)   7.42ms   7.54ms     124.     78.2KB     24.0
-3 third_try(10000)   95.75µs  97.55µs    8419.    117.3KB     20.0</code></pre>
+1 first_try(10000)  139.26ms 139.39ms      7.13     382MB     69.5
+2 second_try(10000)   4.07ms   4.22ms    223.      78.2KB     19.9
+3 third_try(10000)   61.25µs  70.36µs  10863.     117.3KB     30.0</code></pre>
 </div>
 </div>
 </section>
@@ -2497,7 +2497,7 @@ function doWork(withSpinner = false) {
 </section>
 <section id="your-turn-12-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/12_slow_app/app.R</code></h2>
-<div id="timer_59e027d7146733cdb927f956b3c9811e1ee1738d" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_d9bdb28c1ad21417e18c47b61e2a2ce16da5091c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2511,6 +2511,188 @@ function doWork(withSpinner = false) {
 <li><p>How fast can you make the app? Think through or outline your strategy.</p></li>
 <li><p>Stretch: Implement your strategy and see how much you can improve the app’s performance.</p></li>
 </ol>
+</section></section>
+<section>
+<section id="slow-data-fast-data" class="title-slide slide level1 middle center">
+<h1>Slow Data, Fast Data</h1>
+
+</section>
+<section id="where-does-this-show-up-in-the-reactive-graph" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"><span class="fs-step-2">Where does this show up in the reactive graph?</span></h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb16-1" class="hljs-ln-code"><a></a><span class="fu">library</span>(shiny)</span>
+<span id="cb16-2" class="hljs-ln-code"><a></a><span class="fu">library</span>(bslib)</span>
+<span id="cb16-3" class="hljs-ln-code"><a></a></span>
+<span id="cb16-4" class="hljs-ln-code"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">page_fluid</span>(</span>
+<span id="cb16-5" class="hljs-ln-code"><a></a>  <span class="co"># ui stuff...</span></span>
+<span id="cb16-6" class="hljs-ln-code"><a></a>)</span>
+<span id="cb16-7" class="hljs-ln-code"><a></a></span>
+<span id="cb16-8" class="hljs-ln-code"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb16-9" class="hljs-ln-code"><a></a>  scorecard <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"scorecard.csv"</span>)</span>
+<span id="cb16-10" class="hljs-ln-code"><a></a></span>
+<span id="cb16-11" class="hljs-ln-code"><a></a>  <span class="co"># server stuff...</span></span>
+<span id="cb16-12" class="hljs-ln-code"><a></a>}</span>
+<span id="cb16-13" class="hljs-ln-code"><a></a></span>
+<span id="cb16-14" class="hljs-ln-code"><a></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="where-does-this-show-up-in-the-reactive-graph-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"><span class="fs-step-2">Where does this show up in the reactive graph?</span></h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb17-1" class="hljs-ln-code"><a></a><span class="fu">library</span>(shiny)</span>
+<span id="cb17-2" class="hljs-ln-code"><a></a><span class="fu">library</span>(bslib)</span>
+<span id="cb17-3" class="hljs-ln-code"><a></a></span>
+<span id="cb17-4" class="hljs-ln-code"><a></a>scorecard <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"scorecard.csv"</span>)</span>
+<span id="cb17-5" class="hljs-ln-code"><a></a></span>
+<span id="cb17-6" class="hljs-ln-code"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">page_fluid</span>(</span>
+<span id="cb17-7" class="hljs-ln-code"><a></a>  <span class="co"># ui stuff...</span></span>
+<span id="cb17-8" class="hljs-ln-code"><a></a>)</span>
+<span id="cb17-9" class="hljs-ln-code"><a></a></span>
+<span id="cb17-10" class="hljs-ln-code"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb17-11" class="hljs-ln-code"><a></a>  <span class="co"># server stuff...</span></span>
+<span id="cb17-12" class="hljs-ln-code"><a></a>}</span>
+<span id="cb17-13" class="hljs-ln-code"><a></a></span>
+<span id="cb17-14" class="hljs-ln-code"><a></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="how-where-you-load-data-matters" class="slide level2">
+<h2><span class="fs-step-3">How &amp; where you load data matters</span></h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  path                 size
+  &lt;chr&gt;         &lt;fs::bytes&gt;
+1 scorecard.csv        338M
+2 scorecard.rds        668M</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell" data-output-results="fragment">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>bench<span class="sc">::</span><span class="fu">mark</span>(</span>
+<span id="cb19-2"><a></a>  readr<span class="sc">::</span><span class="fu">read_csv</span>(scorecard_csv),</span>
+<span id="cb19-3"><a></a>  readr<span class="sc">::</span><span class="fu">read_rds</span>(scorecard_rds),</span>
+<span id="cb19-4"><a></a>  <span class="at">check =</span> <span class="cn">FALSE</span></span>
+<span id="cb19-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 6
+  expression                          min   median `itr/sec` mem_alloc `gc/sec`
+  &lt;bch:expr&gt;                     &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
+1 readr::read_csv(scorecard_csv)    1.47s    1.47s     0.681     674MB    0.681
+2 readr::read_rds(scorecard_rds) 940.42ms 940.42ms     1.06      643MB    0    </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="its-a-duckdb-world-now" class="slide level2">
+<h2>It’s a duckdb world now</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">library</span>(duckdb)</span>
+<span id="cb21-2"><a></a></span>
+<span id="cb21-3"><a></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(<span class="fu">duckdb</span>(), <span class="st">":memory:"</span>)</span>
+<span id="cb21-4"><a></a></span>
+<span id="cb21-5"><a></a>scorecard <span class="ot">&lt;-</span> duckdb<span class="sc">::</span><span class="fu">tbl_file</span>(con, scorecard_csv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>scorecard</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:   SQL [?? x 24]
+# Database: DuckDB v1.0.0 [root@Darwin 23.5.0:R 4.4.1/:memory:]
+       id academic_year n_undergrads cost_tuition_in cost_tuition_out cost_books
+    &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;        &lt;chr&gt;           &lt;chr&gt;            &lt;chr&gt;     
+ 1 100654 1996-97       3852         NA              NA               NA        
+ 2 100663 1996-97       9889         NA              NA               NA        
+ 3 100672 1996-97       295          NA              NA               NA        
+ 4 100690 1996-97       60           NA              NA               NA        
+ 5 100706 1996-97       3854         NA              NA               NA        
+ 6 100724 1996-97       4679         NA              NA               NA        
+ 7 100751 1996-97       13948        NA              NA               NA        
+ 8 100760 1996-97       1792         NA              NA               NA        
+ 9 100812 1996-97       2698         NA              NA               NA        
+10 100830 1996-97       4541         NA              NA               NA        
+# ℹ more rows
+# ℹ 18 more variables: cost_room_board_on &lt;chr&gt;, cost_room_board_off &lt;chr&gt;,
+#   cost_avg &lt;chr&gt;, cost_avg_income_0_30k &lt;chr&gt;, cost_avg_income_30_48k &lt;chr&gt;,
+#   cost_avg_income_48_75k &lt;chr&gt;, cost_avg_income_75_110k &lt;chr&gt;,
+#   cost_avg_income_110k_plus &lt;chr&gt;, amnt_earnings_med_10y &lt;chr&gt;,
+#   rate_completion &lt;chr&gt;, rate_admissions &lt;chr&gt;, score_sat_avg &lt;chr&gt;,
+#   score_act_p25 &lt;chr&gt;, score_act_p75 &lt;chr&gt;, score_sat_verbal_p25 &lt;chr&gt;, …</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>scorecard <span class="sc">|&gt;</span></span>
+<span id="cb24-2"><a></a>  <span class="fu">filter</span>(academic_year <span class="sc">==</span> <span class="st">"2022-23"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:   SQL [?? x 24]
+# Database: DuckDB v1.0.0 [root@Darwin 23.5.0:R 4.4.1/:memory:]
+       id academic_year n_undergrads cost_tuition_in cost_tuition_out cost_books
+    &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;        &lt;chr&gt;           &lt;chr&gt;            &lt;chr&gt;     
+ 1 100654 2022-23       5196         10024           18634            1600      
+ 2 100663 2022-23       12776        8832            21216            1200      
+ 3 100690 2022-23       228          NA              NA               NA        
+ 4 100706 2022-23       6985         11878           24770            2416      
+ 5 100724 2022-23       3296         11068           19396            1600      
+ 6 100751 2022-23       31360        11940           32300            800       
+ 7 100760 2022-23       963          4990            8740             1250      
+ 8 100812 2022-23       2465         NA              NA               NA        
+ 9 100830 2022-23       3307         9100            19348            1200      
+10 100858 2022-23       25234        12176           32960            1200      
+# ℹ more rows
+# ℹ 18 more variables: cost_room_board_on &lt;chr&gt;, cost_room_board_off &lt;chr&gt;,
+#   cost_avg &lt;chr&gt;, cost_avg_income_0_30k &lt;chr&gt;, cost_avg_income_30_48k &lt;chr&gt;,
+#   cost_avg_income_48_75k &lt;chr&gt;, cost_avg_income_75_110k &lt;chr&gt;,
+#   cost_avg_income_110k_plus &lt;chr&gt;, amnt_earnings_med_10y &lt;chr&gt;,
+#   rate_completion &lt;chr&gt;, rate_admissions &lt;chr&gt;, score_sat_avg &lt;chr&gt;,
+#   score_act_p25 &lt;chr&gt;, score_act_p75 &lt;chr&gt;, score_sat_verbal_p25 &lt;chr&gt;, …</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>scorecard <span class="sc">|&gt;</span></span>
+<span id="cb26-2"><a></a>  <span class="fu">count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:   SQL [1 x 1]
+# Database: DuckDB v1.0.0 [root@Darwin 23.5.0:R 4.4.1/:memory:]
+        n
+    &lt;dbl&gt;
+1 3666120</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="its-a-duckdb-world-now-1" class="slide level2">
+<h2>It’s a duckdb world now</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 6
+  expression                           min   median `itr/sec` mem_alloc `gc/sec`
+  &lt;bch:expr&gt;                      &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
+1 readr::read_csv(scorecard_csv)     1.43s    1.43s     0.699     672MB    0.699
+2 readr::read_rds(scorecard_rds)  851.07ms 851.07ms     1.17      643MB    1.17 
+3 duckdb::tbl_file(con, scorecar…   49.3ms  50.43ms    19.8        52KB    0    </code></pre>
+</div>
+</div>
+</section>
+<section id="duckdb-and-parquet-is-an-unbeatable-combo" class="slide level2">
+<h2>duckdb and parquet is an unbeatable combo</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 6
+  expression          min   median `itr/sec` mem_alloc `gc/sec`
+  &lt;bch:expr&gt;     &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
+1 duckdb_csv      51.12ms  52.03ms      19.2      52KB     0   
+2 duckdb_parquet   4.71ms   5.31ms     186.     59.1KB     8.57</code></pre>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li><code>.csv</code> file ~ 330 MB</li>
+<li><code>.rds</code> file ~ 670 MB</li>
+<li><code>.parquet</code> file ~ 120 MB</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>scorecard <span class="ot">&lt;-</span> <span class="fu">tbl</span>(con, <span class="st">"read_parquet('scorecard.parquet')"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

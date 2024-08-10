@@ -88,14 +88,14 @@
     "href": "slides/slides-09-fast-apps.html#benchmark-your-options-2",
     "title": "Fast Apps 🏎️💨",
     "section": "Benchmark your options",
-    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  check = FALSE\n)\n\n\n\n# A tibble: 2 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   79.11ms  96.88ms      9.54     382MB     85.8\n2 second_try(10000)   7.45ms   7.59ms    126.      78.2KB     19.7\n\n\n\nthird_try &lt;- function(n) {\n  seq_len(n) + runif(n)\n}"
+    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  check = FALSE\n)\n\n\n\n# A tibble: 2 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   133.8ms 136.34ms      7.33     382MB     64.1\n2 second_try(10000)   4.07ms   4.25ms    220.      78.2KB     18.0\n\n\n\nthird_try &lt;- function(n) {\n  seq_len(n) + runif(n)\n}"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#benchmark-your-options-3",
     "href": "slides/slides-09-fast-apps.html#benchmark-your-options-3",
     "title": "Fast Apps 🏎️💨",
     "section": "Benchmark your options",
-    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  third_try(1e4),\n  check = FALSE\n)\n\n# A tibble: 3 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)   89.06ms  91.86ms      10.9     382MB    105. \n2 second_try(10000)   7.42ms   7.54ms     124.     78.2KB     24.0\n3 third_try(10000)   95.75µs  97.55µs    8419.    117.3KB     20.0"
+    "text": "Benchmark your options\n\nbench::mark(\n  first_try(1e4),\n  second_try(1e4),\n  third_try(1e4),\n  check = FALSE\n)\n\n# A tibble: 3 × 6\n  expression             min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 first_try(10000)  139.26ms 139.39ms      7.13     382MB     69.5\n2 second_try(10000)   4.07ms   4.22ms    223.      78.2KB     19.9\n3 third_try(10000)   61.25µs  70.36µs  10863.     117.3KB     30.0"
   },
   {
     "objectID": "slides/slides-09-fast-apps.html#benchmark-your-options-4",
@@ -110,6 +110,48 @@
     "title": "Fast Apps 🏎️💨",
     "section": "Your Turn _exercises/12_slow_app/app.R",
     "text": "Your Turn _exercises/12_slow_app/app.R\n\n  \n    −\n    +\n \n 08:00\n \n\nUse profvis find the slow calls in the app.\nUse reactlog to figure out how the structure of the app makes the slow calls worse.\nUse bench to compare the performance of two API-calling functions: get_schools_in_state_with_sat() and get_schools_in_state().\nHow fast can you make the app? Think through or outline your strategy.\nStretch: Implement your strategy and see how much you can improve the app’s performance."
+  },
+  {
+    "objectID": "slides/slides-09-fast-apps.html#where-does-this-show-up-in-the-reactive-graph",
+    "href": "slides/slides-09-fast-apps.html#where-does-this-show-up-in-the-reactive-graph",
+    "title": "Fast Apps 🏎️💨",
+    "section": "Where does this show up in the reactive graph?",
+    "text": "Where does this show up in the reactive graph?\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- page_fluid(\n  # ui stuff...\n)\n\nserver &lt;- function(input, output, session) {\n  scorecard &lt;- read_csv(\"scorecard.csv\")\n\n  # server stuff...\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "slides/slides-09-fast-apps.html#where-does-this-show-up-in-the-reactive-graph-1",
+    "href": "slides/slides-09-fast-apps.html#where-does-this-show-up-in-the-reactive-graph-1",
+    "title": "Fast Apps 🏎️💨",
+    "section": "Where does this show up in the reactive graph?",
+    "text": "Where does this show up in the reactive graph?\nlibrary(shiny)\nlibrary(bslib)\n\nscorecard &lt;- read_csv(\"scorecard.csv\")\n\nui &lt;- page_fluid(\n  # ui stuff...\n)\n\nserver &lt;- function(input, output, session) {\n  # server stuff...\n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "slides/slides-09-fast-apps.html#how-where-you-load-data-matters",
+    "href": "slides/slides-09-fast-apps.html#how-where-you-load-data-matters",
+    "title": "Fast Apps 🏎️💨",
+    "section": "How & where you load data matters",
+    "text": "How & where you load data matters\n\n\n# A tibble: 2 × 2\n  path                 size\n  &lt;chr&gt;         &lt;fs::bytes&gt;\n1 scorecard.csv        338M\n2 scorecard.rds        668M\n\n\n\n\nbench::mark(\n  readr::read_csv(scorecard_csv),\n  readr::read_rds(scorecard_rds),\n  check = FALSE\n)\n\n# A tibble: 2 × 6\n  expression                          min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;                     &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 readr::read_csv(scorecard_csv)    1.47s    1.47s     0.681     674MB    0.681\n2 readr::read_rds(scorecard_rds) 940.42ms 940.42ms     1.06      643MB    0"
+  },
+  {
+    "objectID": "slides/slides-09-fast-apps.html#its-a-duckdb-world-now",
+    "href": "slides/slides-09-fast-apps.html#its-a-duckdb-world-now",
+    "title": "Fast Apps 🏎️💨",
+    "section": "It’s a duckdb world now",
+    "text": "It’s a duckdb world now\n\nlibrary(duckdb)\n\ncon &lt;- DBI::dbConnect(duckdb(), \":memory:\")\n\nscorecard &lt;- duckdb::tbl_file(con, scorecard_csv)\n\n\n\nscorecard\n\n# Source:   SQL [?? x 24]\n# Database: DuckDB v1.0.0 [root@Darwin 23.5.0:R 4.4.1/:memory:]\n       id academic_year n_undergrads cost_tuition_in cost_tuition_out cost_books\n    &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;        &lt;chr&gt;           &lt;chr&gt;            &lt;chr&gt;     \n 1 100654 1996-97       3852         NA              NA               NA        \n 2 100663 1996-97       9889         NA              NA               NA        \n 3 100672 1996-97       295          NA              NA               NA        \n 4 100690 1996-97       60           NA              NA               NA        \n 5 100706 1996-97       3854         NA              NA               NA        \n 6 100724 1996-97       4679         NA              NA               NA        \n 7 100751 1996-97       13948        NA              NA               NA        \n 8 100760 1996-97       1792         NA              NA               NA        \n 9 100812 1996-97       2698         NA              NA               NA        \n10 100830 1996-97       4541         NA              NA               NA        \n# ℹ more rows\n# ℹ 18 more variables: cost_room_board_on &lt;chr&gt;, cost_room_board_off &lt;chr&gt;,\n#   cost_avg &lt;chr&gt;, cost_avg_income_0_30k &lt;chr&gt;, cost_avg_income_30_48k &lt;chr&gt;,\n#   cost_avg_income_48_75k &lt;chr&gt;, cost_avg_income_75_110k &lt;chr&gt;,\n#   cost_avg_income_110k_plus &lt;chr&gt;, amnt_earnings_med_10y &lt;chr&gt;,\n#   rate_completion &lt;chr&gt;, rate_admissions &lt;chr&gt;, score_sat_avg &lt;chr&gt;,\n#   score_act_p25 &lt;chr&gt;, score_act_p75 &lt;chr&gt;, score_sat_verbal_p25 &lt;chr&gt;, …\n\n\n\n\n\nscorecard |&gt;\n  filter(academic_year == \"2022-23\")\n\n# Source:   SQL [?? x 24]\n# Database: DuckDB v1.0.0 [root@Darwin 23.5.0:R 4.4.1/:memory:]\n       id academic_year n_undergrads cost_tuition_in cost_tuition_out cost_books\n    &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;        &lt;chr&gt;           &lt;chr&gt;            &lt;chr&gt;     \n 1 100654 2022-23       5196         10024           18634            1600      \n 2 100663 2022-23       12776        8832            21216            1200      \n 3 100690 2022-23       228          NA              NA               NA        \n 4 100706 2022-23       6985         11878           24770            2416      \n 5 100724 2022-23       3296         11068           19396            1600      \n 6 100751 2022-23       31360        11940           32300            800       \n 7 100760 2022-23       963          4990            8740             1250      \n 8 100812 2022-23       2465         NA              NA               NA        \n 9 100830 2022-23       3307         9100            19348            1200      \n10 100858 2022-23       25234        12176           32960            1200      \n# ℹ more rows\n# ℹ 18 more variables: cost_room_board_on &lt;chr&gt;, cost_room_board_off &lt;chr&gt;,\n#   cost_avg &lt;chr&gt;, cost_avg_income_0_30k &lt;chr&gt;, cost_avg_income_30_48k &lt;chr&gt;,\n#   cost_avg_income_48_75k &lt;chr&gt;, cost_avg_income_75_110k &lt;chr&gt;,\n#   cost_avg_income_110k_plus &lt;chr&gt;, amnt_earnings_med_10y &lt;chr&gt;,\n#   rate_completion &lt;chr&gt;, rate_admissions &lt;chr&gt;, score_sat_avg &lt;chr&gt;,\n#   score_act_p25 &lt;chr&gt;, score_act_p75 &lt;chr&gt;, score_sat_verbal_p25 &lt;chr&gt;, …\n\n\n\n\n\nscorecard |&gt;\n  count()\n\n# Source:   SQL [1 x 1]\n# Database: DuckDB v1.0.0 [root@Darwin 23.5.0:R 4.4.1/:memory:]\n        n\n    &lt;dbl&gt;\n1 3666120"
+  },
+  {
+    "objectID": "slides/slides-09-fast-apps.html#its-a-duckdb-world-now-1",
+    "href": "slides/slides-09-fast-apps.html#its-a-duckdb-world-now-1",
+    "title": "Fast Apps 🏎️💨",
+    "section": "It’s a duckdb world now",
+    "text": "It’s a duckdb world now\n\n\n# A tibble: 3 × 6\n  expression                           min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;                      &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 readr::read_csv(scorecard_csv)     1.43s    1.43s     0.699     672MB    0.699\n2 readr::read_rds(scorecard_rds)  851.07ms 851.07ms     1.17      643MB    1.17 \n3 duckdb::tbl_file(con, scorecar…   49.3ms  50.43ms    19.8        52KB    0"
+  },
+  {
+    "objectID": "slides/slides-09-fast-apps.html#duckdb-and-parquet-is-an-unbeatable-combo",
+    "href": "slides/slides-09-fast-apps.html#duckdb-and-parquet-is-an-unbeatable-combo",
+    "title": "Fast Apps 🏎️💨",
+    "section": "duckdb and parquet is an unbeatable combo",
+    "text": "duckdb and parquet is an unbeatable combo\n\n\n# A tibble: 2 × 6\n  expression          min   median `itr/sec` mem_alloc `gc/sec`\n  &lt;bch:expr&gt;     &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;\n1 duckdb_csv      51.12ms  52.03ms      19.2      52KB     0   \n2 duckdb_parquet   4.71ms   5.31ms     186.     59.1KB     8.57\n\n\n\n\n.csv file ~ 330 MB\n.rds file ~ 670 MB\n.parquet file ~ 120 MB\n\n\n\nscorecard &lt;- tbl(con, \"read_parquet('scorecard.parquet')\")"
   },
   {
     "objectID": "slides/slides-08-reactivity.html#your-turn-inst",
@@ -717,7 +759,7 @@
     "href": "workshop-09.html#resources",
     "title": "Fast Apps",
     "section": "Resources",
-    "text": "Resources\n\nShiny - Using caching in Shiny to maximize performance\nShiny - Profiling your Shiny app\nShiny - Performance\nExpandable Sparklines • Value boxes • bslib",
+    "text": "Resources\n\nShiny - Using caching in Shiny to maximize performance\nShiny - Profiling your Shiny app\nShiny - Performance\nExpandable Sparklines • Value boxes • bslib\nDuckDB - R API",
     "crumbs": [
       "Workshop",
       "Fast Apps"

@@ -25,6 +25,9 @@ filters:
 webr:
   show-startup-message: false
 
+execute: 
+  freeze: true
+
 editor:
   render-on-save: true
 ---
@@ -330,3 +333,153 @@ plot(res)
 4. How fast can you make the app? Think through or outline your strategy.
 
 5. Stretch: Implement your strategy and see how much you can improve the app's performance.
+
+# Slow Data, Fast Data {.middle}
+
+## [Where does this show up in the reactive graph?]{.fs-step-2} {auto-animate=true}
+
+```{.r}
+library(shiny)
+library(bslib)
+
+ui <- page_fluid(
+  # ui stuff...
+)
+
+server <- function(input, output, session) {
+  scorecard <- read_csv("scorecard.csv")
+
+  # server stuff...
+}
+
+shinyApp(ui, server)
+```
+
+## [Where does this show up in the reactive graph?]{.fs-step-2} {auto-animate=true}
+
+```{.r}
+library(shiny)
+library(bslib)
+
+scorecard <- read_csv("scorecard.csv")
+
+ui <- page_fluid(
+  # ui stuff...
+)
+
+server <- function(input, output, session) {
+  # server stuff...
+}
+
+shinyApp(ui, server)
+```
+
+## [How & where you load data matters]{.fs-step-3}
+
+```{r write-temp-csv-rds-files}
+library(dplyr)
+
+big_scorecard <- purrr::list_rbind(lapply(1:20, \(x) collegeScorecard::scorecard))
+
+scorecard_csv <- withr::local_tempfile(fileext = ".csv")
+readr::write_csv(big_scorecard, scorecard_csv)
+
+scorecard_rds <- withr::local_tempfile(fileext = ".rds")
+readr::write_rds(big_scorecard, scorecard_rds)
+```
+
+```{r}
+fs::file_info(c(scorecard_csv, scorecard_rds))[c(1, 3)] |>
+  dplyr::mutate(path = c("scorecard.csv", "scorecard.rds"))
+```
+
+::: fragment
+```{r csv-vs-rds}
+#| echo: true
+#| output-results: fragment
+bench::mark(
+  readr::read_csv(scorecard_csv),
+  readr::read_rds(scorecard_rds),
+  check = FALSE
+)
+```
+:::
+
+## It's a duckdb world now
+
+```{r demo-duckdb-tbl}
+#| echo: true
+library(duckdb)
+
+con <- DBI::dbConnect(duckdb(), ":memory:")
+
+scorecard <- duckdb::tbl_file(con, scorecard_csv)
+```
+
+::: fragment
+```{r preview-scorecard}
+#| echo: true
+scorecard
+```
+:::
+
+::: fragment
+```{r preview-filter}
+#| echo: true
+scorecard |>
+  filter(academic_year == "2022-23")
+```
+:::
+
+::: fragment
+```{r preview-count}
+#| echo: true
+scorecard |>
+  count()
+```
+:::
+
+## It's a duckdb world now
+
+```{r csv-vs-rds-vs-duckdb}
+bench::mark(
+  readr::read_csv(scorecard_csv),
+  readr::read_rds(scorecard_rds),
+  duckdb::tbl_file(con, scorecard_csv),
+  check = FALSE
+)
+
+DBI::dbDisconnect(con)
+```
+
+## duckdb and parquet is an unbeatable combo
+
+
+```{r duckdb-csv-vs-parquet}
+withr::with_tempdir({
+  con <- DBI::dbConnect(duckdb::duckdb(), ":memory:")
+  duckdb_read_csv(con, "scorecard", scorecard_csv)
+  dbExecute(con, "COPY scorecard TO 'scorecard.parquet' (FORMAT PARQUET)")
+
+  parquet_size <- fs::file_info("scorecard.parquet")$size
+
+  bench::mark(
+    duckdb_csv = tbl_file(con, scorecard_csv),
+    duckdb_parquet = dplyr::tbl(con, "read_parquet('scorecard.parquet')"),
+    check = FALSE
+  )
+})
+DBI::dbDisconnect(con)
+```
+
+::: fragment
+* `.csv` file ~ 330 MB
+* `.rds` file ~ 670 MB
+* `.parquet` file ~ 120 MB
+:::
+
+::: fragment
+```{.r}
+scorecard <- tbl(con, "read_parquet('scorecard.parquet')")
+```
+:::
