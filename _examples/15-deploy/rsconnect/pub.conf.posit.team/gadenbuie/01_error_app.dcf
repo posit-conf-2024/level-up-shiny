@@ -1,0 +1,10 @@
+name: 01_error_app
+title:
+username: gadenbuie
+account: gadenbuie
+server: pub.conf.posit.team
+hostUrl: https://pub.conf.posit.team/__api__
+appId: 3806
+bundleId: 3787
+url: https://pub.conf.posit.team/content/09813081-85ea-4e41-8e4c-d568c46bf2ad/
+version: 1

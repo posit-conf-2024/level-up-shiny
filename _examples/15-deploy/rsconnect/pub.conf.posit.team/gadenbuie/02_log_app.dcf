@@ -1,0 +1,10 @@
+name: 02_log_app
+title:
+username: gadenbuie
+account: gadenbuie
+server: pub.conf.posit.team
+hostUrl: https://pub.conf.posit.team/__api__
+appId: 3807
+bundleId: 3788
+url: https://pub.conf.posit.team/content/c75d0219-4970-4791-b763-e54d50add928/
+version: 1
