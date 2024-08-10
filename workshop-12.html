@@ -335,7 +335,12 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="assets/connect-steps/step-7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="assets/connect-steps/step-7.png" class="img-fluid" style="max-height: 450px"></a></p>
 <p><strong>Step 8:</strong> Return to Posit Cloud and click “Connect Account” to add the account to RStudio.</p>
 <p><a href="assets/connect-steps/step-8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="assets/connect-steps/step-8.png" class="img-fluid" style="max-height: 450px"></a></p>
-<p><strong>Step 9:</strong> Chose the newly added <code>pub.conf.posit.team</code> account, give your app a title, and click Publish to kick off the publish step!</p>
+<p><strong>Step 9:</strong> Chose the newly added <code>pub.conf.posit.team</code> account, and then…</p>
+<ol type="1">
+<li>Pick the files to deploy. For the first deployment, choose <code>15_01_app.R</code>.</li>
+<li>Give your app a title, like <code>find-a-school</code>.</li>
+<li>Click <em>Publish</em> to kick off the publish step!</li>
+</ol>
 <p><a href="assets/connect-steps/step-9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="assets/connect-steps/step-9.png" class="img-fluid" style="max-height: 450px"></a></p>
 <p><strong>Great work!</strong> Give yourself a pat on the back. Check on your neighbors to see if they need help getting set up.</p>
 
@@ -789,7 +794,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":false,"closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

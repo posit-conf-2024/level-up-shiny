@@ -490,375 +490,352 @@
     "text": "Your Turn _exercises/06_app.R\n\n  \n    −\n    +\n \n 08:00\n \n\nUse accordion() and accordion_panel() to organize the sidebar inputs. See the exercise header for links to search icons.\nAdd informational tooltips to the value box titles.\n\nPublic: “Supported by public funds and operated by elected or appointed officials.”\nNonprofit: “Private institutions that are not operated for profit.”\nFor-Profit: “Operated by private, profit-seeking businesses.”\n\nStretch: Replace the local sidebar with a popover element."
   },
   {
-    "objectID": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
-    "href": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
-    "title": "Welcome!",
-    "section": "Welcome to Level Up with Shiny for R",
-    "text": "Welcome to Level Up with Shiny for R\n\nTake a seat, etc.\nHere’s an important link\nWiFI info"
+    "objectID": "slides/slides-12-deploy.html#connect-with-connect",
+    "href": "slides/slides-12-deploy.html#connect-with-connect",
+    "title": "Push to Prod",
+    "section": "Connect with Connect",
+    "text": "Connect with Connect\nThe easiest way to deploy your app is with RStudio’s Publish App button, right next to the Run App button.\n\nFollow the instructions to get connected with Posit Connect."
   },
   {
-    "objectID": "slides/slides-01-intro.html#meet-us",
-    "href": "slides/slides-01-intro.html#meet-us",
-    "title": "Welcome!",
-    "section": "Meet us",
-    "text": "Meet us\n\nGarrick\nCarson\nBarret\nKalau\nAndrew"
+    "objectID": "slides/slides-12-deploy.html#section",
+    "href": "slides/slides-12-deploy.html#section",
+    "title": "Push to Prod",
+    "section": "",
+    "text": "_exercises/15_deploy/15_01_app.R\nLet’s just get this onto Connect.\nThen, we’ll switch to a programmatic deployment using rsconnect::deployApp().\nFrom here on out, I’ll work in the same file, but everyone else can change appPrimaryDoc to each step."
   },
   {
-    "objectID": "slides/slides-01-intro.html#code-of-conduct",
-    "href": "slides/slides-01-intro.html#code-of-conduct",
-    "title": "Welcome!",
-    "section": "Code of Conduct",
-    "text": "Code of Conduct\nPlease Review: posit.co/code-of-conduct\n💙 Treat everyone with respect\n🧡 Everyone should feel welcome and safe\nReporting:\n🗣️ any posit::conf staff member (t-shirt) or Info desk\n📧 conf@posit.com"
+    "objectID": "slides/slides-12-deploy.html#tracing-app-behavior",
+    "href": "slides/slides-12-deploy.html#tracing-app-behavior",
+    "title": "Push to Prod",
+    "section": "Tracing app behavior",
+    "text": "Tracing app behavior\nHow do we know it’s running well? Look at logs of deployed app.\nCheck out _examples/15-deploy/01_error_app.R for an example of logged errors."
   },
   {
-    "objectID": "slides/slides-01-intro.html#meet-each-other",
-    "href": "slides/slides-01-intro.html#meet-each-other",
-    "title": "Welcome!",
-    "section": "Meet each other",
-    "text": "Meet each other\nTK: activity"
+    "objectID": "slides/slides-12-deploy.html#overview-of-logging",
+    "href": "slides/slides-12-deploy.html#overview-of-logging",
+    "title": "Push to Prod",
+    "section": "Overview of logging",
+    "text": "Overview of logging"
   },
   {
-    "objectID": "slides/slides-01-intro.html#wifi",
-    "href": "slides/slides-01-intro.html#wifi",
-    "title": "Welcome!",
-    "section": "WiFi",
-    "text": "WiFi\n\n\n\n\nWiFi\nPosit Conf 2024\n\n\n\n\nPass\nconf2024"
+    "objectID": "slides/slides-12-deploy.html#intro-to-lgr",
+    "href": "slides/slides-12-deploy.html#intro-to-lgr",
+    "title": "Push to Prod",
+    "section": "Intro to lgr",
+    "text": "Intro to lgr"
   },
   {
-    "objectID": "slides/slides-01-intro.html#positconf2024-things-to-know",
-    "href": "slides/slides-01-intro.html#positconf2024-things-to-know",
-    "title": "Welcome!",
-    "section": "posit::conf(2024) Things to Know",
-    "text": "posit::conf(2024) Things to Know\n\n\nThere will be a gender-neutral bathroom on levels 3:7\nMeditation/prayer room: 503\n\nMon & Tues 7am - 7pm\nWed 7am - 5pm\n\nMothers room: 509"
+    "objectID": "slides/slides-12-deploy.html#app-logging",
+    "href": "slides/slides-12-deploy.html#app-logging",
+    "title": "Push to Prod",
+    "section": "App + logging",
+    "text": "App + logging"
   },
   {
-    "objectID": "slides/slides-01-intro.html#positconf2024-social-media",
-    "href": "slides/slides-01-intro.html#positconf2024-social-media",
-    "title": "Welcome!",
-    "section": "posit::conf(2024) Social Media",
-    "text": "posit::conf(2024) Social Media\n\nRed lanyards available to those who don’t wish to be photographed\n#PositConf2024 for all things conf\n#LevelUpShiny for this workshop"
+    "objectID": "slides/slides-12-deploy.html#leads-to-fixed-app",
+    "href": "slides/slides-12-deploy.html#leads-to-fixed-app",
+    "title": "Push to Prod",
+    "section": "Leads to fixed app",
+    "text": "Leads to fixed app"
   },
   {
-    "objectID": "slides/slides-01-intro.html#stickies",
-    "href": "slides/slides-01-intro.html#stickies",
-    "title": "Welcome!",
-    "section": "Stickies",
-    "text": "Stickies\n\n\n🟩\nAll good\nI’m done\n\n\n🟥\nNot great\nNeed time or help"
+    "objectID": "slides/slides-12-deploy.html#overview-of-config",
+    "href": "slides/slides-12-deploy.html#overview-of-config",
+    "title": "Push to Prod",
+    "section": "Overview of {config}",
+    "text": "Overview of {config}\n\n\nconfig.yml\n\ndefault:\n  log_level: debug\n\nrsconnect:\n  log_level: info\n\n\n\nLocal\n\nconfig::get(\"log_level\")\n\n\n\n[1] \"debug\"\n\n\n\n\nPosit Connect\n\nconfig::get(\"log_level\")\n\n\n\n[1] \"info\""
   },
   {
-    "objectID": "slides/slides-01-intro.html#schedule",
-    "href": "slides/slides-01-intro.html#schedule",
-    "title": "Welcome!",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
+    "objectID": "slides/slides-12-deploy.html#about-environment-variables",
+    "href": "slides/slides-12-deploy.html#about-environment-variables",
+    "title": "Push to Prod",
+    "section": "About environment variables",
+    "text": "About environment variables"
   },
   {
-    "objectID": "slides/slides-01-intro.html#schedule-1",
-    "href": "slides/slides-01-intro.html#schedule-1",
-    "title": "Welcome!",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
+    "objectID": "slides/slides-12-deploy.html#table-of-config-values",
+    "href": "slides/slides-12-deploy.html#table-of-config-values",
+    "title": "Push to Prod",
+    "section": "Table of {config} values",
+    "text": "Table of {config} values\n\n\n\nService\nR_CONFIG_ACTIVE\n\n\n\n\nPosit Connect\n rsconnect\n\n\nPost Cloud\n rstudio_cloud\n\n\nshinyapps.io\n shinyapps\n\n\nShinylive\n shinylive"
   },
   {
-    "objectID": "slides/slides-01-intro.html#discord",
-    "href": "slides/slides-01-intro.html#discord",
-    "title": "Welcome!",
-    "section": "Discord",
-    "text": "Discord\nGo posit.co/conference, click Login. Click image to connect to the posit::conf() Discord server.\nThis workshop has a private channel under Workshops.\n\n#level-up-shiny\n\nGreat place to ask questions, post resources, memes, or most anything else before, during, and after the workshop."
+    "objectID": "slides/slides-12-deploy.html#set-config-log-level",
+    "href": "slides/slides-12-deploy.html#set-config-log-level",
+    "title": "Push to Prod",
+    "section": "Set config log level",
+    "text": "Set config log level"
   },
   {
-    "objectID": "slides/slides-01-intro.html#posit-cloud",
-    "href": "slides/slides-01-intro.html#posit-cloud",
-    "title": "Welcome!",
-    "section": "Posit Cloud",
-    "text": "Posit Cloud\n\nStep 1. Join pos.it/level-up-shiny-24\n\nStep 2. Start level-up-shiny assignment"
+    "objectID": "slides/slides-12-deploy.html#get-connected",
+    "href": "slides/slides-12-deploy.html#get-connected",
+    "title": "Push to Prod",
+    "section": "Get Connected",
+    "text": "Get Connected\nYou: Hi, how do I get connected to the database?\nIT: Sure thing, here’s the connection string.\npostgres://dbuser:$3cur3C0d3!@ec2-54-123-45-67.compute-1.amazonaws.com:5432/mydatabase\nhost: port: dbname: user: password:"
   },
   {
-    "objectID": "slides/slides-01-intro.html#cloud-session",
-    "href": "slides/slides-01-intro.html#cloud-session",
-    "title": "Welcome!",
-    "section": "Cloud session",
-    "text": "Cloud session"
+    "objectID": "slides/slides-12-deploy.html#hello-boilerplate",
+    "href": "slides/slides-12-deploy.html#hello-boilerplate",
+    "title": "Push to Prod",
+    "section": "Hello, Boilerplate",
+    "text": "Hello, Boilerplate\ncon &lt;- DBI::dbConnect(\n  RPostgres::Postgres(),\n  host = \"ec2-54-123-45-67.compute-1.amazonaws.com\",\n  port = 5432,\n  dbname = \"mydatabase\",\n  user = \"dbuser\",\n  password = \"$3cur3C0d3!\"\n)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#file-organization",
-    "href": "slides/slides-01-intro.html#file-organization",
-    "title": "Welcome!",
-    "section": "File organization",
-    "text": "File organization\n\n\n\n\n_exercises/\nFiles for Your Turn exercises\n\n\n_examples/\nFiles for my demo examples\n\n\nwebsite/\nThe website and slides\n\n\n./*\nLots of project related files you can ignore"
+    "objectID": "slides/slides-12-deploy.html#hello-dotenv",
+    "href": "slides/slides-12-deploy.html#hello-dotenv",
+    "title": "Push to Prod",
+    "section": "Hello, {dotenv}",
+    "text": "Hello, {dotenv}\n\n\ndb.env\n\nDB_HOST=ec2-54-123-45-67.compute-1.amazonaws.com\nDB_PORT=5432\nDB_DATABASE=mydatabase\nDB_USER=dbuser\nDB_PASSWORD=$3cur3C0d3!\n\ndotenv::load(\"db.env\")\ncon &lt;- DBI::dbConnect(\n  RPostgres::Postgres(),\n  host = Sys.getenv(\"DB_HOST\"),\n  port = Sys.getenv(\"DB_PORT\"),\n  dbname = Sys.getenv(\"DB_DATABASE\"),\n  user = Sys.getenv(\"DB_USER\"),\n  password = Sys.getenv(\"DB_PASSWORD\")\n)"
   },
   {
-    "objectID": "slides/slides-10-extended-tasks.html#long-running-tasks",
-    "href": "slides/slides-10-extended-tasks.html#long-running-tasks",
-    "title": "Extended Tasks",
-    "section": "Long Running Tasks",
-    "text": "Long Running Tasks\nUse long running task from before (long run when changing state)\nWhat if we solved this by adding a “submit button”?\nWhat goes wrong?"
+    "objectID": "slides/slides-12-deploy.html#in-the-project",
+    "href": "slides/slides-12-deploy.html#in-the-project",
+    "title": "Push to Prod",
+    "section": "In the project",
+    "text": "In the project\nlibrary(dplyr)\n\nstaging_env &lt;- here::here(\"secrets/db-staging.env\")\nprod_env &lt;- here::here(\"secrets/db-prod.env\")\n\ndotenv::load_dot_env(staging_env)\n\ncon &lt;- DBI::dbConnect(\n  RPostgres::Postgres(),\n  host = Sys.getenv(\"DB_HOST\"),\n  port = Sys.getenv(\"DB_PORT\"),\n  dbname = Sys.getenv(\"DB_DATABASE\"),\n  user = Sys.getenv(\"DB_USER\"),\n  password = Sys.getenv(\"DB_PASSWORD\")\n)\n\ntbl(con, \"school\")\ntbl(con, \"scorecard\")"
   },
   {
-    "objectID": "slides/slides-10-extended-tasks.html#your-turn-13-inst",
-    "href": "slides/slides-10-extended-tasks.html#your-turn-13-inst",
-    "title": "Extended Tasks",
-    "section": "Your Turn _exercises/13_app.R",
-    "text": "Your Turn _exercises/13_app.R\n\n  \n    −\n    +\n \n 04:00\n \n\nAdd an actionButton(\"get_state\") to the sidebar.\nUpdate the schools_state reactive to only fetch data when the button is clicked.\nUse the app. How can you break it?"
+    "objectID": "slides/slides-12-deploy.html#in-the-app",
+    "href": "slides/slides-12-deploy.html#in-the-app",
+    "title": "Push to Prod",
+    "section": "In the app",
+    "text": "In the app\n\nSwitch to using the database\nGet credentials from secrets/db-staging.env or secrets/db-prod.env\nPreview score/scorecard tables at the start of the app\nDon’t forget to close the connection\nUpdate the rest of the app to use the database\n\narrange() –&gt; window_order()\nuse !! in the between() calls\ncollect() the data in the schools reactive\nmaybe we could cache the data at this point?\n\nAdd logging throughout the app"
   },
   {
-    "objectID": "slides/slides-10-extended-tasks.html#long-running-but-still-blocking",
-    "href": "slides/slides-10-extended-tasks.html#long-running-but-still-blocking",
-    "title": "Extended Tasks",
-    "section": "Long Running but still Blocking",
-    "text": "Long Running but still Blocking\nReactive graph for long running task"
+    "objectID": "slides/slides-12-deploy.html#make-life-easier-for-future-you",
+    "href": "slides/slides-12-deploy.html#make-life-easier-for-future-you",
+    "title": "Push to Prod",
+    "section": "Make life easier for future you",
+    "text": "Make life easier for future you"
   },
   {
-    "objectID": "slides/slides-10-extended-tasks.html#the-heart-of-shiny",
-    "href": "slides/slides-10-extended-tasks.html#the-heart-of-shiny",
-    "title": "Extended Tasks",
-    "section": "The Heart of Shiny",
-    "text": "The Heart of Shiny\nwhile (TRUE) {\n  changes &lt;- get_output_changes()\n  changed_outputs &lt;- recompute_all_affected_things(changes)\n  send_outputs(changed_outputs)\n}"
+    "objectID": "slides/slides-12-deploy.html#renv",
+    "href": "slides/slides-12-deploy.html#renv",
+    "title": "Push to Prod",
+    "section": "renv",
+    "text": "renv\nThis is a good time for renv.\nIs it working now with these packages? Good, lock it down."
   },
   {
-    "objectID": "slides/slides-10-extended-tasks.html#one-user",
-    "href": "slides/slides-10-extended-tasks.html#one-user",
-    "title": "Extended Tasks",
-    "section": "One User",
-    "text": "One User\n\n\nEach reactive expression in your app is evaluated one after the other.\nIt takes as long as it takes to run the code.\nAnd then you get your answer."
+    "objectID": "slides/slides-12-deploy.html#shinytest2",
+    "href": "slides/slides-12-deploy.html#shinytest2",
+    "title": "Push to Prod",
+    "section": "shinytest2",
+    "text": "shinytest2\nNow that it’s working, let’s test it.\nThis might sound backwards. But testing shiny apps isn’t like testing package code.\nYour tests are most helpful when they keep you from breaking something that was working without knowing it."
   },
   {
-    "objectID": "slides/slides-10-extended-tasks.html#two-users",
-    "href": "slides/slides-10-extended-tasks.html#two-users",
-    "title": "Extended Tasks",
-    "section": "Two Users",
-    "text": "Two Users\n\n\nEach user has their own reactive graph that’s still evaluated one computation at a time.\nBut it could take longer than it takes to run the code.\nIf we both have the app open and I start the long running task, you’ll have to wait for me to finish.\nThen Shiny runs the code for your app.\nAnd you get the answer."
+    "objectID": "slides/slides-12-deploy.html#shinytest2-1",
+    "href": "slides/slides-12-deploy.html#shinytest2-1",
+    "title": "Push to Prod",
+    "section": "shinytest2",
+    "text": "shinytest2\nshinytest2::record_test(\"app-dir/\")\nshinytest2::test_app(\"app-dir/\")"
   },
   {
-    "objectID": "slides/slides-10-extended-tasks.html#shiny-async-with-two-users",
-    "href": "slides/slides-10-extended-tasks.html#shiny-async-with-two-users",
-    "title": "Extended Tasks",
-    "section": "Shiny Async with Two Users",
-    "text": "Shiny Async with Two Users\n\n\nEach user has their own reactive graph that’s still evaluated one computation at a time.\nBut they’re now decoupled.\nI only have to wait as long as it takes to the run the code for my app.\nAnd you only have to wait as long as it takes to run the code for your app.\nBut we still have to wait… and we can’t use our apps until our computation is done."
-  },
-  {
-    "objectID": "slides/slides-10-extended-tasks.html#shiny-with-extended-task",
-    "href": "slides/slides-10-extended-tasks.html#shiny-with-extended-task",
-    "title": "Extended Tasks",
-    "section": "Shiny with Extended Task",
-    "text": "Shiny with Extended Task\n\n\n\nExtended Tasks let you split a reactive expression into two pieces.\n\nObserve incoming changes and decide when to run the task, and with what parameters.\nReceive the results of the task and update dependent outputs."
-  },
-  {
-    "objectID": "slides/slides-10-extended-tasks.html#shiny-with-extended-task-1",
-    "href": "slides/slides-10-extended-tasks.html#shiny-with-extended-task-1",
-    "title": "Extended Tasks",
-    "section": "Shiny with Extended Task",
-    "text": "Shiny with Extended Task\n\n\nThe reactive graph can now make it to equillibrium in each reactive tick.\nThe task is run in the background so it doesn’t block either of our apps.\nIt still takes as long as it takes to run the code…\nBut I can also still use the app!"
-  },
-  {
-    "objectID": "slides/slides-10-extended-tasks.html#extendedtask---step-1",
-    "href": "slides/slides-10-extended-tasks.html#extendedtask---step-1",
-    "title": "Extended Tasks",
-    "section": "ExtendedTask - Step 1",
-    "text": "ExtendedTask - Step 1\nDefine the task at hand. At its core, it’s a function that returns a future_promise()\n#| code-copy: false\n1task_fetch_data &lt;- ExtendedTask$new(function(data_type) {\n2  future_promise({\n    fetch_from_slow_api(data_type)\n  })\n}) |&gt;\n3  bind_task_button(\"fetch_data\")\n\n1\n\nNothing reactive can happen here!\n\n2\n\nReturn a future_promise() to make it potentially non-blocking\n\n3\n\nBind the state of an input_task_button() to this task’s state"
-  },
-  {
-    "objectID": "slides/slides-10-extended-tasks.html#extendedtask---step-2",
-    "href": "slides/slides-10-extended-tasks.html#extendedtask---step-2",
-    "title": "Extended Tasks",
-    "section": "ExtendedTask - Step 2",
-    "text": "ExtendedTask - Step 2\nNext, decide when the task will be invoked.\n#| code-copy: false\nobserveEvent(input$fetch_data, {\n1  task_fetch_data$invoke(input$data_type)\n})\n\n1\n\nAnything reactive happens here in the observer or reactive expression."
-  },
-  {
-    "objectID": "slides/slides-10-extended-tasks.html#extendedtask---step-3",
-    "href": "slides/slides-10-extended-tasks.html#extendedtask---step-3",
-    "title": "Extended Tasks",
-    "section": "ExtendedTask - Step 3",
-    "text": "ExtendedTask - Step 3\nFinally, use the task’s result in a reactive context.\n#| code-copy: false\ndata &lt;- reactive({\n1  task_fetch_data$result()\n})\n\n1\n\nThis only fires when the task is done."
-  },
-  {
-    "objectID": "slides/slides-10-extended-tasks.html#extendedtask",
-    "href": "slides/slides-10-extended-tasks.html#extendedtask",
-    "title": "Extended Tasks",
-    "section": "ExtendedTask",
-    "text": "ExtendedTask\ntask_fetch_data &lt;- ExtendedTask$new(function(data_type) {\n  future_promise({\n    fetch_from_slow_api(data_type)\n  })\n}) |&gt;\n  bind_task_button(\"fetch_data\")\n\nobserveEvent(input$fetch_data, {\n  task_fetch_data$invoke(input$data_type)\n})\n\ndata &lt;- reactive({\n  task_fetch_data$result()\n})"
-  },
-  {
-    "objectID": "slides/slides-10-extended-tasks.html#extendedtask-1",
-    "href": "slides/slides-10-extended-tasks.html#extendedtask-1",
-    "title": "Extended Tasks",
-    "section": "ExtendedTask",
-    "text": "ExtendedTask\nserver &lt;- function(input, output, session) {\n  task_fetch_data &lt;- ExtendedTask$new(function(data_type) {\n    future_promise({\n      fetch_from_slow_api(data_type)\n    })\n  }) |&gt;\n    bind_task_button(\"fetch_data\")\n\n  observeEvent(input$fetch_data, {\n    task_fetch_data$invoke(input$data_type)\n  })\n\n  data &lt;- reactive({\n    task_fetch_data$result()\n  })\n}"
-  },
-  {
-    "objectID": "slides/slides-10-extended-tasks.html#extendedtask-2",
-    "href": "slides/slides-10-extended-tasks.html#extendedtask-2",
-    "title": "Extended Tasks",
-    "section": "ExtendedTask",
-    "text": "ExtendedTask\nlibrary(future)\nlibrary(promises)\nfuture::plan(multisession)\n\nserver &lt;- function(input, output, session) {\n  task_fetch_data &lt;- ExtendedTask$new(function(data_type) {\n    future_promise({\n      fetch_from_slow_api(data_type)\n    })\n  }) |&gt;\n    bind_task_button(\"fetch_data\")\n\n  observeEvent(input$fetch_data, {\n    task_fetch_data$invoke(input$data_type)\n  })\n\n  data &lt;- reactive({\n    task_fetch_data$result()\n  })\n}"
-  },
-  {
-    "objectID": "slides/slides-10-extended-tasks.html#your-turn-14-inst",
-    "href": "slides/slides-10-extended-tasks.html#your-turn-14-inst",
-    "title": "Extended Tasks",
-    "section": "Your Turn _exercises/14_app.R",
-    "text": "Your Turn _exercises/14_app.R\n\n  \n    −\n    +\n \n 06:00\n \n\nReplace the actionButton(\"get_state\") with an input_task_button(). How much does the task button help?\nUpdate the server logic to use ExtendedTask that uses future_promise(). I’ve already loaded the packages you need.\nCan you use the app while fetching data from the API?\nStretch: How could you keep the whole app running, including the plots while the data is being fetched? Read 14_solution2_app.R for an example."
-  },
-  {
-    "objectID": "workshop-12.html",
-    "href": "workshop-12.html",
-    "title": "Push to prod",
+    "objectID": "workshop-08.html",
+    "href": "workshop-08.html",
+    "title": "The Reactive Graph",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Push to prod"
+      "The Reactive Graph"
     ]
   },
   {
-    "objectID": "workshop-12.html#slides",
-    "href": "workshop-12.html#slides",
-    "title": "Push to prod",
+    "objectID": "workshop-08.html#slides",
+    "href": "workshop-08.html#slides",
+    "title": "The Reactive Graph",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Push to prod"
+      "The Reactive Graph"
     ]
   },
   {
-    "objectID": "workshop-12.html#connecting-rstudio-with-connect",
-    "href": "workshop-12.html#connecting-rstudio-with-connect",
-    "title": "Push to prod",
-    "section": "Connecting RStudio with Connect",
-    "text": "Connecting RStudio with Connect\nStep 1: Open pub.conf.posit.team and click the “Log In” button.\n\nStep 2: Log in with your GitHub account.\n\nStep 3: With the app to deploy open, click on the “Publish Application” button.\n\nStep 4: This opens the “Publish to Server” dialog, but your pub.conf.posit.team account isn’t connected, yet. Click “Add new account”.\n\nStep 5: Enter pub.conf.posit.team for the public URL of the Posit Connect server.\n\nStep 6: Select “Posit Connect” from the account type menu.\n\nStep 7: This opens a new window on https://pub.conf.posit.team. From here, click “Connect” to connect Posit Cloud with Posit Connect.\n\nStep 8: Return to Posit Cloud and click “Connect Account” to add the account to RStudio.\n\nStep 9: Chose the newly added pub.conf.posit.team account, give your app a title, and click Publish to kick off the publish step!\n\nGreat work! Give yourself a pat on the back. Check on your neighbors to see if they need help getting set up.",
+    "objectID": "workshop-08.html#demo-app",
+    "href": "workshop-08.html#demo-app",
+    "title": "The Reactive Graph",
+    "section": "Demo App",
+    "text": "Demo App\n\n#| standalone: true\n#| components: viewer\n#| viewerHeight: 675\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(dplyr)\nlibrary(collegeScorecard)\n\n\n# UI ----------------------------------------------------------------------\n\nui &lt;- page_sidebar(\n  theme = bs_theme(version = 5),\n  title = \"College Affordability Analyzer\",\n  fill = FALSE,\n  sidebar = sidebar(\n    open = list(mobile = \"always-above\"),\n    selectInput(\"state\", \"State\", choices = setNames(state.abb, state.name), selected = \"WA\"),\n    sliderInput(\"sat_score\", \"Minimum SAT Score\", min = 800, max = 1200, value = 1000, step = 10),\n    radioButtons(\n      \"income_bracket\",\n      \"Income Bracket\",\n      inline = TRUE,\n      choices = c(\n        \"&lt; $30k\" = \"cost_avg_income_0_30k\",\n        \"$30 - $48k\" = \"cost_avg_income_30_48k\",\n        \"$48 - $75k\" = \"cost_avg_income_48_75k\",\n        \"$75 - $110k\" = \"cost_avg_income_75_110k\",\n        \"$110k+\" = \"cost_avg_income_110k_plus\"\n      )\n    )\n  ),\n  value_box(\n    \"Average 10-year Median Earnings\",\n    textOutput(\"txt_amnt_earnings\"),\n    showcase = bsicons::bs_icon(\"wallet-fill\")\n  ),\n  value_box(\n    \"Average 4-year Cost\",\n    textOutput(\"txt_four_year_cost\"),\n    \"For the selected income bracket\",\n    showcase = bsicons::bs_icon(\"cash-stack\")\n  )\n)\n\n\n# Server ------------------------------------------------------------------\n\nserver &lt;- function(input, output, session) {\n  filtered_data &lt;- reactive({\n    scorecard |&gt;\n      filter(\n        academic_year == \"2020-21\",\n        !is.na(cost_avg),\n        !is.na(amnt_earnings_med_10y)\n      ) |&gt;\n      select(id, cost_avg, amnt_earnings_med_10y, score_sat_avg, starts_with(\"cost_avg_income\")) |&gt;\n      left_join(school, by = join_by(id)) |&gt;\n      filter(\n        state == input$state,\n        score_sat_avg &gt;= input$sat_score\n      )\n  })\n\n  output$txt_amnt_earnings &lt;- renderText({\n    filtered_data() |&gt;\n      pull(amnt_earnings_med_10y) |&gt;\n      mean(na.rm = TRUE) |&gt; \n      scales::dollar(accuracy = 10)\n  })\n\n  output$txt_four_year_cost &lt;- renderText({\n    avg_cost &lt;- \n      filtered_data() |&gt;\n      pull(!!input$income_bracket) |&gt;\n      mean(na.rm = TRUE)\n\n    scales::dollar(avg_cost * 4, accuracy = 10)\n  })\n}\n\n\nshinyApp(ui, server)",
     "crumbs": [
       "Workshop",
-      "Push to prod"
+      "The Reactive Graph"
     ]
   },
   {
-    "objectID": "workshop-09.html",
-    "href": "workshop-09.html",
-    "title": "Fast Apps",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Level Up with Shiny for R",
+    "section": "",
+    "text": "Workshop at posit::conf(2024)August 12, 202409:00 - 17:00300 | Columbia C"
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Level Up with Shiny for R",
+    "section": "Introduction",
+    "text": "Introduction\nShiny lets you quickly create rich, data-driven web applications for yourself, your clients, your students, or your colleagues. This workshop will give you the skills you need to build complex applications with brilliant user interfaces.\nYou’ll learn how to make the most of recent developments in the Shiny ecosystem, while mastering techniques for modularizing and structuring your applications for growth and maintainability. Along the way, you’ll encounter new techniques to speed up your applications using caching and databases for a smooth user experience."
+  },
+  {
+    "objectID": "index.html#links",
+    "href": "index.html#links",
+    "title": "Level Up with Shiny for R",
+    "section": "Links",
+    "text": "Links\n\n📘 Workshop Materials\n🔧 Getting Setup\n🧑‍💻 Join Posit Cloud Space\n👾 Discord (signup instructions)\n📦 Repository\n🎡 posit::conf(2024)"
+  },
+  {
+    "objectID": "workshop-10.html",
+    "href": "workshop-10.html",
+    "title": "Extended Tasks",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Fast Apps"
+      "Extended Tasks"
     ]
   },
   {
-    "objectID": "workshop-09.html#slides",
-    "href": "workshop-09.html#slides",
-    "title": "Fast Apps",
+    "objectID": "workshop-10.html#slides",
+    "href": "workshop-10.html#slides",
+    "title": "Extended Tasks",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Fast Apps"
+      "Extended Tasks"
     ]
   },
   {
-    "objectID": "workshop-09.html#resources",
-    "href": "workshop-09.html#resources",
-    "title": "Fast Apps",
+    "objectID": "workshop-10.html#resources",
+    "href": "workshop-10.html#resources",
+    "title": "Extended Tasks",
     "section": "Resources",
-    "text": "Resources\n\nShiny - Using caching in Shiny to maximize performance\nShiny - Profiling your Shiny app\nShiny - Performance\nExpandable Sparklines • Value boxes • bslib\nDuckDB - R API",
+    "text": "Resources\n\nShiny - Non-blocking operations\nYouTube: Managing long-running operations in Shiny | Posit, Joe Cheng\nTask or computation that proceeds in the background — ExtendedTask\nButton for launching longer-running operations — input_task_button • bslib\nTed Laderas: “Part 2: Reactivity” - vmst·io",
     "crumbs": [
       "Workshop",
-      "Fast Apps"
+      "Extended Tasks"
     ]
   },
   {
-    "objectID": "workshop-05.html",
-    "href": "workshop-05.html",
-    "title": "Modules",
+    "objectID": "workshop-06.html",
+    "href": "workshop-06.html",
+    "title": "Just a little JavaScript",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Just a little JavaScript"
     ]
   },
   {
-    "objectID": "workshop-05.html#slides",
-    "href": "workshop-05.html#slides",
-    "title": "Modules",
+    "objectID": "workshop-06.html#slides",
+    "href": "workshop-06.html#slides",
+    "title": "Just a little JavaScript",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Just a little JavaScript"
     ]
   },
   {
-    "objectID": "workshop-05.html#packages",
-    "href": "workshop-05.html#packages",
-    "title": "Modules",
+    "objectID": "workshop-06.html#links",
+    "href": "workshop-06.html#links",
+    "title": "Just a little JavaScript",
+    "section": "Links",
+    "text": "Links\n\nA conversation with ChatGPT 4o",
+    "crumbs": [
+      "Workshop",
+      "Just a little JavaScript"
+    ]
+  },
+  {
+    "objectID": "workshop-04.html",
+    "href": "workshop-04.html",
+    "title": "Code organization",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Code organization"
+    ]
+  },
+  {
+    "objectID": "workshop-04.html#slides",
+    "href": "workshop-04.html#slides",
+    "title": "Code organization",
+    "section": "",
+    "text": "View slides in full screen",
+    "crumbs": [
+      "Workshop",
+      "Code organization"
+    ]
+  },
+  {
+    "objectID": "workshop-04.html#packages",
+    "href": "workshop-04.html#packages",
+    "title": "Code organization",
     "section": "Packages",
-    "text": "Packages\n\nusethis",
+    "text": "Packages\n\nstyler\ngrkstyle",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-05.html#resources",
-    "href": "workshop-05.html#resources",
-    "title": "Modules",
+    "objectID": "workshop-04.html#resources",
+    "href": "workshop-04.html#resources",
+    "title": "Code organization",
     "section": "Resources",
-    "text": "Resources\n\nLeveraging Shiny Modules, Carson Sievert (slides)\nMastering Shiny, Hadley Wickham:\n\nChapter 18 Functions | Mastering Shiny\nChapter 19 Shiny modules | Mastering Shiny\nChapter 20 Packages | Mastering Shiny\n\nR Packages (2nd Edition)\nA beginner’s guide to Shiny modules, Emily Riederer\nShiny Modules in 100 Seconds, Albert Rapp",
+    "text": "Resources\n\nHow Developers Choose Names, Dror G. Fietelson\nThe Programmer’s Brain, Felienne Hermans\nExplaining variable, Pete Hodgson\nWhy comment your code as little (and as well) as possible - R-hub blog\nCoding style, coding etiquette - R-hub blog\nCode smells and feels, Jenny Bryan\nThe Art of Readable Code, Dustin Boswell and Trevor Foucher\nRefactoring: Improving the Design of Existing Code, Martin Fowler\nObject of type ‘closure’ is not subsettable, Jenny Bryan (rstudio::conf(2020))",
     "crumbs": [
       "Workshop",
-      "Modules"
+      "Code organization"
     ]
   },
   {
-    "objectID": "workshop-02.html",
-    "href": "workshop-02.html",
-    "title": "Modern layouts with bslib",
+    "objectID": "workshop-01.html",
+    "href": "workshop-01.html",
+    "title": "Welcome and getting started",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Welcome and getting started"
     ]
   },
   {
-    "objectID": "workshop-02.html#slides",
-    "href": "workshop-02.html#slides",
-    "title": "Modern layouts with bslib",
+    "objectID": "workshop-01.html#slides",
+    "href": "workshop-01.html#slides",
+    "title": "Welcome and getting started",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Welcome and getting started"
     ]
   },
   {
-    "objectID": "workshop-02.html#topic-links",
-    "href": "workshop-02.html#topic-links",
-    "title": "Modern layouts with bslib",
-    "section": "Topic Links",
-    "text": "Topic Links\n\nbslib\nU.S. College Scorecard Data\n\ncollegeScorecard\n\nTheming with bslib\n\nbslib | Get Started | Theming\nbs_theme()\nBootstrap 5 theming variables\n\nbslib page functions\nFilling layouts with bslib\nbslib components:\n\ncard() · Article: Cards\nvalue_box() · Article: Value Boxes\nBuild-A-Box app\n\nbslib sidebar layouts:\n\npage_sidebar()\nsidebar()\nlayout_sidebar()\nArticle: Sidebar Layouts\n\nDetails on demand\n\naccordion()\ntooltip()\npopover()\nArticle: Tooltips and Popovers\n\nIcons\n\nfontawesome · Fontawesome Icons\nbsicons · Bootstrap Icons",
+    "objectID": "workshop-01.html#outline",
+    "href": "workshop-01.html#outline",
+    "title": "Welcome and getting started",
+    "section": "Outline",
+    "text": "Outline\n\nWelcome to posit::conf(2024)!\nIntroductions and meet your neighbors\nAbout the workshop, conference, goals and ground rules",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Welcome and getting started"
     ]
   },
   {
-    "objectID": "workshop-02.html#resources",
-    "href": "workshop-02.html#resources",
-    "title": "Modern layouts with bslib",
-    "section": "Resources",
-    "text": "Resources\n\nCarson Sievert: Towards the next generation of Shiny UI (slides) (ShinyConf 2023)\nNext Generation Shiny Apps with {bslib} (Workshop at R/Medicine 2024)",
+    "objectID": "workshop-01.html#your-turn",
+    "href": "workshop-01.html#your-turn",
+    "title": "Welcome and getting started",
+    "section": "🧑‍💻 Your Turn",
+    "text": "🧑‍💻 Your Turn",
     "crumbs": [
       "Workshop",
-      "Modern layouts with bslib"
+      "Welcome and getting started"
     ]
-  },
-  {
-    "objectID": "about/index.html",
-    "href": "about/index.html",
-    "title": "Our Team",
-    "section": "",
-    "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Barret Schloerke\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
   },
   {
     "objectID": "workshop.html",
@@ -1018,219 +995,375 @@
     ]
   },
   {
-    "objectID": "slides/slides-12-deploy.html#connect-with-connect",
-    "href": "slides/slides-12-deploy.html#connect-with-connect",
-    "title": "Push to Prod",
-    "section": "Connect with Connect",
-    "text": "Connect with Connect\nThe easiest way to deploy your app is with RStudio’s Publish App button, right next to the Run App button.\n\nFollow the instructions to get connected with Posit Connect."
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "Our Team",
+    "section": "",
+    "text": "Garrick Aden-Buie\n        Software Engineer, Shiny\n        \n            Instructor\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Carson Sievert\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 Mastodon\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Barret Schloerke\n        Software Engineer, Shiny\n        \n            Assistant\n        \n        \n            \n            \n                 GitHub\n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Kalau Tanaka-Pesamino\n        Solutions Engineer, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n    \n        \n        Andrew Holz\n        Head of Engineering, Posit\n        \n            Assistant\n        \n        \n            \n            \n                 LinkedIn\n            \n            \n        \n    \n\n\n\nNo matching items"
   },
   {
-    "objectID": "workshop-01.html",
-    "href": "workshop-01.html",
-    "title": "Welcome and getting started",
+    "objectID": "workshop-02.html",
+    "href": "workshop-02.html",
+    "title": "Modern layouts with bslib",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modern layouts with bslib"
     ]
   },
   {
-    "objectID": "workshop-01.html#slides",
-    "href": "workshop-01.html#slides",
-    "title": "Welcome and getting started",
+    "objectID": "workshop-02.html#slides",
+    "href": "workshop-02.html#slides",
+    "title": "Modern layouts with bslib",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modern layouts with bslib"
     ]
   },
   {
-    "objectID": "workshop-01.html#outline",
-    "href": "workshop-01.html#outline",
-    "title": "Welcome and getting started",
-    "section": "Outline",
-    "text": "Outline\n\nWelcome to posit::conf(2024)!\nIntroductions and meet your neighbors\nAbout the workshop, conference, goals and ground rules",
+    "objectID": "workshop-02.html#topic-links",
+    "href": "workshop-02.html#topic-links",
+    "title": "Modern layouts with bslib",
+    "section": "Topic Links",
+    "text": "Topic Links\n\nbslib\nU.S. College Scorecard Data\n\ncollegeScorecard\n\nTheming with bslib\n\nbslib | Get Started | Theming\nbs_theme()\nBootstrap 5 theming variables\n\nbslib page functions\nFilling layouts with bslib\nbslib components:\n\ncard() · Article: Cards\nvalue_box() · Article: Value Boxes\nBuild-A-Box app\n\nbslib sidebar layouts:\n\npage_sidebar()\nsidebar()\nlayout_sidebar()\nArticle: Sidebar Layouts\n\nDetails on demand\n\naccordion()\ntooltip()\npopover()\nArticle: Tooltips and Popovers\n\nIcons\n\nfontawesome · Fontawesome Icons\nbsicons · Bootstrap Icons",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modern layouts with bslib"
     ]
   },
   {
-    "objectID": "workshop-01.html#your-turn",
-    "href": "workshop-01.html#your-turn",
-    "title": "Welcome and getting started",
-    "section": "🧑‍💻 Your Turn",
-    "text": "🧑‍💻 Your Turn",
+    "objectID": "workshop-02.html#resources",
+    "href": "workshop-02.html#resources",
+    "title": "Modern layouts with bslib",
+    "section": "Resources",
+    "text": "Resources\n\nCarson Sievert: Towards the next generation of Shiny UI (slides) (ShinyConf 2023)\nNext Generation Shiny Apps with {bslib} (Workshop at R/Medicine 2024)",
     "crumbs": [
       "Workshop",
-      "Welcome and getting started"
+      "Modern layouts with bslib"
     ]
   },
   {
-    "objectID": "workshop-04.html",
-    "href": "workshop-04.html",
-    "title": "Code organization",
+    "objectID": "workshop-05.html",
+    "href": "workshop-05.html",
+    "title": "Modules",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Code organization"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-04.html#slides",
-    "href": "workshop-04.html#slides",
-    "title": "Code organization",
+    "objectID": "workshop-05.html#slides",
+    "href": "workshop-05.html#slides",
+    "title": "Modules",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Code organization"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-04.html#packages",
-    "href": "workshop-04.html#packages",
-    "title": "Code organization",
+    "objectID": "workshop-05.html#packages",
+    "href": "workshop-05.html#packages",
+    "title": "Modules",
     "section": "Packages",
-    "text": "Packages\n\nstyler\ngrkstyle",
+    "text": "Packages\n\nusethis",
     "crumbs": [
       "Workshop",
-      "Code organization"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-04.html#resources",
-    "href": "workshop-04.html#resources",
-    "title": "Code organization",
+    "objectID": "workshop-05.html#resources",
+    "href": "workshop-05.html#resources",
+    "title": "Modules",
     "section": "Resources",
-    "text": "Resources\n\nHow Developers Choose Names, Dror G. Fietelson\nThe Programmer’s Brain, Felienne Hermans\nExplaining variable, Pete Hodgson\nWhy comment your code as little (and as well) as possible - R-hub blog\nCoding style, coding etiquette - R-hub blog\nCode smells and feels, Jenny Bryan\nThe Art of Readable Code, Dustin Boswell and Trevor Foucher\nRefactoring: Improving the Design of Existing Code, Martin Fowler\nObject of type ‘closure’ is not subsettable, Jenny Bryan (rstudio::conf(2020))",
+    "text": "Resources\n\nLeveraging Shiny Modules, Carson Sievert (slides)\nMastering Shiny, Hadley Wickham:\n\nChapter 18 Functions | Mastering Shiny\nChapter 19 Shiny modules | Mastering Shiny\nChapter 20 Packages | Mastering Shiny\n\nR Packages (2nd Edition)\nA beginner’s guide to Shiny modules, Emily Riederer\nShiny Modules in 100 Seconds, Albert Rapp",
     "crumbs": [
       "Workshop",
-      "Code organization"
+      "Modules"
     ]
   },
   {
-    "objectID": "workshop-06.html",
-    "href": "workshop-06.html",
-    "title": "Just a little JavaScript",
+    "objectID": "workshop-09.html",
+    "href": "workshop-09.html",
+    "title": "Fast Apps",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Just a little JavaScript"
+      "Fast Apps"
     ]
   },
   {
-    "objectID": "workshop-06.html#slides",
-    "href": "workshop-06.html#slides",
-    "title": "Just a little JavaScript",
+    "objectID": "workshop-09.html#slides",
+    "href": "workshop-09.html#slides",
+    "title": "Fast Apps",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "Just a little JavaScript"
+      "Fast Apps"
     ]
   },
   {
-    "objectID": "workshop-06.html#links",
-    "href": "workshop-06.html#links",
-    "title": "Just a little JavaScript",
-    "section": "Links",
-    "text": "Links\n\nA conversation with ChatGPT 4o",
-    "crumbs": [
-      "Workshop",
-      "Just a little JavaScript"
-    ]
-  },
-  {
-    "objectID": "workshop-10.html",
-    "href": "workshop-10.html",
-    "title": "Extended Tasks",
-    "section": "",
-    "text": "View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Extended Tasks"
-    ]
-  },
-  {
-    "objectID": "workshop-10.html#slides",
-    "href": "workshop-10.html#slides",
-    "title": "Extended Tasks",
-    "section": "",
-    "text": "View slides in full screen",
-    "crumbs": [
-      "Workshop",
-      "Extended Tasks"
-    ]
-  },
-  {
-    "objectID": "workshop-10.html#resources",
-    "href": "workshop-10.html#resources",
-    "title": "Extended Tasks",
+    "objectID": "workshop-09.html#resources",
+    "href": "workshop-09.html#resources",
+    "title": "Fast Apps",
     "section": "Resources",
-    "text": "Resources\n\nShiny - Non-blocking operations\nYouTube: Managing long-running operations in Shiny | Posit, Joe Cheng\nTask or computation that proceeds in the background — ExtendedTask\nButton for launching longer-running operations — input_task_button • bslib\nTed Laderas: “Part 2: Reactivity” - vmst·io",
+    "text": "Resources\n\nShiny - Using caching in Shiny to maximize performance\nShiny - Profiling your Shiny app\nShiny - Performance\nExpandable Sparklines • Value boxes • bslib\nDuckDB - R API",
     "crumbs": [
       "Workshop",
-      "Extended Tasks"
+      "Fast Apps"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Level Up with Shiny for R",
-    "section": "",
-    "text": "Workshop at posit::conf(2024)August 12, 202409:00 - 17:00300 | Columbia C"
-  },
-  {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Level Up with Shiny for R",
-    "section": "Introduction",
-    "text": "Introduction\nShiny lets you quickly create rich, data-driven web applications for yourself, your clients, your students, or your colleagues. This workshop will give you the skills you need to build complex applications with brilliant user interfaces.\nYou’ll learn how to make the most of recent developments in the Shiny ecosystem, while mastering techniques for modularizing and structuring your applications for growth and maintainability. Along the way, you’ll encounter new techniques to speed up your applications using caching and databases for a smooth user experience."
-  },
-  {
-    "objectID": "index.html#links",
-    "href": "index.html#links",
-    "title": "Level Up with Shiny for R",
-    "section": "Links",
-    "text": "Links\n\n📘 Workshop Materials\n🔧 Getting Setup\n🧑‍💻 Join Posit Cloud Space\n👾 Discord (signup instructions)\n📦 Repository\n🎡 posit::conf(2024)"
-  },
-  {
-    "objectID": "workshop-08.html",
-    "href": "workshop-08.html",
-    "title": "The Reactive Graph",
+    "objectID": "workshop-12.html",
+    "href": "workshop-12.html",
+    "title": "Push to prod",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "The Reactive Graph"
+      "Push to prod"
     ]
   },
   {
-    "objectID": "workshop-08.html#slides",
-    "href": "workshop-08.html#slides",
-    "title": "The Reactive Graph",
+    "objectID": "workshop-12.html#slides",
+    "href": "workshop-12.html#slides",
+    "title": "Push to prod",
     "section": "",
     "text": "View slides in full screen",
     "crumbs": [
       "Workshop",
-      "The Reactive Graph"
+      "Push to prod"
     ]
   },
   {
-    "objectID": "workshop-08.html#demo-app",
-    "href": "workshop-08.html#demo-app",
-    "title": "The Reactive Graph",
-    "section": "Demo App",
-    "text": "Demo App\n\n#| standalone: true\n#| components: viewer\n#| viewerHeight: 675\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(dplyr)\nlibrary(collegeScorecard)\n\n\n# UI ----------------------------------------------------------------------\n\nui &lt;- page_sidebar(\n  theme = bs_theme(version = 5),\n  title = \"College Affordability Analyzer\",\n  fill = FALSE,\n  sidebar = sidebar(\n    open = list(mobile = \"always-above\"),\n    selectInput(\"state\", \"State\", choices = setNames(state.abb, state.name), selected = \"WA\"),\n    sliderInput(\"sat_score\", \"Minimum SAT Score\", min = 800, max = 1200, value = 1000, step = 10),\n    radioButtons(\n      \"income_bracket\",\n      \"Income Bracket\",\n      inline = TRUE,\n      choices = c(\n        \"&lt; $30k\" = \"cost_avg_income_0_30k\",\n        \"$30 - $48k\" = \"cost_avg_income_30_48k\",\n        \"$48 - $75k\" = \"cost_avg_income_48_75k\",\n        \"$75 - $110k\" = \"cost_avg_income_75_110k\",\n        \"$110k+\" = \"cost_avg_income_110k_plus\"\n      )\n    )\n  ),\n  value_box(\n    \"Average 10-year Median Earnings\",\n    textOutput(\"txt_amnt_earnings\"),\n    showcase = bsicons::bs_icon(\"wallet-fill\")\n  ),\n  value_box(\n    \"Average 4-year Cost\",\n    textOutput(\"txt_four_year_cost\"),\n    \"For the selected income bracket\",\n    showcase = bsicons::bs_icon(\"cash-stack\")\n  )\n)\n\n\n# Server ------------------------------------------------------------------\n\nserver &lt;- function(input, output, session) {\n  filtered_data &lt;- reactive({\n    scorecard |&gt;\n      filter(\n        academic_year == \"2020-21\",\n        !is.na(cost_avg),\n        !is.na(amnt_earnings_med_10y)\n      ) |&gt;\n      select(id, cost_avg, amnt_earnings_med_10y, score_sat_avg, starts_with(\"cost_avg_income\")) |&gt;\n      left_join(school, by = join_by(id)) |&gt;\n      filter(\n        state == input$state,\n        score_sat_avg &gt;= input$sat_score\n      )\n  })\n\n  output$txt_amnt_earnings &lt;- renderText({\n    filtered_data() |&gt;\n      pull(amnt_earnings_med_10y) |&gt;\n      mean(na.rm = TRUE) |&gt; \n      scales::dollar(accuracy = 10)\n  })\n\n  output$txt_four_year_cost &lt;- renderText({\n    avg_cost &lt;- \n      filtered_data() |&gt;\n      pull(!!input$income_bracket) |&gt;\n      mean(na.rm = TRUE)\n\n    scales::dollar(avg_cost * 4, accuracy = 10)\n  })\n}\n\n\nshinyApp(ui, server)",
+    "objectID": "workshop-12.html#connecting-rstudio-with-connect",
+    "href": "workshop-12.html#connecting-rstudio-with-connect",
+    "title": "Push to prod",
+    "section": "Connecting RStudio with Connect",
+    "text": "Connecting RStudio with Connect\nStep 1: Open pub.conf.posit.team and click the “Log In” button.\n\nStep 2: Log in with your GitHub account.\n\nStep 3: With the app to deploy open, click on the “Publish Application” button.\n\nStep 4: This opens the “Publish to Server” dialog, but your pub.conf.posit.team account isn’t connected, yet. Click “Add new account”.\n\nStep 5: Enter pub.conf.posit.team for the public URL of the Posit Connect server.\n\nStep 6: Select “Posit Connect” from the account type menu.\n\nStep 7: This opens a new window on https://pub.conf.posit.team. From here, click “Connect” to connect Posit Cloud with Posit Connect.\n\nStep 8: Return to Posit Cloud and click “Connect Account” to add the account to RStudio.\n\nStep 9: Chose the newly added pub.conf.posit.team account, and then…\n\nPick the files to deploy. For the first deployment, choose 15_01_app.R.\nGive your app a title, like find-a-school.\nClick Publish to kick off the publish step!\n\n\nGreat work! Give yourself a pat on the back. Check on your neighbors to see if they need help getting set up.",
     "crumbs": [
       "Workshop",
-      "The Reactive Graph"
+      "Push to prod"
     ]
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#long-running-tasks",
+    "href": "slides/slides-10-extended-tasks.html#long-running-tasks",
+    "title": "Extended Tasks",
+    "section": "Long Running Tasks",
+    "text": "Long Running Tasks\nUse long running task from before (long run when changing state)\nWhat if we solved this by adding a “submit button”?\nWhat goes wrong?"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#your-turn-13-inst",
+    "href": "slides/slides-10-extended-tasks.html#your-turn-13-inst",
+    "title": "Extended Tasks",
+    "section": "Your Turn _exercises/13_app.R",
+    "text": "Your Turn _exercises/13_app.R\n\n  \n    −\n    +\n \n 04:00\n \n\nAdd an actionButton(\"get_state\") to the sidebar.\nUpdate the schools_state reactive to only fetch data when the button is clicked.\nUse the app. How can you break it?"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#long-running-but-still-blocking",
+    "href": "slides/slides-10-extended-tasks.html#long-running-but-still-blocking",
+    "title": "Extended Tasks",
+    "section": "Long Running but still Blocking",
+    "text": "Long Running but still Blocking\nReactive graph for long running task"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#the-heart-of-shiny",
+    "href": "slides/slides-10-extended-tasks.html#the-heart-of-shiny",
+    "title": "Extended Tasks",
+    "section": "The Heart of Shiny",
+    "text": "The Heart of Shiny\nwhile (TRUE) {\n  changes &lt;- get_output_changes()\n  changed_outputs &lt;- recompute_all_affected_things(changes)\n  send_outputs(changed_outputs)\n}"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#one-user",
+    "href": "slides/slides-10-extended-tasks.html#one-user",
+    "title": "Extended Tasks",
+    "section": "One User",
+    "text": "One User\n\n\nEach reactive expression in your app is evaluated one after the other.\nIt takes as long as it takes to run the code.\nAnd then you get your answer."
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#two-users",
+    "href": "slides/slides-10-extended-tasks.html#two-users",
+    "title": "Extended Tasks",
+    "section": "Two Users",
+    "text": "Two Users\n\n\nEach user has their own reactive graph that’s still evaluated one computation at a time.\nBut it could take longer than it takes to run the code.\nIf we both have the app open and I start the long running task, you’ll have to wait for me to finish.\nThen Shiny runs the code for your app.\nAnd you get the answer."
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#shiny-async-with-two-users",
+    "href": "slides/slides-10-extended-tasks.html#shiny-async-with-two-users",
+    "title": "Extended Tasks",
+    "section": "Shiny Async with Two Users",
+    "text": "Shiny Async with Two Users\n\n\nEach user has their own reactive graph that’s still evaluated one computation at a time.\nBut they’re now decoupled.\nI only have to wait as long as it takes to the run the code for my app.\nAnd you only have to wait as long as it takes to run the code for your app.\nBut we still have to wait… and we can’t use our apps until our computation is done."
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#shiny-with-extended-task",
+    "href": "slides/slides-10-extended-tasks.html#shiny-with-extended-task",
+    "title": "Extended Tasks",
+    "section": "Shiny with Extended Task",
+    "text": "Shiny with Extended Task\n\n\n\nExtended Tasks let you split a reactive expression into two pieces.\n\nObserve incoming changes and decide when to run the task, and with what parameters.\nReceive the results of the task and update dependent outputs."
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#shiny-with-extended-task-1",
+    "href": "slides/slides-10-extended-tasks.html#shiny-with-extended-task-1",
+    "title": "Extended Tasks",
+    "section": "Shiny with Extended Task",
+    "text": "Shiny with Extended Task\n\n\nThe reactive graph can now make it to equillibrium in each reactive tick.\nThe task is run in the background so it doesn’t block either of our apps.\nIt still takes as long as it takes to run the code…\nBut I can also still use the app!"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#extendedtask---step-1",
+    "href": "slides/slides-10-extended-tasks.html#extendedtask---step-1",
+    "title": "Extended Tasks",
+    "section": "ExtendedTask - Step 1",
+    "text": "ExtendedTask - Step 1\nDefine the task at hand. At its core, it’s a function that returns a future_promise()\n#| code-copy: false\n1task_fetch_data &lt;- ExtendedTask$new(function(data_type) {\n2  future_promise({\n    fetch_from_slow_api(data_type)\n  })\n}) |&gt;\n3  bind_task_button(\"fetch_data\")\n\n1\n\nNothing reactive can happen here!\n\n2\n\nReturn a future_promise() to make it potentially non-blocking\n\n3\n\nBind the state of an input_task_button() to this task’s state"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#extendedtask---step-2",
+    "href": "slides/slides-10-extended-tasks.html#extendedtask---step-2",
+    "title": "Extended Tasks",
+    "section": "ExtendedTask - Step 2",
+    "text": "ExtendedTask - Step 2\nNext, decide when the task will be invoked.\n#| code-copy: false\nobserveEvent(input$fetch_data, {\n1  task_fetch_data$invoke(input$data_type)\n})\n\n1\n\nAnything reactive happens here in the observer or reactive expression."
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#extendedtask---step-3",
+    "href": "slides/slides-10-extended-tasks.html#extendedtask---step-3",
+    "title": "Extended Tasks",
+    "section": "ExtendedTask - Step 3",
+    "text": "ExtendedTask - Step 3\nFinally, use the task’s result in a reactive context.\n#| code-copy: false\ndata &lt;- reactive({\n1  task_fetch_data$result()\n})\n\n1\n\nThis only fires when the task is done."
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#extendedtask",
+    "href": "slides/slides-10-extended-tasks.html#extendedtask",
+    "title": "Extended Tasks",
+    "section": "ExtendedTask",
+    "text": "ExtendedTask\ntask_fetch_data &lt;- ExtendedTask$new(function(data_type) {\n  future_promise({\n    fetch_from_slow_api(data_type)\n  })\n}) |&gt;\n  bind_task_button(\"fetch_data\")\n\nobserveEvent(input$fetch_data, {\n  task_fetch_data$invoke(input$data_type)\n})\n\ndata &lt;- reactive({\n  task_fetch_data$result()\n})"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#extendedtask-1",
+    "href": "slides/slides-10-extended-tasks.html#extendedtask-1",
+    "title": "Extended Tasks",
+    "section": "ExtendedTask",
+    "text": "ExtendedTask\nserver &lt;- function(input, output, session) {\n  task_fetch_data &lt;- ExtendedTask$new(function(data_type) {\n    future_promise({\n      fetch_from_slow_api(data_type)\n    })\n  }) |&gt;\n    bind_task_button(\"fetch_data\")\n\n  observeEvent(input$fetch_data, {\n    task_fetch_data$invoke(input$data_type)\n  })\n\n  data &lt;- reactive({\n    task_fetch_data$result()\n  })\n}"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#extendedtask-2",
+    "href": "slides/slides-10-extended-tasks.html#extendedtask-2",
+    "title": "Extended Tasks",
+    "section": "ExtendedTask",
+    "text": "ExtendedTask\nlibrary(future)\nlibrary(promises)\nfuture::plan(multisession)\n\nserver &lt;- function(input, output, session) {\n  task_fetch_data &lt;- ExtendedTask$new(function(data_type) {\n    future_promise({\n      fetch_from_slow_api(data_type)\n    })\n  }) |&gt;\n    bind_task_button(\"fetch_data\")\n\n  observeEvent(input$fetch_data, {\n    task_fetch_data$invoke(input$data_type)\n  })\n\n  data &lt;- reactive({\n    task_fetch_data$result()\n  })\n}"
+  },
+  {
+    "objectID": "slides/slides-10-extended-tasks.html#your-turn-14-inst",
+    "href": "slides/slides-10-extended-tasks.html#your-turn-14-inst",
+    "title": "Extended Tasks",
+    "section": "Your Turn _exercises/14_app.R",
+    "text": "Your Turn _exercises/14_app.R\n\n  \n    −\n    +\n \n 06:00\n \n\nReplace the actionButton(\"get_state\") with an input_task_button(). How much does the task button help?\nUpdate the server logic to use ExtendedTask that uses future_promise(). I’ve already loaded the packages you need.\nCan you use the app while fetching data from the API?\nStretch: How could you keep the whole app running, including the plots while the data is being fetched? Read 14_solution2_app.R for an example."
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
+    "href": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
+    "title": "Welcome!",
+    "section": "Welcome to Level Up with Shiny for R",
+    "text": "Welcome to Level Up with Shiny for R\n\nTake a seat, etc.\nHere’s an important link\nWiFI info"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#meet-us",
+    "href": "slides/slides-01-intro.html#meet-us",
+    "title": "Welcome!",
+    "section": "Meet us",
+    "text": "Meet us\n\nGarrick\nCarson\nBarret\nKalau\nAndrew"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#code-of-conduct",
+    "href": "slides/slides-01-intro.html#code-of-conduct",
+    "title": "Welcome!",
+    "section": "Code of Conduct",
+    "text": "Code of Conduct\nPlease Review: posit.co/code-of-conduct\n💙 Treat everyone with respect\n🧡 Everyone should feel welcome and safe\nReporting:\n🗣️ any posit::conf staff member (t-shirt) or Info desk\n📧 conf@posit.com"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#meet-each-other",
+    "href": "slides/slides-01-intro.html#meet-each-other",
+    "title": "Welcome!",
+    "section": "Meet each other",
+    "text": "Meet each other\nTK: activity"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#wifi",
+    "href": "slides/slides-01-intro.html#wifi",
+    "title": "Welcome!",
+    "section": "WiFi",
+    "text": "WiFi\n\n\n\n\nWiFi\nPosit Conf 2024\n\n\n\n\nPass\nconf2024"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#positconf2024-things-to-know",
+    "href": "slides/slides-01-intro.html#positconf2024-things-to-know",
+    "title": "Welcome!",
+    "section": "posit::conf(2024) Things to Know",
+    "text": "posit::conf(2024) Things to Know\n\n\nThere will be a gender-neutral bathroom on levels 3:7\nMeditation/prayer room: 503\n\nMon & Tues 7am - 7pm\nWed 7am - 5pm\n\nMothers room: 509"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#positconf2024-social-media",
+    "href": "slides/slides-01-intro.html#positconf2024-social-media",
+    "title": "Welcome!",
+    "section": "posit::conf(2024) Social Media",
+    "text": "posit::conf(2024) Social Media\n\nRed lanyards available to those who don’t wish to be photographed\n#PositConf2024 for all things conf\n#LevelUpShiny for this workshop"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#stickies",
+    "href": "slides/slides-01-intro.html#stickies",
+    "title": "Welcome!",
+    "section": "Stickies",
+    "text": "Stickies\n\n\n🟩\nAll good\nI’m done\n\n\n🟥\nNot great\nNeed time or help"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#schedule",
+    "href": "slides/slides-01-intro.html#schedule",
+    "title": "Welcome!",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#schedule-1",
+    "href": "slides/slides-01-intro.html#schedule-1",
+    "title": "Welcome!",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#discord",
+    "href": "slides/slides-01-intro.html#discord",
+    "title": "Welcome!",
+    "section": "Discord",
+    "text": "Discord\nGo posit.co/conference, click Login. Click image to connect to the posit::conf() Discord server.\nThis workshop has a private channel under Workshops.\n\n#level-up-shiny\n\nGreat place to ask questions, post resources, memes, or most anything else before, during, and after the workshop."
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#posit-cloud",
+    "href": "slides/slides-01-intro.html#posit-cloud",
+    "title": "Welcome!",
+    "section": "Posit Cloud",
+    "text": "Posit Cloud\n\nStep 1. Join pos.it/level-up-shiny-24\n\nStep 2. Start level-up-shiny assignment"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#cloud-session",
+    "href": "slides/slides-01-intro.html#cloud-session",
+    "title": "Welcome!",
+    "section": "Cloud session",
+    "text": "Cloud session"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#file-organization",
+    "href": "slides/slides-01-intro.html#file-organization",
+    "title": "Welcome!",
+    "section": "File organization",
+    "text": "File organization\n\n\n\n\n_exercises/\nFiles for Your Turn exercises\n\n\n_examples/\nFiles for my demo examples\n\n\nwebsite/\nThe website and slides\n\n\n./*\nLots of project related files you can ignore"
   },
   {
     "objectID": "slides/slides-06-javascript.html#section",
