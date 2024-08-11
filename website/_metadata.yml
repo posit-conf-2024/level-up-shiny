@@ -9,7 +9,8 @@ workshop:
   links:
     repo: https://github.com/posit-conf-2024/level-up-shiny
     website: https://posit-conf-2024.github.io/level-up-shiny
-    cloud:  https://posit.cloud/spaces/517274/join?access_code=hOrr2kUey-vMVbjRoWbQRqbHM45L0rUSIdfgSsj9
+    # FIXME (after) remove cloud link
+    cloud: https://posit.cloud/spaces/517274/join?access_code=hOrr2kUey-vMVbjRoWbQRqbHM45L0rUSIdfgSsj9
     cloud_short: 
       href: https://pos.it/level-up-shiny-24-cloud
       text: "pos.it/level-up-shiny-24-cloud"

@@ -142,6 +142,7 @@ Great place to ask questions, post resources, memes, or most anything else befor
 ## Posit Cloud
 
 ::: {.fs-step-3}
+<!-- FIXME (after) remove cloud link -->
 **Step 1.** Join
 [pos.it/level-up-shiny-24-cloud](https://pos.it/level-up-shiny-24-cloud)
 
