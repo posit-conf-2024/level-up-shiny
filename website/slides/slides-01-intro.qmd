@@ -58,9 +58,15 @@ editor:
 🗣️ any posit::conf staff member (t-shirt) or Info desk \
 📧 `conf@posit.com`
 
-## Meet each other
+## Meet each other {.middle}
 
-TK: activity
+::: {.fs-step-3 .incremental}
+* 👋 Hi, my name is ...
+
+* 💼 My first job was ...
+
+* 💡 What did you learn from that job?
+:::
 
 # About this workshop {.middle}
 
