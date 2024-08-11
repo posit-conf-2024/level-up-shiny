@@ -646,23 +646,41 @@ Use `page_sidebar()` to move the state selector to a global sidebar.
 
 ## Column Layouts
 
-<!-- TODO: sequential reveal -->
+::: {.easy-columns}
+::: {.b .code}
+layout_column_wrap()
+:::
+::: {.b .code}
+layout_columns()
+:::
+:::
 
-### `layout_column_wrap()`
+::: {.easy-columns .fragment}
+::: {.col .m-block-start-m}
+Takes any number of items and lays them out column-wise
+:::
+::: {.col .m-block-start-m}
+Takes any number of items and lays them out column-wise
+:::
+:::
 
-* Takes any number of items and lays them out column-wise
+::: {.easy-columns .fragment}
+::: {.col .m-block-start-m}
+Equally sized columns and rows
+:::
+::: {.col .m-block-start-m}
+Uneven columns and rows
+:::
+:::
 
-* Equally sized columns and rows
-
-* All the same thing
-
-### `layout_columns()`
-
-* Takes any number of items and lays them out column-wise
-
-* Uneven columns and rows
-
-* Bootstrap's 12-column grid
+::: {.easy-columns .fragment}
+::: {.col .m-block-start-m}
+Best when all items are the same thing
+:::
+::: {.col .m-block-start-m}
+Best for using Bootstrap's 12-column grid
+:::
+:::
 
 ## Splat!
 
