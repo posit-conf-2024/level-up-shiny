@@ -238,15 +238,15 @@ card(card_header("Cost vs Earnings"),
 
 ##
 
-::: {.flex}
-::: {.w-50}
+::: {.easy-columns}
+::: {.col}
 ```{r}
 #| echo: true
 styler::style_text(card_example)
 ```
 :::
 
-::: {.w-50 .fragment}
+::: {.col .fragment}
 ```{r}
 #| echo: true
 #| attr.out:

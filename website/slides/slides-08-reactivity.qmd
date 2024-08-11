@@ -49,8 +49,8 @@ editor:
 
 ## {#value-expression-observer .top}
 
-::: {.flex}
-::: {.w-third .text-center}
+::: {.flex-ns}
+::: {.w-third-ns .text-center}
 [Reactive values]{.b .font-heading .fs-step-1}
 
 ```{=html}
@@ -58,7 +58,7 @@ editor:
 ```
 :::
 
-::: {.w-third .text-center}
+::: {.w-third-ns .text-center}
 [Reactive expressions]{.b .font-heading .fs-step-1}
 
 ```{=html}
@@ -66,7 +66,7 @@ editor:
 ```
 :::
 
-::: {.w-third .text-center}
+::: {.w-third-ns .text-center}
 [Observers]{.b .font-heading .fs-step-1}
 
 ```{=html}
@@ -91,8 +91,8 @@ cat(paste(slides_md[1:7], collapse = "\n\n\n"))
 
 ## {#reative-state .top}
 
-::: {.flex}
-::: {.w-third .text-center}
+::: {.flex-ns}
+::: {.w-third-ns .text-center}
 [Invalidated]{.b .font-heading .fs-step-1}
 
 ```{=html}
@@ -100,7 +100,7 @@ cat(paste(slides_md[1:7], collapse = "\n\n\n"))
 ```
 :::
 
-::: {.w-third .text-center}
+::: {.w-third-ns .text-center}
 [Evaluating]{.b .font-heading .fs-step-1}
 
 ```{=html}
@@ -108,7 +108,7 @@ cat(paste(slides_md[1:7], collapse = "\n\n\n"))
 ```
 :::
 
-::: {.w-third .text-center}
+::: {.w-third-ns .text-center}
 [Ready]{.b .font-heading .fs-step-1}
 
 ```{=html}

@@ -432,7 +432,7 @@ plot
 
 ## Card Parts
 
-::: {.flex .justify-center .items-center}
+::: {.flex-ns .justify-center .items-center}
 ::: {.w-40}
 <!-- _examples/bslib/02_example.R -->
 ![](assets/bslib-card.png)
@@ -454,7 +454,7 @@ card(
 
 ## Card Parts {auto-animate=true}
 
-::: {.flex .justify-center .items-center}
+::: {.flex-ns .justify-center .items-center}
 ::: {.w-40}
 <!-- _examples/bslib/02_example.R -->
 ![](assets/bslib-card-not-fillable.png)
@@ -479,7 +479,7 @@ card(
 
 ## Full Screen Cards
 
-::: {.flex .justify-center .items-center .gap-xs}
+::: {.flex-ns .justify-center .items-center .gap-xs}
 
 ::: {.w-40}
 ```{.r}
