@@ -143,7 +143,7 @@ Great place to ask questions, post resources, memes, or most anything else befor
 
 ::: {.fs-step-3}
 **Step 1.** Join
-<!-- FIXME: cloud link -->[pos.it/level-up-shiny-24](https://pos.it/level-up-shiny-24)
+[pos.it/level-up-shiny-24-cloud](https://pos.it/level-up-shiny-24-cloud)
 
 ::: fragment
 **Step 2.** Start `level-up-shiny` assignment
