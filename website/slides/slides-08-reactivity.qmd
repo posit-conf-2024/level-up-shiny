@@ -78,7 +78,7 @@ editor:
 ```{r}
 #| output: asis
 
-reactive_bg_files <- fs::dir_ls(glob = "assets/reactivity-*", recurse = TRUE)
+reactive_bg_files <- fs::dir_ls(glob = "assets/08-reactivity/reactivity-*", recurse = TRUE)
 reactive_name <- fs::path_file(reactive_bg_files) |> fs::path_ext_remove()
 slides_md <- glue::glue(
   '## {{#{reactive_name} background-image="{reactive_bg_files}" background-size="85%" background-position="center"}}',
@@ -168,7 +168,7 @@ Close the app and run `shiny::reactlogShow()` in the console.
 
 {{< countdown 4:00 bottom="2rem" right="2rem" >}}
 
-![](assets/make-this-reactive-graph.svg){height="650px"}
+![](assets/08-reactivity/make-this-reactive-graph.svg){height="650px"}
 
 ## Describe the app
 
