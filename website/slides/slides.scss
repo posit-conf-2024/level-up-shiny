@@ -54,6 +54,14 @@
   white-space: pre;
 }
 
+.reveal .sourceCode.cell-code:has(+ .cell-output) {
+  margin-bottom: 0 !important;
+}
+
+.cell-output {
+  margin-bottom: 1rem;
+}
+
 .highlight-line {
   --_highlight-line-color: var(--highlight-line-color, oklab(0.95 -0.04 0.16 / 0.7));
   background: var(--_highlight-line-color);
@@ -72,4 +80,27 @@
 div.shinylive-wrapper {
   box-shadow: none;
   border: none;
+}
+
+.easy-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: var(--space-s);
+}
+
+.easy-columns > div > :first-child {
+  margin-top: 0;
+}
+
+.easy-columns > div > :last-child {
+  margin-bottom: 0;
+}
+
+.gradient-shinytest2 {
+  background-image: 
+    linear-gradient(
+      to bottom in oklch,
+      #3775A9 0%, #A61E22 100%
+    )
+  ;
 }

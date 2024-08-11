@@ -230,8 +230,16 @@ server <- function(input, output, session) {
 
   # Leaflet Map ----
   output$map <- renderLeaflet({
+    addColorModeTiles <- function(map) {
+      if (input$color_mode == "light") {
+        addProviderTiles(map, "OpenStreetMap.Mapnik")
+      } else if (input$color_mode == "night") {
+        addProviderTiles(map, "CartoDB.DarkMatter")
+      }
+    }
+    
     leaflet() |>
-      addTiles() |>
+      addColorModeTiles() |>
       addMarkers(
         data = schools(),
         lng = ~longitude,
