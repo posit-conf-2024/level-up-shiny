@@ -688,7 +688,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"id":1,"options":{"editor-quick-suggestions":"false","label":"unnamed-chunk-1","autorun":"false","output":"true","warning":"true","fig-height":5,"context":"interactive","comment":"","editor-max-height":"","results":"markup","out-height":"","classes":"","message":"true","out-width":"700px","fig-width":7,"dpi":72,"read-only":"false","editor-word-wrap":"true","fig-cap":"","editor-font-scale":"0.5"},"code":"school |>\n  filter(state == \"CA\") |>\n  filter(control == \"Public\") |>\n  count() |>\n  pull(n)"}];
+  globalThis.qwebrCellDetails = [{"code":"school |>\n  filter(state == \"CA\") |>\n  filter(control == \"Public\") |>\n  count() |>\n  pull(n)","id":1,"options":{"out-height":"","autorun":"false","comment":"","fig-height":5,"editor-quick-suggestions":"false","label":"unnamed-chunk-1","editor-word-wrap":"true","fig-cap":"","classes":"","fig-width":7,"output":"true","warning":"true","message":"true","editor-font-scale":"0.5","editor-max-height":"","read-only":"false","results":"markup","context":"interactive","out-width":"700px","dpi":72}}];
 
   </script>
   <script type="module">
@@ -2205,7 +2205,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="section" class="slide level2 middle">
 <h2></h2>
-<div class="flex">
+<div class="flex-ns">
 <div class="w-50">
 <p><span class="fs-step-2 font-heading b">Why use <strong>Shiny modules</strong>?</span></p>
 <div class="fragment">
@@ -2221,7 +2221,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="section-1" class="slide level2 middle">
 <h2></h2>
-<div class="flex">
+<div class="flex-ns">
 <div class="w-50">
 <p><span class="fs-step-2 font-heading b">Why use <span class="b orange">functions</span>?</span></p>
 <ul>
@@ -2351,7 +2351,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="your-turn-1" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/07_app.R</code></h2>
-<div id="timer_610e22f08f9f9142a916054d0245e53d94e6277c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_7a1b0381781f2f83299b4ac6a508f1e7a69fa7b8" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2473,7 +2473,7 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="your-turn-8-inst" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>_exercises/08_app.R</code></h2>
-<div id="timer_610e22f08f9f9142a916054d0245e53d94e6277c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_7a1b0381781f2f83299b4ac6a508f1e7a69fa7b8" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
@@ -2516,8 +2516,8 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="am-i-repeating-myself" class="slide level2">
 <h2>Am I repeating myself?</h2>
-<div class="flex gap-s">
-<div class="w-50">
+<div class="easy-columns gap-s">
+<div class="col">
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># UI ----</span></span>
 <span id="cb9-2"><a></a><span class="fu">selectInput</span>(<span class="st">"school_a"</span>, <span class="st">"School A"</span>, <span class="at">choices =</span> school_names, <span class="at">selected =</span> school_a, <span class="at">width =</span> <span class="st">"100%"</span>),</span>
 <span id="cb9-3"><a></a><span class="fu">card</span>(</span>
@@ -2534,7 +2534,7 @@ How well will your function compose with other functions?</p></li>
 <span id="cb9-14"><a></a>    <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">1</span>])</span>
 <span id="cb9-15"><a></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="w-50">
+<div class="col">
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># UI ----</span></span>
 <span id="cb10-2"><a></a><span class="fu">selectInput</span>(<span class="st">"school_a"</span>, <span class="st">"School A"</span>, <span class="at">choices =</span> school_names, <span class="at">selected =</span> school_a, <span class="at">width =</span> <span class="st">"100%"</span>),</span>
 <span id="cb10-3"><a></a><span class="fu">card</span>(</span>
@@ -2555,8 +2555,8 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="step-1-module-ui" class="slide level2">
 <h2>Step 1: Module UI</h2>
-<div class="flex gap-s">
-<div class="w-50">
+<div class="easy-columns">
+<div class="col">
 <div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># UI ----</span></span>
 <span id="cb11-2"><a></a><span class="fu">selectInput</span>(<span class="st">"school_a"</span>, <span class="st">"School A"</span>, <span class="at">choices =</span> school_names, <span class="at">selected =</span> school_a, <span class="at">width =</span> <span class="st">"100%"</span>),</span>
 <span id="cb11-3"><a></a><span class="fu">card</span>(</span>
@@ -2564,7 +2564,7 @@ How well will your function compose with other functions?</p></li>
 <span id="cb11-5"><a></a>  <span class="fu">plotOutput</span>(<span class="st">"plot_school_a"</span>)</span>
 <span id="cb11-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="w-50">
+<div class="col">
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># UI ----</span></span>
 <span id="cb12-2"><a></a><span class="fu">selectInput</span>(<span class="st">"school_a"</span>, <span class="st">"School A"</span>, <span class="at">choices =</span> school_names, <span class="at">selected =</span> school_a, <span class="at">width =</span> <span class="st">"100%"</span>),</span>
 <span id="cb12-3"><a></a><span class="fu">card</span>(</span>
@@ -2573,7 +2573,7 @@ How well will your function compose with other functions?</p></li>
 <span id="cb12-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div class="w-two-thirds fragment center">
+<div class="w-two-thirds-ns fragment center">
 <div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>mod_school_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
 <span id="cb13-2"><a></a>  <span class="fu">list</span>(</span>
 <span id="cb13-3"><a></a>    <span class="fu">selectInput</span>(<span class="fu">paste0</span>(<span class="st">"school_"</span>, id), <span class="st">"School A"</span>, <span class="at">choices =</span> school_names, <span class="at">selected =</span> school_a, <span class="at">width =</span> <span class="st">"100%"</span>),</span>
@@ -2590,7 +2590,7 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="step-1-module-ui-1" class="slide level2">
 <h2>Step 1: Module UI</h2>
-<div class="w-80 center">
+<div class="w-80-ns center">
 <div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>mod_school_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
 <span id="cb14-2"><a></a>  <span class="fu">list</span>(</span>
 <span id="cb14-3"><a></a>    <span class="fu">selectInput</span>(<span class="fu">NS</span>(id, <span class="st">"school"</span>), <span class="st">"School A"</span>, <span class="at">choices =</span> school_names, <span class="at">selected =</span> school_a, <span class="at">width =</span> <span class="st">"100%"</span>),</span>
@@ -2607,7 +2607,7 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="step-1-module-ui-2" class="slide level2">
 <h2>Step 1: Module UI</h2>
-<div class="w-80 center">
+<div class="w-80-ns center">
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>mod_school_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
 <span id="cb15-2"><a></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
 <span id="cb15-3"><a></a></span>
@@ -2639,7 +2639,7 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="step-1-module-ui-3" class="slide level2">
 <h2>Step 1: Module UI</h2>
-<div class="w-80 center">
+<div class="w-80-ns center">
 <div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>mod_school_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
 <span id="cb17-2"><a></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
 <span id="cb17-3"><a></a></span>
@@ -2658,7 +2658,7 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="step-1-module-ui-4" class="slide level2">
 <h2>Step 1: Module UI</h2>
-<div class="w-80 center">
+<div class="w-80-ns center">
 <div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>mod_school_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id, label, choices, <span class="at">selected =</span> <span class="cn">NULL</span>) {</span>
 <span id="cb18-2"><a></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
 <span id="cb18-3"><a></a></span>
@@ -2677,7 +2677,7 @@ How well will your function compose with other functions?</p></li>
 </section>
 <section id="step-1-module-ui-5" class="slide level2">
 <h2>Step 1: Module UI</h2>
-<div class="w-80 center">
+<div class="w-80-ns center">
 <div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>mod_school_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id, label, choices, <span class="at">selected =</span> <span class="cn">NULL</span>) {</span>
 <span id="cb19-2"><a></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
 <span id="cb19-3"><a></a></span>
@@ -2704,8 +2704,8 @@ outputs: <strong>plot_school</strong></p>
 </section>
 <section id="step-2-module-server" class="slide level2">
 <h2>Step 2: Module Server</h2>
-<div class="flex gap-s">
-<div class="w-50">
+<div class="easy-columns">
+<div class="col">
 <div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>output<span class="sc">$</span>plot_school_a <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
 <span id="cb20-2"><a></a>  <span class="fu">req</span>(input<span class="sc">$</span>school_a)</span>
 <span id="cb20-3"><a></a></span>
@@ -2714,7 +2714,7 @@ outputs: <strong>plot_school</strong></p>
 <span id="cb20-6"><a></a>    <span class="fu">plot_cost_tuition</span>(colors[<span class="dv">1</span>])</span>
 <span id="cb20-7"><a></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="w-50">
+<div class="col">
 <div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>output<span class="sc">$</span>plot_school_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
 <span id="cb21-2"><a></a>  <span class="fu">req</span>(input<span class="sc">$</span>school_b)</span>
 <span id="cb21-3"><a></a></span>
@@ -2727,8 +2727,8 @@ outputs: <strong>plot_school</strong></p>
 </section>
 <section id="step-2-module-server-1" class="slide level2">
 <h2>Step 2: Module Server</h2>
-<div class="flex gap-s">
-<div class="w-50">
+<div class="easy-columns">
+<div class="col">
 <div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
 <span id="cb22-2"><a></a>  output<span class="sc">$</span>plot_school_a <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
 <span id="cb22-3"><a></a>    <span class="fu">req</span>(input<span class="sc">$</span>school_a)</span>
@@ -2739,7 +2739,7 @@ outputs: <strong>plot_school</strong></p>
 <span id="cb22-8"><a></a>  })</span>
 <span id="cb22-9"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="w-50">
+<div class="col">
 <div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
 <span id="cb23-2"><a></a>  output<span class="sc">$</span>plot_school_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
 <span id="cb23-3"><a></a>    <span class="fu">req</span>(input<span class="sc">$</span>school_b)</span>
@@ -2751,7 +2751,7 @@ outputs: <strong>plot_school</strong></p>
 <span id="cb23-9"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div class="w-75 fragment center">
+<div class="w-75-ns fragment center">
 <div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>mod_school_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
 <span id="cb24-2"><a></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
 <span id="cb24-3"><a></a>    output<span class="sc">$</span>plot_school_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
@@ -2767,7 +2767,7 @@ outputs: <strong>plot_school</strong></p>
 </section>
 <section id="step-2-module-server-2" class="slide level2">
 <h2>Step 2: Module Server</h2>
-<div class="w-75 center">
+<div class="w-75-ns center">
 <div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
 <span id="cb25-2"><a></a>  output<span class="sc">$</span>plot_school_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
 <span id="cb25-3"><a></a>    <span class="fu">req</span>(input<span class="sc">$</span>school_b)</span>
@@ -2781,7 +2781,7 @@ outputs: <strong>plot_school</strong></p>
 </section>
 <section id="step-2-module-server-3" class="slide level2">
 <h2>Step 2: Module Server</h2>
-<div class="w-75 center">
+<div class="w-75-ns center">
 <div class="sourceCode" id="cb26" data-code-line-numbers="|3,4,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>mod_school_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
 <span id="cb26-2"><a></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
 <span id="cb26-3"><a></a>    output<span class="sc">$</span>plot_school_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
@@ -2797,7 +2797,7 @@ outputs: <strong>plot_school</strong></p>
 </section>
 <section id="step-2-module-server-4" class="slide level2">
 <h2>Step 2: Module Server</h2>
-<div class="w-75 center">
+<div class="w-75-ns center">
 <div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>mod_school_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
 <span id="cb27-2"><a></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
 <span id="cb27-3"><a></a>    output<span class="sc">$</span>plot_school <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
@@ -2819,7 +2819,7 @@ outputs: <strong>plot_school</strong></p>
 </section>
 <section id="step-2-module-server-5" class="slide level2">
 <h2>Step 2: Module Server</h2>
-<div class="w-75 center">
+<div class="w-75-ns center">
 <div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>mod_school_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id, plot_color) {</span>
 <span id="cb28-2"><a></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
 <span id="cb28-3"><a></a>    output<span class="sc">$</span>plot_school <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
@@ -2851,14 +2851,14 @@ outputs: <strong>plot_school</strong></p>
 </section>
 <section id="your-turn-9" class="slide level2 slide-your-turn">
 <h2>Your Turn <code>09_modules/app.R</code></h2>
-<div id="timer_610e22f08f9f9142a916054d0245e53d94e6277c" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
+<div id="timer_7a1b0381781f2f83299b4ac6a508f1e7a69fa7b8" class="countdown" data-warn-when="0" data-update-every="1" data-play-sound="false" data-blink-colon="false" data-start-immediately="false" tabindex="0" style="right: 2rem;bottom: 2rem;">
   <div class="countdown-controls">
     <button class="countdown-bump-down">−</button>
     <button class="countdown-bump-up">+</button>
  </div>
  <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
  </div>
-<div class="w-80">
+<div class="w-80-ns">
 <p>Add the school map card to the <code>mod_school</code> ui/server functions. You can find the module in <code>R/mod_school.R</code>.</p>
 <p>Having the module in a separate file makes it easier to have both the app and the module open at the same time.</p>
 </div>

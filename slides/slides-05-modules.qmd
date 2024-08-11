@@ -42,7 +42,7 @@ editor:
 
 ## {.middle}
 
-::: {.flex}
+::: {.flex-ns}
 ::: w-50
 [Why use **Shiny modules**?]{.fs-step-2 .font-heading .b}
 
@@ -58,7 +58,7 @@ editor:
 
 ## {.middle}
 
-::: {.flex}
+::: {.flex-ns}
 ::: w-50
 [Why use [functions]{.b .orange}?]{.fs-step-2 .font-heading .b}
 
@@ -311,8 +311,8 @@ Let's make a [Bootstrap badge](https://getbootstrap.com/docs/5.3/components/badg
 
 ## Am I repeating myself?
 
-::: {.flex .gap-s}
-::: {.w-50}
+::: {.easy-columns .gap-s}
+::: {.col}
 ```{.r}
 # UI ----
 selectInput("school_a", "School A", choices = school_names, selected = school_a, width = "100%"),
@@ -332,7 +332,7 @@ output$plot_school_a <- renderPlot({
 ```
 :::
 
-::: {.w-50}
+::: {.col}
 ```{.r}
 # UI ----
 selectInput("school_a", "School A", choices = school_names, selected = school_a, width = "100%"),
@@ -355,8 +355,8 @@ output$plot_school_b <- renderPlot({
 
 ## Step 1: Module UI
 
-::: {.flex .gap-s}
-::: {.w-50}
+::: {.easy-columns}
+::: {.col}
 ```{.r}
 # UI ----
 selectInput("school_a", "School A", choices = school_names, selected = school_a, width = "100%"),
@@ -367,7 +367,7 @@ card(
 ```
 :::
 
-::: {.w-50}
+::: {.col}
 ```{.r}
 # UI ----
 selectInput("school_a", "School A", choices = school_names, selected = school_a, width = "100%"),
@@ -379,7 +379,7 @@ card(
 :::
 :::
 
-::: {.w-two-thirds .fragment .center}
+::: {.w-two-thirds-ns .fragment .center}
 ```{.r}
 mod_school_ui <- function(id) {
   list(
@@ -399,7 +399,7 @@ mod_school_ui("b")
 
 ## Step 1: Module UI
 
-::: {.w-80 .center}
+::: {.w-80-ns .center}
 ```{.r}
 mod_school_ui <- function(id) {
   list(
@@ -418,7 +418,7 @@ mod_school_ui("b")
 
 ## Step 1: Module UI
 
-::: {.w-80 .center}
+::: {.w-80-ns .center}
 ```{.r}
 mod_school_ui <- function(id) {
   ns <- NS(id)
@@ -451,7 +451,7 @@ ns("plot_school")
 
 ## Step 1: Module UI
 
-::: {.w-80 .center}
+::: {.w-80-ns .center}
 ```{.r}
 mod_school_ui <- function(id) {
   ns <- NS(id)
@@ -472,7 +472,7 @@ mod_school_ui("b")
 
 ## Step 1: Module UI
 
-::: {.w-80 .center}
+::: {.w-80-ns .center}
 ```{.r}
 mod_school_ui <- function(id, label, choices, selected = NULL) {
   ns <- NS(id)
@@ -493,7 +493,7 @@ mod_school_ui("b", "School B", school_names, school_b)
 
 ## Step 1: Module UI
 
-::: {.w-80 .center}
+::: {.w-80-ns .center}
 ```{.r}
 mod_school_ui <- function(id, label, choices, selected = NULL) {
   ns <- NS(id)
@@ -523,8 +523,8 @@ outputs: **plot_school**
 
 ## Step 2: Module Server
 
-::: {.flex .gap-s}
-::: {.w-50}
+::: {.easy-columns}
+::: {.col}
 ```{.r}
 output$plot_school_a <- renderPlot({
   req(input$school_a)
@@ -536,7 +536,7 @@ output$plot_school_a <- renderPlot({
 ```
 :::
 
-::: {.w-50}
+::: {.col}
 ```{.r}
 output$plot_school_b <- renderPlot({
   req(input$school_b)
@@ -551,8 +551,8 @@ output$plot_school_b <- renderPlot({
 
 ## Step 2: Module Server
 
-::: {.flex .gap-s}
-::: {.w-50}
+::: {.easy-columns}
+::: {.col}
 ```{.r}
 server <- function(input, output, session) {
   output$plot_school_a <- renderPlot({
@@ -566,7 +566,7 @@ server <- function(input, output, session) {
 ```
 :::
 
-::: {.w-50}
+::: {.col}
 ```{.r}
 server <- function(input, output, session) {
   output$plot_school_b <- renderPlot({
@@ -581,7 +581,7 @@ server <- function(input, output, session) {
 :::
 :::
 
-::: {.w-75 .fragment .center}
+::: {.w-75-ns .fragment .center}
 ```{.r}
 mod_school_server <- function(id) {
   moduleServer(id, function(input, output, session) {
@@ -599,7 +599,7 @@ mod_school_server <- function(id) {
 
 ## Step 2: Module Server
 
-::: {.w-75 .center}
+::: {.w-75-ns .center}
 ```{.r}
 moduleServer(id, function(input, output, session) {
   output$plot_school_b <- renderPlot({
@@ -615,7 +615,7 @@ moduleServer(id, function(input, output, session) {
 
 ## Step 2: Module Server
 
-::: {.w-75 .center}
+::: {.w-75-ns .center}
 ```{.r code-line-numbers="|3,4,7"}
 mod_school_server <- function(id) {
   moduleServer(id, function(input, output, session) {
@@ -633,7 +633,7 @@ mod_school_server <- function(id) {
 
 ## Step 2: Module Server
 
-::: {.w-75 .center}
+::: {.w-75-ns .center}
 ```{.r}
 mod_school_server <- function(id) {
   moduleServer(id, function(input, output, session) {
@@ -657,7 +657,7 @@ mod_school_server("b")
 
 ## Step 2: Module Server
 
-::: {.w-75 .center}
+::: {.w-75-ns .center}
 ```{.r}
 mod_school_server <- function(id, plot_color) {
   moduleServer(id, function(input, output, session) {
@@ -685,7 +685,7 @@ Working app at this point: `_examples/05-modules/03_app.R`
 {{< countdown 5:00 bottom="2rem" right="2rem" >}}
 
 
-::: w-80
+::: w-80-ns
 Add the school map card to the `mod_school` ui/server functions.
 You can find the module in `R/mod_school.R`. 
     

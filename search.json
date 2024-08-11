@@ -490,144 +490,60 @@
     "text": "Your Turn _exercises/06_app.R\n\n  \n    −\n    +\n \n 08:00\n \n\nUse accordion() and accordion_panel() to organize the sidebar inputs. See the exercise header for links to search icons.\nAdd informational tooltips to the value box titles.\n\nPublic: “Supported by public funds and operated by elected or appointed officials.”\nNonprofit: “Private institutions that are not operated for profit.”\nFor-Profit: “Operated by private, profit-seeking businesses.”\n\nStretch: Replace the local sidebar with a popover element."
   },
   {
-    "objectID": "slides/slides-12-deploy.html#connect-with-connect",
-    "href": "slides/slides-12-deploy.html#connect-with-connect",
-    "title": "Push to Prod",
-    "section": "Connect with Connect",
-    "text": "Connect with Connect\nThe easiest way to deploy your app is with RStudio’s Publish App button, right next to the Run App button.\n\nFollow the instructions to get connected with Posit Connect."
-  },
-  {
-    "objectID": "slides/slides-12-deploy.html#section",
-    "href": "slides/slides-12-deploy.html#section",
-    "title": "Push to Prod",
+    "objectID": "slides/slides-06-javascript.html#section",
+    "href": "slides/slides-06-javascript.html#section",
+    "title": "A Spoonful of JavaScript",
     "section": "",
-    "text": "_exercises/15_deploy/15_01_app.R\nLet’s just get this onto Connect.\nThen, we’ll switch to a programmatic deployment using rsconnect::deployApp().\nFrom here on out, I’ll work in the same file, but everyone else can change appPrimaryDoc to each step."
+    "text": "Have you ever used a large language model like ChatGPT?\nHave you used an LLM to help you write code?\nHave you used an LLM to help you learn a programming language?\nHave you used an LLM to write a Shiny app?\nHave you used an LLM to write a workshop about Shiny?"
   },
   {
-    "objectID": "slides/slides-12-deploy.html#tracing-app-behavior",
-    "href": "slides/slides-12-deploy.html#tracing-app-behavior",
-    "title": "Push to Prod",
-    "section": "Tracing app behavior",
-    "text": "Tracing app behavior\nHow do we know it’s running well? Look at logs of deployed app.\nCheck out _examples/15-deploy/01_error_app.R for an example of logged errors."
+    "objectID": "slides/slides-06-javascript.html#section-1",
+    "href": "slides/slides-06-javascript.html#section-1",
+    "title": "A Spoonful of JavaScript",
+    "section": "",
+    "text": "What do LLMs do best?\n- situation\n\nWhen do LLMs perform poorly?\n- situation"
   },
   {
-    "objectID": "slides/slides-12-deploy.html#overview-of-logging",
-    "href": "slides/slides-12-deploy.html#overview-of-logging",
-    "title": "Push to Prod",
-    "section": "Overview of logging",
-    "text": "Overview of logging"
+    "objectID": "slides/slides-06-javascript.html#our-task",
+    "href": "slides/slides-06-javascript.html#our-task",
+    "title": "A Spoonful of JavaScript",
+    "section": "Our Task",
+    "text": "Our Task\nWe want to update our college comparison app to remember the colleges that the user was comparing.\nWe’ve decided that bookmarking is too involved, we just want the app to remember automatically."
   },
   {
-    "objectID": "slides/slides-12-deploy.html#intro-to-lgr",
-    "href": "slides/slides-12-deploy.html#intro-to-lgr",
-    "title": "Push to Prod",
-    "section": "Intro to lgr",
-    "text": "Intro to lgr"
+    "objectID": "slides/slides-06-javascript.html#your-turn",
+    "href": "slides/slides-06-javascript.html#your-turn",
+    "title": "A Spoonful of JavaScript",
+    "section": "Your Turn",
+    "text": "Your Turn\n\nI had a conversation with ChatGPT about this task.\nWhat strategy does the 🤖 suggest? Find:\n\nthe browser JavaScript API\nthe Shiny JavaScript API\nwhere to put this JavaScript code in our app\nthe server-side logic that connects JS ↔︎ R\n\nWhat made my prompt to ChatGPT effective?\n\n\n  \n    −\n    +\n \n 08:00"
   },
   {
-    "objectID": "slides/slides-12-deploy.html#app-logging",
-    "href": "slides/slides-12-deploy.html#app-logging",
-    "title": "Push to Prod",
-    "section": "App + logging",
-    "text": "App + logging"
+    "objectID": "slides/slides-06-javascript.html#storing-values-in-the-browser",
+    "href": "slides/slides-06-javascript.html#storing-values-in-the-browser",
+    "title": "A Spoonful of JavaScript",
+    "section": "Storing values in the browser",
+    "text": "Storing values in the browser\n\n\nHow can you store values in the browser?\n...\n\nHow can you retrieve values in the browser?\n...\n\n\n\n\nTry this in your own fancy JavaScript IDE: about:blank\n\n\nlocalStorage.setItem(key, value)\n// key is a string, value is a string\n// value = JSON.stringify(obj)\n\nvalue = localStorage.getItem(key)\nJSON.parse(value)"
   },
   {
-    "objectID": "slides/slides-12-deploy.html#leads-to-fixed-app",
-    "href": "slides/slides-12-deploy.html#leads-to-fixed-app",
-    "title": "Push to Prod",
-    "section": "Leads to fixed app",
-    "text": "Leads to fixed app"
+    "objectID": "slides/slides-06-javascript.html#sending-data-from-the-browser-to-r",
+    "href": "slides/slides-06-javascript.html#sending-data-from-the-browser-to-r",
+    "title": "A Spoonful of JavaScript",
+    "section": "Sending data from the browser to R",
+    "text": "Sending data from the browser to R\n\n\nWhat function sends data from the browser to R?\n...\n\nWhat function receives data from R in the browser?\n...\n\nAnd how do you send data from R to the browser?\n...\n\n\n\n\nShiny.setInputValue(inputId, value)\n\nShiny.addCustomMessageHandler(messageName, function(data) {\n  // do something with data\n})\nsession$sendCustomMessage(messageName, data)"
   },
   {
-    "objectID": "slides/slides-12-deploy.html#overview-of-config",
-    "href": "slides/slides-12-deploy.html#overview-of-config",
-    "title": "Push to Prod",
-    "section": "Overview of {config}",
-    "text": "Overview of {config}\n\n\nconfig.yml\n\ndefault:\n  log_level: debug\n\nrsconnect:\n  log_level: info\n\n\n\nLocal\n\nconfig::get(\"log_level\")\n\n\n\n[1] \"debug\"\n\n\n\n\nPosit Connect\n\nconfig::get(\"log_level\")\n\n\n\n[1] \"info\""
+    "objectID": "slides/slides-06-javascript.html#strategies-for-success-with-llms",
+    "href": "slides/slides-06-javascript.html#strategies-for-success-with-llms",
+    "title": "A Spoonful of JavaScript",
+    "section": "Strategies for Success with LLMs",
+    "text": "Strategies for Success with LLMs\n- Idea 1\\n- Idea 2"
   },
   {
-    "objectID": "slides/slides-12-deploy.html#about-environment-variables",
-    "href": "slides/slides-12-deploy.html#about-environment-variables",
-    "title": "Push to Prod",
-    "section": "About environment variables",
-    "text": "About environment variables"
-  },
-  {
-    "objectID": "slides/slides-12-deploy.html#table-of-config-values",
-    "href": "slides/slides-12-deploy.html#table-of-config-values",
-    "title": "Push to Prod",
-    "section": "Table of {config} values",
-    "text": "Table of {config} values\n\n\n\nService\nR_CONFIG_ACTIVE\n\n\n\n\nPosit Connect\n rsconnect\n\n\nPost Cloud\n rstudio_cloud\n\n\nshinyapps.io\n shinyapps\n\n\nShinylive\n shinylive"
-  },
-  {
-    "objectID": "slides/slides-12-deploy.html#set-config-log-level",
-    "href": "slides/slides-12-deploy.html#set-config-log-level",
-    "title": "Push to Prod",
-    "section": "Set config log level",
-    "text": "Set config log level"
-  },
-  {
-    "objectID": "slides/slides-12-deploy.html#get-connected",
-    "href": "slides/slides-12-deploy.html#get-connected",
-    "title": "Push to Prod",
-    "section": "Get Connected",
-    "text": "Get Connected\nYou: Hi, how do I get connected to the database?\nIT: Sure thing, here’s the connection string.\npostgres://dbuser:$3cur3C0d3!@ec2-54-123-45-67.compute-1.amazonaws.com:5432/mydatabase\nhost: port: dbname: user: password:"
-  },
-  {
-    "objectID": "slides/slides-12-deploy.html#hello-boilerplate",
-    "href": "slides/slides-12-deploy.html#hello-boilerplate",
-    "title": "Push to Prod",
-    "section": "Hello, Boilerplate",
-    "text": "Hello, Boilerplate\ncon &lt;- DBI::dbConnect(\n  RPostgres::Postgres(),\n  host = \"ec2-54-123-45-67.compute-1.amazonaws.com\",\n  port = 5432,\n  dbname = \"mydatabase\",\n  user = \"dbuser\",\n  password = \"$3cur3C0d3!\"\n)"
-  },
-  {
-    "objectID": "slides/slides-12-deploy.html#hello-dotenv",
-    "href": "slides/slides-12-deploy.html#hello-dotenv",
-    "title": "Push to Prod",
-    "section": "Hello, {dotenv}",
-    "text": "Hello, {dotenv}\n\n\ndb.env\n\nDB_HOST=ec2-54-123-45-67.compute-1.amazonaws.com\nDB_PORT=5432\nDB_DATABASE=mydatabase\nDB_USER=dbuser\nDB_PASSWORD=$3cur3C0d3!\n\ndotenv::load(\"db.env\")\ncon &lt;- DBI::dbConnect(\n  RPostgres::Postgres(),\n  host = Sys.getenv(\"DB_HOST\"),\n  port = Sys.getenv(\"DB_PORT\"),\n  dbname = Sys.getenv(\"DB_DATABASE\"),\n  user = Sys.getenv(\"DB_USER\"),\n  password = Sys.getenv(\"DB_PASSWORD\")\n)"
-  },
-  {
-    "objectID": "slides/slides-12-deploy.html#in-the-project",
-    "href": "slides/slides-12-deploy.html#in-the-project",
-    "title": "Push to Prod",
-    "section": "In the project",
-    "text": "In the project\nlibrary(dplyr)\n\nstaging_env &lt;- here::here(\"secrets/db-staging.env\")\nprod_env &lt;- here::here(\"secrets/db-prod.env\")\n\ndotenv::load_dot_env(staging_env)\n\ncon &lt;- DBI::dbConnect(\n  RPostgres::Postgres(),\n  host = Sys.getenv(\"DB_HOST\"),\n  port = Sys.getenv(\"DB_PORT\"),\n  dbname = Sys.getenv(\"DB_DATABASE\"),\n  user = Sys.getenv(\"DB_USER\"),\n  password = Sys.getenv(\"DB_PASSWORD\")\n)\n\ntbl(con, \"school\")\ntbl(con, \"scorecard\")"
-  },
-  {
-    "objectID": "slides/slides-12-deploy.html#in-the-app",
-    "href": "slides/slides-12-deploy.html#in-the-app",
-    "title": "Push to Prod",
-    "section": "In the app",
-    "text": "In the app\n\nSwitch to using the database\nGet credentials from secrets/db-staging.env or secrets/db-prod.env\nPreview score/scorecard tables at the start of the app\nDon’t forget to close the connection\nUpdate the rest of the app to use the database\n\narrange() –&gt; window_order()\nuse !! in the between() calls\ncollect() the data in the schools reactive\nmaybe we could cache the data at this point?\n\nAdd logging throughout the app"
-  },
-  {
-    "objectID": "slides/slides-12-deploy.html#make-life-easier-for-future-you",
-    "href": "slides/slides-12-deploy.html#make-life-easier-for-future-you",
-    "title": "Push to Prod",
-    "section": "Make life easier for future you",
-    "text": "Make life easier for future you"
-  },
-  {
-    "objectID": "slides/slides-12-deploy.html#renv",
-    "href": "slides/slides-12-deploy.html#renv",
-    "title": "Push to Prod",
-    "section": "renv",
-    "text": "renv\nThis is a good time for renv.\nIs it working now with these packages? Good, lock it down."
-  },
-  {
-    "objectID": "slides/slides-12-deploy.html#shinytest2",
-    "href": "slides/slides-12-deploy.html#shinytest2",
-    "title": "Push to Prod",
-    "section": "shinytest2",
-    "text": "shinytest2\nNow that it’s working, let’s test it.\nThis might sound backwards. But testing shiny apps isn’t like testing package code.\nYour tests are most helpful when they keep you from breaking something that was working without knowing it."
-  },
-  {
-    "objectID": "slides/slides-12-deploy.html#shinytest2-1",
-    "href": "slides/slides-12-deploy.html#shinytest2-1",
-    "title": "Push to Prod",
-    "section": "shinytest2",
-    "text": "shinytest2\nshinytest2::record_test(\"app-dir/\")\nshinytest2::test_app(\"app-dir/\")"
+    "objectID": "slides/slides-06-javascript.html#live-code-together",
+    "href": "slides/slides-06-javascript.html#live-code-together",
+    "title": "A Spoonful of JavaScript",
+    "section": "Live Code Together",
+    "text": "Live Code Together\nUse the chat to give our comparison app a memory."
   },
   {
     "objectID": "workshop-08.html",
@@ -1366,60 +1282,193 @@
     "text": "File organization\n\n\n\n\n_exercises/\nFiles for Your Turn exercises\n\n\n_examples/\nFiles for my demo examples\n\n\nwebsite/\nThe website and slides\n\n\n./*\nLots of project related files you can ignore"
   },
   {
-    "objectID": "slides/slides-06-javascript.html#section",
-    "href": "slides/slides-06-javascript.html#section",
-    "title": "A Spoonful of JavaScript",
-    "section": "",
-    "text": "Have you ever used a large language model like ChatGPT?\nHave you used an LLM to help you write code?\nHave you used an LLM to help you learn a programming language?\nHave you used an LLM to write a Shiny app?\nHave you used an LLM to write a workshop about Shiny?"
+    "objectID": "slides/slides-12-deploy.html#lets-deploy-our-app",
+    "href": "slides/slides-12-deploy.html#lets-deploy-our-app",
+    "title": "Push to Prod",
+    "section": "Let’s Deploy Our App!",
+    "text": "Let’s Deploy Our App!\nWe’re going to start by deploying _exercises/15_deploy/15_01_app.R.\n\nFirst, we’ll just get it onto Connect.\nThen, we’ll switch to a programmatic deployment using rsconnect::deployApp()."
   },
   {
-    "objectID": "slides/slides-06-javascript.html#section-1",
-    "href": "slides/slides-06-javascript.html#section-1",
-    "title": "A Spoonful of JavaScript",
-    "section": "",
-    "text": "What do LLMs do best?\n- situation\n\nWhen do LLMs perform poorly?\n- situation"
+    "objectID": "slides/slides-12-deploy.html#well-work-together",
+    "href": "slides/slides-12-deploy.html#well-work-together",
+    "title": "Push to Prod",
+    "section": "We’ll work together",
+    "text": "We’ll work together\nI’ll walk through each step in the process. Choose your adventure:\n\nFollow along and work through this with me\nJust watch and absorb\n\nI’ll work in the same file, but there are snapshot of the progress we’ll make, e.g. 15_02_app.R, etc."
   },
   {
-    "objectID": "slides/slides-06-javascript.html#our-task",
-    "href": "slides/slides-06-javascript.html#our-task",
-    "title": "A Spoonful of JavaScript",
-    "section": "Our Task",
-    "text": "Our Task\nWe want to update our college comparison app to remember the colleges that the user was comparing.\nWe’ve decided that bookmarking is too involved, we just want the app to remember automatically."
+    "objectID": "slides/slides-12-deploy.html#connect-with-connect",
+    "href": "slides/slides-12-deploy.html#connect-with-connect",
+    "title": "Push to Prod",
+    "section": "Connect with Connect",
+    "text": "Connect with Connect\nThe easiest way to deploy your app is with RStudio’s Publish App button, right next to the Run App button.\n\nFollow the instructions to get connected with Posit Connect."
   },
   {
-    "objectID": "slides/slides-06-javascript.html#your-turn",
-    "href": "slides/slides-06-javascript.html#your-turn",
-    "title": "A Spoonful of JavaScript",
-    "section": "Your Turn",
-    "text": "Your Turn\n\nI had a conversation with ChatGPT about this task.\nWhat strategy does the 🤖 suggest? Find:\n\nthe browser JavaScript API\nthe Shiny JavaScript API\nwhere to put this JavaScript code in our app\nthe server-side logic that connects JS ↔︎ R\n\nWhat made my prompt to ChatGPT effective?\n\n\n  \n    −\n    +\n \n 08:00"
+    "objectID": "slides/slides-12-deploy.html#now-that-other-people-can-use-it",
+    "href": "slides/slides-12-deploy.html#now-that-other-people-can-use-it",
+    "title": "Push to Prod",
+    "section": "Now that other people can use it",
+    "text": "Now that other people can use it\n…they’re probably doing something you didn’t expect.\nFind the logs of the app we just deployed."
   },
   {
-    "objectID": "slides/slides-06-javascript.html#storing-values-in-the-browser",
-    "href": "slides/slides-06-javascript.html#storing-values-in-the-browser",
-    "title": "A Spoonful of JavaScript",
-    "section": "Storing values in the browser",
-    "text": "Storing values in the browser\n\n\nHow can you store values in the browser?\n...\n\nHow can you retrieve values in the browser?\n...\n\n\n\n\nTry this in your own fancy JavaScript IDE: about:blank\n\n\nlocalStorage.setItem(key, value)\n// key is a string, value is a string\n// value = JSON.stringify(obj)\n\nvalue = localStorage.getItem(key)\nJSON.parse(value)"
+    "objectID": "slides/slides-12-deploy.html#what-happens-when-things-go-wrong",
+    "href": "slides/slides-12-deploy.html#what-happens-when-things-go-wrong",
+    "title": "Push to Prod",
+    "section": "What happens when things go wrong?",
+    "text": "What happens when things go wrong?\nShare your app with a small group first. Someone who will tell you what they think and reach out if the app breaks.\nWhat happens when an app breaks in the middle of a user session?"
   },
   {
-    "objectID": "slides/slides-06-javascript.html#sending-data-from-the-browser-to-r",
-    "href": "slides/slides-06-javascript.html#sending-data-from-the-browser-to-r",
-    "title": "A Spoonful of JavaScript",
-    "section": "Sending data from the browser to R",
-    "text": "Sending data from the browser to R\n\n\nWhat function sends data from the browser to R?\n...\n\nWhat function receives data from R in the browser?\n...\n\nAnd how do you send data from R to the browser?\n...\n\n\n\n\nShiny.setInputValue(inputId, value)\n\nShiny.addCustomMessageHandler(messageName, function(data) {\n  // do something with data\n})\nsession$sendCustomMessage(messageName, data)"
+    "objectID": "slides/slides-12-deploy.html#your-base-r-options-are-limited",
+    "href": "slides/slides-12-deploy.html#your-base-r-options-are-limited",
+    "title": "Push to Prod",
+    "section": "Your Base-R Options are limited",
+    "text": "Your Base-R Options are limited\n\nx &lt;- 42\ncat(\"The value of x is\", x)\n\nThe value of x is 42\n\nmessage(\"x is now \", x)\n\nx is now 42\n\nwarning(\"x is \", x, \" and that might be bad\")\n\nWarning: x is 42 and that might be bad\n\nstop(\"x cannot be \", x)\n\nError in eval(expr, envir, enclos): x cannot be 42"
   },
   {
-    "objectID": "slides/slides-06-javascript.html#strategies-for-success-with-llms",
-    "href": "slides/slides-06-javascript.html#strategies-for-success-with-llms",
-    "title": "A Spoonful of JavaScript",
-    "section": "Strategies for Success with LLMs",
-    "text": "Strategies for Success with LLMs\n- Idea 1\\n- Idea 2"
+    "objectID": "slides/slides-12-deploy.html#overview-of-logging",
+    "href": "slides/slides-12-deploy.html#overview-of-logging",
+    "title": "Push to Prod",
+    "section": "Overview of logging",
+    "text": "Overview of logging\n\nlogs are like events, you decide what data is attached to them\nlog levels: how severe is the logging event?\nthese events can be filtered and recorded in more than one place\nappenders decide where to send (append) the log message\n\nappenders can filter messages they don’t want to see\nthey decide where the log message is recorded\nthey decide the layout of the log message"
   },
   {
-    "objectID": "slides/slides-06-javascript.html#live-code-together",
-    "href": "slides/slides-06-javascript.html#live-code-together",
-    "title": "A Spoonful of JavaScript",
-    "section": "Live Code Together",
-    "text": "Live Code Together\nUse the chat to give our comparison app a memory."
+    "objectID": "slides/slides-12-deploy.html#intro-to-lgr",
+    "href": "slides/slides-12-deploy.html#intro-to-lgr",
+    "title": "Push to Prod",
+    "section": "Intro to lgr",
+    "text": "Intro to lgr\n\nlibrary(lgr)\n\nlgr$info(\"Loading data from customers.csv\")\n\nINFO  [23:29:15.247] Loading data from customers.csv\n\nlgr$warn(\"Missing values detected in column `%s`\", \"salary\")\n\nWARN  [23:29:15.275] Missing values detected in column `salary`\n\nlgr$error(\"Model validation failed\", accuracy = 0.459)\n\nERROR [23:29:15.282] Model validation failed {accuracy: `0.459`}\n\nlgr$fatal(\"object of type 'closure' is not subsettable\")\n\nFATAL [23:29:15.283] object of type 'closure' is not subsettable"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#appenders---glue-messages",
+    "href": "slides/slides-12-deploy.html#appenders---glue-messages",
+    "title": "Push to Prod",
+    "section": "Appenders - glue messages",
+    "text": "Appenders - glue messages\n\n\nINFO  [23:29:15.408] Loading data from customers.csv\n\n\nWARN  [23:29:15.436] Missing values detected {columns: (salaries, age)}\n\n\nERROR [23:29:15.438] Model validation failed {accuracy: `0.459`, threshold: `0.5`}\n\n\nFATAL [23:29:15.439] object of type 'closure' is not subsettable"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#without-logging",
+    "href": "slides/slides-12-deploy.html#without-logging",
+    "title": "Push to Prod",
+    "section": "Without logging",
+    "text": "Without logging\nWarning: Error in dispatch: Invalid map parameter\n  100: expandLimits\n   98: addMarkers\n   97: ::\nhtmlwidgets\nshinyRenderWidget [/Users/garrick/teach/level-up-shiny/_examples/12-deploy/02_log_app.R#247]\n# ... more stuff\nTask: Add logging to the app to diagnose this error."
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#with-logging",
+    "href": "slides/slides-12-deploy.html#with-logging",
+    "title": "Push to Prod",
+    "section": "With logging",
+    "text": "With logging\nDEBUG [10:04:39.334] Rendering map with color mode {color_mode: `light`}\nDEBUG [10:04:39.357] Choosing OpenStreetMap.Mapnik tiles\nDEBUG [10:04:42.767] Rendering map with color mode {color_mode: `dark`}\nWarning: Error in dispatch: Invalid map parameter\n  100: expandLimits\n   98: addMarkers\n   97: ::\nhtmlwidgets\nshinyRenderWidget [/Users/garrick/teach/level-up-shiny/_examples/12-deploy/02_log_app.R#247]\nSee it in action"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#leads-to-fixed-app",
+    "href": "slides/slides-12-deploy.html#leads-to-fixed-app",
+    "title": "Push to Prod",
+    "section": "Leads to fixed app",
+    "text": "Leads to fixed app\nTask: Fix and re-deploy the app.\n\n\nThe problem is that input$color_mode() returns \"light\" or \"dark\", not \"night\".\n\n\n_exercises/15_deploy/15_02_app.R"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#overview-of-config",
+    "href": "slides/slides-12-deploy.html#overview-of-config",
+    "title": "Push to Prod",
+    "section": "Overview of {config}",
+    "text": "Overview of {config}\n\n\n\nconfig.yml\n\ndefault:\n  log_level: debug\n\nrsconnect:\n  log_level: info\n\n\n\n\nLocal\n\nconfig::get(\"log_level\")\n\n\n\n[1] \"debug\"\n\n\n\n\n\n\nPosit Connect\n\nconfig::get(\"log_level\")\n\n\n\n[1] \"info\"\n\n\n\n\nhttps://rstudio.github.io/config/"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#a-quick-word-about-environment-variables",
+    "href": "slides/slides-12-deploy.html#a-quick-word-about-environment-variables",
+    "title": "Push to Prod",
+    "section": "A quick word about environment variables",
+    "text": "A quick word about environment variables\n\nHave you ever used environment variables? Set GITHUB_PAT somewhere? Or another secret or token?"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#envvvars-are-like-options",
+    "href": "slides/slides-12-deploy.html#envvvars-are-like-options",
+    "title": "Push to Prod",
+    "section": "Envvvars are like options…",
+    "text": "Envvvars are like options…\nExcept they are…\n\n\nMore system-wide than within-process\nOften be set by the controlling process\nVey-value pairs, but values are always character\nStickier"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#how-to-use-environment-variables",
+    "href": "slides/slides-12-deploy.html#how-to-use-environment-variables",
+    "title": "Push to Prod",
+    "section": "How to use environment variables",
+    "text": "How to use environment variables\n\n\nSys.getenv(name, default) to get the value of an envvar\nedit_r_environ() to edit the .Renviron file\nCommon to store secrets in .env files\n\nLoad with {dotenv}\nDon’t check them into version control\n\n\n\n\nWhat’s the value of the R_CONFIG_ACTIVE envvar?"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#common-posit-config-names",
+    "href": "slides/slides-12-deploy.html#common-posit-config-names",
+    "title": "Push to Prod",
+    "section": "Common Posit config names",
+    "text": "Common Posit config names\n\n\n\nService\nR_CONFIG_ACTIVE\n\n\n\n\nPosit Connect\n rsconnect\n\n\nPost Cloud\n rstudio_cloud\n\n\nshinyapps.io\n shinyapps\n\n\nShinylive\n shinylive"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#task-set-log-level",
+    "href": "slides/slides-12-deploy.html#task-set-log-level",
+    "title": "Push to Prod",
+    "section": "Task: Set log level",
+    "text": "Task: Set log level\n\nUse config to set the log level in the app.\nUse a second envvar to override the default log level.\nDeploy the app and test the envvar override.\n\n\n\n_exercises/15_deploy/15_03_app.R"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#get-connected",
+    "href": "slides/slides-12-deploy.html#get-connected",
+    "title": "Push to Prod",
+    "section": "Get Connected",
+    "text": "Get Connected\nYou: Hi, how do I get connected to the database?\nIT: Sure thing, here’s the connection string.\npostgres://dbuser:$3cur3C0d3!@ec2-54-123-45-67.compute-1.amazonaws.com:5432/mydatabase\nhost: port: dbname: user: password:"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#hello-boilerplate",
+    "href": "slides/slides-12-deploy.html#hello-boilerplate",
+    "title": "Push to Prod",
+    "section": "Hello, Boilerplate",
+    "text": "Hello, Boilerplate\ncon &lt;- DBI::dbConnect(\n  RPostgres::Postgres(),\n  host = \"ec2-54-123-45-67.compute-1.amazonaws.com\",\n  port = 5432,\n  dbname = \"mydatabase\",\n  user = \"dbuser\",\n  password = \"$3cur3C0d3!\"\n)"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#hello-dotenv",
+    "href": "slides/slides-12-deploy.html#hello-dotenv",
+    "title": "Push to Prod",
+    "section": "Hello, {dotenv}",
+    "text": "Hello, {dotenv}\n\n\ndb.env\n\nDB_HOST=ec2-54-123-45-67.compute-1.amazonaws.com\nDB_PORT=5432\nDB_DATABASE=mydatabase\nDB_USER=dbuser\nDB_PASSWORD=$3cur3C0d3!\n\ndotenv::load(\"db.env\")\ncon &lt;- DBI::dbConnect(\n  RPostgres::Postgres(),\n  host = Sys.getenv(\"DB_HOST\"),\n  port = Sys.getenv(\"DB_PORT\"),\n  dbname = Sys.getenv(\"DB_DATABASE\"),\n  user = Sys.getenv(\"DB_USER\"),\n  password = Sys.getenv(\"DB_PASSWORD\")\n)"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#task-use-the-database",
+    "href": "slides/slides-12-deploy.html#task-use-the-database",
+    "title": "Push to Prod",
+    "section": "Task: Use the database",
+    "text": "Task: Use the database\n\n\n\nGet credentials from secrets/db-staging.env or secrets/db-prod.env\nPreview score/scorecard tables at the start of the app\nDon’t forget to close the connection\nAdd logging throughout the app\n\n\n\n\nSome updates:\n\narrange() –&gt; window_order()\nuse !! in the between() calls\ncollect() the data in the schools reactive\nmaybe we could cache the data at this point?\n\n\n\n\n\n\n_exercises/15_deploy/15_04_app.R"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#in-the-project",
+    "href": "slides/slides-12-deploy.html#in-the-project",
+    "title": "Push to Prod",
+    "section": "In the project",
+    "text": "In the project\nlibrary(dplyr)\n\nstaging_env &lt;- here::here(\"secrets/db-staging.env\")\nprod_env &lt;- here::here(\"secrets/db-prod.env\")\n\ndotenv::load_dot_env(staging_env)\n\ncon &lt;- DBI::dbConnect(\n  RPostgres::Postgres(),\n  host = Sys.getenv(\"DB_HOST\"),\n  port = Sys.getenv(\"DB_PORT\"),\n  dbname = Sys.getenv(\"DB_DATABASE\"),\n  user = Sys.getenv(\"DB_USER\"),\n  password = Sys.getenv(\"DB_PASSWORD\")\n)\n\ntbl(con, \"school\")\ntbl(con, \"scorecard\")"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#make-life-easier-for-future-you",
+    "href": "slides/slides-12-deploy.html#make-life-easier-for-future-you",
+    "title": "Push to Prod",
+    "section": "Make life easier for future you",
+    "text": "Make life easier for future you"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#renv",
+    "href": "slides/slides-12-deploy.html#renv",
+    "title": "Push to Prod",
+    "section": "renv",
+    "text": "renv\n\nIs it working now with these packages? Good, lock it down. This is a good time for renv.\n\nrenv::init()\n# =&gt; renv.lock\n\n\nLater, or on someone else’s machine:\nrenv::restore()  # restore the same packages\nrenv::snapshot() # update the lockfile\n\n\nhttps://rstudio.github.io/renv/"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#shinytest2",
+    "href": "slides/slides-12-deploy.html#shinytest2",
+    "title": "Push to Prod",
+    "section": "shinytest2",
+    "text": "shinytest2\n\n\nNow that it’s working, let’s test it.\nDoes that sound backwards?\n\nTesting shiny apps isn’t like testing package code.\nYour tests are most helpful when they keep you from breaking something that was working without knowing it.\n\n\n\nhttps://rstudio.github.io/shinytest2/"
+  },
+  {
+    "objectID": "slides/slides-12-deploy.html#shinytest2-1",
+    "href": "slides/slides-12-deploy.html#shinytest2-1",
+    "title": "Push to Prod",
+    "section": "shinytest2",
+    "text": "shinytest2\nFirst, record the test.\nshinytest2::record_test(\"app-dir/\")\n\nThen, or much later, run the test.\nshinytest2::test_app(\"app-dir/\")"
   },
   {
     "objectID": "slides/slides-04-code-style.html#section",

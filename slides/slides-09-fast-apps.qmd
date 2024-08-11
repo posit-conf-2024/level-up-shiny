@@ -203,8 +203,8 @@ Talk through what you see in profvis
 
 ## Benchmark your options {auto-animate=true}
 
-::: {.flex .gap-s}
-::: {.w-50}
+::: {.easy-columns}
+::: {.col}
 ```{r}
 #| echo: true
 first_try <- function(n) {
@@ -217,7 +217,7 @@ first_try <- function(n) {
 ```
 :::
 
-::: {.w-50}
+::: {.col}
 ```{r}
 #| echo: true
 second_try <- function(n) {

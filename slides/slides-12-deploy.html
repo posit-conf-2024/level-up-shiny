@@ -425,44 +425,164 @@
 <h1>Deploying Shiny Apps</h1>
 
 </section>
+<section id="lets-deploy-our-app" class="slide level2">
+<h2>Let’s Deploy Our App!</h2>
+<p>We’re going to start by deploying <code>_exercises/15_deploy/15_01_app.R</code>.</p>
+<div class="fragment">
+<p>First, we’ll just get it onto Connect.</p>
+<p>Then, we’ll switch to a programmatic deployment using <code>rsconnect::deployApp()</code>.</p>
+</div>
+</section>
+<section id="well-work-together" class="slide level2">
+<h2>We’ll work together</h2>
+<p>I’ll walk through each step in the process. Choose your adventure:</p>
+<ol type="1">
+<li><p>Follow along and work through this with me</p></li>
+<li><p>Just watch and absorb</p></li>
+</ol>
+<p>I’ll work in the same file, but there are snapshot of the progress we’ll make, e.g.&nbsp;<code>15_02_app.R</code>, etc.</p>
+</section>
 <section id="connect-with-connect" class="slide level2">
 <h2>Connect with Connect</h2>
 <p>The easiest way to deploy your app is with RStudio’s Publish App button, right next to the Run App button.</p>
 
 <img data-src="assets/run-app-publish-buttons.png" class="r-stretch"><p>Follow <a href="../workshop-12.html#connecting-rstudio-with-connect">the instructions to get connected with Posit Connect</a>.</p>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<p><code>_exercises/15_deploy/15_01_app.R</code></p>
-<p>Let’s just get this onto Connect.</p>
-<p>Then, we’ll switch to a programmatic deployment using <code>rsconnect::deployApp()</code>.</p>
-<p>From here on out, I’ll work in the same file, but everyone else can change <code>appPrimaryDoc</code> to each step.</p>
 </section></section>
 <section>
 <section id="logging" class="title-slide slide level1 middle center">
 <h1>Logging</h1>
 
 </section>
-<section id="tracing-app-behavior" class="slide level2">
-<h2>Tracing app behavior</h2>
-<p>How do we know it’s running well? Look at logs of deployed app.</p>
-<p>Check out <code>_examples/15-deploy/01_error_app.R</code> for an example of logged errors.</p>
-<!-- TK: deploy 01_error_app.R and add link to connect here -->
+<section id="now-that-other-people-can-use-it" class="slide level2">
+<h2>Now that other people can use it</h2>
+<p>…they’re probably doing something you didn’t expect.</p>
+<p>Find the logs of the app we just deployed.</p>
+</section>
+<section id="what-happens-when-things-go-wrong" class="slide level2">
+<h2>What happens when things go wrong?</h2>
+<p>Share your app with a small group first. Someone who will tell you what they think and reach out if the app breaks.</p>
+<p>What happens when an app <a href="https://pub.conf.posit.team/content/09813081-85ea-4e41-8e4c-d568c46bf2ad">breaks in the middle of a user session</a>?</p>
+</section>
+<section id="your-base-r-options-are-limited" class="slide level2">
+<h2>Your Base-R Options are limited</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">42</span></span>
+<span id="cb1-2"><a></a><span class="fu">cat</span>(<span class="st">"The value of x is"</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The value of x is 42</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">message</span>(<span class="st">"x is now "</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>x is now 42</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">warning</span>(<span class="st">"x is "</span>, x, <span class="st">" and that might be bad"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: x is 42 and that might be bad</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">stop</span>(<span class="st">"x cannot be "</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): x cannot be 42</code></pre>
+</div>
+</div>
 </section>
 <section id="overview-of-logging" class="slide level2">
 <h2>Overview of logging</h2>
+<ul>
+<li>logs are like events, you decide what data is attached to them</li>
+<li>log levels: how severe is the logging event?</li>
+<li>these events can be filtered and recorded in more than one place</li>
+<li>appenders decide where to send (append) the log message
+<ul>
+<li>appenders can filter messages they don’t want to see</li>
+<li>they decide where the log message is recorded</li>
+<li>they decide the layout of the log message</li>
+</ul></li>
+</ul>
 </section>
 <section id="intro-to-lgr" class="slide level2">
 <h2>Intro to <code>lgr</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">library</span>(lgr)</span>
+<span id="cb9-2"><a></a></span>
+<span id="cb9-3"><a></a>lgr<span class="sc">$</span><span class="fu">info</span>(<span class="st">"Loading data from customers.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>INFO  [23:29:15.247] Loading data from customers.csv</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>lgr<span class="sc">$</span><span class="fu">warn</span>(<span class="st">"Missing values detected in column `%s`"</span>, <span class="st">"salary"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>WARN  [23:29:15.275] Missing values detected in column `salary`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>lgr<span class="sc">$</span><span class="fu">error</span>(<span class="st">"Model validation failed"</span>, <span class="at">accuracy =</span> <span class="fl">0.459</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ERROR [23:29:15.282] Model validation failed {accuracy: `0.459`}</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>lgr<span class="sc">$</span><span class="fu">fatal</span>(<span class="st">"object of type 'closure' is not subsettable"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>FATAL [23:29:15.283] object of type 'closure' is not subsettable</code></pre>
+</div>
+</div>
 </section>
-<section id="app-logging" class="slide level2">
-<h2>App + logging</h2>
-<!-- TK: deploy 02_log_app.R and add link to connect here -->
+<section id="appenders---glue-messages" class="slide level2">
+<h2>Appenders - glue messages</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>INFO  [23:29:15.408] Loading data from customers.csv</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>WARN  [23:29:15.436] Missing values detected {columns: (salaries, age)}</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ERROR [23:29:15.438] Model validation failed {accuracy: `0.459`, threshold: `0.5`}</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>FATAL [23:29:15.439] object of type 'closure' is not subsettable</code></pre>
+</div>
+</div>
+</section>
+<section id="without-logging" class="slide level2">
+<h2>Without logging</h2>
+<pre><code>Warning: Error in dispatch: Invalid map parameter
+  100: expandLimits
+   98: addMarkers
+   97: ::
+htmlwidgets
+shinyRenderWidget [/Users/garrick/teach/level-up-shiny/_examples/12-deploy/02_log_app.R#247]
+# ... more stuff</code></pre>
+<p>Task: Add logging to the app to diagnose this error.</p>
+</section>
+<section id="with-logging" class="slide level2">
+<h2>With logging</h2>
+<pre><code>DEBUG [10:04:39.334] Rendering map with color mode {color_mode: `light`}
+DEBUG [10:04:39.357] Choosing OpenStreetMap.Mapnik tiles
+DEBUG [10:04:42.767] Rendering map with color mode {color_mode: `dark`}
+Warning: Error in dispatch: Invalid map parameter
+  100: expandLimits
+   98: addMarkers
+   97: ::
+htmlwidgets
+shinyRenderWidget [/Users/garrick/teach/level-up-shiny/_examples/12-deploy/02_log_app.R#247]</code></pre>
+<p><a href="https://pub.conf.posit.team/content/c75d0219-4970-4791-b763-e54d50add928">See it in action</a></p>
 </section>
 <section id="leads-to-fixed-app" class="slide level2">
 <h2>Leads to fixed app</h2>
-<!-- TK: _exercises/15_deploy/15_02_app.R -->
-</section></section>
+<p>Task: Fix and re-deploy the app.</p>
+
+<aside class="notes">
+<p>The problem is that <code>input$color_mode()</code> returns <code>"light"</code> or <code>"dark"</code>, not <code>"night"</code>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>_exercises/15_deploy/15_02_app.R</p>
+</div></aside></section></section>
 <section>
 <section id="config" class="title-slide slide level1 middle center">
 <h1>Config</h1>
@@ -470,44 +590,93 @@
 </section>
 <section id="overview-of-config" class="slide level2">
 <h2>Overview of <code>{config}</code></h2>
+
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>config.yml</strong></pre>
 </div>
-<div class="sourceCode" id="cb1" data-filename="config.yml"><pre class="sourceCode numberSource yml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="fu">default</span><span class="kw">:</span></span>
-<span id="cb1-2"><a></a><span class="at">  </span><span class="fu">log_level</span><span class="kw">:</span><span class="at"> debug</span></span>
-<span id="cb1-3"><a></a></span>
-<span id="cb1-4"><a></a><span class="fu">rsconnect</span><span class="kw">:</span></span>
-<span id="cb1-5"><a></a><span class="at">  </span><span class="fu">log_level</span><span class="kw">:</span><span class="at"> info</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23" data-filename="config.yml"><pre class="sourceCode numberSource yml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb23-1"><a></a><span class="fu">default</span><span class="kw">:</span></span>
+<span id="cb23-2"><a></a><span class="at">  </span><span class="fu">log_level</span><span class="kw">:</span><span class="at"> debug</span></span>
+<span id="cb23-3"><a></a></span>
+<span id="cb23-4"><a></a><span class="fu">rsconnect</span><span class="kw">:</span></span>
+<span id="cb23-5"><a></a><span class="at">  </span><span class="fu">log_level</span><span class="kw">:</span><span class="at"> info</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="fragment">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Local</strong></pre>
 </div>
-<div class="sourceCode" id="cb2" data-filename="Local"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>config<span class="sc">::</span><span class="fu">get</span>(<span class="st">"log_level"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24" data-filename="Local"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>config<span class="sc">::</span><span class="fu">get</span>(<span class="st">"log_level"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "debug"</code></pre>
 </div>
 </div>
+</div>
+<div class="fragment">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Posit Connect</strong></pre>
 </div>
-<div class="sourceCode" id="cb4" data-filename="Posit Connect"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>config<span class="sc">::</span><span class="fu">get</span>(<span class="st">"log_level"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26" data-filename="Posit Connect"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>config<span class="sc">::</span><span class="fu">get</span>(<span class="st">"log_level"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "info"</code></pre>
 </div>
 </div>
+</div>
+<aside><div>
+<p><a href="https://rstudio.github.io/config/" class="uri">https://rstudio.github.io/config/</a></p>
+</div></aside></section>
+<section id="a-quick-word-about-environment-variables" class="slide level2 middle center">
+<h2>A quick word about environment variables</h2>
+<aside class="notes">
+<p>Have you ever used environment variables? Set <code>GITHUB_PAT</code> somewhere? Or another secret or token?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="about-environment-variables" class="slide level2">
-<h2>About environment variables</h2>
+<section id="envvvars-are-like-options" class="slide level2">
+<h2>Envvvars are like options…</h2>
+<p>Except they are…</p>
+<div>
+<ul>
+<li class="fragment">More system-wide than within-process</li>
+<li class="fragment">Often be set by the controlling process</li>
+<li class="fragment">Vey-value pairs, but values are always character</li>
+<li class="fragment">Stickier</li>
+</ul>
+</div>
 </section>
-<section id="table-of-config-values" class="slide level2">
-<h2>Table of <code>{config}</code> values</h2>
+<section id="how-to-use-environment-variables" class="slide level2">
+<h2>How to use environment variables</h2>
+<div>
+<ul>
+<li class="fragment"><code>Sys.getenv(name, default)</code> to get the value of an envvar</li>
+<li class="fragment"><code>edit_r_environ()</code> to edit the <code>.Renviron</code> file</li>
+<li class="fragment">Common to store secrets in <code>.env</code> files
+<ul>
+<li class="fragment">Load with <code>{dotenv}</code></li>
+<li class="fragment">Don’t check them into version control</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<p>What’s the value of the <code>R_CONFIG_ACTIVE</code> envvar?</p>
+</div>
+</section>
+<section id="common-posit-config-names" class="slide level2">
+<h2>Common Posit config names</h2>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -535,10 +704,17 @@
 </tbody>
 </table>
 </section>
-<section id="set-config-log-level" class="slide level2">
-<h2>Set config log level</h2>
-<!-- TK: _exercises/15_deploy/15_03_app.R -->
-</section></section>
+<section id="task-set-log-level" class="slide level2">
+<h2>Task: Set log level</h2>
+<ul>
+<li>Use config to set the log level in the app.</li>
+<li>Use a second envvar to override the default log level.</li>
+<li>Deploy the app and test the envvar override.</li>
+</ul>
+
+<aside><div>
+<p>_exercises/15_deploy/15_03_app.R</p>
+</div></aside></section></section>
 <section>
 <section id="databases" class="title-slide slide level1 middle center">
 <h1>Databases</h1>
@@ -554,14 +730,14 @@
 </section>
 <section id="hello-boilerplate" class="slide level2">
 <h2>Hello, Boilerplate</h2>
-<div class="sourceCode" id="cb7" data-code-line-numbers="|2|3-7|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(</span>
-<span id="cb7-2"><a></a>  RPostgres<span class="sc">::</span><span class="fu">Postgres</span>(),</span>
-<span id="cb7-3"><a></a>  <span class="at">host =</span> <span class="st">"ec2-54-123-45-67.compute-1.amazonaws.com"</span>,</span>
-<span id="cb7-4"><a></a>  <span class="at">port =</span> <span class="dv">5432</span>,</span>
-<span id="cb7-5"><a></a>  <span class="at">dbname =</span> <span class="st">"mydatabase"</span>,</span>
-<span id="cb7-6"><a></a>  <span class="at">user =</span> <span class="st">"dbuser"</span>,</span>
-<span id="cb7-7"><a></a>  <span class="at">password =</span> <span class="st">"$3cur3C0d3!"</span></span>
-<span id="cb7-8"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29" data-code-line-numbers="|2|3-7|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(</span>
+<span id="cb29-2"><a></a>  RPostgres<span class="sc">::</span><span class="fu">Postgres</span>(),</span>
+<span id="cb29-3"><a></a>  <span class="at">host =</span> <span class="st">"ec2-54-123-45-67.compute-1.amazonaws.com"</span>,</span>
+<span id="cb29-4"><a></a>  <span class="at">port =</span> <span class="dv">5432</span>,</span>
+<span id="cb29-5"><a></a>  <span class="at">dbname =</span> <span class="st">"mydatabase"</span>,</span>
+<span id="cb29-6"><a></a>  <span class="at">user =</span> <span class="st">"dbuser"</span>,</span>
+<span id="cb29-7"><a></a>  <span class="at">password =</span> <span class="st">"$3cur3C0d3!"</span></span>
+<span id="cb29-8"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="hello-dotenv" class="slide level2">
 <h2>Hello, <code>{dotenv}</code></h2>
@@ -569,103 +745,135 @@
 <div class="code-with-filename-file">
 <pre><strong>db.env</strong></pre>
 </div>
-<div class="sourceCode" id="cb8" data-filename="db.env"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a></a>DB_HOST=ec2-54-123-45-67.compute-1.amazonaws.com</span>
-<span id="cb8-2"><a></a>DB_PORT=5432</span>
-<span id="cb8-3"><a></a>DB_DATABASE=mydatabase</span>
-<span id="cb8-4"><a></a>DB_USER=dbuser</span>
-<span id="cb8-5"><a></a>DB_PASSWORD=$3cur3C0d3!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30" data-filename="db.env"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb30-1"><a></a>DB_HOST=ec2-54-123-45-67.compute-1.amazonaws.com</span>
+<span id="cb30-2"><a></a>DB_PORT=5432</span>
+<span id="cb30-3"><a></a>DB_DATABASE=mydatabase</span>
+<span id="cb30-4"><a></a>DB_USER=dbuser</span>
+<span id="cb30-5"><a></a>DB_PASSWORD=$3cur3C0d3!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>dotenv<span class="sc">::</span><span class="fu">load</span>(<span class="st">"db.env"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(</span>
-<span id="cb10-2"><a></a>  RPostgres<span class="sc">::</span><span class="fu">Postgres</span>(),</span>
-<span id="cb10-3"><a></a>  <span class="at">host =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_HOST"</span>),</span>
-<span id="cb10-4"><a></a>  <span class="at">port =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_PORT"</span>),</span>
-<span id="cb10-5"><a></a>  <span class="at">dbname =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_DATABASE"</span>),</span>
-<span id="cb10-6"><a></a>  <span class="at">user =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_USER"</span>),</span>
-<span id="cb10-7"><a></a>  <span class="at">password =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_PASSWORD"</span>)</span>
-<span id="cb10-8"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>dotenv<span class="sc">::</span><span class="fu">load</span>(<span class="st">"db.env"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(</span>
+<span id="cb32-2"><a></a>  RPostgres<span class="sc">::</span><span class="fu">Postgres</span>(),</span>
+<span id="cb32-3"><a></a>  <span class="at">host =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_HOST"</span>),</span>
+<span id="cb32-4"><a></a>  <span class="at">port =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_PORT"</span>),</span>
+<span id="cb32-5"><a></a>  <span class="at">dbname =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_DATABASE"</span>),</span>
+<span id="cb32-6"><a></a>  <span class="at">user =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_USER"</span>),</span>
+<span id="cb32-7"><a></a>  <span class="at">password =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_PASSWORD"</span>)</span>
+<span id="cb32-8"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="in-the-project" class="slide level2">
-<h2>In the project</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb11-2"><a></a></span>
-<span id="cb11-3"><a></a>staging_env <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"secrets/db-staging.env"</span>)</span>
-<span id="cb11-4"><a></a>prod_env <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"secrets/db-prod.env"</span>)</span>
-<span id="cb11-5"><a></a></span>
-<span id="cb11-6"><a></a>dotenv<span class="sc">::</span><span class="fu">load_dot_env</span>(staging_env)</span>
-<span id="cb11-7"><a></a></span>
-<span id="cb11-8"><a></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(</span>
-<span id="cb11-9"><a></a>  RPostgres<span class="sc">::</span><span class="fu">Postgres</span>(),</span>
-<span id="cb11-10"><a></a>  <span class="at">host =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_HOST"</span>),</span>
-<span id="cb11-11"><a></a>  <span class="at">port =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_PORT"</span>),</span>
-<span id="cb11-12"><a></a>  <span class="at">dbname =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_DATABASE"</span>),</span>
-<span id="cb11-13"><a></a>  <span class="at">user =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_USER"</span>),</span>
-<span id="cb11-14"><a></a>  <span class="at">password =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_PASSWORD"</span>)</span>
-<span id="cb11-15"><a></a>)</span>
-<span id="cb11-16"><a></a></span>
-<span id="cb11-17"><a></a><span class="fu">tbl</span>(con, <span class="st">"school"</span>)</span>
-<span id="cb11-18"><a></a><span class="fu">tbl</span>(con, <span class="st">"scorecard"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="in-the-app" class="slide level2">
-<h2>In the app</h2>
+<section id="task-use-the-database" class="slide level2">
+<h2>Task: Use the database</h2>
+<div class="easy-columns">
+<div class="col">
 <ul>
-<li>Switch to using the database</li>
 <li>Get credentials from <code>secrets/db-staging.env</code> or <code>secrets/db-prod.env</code></li>
 <li>Preview score/scorecard tables at the start of the app</li>
 <li>Don’t forget to close the connection</li>
-<li>Update the rest of the app to use the database
+<li>Add logging throughout the app</li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li>Some updates:
 <ul>
 <li><code>arrange()</code> –&gt; <code>window_order()</code></li>
 <li>use <code>!!</code> in the <code>between()</code> calls</li>
 <li><code>collect()</code> the data in the <code>schools</code> reactive</li>
 <li>maybe we could cache the data at this point?</li>
 </ul></li>
-<li>Add logging throughout the app</li>
 </ul>
-<!-- TK: _exercises/15_deploy/15_04_app.R -->
+</div>
+</div>
+
+<aside><div>
+<p>_exercises/15_deploy/15_04_app.R</p>
+</div></aside></section>
+<section id="in-the-project" class="slide level2">
+<h2>In the project</h2>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb33-2"><a></a></span>
+<span id="cb33-3"><a></a>staging_env <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"secrets/db-staging.env"</span>)</span>
+<span id="cb33-4"><a></a>prod_env <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"secrets/db-prod.env"</span>)</span>
+<span id="cb33-5"><a></a></span>
+<span id="cb33-6"><a></a>dotenv<span class="sc">::</span><span class="fu">load_dot_env</span>(staging_env)</span>
+<span id="cb33-7"><a></a></span>
+<span id="cb33-8"><a></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(</span>
+<span id="cb33-9"><a></a>  RPostgres<span class="sc">::</span><span class="fu">Postgres</span>(),</span>
+<span id="cb33-10"><a></a>  <span class="at">host =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_HOST"</span>),</span>
+<span id="cb33-11"><a></a>  <span class="at">port =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_PORT"</span>),</span>
+<span id="cb33-12"><a></a>  <span class="at">dbname =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_DATABASE"</span>),</span>
+<span id="cb33-13"><a></a>  <span class="at">user =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_USER"</span>),</span>
+<span id="cb33-14"><a></a>  <span class="at">password =</span> <span class="fu">Sys.getenv</span>(<span class="st">"DB_PASSWORD"</span>)</span>
+<span id="cb33-15"><a></a>)</span>
+<span id="cb33-16"><a></a></span>
+<span id="cb33-17"><a></a><span class="fu">tbl</span>(con, <span class="st">"school"</span>)</span>
+<span id="cb33-18"><a></a><span class="fu">tbl</span>(con, <span class="st">"scorecard"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
-<section id="now-that-it-works" class="title-slide slide level1 middle center">
+<section id="now-that-it-works" class="title-slide slide level1 middle text-center center">
 <h1>Now that it works</h1>
 
 </section>
-<section id="make-life-easier-for-future-you" class="slide level2 middle">
+<section id="make-life-easier-for-future-you" class="slide level2 middle text-center gradient-shinytest2" style="--slide-color:white;">
 <h2>Make life easier for future you</h2>
 </section>
-<section id="renv" class="slide level2">
+<section id="renv" class="slide level2" data-background-image="assets/renv.svg" data-background-size="300px" data-background-position="94% 95%" data-background-repeat="no-repeat">
 <h2>renv</h2>
-<p>This is a good time for renv.</p>
-<p>Is it working now with these packages? Good, lock it down.</p>
-</section>
-<section id="shinytest2" class="slide level2">
+
+<p>Is it working now with these packages? Good, lock it down. This is a good time for renv.</p>
+<div class="fragment">
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>renv<span class="sc">::</span><span class="fu">init</span>()</span>
+<span id="cb34-2"><a></a><span class="co"># =&gt; renv.lock</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment w-75-ns">
+<p>Later, or on someone else’s machine:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>renv<span class="sc">::</span><span class="fu">restore</span>()  <span class="co"># restore the same packages</span></span>
+<span id="cb35-2"><a></a>renv<span class="sc">::</span><span class="fu">snapshot</span>() <span class="co"># update the lockfile</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside><div>
+<p><a href="https://rstudio.github.io/renv/" class="uri">https://rstudio.github.io/renv/</a></p>
+</div></aside></section>
+<section id="shinytest2" class="slide level2" data-background-image="assets/shinytest2.svg" data-background-size="300px" data-background-position="94% 95%" data-background-repeat="no-repeat">
 <h2>shinytest2</h2>
-<p>Now that it’s working, let’s test it.</p>
-<p>This might sound backwards. But testing shiny apps isn’t like testing package code.</p>
-<p>Your tests are most helpful when they keep you from breaking something that was working without knowing it.</p>
-</section>
-<section id="shinytest2-1" class="slide level2">
+
+<div class="w-75-ns">
+<p>Now that it’s working, let’s test it.<br>
+Does that sound backwards?</p>
+<div class="fragment">
+<p>Testing shiny apps isn’t like testing package code.</p>
+<p>Your tests are most helpful when they keep you from breaking something that <strong>was working</strong> without knowing it.</p>
+</div>
+</div>
+<aside><div>
+<p><a href="https://rstudio.github.io/shinytest2/" class="uri">https://rstudio.github.io/shinytest2/</a></p>
+</div></aside></section>
+<section id="shinytest2-1" class="slide level2" data-background-image="assets/shinytest2.svg" data-background-size="300px" data-background-position="94% 95%" data-background-repeat="no-repeat">
 <h2>shinytest2</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>shinytest2<span class="sc">::</span><span class="fu">record_test</span>(<span class="st">"app-dir/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>shinytest2<span class="sc">::</span><span class="fu">test_app</span>(<span class="st">"app-dir/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>First, record the test.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>shinytest2<span class="sc">::</span><span class="fu">record_test</span>(<span class="st">"app-dir/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Then, or much later, run the test.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>shinytest2<span class="sc">::</span><span class="fu">test_app</span>(<span class="st">"app-dir/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section></section>
 <section>
 <section id="frameworks" class="title-slide slide level1 middle center">
 <h1>Frameworks</h1>
 
 </section>
-<section id="section-1" class="slide level2" data-background-image="assets/mark-bosky-w58KovW_d0A-unsplash.jpg" data-background-size="cover" data-background-position="center" data-background-repeat="no-repeat">
+<section id="section" class="slide level2" data-background-image="assets/mark-bosky-w58KovW_d0A-unsplash.jpg" data-background-size="cover" data-background-position="center" data-background-repeat="no-repeat">
 <h2></h2>
 </section>
-<section id="section-2" class="slide level2" data-background-image="assets/adrianna-geo-j80rnXkPrg0-unsplash.jpg" data-background-size="cover" data-background-position="center" data-background-repeat="no-repeat">
+<section id="section-1" class="slide level2" data-background-image="assets/adrianna-geo-j80rnXkPrg0-unsplash.jpg" data-background-size="cover" data-background-position="center" data-background-repeat="no-repeat">
 <h2></h2>
 </section>
-<section id="section-3" class="slide level2" data-background-image="assets/persnickety-prints-qztXD0YoEMM-unsplash.jpg" data-background-size="cover" data-background-position="center" data-background-repeat="no-repeat">
+<section id="section-2" class="slide level2" data-background-image="assets/persnickety-prints-qztXD0YoEMM-unsplash.jpg" data-background-size="cover" data-background-position="center" data-background-repeat="no-repeat">
 <h2></h2>
 </section>
-<section id="section-4" class="slide level2" data-background-image="assets/anastasia-palagutina-txbXuzTJdSA-unsplash.jpg" data-background-size="cover" data-background-position="center" data-background-repeat="no-repeat">
+<section id="section-3" class="slide level2" data-background-image="assets/anastasia-palagutina-txbXuzTJdSA-unsplash.jpg" data-background-size="cover" data-background-position="center" data-background-repeat="no-repeat">
 <h2></h2>
 </section>
-<section id="section-5" class="slide level2" data-background-image="assets/diego-fernandez-6Vg8N8u61aI-unsplash.jpg" data-background-size="cover" data-background-position="center" data-background-repeat="no-repeat">
+<section id="section-4" class="slide level2" data-background-image="assets/diego-fernandez-6Vg8N8u61aI-unsplash.jpg" data-background-size="cover" data-background-position="center" data-background-repeat="no-repeat">
 <h2></h2>
 
 <div class="quarto-auto-generated-content">

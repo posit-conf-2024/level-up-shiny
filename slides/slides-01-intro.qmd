@@ -94,7 +94,7 @@ TK: activity
 
 ## Stickies
 
-::: {.flex style="margin-top: var(--space-xl); font-size: var(--step-3);"}
+::: {.easy-columns style="margin-top: var(--space-xl); font-size: var(--step-3);"}
 ::: {.flex .flex-column .items-center .justify-center .w-50 .text-center}
 🟩
 
