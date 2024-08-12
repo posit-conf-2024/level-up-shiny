@@ -91,6 +91,81 @@ warning("x is ", x, " and that might be bad")
 stop("x cannot be ", x)
 ```
 
+## Log Levels
+
+::: {.col style="max-width: 140px"}
+{{< include assets/12-deploy/01_logging.excalidraw.svg >}}
+:::
+
+## Log Levels
+
+::: {.col style="max-width: 140px"}
+{{< include assets/12-deploy/02_logging.excalidraw.svg >}}
+:::
+
+## Log Levels
+
+::: {.col style="max-width: 466px"}
+{{< include assets/12-deploy/03_logging.excalidraw.svg >}}
+:::
+
+## Log Levels
+
+::: {.col style="max-width: 466px"}
+{{< include assets/12-deploy/04_logging.excalidraw.svg >}}
+:::
+
+## Log Levels
+
+{{< include assets/12-deploy/10_logging.excalidraw.svg >}}
+
+
+## Log Levels
+
+{{< include assets/12-deploy/11_logging.excalidraw.svg >}}
+
+
+## Log Levels
+
+{{< include assets/12-deploy/12_logging.excalidraw.svg >}}
+
+## Log Levels
+
+{{< include assets/12-deploy/13_logging.excalidraw.svg >}}
+
+## Log Levels
+
+{{< include assets/12-deploy/14_logging.excalidraw.svg >}}
+
+## Log Levels
+
+{{< include assets/12-deploy/15_logging.excalidraw.svg >}}
+
+## Log Levels
+
+{{< include assets/12-deploy/16_logging.excalidraw.svg >}}
+
+## Log Levels
+
+{{< include assets/12-deploy/17_logging.excalidraw.svg >}}
+
+## Log Levels
+
+{{< include assets/12-deploy/18_logging.excalidraw.svg >}}
+
+## Log Levels
+
+{{< include assets/12-deploy/19_logging.excalidraw.svg >}}
+
+## Log Levels
+
+{{< include assets/12-deploy/20_logging.excalidraw.svg >}}
+
+## Log Levels
+
+{{< include assets/12-deploy/21_logging.excalidraw.svg >}}
+
+<!--
 ## Overview of logging
 
 * logs are like events, you decide what data is attached to them
@@ -100,6 +175,7 @@ stop("x cannot be ", x)
   * appenders can filter messages they don't want to see
   * they decide where the log message is recorded
   * they decide the layout of the log message
+-->
 
 ## Intro to `lgr`
 
