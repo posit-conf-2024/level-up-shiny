@@ -71,47 +71,705 @@ while (TRUE) {
 
 ## One User
 
-<!-- TK simple reactive graph for single user -->
+```{=html}
+{{< include assets/10-extended-tasks/one_user/01_one_user.excalidraw.svg >}}
+```
+
+## One User
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/02_one_user.excalidraw.svg >}}
+```
+
+## One User
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/03_one_user.excalidraw.svg >}}
+```
+
+## One User
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/04_one_user.excalidraw.svg >}}
+```
+
+## One User
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/05_one_user.excalidraw.svg >}}
+```
+
+## One User
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/06_one_user.svg >}}
+```
+
+## One User
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/07_one_user.excalidraw.svg >}}
+```
+
+## One User
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/08_one_user.excalidraw.svg >}}
+```
+
+## One User
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/09_one_user.excalidraw.svg >}}
+```
+
+## One User
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/10_one_user.excalidraw.svg >}}
+```
+
+## One User
 
 * Each reactive expression in your app is evaluated one after the other.
 * It takes as long as it takes to run the code.
 * And then you get your answer.
 
+
 ## Two Users
 
-<!-- TK Reactive graph for two simultaneous users -->
+::: {.easy-columns}
+::: {.col .text-center}
+Me
 
+```{=html}
+{{< include assets/10-extended-tasks/one_user/02_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/02_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/03_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/02_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/04_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/02_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/05_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/02_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/06_one_user.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/02_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/07_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/02_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/08_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/02_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/09_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/02_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/10_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/02_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/10_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/03_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/10_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/04_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/10_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/05_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/10_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/06_one_user.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/10_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/07_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/10_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/08_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/10_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/09_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/10_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/10_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+## Two Users
+
+::: incremental
 * Each user has their own reactive graph that's still evaluated one computation at a time.
 * But it could take longer than it takes to run the code.
 * If we both have the app open and I start the long running task, you'll have to wait for me to finish.
 * Then Shiny runs the code for your app.
 * And you get the answer.
+:::
 
-## Shiny Async with Two Users
 
-<!-- TK Reactive graph for two simultaneous users using promises -->
+## Shiny Async: Two Users
 
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/02_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/02_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Shiny Async: Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/03_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/03_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Shiny Async: Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/04_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/04_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Shiny Async: Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/05_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/05_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Shiny Async: Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/06_one_user.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/06_one_user.svg >}}
+```
+:::
+:::
+
+
+## Shiny Async: Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/07_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/07_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Shiny Async: Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/08_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/08_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Shiny Async: Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/09_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/09_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+
+## Shiny Async: Two Users
+
+::: {.easy-columns}
+::: {.col .text-center}
+Me
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/10_one_user.excalidraw.svg >}}
+```
+:::
+
+::: {.col .text-center}
+You
+
+```{=html}
+{{< include assets/10-extended-tasks/one_user/10_one_user.excalidraw.svg >}}
+```
+:::
+:::
+
+## Shiny Async: Two Users
+
+::: incremental
 * Each user has their own reactive graph that's still evaluated one computation at a time.
 * But they're now decoupled.
 * I only have to wait as long as it takes to the run the code for my app.
 * And you only have to wait as long as it takes to run the code for your app.
 * But we still have to wait... and we can't use our apps until our computation is done.
+:::
 
 # Enter [ExtendedTask]{.code} {.middle}
 
+## Extended Tasks
+
+```{=html}
+{{< include assets/10-extended-tasks/01_extended_task.excalidraw.svg >}}
+```
+
+## Extended Tasks
+
+```{=html}
+{{< include assets/10-extended-tasks/02_extended_task.excalidraw.svg >}}
+```
+
+## Extended Tasks
+
+```{=html}
+{{< include assets/10-extended-tasks/03_extended_task.excalidraw.svg >}}
+```
+
+## Extended Tasks
+
+```{=html}
+{{< include assets/10-extended-tasks/04_extended_task.excalidraw.svg >}}
+```
+
+## Extended Tasks
+
+```{=html}
+{{< include assets/10-extended-tasks/05_extended_task.excalidraw.svg >}}
+```
+
+## Extended Tasks
+
+```{=html}
+{{< include assets/10-extended-tasks/06_extended_task.excalidraw.svg >}}
+```
+
+## Extended Tasks
+
+```{=html}
+{{< include assets/10-extended-tasks/07_extended_task.excalidraw.svg >}}
+```
+
+## Extended Tasks
+
+```{=html}
+{{< include assets/10-extended-tasks/08_extended_task.excalidraw.svg >}}
+```
+
+## Extended Tasks
+
+```{=html}
+{{< include assets/10-extended-tasks/09_extended_task.excalidraw.svg >}}
+```
+
+## Extended Tasks
+
+```{=html}
+{{< include assets/10-extended-tasks/10_extended_task.excalidraw.svg >}}
+```
+
 ## Shiny with Extended Task
-
-<!-- TK Shape of reactive expression -->
-
-<!-- TK Divide reactive expression into to pieces -->
 
 * Extended Tasks let you split a reactive expression into two pieces.
   1. Observe incoming changes and decide when to run the task, and with what parameters.
   2. Receive the results of the task and update dependent outputs.
 
 ## Shiny with Extended Task
-
-<!-- TK Reactive graph with Extended Task -->
 
 * The reactive graph can now make it to equillibrium in each reactive tick.
 * The task is run in the background so it doesn't block either of our apps.
