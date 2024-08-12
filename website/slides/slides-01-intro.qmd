@@ -22,7 +22,7 @@ editor:
   render-on-save: true
 ---
 
-## Welcome to Level&nbsp;Up&nbsp;with Shiny&nbsp;for&nbsp;R {.middle .text-center .fs-step-2"}
+## Welcome to Level&nbsp;Up&nbsp;with Shiny&nbsp;for&nbsp;R {.middle .text-center .fs-step-2}
 
 * Find a seat where you can see the screen!
 
