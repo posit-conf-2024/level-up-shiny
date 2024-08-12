@@ -1,0 +1,83 @@
+---
+title: "Goodbye for now!"
+subtitle: Level Up with Shiny for R
+author: <code>posit::conf(2024)</code>
+date: 2024-08-12
+
+format:
+  utopia-slides-revealjs:
+    html-math-method: plain
+    revealjs-url: slides/assets/reveal.js-4.5.0
+    slide-level: 2
+    # chalkboard: true
+    theme:
+      - slides.scss
+      - assets/code-blocked.scss
+    css:
+      - ../auto-dark-mode.css
+    code-annotations: hover
+
+revealjs-plugins:
+  - utopia-slides
+
+# filters {.middle}:
+#    {.middle}- webr
+
+webr:
+  show-startup-message: false
+
+editor:
+  render-on-save: true
+---
+
+# Workshop Highlights {.middle .text-center .gradient-shinytest2 style="--slide-color:white;"}
+
+## Modern UI with bslib
+
+**Something cool**
+
+{{< partial ../partials/content-editable-code.html text="..." >}}
+
+**Something tricky**
+
+{{< partial ../partials/content-editable-code.html text="..." >}}
+
+## Organizing your Shiny apps
+
+**Something cool**
+
+{{< partial ../partials/content-editable-code.html text="..." >}}
+
+**Something tricky**
+
+{{< partial ../partials/content-editable-code.html text="..." >}}
+
+## Reactivity & Fast Apps
+
+**Something cool**
+
+{{< partial ../partials/content-editable-code.html text="..." >}}
+
+**Something tricky**
+
+{{< partial ../partials/content-editable-code.html text="..." >}}
+
+## Deploying to Production
+
+**Something cool**
+
+{{< partial ../partials/content-editable-code.html text="..." >}}
+
+**Something tricky**
+
+{{< partial ../partials/content-editable-code.html text="..." >}}
+
+# Workshop Survey {.middle .text-center}
+
+## {#survey .middle .text-center}
+
+[pos.it/conf-workshop-survey]{.b .code .r-fit-text}
+
+# Thank you! {.text-center background-image="assets/zhifei-zhou-mwO0ofO72J8-unsplash.jpg" background-size="cover" style="--slide-color:white; --title-slide-background-color:transparent;"}
+
+Enjoy [posit::conf]{.code}!
