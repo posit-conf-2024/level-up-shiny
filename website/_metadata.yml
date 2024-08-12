@@ -6,6 +6,7 @@ workshop:
   date: August 12, 2024
   time: 09:00 - 17:00
   location: 300 | Columbia C
+  discord_channel: "#workshop-level-up-shiny"
   links:
     repo: https://github.com/posit-conf-2024/level-up-shiny
     website: https://posit-conf-2024.github.io/level-up-shiny

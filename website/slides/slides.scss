@@ -7,6 +7,25 @@
   opacity: 0.5
 }
 
+.table-what-matters > table > tbody {
+  & > tr:nth-child(2n - 1) {
+    & > td:first-child {
+      opacity: 0.15;
+    }
+    & > td:last-child {
+      font-weight: bold;
+    }
+  }
+  & > tr:nth-child(2n) {
+    & > td:first-child {
+      font-weight: bold;
+    }
+    & > td:last-child {
+      opacity: 0.15;
+    }
+  }
+}
+
 .table-no-border {
 
   >table th,
