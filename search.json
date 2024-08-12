@@ -907,14 +907,14 @@
     "href": "slides/slides-12-deploy.html#intro-to-lgr",
     "title": "Push to Prod",
     "section": "Intro to lgr",
-    "text": "Intro to lgr\n\nlibrary(lgr)\n\nlgr$info(\"Loading data from customers.csv\")\n\nINFO  [13:08:48.449] Loading data from customers.csv\n\nlgr$warn(\"Missing values detected in column `%s`\", \"salary\")\n\nWARN  [13:08:48.479] Missing values detected in column `salary`\n\nlgr$error(\"Model validation failed\", accuracy = 0.459)\n\nERROR [13:08:48.485] Model validation failed {accuracy: `0.459`}\n\nlgr$fatal(\"object of type 'closure' is not subsettable\")\n\nFATAL [13:08:48.486] object of type 'closure' is not subsettable"
+    "text": "Intro to lgr\n\nlibrary(lgr)\n\nlgr$info(\"Loading data from customers.csv\")\n\nINFO  [13:39:27.861] Loading data from customers.csv\n\nlgr$warn(\"Missing values detected in column `%s`\", \"salary\")\n\nWARN  [13:39:27.891] Missing values detected in column `salary`\n\nlgr$error(\"Model validation failed\", accuracy = 0.459)\n\nERROR [13:39:27.898] Model validation failed {accuracy: `0.459`}\n\nlgr$fatal(\"object of type 'closure' is not subsettable\")\n\nFATAL [13:39:27.899] object of type 'closure' is not subsettable"
   },
   {
     "objectID": "slides/slides-12-deploy.html#appenders---glue-messages",
     "href": "slides/slides-12-deploy.html#appenders---glue-messages",
     "title": "Push to Prod",
     "section": "Appenders - glue messages",
-    "text": "Appenders - glue messages\n\n\nINFO  [13:08:48.616] Loading data from customers.csv\n\n\nWARN  [13:08:48.644] Missing values detected {columns: (salaries, age)}\n\n\nERROR [13:08:48.646] Model validation failed {accuracy: `0.459`, threshold: `0.5`}\n\n\nFATAL [13:08:48.648] object of type 'closure' is not subsettable"
+    "text": "Appenders - glue messages\n\n\nINFO  [13:39:28.032] Loading data from customers.csv\n\n\nWARN  [13:39:28.062] Missing values detected {columns: (salaries, age)}\n\n\nERROR [13:39:28.064] Model validation failed {accuracy: `0.459`, threshold: `0.5`}\n\n\nFATAL [13:39:28.065] object of type 'closure' is not subsettable"
   },
   {
     "objectID": "slides/slides-12-deploy.html#without-logging",
@@ -1675,6 +1675,13 @@
     "text": "posit::conf(2024) Social Media\n\nRed lanyards available to those who don’t wish to be photographed\n#PositConf2024 for all things conf\n#LevelUpShiny for this workshop"
   },
   {
+    "objectID": "slides/slides-01-intro.html#questions",
+    "href": "slides/slides-01-intro.html#questions",
+    "title": "Welcome!",
+    "section": "Questions",
+    "text": "Questions\n\n🙋 🙋‍♀️ 🙋‍♂️\nPlease ask questions!"
+  },
+  {
     "objectID": "slides/slides-01-intro.html#stickies",
     "href": "slides/slides-01-intro.html#stickies",
     "title": "Welcome!",
@@ -1696,11 +1703,18 @@
     "text": "Schedule\n\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
   },
   {
+    "objectID": "slides/slides-01-intro.html#schedule-2",
+    "href": "slides/slides-01-intro.html#schedule-2",
+    "title": "Welcome!",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\nTime\nActivity\n\n\n\n\n09:00\nModern UI with bslib\n\n\n10:30\nCoffee break\n\n\n11:00\nOrganizing your Shiny apps\n\n\n12:30\nLunch break\n\n\n13:30\nMastering reactivity\n\n\n15:00\nCoffee break\n\n\n15:30\nPush to prod"
+  },
+  {
     "objectID": "slides/slides-01-intro.html#discord",
     "href": "slides/slides-01-intro.html#discord",
     "title": "Welcome!",
     "section": "Discord",
-    "text": "Discord\nGo posit.co/conference, click Login. Click image to connect to the posit::conf() Discord server.\nThis workshop has a private channel under Workshops.\n\n#level-up-shiny\n\nGreat place to ask questions, post resources, memes, or most anything else before, during, and after the workshop."
+    "text": "Discord\n\n\n\nGo posit.co/conference\nClick Login\nFind and click the discord banner\n\n\n\n\n\n\n\nOur workshop channel\n#workshop-level-up-shiny"
   },
   {
     "objectID": "slides/slides-01-intro.html#posit-cloud",
@@ -1722,6 +1736,13 @@
     "title": "Welcome!",
     "section": "File organization",
     "text": "File organization\n\n\n\n\n_exercises/\nFiles for Your Turn exercises\n\n\n_examples/\nFiles for my demo examples\n\n\nwebsite/\nThe website and slides\n\n\n./*\nLots of project related files you can ignore"
+  },
+  {
+    "objectID": "slides/slides-01-intro.html#exercise-solutions",
+    "href": "slides/slides-01-intro.html#exercise-solutions",
+    "title": "Welcome!",
+    "section": "Exercise Solutions",
+    "text": "Exercise Solutions\n\n👨‍💻 👩‍💻 _exercises/01_app.R\n   🫣    _exercises/01_solution_app.R"
   },
   {
     "objectID": "slides/slides-06-javascript.html#section",

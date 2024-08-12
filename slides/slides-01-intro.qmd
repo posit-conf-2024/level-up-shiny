@@ -97,17 +97,24 @@ editor:
 
 * `#LevelUpShiny` for this workshop
 
+## Questions
+
+::: {.flex .flex-column .fs-step-4 .justify-center-ns .text-center style="min-height: 60vh"}
+🙋 🙋‍♀️ 🙋‍♂️ \
+Please ask questions!
+:::
+
 
 ## Stickies
 
 ::: {.easy-columns style="margin-top: var(--space-xl); font-size: var(--step-3);"}
-::: {.flex .flex-column .items-center .justify-center .w-50 .text-center}
+::: {.flex .flex-column .items-center .justify-center .text-center}
 🟩
 
 All good \
 I'm done
 :::
-::: {.flex .flex-column .items-center .justify-center .w-50 .text-center}
+::: {.flex .flex-column .items-center .justify-center .text-center}
 🟥
 
 Not great \
@@ -126,24 +133,34 @@ Need time or help
 {{< partial ../partials/schedule.qmd >}}
 :::
 
-<!-- TODO another table with activity and break times highlighted -->
+## Schedule
 
-## Discord
-
-Go [posit.co/conference](https://posit.co/conference), click **Login**.
-Click image to connect to the `posit::conf()` Discord server.
-
-This workshop has a private channel under Workshops.
-
-::: {.text-center .code .purple}
-#level-up-shiny
+::: {.table-what-matters}
+{{< partial ../partials/schedule.qmd >}}
 :::
 
 
-Great place to ask questions, post resources, memes, or most anything else before, during, and after the workshop.
+## Discord
+
+::: {.easy-columns}
+::: col
+1. Go [posit.co/conference](https://posit.co/conference)
+1. Click **Login**
+1. Find and click the discord banner
+:::
+::: col
+![](assets/discord-banner.png)
+:::
+:::
 
 
-# Computational Environment {.middle}
+::: {.text-center .fs-step-2}
+Our workshop channel \
+[#workshop-level-up-shiny]{.code .purple}
+:::
+
+
+# Computering {.middle .text-center}
 
 ## Posit Cloud
 
@@ -176,6 +193,13 @@ Great place to ask questions, post resources, memes, or most anything else befor
 | `_examples/` | Files for my demo examples |
 | `website/` | The website and slides |
 | `./*` | Lots of project related files you can ignore |
+:::
+
+## Exercise Solutions
+
+::: {.flex .flex-column .fs-step-2 .justify-center-ns .items-center-ns style="min-height: 60vh"}
+👨‍💻 👩‍💻 `_exercises/01_app.R` \
+[&nbsp;&nbsp;&nbsp;🫣&nbsp;&nbsp;&nbsp; `_exercises/01_solution_app.R`]{.fragment}
 :::
 
 # Let's Dive In! {.middle}
