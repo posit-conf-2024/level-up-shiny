@@ -907,14 +907,14 @@
     "href": "slides/slides-12-deploy.html#intro-to-lgr",
     "title": "Push to Prod",
     "section": "Intro to lgr",
-    "text": "Intro to lgr\n\nlibrary(lgr)\n\nlgr$info(\"Loading data from customers.csv\")\n\nINFO  [04:55:42.316] Loading data from customers.csv\n\nlgr$warn(\"Missing values detected in column `%s`\", \"salary\")\n\nWARN  [04:55:42.345] Missing values detected in column `salary`\n\nlgr$error(\"Model validation failed\", accuracy = 0.459)\n\nERROR [04:55:42.352] Model validation failed {accuracy: `0.459`}\n\nlgr$fatal(\"object of type 'closure' is not subsettable\")\n\nFATAL [04:55:42.353] object of type 'closure' is not subsettable"
+    "text": "Intro to lgr\n\nlibrary(lgr)\n\nlgr$info(\"Loading data from customers.csv\")\n\nINFO  [13:08:48.449] Loading data from customers.csv\n\nlgr$warn(\"Missing values detected in column `%s`\", \"salary\")\n\nWARN  [13:08:48.479] Missing values detected in column `salary`\n\nlgr$error(\"Model validation failed\", accuracy = 0.459)\n\nERROR [13:08:48.485] Model validation failed {accuracy: `0.459`}\n\nlgr$fatal(\"object of type 'closure' is not subsettable\")\n\nFATAL [13:08:48.486] object of type 'closure' is not subsettable"
   },
   {
     "objectID": "slides/slides-12-deploy.html#appenders---glue-messages",
     "href": "slides/slides-12-deploy.html#appenders---glue-messages",
     "title": "Push to Prod",
     "section": "Appenders - glue messages",
-    "text": "Appenders - glue messages\n\n\nINFO  [04:55:42.484] Loading data from customers.csv\n\n\nWARN  [04:55:42.513] Missing values detected {columns: (salaries, age)}\n\n\nERROR [04:55:42.515] Model validation failed {accuracy: `0.459`, threshold: `0.5`}\n\n\nFATAL [04:55:42.516] object of type 'closure' is not subsettable"
+    "text": "Appenders - glue messages\n\n\nINFO  [13:08:48.616] Loading data from customers.csv\n\n\nWARN  [13:08:48.644] Missing values detected {columns: (salaries, age)}\n\n\nERROR [13:08:48.646] Model validation failed {accuracy: `0.459`, threshold: `0.5`}\n\n\nFATAL [13:08:48.648] object of type 'closure' is not subsettable"
   },
   {
     "objectID": "slides/slides-12-deploy.html#without-logging",
@@ -1644,7 +1644,7 @@
     "href": "slides/slides-01-intro.html#code-of-conduct",
     "title": "Welcome!",
     "section": "Code of Conduct",
-    "text": "Code of Conduct\nPlease Review: posit.co/code-of-conduct\n💙 Treat everyone with respect\n🧡 Everyone should feel welcome and safe\nReporting:\n🗣️ any posit::conf staff member (t-shirt) or Info desk\n📧 conf@posit.com"
+    "text": "Code of Conduct\nPlease Review: posit.co/code-of-conduct\n💙 Treat everyone with respect\n🧡 Everyone should feel welcome and safe\nReporting:\n🗣️ any posit::conf staff member (t-shirt) or Info desk\n📧 conf@posit.co"
   },
   {
     "objectID": "slides/slides-01-intro.html#meet-each-other",
