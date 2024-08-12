@@ -56,7 +56,7 @@ editor:
 **Reporting:**
 
 🗣️ any posit::conf staff member (t-shirt) or Info desk \
-📧 `conf@posit.com`
+📧 `conf@posit.co`
 
 ## Meet each other {.middle}
 
