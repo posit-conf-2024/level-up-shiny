@@ -6,9 +6,12 @@ duration: 30min
 time: 16:30 - 17:00
 ---
 
-::: lead
-🙏 Thanks for attending!<br>
-🙋 Any questions?
-:::
+## Slides
 
-<!-- FIXME link to survey -->
+{{< revealjs "slides/slides-13-thanks.html" class="ratio ratio-16x9" >}}
+
+## Workshop Survey
+
+Please take 5-10 minutes to fill out the workshop survey. Your feedback is important to us!
+
+[pos.it/conf-workshop-survey](https://pos.it/conf-workshop-survey)
