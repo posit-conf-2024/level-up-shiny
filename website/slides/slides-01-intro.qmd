@@ -22,11 +22,15 @@ editor:
   render-on-save: true
 ---
 
-## Welcome to Level&nbsp;Up&nbsp;with Shiny&nbsp;for&nbsp;R
+## Welcome to Level&nbsp;Up&nbsp;with Shiny&nbsp;for&nbsp;R {.middle .text-center .fs-step-2"}
 
-* Take a seat, etc.
-* Here's an important link
-* WiFI info
+* Find a seat where you can see the screen!
+
+* Join the Posit Cloud workspace: [pos.it/level-up-shiny-24-cloud]{.code .purple}
+
+* Join the Discord from [https://pos.it/conf]{.code .purple}
+
+* **WiFI**: Posit Conf 2024 | `conf2024`
 
 ```{=html}
 <style>
