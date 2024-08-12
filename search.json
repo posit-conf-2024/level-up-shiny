@@ -1507,11 +1507,11 @@
     "text": "Links\n\n📘 Workshop Materials\n🔧 Getting Setup\n🧑‍💻 Join Posit Cloud Space\n👾 Discord (signup instructions)\n📦 Repository\n🎡 posit::conf(2024)"
   },
   {
-    "objectID": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
-    "href": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r",
+    "objectID": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r-.middle-.text-center-.fs-step-2",
+    "href": "slides/slides-01-intro.html#welcome-to-level-up-with-shiny-for-r-.middle-.text-center-.fs-step-2",
     "title": "Welcome!",
-    "section": "Welcome to Level Up with Shiny for R",
-    "text": "Welcome to Level Up with Shiny for R\n\nTake a seat, etc.\nHere’s an important link\nWiFI info"
+    "section": "Welcome to Level Up with Shiny for R {.middle .text-center .fs-step-2”}",
+    "text": "Welcome to Level Up with Shiny for R {.middle .text-center .fs-step-2”}\n\nFind a seat where you can see the screen!\nJoin the Posit Cloud workspace: pos.it/level-up-shiny-24-cloud\nJoin the Discord from https://pos.it/conf\nWiFI: Posit Conf 2024 | conf2024"
   },
   {
     "objectID": "slides/slides-01-intro.html#meet-us",
@@ -2260,14 +2260,14 @@
     "href": "slides/slides-12-deploy.html#intro-to-lgr",
     "title": "Push to Prod",
     "section": "Intro to lgr",
-    "text": "Intro to lgr\n\nlibrary(lgr)\n\nlgr$info(\"Loading data from customers.csv\")\n\nINFO  [14:53:53.039] Loading data from customers.csv\n\nlgr$warn(\"Missing values detected in column `%s`\", \"salary\")\n\nWARN  [14:53:53.070] Missing values detected in column `salary`\n\nlgr$error(\"Model validation failed\", accuracy = 0.459)\n\nERROR [14:53:53.077] Model validation failed {accuracy: `0.459`}\n\nlgr$fatal(\"object of type 'closure' is not subsettable\")\n\nFATAL [14:53:53.078] object of type 'closure' is not subsettable"
+    "text": "Intro to lgr\n\nlibrary(lgr)\n\nlgr$info(\"Loading data from customers.csv\")\n\nINFO  [15:41:46.639] Loading data from customers.csv\n\nlgr$warn(\"Missing values detected in column `%s`\", \"salary\")\n\nWARN  [15:41:46.669] Missing values detected in column `salary`\n\nlgr$error(\"Model validation failed\", accuracy = 0.459)\n\nERROR [15:41:46.675] Model validation failed {accuracy: `0.459`}\n\nlgr$fatal(\"object of type 'closure' is not subsettable\")\n\nFATAL [15:41:46.677] object of type 'closure' is not subsettable"
   },
   {
     "objectID": "slides/slides-12-deploy.html#appenders---glue-messages",
     "href": "slides/slides-12-deploy.html#appenders---glue-messages",
     "title": "Push to Prod",
     "section": "Appenders - glue messages",
-    "text": "Appenders - glue messages\n\n\nINFO  [14:53:53.215] Loading data from customers.csv\n\n\nWARN  [14:53:53.245] Missing values detected {columns: (salaries, age)}\n\n\nERROR [14:53:53.247] Model validation failed {accuracy: `0.459`, threshold: `0.5`}\n\n\nFATAL [14:53:53.249] object of type 'closure' is not subsettable"
+    "text": "Appenders - glue messages\n\n\nINFO  [15:41:46.810] Loading data from customers.csv\n\n\nWARN  [15:41:46.839] Missing values detected {columns: (salaries, age)}\n\n\nERROR [15:41:46.841] Model validation failed {accuracy: `0.459`, threshold: `0.5`}\n\n\nFATAL [15:41:46.842] object of type 'closure' is not subsettable"
   },
   {
     "objectID": "slides/slides-12-deploy.html#without-logging",
