@@ -104,3 +104,44 @@ div.shinylive-wrapper {
     )
   ;
 }
+
+.pulsing {
+  animation: pulse 2s infinite;
+  transform-origin: 10% 40%;
+}
+
+@keyframes pulse {
+  0% {
+      stroke-width: 1;
+      transform: scale(1);
+  }
+  50% {
+      stroke-width: 3; /* Adjust the stroke width for different effect */
+      transform: scale(1.2); /* Adjust the scaling factor as needed */
+  }
+  100% {
+      stroke-width: 1;
+      transform: scale(1);
+  }
+}
+
+@keyframes pulse-wobble {
+  0% {
+      stroke-width: 1;
+      transform: scale(1) rotateZ(-30deg);
+  }
+  50% {
+      stroke-width: 3; /* Adjust the stroke width for different effect */
+      transform: scale(1.2) rotateZ(0deg); /* Adjust the scaling factor as needed */
+  }
+  100% {
+      stroke-width: 1;
+      transform: scale(1) rotateZ(-30deg);
+  }
+}
+
+.slide-container > svg,
+.col > svg {
+  width: 100%;
+  height: auto;
+}
