@@ -1005,7 +1005,7 @@
     "href": "setup.html#using-posit-cloud",
     "title": "Getting Setup",
     "section": "Using Posit Cloud",
-    "text": "Using Posit Cloud\n\n\n\n\n\n\nRecommended Workflow\n\n\n\nThe easiest way to get started is to use the Posit Cloud workspace I’ve prepared for you.\n\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the level-up-shiny space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the level-up-shiny space, select the level-up-shiny assignment to create and launch a new project just for you."
+    "text": "Using Posit Cloud\n\n\n\n\n\n\nRecommended Workflow\n\n\n\nThe easiest way to get started is to use the Posit Cloud workspace I’ve prepared for you.\n\nJoin the Posit Cloud workspace at pos.it/level-up-shiny-24-cloud.\n\n\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the level-up-shiny space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the level-up-shiny space, select the level-up-shiny assignment to create and launch a new project just for you."
   },
   {
     "objectID": "setup.html#using-your-own-computer",
@@ -1392,14 +1392,14 @@
     "href": "slides/slides-12-deploy.html#intro-to-lgr",
     "title": "Push to Prod",
     "section": "Intro to lgr",
-    "text": "Intro to lgr\n\nlibrary(lgr)\n\nlgr$info(\"Loading data from customers.csv\")\n\nINFO  [00:09:55.309] Loading data from customers.csv\n\nlgr$warn(\"Missing values detected in column `%s`\", \"salary\")\n\nWARN  [00:09:55.340] Missing values detected in column `salary`\n\nlgr$error(\"Model validation failed\", accuracy = 0.459)\n\nERROR [00:09:55.348] Model validation failed {accuracy: `0.459`}\n\nlgr$fatal(\"object of type 'closure' is not subsettable\")\n\nFATAL [00:09:55.349] object of type 'closure' is not subsettable"
+    "text": "Intro to lgr\n\nlibrary(lgr)\n\nlgr$info(\"Loading data from customers.csv\")\n\nINFO  [03:12:15.168] Loading data from customers.csv\n\nlgr$warn(\"Missing values detected in column `%s`\", \"salary\")\n\nWARN  [03:12:15.199] Missing values detected in column `salary`\n\nlgr$error(\"Model validation failed\", accuracy = 0.459)\n\nERROR [03:12:15.206] Model validation failed {accuracy: `0.459`}\n\nlgr$fatal(\"object of type 'closure' is not subsettable\")\n\nFATAL [03:12:15.207] object of type 'closure' is not subsettable"
   },
   {
     "objectID": "slides/slides-12-deploy.html#appenders---glue-messages",
     "href": "slides/slides-12-deploy.html#appenders---glue-messages",
     "title": "Push to Prod",
     "section": "Appenders - glue messages",
-    "text": "Appenders - glue messages\n\n\nINFO  [00:09:55.487] Loading data from customers.csv\n\n\nWARN  [00:09:55.518] Missing values detected {columns: (salaries, age)}\n\n\nERROR [00:09:55.520] Model validation failed {accuracy: `0.459`, threshold: `0.5`}\n\n\nFATAL [00:09:55.521] object of type 'closure' is not subsettable"
+    "text": "Appenders - glue messages\n\n\nINFO  [03:12:15.339] Loading data from customers.csv\n\n\nWARN  [03:12:15.368] Missing values detected {columns: (salaries, age)}\n\n\nERROR [03:12:15.370] Model validation failed {accuracy: `0.459`, threshold: `0.5`}\n\n\nFATAL [03:12:15.371] object of type 'closure' is not subsettable"
   },
   {
     "objectID": "slides/slides-12-deploy.html#without-logging",
