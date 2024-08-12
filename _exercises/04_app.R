@@ -45,32 +45,28 @@ ui <- page_sidebar(
 # Server ---------------------------------------------------------------------
 
 server <- function(input, output, session) {
-  output$vb_public <- renderText({
+  schools <- reactive({
     school |>
       filter(
         state == input$state,
         locale_type %in% input$locale_type
-      ) |>
+      )
+  })
+
+  output$vb_public <- renderText({
+    schools() |>
       filter(control == "Public") |>
       nrow()
   })
 
   output$vb_nonprofit <- renderText({
-    school |>
-      filter(
-        state == input$state,
-        locale_type %in% input$locale_type
-      ) |>
+    schools() |>
       filter(control == "Nonprofit") |>
       nrow()
   })
 
   output$vb_for_profit <- renderText({
-    school |>
-      filter(
-        state == input$state,
-        locale_type %in% input$locale_type
-      ) |>
+    schools() |>
       filter(control == "For-Profit") |>
       nrow()
   })

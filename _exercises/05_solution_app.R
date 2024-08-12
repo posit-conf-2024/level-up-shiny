@@ -107,53 +107,45 @@ scorecard_latest <-
   slice_max(academic_year, n = 1, with_ties = FALSE) |>
   ungroup()
 
-school <-
+school_scorecard <-
   school |>
   left_join(scorecard_latest, by = "id")
 
 # Server ---------------------------------------------------------------------
 
 server <- function(input, output, session) {
-  # > Value boxes ----
-  output$vb_public <- renderText({
-    school |>
+  schools <- reactive({
+    school_scorecard |>
       filter(
         state == input$state,
         locale_type %in% input$locale_type
-      ) |>
+      )
+  })
+
+  # > Value boxes ----
+  output$vb_public <- renderText({
+    schools() |>
       filter(control == "Public") |>
       nrow()
   })
 
   output$vb_nonprofit <- renderText({
-    school |>
-      filter(
-        state == input$state,
-        locale_type %in% input$locale_type
-      ) |>
+    schools() |>
       filter(control == "Nonprofit") |>
       nrow()
   })
 
   output$vb_for_profit <- renderText({
-    school |>
-      filter(
-        state == input$state,
-        locale_type %in% input$locale_type
-      ) |>
+    schools() |>
       filter(control == "For-Profit") |>
       nrow()
-  })
+  }) 
 
   # > Card: Cost vs Earnings ----
   output$plot_cost <- renderPlot({
     label_dollars <- scales::label_dollar(scale_cut = scales::cut_long_scale())
 
-    school |>
-      filter(
-        state == input$state,
-        locale_type %in% input$locale_type
-      ) |>
+    schools() |>
       ggplot() +
       aes(
         x = cost_avg,
@@ -180,17 +172,10 @@ server <- function(input, output, session) {
 
   # > Card: Map ----
   output$map <- renderLeaflet({
-    school_filtered <-
-      school |>
-      filter(
-        state == input$state,
-        locale_type %in% input$locale_type
-      )
-
     leaflet() |>
       addTiles() |>
       addMarkers(
-        data = school_filtered,
+        data = schools(),
         lng = ~longitude,
         lat = ~latitude,
         popup = ~name

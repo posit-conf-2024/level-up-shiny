@@ -72,7 +72,7 @@ scorecard_latest <-
   slice_max(academic_year, n = 1, with_ties = FALSE) |>
   ungroup()
 
-school <-
+school_scorecard <-
   school |>
   left_join(scorecard_latest, by = "id")
 
@@ -80,7 +80,7 @@ school <-
 
 server <- function(input, output, session) {
   output$plot_deg_predominant <- renderPlot({
-    school |>
+    school_scorecard |>
       filter(
         state == input$state,
         locale_type %in% input$locale_type
@@ -102,7 +102,7 @@ server <- function(input, output, session) {
   output$plot_cost <- renderPlot({
     label_dollars <- scales::label_dollar(scale_cut = scales::cut_long_scale())
 
-    school |>
+    school_scorecard |>
       filter(
         state == input$state,
         locale_type %in% input$locale_type
