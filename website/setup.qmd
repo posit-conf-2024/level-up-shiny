@@ -31,6 +31,10 @@ If you don't already have accounts with these services, you'll need to create th
 
 ::: {.callout-note title="Recommended Workflow"}
 The easiest way to get started is to use the Posit Cloud workspace I've prepared for you.
+
+::: lead
+Join the Posit Cloud workspace at [{{< meta workshop.links.cloud_short.text >}}]({{< meta workshop.links.cloud_short.href >}}).
+:::
 :::
 
 <!--

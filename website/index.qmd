@@ -79,7 +79,7 @@ You’ll learn how to make the most of recent developments in the Shiny ecosyste
 
 🔧 [Getting Setup](setup.qmd)
 
-🧑‍💻 [Join Posit Cloud Space]({{< meta workshop.links.cloud >}})
+🧑‍💻 [Join Posit Cloud Space](setup.qmd#using-posit-cloud)
 
 👾 [Discord]({{< meta workshop.links.discord >}}) ([signup instructions](setup.qmd#create-accounts))
 

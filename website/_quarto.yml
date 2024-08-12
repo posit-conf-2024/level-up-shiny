@@ -27,7 +27,7 @@ website:
     icon: cone-striped
     dismissible: true
     content: |
-      Welcome to [posit::conf]{.font-monospace}! Please join the [[level-up-shiny]{.font-monospace} Posit Cloud space](https://posit.cloud/spaces/517274/join?access_code=hOrr2kUey-vMVbjRoWbQRqbHM45L0rUSIdfgSsj9).
+      Welcome to [posit::conf]{.font-monospace}! Please join the [[level-up-shiny]{.font-monospace} Posit Cloud space](setup.qmd#using-posit-cloud).
     type: info
   
   page-footer: |
