@@ -1241,7 +1241,7 @@
     "href": "setup.html#using-posit-cloud",
     "title": "Getting Setup",
     "section": "Using Posit Cloud",
-    "text": "Using Posit Cloud\n\n\n\n\n\n\nRecommended Workflow\n\n\n\nThe easiest way to get started is to use the Posit Cloud workspace I’ve prepared for you.\n\nJoin the Posit Cloud workspace at pos.it/level-up-shiny-24-cloud.\n\n\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the level-up-shiny space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the level-up-shiny space, select the level-up-shiny assignment to create and launch a new project just for you."
+    "text": "Using Posit Cloud\n\n\n\n\n\n\nRecommended Workflow\n\n\n\nThe easiest way to get started is to use the Posit Cloud workspace I’ve prepared for you.\n\nJoin the Posit Cloud workspace at https://posit.cloud/spaces/517274/.\n\n\n\n\nI’ve prepared a Posit Cloud workspace for workshop participants with a project for you to use during our time together. The project contains all of the files and packages pre-installed and ready to go. All you need to do is log in and start coding!\nIf you already have a Posit Cloud account, first join the level-up-shiny space on Posit Cloud. Otherwise sign up for a free account and then join the space. You can create an account with your email or login with Google, GitHub or Clever.\nOnce you’re part of the level-up-shiny space, select the level-up-shiny assignment to create and launch a new project just for you."
   },
   {
     "objectID": "setup.html#using-your-own-computer",
@@ -1602,7 +1602,7 @@
     "href": "slides/slides-01-intro.html#posit-cloud",
     "title": "Welcome!",
     "section": "Posit Cloud",
-    "text": "Posit Cloud\n\n\nStep 1. Join pos.it/level-up-shiny-24-cloud\n\nStep 2. Start level-up-shiny assignment"
+    "text": "Posit Cloud\n\nStep 1. Join the Level Up for Shiny Posit Cloud workspace\n\nStep 2. Start level-up-shiny assignment"
   },
   {
     "objectID": "slides/slides-01-intro.html#cloud-session",
@@ -2260,14 +2260,14 @@
     "href": "slides/slides-12-deploy.html#intro-to-lgr",
     "title": "Push to Prod",
     "section": "Intro to lgr",
-    "text": "Intro to lgr\n\nlibrary(lgr)\n\nlgr$info(\"Loading data from customers.csv\")\n\nINFO  [15:48:03.585] Loading data from customers.csv\n\nlgr$warn(\"Missing values detected in column `%s`\", \"salary\")\n\nWARN  [15:48:03.614] Missing values detected in column `salary`\n\nlgr$error(\"Model validation failed\", accuracy = 0.459)\n\nERROR [15:48:03.621] Model validation failed {accuracy: `0.459`}\n\nlgr$fatal(\"object of type 'closure' is not subsettable\")\n\nFATAL [15:48:03.623] object of type 'closure' is not subsettable"
+    "text": "Intro to lgr\n\nlibrary(lgr)\n\nlgr$info(\"Loading data from customers.csv\")\n\nINFO  [17:16:32.792] Loading data from customers.csv\n\nlgr$warn(\"Missing values detected in column `%s`\", \"salary\")\n\nWARN  [17:16:32.824] Missing values detected in column `salary`\n\nlgr$error(\"Model validation failed\", accuracy = 0.459)\n\nERROR [17:16:32.831] Model validation failed {accuracy: `0.459`}\n\nlgr$fatal(\"object of type 'closure' is not subsettable\")\n\nFATAL [17:16:32.832] object of type 'closure' is not subsettable"
   },
   {
     "objectID": "slides/slides-12-deploy.html#appenders---glue-messages",
     "href": "slides/slides-12-deploy.html#appenders---glue-messages",
     "title": "Push to Prod",
     "section": "Appenders - glue messages",
-    "text": "Appenders - glue messages\n\n\nINFO  [15:48:03.754] Loading data from customers.csv\n\n\nWARN  [15:48:03.783] Missing values detected {columns: (salaries, age)}\n\n\nERROR [15:48:03.784] Model validation failed {accuracy: `0.459`, threshold: `0.5`}\n\n\nFATAL [15:48:03.786] object of type 'closure' is not subsettable"
+    "text": "Appenders - glue messages\n\n\nINFO  [17:16:32.966] Loading data from customers.csv\n\n\nWARN  [17:16:32.997] Missing values detected {columns: (salaries, age)}\n\n\nERROR [17:16:32.999] Model validation failed {accuracy: `0.459`, threshold: `0.5`}\n\n\nFATAL [17:16:33.000] object of type 'closure' is not subsettable"
   },
   {
     "objectID": "slides/slides-12-deploy.html#without-logging",

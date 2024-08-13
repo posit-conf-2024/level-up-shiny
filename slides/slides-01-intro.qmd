@@ -9,7 +9,7 @@ format:
     html-math-method: plain
     slide-level: 2
     footer: >
-      [pos.it/level-up-shiny](https://pos.it/level-up-shiny)
+      [pos.it/level-up-shiny-24](https://pos.it/level-up-shiny-24)
     theme:
       - slides.scss
     css:
@@ -169,9 +169,7 @@ Our workshop channel \
 ## Posit Cloud
 
 ::: {.fs-step-3}
-<!-- FIXME (after) remove cloud link -->
-**Step 1.** Join
-[pos.it/level-up-shiny-24-cloud](https://pos.it/level-up-shiny-24-cloud)
+**Step 1.** Join the [Level Up for Shiny Posit Cloud workspace](../setup.qmd#using-posit-cloud)
 
 ::: fragment
 **Step 2.** Start `level-up-shiny` assignment

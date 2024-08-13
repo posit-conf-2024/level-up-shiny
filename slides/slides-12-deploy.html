@@ -911,19 +911,19 @@ eyJ2ZXJzaW9uIjoiMSIsImVuY29kaW5nIjoiYnN0cmluZyIsImNvbXByZXNzZWQiOnRydWUsImVuY29k
 <span id="cb9-2"><a></a></span>
 <span id="cb9-3"><a></a>lgr<span class="sc">$</span><span class="fu">info</span>(<span class="st">"Loading data from customers.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>INFO  [15:48:03.585] Loading data from customers.csv</code></pre>
+<pre><code>INFO  [17:16:32.792] Loading data from customers.csv</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>lgr<span class="sc">$</span><span class="fu">warn</span>(<span class="st">"Missing values detected in column `%s`"</span>, <span class="st">"salary"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>WARN  [15:48:03.614] Missing values detected in column `salary`</code></pre>
+<pre><code>WARN  [17:16:32.824] Missing values detected in column `salary`</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>lgr<span class="sc">$</span><span class="fu">error</span>(<span class="st">"Model validation failed"</span>, <span class="at">accuracy =</span> <span class="fl">0.459</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>ERROR [15:48:03.621] Model validation failed {accuracy: `0.459`}</code></pre>
+<pre><code>ERROR [17:16:32.831] Model validation failed {accuracy: `0.459`}</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>lgr<span class="sc">$</span><span class="fu">fatal</span>(<span class="st">"object of type 'closure' is not subsettable"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>FATAL [15:48:03.623] object of type 'closure' is not subsettable</code></pre>
+<pre><code>FATAL [17:16:32.832] object of type 'closure' is not subsettable</code></pre>
 </div>
 </div>
 </section>
@@ -931,16 +931,16 @@ eyJ2ZXJzaW9uIjoiMSIsImVuY29kaW5nIjoiYnN0cmluZyIsImNvbXByZXNzZWQiOnRydWUsImVuY29k
 <h2>Appenders - glue messages</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>INFO  [15:48:03.754] Loading data from customers.csv</code></pre>
+<pre><code>INFO  [17:16:32.966] Loading data from customers.csv</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>WARN  [15:48:03.783] Missing values detected {columns: (salaries, age)}</code></pre>
+<pre><code>WARN  [17:16:32.997] Missing values detected {columns: (salaries, age)}</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>ERROR [15:48:03.784] Model validation failed {accuracy: `0.459`, threshold: `0.5`}</code></pre>
+<pre><code>ERROR [17:16:32.999] Model validation failed {accuracy: `0.459`, threshold: `0.5`}</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>FATAL [15:48:03.786] object of type 'closure' is not subsettable</code></pre>
+<pre><code>FATAL [17:16:33.000] object of type 'closure' is not subsettable</code></pre>
 </div>
 </div>
 </section>
