@@ -22,13 +22,12 @@ website:
   open-graph:
     image: assets/open-graph-card-2.png
 
-  # FIXME (after) remove the announcement
-  announcement:
-    icon: cone-striped
-    dismissible: true
-    content: |
-      Welcome to [posit::conf]{.font-monospace}! Please join the [[level-up-shiny]{.font-monospace} Posit Cloud space](setup.qmd#using-posit-cloud).
-    type: info
+  # announcement:
+  #   icon: cone-striped
+  #   dismissible: true
+  #   content: |
+  #     Welcome to [posit::conf]{.font-monospace}! Please join the [[level-up-shiny]{.font-monospace} Posit Cloud space](setup.qmd#using-posit-cloud).
+  #   type: info
   
   page-footer: |
     <a href="https:://posi.it/conf-event-portal">posit::conf(2024)</a>
