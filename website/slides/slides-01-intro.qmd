@@ -9,7 +9,7 @@ format:
     html-math-method: plain
     slide-level: 2
     footer: >
-      [pos.it/level-up-shiny](https://pos.it/level-up-shiny)
+      [pos.it/level-up-shiny-24](https://pos.it/level-up-shiny-24)
     theme:
       - slides.scss
     css:
