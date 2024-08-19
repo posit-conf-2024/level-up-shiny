@@ -67,6 +67,21 @@ ui <- page_fillable(
 # Functions ------------------------------------------------------------------
 
 ## Put your function(s) here ##
+plot_school_tuition_by_year <- function(school, scorecard, school_name, fill) {
+  school_b <- school |> filter(name == {{ school_name }})
+  
+  scorecard |>
+    semi_join(school_b, by = "id") |>
+    mutate(academic_year = as.integer(substr(academic_year, 1, 4))) |>
+    ggplot() +
+    aes(x = academic_year, y = cost_tuition_in) +
+    geom_col(fill = fill, na.rm = TRUE) +
+    labs(
+      x = "Academic Year",
+      y = NULL
+    ) +
+    scale_y_continuous(labels = scales::label_dollar())
+}
 
 # Server ---------------------------------------------------------------------
 
@@ -74,37 +89,13 @@ server <- function(input, output, session) {
   output$plot_school_a <- renderPlot({
     req(input$school_a)
 
-    school_a <- school |> filter(name == input$school_a)
-
-    scorecard |>
-      semi_join(school_a, by = "id") |>
-      mutate(academic_year = as.integer(substr(academic_year, 1, 4))) |>
-      ggplot() +
-      aes(x = academic_year, y = cost_tuition_in) +
-      geom_col(fill = colors[1], na.rm = TRUE) +
-      labs(
-        x = "Academic Year",
-        y = NULL
-      ) +
-      scale_y_continuous(labels = scales::label_dollar())
+     plot_school_tuition_by_year(school, scorecard, input$school_a, colors[1])
   })
 
   output$plot_school_b <- renderPlot({
     req(input$school_b)
 
-    school_b <- school |> filter(name == input$school_b)
-
-    scorecard |>
-      semi_join(school_b, by = "id") |>
-      mutate(academic_year = as.integer(substr(academic_year, 1, 4))) |>
-      ggplot() +
-      aes(x = academic_year, y = cost_tuition_in) +
-      geom_col(fill = colors[2], na.rm = TRUE) +
-      labs(
-        x = "Academic Year",
-        y = NULL
-      ) +
-      scale_y_continuous(labels = scales::label_dollar())
+    plot_school_tuition_by_year(school, scorecard, input$school_b, colors[2])
   })
 }
 

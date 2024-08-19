@@ -45,17 +45,9 @@ ui <- page_fillable(
   layout_columns(
     div(
       mod_school_ui("a", "School A", school_names),
-      card_dark(
-        title = "Location",
-        leafletOutput("map_school_a")
-      )
     ),
     div(
       mod_school_ui("b", "School B", school_names),
-      card_dark(
-        title = "Location",
-        leafletOutput("map_school_b")
-      )
     )
   )
 )
@@ -65,16 +57,6 @@ ui <- page_fillable(
 server <- function(input, output, session) {
   mod_school_server("a", colors[1])
   mod_school_server("b", colors[2])
-
-  output$map_school_a <- renderLeaflet({
-    req(input$school_a)
-    map_school(school, input$school_a)
-  })
-
-  output$map_school_b <- renderLeaflet({
-    req(input$school_b)
-    map_school(school, input$school_b)
-  })
 }
 
 shinyApp(ui, server)

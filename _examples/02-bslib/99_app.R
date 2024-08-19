@@ -67,6 +67,7 @@ ui <- page_sidebar(
         "Public",
         tooltip(
           fa_i("info-circle"),
+          placement = "bottom",
           "Supported by public funds and operated by elected or appointed officials."
         )
       ),
