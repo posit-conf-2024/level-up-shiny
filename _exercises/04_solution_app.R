@@ -18,11 +18,7 @@ ui <- page_sidebar(
     selectInput("state", "State", choices = setNames(state.abb, state.name)),
     checkboxGroupInput("locale_type", "Locale Type", choices = levels(school$locale_type), selected = levels(school$locale_type)),
   ),
-  value_box(
-    "Public",
-    textOutput("vb_public"),
-    showcase = fa_i("university")
-  ),
+  uiOutput("value_box_public", fill = FALSE),
   value_box(
     "Nonprofit",
     textOutput("vb_nonprofit"),
@@ -47,11 +43,23 @@ server <- function(input, output, session) {
         locale_type %in% input$locale_type
       )
   })
-
-  output$vb_public <- renderText({
-    schools() |>
+  
+  output$value_box_public <- renderUI({
+    n_public_schools <- 
+      schools() |>
       filter(control == "Public") |>
       nrow()
+    
+    value_box(
+      "Public",
+      n_public_schools,
+      showcase = fa_i("university"),
+      theme = if (n_public_schools > 25) {
+        "success"
+      } else {
+        "danger"
+      }
+    )
   })
 
   output$vb_nonprofit <- renderText({

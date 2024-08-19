@@ -18,30 +18,32 @@ ui <- page_sidebar(
     selectInput("state", "State", choices = setNames(state.abb, state.name)),
     checkboxGroupInput("locale_type", "Locale Type", choices = levels(school$locale_type), selected = levels(school$locale_type)),
   ),
-  card(
-    card_header("Predominant Degree"),
-    plotOutput("plot_deg_predominant"),
-    full_screen = TRUE
-  ),
-  card(
-    card_header("Cost vs Earnings"),
-    layout_sidebar(
-      sidebar = sidebar(
-        open = FALSE,
-        position = "right",
-        radioButtons(
-          "cost_group_by",
-          "Group By",
-          choices = c(
-            "Predominant Degree" = "deg_predominant",
-            "Campus Setting" = "locale_type",
-            "Testing Requirements" = "adm_req_test"
+  navset_(
+    nav_panel_hidden(
+      "Predominant Degree",
+      plotOutput("plot_deg_predominant"),
+      full_screen = TRUE
+    ),
+    nav_panel(
+      "Cost vs Earnings",
+      layout_sidebar(
+        sidebar = sidebar(
+          open = FALSE,
+          position = "right",
+          radioButtons(
+            "cost_group_by",
+            "Group By",
+            choices = c(
+              "Predominant Degree" = "deg_predominant",
+              "Campus Setting" = "locale_type",
+              "Testing Requirements" = "adm_req_test"
+            ),
           ),
         ),
+        plotOutput("plot_cost"),
       ),
-      plotOutput("plot_cost"),
-    ),
-    full_screen = TRUE
+      full_screen = TRUE
+    )
   )
 )
 

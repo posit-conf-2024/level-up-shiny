@@ -28,58 +28,66 @@ library(collegeScorecard)
 ui <- page_sidebar(
   title = "Find a School",
   sidebar = sidebar(
+    open = "closed",
     selectInput("state", "State", choices = setNames(state.abb, state.name)),
     checkboxGroupInput("locale_type", "Locale Type", choices = levels(school$locale_type), selected = levels(school$locale_type)),
   ),
-
+  
   # > Value boxes ----
-  value_box(
-    "Public",
-    textOutput("vb_public"),
-    showcase = fa_i("university")
+  layout_column_wrap(
+    width = 1/3,
+    value_box(
+      "Public",
+      textOutput("vb_public"),
+      showcase = fa_i("university")
+    ),
+    value_box(
+      "Nonprofit",
+      textOutput("vb_nonprofit"),
+      theme = "primary",
+      showcase = fa_i("school-lock")
+    ),
+    value_box(
+      "For-Profit",
+      textOutput("vb_for_profit"),
+      theme = "bg-gradient-orange-red",
+      showcase = fa_i("building")
+    )
   ),
-  value_box(
-    "Nonprofit",
-    textOutput("vb_nonprofit"),
-    theme = "primary",
-    showcase = fa_i("school-lock")
-  ),
-  value_box(
-    "For-Profit",
-    textOutput("vb_for_profit"),
-    theme = "bg-gradient-orange-red",
-    showcase = fa_i("building")
-  ),
-
+  
+  
   # > Card: Cost vs Earnings ----
-  card(
-    card_header("Cost vs Earnings"),
-    layout_sidebar(
-      sidebar = sidebar(
-        open = FALSE,
-        position = "right",
-        radioButtons(
-          "cost_group_by",
-          "Group By",
-          choices = c(
-            "Predominant Degree" = "deg_predominant",
-            "Campus Setting" = "locale_type",
-            "Testing Requirements" = "adm_req_test"
+  layout_columns(
+    col_widths = c(8, 4),
+    card(
+      card_header("Cost vs Earnings"),
+      layout_sidebar(
+        sidebar = sidebar(
+          open = FALSE,
+          position = "right",
+          radioButtons(
+            "cost_group_by",
+            "Group By",
+            choices = c(
+              "Predominant Degree" = "deg_predominant",
+              "Campus Setting" = "locale_type",
+              "Testing Requirements" = "adm_req_test"
+            ),
           ),
         ),
+        plotOutput("plot_cost"),
       ),
-      plotOutput("plot_cost"),
+      full_screen = TRUE
     ),
-    full_screen = TRUE
-  ),
-
-  # > Card: Map ----
-  card(
-    class = "text-bg-secondary",
-    card_header("School Locations"),
-    card_body(
-      padding = 0,
-      leafletOutput("map")
+    
+    # > Card: Map ----
+    card(
+      class = "text-bg-secondary",
+      card_header("School Locations"),
+      card_body(
+        padding = 0,
+        leafletOutput("map")
+      )
     )
   )
 )
@@ -125,30 +133,30 @@ server <- function(input, output, session) {
         locale_type %in% input$locale_type
       )
   })
-
+  
   # > Value boxes ----
   output$vb_public <- renderText({
     schools() |>
       filter(control == "Public") |>
       nrow()
   })
-
+  
   output$vb_nonprofit <- renderText({
     schools() |>
       filter(control == "Nonprofit") |>
       nrow()
   })
-
+  
   output$vb_for_profit <- renderText({
     schools() |>
       filter(control == "For-Profit") |>
       nrow()
   }) 
-
+  
   # > Card: Cost vs Earnings ----
   output$plot_cost <- renderPlot({
     label_dollars <- scales::label_dollar(scale_cut = scales::cut_long_scale())
-
+    
     schools() |>
       ggplot() +
       aes(
@@ -173,7 +181,7 @@ server <- function(input, output, session) {
         panel.grid.major.y = element_line()
       )
   })
-
+  
   # > Card: Map ----
   output$map <- renderLeaflet({
     leaflet() |>

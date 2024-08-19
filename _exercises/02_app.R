@@ -32,10 +32,25 @@ theme_set(
 
 # UI -------------------------------------------------------------------------
 
-ui <- page_fillable(
-  plotlyOutput("plot_control"),
-  plotOutput("plot_deg_predominant"),
-  plotOutput("plot_locale_type")
+ui <- page_fillable( # << fillable container
+  card( # << ~fill~ item
+    fill = FALSE,
+    min_height = "200px",
+    card_body( # << ~~fillable~~ container
+      fillable = FALSE,
+      plotlyOutput("plot_control"), # << fill item
+    )
+  ),
+  card(
+    min_height = "300px",
+    plotOutput("plot_deg_predominant"),
+    full_screen = TRUE
+  ),
+  card(
+    min_height = "300px",
+    plotOutput("plot_locale_type"),
+    full_screen = TRUE
+  )
 )
 
 # Server ---------------------------------------------------------------------
