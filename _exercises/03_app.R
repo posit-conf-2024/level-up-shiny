@@ -21,27 +21,41 @@ library(collegeScorecard)
 
 # UI -------------------------------------------------------------------------
 
-ui <- page_fillable(
-  selectInput("state", "State", choices = setNames(state.abb, state.name)),
-  checkboxGroupInput("locale_type", "Locale Type", choices = levels(school$locale_type), selected = levels(school$locale_type)),
-  radioButtons(
-    "cost_group_by",
-    "Group By",
-    choices = c(
-      "Predominant Degree" = "deg_predominant",
-      "Campus Setting" = "locale_type",
-      "Testing Requirements" = "adm_req_test"
-    ),
+ui <- page_navbar(
+  title = "College Explorer",
+  sidebar = sidebar(
+    selectInput("state", "State", choices = setNames(state.abb, state.name)),
+    checkboxGroupInput("locale_type", "Locale Type", choices = levels(school$locale_type), selected = levels(school$locale_type)),
   ),
-  card(
-    card_header("Predominant Degree"),
-    plotOutput("plot_deg_predominant"),
-    full_screen = TRUE
+  nav_panel(
+    "Degrees",
+    card(
+      card_header("Predominant Degree"),
+      plotOutput("plot_deg_predominant"),
+      full_screen = TRUE
+    )
   ),
-  card(
-    card_header("Cost vs Earnings"),
-    plotOutput("plot_cost"),
-    full_screen = TRUE
+  nav_panel(
+    "Cost",
+    layout_sidebar(
+      sidebar = sidebar(
+        position = "right",
+        radioButtons(
+          "cost_group_by",
+          "Group By",
+          choices = c(
+            "Predominant Degree" = "deg_predominant",
+            "Campus Setting" = "locale_type",
+            "Testing Requirements" = "adm_req_test"
+          ),
+        ),
+      ),
+      card(
+        card_header("Cost vs Earnings"),
+        plotOutput("plot_cost"),
+        full_screen = TRUE
+      )
+    )
   )
 )
 

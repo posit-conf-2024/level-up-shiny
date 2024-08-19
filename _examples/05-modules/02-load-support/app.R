@@ -5,6 +5,7 @@ library(ggplot2)
 library(leaflet)
 library(collegeScorecard)
 
+
 # Setup ----------------------------------------------------------------------
 
 colors <- c("#007bc2", "#f45100", "#bf007f")

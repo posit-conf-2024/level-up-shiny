@@ -16,8 +16,18 @@
 # 4. Add `thematic::thematic_shiny()` to the app to make the plots look better.
 
 library(shiny)
+library(bslib)
+
+thematic::thematic_shiny()
 
 ui <- fluidPage(
+  theme = bs_theme(
+    version = 5,
+    "bg" = "#432143",
+    "fg" = "#FFF",
+    "link-color" = "yellow",
+  ),
+  a(href = "https://pos.it/level-up-shiny-24", "pos.it/level-up-shiny-24"),
   selectizeInput("data", "Data set", choices = c("school", "scorecard"), selected = "school"),
   radioButtons("type", "Inspection type", choices = c("Column Types" = "types", "Categorical" = "cat", "Numeric" = "num", "Missing" = "na"), inline = TRUE),
   plotOutput("plot")
